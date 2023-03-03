@@ -37,6 +37,10 @@ Various
 |Part #|LCSC|Footprint|Description|Cost 100|Datasheet|
 |--|--|--|--|--|--|
 |RY2200|C2888102|SOT-23|Battery Protection|0.0431|https://datasheet.lcsc.com/lcsc/2108251630_RYCHIP-Semiconductor-Inc--RY2200_C2888102.pdf|
+|LGS4056H|C5124109|DFN-8(2x2)|Battery Charger, 1A|0.0891|https://datasheet.lcsc.com/lcsc/2210111600_Legend-Si-LGS4056H_C5124109.pdf|
+|XB6042J2SV-L|C2759994|DFN1X1x0.37-4|Battery Protection, 44mO|0.1160|https://datasheet.lcsc.com/lcsc/2104081605_XySemi-XB6042J2SV-L_C2759994.pdf|
+|LP4069TQVF|C2890382|DFN-8-EP(2x2)|Battery Charger 800mA (English Datasheet)|0.2010|https://datasheet.lcsc.com/lcsc/2108271830_LOWPOWER-LP4069TQVF_C2890382.pdf|
+|HP4555D8-42|C648899|DFN-8-EP(2x2)|Battery Charger 500mA (English Datasheet)|0.1171|https://datasheet.lcsc.com/lcsc/2006301234_HYPWR-HP4555D8-42_C648897.pdf|
 
 
 ** = Limited availability on JLCPCB
