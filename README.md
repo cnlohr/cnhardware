@@ -24,6 +24,9 @@
 |DMN3110LCP3-7|C443826|X2-DSN1006-3|N, 30v, 80m, 1.3v, 140pF|0.1775|https://datasheet.lcsc.com/lcsc/1912111437_Diodes-Incorporated-DMN3110LCP3-7_C443826.pdf|
 
 Diodes
+
+|Part #|LCSC|Footprint|Description|Cost 100|Datasheet|
+|--|--|--|--|--|--|
 |TPLMBR01S30ST5G|C2858725|DFN0603 (0.6x0.3)|Schottky, 30v, 0.35v, 100mA|0.0231|https://datasheet.lcsc.com/lcsc/2108150230_TECH-PUBLIC-TPLMBR01S30ST5G_C2858725.pdf|
 |WSB5539N-2/TR|C239808|DFN1006-2L|Schottky, 40v, 0.53v, 500mA|0.0569|https://datasheet.lcsc.com/lcsc/1808311538_WILLSEMI-Will-Semicon-WSB5539N-2-TR_C239808.pdf|
 |PMEG3010EJ,115***|C255586|SOD-323F|Schottky, 30v, 0.25v, 1A|0.1470|https://datasheet.lcsc.com/lcsc/1810231722_Nexperia-PMEG3010EJ-115_C255586.pdf|
