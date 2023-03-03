@@ -42,6 +42,7 @@ Various
 |LP4069TQVF|C2890382|DFN-8-EP(2x2)|Battery Charger 800mA (English Datasheet)|0.2010|https://datasheet.lcsc.com/lcsc/2108271830_LOWPOWER-LP4069TQVF_C2890382.pdf|
 |HP4555D8-42|C648899|DFN-8-EP(2x2)|Battery Charger 500mA (English Datasheet)|0.1171|https://datasheet.lcsc.com/lcsc/2006301234_HYPWR-HP4555D8-42_C648897.pdf|
 |LP28013QVF|C517140|TDFN-10-EP(3x3)|Battery Charger (English, Interesting Blocking config) WARNING: NOT 4.2V|0.1975|https://datasheet.lcsc.com/lcsc/2004281204_LOWPOWER-LP28013QVF-44_C517140.pdf|
+|LP5301QVF|C517041|DFN-8-EP(2x2)|Battery Charger (English, No Blocking Diode, for backflow Structure)|0.1983|https://datasheet.lcsc.com/lcsc/2004281203_LOWPOWER-LP5301QVF_C517041.pdf|
 
 ** = Limited availability on JLCPCB
 *** = Charles Plans to Use
