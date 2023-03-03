@@ -41,6 +41,7 @@ Various
 |XB6042J2SV-L|C2759994|DFN1X1x0.37-4|Battery Protection, 44mO|0.1160|https://datasheet.lcsc.com/lcsc/2104081605_XySemi-XB6042J2SV-L_C2759994.pdf|
 |LP4069TQVF|C2890382|DFN-8-EP(2x2)|Battery Charger 800mA (English Datasheet)|0.2010|https://datasheet.lcsc.com/lcsc/2108271830_LOWPOWER-LP4069TQVF_C2890382.pdf|
 |HP4555D8-42|C648899|DFN-8-EP(2x2)|Battery Charger 500mA (English Datasheet)|0.1171|https://datasheet.lcsc.com/lcsc/2006301234_HYPWR-HP4555D8-42_C648897.pdf|
+|LP28013QVF|C517140|TDFN-10-EP(3x3)|Battery Charger (English, Interesting Blocking config) WARNING: NOT 4.2V|https://datasheet.lcsc.com/lcsc/2004281204_LOWPOWER-LP28013QVF-44_C517140.pdf|
 
 ** = Limited availability on JLCPCB
 *** = Charles Plans to Use
