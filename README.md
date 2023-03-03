@@ -32,6 +32,12 @@ Diodes
 |PMEG3010EJ,115***|C255586|SOD-323F|Schottky, 30v, 0.25v, 1A|0.1470|https://datasheet.lcsc.com/lcsc/1810231722_Nexperia-PMEG3010EJ-115_C255586.pdf|
 |1N4448HLP-7|C154874|DFN-2(0.6x1)|Switching, 80v, 0.8v, 300mA|0.0232|https://datasheet.lcsc.com/lcsc/1912111437_Diodes-Incorporated-1N4448HLP-7_C154874.pdf|
 
+Various
+
+|Part #|LCSC|Footprint|Description|Cost 100|Datasheet|
+|--|--|--|--|--|--|
+|RY2200|C2888102|SOT-23|Battery Protection|0.0431|https://datasheet.lcsc.com/lcsc/2108251630_RYCHIP-Semiconductor-Inc--RY2200_C2888102.pdf|
+
 
 ** = Limited availability on JLCPCB
 *** = Charles Plans to Use
