@@ -1,5 +1,7 @@
 # hardware
 
+My random junk repo for random things.
+
 # Tiny Fets and Combos
 
 |Part #|LCSC|Footprint|Description|Cost 100|Datasheet|
