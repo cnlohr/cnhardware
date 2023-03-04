@@ -31,7 +31,7 @@ Diodes
 |--|--|--|--|--|--|
 |TPLMBR01S30ST5G|C2858725|DFN0603 (0.6x0.3)|Schottky, 30v, 0.35v, 100mA|0.0231|https://datasheet.lcsc.com/lcsc/2108150230_TECH-PUBLIC-TPLMBR01S30ST5G_C2858725.pdf|
 |WSB5539N-2/TR|C239808|DFN1006-2L|Schottky, 40v, 0.53v, 500mA (2.5v@10mA) (20pF)|0.0569|https://datasheet.lcsc.com/lcsc/1808311538_WILLSEMI-Will-Semicon-WSB5539N-2-TR_C239808.pdf|
-|PMEG3010EJ,115***|C255586|SOD-323F|Schottky, 30v, 0.25v, 1A|0.1470|https://datasheet.lcsc.com/lcsc/1810231722_Nexperia-PMEG3010EJ-115_C255586.pdf|
+|PMEG3010EJ,115***|C255586|SOD-323F|Schottky, 30v, 0.25v, 1A (2.1v@10mA) (30pF)|0.1470|https://datasheet.lcsc.com/lcsc/1810231722_Nexperia-PMEG3010EJ-115_C255586.pdf|
 |1N4448HLP-7|C154874|DFN-2(0.6x1)|Switching, 80v, 0.8v, 300mA|0.0232|https://datasheet.lcsc.com/lcsc/1912111437_Diodes-Incorporated-1N4448HLP-7_C154874.pdf|
 |PMEG3010AESBYL|C503409|DFN1006-2L|Schottky, 1A,200mV@10mA (40pF)|0.0936|https://datasheet.lcsc.com/lcsc/2004031109_Nexperia-PMEG3010AESBYL_C503409.pdf|
 
