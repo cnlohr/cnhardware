@@ -44,6 +44,7 @@ Various
 |LP28013QVF|C517140|TDFN-10-EP(3x3)|Battery Charger (English, Interesting Blocking config) WARNING: NOT 4.2V|0.1975|https://datasheet.lcsc.com/lcsc/2004281204_LOWPOWER-LP28013QVF-44_C517140.pdf|
 |LP5301QVF|C517041|DFN-8-EP(2x2)|Battery Charger (English, No Blocking Diode, for backflow Structure)|0.1983|https://datasheet.lcsc.com/lcsc/2004281203_LOWPOWER-LP5301QVF_C517041.pdf|
 |WS4518D-6/TR|C910991|DFN-8-EP(2x2)|Battery Charger (English, Willsemi, Cheap)|0.1121|https://datasheet.lcsc.com/lcsc/2011111834_WILLSEMI-Will-Semicon-WS4518D-6-TR_C910991.pdf|
+|XB6042J2SV-L|C2759994|DFN-4-EP(1x1)|Protection (4.2/4.25v) 44mO|0.1160|https://datasheet.lcsc.com/lcsc/2104081605_XySemi-XB6042J2SV-L_C2759994.pdf|
 
 ** = Limited availability on JLCPCB
 *** = Charles Plans to Use
