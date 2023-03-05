@@ -1,5 +1,7 @@
 # hardware
 
+My random junk repo for random things.
+
 # Tiny Fets and Combos
 
 |Part #|LCSC|Footprint|Description|Cost 100|Datasheet|
@@ -28,9 +30,10 @@ Diodes
 |Part #|LCSC|Footprint|Description|Cost 100|Datasheet|
 |--|--|--|--|--|--|
 |TPLMBR01S30ST5G|C2858725|DFN0603 (0.6x0.3)|Schottky, 30v, 0.35v, 100mA|0.0231|https://datasheet.lcsc.com/lcsc/2108150230_TECH-PUBLIC-TPLMBR01S30ST5G_C2858725.pdf|
-|WSB5539N-2/TR|C239808|DFN1006-2L|Schottky, 40v, 0.53v, 500mA|0.0569|https://datasheet.lcsc.com/lcsc/1808311538_WILLSEMI-Will-Semicon-WSB5539N-2-TR_C239808.pdf|
-|PMEG3010EJ,115***|C255586|SOD-323F|Schottky, 30v, 0.25v, 1A|0.1470|https://datasheet.lcsc.com/lcsc/1810231722_Nexperia-PMEG3010EJ-115_C255586.pdf|
+|WSB5539N-2/TR|C239808|DFN1006-2L|Schottky, 40v, 0.53v, 500mA (250mV@10mA),(350mV@100mA) (20pF)|0.0569|https://datasheet.lcsc.com/lcsc/1808311538_WILLSEMI-Will-Semicon-WSB5539N-2-TR_C239808.pdf|
+|PMEG3010EJ,115***|C255586|SOD-323F|Schottky, 30v, 0.25v, 1A (210mV@10mA),(290mV@100mA) (30pF)|0.1470|https://datasheet.lcsc.com/lcsc/1810231722_Nexperia-PMEG3010EJ-115_C255586.pdf|
 |1N4448HLP-7|C154874|DFN-2(0.6x1)|Switching, 80v, 0.8v, 300mA|0.0232|https://datasheet.lcsc.com/lcsc/1912111437_Diodes-Incorporated-1N4448HLP-7_C154874.pdf|
+|PMEG3010AESBYL|C503409|DFN1006-2L|Schottky, 1A,(200mV@10mA),(280mV@100mA) (40pF)|0.0936|https://datasheet.lcsc.com/lcsc/2004031109_Nexperia-PMEG3010AESBYL_C503409.pdf|
 
 Various
 
@@ -43,6 +46,8 @@ Various
 |HP4555D8-42|C648899|DFN-8-EP(2x2)|Battery Charger 500mA (English Datasheet)|0.1171|https://datasheet.lcsc.com/lcsc/2006301234_HYPWR-HP4555D8-42_C648897.pdf|
 |LP28013QVF|C517140|TDFN-10-EP(3x3)|Battery Charger (English, Interesting Blocking config) WARNING: NOT 4.2V|0.1975|https://datasheet.lcsc.com/lcsc/2004281204_LOWPOWER-LP28013QVF-44_C517140.pdf|
 |LP5301QVF|C517041|DFN-8-EP(2x2)|Battery Charger (English, No Blocking Diode, for backflow Structure)|0.1983|https://datasheet.lcsc.com/lcsc/2004281203_LOWPOWER-LP5301QVF_C517041.pdf|
+|WS4518D-6/TR|C910991|DFN-8-EP(2x2)|Battery Charger (English, Willsemi, Cheap)|0.1121|https://datasheet.lcsc.com/lcsc/2011111834_WILLSEMI-Will-Semicon-WS4518D-6-TR_C910991.pdf|
+|XB6042Q2SV-L|C2759995|DFN-4-EP(1x1)|Protection (4.2/4.25v) 44mO|0.1160|https://datasheet.lcsc.com/lcsc/2104081605_XySemi-XB6042Q2SV-L_C2759995.pdf|
 
 ** = Limited availability on JLCPCB
 *** = Charles Plans to Use
