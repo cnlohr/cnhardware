@@ -25,6 +25,7 @@ My random junk repo for random things.
 |TPM2008EP3|C2682293|DFN1006-3L(1x0.6)|N, 20v, 130m, 1.2v, 120pF|0.0278|https://datasheet.lcsc.com/lcsc/2108132030_TECH-PUBLIC-TPM2008EP3_C2682293.pdf|
 |DMN3110LCP3-7|C443826|X2-DSN1006-3|N, 30v, 80m, 1.3v, 140pF|0.1775|https://datasheet.lcsc.com/lcsc/1912111437_Diodes-Incorporated-DMN3110LCP3-7_C443826.pdf|
 |TPDMN26D0UFB4|C970037|DFN-3(1x0.6)|N, 20v, 500m, 1.2v, 120pF (Cheap, Basic Sevice, Tiny, Not great but good for signals)|.0242|https://datasheet.lcsc.com/lcsc/2108132030_TECH-PUBLIC-TPDMN26D0UFB4_C970037.pdf|
+|WNM2096-3/TR**|C2931326|DFN-3(1x0.6)|N, 20v, 400m, 1.7v, 20pF (On Order)|0.0626|https://datasheet.lcsc.com/lcsc/2201121500_WILLSEMI-Will-Semicon-WNM2096-3-TR_C2931326.pdf|
 
 Diodes
 
@@ -49,6 +50,7 @@ Various
 |LP5301QVF|C517041|DFN-8-EP(2x2)|Battery Charger (English, No Blocking Diode, for backflow Structure)|0.1983|https://datasheet.lcsc.com/lcsc/2004281203_LOWPOWER-LP5301QVF_C517041.pdf|
 |WS4518D-6/TR|C910991|DFN-8-EP(2x2)|Battery Charger (English, Willsemi, Cheap)|0.1121|https://datasheet.lcsc.com/lcsc/2011111834_WILLSEMI-Will-Semicon-WS4518D-6-TR_C910991.pdf|
 |XB6042Q2SV-L|C2759995|DFN-4-EP(1x1)|Protection (4.2/4.25v) 44mO|0.1160|https://datasheet.lcsc.com/lcsc/2104081605_XySemi-XB6042Q2SV-L_C2759995.pdf|
+|SGM41562BXG/TR|C5153801|WLCSP-9-B(1.52x1.52)|Charger + Power Path for LiPo/LiIon + I2C + Power Down Options|0.4137|https://datasheet.lcsc.com/lcsc/2302061809_SGMICRO-SGM41562BXG-TR_C5153801.pdf|
 
 ** = Limited availability on JLCPCB
 *** = Charles Plans to Use
