@@ -21,8 +21,8 @@ My random junk repo for random things.
 
 |Part #|LCSC|Footprint|Description|Cost 100|
 |--|--|--|--|--|
-|[WNM2096-3/TR](https://datasheet.lcsc.com/lcsc/2201121500_WILLSEMI-Will-Semicon-WNM2096-3-TR_C2931326.pdf)**|C2931326|DFN-3(1x0.6)|N, 20v, 400m, 1.7v, 20pF (On Order)|0.0626|
-|[TPDMN26D0UFB4](https://datasheet.lcsc.com/lcsc/2108132030_TECH-PUBLIC-TPDMN26D0UFB4_C970037.pdf)|C970037|DFN-3(1x0.6)|N, 20v, 500m, 1.2v, 120pF (Cheap, Basic Sevice, Tiny, Not great but good for signals)|.0242|
+|[WNM2096-3/TR](https://datasheet.lcsc.com/lcsc/2201121500_WILLSEMI-Will-Semicon-WNM2096-3-TR_C2931326.pdf)**|[C2931326](https://www.lcsc.com/product-detail/MOSFETs_WILLSEMI-Will-Semicon-WNM2096-3-TR_C2931326.html)|DFN-3(1x0.6)|N, 20v, 400m, 1.7v, 20pF (On Order)|0.0626|
+|[TPDMN26D0UFB4](https://datasheet.lcsc.com/lcsc/2108132030_TECH-PUBLIC-TPDMN26D0UFB4_C970037.pdf)|[C970037](https://www.lcsc.com/product-detail/MOSFETs_TECH-PUBLIC-TPDMN26D0UFB4_C970037.html)|DFN-3(1x0.6)|N, 20v, 500m, 1.2v, 120pF (Cheap, Basic Sevice, Tiny, Not great but good for signals)|.0242|
 |[DMN3110LCP3-7](https://datasheet.lcsc.com/lcsc/1912111437_Diodes-Incorporated-DMN3110LCP3-7_C443826.pdf)|[C443826](https://www.lcsc.com/product-detail/MOSFETs_Diodes-Incorporated-DMN3110LCP3-7_C443826.html)|X2-DSN1006-3|N, 30v, 80m, 1.3v, 140pF Wicked Awesome Case|0.1775|
 |[TPM2008EP3](https://datasheet.lcsc.com/lcsc/2108132030_TECH-PUBLIC-TPM2008EP3_C2682293.pdf)|[C2682293](https://www.lcsc.com/product-detail/MOSFETs_TECH-PUBLIC-TPM2008EP3_C2682293.html)|DFN1006-3L(1x0.6)|N, 20v, 130m, 1.2v, 120pF|0.0278|
 |[PNM3FD20V1E](https://datasheet.lcsc.com/lcsc/2108150430_Shanghai-Prisemi-Elec-PNM3FD20V1E_C2875806.pdf)***|[C2875806](https://www.lcsc.com/product-detail/MOSFETs_Shanghai-Prisemi-Elec-PNM3FD20V1E_C2875806.html)|DFN-3L(1x0.6)|N, 20v, 200m, 1.1v, 48pF|0.0256|
