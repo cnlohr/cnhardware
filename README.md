@@ -5,7 +5,7 @@ My random junk repo for random things.
 ## Small Combo Fets
 
 |Part #|LCSC|Footprint|Description|Cost 100|
-|--|--|--|--|--|--|
+|--|--|--|--|--|
 |[PB544JU](https://datasheet.lcsc.com/lcsc/2005181005_NIKO-Semicon-PB544JU_C532969.pdf)|[C532969](https://www.lcsc.com/product-detail/MOSFETs_NIKO-Semicon-PB544JU_C532969.html)|DFN-6-EP(3x2)|Dual N 20v, 8m, 1.2v, 1584pF|0.1376|
 |[SE4625](https://datasheet.lcsc.com/lcsc/2008291435_SINO-IC-SE4625_C730094.pdf)|[C730094](https://www.lcsc.com/product-detail/MOSFETs_SINO-IC-SE4625_C730094.html)|DFN-6L-EP(2x2)|P and N, 12v, 28/57m, 1.2v, 469pF|0.0508|
 |[SED5852](https://datasheet.lcsc.com/lcsc/2208251800_SINO-IC-SED5852_C238715.pdf)|[C238715](https://www.lcsc.com/product-detail/MOSFETs_SINO-IC-SED5852_C238715.html)|DFN-6-EP(2x2)|P+Schottky, 20v, 90m, 1.2v, 540pF|0.0250|
@@ -20,7 +20,7 @@ My random junk repo for random things.
 ## Gud Fets
 
 |Part #|LCSC|Footprint|Description|Cost 100|
-|--|--|--|--|--|--|
+|--|--|--|--|--|
 |[WNM2096-3/TR](https://datasheet.lcsc.com/lcsc/2201121500_WILLSEMI-Will-Semicon-WNM2096-3-TR_C2931326.pdf)**|C2931326|DFN-3(1x0.6)|N, 20v, 400m, 1.7v, 20pF (On Order)|0.0626|
 |[TPDMN26D0UFB4](https://datasheet.lcsc.com/lcsc/2108132030_TECH-PUBLIC-TPDMN26D0UFB4_C970037.pdf)|C970037|DFN-3(1x0.6)|N, 20v, 500m, 1.2v, 120pF (Cheap, Basic Sevice, Tiny, Not great but good for signals)|.0242|
 |[DMN3110LCP3-7](https://datasheet.lcsc.com/lcsc/1912111437_Diodes-Incorporated-DMN3110LCP3-7_C443826.pdf)|[C443826](https://www.lcsc.com/product-detail/MOSFETs_Diodes-Incorporated-DMN3110LCP3-7_C443826.html)|X2-DSN1006-3|N, 30v, 80m, 1.3v, 140pF Wicked Awesome Case|0.1775|
@@ -36,7 +36,7 @@ My random junk repo for random things.
 ## Diodes
 
 |Part #|LCSC|Footprint|Description|Cost 100|
-|--|--|--|--|--|--|
+|--|--|--|--|--|
 |[TPLMBR01S30ST5G](https://datasheet.lcsc.com/lcsc/2108150230_TECH-PUBLIC-TPLMBR01S30ST5G_C2858725.pdf)|[C2858725](https://www.lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_TECH-PUBLIC-TPLMBR01S30ST5G_C2858725.html)|DFN0603 (0.6x0.3)|Schottky, 30v, 0.35v, 100mA|0.0231|
 |[WSB5539N-2/TR](https://datasheet.lcsc.com/lcsc/1808311538_WILLSEMI-Will-Semicon-WSB5539N-2-TR_C239808.pdf)|[C239808](https://www.lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_WILLSEMI-Will-Semicon-WSB5539N-2-TR_C239808.html)|DFN1006-2L|Schottky, 40v, 0.53v, 500mA (250mV@10mA),(350mV@100mA) (20pF)|0.0569|
 |[PMEG3010EJ,115](https://datasheet.lcsc.com/lcsc/1810231722_Nexperia-PMEG3010EJ-115_C255586.pdf)***|[C255586](https://www.lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_Nexperia-PMEG3010EJ-115_C255586.html)|SOD-323F|Schottky, 30v, 0.25v, 1A (210mV@10mA),(290mV@100mA) (30pF)|0.1470|
@@ -45,8 +45,8 @@ My random junk repo for random things.
 
 ## Various
 
-|Part #|LCSC|Footprint|Description|Cost 100|Datasheet|
-|--|--|--|--|--|--|
+|Part #|LCSC|Footprint|Description|Cost 100|
+|--|--|--|--|--|
 |[RY2200](https://datasheet.lcsc.com/lcsc/2108251630_RYCHIP-Semiconductor-Inc--RY2200_C2888102.pdf)|[C2888102](https://www.lcsc.com/product-detail/Battery-Management-ICs_RYCHIP-Semiconductor-Inc-RY2200_C2888102.html)|SOT-23|Battery Protection|0.0431|
 |[LGS4056H](https://datasheet.lcsc.com/lcsc/2210111600_Legend-Si-LGS4056H_C5124109.pdf)|[C5124109](https://www.lcsc.com/product-detail/Battery-Management-ICs_Legend-Si-LGS4056H_C5124109.html)|DFN-8(2x2)|Battery Charger, 1A|0.0891|
 |[XB6042J2SV-L](https://datasheet.lcsc.com/lcsc/2104081605_XySemi-XB6042J2SV-L_C2759994.pdf)|[C2759994](https://www.lcsc.com/product-detail/Battery-Management-ICs_XySemi-XB6042J2SV-L_C2759994.html)|DFN1X1x0.37-4|Battery Protection, 44mO|0.1160|
