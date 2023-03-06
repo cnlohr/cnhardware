@@ -24,6 +24,7 @@ My random junk repo for random things.
 |DMN2990UFA-7B|C151598|XFDFN-3(0.6x0.8)|N, 20v, 900m, 1.3v, 30pF|0.0544|https://datasheet.lcsc.com/lcsc/1804250226_Diodes-Incorporated-DMN2990UFA-7B_C151598.pdf|
 |TPM2008EP3|C2682293|DFN1006-3L(1x0.6)|N, 20v, 130m, 1.2v, 120pF|0.0278|https://datasheet.lcsc.com/lcsc/2108132030_TECH-PUBLIC-TPM2008EP3_C2682293.pdf|
 |DMN3110LCP3-7|C443826|X2-DSN1006-3|N, 30v, 80m, 1.3v, 140pF|0.1775|https://datasheet.lcsc.com/lcsc/1912111437_Diodes-Incorporated-DMN3110LCP3-7_C443826.pdf|
+|TPDMN26D0UFB4|C970037|DFN-3(1x0.6)|N, 20v, 500m, 1.2v, 120pF (Cheap, Basic Sevice, Tiny, Not great but good for signals)|.0242|https://datasheet.lcsc.com/lcsc/2108132030_TECH-PUBLIC-TPDMN26D0UFB4_C970037.pdf|
 
 Diodes
 
