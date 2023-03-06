@@ -6,7 +6,7 @@ My random junk repo for random things.
 
 |Part #|LCSC|Footprint|Description|Cost 100|Datasheet|
 |--|--|--|--|--|--|
-|PB544JU|C532969|DFN-6-EP(3x2)|Dual N 20v, 8m, 1.2v, 1584pF|0.1376|https://datasheet.lcsc.com/lcsc/2005181005_NIKO-Semicon-PB544JU_C532969.pdf|
+|PB544JU|[C532969](https://www.lcsc.com/product-detail/MOSFETs_NIKO-Semicon-PB544JU_C532969.html)|DFN-6-EP(3x2)|Dual N 20v, 8m, 1.2v, 1584pF|0.1376|https://datasheet.lcsc.com/lcsc/2005181005_NIKO-Semicon-PB544JU_C532969.pdf|
 |SE4625|C730094|DFN-6L-EP(2x2)|P and N, 12v, 28/57m, 1.2v, 469pF|0.0508|https://datasheet.lcsc.com/lcsc/2008291435_SINO-IC-SE4625_C730094.pdf|
 |G66|C239037|DFN-6L(2x2)|P, 16v, 45m, 1.25v, 740pF|0.0499|https://datasheet.lcsc.com/lcsc/1809251724_GOFORD-G66_C239037.pdf|
 |DMP1009UFDF|C493499|U-DFN2020-6|P, 12v, 11m, 1.1v, 1860pF|0.4530|https://datasheet.lcsc.com/lcsc/2003091237_Diodes-Incorporated-DMP1009UFDF-7_C493499.pdf|
