@@ -59,12 +59,15 @@ My random junk repo for random things.
 |[SGM41562BXG/TR](https://datasheet.lcsc.com/lcsc/2302061809_SGMICRO-SGM41562BXG-TR_C5153801.pdf)|[C5153801](https://www.lcsc.com/product-detail/Battery-Management-ICs_SGMICRO-SGM41562BXG-TR_C5153801.html)|WLCSP-9-B(1.52x1.52)|Charger + Power Path for LiPo/LiIon + I2C + Power Down Options|0.4137|
 |[AW32001ECSR](https://www.lcsc.com/product-detail/Battery-Management-ICs_AWINIC-Shanghai-Awinic-Tech-AW32001ECSR_C5125890.html)|[C5125890](https://www.lcsc.com/product-detail/Battery-Management-ICs_AWINIC-Shanghai-Awinic-Tech-AW32001ECSR_C5125890.html)|WLCSP-9-B(1.68x1.68)|Charger + Power Path for LiPo/LiIon + I2C + Power Down Options *Has good power off*|0.3675|
 
-## Random Chips
+## Flash Chips
 
 |Datasheet|LCSC|Footprint|Description|Cost 150|
 |--|--|--|--|--|
 |[P25Q32H-UXH-IR](https://datasheet.lcsc.com/lcsc/1912111437_PUYA--P25Q32H-UXH-IR_C414068.pdf)|[C414068](https://www.lcsc.com/product-detail/span-style-background-color-ff0-NOR-span-span-style-background-color-ff0-FLASH-span_PUYA-P25Q32H-UXH-IR_C414068.html)|USON8-EP(2x3)|NOR Flash, 32Mbit, 2.3-3.6v, 120MHz|0.3162|
 |[ZD25WQ16BUIGR](https://datasheet.lcsc.com/lcsc/2203161812_Zetta-ZD25WQ16BUIGR_C2983691.pdf)|[C2983691](https://www.lcsc.com/product-detail/NOR-FLASH_Zetta-ZD25WQ16BUIGR_C2983691.html)|USON-8(2x3)|NOR Flash, 16Mbit, 1.65-3.6v, 104MHz|0.1782|
+
+## IMUs, Accelerometers, Gyros, Magnetometers
+
 |[QMC5883P](https://datasheet.lcsc.com/lcsc/2108072330_QST-QMC5883P_C2847467.pdf)|[C2847467](https://www.lcsc.com/product-detail/Hall-Sensor_QST-QMC5883P_C2847467.html)|LGA-16(3x3)|3-Axis Magnetometer, 16-bit|0.8607|
 |[QMA7981](https://datasheet.lcsc.com/lcsc/2004281102_QST-QMA7981_C457290.pdf)|[C457290](https://www.lcsc.com/product-detail/Attitude-Sensor-Gyroscope_QST-QMA7981_C457290.html)|LGA-12(2x2)|Accelerometer, 14-bit, VERY low power LF mode.|0.3071|
 |[QMI8658C](https://datasheet.lcsc.com/lcsc/2108161930_QST-QMI8658C_C2842151.pdf)|[C2842151](https://www.lcsc.com/product-detail/Attitude-Sensor-Gyroscope_QST-QMI8658C_C2842151.html)|LGA-14(2.5x3)|Accelerometer + Gyro + Temp, 16-bit|0.9212|
