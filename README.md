@@ -76,6 +76,6 @@ My random junk repo for random things.
 |[X05A12H05G](https://datasheet.lcsc.com/lcsc/2110201130_XKB-Connectivity-X05A12H05G_C2880762.pdf)|[C2880762](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_XKB-Connectivity-X05A12H05G_C2880762.html)|[Flex Footprint](https://github.com/cnlohr/cnhardware/blob/master/kicad_parts/XCB-FPC-DS-05-0.5mm.pretty/XCB-FPC-DS-05-0.5mm.kicad_mod)|0.5mm Pitch Flex 5-Pin Top-And-Bottom Connector, Great for Those Joycon Replacement Joysticks|0.2034|
 |[0.5K-QX-5PWB](https://datasheet.lcsc.com/lcsc/2111151830_HDGC-0-5K-QX-5PWB_C2919476.pdf)|[C2919476](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_HDGC-0-5K-QX-5PWB_C2919476.html)|-|0.5mm Pitch Flex 5-Pin Top-And-Bottom Connector "Bottom Only"|0.0848|
 |[X05A10H06G](https://datasheet.lcsc.com/lcsc/2110111330_XKB-Connectivity-X05A10H06G_C528032.pdf)|[C528032](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_XKB-Connectivity-X05A10H06G_C528032.html)|[Flex Footprint](https://github.com/cnlohr/cnhardware/blob/master/kicad_parts/XCB-FPC-DS-06-0.5mm.pretty/XCB-FPC-DS-06-0.5mm.kicad_mod)|0.5mm Pitch Flex 6-Pin Top-And-Bottom Connector, Good for non-joycon replacement Joysticks|0.1503|
-
+|[X05A10H06G](https://datasheet.lcsc.com/lcsc/2110111330_XKB-Connectivity-X05A10H06G_C528032.pdf)|[C5213748](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_HCTL-HC-FPC-05-09-6RLTAG_C5213748.html)|--|0.5mm Pitch Flex Connnector 6 Pin, Bottom-Only|0.0362|
 ** = Limited availability on JLCPCB
 *** = Charles Plans to Use
