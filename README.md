@@ -86,8 +86,9 @@ These are ones I've found that are JLCPCB compatible.
 
 |Datasheet|LCSC|Footprint|Description|Cost 100|
 |--|--|--|--|--|
-|[YZP0055-15080-01](https://datasheet.lcsc.com/lcsc/2209201730_Xinyangze-YZP0055-15080-01_C5157266.pdf)|[C5157266](https://www.lcsc.com/product-detail/Thimble-Copper-Rod-Test-Ring_Xinyangze-YZP0055-15080-01_C5157266.html)|Through-Hole Post, 0.8mm|Pogo Pin (Express Service OK)|0.0879|
-|[KH-102540-DZ](https://datasheet.lcsc.com/lcsc/2005121133_Shenzhen-Kinghelm-Elec-KH-102540-DZ_C530675.pdf)|[C530675](https://www.lcsc.com/product-detail/Thimble-Copper-Rod-Test-Ring_Shenzhen-Kinghelm-Elec-KH-102540-DZ_C530675.html)|2mm Pad SMT (Pad should be slightly bigger)|Pogo Pin (Standard service ONLY)|0.0675 |
+|[YZP0055-15080-01](https://datasheet.lcsc.com/lcsc/2209201730_Xinyangze-YZP0055-15080-01_C5157266.pdf)|[C5157266](https://www.lcsc.com/product-detail/Thimble-Copper-Rod-Test-Ring_Xinyangze-YZP0055-15080-01_C5157266.html)|Through-Hole Post, 0.8mm|Pogo Pin, Begin Contact @ 7mm above board (Express Service OK)|0.0879|
+|[YZP0526-20048-01](https://datasheet.lcsc.com/lcsc/2210101800_Xinyangze-YZP0526-20048-01_C5157225.pdf)|[C5157225](https://www.lcsc.com/product-detail/Thimble-Copper-Rod-Test-Ring_Xinyangze-YZP0526-20048-01_C5157225.html)|Through-Hole Post, 0.8mm|Pogo Pin, Begin Contact @ 4mm above board (Express Service OK)|0.1087|
+|[KH-102540-DZ](https://datasheet.lcsc.com/lcsc/2005121133_Shenzhen-Kinghelm-Elec-KH-102540-DZ_C530675.pdf)|[C530675](https://www.lcsc.com/product-detail/Thimble-Copper-Rod-Test-Ring_Shenzhen-Kinghelm-Elec-KH-102540-DZ_C530675.html)|2mm Round Base SMT (Solder pad should be slightly bigger)|Pogo Pin, Begin Contact @ 3.5mm Above Board (Standard service ONLY)|0.0675 |
 
 ** = Limited availability on JLCPCB
 *** = Charles Plans to Use
