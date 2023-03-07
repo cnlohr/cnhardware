@@ -73,7 +73,7 @@ My random junk repo for random things.
 
 |Part #|LCSC|Footprint|Description|Cost 100|
 |--|--|--|--|--|
-|[X05A12H05G](https://datasheet.lcsc.com/lcsc/2110201130_XKB-Connectivity-X05A12H05G_C2880762.pdf)|[C2880762](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_XKB-Connectivity-X05A12H05G_C2880762.html)|[Flex Footprint](https://github.com/cnlohr/cnhardware/blob/master/kicad_parts/XCB-FPC-DS-05-0.5mm.pretty/XCB-FPC-DS-05-0.5mm.kicad_mod)|Flex 5-Pin Connector, Great for Those Joycon Replacement Joysticks|0.2034|
+|[X05A12H05G](https://datasheet.lcsc.com/lcsc/2110201130_XKB-Connectivity-X05A12H05G_C2880762.pdf)|[C2880762](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_XKB-Connectivity-X05A12H05G_C2880762.html)|[Flex Footprint](https://github.com/cnlohr/cnhardware/blob/master/kicad_parts/XCB-FPC-DS-05-0.5mm.pretty/XCB-FPC-DS-05-0.5mm.kicad_mod)|0.5mm Pitch Flex 5-Pin Connector, Great for Those Joycon Replacement Joysticks|0.2034|
 
 ** = Limited availability on JLCPCB
 *** = Charles Plans to Use
