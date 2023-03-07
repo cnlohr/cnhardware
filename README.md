@@ -69,6 +69,11 @@ My random junk repo for random things.
 |[QMA7981](https://datasheet.lcsc.com/lcsc/2004281102_QST-QMA7981_C457290.pdf)|[C457290](https://www.lcsc.com/product-detail/Attitude-Sensor-Gyroscope_QST-QMA7981_C457290.html)|LGA-12(2x2)|Accelerometer, 14-bit, VERY low power LF mode.|0.3071|
 |[QMI8658C](https://datasheet.lcsc.com/lcsc/2108161930_QST-QMI8658C_C2842151.pdf)|[C2842151](https://www.lcsc.com/product-detail/Attitude-Sensor-Gyroscope_QST-QMI8658C_C2842151.html)|LGA-14(2.5x3)|Accelerometer + Gyro + Temp, 16-bit|0.9212|
 
+## Other Random Things
+
+|Part #|LCSC|Footprint|Description|Cost 100|
+|--|--|--|--|--|
+|[X05A12H05G](https://datasheet.lcsc.com/lcsc/2110201130_XKB-Connectivity-X05A12H05G_C2880762.pdf)|[C2880762](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_XKB-Connectivity-X05A12H05G_C2880762.html)|[Flex Footprint](https://github.com/cnlohr/cnhardware/blob/master/kicad_parts/XCB-FPC-DS-05-0.5mm.pretty/XCB-FPC-DS-05-0.5mm.kicad_mod)|Flex 5-Pin Connector, Great for Those Joycon Replacement Joysticks|0.2034|
 
 ** = Limited availability on JLCPCB
 *** = Charles Plans to Use
