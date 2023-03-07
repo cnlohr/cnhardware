@@ -4,7 +4,7 @@ My random junk repo for random things.
 
 ## Small Combo Fets
 
-|Part #|LCSC|Footprint|Description|Cost 100|
+|Datasheet|LCSC|Footprint|Description|Cost 100|
 |--|--|--|--|--|
 |[PB544JU](https://datasheet.lcsc.com/lcsc/2005181005_NIKO-Semicon-PB544JU_C532969.pdf)|[C532969](https://www.lcsc.com/product-detail/MOSFETs_NIKO-Semicon-PB544JU_C532969.html)|DFN-6-EP(3x2)|Dual N 20v, 8m, 1.2v, 1584pF|0.1376|
 |[SE4625](https://datasheet.lcsc.com/lcsc/2008291435_SINO-IC-SE4625_C730094.pdf)|[C730094](https://www.lcsc.com/product-detail/MOSFETs_SINO-IC-SE4625_C730094.html)|DFN-6L-EP(2x2)|P and N, 12v, 28/57m, 1.2v, 469pF|0.0508|
@@ -19,7 +19,7 @@ My random junk repo for random things.
 
 ## Gud Fets
 
-|Part #|LCSC|Footprint|Description|Cost 100|
+|Datasheet|LCSC|Footprint|Description|Cost 100|
 |--|--|--|--|--|
 |[WNM2096-3/TR](https://datasheet.lcsc.com/lcsc/2201121500_WILLSEMI-Will-Semicon-WNM2096-3-TR_C2931326.pdf)**|[C2931326](https://www.lcsc.com/product-detail/MOSFETs_WILLSEMI-Will-Semicon-WNM2096-3-TR_C2931326.html)|DFN-3(1x0.6)|N, 20v, 400m, 1.7v, 20pF (On Order)|0.0626|
 |[TPDMN26D0UFB4](https://datasheet.lcsc.com/lcsc/2108132030_TECH-PUBLIC-TPDMN26D0UFB4_C970037.pdf)|[C970037](https://www.lcsc.com/product-detail/MOSFETs_TECH-PUBLIC-TPDMN26D0UFB4_C970037.html)|DFN-3(1x0.6)|N, 20v, 500m, 1.2v, 120pF (Cheap, Basic Sevice, Tiny, Not great but good for signals)|.0242|
@@ -35,7 +35,7 @@ My random junk repo for random things.
 
 ## Diodes
 
-|Part #|LCSC|Footprint|Description|Cost 100|
+|Datasheet|LCSC|Footprint|Description|Cost 100|
 |--|--|--|--|--|
 |[TPLMBR01S30ST5G](https://datasheet.lcsc.com/lcsc/2108150230_TECH-PUBLIC-TPLMBR01S30ST5G_C2858725.pdf)|[C2858725](https://www.lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_TECH-PUBLIC-TPLMBR01S30ST5G_C2858725.html)|DFN0603 (0.6x0.3)|Schottky, 30v, 0.35v, 100mA|0.0231|
 |[WSB5539N-2/TR](https://datasheet.lcsc.com/lcsc/1808311538_WILLSEMI-Will-Semicon-WSB5539N-2-TR_C239808.pdf)|[C239808](https://www.lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_WILLSEMI-Will-Semicon-WSB5539N-2-TR_C239808.html)|DFN1006-2L|Schottky, 40v, 0.53v, 500mA (250mV@10mA),(350mV@100mA) (20pF)|0.0569|
@@ -45,7 +45,7 @@ My random junk repo for random things.
 
 ## Various LiPo / LiIon Chips
 
-|Part #|LCSC|Footprint|Description|Cost 100|
+|Datasheet|LCSC|Footprint|Description|Cost 100|
 |--|--|--|--|--|
 |[RY2200](https://datasheet.lcsc.com/lcsc/2108251630_RYCHIP-Semiconductor-Inc--RY2200_C2888102.pdf)|[C2888102](https://www.lcsc.com/product-detail/Battery-Management-ICs_RYCHIP-Semiconductor-Inc-RY2200_C2888102.html)|SOT-23|Battery Protection|0.0431|
 |[LGS4056H](https://datasheet.lcsc.com/lcsc/2210111600_Legend-Si-LGS4056H_C5124109.pdf)|[C5124109](https://www.lcsc.com/product-detail/Battery-Management-ICs_Legend-Si-LGS4056H_C5124109.html)|DFN-8(2x2)|Battery Charger, 1A|0.0891|
@@ -61,17 +61,18 @@ My random junk repo for random things.
 
 ## Random Chips
 
-|Part #|LCSC|Footprint|Description|Cost 100|
+|Datasheet|LCSC|Footprint|Description|Cost 100|
 |--|--|--|--|--|
 |[P25Q32H-UXH-IR](https://datasheet.lcsc.com/lcsc/1912111437_PUYA--P25Q32H-UXH-IR_C414068.pdf)|[C414068](https://www.lcsc.com/product-detail/span-style-background-color-ff0-NOR-span-span-style-background-color-ff0-FLASH-span_PUYA-P25Q32H-UXH-IR_C414068.html)|USON8-EP(2x3)|NOR Flash, 32Mbit, 2.3-3.6v, 120MHz|0.3162|
 |[ZD25WQ16BUIGR](https://datasheet.lcsc.com/lcsc/2203161812_Zetta-ZD25WQ16BUIGR_C2983691.pdf)|[C2983691](https://www.lcsc.com/product-detail/NOR-FLASH_Zetta-ZD25WQ16BUIGR_C2983691.html)|USON-8(2x3)|NOR Flash, 16Mbit, 1.65-3.6v, 104MHz|0.1782|
 |[QMC5883P](https://datasheet.lcsc.com/lcsc/2108072330_QST-QMC5883P_C2847467.pdf)|[C2847467](https://www.lcsc.com/product-detail/Hall-Sensor_QST-QMC5883P_C2847467.html)|LGA-16(3x3)|3-Axis Magnetometer, 16-bit|0.8607|
 |[QMA7981](https://datasheet.lcsc.com/lcsc/2004281102_QST-QMA7981_C457290.pdf)|[C457290](https://www.lcsc.com/product-detail/Attitude-Sensor-Gyroscope_QST-QMA7981_C457290.html)|LGA-12(2x2)|Accelerometer, 14-bit, VERY low power LF mode.|0.3071|
 |[QMI8658C](https://datasheet.lcsc.com/lcsc/2108161930_QST-QMI8658C_C2842151.pdf)|[C2842151](https://www.lcsc.com/product-detail/Attitude-Sensor-Gyroscope_QST-QMI8658C_C2842151.html)|LGA-14(2.5x3)|Accelerometer + Gyro + Temp, 16-bit|0.9212|
+|[STK8BA58](https://datasheet.lcsc.com/lcsc/2109101230_SENSORTEK-STK8BA58-LGA-12PIN_C2890989.pdf)|[C2890989](https://www.lcsc.com/product-detail/Attitude-Sensor-Gyroscope_SENSORTEK-STK8BA58-LGA-12PIN_C2890989.html)|LGA-12(2x2)|Not as good as the QMA7981, but slighly cheaper|0.2976|
 
 ## Other Random Things
 
-|Part #|LCSC|Footprint|Description|Cost 100|
+|Datasheet|LCSC|Footprint|Description|Cost 100|
 |--|--|--|--|--|
 |[X05A12H05G](https://datasheet.lcsc.com/lcsc/2110201130_XKB-Connectivity-X05A12H05G_C2880762.pdf)|[C2880762](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_XKB-Connectivity-X05A12H05G_C2880762.html)|[Flex Footprint](https://github.com/cnlohr/cnhardware/blob/master/kicad_parts/XCB-FPC-DS-05-0.5mm.pretty/XCB-FPC-DS-05-0.5mm.kicad_mod)|0.5mm Pitch Flex 5-Pin Top-And-Bottom Connector, Great for Those Joycon Replacement Joysticks|0.2034|
 |[0.5K-QX-5PWB](https://datasheet.lcsc.com/lcsc/2111151830_HDGC-0-5K-QX-5PWB_C2919476.pdf)|[C2919476](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_HDGC-0-5K-QX-5PWB_C2919476.html)|-|0.5mm Pitch Flex 5-Pin Top-And-Bottom Connector "Bottom Only"|0.0848|
