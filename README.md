@@ -79,5 +79,15 @@ My random junk repo for random things.
 |[X05A10H06G](https://datasheet.lcsc.com/lcsc/2110111330_XKB-Connectivity-X05A10H06G_C528032.pdf)|[C528032](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_XKB-Connectivity-X05A10H06G_C528032.html)|[Flex Footprint](https://github.com/cnlohr/cnhardware/blob/master/kicad_parts/XCB-FPC-DS-06-0.5mm.pretty/XCB-FPC-DS-06-0.5mm.kicad_mod)|0.5mm Pitch Flex 6-Pin Top-And-Bottom Connector, Good for non-joycon replacement Joysticks|0.1503|
 |[HCTL-HC-FPC-05-09-6RLTAG](https://datasheet.lcsc.com/lcsc/2210261730_HCTL-HC-FPC-05-09-6RLTAG_C5213748.pdf)|[C5213748](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_HCTL-HC-FPC-05-09-6RLTAG_C5213748.html)|--|0.5mm Pitch Flex Connnector 6 Pin, Bottom-Only|0.0362|
 
+
+## Pogo pins
+
+These are ones I've found that are JLCPCB compatible.
+
+|Datasheet|LCSC|Footprint|Description|Cost 100|
+|--|--|--|--|--|
+|[YZP0055-15080-01](https://datasheet.lcsc.com/lcsc/2209201730_Xinyangze-YZP0055-15080-01_C5157266.pdf)|[C5157266](https://www.lcsc.com/product-detail/Thimble-Copper-Rod-Test-Ring_Xinyangze-YZP0055-15080-01_C5157266.html)|Through-Hole Post, 0.8mm|Pogo Pin (Express Service OK)|0.0879|
+|[KH-102540-DZ](https://datasheet.lcsc.com/lcsc/2005121133_Shenzhen-Kinghelm-Elec-KH-102540-DZ_C530675.pdf)|[C530675](https://www.lcsc.com/product-detail/Thimble-Copper-Rod-Test-Ring_Shenzhen-Kinghelm-Elec-KH-102540-DZ_C530675.html)|2mm Pad SMT (Pad should be slightly bigger)|Pogo Pin (Standard service ONLY)|0.0675 |
+
 ** = Limited availability on JLCPCB
 *** = Charles Plans to Use
