@@ -109,7 +109,7 @@ These are ones I've found that are JLCPCB compatible.
 |[MS5510](https://datasheet.lcsc.com/lcsc/2012211836_Hangzhou-Ruimeng-Tech-MS5510_C1509020.pdf)|[C1509020](https://www.lcsc.com/product-detail/Analog-To-Digital-Converters-ADCs_Hangzhou-Ruimeng-Tech-MS5510_C1509020.html)|SOP-24-7.8mm|20MSPS, 8-bit Flash ADC|0.506|
 |[MS9280](https://datasheet.lcsc.com/lcsc/2012211836_Hangzhou-Ruimeng-Tech-MS9280_C1509021.pdf)|[C1509021](https://www.lcsc.com/product-detail/Analog-To-Digital-Converters-ADCs_Hangzhou-Ruimeng-Tech-MS9280_C1509021.html)|SSOP-28-208mil|50MSPS, 10-bit Flash ADC|0.8544|
 |[MS9945](https://datasheet.lcsc.com/lcsc/2012211837_Hangzhou-Ruimeng-Tech-MS9945_C1509043.pdf)|[C1509043](https://www.lcsc.com/product-detail/Analog-To-Digital-Converters-ADCs_Hangzhou-Ruimeng-Tech-MS9945_C1509043.html)|QFN-32-EP(5x5)|40MSPS, 12-bit Flash ADC (NOTE: Was originally designed for CCDs)|3.3426|
-|[MS9944](https://datasheet.lcsc.com/lcsc/2012211837_Hangzhou-Ruimeng-Tech-MS9943_C1509042.pdf)|[C1509042](https://www.lcsc.com/product-detail/Analog-To-Digital-Converters-ADCs_Hangzhou-Ruimeng-Tech-MS9943_C1509042.html)|QFN-32-EP(5x5)|25MSPS, 8-bit Flash ADC (NOTE: Was originally designed for CCDs, WARNING: PRE-STOCK MAY NOT REFLECT ACTUAL PRICE)|0.463|
+|[MS9943](https://datasheet.lcsc.com/lcsc/2012211837_Hangzhou-Ruimeng-Tech-MS9943_C1509042.pdf)|[C1509042](https://www.lcsc.com/product-detail/Analog-To-Digital-Converters-ADCs_Hangzhou-Ruimeng-Tech-MS9943_C1509042.html)|QFN-32-EP(5x5)|25MSPS, 8-bit Flash ADC (NOTE: Was originally designed for CCDs, WARNING: PRE-STOCK MAY NOT REFLECT ACTUAL PRICE)|0.463|
 
 ** = Limited availability on JLCPCB
 *** = Charles Plans to Use
