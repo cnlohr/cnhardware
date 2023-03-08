@@ -102,5 +102,12 @@ These are ones I've found that are JLCPCB compatible.
 |[KH-102540-DZ](https://datasheet.lcsc.com/lcsc/2005121133_Shenzhen-Kinghelm-Elec-KH-102540-DZ_C530675.pdf)|[C530675](https://www.lcsc.com/product-detail/Thimble-Copper-Rod-Test-Ring_Shenzhen-Kinghelm-Elec-KH-102540-DZ_C530675.html)|2mm Round Base SMT (Solder pad should be slightly bigger)|Pogo Pin, Begin Contact @ 4mm Above Board (Standard service ONLY)|0.0675|
 |[YZ01115025R-01](https://datasheet.lcsc.com/lcsc/2205091745_Xinyangze-YZ01115025R-01_C3001867.pdf)|[C3001867](https://www.lcsc.com/product-detail/Thimble-Copper-Rod-Test-Ring_Xinyangze-YZ01115025R-01_C3001867.html)|2mm Round Base (With taper, so 2mm pad should be OK)|Pogo Pin, Low Profile, Begin Contact @ 2.5mm above board (Express OK)|0.0686|
 
+## ADCs
+
+|Datasheet|LCSC|Footprint|Description|Cost 150|
+|--|--|--|--|--|
+|[MS5510](https://datasheet.lcsc.com/lcsc/2012211836_Hangzhou-Ruimeng-Tech-MS5510_C1509020.pdf)|[C1509020](https://www.lcsc.com/product-detail/Analog-To-Digital-Converters-ADCs_Hangzhou-Ruimeng-Tech-MS5510_C1509020.html)|SOP-24-7.8mm|20MSPS, 8-bit Flash ADC|0.506|
+|[MS9280](https://datasheet.lcsc.com/lcsc/2012211836_Hangzhou-Ruimeng-Tech-MS9280_C1509021.pdf)|[C1509021](https://www.lcsc.com/product-detail/Analog-To-Digital-Converters-ADCs_Hangzhou-Ruimeng-Tech-MS9280_C1509021.html)|SSOP-28-208mil|50MSPS, 10-bit Flash ADC|0.8544|
+
 ** = Limited availability on JLCPCB
 *** = Charles Plans to Use
