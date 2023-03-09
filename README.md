@@ -17,7 +17,7 @@ My random junk repo for random things.
 |[SIA517DJ-T1-GE3](https://datasheet.lcsc.com/lcsc/2108150330_JSMSEMI-SIA517DJ-T1-GE3_C2874705.pdf)|[C2874705](https://www.lcsc.com/product-detail/MOSFETs_JSMSEMI-SIA517DJ-T1-GE3_C2874705.html)|WDFN-6-EP(2x2)|P and N, 12v, 30/70m, 590pF|0.1764|
 |[DMP1046UFDB-7](https://datasheet.lcsc.com/lcsc/1912111437_Diodes-Incorporated-DMP1046UFDB-7_C461048.pdf)|[C461048](https://www.lcsc.com/product-detail/MOSFETs_Diodes-Incorporated-DMP1046UFDB-7_C461048.html)|U-DFN2020-6D|Dual N, 12v, 60m, 1.3v, 915pF|0.20|
 
-## Gud Fets
+## Interesting Fets
 
 |Datasheet|LCSC|Footprint|Description|Cost 150|
 |--|--|--|--|--|
