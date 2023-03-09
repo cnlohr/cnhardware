@@ -38,6 +38,7 @@ My random junk repo for random things.
 |--|--|--|--|--|
 |[2SC4226](https://datasheet.lcsc.com/lcsc/2009141834_Slkor-SLKORMICRO-Elec--2SC4226-R25_C781319.pdf)|[C781319](https://www.lcsc.com/product-detail/Bipolar-Transistors-BJT_Slkor-SLKORMICRO-Elec-2SC4226-R25_C781319.html)|SOT-323-3|4.5GHz, 20V 100mA, 100 Hfe, +16dB@433MHz|0.0269|
 |[2SC4228](https://datasheet.lcsc.com/lcsc/2009141834_Slkor-SLKORMICRO-Elec--2SC4228-R45_C781327.pdf)|[C781327](https://www.lcsc.com/product-detail/Bipolar-Transistors-BJT_Slkor-SLKORMICRO-Elec-2SC4228-R45_C781327.html)|SOT-323-3|8GHz, 20V 35mA, 150 Hfe, +19dB@433MHz|0.0464|
+|[2SC4901](https://datasheet.lcsc.com/lcsc/2009141834_Slkor-SLKORMICRO-Elec--2SC4901_C781326.pdf)|[C781326](https://www.lcsc.com/product-detail/Bipolar-Transistors-BJT_Slkor-SLKORMICRO-Elec-2SC4901_C781326.html)|SOT-323-3|9GHz, 11V, 150 Hfe, +21dB@433MHz|0.0508|
 
 ## Diodes
 
