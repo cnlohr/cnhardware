@@ -128,6 +128,11 @@ These are ones I've found that are JLCPCB compatible.
 |[MS9945](https://datasheet.lcsc.com/lcsc/2012211837_Hangzhou-Ruimeng-Tech-MS9945_C1509043.pdf)|[C1509043](https://www.lcsc.com/product-detail/Analog-To-Digital-Converters-ADCs_Hangzhou-Ruimeng-Tech-MS9945_C1509043.html)|QFN-32-EP(5x5)|40MSPS, 12-bit Flash ADC (NOTE: Was originally designed for CCDs)|3.3426|
 |[MS9943](https://datasheet.lcsc.com/lcsc/2012211837_Hangzhou-Ruimeng-Tech-MS9943_C1509042.pdf)|[C1509042](https://www.lcsc.com/product-detail/Analog-To-Digital-Converters-ADCs_Hangzhou-Ruimeng-Tech-MS9943_C1509042.html)|QFN-32-EP(5x5)|25MSPS, 8-bit Flash ADC (NOTE: Was originally designed for CCDs, WARNING: PRE-STOCK MAY NOT REFLECT ACTUAL PRICE)|0.463|
 
+## Connectors
+|Datasheet|LCSC|Footprint|Description|Cost 150|
+|--|--|--|--|--|
+|[1.5-2A](https://datasheet.lcsc.com/lcsc/1811151411_BOOMELE-Boom-Precision-Elec-1-5-2A_C50588.pdf)|[C50588](https://www.lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_BOOMELE-Boom-Precision-Elec-1-5-2A_C50588.html)|1x2P Straight Through-Hole 1.5mm|JST 1.5mm Spacing 2-Pin Connector|0.0062|
+
 ## Totally random things
 
 |Datasheet|LCSC|Footprint|Description|Cost 150|
