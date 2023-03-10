@@ -2,6 +2,8 @@
 
 My random junk repo for random things.
 
+**NOTE** FOR PULL REQUESTS: I DO NOT ACCEPT MASS ADDS.  If you have 5-6 really awesome parts, I'll accept a pull request, but if you have say 10+ parts, I will not.  Select only the neatest.  Also, make sure JLCPCB offers the parts, if they're intended for board mounting!
+
 ## Small Combo Fets
 
 |Datasheet|LCSC|Footprint|Description|Cost 150|
