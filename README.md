@@ -100,6 +100,14 @@ My random junk repo for random things.
 |[WS2816C-2121](https://datasheet.lcsc.com/lcsc/2012110135_Worldsemi-WS2816C-2121_C965561.pdf)|[C965561](https://www.lcsc.com/product-detail/Light-Emitting-Diodes-LED_Worldsemi-WS2816C-2121_C965561.html)|[SMD,2.2x2.2mm](https://github.com/cnlohr/cnhardware/blob/master/kicad_parts/WS2816-2121.pretty/WS2816-2121.kicad_mod)|RGB Serial LED with Backup And Data Lines, 10mA (Pretty case)|0.0893|
 |[WS2816B-2020](https://datasheet.lcsc.com/lcsc/2210181730_Worldsemi-WS2816B-2020_C4154877.pdf)|[C4154877](https://www.lcsc.com/product-detail/Light-Emitting-Diodes-LED_Worldsemi-WS2816B-2020_C4154877.html)|SMD,2x2.2mm|RGB Serial LED with Data and Backup, 20mA (more basic case)|0.0787|
 
+
+## Other Optos
+|Datasheet|LCSC|Footprint|Description|Cost 150|
+|--|--|--|--|--|
+|[PT17-21C/L41/TR8](https://datasheet.lcsc.com/lcsc/1810010213_Everlight-Elec-PT17-21C-L41-TR8_C100090.pdf)|[C100090](https://www.lcsc.com/product-detail/Phototransistors_Everlight-Elec-PT17-21C-L41-TR8_C100090.html)|0805|Nice NPN Photodiode|0.0527|
+|[IRM-H638T/TR2](https://datasheet.lcsc.com/lcsc/1810121714_Everlight-Elec-IRM-H638T-TR2_C91447.pdf)|[C91447](https://www.lcsc.com/product-detail/Infrared-remote-receiver_Everlight-Elec-IRM-H638T-TR2_C91447.html)|SMD-4P,4x5mm|IR Receiver Module|0.1771|
+
+
 ## Pogo pins
 
 These are ones I've found that are JLCPCB compatible.
