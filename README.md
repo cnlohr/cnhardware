@@ -131,11 +131,20 @@ These are ones I've found that are JLCPCB compatible.
 |[MS9943](https://datasheet.lcsc.com/lcsc/2012211837_Hangzhou-Ruimeng-Tech-MS9943_C1509042.pdf)|[C1509042](https://www.lcsc.com/product-detail/Analog-To-Digital-Converters-ADCs_Hangzhou-Ruimeng-Tech-MS9943_C1509042.html)|QFN-32-EP(5x5)|25MSPS, 8-bit Flash ADC (NOTE: Was originally designed for CCDs, WARNING: PRE-STOCK MAY NOT REFLECT ACTUAL PRICE)|0.463|
 
 ## Connectors
+
 |Datasheet|LCSC|Footprint|Description|Cost 150|
 |--|--|--|--|--|
 |[1.5-2A](https://datasheet.lcsc.com/lcsc/1811151411_BOOMELE-Boom-Precision-Elec-1-5-2A_C50588.pdf)|[C50588](https://www.lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_BOOMELE-Boom-Precision-Elec-1-5-2A_C50588.html)|1x2P Straight Through-Hole 1.5mm|JST 1.5mm Spacing 2-Pin Connector (For batteries)|0.0062|
 |[1.25-2A-WT](https://datasheet.lcsc.com/lcsc/2008311403_CAX-1-25-2A-WT_C722596.pdf)|[C722596](https://www.lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_CAX-1-25-2A-WT_C722596.html)|SMD,P=1.25mm|JST 1.25mm Spacing 2-Pin Right Angle Connector (For batteries)|0.0171|
 |[1.25-2P](https://datasheet.lcsc.com/lcsc/1912111437_SHOU-HAN-1-25-2P_C393945.pdf)|[C393945](https://www.lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_SHOU-HAN-1-25-2P_C393945.html)|SMT,P=1.25mm|JST 1.25mm Spacing 2-Pin Top Connector (For batteries)|0.0365|
+
+## Useful Basic Parts
+
+|Datasheet|LCSC|Footprint|Description|Cost 150|
+|--|--|--|--|--|
+|[0402CG101J500NT](https://datasheet.lcsc.com/lcsc/1810151218_FH--Guangdong-Fenghua-Advanced-Tech-0402CG101J500NT_C1546.pdf)|[C1546](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_FH-Guangdong-Fenghua-Advanced-Tech-0402CG101J500NT_C1546.html)|0402|100pF 50v 0402 Capacitor|0.0005|
+|[CL05B104KO5NNNC](https://datasheet.lcsc.com/lcsc/1810191219_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.pdf)|[C1525](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html)|0402|100nF 16v 0402|0.0011|
+
 
 ## Totally random things
 
