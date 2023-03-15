@@ -76,7 +76,7 @@ My random junk repo for random things.
 |[ZD25WQ16BUIGR](https://datasheet.lcsc.com/lcsc/2203161812_Zetta-ZD25WQ16BUIGR_C2983691.pdf)|[C2983691](https://www.lcsc.com/product-detail/NOR-FLASH_Zetta-ZD25WQ16BUIGR_C2983691.html)|USON-8(2x3)|NOR Flash, 16Mbit, 1.65-3.6v, 104MHz|0.1782|
 |[ZD25WD40BUIGR](https://datasheet.lcsc.com/lcsc/2204011630_Zetta-ZD25WD40BUIGR_C2759917.pdf)|[C2759917](https://www.lcsc.com/product-detail/span-style-background-color-ff0-NOR-span-span-style-background-color-ff0-FLASH-span_Zetta-ZD25WD40BUIGR_C2759917.html)|USON-8(2x3)|NOR Flash, 4Mbit, 1.65-2.0v, 104MHz (DIO ONLY)|0.0546|
 |[ZD25WD20BUIGR](https://datasheet.lcsc.com/lcsc/2106062209_Zetta-ZD25WD20BUIGR_C2759918.pdf)|[C2759918](https://www.lcsc.com/product-detail/span-style-background-color-ff0-NOR-span-span-style-background-color-ff0-FLASH-span_Zetta-ZD25WD20BUIGR_C2759918.html)|USON-8(2x3)|NOR Flash, 2Mbit, 1.65-3.6v, 104MHz (DIO ONLY)|0.0675|
-|[ZD25Q80BNIGR](https://datasheet.lcsc.com/lcsc/2206131630_Zetta-ZD25Q80BNIGR_C3035284.pdf)|[C3035284](https://www.lcsc.com/product-detail/NOR-FLASH_Zetta-ZD25Q80BNIGR_C3035284.html)|USON-8(1.5x1.5)|NOR Flash, 8Mbit, 2.3-3.6v, 104MHz (QIO ok)|0.0874|
+|[ZD25Q80BNIGR](https://datasheet.lcsc.com/lcsc/2206131630_Zetta-ZD25Q80BNIGR_C3035284.pdf)|[C3035284](https://www.lcsc.com/product-detail/NOR-FLASH_Zetta-ZD25Q80BNIGR_C3035284.html)|USON-8(1.5x1.5)|NOR Flash, 8Mbit, 2.3-3.6v, 104MHz (QIO ok)|0.18|
 
 
 ## IMUs, Accelerometers, Gyros, Magnetometers
