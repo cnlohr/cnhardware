@@ -77,7 +77,7 @@ My random junk repo for random things.
 |[ZD25WD40BUIGR](https://datasheet.lcsc.com/lcsc/2204011630_Zetta-ZD25WD40BUIGR_C2759917.pdf)|[C2759917](https://www.lcsc.com/product-detail/span-style-background-color-ff0-NOR-span-span-style-background-color-ff0-FLASH-span_Zetta-ZD25WD40BUIGR_C2759917.html)|USON-8(2x3)|NOR Flash, 4Mbit, 1.65-2.0v, 104MHz (DIO ONLY)|0.0546|
 |[ZD25WD20BUIGR](https://datasheet.lcsc.com/lcsc/2106062209_Zetta-ZD25WD20BUIGR_C2759918.pdf)|[C2759918](https://www.lcsc.com/product-detail/span-style-background-color-ff0-NOR-span-span-style-background-color-ff0-FLASH-span_Zetta-ZD25WD20BUIGR_C2759918.html)|USON-8(2x3)|NOR Flash, 2Mbit, 1.65-3.6v, 104MHz (DIO ONLY)|0.0675|
 |[ZD25Q80BNIGR](https://datasheet.lcsc.com/lcsc/2206131630_Zetta-ZD25Q80BNIGR_C3035284.pdf)|[C3035284](https://www.lcsc.com/product-detail/NOR-FLASH_Zetta-ZD25Q80BNIGR_C3035284.html)|USON-8(1.5x1.5)|NOR Flash, 8Mbit, 2.3-3.6v, 104MHz (QIO ok)|0.18|
-
+|[GD25Q128ESIGR](https://datasheet.lcsc.com/lcsc/2204011730_GigaDevice-Semicon-Beijing-GD25Q128EWIG_C2986327.pdf)|[C2928891](https://www.lcsc.com/product-detail/span-style-background-color-ff0-NOR-span-span-style-background-color-ff0-FLASH-span_GigaDevice-Semicon-Beijing-GD25Q128ESIGR_C2928891.html)|SOP-8-208mil|128 Mbit (16MByte) Flash Chip|0.7588|
 
 ## IMUs, Accelerometers, Gyros, Magnetometers
 
@@ -139,6 +139,8 @@ These are ones I've found that are JLCPCB compatible.
 |[1.5-2A](https://datasheet.lcsc.com/lcsc/1811151411_BOOMELE-Boom-Precision-Elec-1-5-2A_C50588.pdf)|[C50588](https://www.lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_BOOMELE-Boom-Precision-Elec-1-5-2A_C50588.html)|1x2P Straight Through-Hole 1.5mm|JST 1.5mm Spacing 2-Pin Connector (For batteries)|0.0062|
 |[1.25-2A-WT](https://datasheet.lcsc.com/lcsc/2008311403_CAX-1-25-2A-WT_C722596.pdf)|[C722596](https://www.lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_CAX-1-25-2A-WT_C722596.html)|SMD,P=1.25mm|JST 1.25mm Spacing 2-Pin Right Angle Connector (For batteries)|0.0171|
 |[1.25-2P](https://datasheet.lcsc.com/lcsc/1912111437_SHOU-HAN-1-25-2P_C393945.pdf)|[C393945](https://www.lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_SHOU-HAN-1-25-2P_C393945.html)|SMT,P=1.25mm|JST 1.25mm Spacing 2-Pin Top Connector (For batteries)|0.0365|
+ |[TYPE-C 16PIN 2MD(073)](https://datasheet.lcsc.com/lcsc/2111231930_SHOU-HAN-TYPE-C-16PIN-2MD-073_C2765186.pdf)|[C2765186](https://www.lcsc.com/product-detail/USB-Connectors_SHOU-HAN-TYPE-C-16PIN-2MD-073_C2765186.html)|[HRO TYPE C](https://github.com/cnlohr/cnhardware/blob/master/kicad_parts/cnhardware.pretty/USB_C_Receptacle_HRO_TYPE-C-31-M-12.kicad_mod)|Nice USB Type-C used on Swadges.  With USB 2.0, CC, AUX and Power.|0.0432|
+
 
 ## Useful Basic Parts
 
