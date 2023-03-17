@@ -151,7 +151,7 @@ These are ones I've found that are JLCPCB compatible.
 |[CL05A106MP5NUNC](https://datasheet.lcsc.com/lcsc/2007131004_Samsung-Electro-Mechanics-CL05A106MP5NUNC_C315248.pdf)|[C315248](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05A106MP5NUNC_C315248.html)|0402|10uF 10v 0402|0.0108|
 |[CL05A106MQ5NUNC](https://datasheet.lcsc.com/lcsc/2208231630_Samsung-Electro-Mechanics-CL05A106MQ5NUNC_C15525.pdf)|[C15525](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05A106MQ5NUNC_C15525.html)|0402|10uF 6.3v 0402 BASIC PART|0.0056|
 |[CL05A105KA5NQNC](https://datasheet.lcsc.com/lcsc/1811091611_Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf)|[C52923](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.html)|0402|1uF 25v 0402 BASIC PART|0.0039|
-|[FRC0402P000](https://datasheet.lcsc.com/lcsc/2111020930_FOJAN-FRC0402P000-TS_C2906877.pdf)|[C2906877](https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_FOJAN-FRC0402P000-TS_C2906877.html)|0402|0Ω|0.0004|
+|[0402WGF0000TCE](https://datasheet.lcsc.com/lcsc/2206010216_UNI-ROYAL-Uniroyal-Elec-0402WGF0000TCE_C17168.pdf)|[C17168](https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF0000TCE_C17168.html)|0402|0Ω|0.0004|
 
 ## Totally random things
 
