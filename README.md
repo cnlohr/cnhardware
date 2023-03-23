@@ -72,6 +72,7 @@ My random junk repo for random things.
 
 |Datasheet|LCSC|Footprint|Description|Cost 150|
 |--|--|--|--|--|
+|[GD25LE64ELIGR](https://datasheet.lcsc.com/lcsc/2208221030_GigaDevice-Semicon-Beijing-GD25LE64ELIGR_C2904424.pdf)|[C2904424](https://www.lcsc.com/product-detail/NOR-FLASH_GigaDevice-Semicon-Beijing-GD25LE64ELIGR_C2904424.html)|WLCSP-8 (1.35x2.75)|NOR Flash, 64Mbit, 1.65-2v, 133MHz, 4x|0.6938|
 |[ZD25WQ32CEIGR](https://datasheet.lcsc.com/lcsc/2211091800_Zetta-ZD25WQ32CEIGR_C5258281.pdf)|[C5258281](https://www.lcsc.com/product-detail/NOR-FLASH_Zetta-ZD25WQ32CEIGR_C5258281.html)|USON8-LINE(2x3)|NOR Flash, 32Mbit, 1.65-3.6v, 104MHz, 4x|0.1846|
 |[P25Q32H-UXH-IR](https://datasheet.lcsc.com/lcsc/1912111437_PUYA--P25Q32H-UXH-IR_C414068.pdf)|[C414068](https://www.lcsc.com/product-detail/span-style-background-color-ff0-NOR-span-span-style-background-color-ff0-FLASH-span_PUYA-P25Q32H-UXH-IR_C414068.html)|USON8-EP(2x3)|NOR Flash, 32Mbit, 2.3-3.6v, 120MHz|0.3162|
 |[ZD25WQ16BUIGR](https://datasheet.lcsc.com/lcsc/2203161812_Zetta-ZD25WQ16BUIGR_C2983691.pdf)|[C2983691](https://www.lcsc.com/product-detail/NOR-FLASH_Zetta-ZD25WQ16BUIGR_C2983691.html)|USON-8(2x3)|NOR Flash, 16Mbit, 1.65-3.6v, 104MHz|0.1782|
