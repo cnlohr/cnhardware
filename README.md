@@ -66,7 +66,7 @@ My random junk repo for random things.
 |[WS4518D-6/TR](https://datasheet.lcsc.com/lcsc/2011111834_WILLSEMI-Will-Semicon-WS4518D-6-TR_C910991.pdf)|[C910991](https://www.lcsc.com/product-detail/Battery-Management-ICs_WILLSEMI-Will-Semicon-WS4518D-6-TR_C910991.html)|DFN-8-EP(2x2)|Battery Charger (English, Willsemi, Cheap)|0.1121|
 |[XB6042Q2SV-L](https://datasheet.lcsc.com/lcsc/2104081605_XySemi-XB6042Q2SV-L_C2759995.pdf)|[C2759995](https://www.lcsc.com/product-detail/Battery-Management-ICs_XySemi-XB6042Q2SV-L_C2759995.html)|DFN-4-EP(1x1)|Protection (4.2/4.25v) 44mO|0.1160|
 |[SGM41562BXG/TR](https://datasheet.lcsc.com/lcsc/2302061809_SGMICRO-SGM41562BXG-TR_C5153801.pdf)|[C5153801](https://www.lcsc.com/product-detail/Battery-Management-ICs_SGMICRO-SGM41562BXG-TR_C5153801.html)|WLCSP-9-B(1.52x1.52)|Charger + Power Path for LiPo/LiIon + I2C + Power Down Options|0.4137|
-|[AW32001ECSR](https://www.lcsc.com/product-detail/Battery-Management-ICs_AWINIC-Shanghai-Awinic-Tech-AW32001ECSR_C5125890.html)|[C5125890](https://www.lcsc.com/product-detail/Battery-Management-ICs_AWINIC-Shanghai-Awinic-Tech-AW32001ECSR_C5125890.html)|WLCSP-9-B(1.68x1.68)|Charger + Power Path for LiPo/LiIon + I2C + Power Down Options *Has good power off*|0.3675|
+|[AW32001ECSR](https://www.lcsc.com/product-detail/Battery-Management-ICs_AWINIC-Shanghai-Awinic-Tech-AW32001ECSR_C5125890.html)|[C5125890](https://www.lcsc.com/product-detail/Battery-Management-ICs_AWINIC-Shanghai-Awinic-Tech-AW32001ECSR_C5125890.html)|WLCSP-9-B(1.68x1.68)|Charger + Power Path for LiPo/LiIon + I2C + Power Down Options *Has good power off* I intend to use this.|0.2642-0.3675|
 
 ## Flash Chips
 
