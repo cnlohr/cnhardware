@@ -157,6 +157,7 @@ These are ones I've found that are JLCPCB compatible.
 |[0402WGF100KTCE](https://datasheet.lcsc.com/lcsc/2205311900_UNI-ROYAL-Uniroyal-Elec-0402WGF100KTCE_C25086.pdf)|[C25086](https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF100KTCE_C25086.html)|0402|10kΩ BASIC PART|0.0007|
 |[0402WGF4701TCE](https://datasheet.lcsc.com/lcsc/2206010045_UNI-ROYAL-Uniroyal-Elec-0402WGF4701TCE_C25900.pdf)|[C25900](https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF4701TCE_C25900.html)|0402|4.7kΩ BASIC PART|0.0007|
 |[0402WGF6801TCE](https://datasheet.lcsc.com/lcsc/2206010045_UNI-ROYAL-Uniroyal-Elec-0402WGF6801TCE_C25917.pdf)|[C25917](https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF6801TCE_C25917.html)|0402|6.8kΩ BASIC PART|0.0007|
+|[0402WGF499JTCE](https://datasheet.lcsc.com/lcsc/2205311900_UNI-ROYAL-Uniroyal-Elec-0402WGF499JTCE_C25120.pdf)|[C25120](https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF499JTCE_C25120.html)|0402|49.9Ω BASIC PART|0.001|
 
 
 
