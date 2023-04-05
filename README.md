@@ -170,6 +170,7 @@ These are ones I've found that are JLCPCB compatible.
 |Datasheet|LCSC|Footprint|Description|Cost 150|
 |--|--|--|--|--|
 |[SB2143392TT](https://datasheet.lcsc.com/lcsc/2108142130_JYJE-SB2143392TT_C2847068.pdf)|[C2847068](https://www.lcsc.com/product-detail/SAW-Resonators_JYJE-SB2143392TT_C2847068.html)|SMD2016-2P|433.92MHz SAW|0.0713|
+|[B21D339210A010CT](https://datasheet.lcsc.com/lcsc/2211080930_JGHC-B21D339210A010CT_C5240375.pdf)|[C5240375](https://www.lcsc.com/product-detail/SAW-Oscillators_JGHC-B21D339210A010CT_C5240375.html)|SMD2016-2P|433.92MHz SAW|0.0593|
 |[TS-1187A-B-A-B](https://datasheet.lcsc.com/lcsc/2002271431_XKB-Connectivity-TS-1187A-B-A-B_C318884.pdf)|[C318884](https://www.lcsc.com/product-detail/Tactile-Switches_XKB-Connectivity-TS-1187A-B-A-B_C318884.html)|Button_Switch_SMD:SW_SPST_TL3342|Cheap Basic Tactile|0.0103|
 |[TSA021](https://datasheet.lcsc.com/lcsc/1912171420_TNK-TSA021_C465987.pdf)|[C465987](https://www.lcsc.com/product-detail/Power-Transformer_TNK-TSA021_C465987.html)|17x13|PoE, Flyback Transformer for converting to 12V|.6953|
 
