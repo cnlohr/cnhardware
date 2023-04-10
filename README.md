@@ -174,6 +174,6 @@ These are ones I've found that are JLCPCB compatible.
 |[B21D339210A010CT](https://datasheet.lcsc.com/lcsc/2211080930_JGHC-B21D339210A010CT_C5240375.pdf)|[C5240375](https://www.lcsc.com/product-detail/SAW-Oscillators_JGHC-B21D339210A010CT_C5240375.html)|SMD2016-2P|433.92MHz SAW|0.0593|
 |[TS-1187A-B-A-B](https://datasheet.lcsc.com/lcsc/2002271431_XKB-Connectivity-TS-1187A-B-A-B_C318884.pdf)|[C318884](https://www.lcsc.com/product-detail/Tactile-Switches_XKB-Connectivity-TS-1187A-B-A-B_C318884.html)|Button_Switch_SMD:SW_SPST_TL3342|Cheap Basic Tactile|0.0103|
 |[TSA021](https://datasheet.lcsc.com/lcsc/1912171420_TNK-TSA021_C465987.pdf)|[C465987](https://www.lcsc.com/product-detail/Power-Transformer_TNK-TSA021_C465987.html)|17x13|PoE, Flyback Transformer for converting to 12V|.6953|
-|[MXD8921L]https://datasheet.lcsc.com/lcsc/1912111437_Maxscend-MXD8921L_C462324.pdf|[C462324](https://www.lcsc.com/product-detail/Low-Noise-Amplifiers-LNA-RF_Maxscend-MXD8921L_C462324.html)|LGA-6(0.7x1.1)|Low Noise Amplifiers (LNA), 13dBm, 600M - 1.0GHz|0.1214|
+|[MXD8921L](https://datasheet.lcsc.com/lcsc/1912111437_Maxscend-MXD8921L_C462324.pdf)|[C462324](https://www.lcsc.com/product-detail/Low-Noise-Amplifiers-LNA-RF_Maxscend-MXD8921L_C462324.html)|LGA-6(0.7x1.1)|Low Noise Amplifiers (LNA), 13dBm, 600M - 1.0GHz|0.1214|
 |[BDR6122TC](https://datasheet.lcsc.com/lcsc/2207062230_Bardeen-Micro--BDR6122TC_C3975097.pdf)|[C3975097](https://www.lcsc.com/product-detail/Motor-Driver-ICs_Bardeen-Micro-BDR6122TC_C3975097.html)|DFN8-2x2|Motor Driver (Full-bridge)|0.1149|
 
