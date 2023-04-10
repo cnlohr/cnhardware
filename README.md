@@ -27,12 +27,13 @@ My random junk repo for random things.
 |[TPDMN26D0UFB4](https://datasheet.lcsc.com/lcsc/2108132030_TECH-PUBLIC-TPDMN26D0UFB4_C970037.pdf)|[C970037](https://www.lcsc.com/product-detail/MOSFETs_TECH-PUBLIC-TPDMN26D0UFB4_C970037.html)|DFN-3(1x0.6)|N, 20v, 500m, 1.2v, 120pF (Cheap, Basic Sevice, Tiny, Not great but good for signals)|.0242|
 |[DMN3110LCP3-7](https://datasheet.lcsc.com/lcsc/1912111437_Diodes-Incorporated-DMN3110LCP3-7_C443826.pdf)|[C443826](https://www.lcsc.com/product-detail/MOSFETs_Diodes-Incorporated-DMN3110LCP3-7_C443826.html)|X2-DSN1006-3|N, 30v, 80m, 1.3v, 140pF Wicked Awesome Case|0.1775|
 |[TPM2008EP3](https://datasheet.lcsc.com/lcsc/2108132030_TECH-PUBLIC-TPM2008EP3_C2682293.pdf)|[C2682293](https://www.lcsc.com/product-detail/MOSFETs_TECH-PUBLIC-TPM2008EP3_C2682293.html)|DFN1006-3L(1x0.6)|N, 20v, 130m, 1.2v, 120pF|0.0278|
-|[PNM3FD20V1E](https://datasheet.lcsc.com/lcsc/2108150430_Shanghai-Prisemi-Elec-PNM3FD20V1E_C2875806.pdf)***|[C2875806](https://www.lcsc.com/product-detail/MOSFETs_Shanghai-Prisemi-Elec-PNM3FD20V1E_C2875806.html)|DFN-3L(1x0.6)|N, 20v, 200m, 1.1v, 48pF|0.0256|
+|[PNM3FD20V1E](https://datasheet.lcsc.com/lcsc/2108150430_Shanghai-Prisemi-Elec-PNM3FD20V1E_C2875806.pdf)|[C2875806](https://www.lcsc.com/product-detail/MOSFETs_Shanghai-Prisemi-Elec-PNM3FD20V1E_C2875806.html)|DFN-3L(1x0.6)|N, 20v, 200m, 1.1v, 48pF|0.0256|
 |[DMN2990UFA-7B](https://datasheet.lcsc.com/lcsc/1804250226_Diodes-Incorporated-DMN2990UFA-7B_C151598.pdf)|[C151598](https://www.lcsc.com/product-detail/MOSFETs_Diodes-Incorporated-DMN2990UFA-7B_C151598.html)|XFDFN-3(0.6x0.8)|N, 20v, 900m, 1.3v, 30pF|0.0544|
 |[HSCB2307](https://datasheet.lcsc.com/lcsc/2010160905_HUASHUO-HSCB2307_C845602.pdf)|[C845602](https://www.lcsc.com/product-detail/MOSFETs_HUASHUO-HSCB2307_C845602.html)|DFN-6L(2x2)|P, 20v, 15m, 1v, 2100pF|0.0789|
 |[G66](https://datasheet.lcsc.com/lcsc/1809251724_GOFORD-G66_C239037.pdf)|[C239037](https://www.lcsc.com/product-detail/MOSFETs_GOFORD-G66_C239037.html)|DFN-6L(2x2)|P, 16v, 45m, 1.25v, 740pF|0.0499|
 |[DMP1009UFDF](https://datasheet.lcsc.com/lcsc/2003091237_Diodes-Incorporated-DMP1009UFDF-7_C493499.pdf)|[C493499](https://www.lcsc.com/product-detail/MOSFETs_Diodes-Incorporated-DMP1009UFDF-7_C493499.html)|U-DFN2020-6|P, 12v, 11m, 1.1v, 1860pF|0.4530|
-|[PJM01N20KDC](https://datasheet.lcsc.com/lcsc/2203092030_PJSEMI-PJM01N20KDC_C2981470.pdf)|[C2981470](https://www.lcsc.com/product-detail/MOSFETs_PJSEMI-PJM01N20KDC_C2981470.html)|DFN-3L(1x0.6)|N, 20v, 180m, 1.3v, 56pF|0.0259**|
+|[PJM01N20KDC](https://datasheet.lcsc.com/lcsc/2203092030_PJSEMI-PJM01N20KDC_C2981470.pdf)|[C2981470](https://www.lcsc.com/product-detail/MOSFETs_PJSEMI-PJM01N20KDC_C2981470.html)|DFN-3L(1x0.6)|N, 20v, 180m, 1.3v, 56pF|0.0259|
+|[AP4580](https://datasheet.lcsc.com/lcsc/2108150030_ALLPOWER-ShenZhen-Quan-Li-Semiconductor-AP4580_C2849569.pdf)|[C2849569](https://www.lcsc.com/product-detail/MOSFETs_ALLPOWER-ShenZhen-Quan-Li-Semiconductor-AP4580_C2849569.html)|SOT-23-8L|2N and 2P Full Bridge|0.0635|
 
 ## Interesting BJTs
 
@@ -174,6 +175,5 @@ These are ones I've found that are JLCPCB compatible.
 |[TS-1187A-B-A-B](https://datasheet.lcsc.com/lcsc/2002271431_XKB-Connectivity-TS-1187A-B-A-B_C318884.pdf)|[C318884](https://www.lcsc.com/product-detail/Tactile-Switches_XKB-Connectivity-TS-1187A-B-A-B_C318884.html)|Button_Switch_SMD:SW_SPST_TL3342|Cheap Basic Tactile|0.0103|
 |[TSA021](https://datasheet.lcsc.com/lcsc/1912171420_TNK-TSA021_C465987.pdf)|[C465987](https://www.lcsc.com/product-detail/Power-Transformer_TNK-TSA021_C465987.html)|17x13|PoE, Flyback Transformer for converting to 12V|.6953|
 |[MXD8921L]https://datasheet.lcsc.com/lcsc/1912111437_Maxscend-MXD8921L_C462324.pdf|[C462324](https://www.lcsc.com/product-detail/Low-Noise-Amplifiers-LNA-RF_Maxscend-MXD8921L_C462324.html)|LGA-6(0.7x1.1)|Low Noise Amplifiers (LNA), 13dBm, 600M - 1.0GHz|0.1214|
+|[BDR6122TC](https://datasheet.lcsc.com/lcsc/2207062230_Bardeen-Micro--BDR6122TC_C3975097.pdf)|[C3975097](https://www.lcsc.com/product-detail/Motor-Driver-ICs_Bardeen-Micro-BDR6122TC_C3975097.html)|DFN8-2x2|Motor Driver (Full-bridge)|0.1149|
 
-** = Limited availability on JLCPCB
-*** = Charles Plans to Use
