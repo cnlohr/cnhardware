@@ -176,4 +176,5 @@ These are ones I've found that are JLCPCB compatible.
 |[TSA021](https://datasheet.lcsc.com/lcsc/1912171420_TNK-TSA021_C465987.pdf)|[C465987](https://www.lcsc.com/product-detail/Power-Transformer_TNK-TSA021_C465987.html)|17x13|PoE, Flyback Transformer for converting to 12V|.6953|
 |[MXD8921L](https://datasheet.lcsc.com/lcsc/1912111437_Maxscend-MXD8921L_C462324.pdf)|[C462324](https://www.lcsc.com/product-detail/Low-Noise-Amplifiers-LNA-RF_Maxscend-MXD8921L_C462324.html)|LGA-6(0.7x1.1)|Low Noise Amplifiers (LNA), 13dBm, 600M - 1.0GHz|0.1214|
 |[BDR6122TC](https://datasheet.lcsc.com/lcsc/2207062230_Bardeen-Micro--BDR6122TC_C3975097.pdf)|[C3975097](https://www.lcsc.com/product-detail/Motor-Driver-ICs_Bardeen-Micro-BDR6122TC_C3975097.html)|DFN8-2x2|Motor Driver (Full-bridge)|0.1149|
+|[NCP5901MNTBG](https://datasheet.lcsc.com/lcsc/1809111713_onsemi-NCP5901MNTBG_C154811.pdf)|[C154811](https://www.lcsc.com/product-detail/Gate-Drive-ICs_onsemi-NCP5901MNTBG_C154811.html)|DFN-8 (2x2)|Gate Driver (High-and-low)|0.0879|
 
