@@ -136,6 +136,12 @@ These are ones I've found that are JLCPCB compatible.
 |[MS9945](https://datasheet.lcsc.com/lcsc/2012211837_Hangzhou-Ruimeng-Tech-MS9945_C1509043.pdf)|[C1509043](https://www.lcsc.com/product-detail/Analog-To-Digital-Converters-ADCs_Hangzhou-Ruimeng-Tech-MS9945_C1509043.html)|QFN-32-EP(5x5)|40MSPS, 12-bit Flash ADC (NOTE: Was originally designed for CCDs)|3.3426|
 |[MS9943](https://datasheet.lcsc.com/lcsc/2012211837_Hangzhou-Ruimeng-Tech-MS9943_C1509042.pdf)|[C1509042](https://www.lcsc.com/product-detail/Analog-To-Digital-Converters-ADCs_Hangzhou-Ruimeng-Tech-MS9943_C1509042.html)|QFN-32-EP(5x5)|25MSPS, 8-bit Flash ADC (NOTE: Was originally designed for CCDs, WARNING: PRE-STOCK MAY NOT REFLECT ACTUAL PRICE)|0.463|
 
+## Amps (Right now, just weird ones)
+|Datasheet|LCSC|Footprint|Description|Cost 150|
+|--|--|--|--|--|
+|[MXD8921L](https://datasheet.lcsc.com/lcsc/1912111437_Maxscend-MXD8921L_C462324.pdf)|[C462324](https://www.lcsc.com/product-detail/Low-Noise-Amplifiers-LNA-RF_Maxscend-MXD8921L_C462324.html)|LGA-6(0.7x1.1)|LNA, 600MHz - 1GHz|0.1214|
+
+
 ## Connectors
 
 |Datasheet|LCSC|Footprint|Description|Cost 150|
@@ -177,4 +183,8 @@ These are ones I've found that are JLCPCB compatible.
 |[MXD8921L](https://datasheet.lcsc.com/lcsc/1912111437_Maxscend-MXD8921L_C462324.pdf)|[C462324](https://www.lcsc.com/product-detail/Low-Noise-Amplifiers-LNA-RF_Maxscend-MXD8921L_C462324.html)|LGA-6(0.7x1.1)|Low Noise Amplifiers (LNA), 13dBm, 600M - 1.0GHz|0.1214|
 |[BDR6122TC](https://datasheet.lcsc.com/lcsc/2207062230_Bardeen-Micro--BDR6122TC_C3975097.pdf)|[C3975097](https://www.lcsc.com/product-detail/Motor-Driver-ICs_Bardeen-Micro-BDR6122TC_C3975097.html)|DFN8-2x2|Motor Driver (Full-bridge)|0.1149|
 |[NCP5901MNTBG](https://datasheet.lcsc.com/lcsc/1809111713_onsemi-NCP5901MNTBG_C154811.pdf)|[C154811](https://www.lcsc.com/product-detail/Gate-Drive-ICs_onsemi-NCP5901MNTBG_C154811.html)|DFN-8 (2x2)|Gate Driver (High-and-low)|0.0879|
-
+|[AD8317ACPZ-R7](https://datasheet.lcsc.com/lcsc/2009091233_Analog-Devices-AD8317ACPZ-R7_C578693.pdf)|[C578693](https://www.lcsc.com/product-detail/Special-Purpose-Amplifiers_Analog-Devices-AD8317ACPZ-R7_C578693.html)|LFCSP-8 (3x2)|Log Signal Detector|5.1323|
+|[AD8318ACPZ-REEL7](https://datasheet.lcsc.com/lcsc/2009141605_Analog-Devices-AD8318ACPZ-REEL7_C578694.pdf)|[C578694](https://www.lcsc.com/product-detail/RF-Detectors_Analog-Devices-AD8318ACPZ-REEL7_C578694.html)|LFCSP-16|1MHz to 8GHz Log Signal Detector|6.4607|
+|[MAX2870ETJ](https://datasheet.lcsc.com/lcsc/2212222008_Maxim-Integrated-MAX2870ETJ-_C5181325.pdf)|[C5181325](https://www.lcsc.com/product-detail/Clock-Generators-Frequency-Synthesizers-PLL_Maxim-Integrated-MAX2870ETJ_C5181325.html)|TQFN-32(5x5)|Frequency Synthesizer 23.5MHz to 6.0GHz|17.28|
+|[AD8314ARMZ-REEL7](https://datasheet.lcsc.com/lcsc/2012060304_Analog-Devices-AD8314ARMZ-REEL7_C459906.pdf)|[C459906](https://www.lcsc.com/product-detail/RF-Detectors_Analog-Devices-AD8314ARMZ-REEL7_C459906.html)|MSOP-8|Log Detector 100 MHz to 2.7 GHz|1.4557|
+|[AD8313ARMZ-REEL7](https://datasheet.lcsc.com/lcsc/2001132235_Analog-Devices-AD8313ARMZ-REEL7_C481897.pdf)|[C481897](https://www.lcsc.com/product-detail/RF-Detectors_Analog-Devices-AD8313ARMZ-REEL7_C481897.html)|MSOP-8|Log Detector 0.1 MHz to 2.7 GHz|4.838|
