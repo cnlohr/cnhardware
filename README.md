@@ -171,6 +171,11 @@ These are ones I've found that are JLCPCB compatible.
 |[AC0402FR-0724K3L](https://datasheet.lcsc.com/lcsc/1810241343_YAGEO-AC0402FR-0724K3L_C226370.pdf)|[C226370](https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-AC0402FR-0724K3L_C226370.html)|0402|24.3kΩ (Power over Ethernet)|0.001|
 [0402WGF100JTCE](https://datasheet.lcsc.com/lcsc/2205311900_UNI-ROYAL-Uniroyal-Elec-0402WGF100JTCE_C25077.pdf)|[C25077](https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF100JTCE_C25077.html)|0402|10Ω (Basic Part)|0.0005|
 
+## Power Supplies
+
+|Datasheet|LCSC|Footprint|Description|Cost 150|
+|--|--|--|--|--|
+|[MT2492](https://datasheet.lcsc.com/lcsc/2212101330_XI-AN-Aerosemi-Tech-MT2492_C89358.pdf)|[C89358](https://www.lcsc.com/product-detail/DC-DC-Converters_MT2492_C89358.html)|SOT-23-6|Buck, 4.5 to 16V input, 2A, Integrated diode|0.0411|
 
 ## Totally random things
 
