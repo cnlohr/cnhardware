@@ -35,6 +35,13 @@ My random junk repo for random things.
 |[PJM01N20KDC](https://datasheet.lcsc.com/lcsc/2203092030_PJSEMI-PJM01N20KDC_C2981470.pdf)|[C2981470](https://www.lcsc.com/product-detail/MOSFETs_PJSEMI-PJM01N20KDC_C2981470.html)|DFN-3L(1x0.6)|N, 20v, 180m, 1.3v, 56pF|0.0259|
 |[AP4580](https://datasheet.lcsc.com/lcsc/2108150030_ALLPOWER-ShenZhen-Quan-Li-Semiconductor-AP4580_C2849569.pdf)|[C2849569](https://www.lcsc.com/product-detail/MOSFETs_ALLPOWER-ShenZhen-Quan-Li-Semiconductor-AP4580_C2849569.html)|SOT-23-8L|2N and 2P Full Bridge|0.0635|
 
+## Special FETs
+
+|Datasheet|LCSC|Footprint|Description|Cost 150|
+|--|--|--|--|--|
+|[DMZ6005E](https://datasheet.lcsc.com/lcsc/2206061716_ARK-micro-DMZ6005E_C3031422.pdf)|[C3031422](https://www.lcsc.com/product-detail/MOSFETs_ARK-micro-DMZ6005E_C3031422.html)|SOT-23|Depletion Mode N-Fet (Normally on)|0.0626|
+
+
 ## Interesting BJTs
 
 |Datasheet|LCSC|Footprint|Description|Cost 150|
