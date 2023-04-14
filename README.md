@@ -95,9 +95,11 @@ My random junk repo for random things.
 |Datasheet|LCSC|Footprint|Description|Cost 150|
 |--|--|--|--|--|
 |[QMC5883P](https://datasheet.lcsc.com/lcsc/2108072330_QST-QMC5883P_C2847467.pdf)|[C2847467](https://www.lcsc.com/product-detail/Hall-Sensor_QST-QMC5883P_C2847467.html)|LGA-16(3x3)|3-Axis Magnetometer, 16-bit|0.8607|
+|[QMC5883L](https://datasheet.lcsc.com/lcsc/2012221837_QST-QMC5883L_C976032.pdf)|[C976032](https://www.lcsc.com/product-detail/Hall-Sensor_QST-QMC5883L_C976032.html)|LGA-16 (3x3)|3-Axis Magnetometer, 16-bit|0.8337|
 |[QMA7981](https://datasheet.lcsc.com/lcsc/2004281102_QST-QMA7981_C457290.pdf)|[C457290](https://www.lcsc.com/product-detail/Attitude-Sensor-Gyroscope_QST-QMA7981_C457290.html)|LGA-12(2x2)|Accelerometer, 14-bit, VERY low power LF mode.|0.3071|
 |[QMI8658C](https://datasheet.lcsc.com/lcsc/2108161930_QST-QMI8658C_C2842151.pdf)|[C2842151](https://www.lcsc.com/product-detail/Attitude-Sensor-Gyroscope_QST-QMI8658C_C2842151.html)|LGA-14(2.5x3)|Accelerometer + Gyro + Temp, 16-bit|0.9212|
 |[STK8BA58](https://datasheet.lcsc.com/lcsc/2109101230_SENSORTEK-STK8BA58-LGA-12PIN_C2890989.pdf)|[C2890989](https://www.lcsc.com/product-detail/Attitude-Sensor-Gyroscope_SENSORTEK-STK8BA58-LGA-12PIN_C2890989.html)|LGA-12(2x2)|Not as good as the QMA7981, but slighly cheaper|0.2976|
+
 
 ## Other Random Things
 
