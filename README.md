@@ -187,6 +187,7 @@ These are ones I've found that are JLCPCB compatible.
 |Datasheet|LCSC|Footprint|Description|Cost 150|
 |--|--|--|--|--|
 |[MT2492](https://datasheet.lcsc.com/lcsc/2212101330_XI-AN-Aerosemi-Tech-MT2492_C89358.pdf)|[C89358](https://www.lcsc.com/product-detail/DC-DC-Converters_MT2492_C89358.html)|SOT-23-6|Buck, 4.5 to 16V input, 2A, Integrated diode|0.0411|
+|[M3406-ADJ](https://datasheet.lcsc.com/lcsc/1811151539_XI-AN-Aerosemi-Tech-M3406-ADJ_C83224.pdf)|[C83224](https://www.lcsc.com/product-detail/DC-DC-Converters_XI-AN-Aerosemi-Tech-M3406-ADJ_C83224.html)|SOT-23-5|Step-down type SOT-23-5, 2-6.5 in, 800mA Out|0.025|
 
 ## Totally random things
 
