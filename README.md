@@ -182,6 +182,7 @@ These are ones I've found that are JLCPCB compatible.
 |[AC0402FR-0724K3L](https://datasheet.lcsc.com/lcsc/1810241343_YAGEO-AC0402FR-0724K3L_C226370.pdf)|[C226370](https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-AC0402FR-0724K3L_C226370.html)|0402|24.3kΩ (Power over Ethernet)|0.001|
 [0402WGF100JTCE](https://datasheet.lcsc.com/lcsc/2205311900_UNI-ROYAL-Uniroyal-Elec-0402WGF100JTCE_C25077.pdf)|[C25077](https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF100JTCE_C25077.html)|0402|10Ω (Basic Part)|0.0005|
 |[CL05A475KP5NRNC](https://datasheet.lcsc.com/lcsc/1912111437_Samsung-Electro-Mechanics-CL05A475KP5NRNC_C368809.pdf)|[C368809](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05A475KP5NRNC_C368809.html)|0402|10V 4.7uF X5R|0.0068|
+|[GRT155C81C225KE13D](https://datasheet.lcsc.com/lcsc/2105241313_Murata-Electronics-GRT155C81C225KE13D_C668369.pdf)|[C668369](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Murata-Electronics-GRT155C81C225KE13D_C668369.html)|0402|16v 2.2uF X6S|0.0296|
 
 ## Power Supplies
 
