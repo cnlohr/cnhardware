@@ -89,6 +89,7 @@ My random junk repo for random things.
 |[ZD25WD20BUIGR](https://datasheet.lcsc.com/lcsc/2106062209_Zetta-ZD25WD20BUIGR_C2759918.pdf)|[C2759918](https://www.lcsc.com/product-detail/span-style-background-color-ff0-NOR-span-span-style-background-color-ff0-FLASH-span_Zetta-ZD25WD20BUIGR_C2759918.html)|USON-8(2x3)|NOR Flash, 2Mbit, 1.65-3.6v, 104MHz (DIO ONLY)|0.0675|
 |[ZD25Q80BNIGR](https://datasheet.lcsc.com/lcsc/2206131630_Zetta-ZD25Q80BNIGR_C3035284.pdf)|[C3035284](https://www.lcsc.com/product-detail/NOR-FLASH_Zetta-ZD25Q80BNIGR_C3035284.html)|USON-8(1.5x1.5)|NOR Flash, 8Mbit, 2.3-3.6v, 104MHz (QIO ok)|0.18|
 |[GD25Q128ESIGR](https://datasheet.lcsc.com/lcsc/2204011730_GigaDevice-Semicon-Beijing-GD25Q128EWIG_C2986327.pdf)|[C2928891](https://www.lcsc.com/product-detail/span-style-background-color-ff0-NOR-span-span-style-background-color-ff0-FLASH-span_GigaDevice-Semicon-Beijing-GD25Q128ESIGR_C2928891.html)|SOP-8-208mil|128 Mbit (16MByte) Flash Chip|0.7588|
+|[W25Q64JVXGIQ](https://datasheet.lcsc.com/lcsc/2201121830_Winbond-Elec-W25Q64JVXGIQ_C2940195.pdf)|[C2940195](https://www.lcsc.com/product-detail/NOR-FLASH_Winbond-Elec-W25Q64JVXGIQ_C2940195.html)|USON-4x4|3.0-3.6V, 64Mbit, Dual, Quad SPI|.4964|
 
 ## IMUs, Accelerometers, Gyros, Magnetometers
 
