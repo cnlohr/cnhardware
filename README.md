@@ -185,6 +185,14 @@ These are ones I've found that are JLCPCB compatible.
 |[CL05A475KP5NRNC](https://datasheet.lcsc.com/lcsc/1912111437_Samsung-Electro-Mechanics-CL05A475KP5NRNC_C368809.pdf)|[C368809](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05A475KP5NRNC_C368809.html)|0402|10V 4.7uF X5R|0.0068|
 |[GRT155C81C225KE13D](https://datasheet.lcsc.com/lcsc/2105241313_Murata-Electronics-GRT155C81C225KE13D_C668369.pdf)|[C668369](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Murata-Electronics-GRT155C81C225KE13D_C668369.html)|0402|16v 2.2uF X6S|0.0296|
 
+## TXCO's (Very precise oscillators)
+
+|Datasheet|LCSC|Footprint|Description|Cost 150|
+|--|--|--|--|--|
+|[2TG2600001](https://datasheet.lcsc.com/lcsc/1912111437_YL-Failong-Crystal-2TG2600001_C427551.pdf)|[C427551](https://www.lcsc.com/product-detail/Temperature-Compensated-Crystal-Oscillators-TCXOs_YL-Failong-Crystal-2TG2600001_C427551.html)|SMD2520-6P|1.7V~3.3V ±0.5ppm 26MHz TXCO|0.3553|
+|[1XXC26000PCA](https://datasheet.lcsc.com/lcsc/1810221842_KDS-Daishinku-1XXC26000PCA_C253754.pdf)|[C253754](https://www.lcsc.com/product-detail/Temperature-Compensated-Crystal-Oscillators-TCXOs_KDS-Daishinku-1XXC26000PCA_C253754.html)|SMD2016-4P|2.8V ±1.5ppm 26MHz TXCO|0.6571|
+|[1XXD26000MAA](https://datasheet.lcsc.com/lcsc/1810171114_KDS-Daishinku-1XXD26000MAA_C135223.pdf)|[C135223](https://www.lcsc.com/product-detail/Temperature-Compensated-Crystal-Oscillators-TCXOs_KDS-Daishinku-1XXD26000MAA_C135223.html)|
+
 ## Power Supplies
 
 |Datasheet|LCSC|Footprint|Description|Cost 150|
