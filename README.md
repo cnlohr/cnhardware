@@ -191,7 +191,7 @@ These are ones I've found that are JLCPCB compatible.
 |--|--|--|--|--|
 |[2TG2600001](https://datasheet.lcsc.com/lcsc/1912111437_YL-Failong-Crystal-2TG2600001_C427551.pdf)|[C427551](https://www.lcsc.com/product-detail/Temperature-Compensated-Crystal-Oscillators-TCXOs_YL-Failong-Crystal-2TG2600001_C427551.html)|SMD2520-6P|1.7V~3.3V ±0.5ppm 26MHz TXCO|0.3553|
 |[1XXC26000PCA](https://datasheet.lcsc.com/lcsc/1810221842_KDS-Daishinku-1XXC26000PCA_C253754.pdf)|[C253754](https://www.lcsc.com/product-detail/Temperature-Compensated-Crystal-Oscillators-TCXOs_KDS-Daishinku-1XXC26000PCA_C253754.html)|SMD2016-4P|2.8V ±1.5ppm 26MHz TXCO|0.6571|
-|[1XXD26000MAA](https://datasheet.lcsc.com/lcsc/1810171114_KDS-Daishinku-1XXD26000MAA_C135223.pdf)|[C135223](https://www.lcsc.com/product-detail/Temperature-Compensated-Crystal-Oscillators-TCXOs_KDS-Daishinku-1XXD26000MAA_C135223.html)|
+|[1XXD26000MAA](https://datasheet.lcsc.com/lcsc/1810171114_KDS-Daishinku-1XXD26000MAA_C135223.pdf)|[C135223](https://www.lcsc.com/product-detail/Temperature-Compensated-Crystal-Oscillators-TCXOs_KDS-Daishinku-1XXD26000MAA_C135223.html)|SMD2016-4P|1.7V~3.6V ±1.5ppm 26MHz|0.401|
 
 ## Power Supplies
 
