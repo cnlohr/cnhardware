@@ -34,6 +34,7 @@ My random junk repo for random things.
 |[DMP1009UFDF](https://datasheet.lcsc.com/lcsc/2003091237_Diodes-Incorporated-DMP1009UFDF-7_C493499.pdf)|[C493499](https://www.lcsc.com/product-detail/MOSFETs_Diodes-Incorporated-DMP1009UFDF-7_C493499.html)|U-DFN2020-6|P, 12v, 11m, 1.1v, 1860pF|0.4530|
 |[PJM01N20KDC](https://datasheet.lcsc.com/lcsc/2203092030_PJSEMI-PJM01N20KDC_C2981470.pdf)|[C2981470](https://www.lcsc.com/product-detail/MOSFETs_PJSEMI-PJM01N20KDC_C2981470.html)|DFN-3L(1x0.6)|N, 20v, 180m, 1.3v, 56pF|0.0259|
 |[AP4580](https://datasheet.lcsc.com/lcsc/2108150030_ALLPOWER-ShenZhen-Quan-Li-Semiconductor-AP4580_C2849569.pdf)|[C2849569](https://www.lcsc.com/product-detail/MOSFETs_ALLPOWER-ShenZhen-Quan-Li-Semiconductor-AP4580_C2849569.html)|SOT-23-8L|2N and 2P Full Bridge|0.0635|
+|[DMC3730UFL3-7](https://datasheet.lcsc.com/lcsc/1912111437_Diodes-Incorporated-DMC3730UFL3-7_C460973.pdf)|[C460973](https://www.lcsc.com/product-detail/MOSFETs_Diodes-Incorporated-DMC3730UFL3-7_C460973.html)|X2-DFN1310-6|Complementary P- and N- 1A, 30V TTL level FETs|0.0539|
 
 ## Special FETs
 
