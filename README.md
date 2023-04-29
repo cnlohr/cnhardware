@@ -163,7 +163,7 @@ These are ones I've found that are JLCPCB compatible.
  |[TYPE-C 16PIN 2MD(073)](https://datasheet.lcsc.com/lcsc/2111231930_SHOU-HAN-TYPE-C-16PIN-2MD-073_C2765186.pdf)|[C2765186](https://www.lcsc.com/product-detail/USB-Connectors_SHOU-HAN-TYPE-C-16PIN-2MD-073_C2765186.html)|[HRO TYPE C](https://github.com/cnlohr/cnhardware/blob/master/kicad_parts/cnhardware.pretty/USB_C_Receptacle_HRO_TYPE-C-31-M-12.kicad_mod)|Nice USB Type-C used on Swadges.  With USB 2.0, CC, AUX and Power.|0.0432|
 |[THD0509-08CL-GF](https://datasheet.lcsc.com/lcsc/1811021341_THD-THD0509-08CL-GF_C283135.pdf)|[C283135](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_THD-THD0509-08CL-GF_C283135.html)|0.5mm Pitch|8 Pos Flex Connector, Double-Sided|0.0628|
 |[HC-FPC-05-09-8RLTAG](https://datasheet.lcsc.com/lcsc/2210261730_HCTL-HC-FPC-05-09-8RLTAG_C5213749.pdf)|[C5213749](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_HCTL-HC-FPC-05-09-8RLTAG_C5213749.html)|0.5mm Pitch|8 Pos Flex Connector, Bottom-Sided?? Or both?|0.0425|
-
+|[HC-FPC-05-10-10RLTAG](https://datasheet.lcsc.com/lcsc/2210271630_HCTL-HC-FPC-05-10-10RLTAG_C5213731.pdf)|[C5213731](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_HCTL-HC-FPC-05-10-10RLTAG_C5213731.html)|0.5mm Pitch|10 Pos Flex Connector, Bottom-Sided?? Or both?|0.0425|
 
 ## Useful Basic Parts
 
