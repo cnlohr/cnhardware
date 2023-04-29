@@ -201,6 +201,8 @@ These are ones I've found that are JLCPCB compatible.
 |[MT2492](https://datasheet.lcsc.com/lcsc/2212101330_XI-AN-Aerosemi-Tech-MT2492_C89358.pdf)|[C89358](https://www.lcsc.com/product-detail/DC-DC-Converters_MT2492_C89358.html)|SOT-23-6|Buck, 4.5 to 16V input, 2A, Integrated diode|0.0411|
 |[M3406-ADJ](https://datasheet.lcsc.com/lcsc/1811151539_XI-AN-Aerosemi-Tech-M3406-ADJ_C83224.pdf)|[C83224](https://www.lcsc.com/product-detail/DC-DC-Converters_XI-AN-Aerosemi-Tech-M3406-ADJ_C83224.html)|SOT-23-5|Step-down type SOT-23-5, 2-6.5 in, 800mA Out|0.025|
 |[RS3236-3-3YUTDN4](https://datasheet.lcsc.com/lcsc/2202251530_Jiangsu-RUNIC-Tech-RS3236-3-3YUTDN4_C379350.pdf)|[C379350](https://www.lcsc.com/product-detail/Linear-Voltage-Regulators-LDO_Jiangsu-RUNIC-Tech-RS3236-3-3YUTDN4_C379350.html)|X-DFN-4|3.3V 500mA LDO|0.0542|
+|[XT1861B362MR-G]()|[C236397](https://www.lcsc.com/product-detail/DC-DC-Converters_NATLINEAR-XT1861B362MR-G_C236397.html)|SOT-23|3.6V Boost LXmax 800mA|0.0511|
+
 
 ## Totally random things
 
