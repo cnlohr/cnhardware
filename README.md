@@ -185,6 +185,16 @@ These are ones I've found that are JLCPCB compatible.
 [0402WGF100JTCE](https://datasheet.lcsc.com/lcsc/2205311900_UNI-ROYAL-Uniroyal-Elec-0402WGF100JTCE_C25077.pdf)|[C25077](https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF100JTCE_C25077.html)|0402|10Ω (Basic Part)|0.0005|
 |[CL05A475KP5NRNC](https://datasheet.lcsc.com/lcsc/1912111437_Samsung-Electro-Mechanics-CL05A475KP5NRNC_C368809.pdf)|[C368809](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05A475KP5NRNC_C368809.html)|0402|10V 4.7uF X5R|0.0068|
 |[GRT155C81C225KE13D](https://datasheet.lcsc.com/lcsc/2105241313_Murata-Electronics-GRT155C81C225KE13D_C668369.pdf)|[C668369](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Murata-Electronics-GRT155C81C225KE13D_C668369.html)|0402|16v 2.2uF X6S|0.0296|
+|CL05A475MP5NRNC|C23733|0402|4.7uF 10V X5R BASIC|0.0058|
+|CL05A106MQ5NUNC|C15525|0402|10uF 6.3V X5R BASIC|0.0040|
+|CL05A225MQ5NSNC|C12530|0402|2.2uF 6.3V X5R BASIC|0.0021|
+|CL05A105KA5NQNC|C52923|0402|1uF 6.3V X5R BASIC|0.0031|
+|CL05B104KB54PNC|C307331|0402|100nF 50V X7R BASIC|0.0056|
+|CL05C331JB5NNNC|C13533|0402|330pF 50V C0G BASIC|0.0056|
+|0402WGF1004TCE|C26083|0402|1M 1% BASIC|0.0005|
+|0402WGF220JTCE|C25092|0402|22 1% BASIC|0.0004|
+
+
 
 ## TXCO's (Very precise oscillators)
 
