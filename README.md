@@ -34,6 +34,7 @@ My random junk repo for random things.
 |[DMP1009UFDF](https://datasheet.lcsc.com/lcsc/2003091237_Diodes-Incorporated-DMP1009UFDF-7_C493499.pdf)|[C493499](https://www.lcsc.com/product-detail/MOSFETs_Diodes-Incorporated-DMP1009UFDF-7_C493499.html)|U-DFN2020-6|P, 12v, 11m, 1.1v, 1860pF|0.4530|
 |[PJM01N20KDC](https://datasheet.lcsc.com/lcsc/2203092030_PJSEMI-PJM01N20KDC_C2981470.pdf)|[C2981470](https://www.lcsc.com/product-detail/MOSFETs_PJSEMI-PJM01N20KDC_C2981470.html)|DFN-3L(1x0.6)|N, 20v, 180m, 1.3v, 56pF|0.0259|
 |[AP4580](https://datasheet.lcsc.com/lcsc/2108150030_ALLPOWER-ShenZhen-Quan-Li-Semiconductor-AP4580_C2849569.pdf)|[C2849569](https://www.lcsc.com/product-detail/MOSFETs_ALLPOWER-ShenZhen-Quan-Li-Semiconductor-AP4580_C2849569.html)|SOT-23-8L|2N and 2P Full Bridge|0.0635|
+|[DMC3730UFL3-7](https://datasheet.lcsc.com/lcsc/1912111437_Diodes-Incorporated-DMC3730UFL3-7_C460973.pdf)|[C460973](https://www.lcsc.com/product-detail/MOSFETs_Diodes-Incorporated-DMC3730UFL3-7_C460973.html)|X2-DFN1310-6|Complementary P- and N- 1A, 30V TTL level FETs|0.0539|
 
 ## Special FETs
 
@@ -162,7 +163,7 @@ These are ones I've found that are JLCPCB compatible.
  |[TYPE-C 16PIN 2MD(073)](https://datasheet.lcsc.com/lcsc/2111231930_SHOU-HAN-TYPE-C-16PIN-2MD-073_C2765186.pdf)|[C2765186](https://www.lcsc.com/product-detail/USB-Connectors_SHOU-HAN-TYPE-C-16PIN-2MD-073_C2765186.html)|[HRO TYPE C](https://github.com/cnlohr/cnhardware/blob/master/kicad_parts/cnhardware.pretty/USB_C_Receptacle_HRO_TYPE-C-31-M-12.kicad_mod)|Nice USB Type-C used on Swadges.  With USB 2.0, CC, AUX and Power.|0.0432|
 |[THD0509-08CL-GF](https://datasheet.lcsc.com/lcsc/1811021341_THD-THD0509-08CL-GF_C283135.pdf)|[C283135](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_THD-THD0509-08CL-GF_C283135.html)|0.5mm Pitch|8 Pos Flex Connector, Double-Sided|0.0628|
 |[HC-FPC-05-09-8RLTAG](https://datasheet.lcsc.com/lcsc/2210261730_HCTL-HC-FPC-05-09-8RLTAG_C5213749.pdf)|[C5213749](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_HCTL-HC-FPC-05-09-8RLTAG_C5213749.html)|0.5mm Pitch|8 Pos Flex Connector, Bottom-Sided?? Or both?|0.0425|
-
+|[HC-FPC-05-10-10RLTAG](https://datasheet.lcsc.com/lcsc/2210271630_HCTL-HC-FPC-05-10-10RLTAG_C5213731.pdf)|[C5213731](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_HCTL-HC-FPC-05-10-10RLTAG_C5213731.html)|0.5mm Pitch|10 Pos Flex Connector, Bottom-Sided?? Or both?|0.0425|
 
 ## Useful Basic Parts
 
@@ -184,6 +185,16 @@ These are ones I've found that are JLCPCB compatible.
 [0402WGF100JTCE](https://datasheet.lcsc.com/lcsc/2205311900_UNI-ROYAL-Uniroyal-Elec-0402WGF100JTCE_C25077.pdf)|[C25077](https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF100JTCE_C25077.html)|0402|10Ω (Basic Part)|0.0005|
 |[CL05A475KP5NRNC](https://datasheet.lcsc.com/lcsc/1912111437_Samsung-Electro-Mechanics-CL05A475KP5NRNC_C368809.pdf)|[C368809](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05A475KP5NRNC_C368809.html)|0402|10V 4.7uF X5R|0.0068|
 |[GRT155C81C225KE13D](https://datasheet.lcsc.com/lcsc/2105241313_Murata-Electronics-GRT155C81C225KE13D_C668369.pdf)|[C668369](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Murata-Electronics-GRT155C81C225KE13D_C668369.html)|0402|16v 2.2uF X6S|0.0296|
+|CL05A475MP5NRNC|C23733|0402|4.7uF 10V X5R BASIC|0.0058|
+|CL05A106MQ5NUNC|C15525|0402|10uF 6.3V X5R BASIC|0.0040|
+|CL05A225MQ5NSNC|C12530|0402|2.2uF 6.3V X5R BASIC|0.0021|
+|CL05A105KA5NQNC|C52923|0402|1uF 6.3V X5R BASIC|0.0031|
+|CL05B104KB54PNC|C307331|0402|100nF 50V X7R BASIC|0.0056|
+|CL05C331JB5NNNC|C13533|0402|330pF 50V C0G BASIC|0.0056|
+|0402WGF1004TCE|C26083|0402|1M 1% BASIC|0.0005|
+|0402WGF220JTCE|C25092|0402|22 1% BASIC|0.0004|
+
+
 
 ## TXCO's (Very precise oscillators)
 
@@ -200,6 +211,8 @@ These are ones I've found that are JLCPCB compatible.
 |[MT2492](https://datasheet.lcsc.com/lcsc/2212101330_XI-AN-Aerosemi-Tech-MT2492_C89358.pdf)|[C89358](https://www.lcsc.com/product-detail/DC-DC-Converters_MT2492_C89358.html)|SOT-23-6|Buck, 4.5 to 16V input, 2A, Integrated diode|0.0411|
 |[M3406-ADJ](https://datasheet.lcsc.com/lcsc/1811151539_XI-AN-Aerosemi-Tech-M3406-ADJ_C83224.pdf)|[C83224](https://www.lcsc.com/product-detail/DC-DC-Converters_XI-AN-Aerosemi-Tech-M3406-ADJ_C83224.html)|SOT-23-5|Step-down type SOT-23-5, 2-6.5 in, 800mA Out|0.025|
 |[RS3236-3-3YUTDN4](https://datasheet.lcsc.com/lcsc/2202251530_Jiangsu-RUNIC-Tech-RS3236-3-3YUTDN4_C379350.pdf)|[C379350](https://www.lcsc.com/product-detail/Linear-Voltage-Regulators-LDO_Jiangsu-RUNIC-Tech-RS3236-3-3YUTDN4_C379350.html)|X-DFN-4|3.3V 500mA LDO|0.0542|
+|[XT1861B362MR-G]()|[C236397](https://www.lcsc.com/product-detail/DC-DC-Converters_NATLINEAR-XT1861B362MR-G_C236397.html)|SOT-23|3.6V Boost LXmax 800mA|0.0511|
+
 
 ## Totally random things
 
@@ -210,7 +223,10 @@ These are ones I've found that are JLCPCB compatible.
 |[TS-1187A-B-A-B](https://datasheet.lcsc.com/lcsc/2002271431_XKB-Connectivity-TS-1187A-B-A-B_C318884.pdf)|[C318884](https://www.lcsc.com/product-detail/Tactile-Switches_XKB-Connectivity-TS-1187A-B-A-B_C318884.html)|Button_Switch_SMD:SW_SPST_TL3342|Cheap Basic Tactile|0.0103|
 |[TSA021](https://datasheet.lcsc.com/lcsc/1912171420_TNK-TSA021_C465987.pdf)|[C465987](https://www.lcsc.com/product-detail/Power-Transformer_TNK-TSA021_C465987.html)|17x13|PoE, Flyback Transformer for converting to 12V|.6953|
 |[MXD8921L](https://datasheet.lcsc.com/lcsc/1912111437_Maxscend-MXD8921L_C462324.pdf)|[C462324](https://www.lcsc.com/product-detail/Low-Noise-Amplifiers-LNA-RF_Maxscend-MXD8921L_C462324.html)|LGA-6(0.7x1.1)|Low Noise Amplifiers (LNA), 13dBm, 600M - 1.0GHz|0.1214|
-|[BDR6122TC](https://datasheet.lcsc.com/lcsc/2207062230_Bardeen-Micro--BDR6122TC_C3975097.pdf)|[C3975097](https://www.lcsc.com/product-detail/Motor-Driver-ICs_Bardeen-Micro-BDR6122TC_C3975097.html)|DFN8-2x2|Motor Driver (Full-bridge)|0.1149|
+|[BDR6122TC](https://datasheet.lcsc.com/lcsc/2207062230_Bardeen-Micro--BDR6122TC_C3975097.pdf)|[C3975097](https://www.lcsc.com/product-detail/Motor-Driver-ICs_Bardeen-Micro-BDR6122TC_C3975097.html)|DFN8-2x2|Motor Driver (Full-bridge) 1A|0.1149|
+|[WD8837LA](https://datasheet.lcsc.com/lcsc/2210150000_Wade-WD8837LA_C2830420.pdf)|[C2830420](https://www.lcsc.com/product-detail/Motor-Driver-ICs_Wade-WD8837LA_C2830420.html)|DFN8-2x2|Motor Driver (Full-bridge), 100mA, 450m, Same footprint as BDR6122|0.1105|
+|[DRV8837CDSGR](https://datasheet.lcsc.com/lcsc/1810291821_Texas-Instruments-DRV8837CDSGR_C191000.pdf)|[C191000](https://www.lcsc.com/product-detail/Motor-Driver-ICs_Texas-Instruments-DRV8837CDSGR_C191000.html)|DFN-8(2x2)|Motor Driver (Full-bridge) 1A/1Ohm|0.1255|
+|[CN8001DHR](https://datasheet.lcsc.com/lcsc/2206231830_Xinbei-Electronics-Technology-CN8001DHR_C3039513.pdf)|[C3039513](https://www.lcsc.com/product-detail/Motor-Driver-ICs_Xinbei-Electronics-Technology-CN8001DHR_C3039513.html)|DFN-8(2x2)|Motor Driver (Full-bridge) 3A/.15Ohm|0.1324|
 |[NCP5901MNTBG](https://datasheet.lcsc.com/lcsc/1809111713_onsemi-NCP5901MNTBG_C154811.pdf)|[C154811](https://www.lcsc.com/product-detail/Gate-Drive-ICs_onsemi-NCP5901MNTBG_C154811.html)|DFN-8 (2x2)|Gate Driver (High-and-low)|0.0879|
 |[AD8317ACPZ-R7](https://datasheet.lcsc.com/lcsc/2009091233_Analog-Devices-AD8317ACPZ-R7_C578693.pdf)|[C578693](https://www.lcsc.com/product-detail/Special-Purpose-Amplifiers_Analog-Devices-AD8317ACPZ-R7_C578693.html)|LFCSP-8 (3x2)|Log Signal Detector|5.1323|
 |[AD8318ACPZ-REEL7](https://datasheet.lcsc.com/lcsc/2009141605_Analog-Devices-AD8318ACPZ-REEL7_C578694.pdf)|[C578694](https://www.lcsc.com/product-detail/RF-Detectors_Analog-Devices-AD8318ACPZ-REEL7_C578694.html)|LFCSP-16|1MHz to 8GHz Log Signal Detector|6.4607|
@@ -222,3 +238,4 @@ These are ones I've found that are JLCPCB compatible.
 |[RPR-0521RS](https://datasheet.lcsc.com/lcsc/2109182030_ROHM-Semicon-RPR-0521RS_C509781.pdf)|[C509781](https://www.lcsc.com/product-detail/Proximity-Sensors_ROHM-Semicon-RPR-0521RS_C509781.html)|SMD-8 (4x2.5)|Prox, and ambient light sensor|0.4519|
 |[GH6210](https://datasheet.lcsc.com/lcsc/2301101530_Goodix-Technology-GH6210_C2960452.pdf)|[C2960452](https://www.lcsc.com/product-detail/Proximity-Sensors_Goodix-Technology-GH6210_C2960452.html)|WLCSP-8(0.9x1.8)|RF Prox, Cap Sensor, with MCU|0.358|
 |[ATB322515-0110-T000](https://datasheet.lcsc.com/lcsc/1912111437_TDK-ATB322515-0110-T000_C415291.pdf)|[C415291](https://www.lcsc.com/product-detail/Power-Transformer_TDK-ATB322515-0110-T000_C415291.html)|3.2 x 2.5|10:1 Flyback Transformer|0.4073|
+|[RFANT3216120A5T](https://datasheet.lcsc.com/lcsc/1810201611_Walsin-Tech-Corp-RFANT3216120A5T_C127629.pdf)|[C127629](https://www.lcsc.com/product-detail/Antennas_Walsin-Tech-Corp-RFANT3216120A5T_C127629.html)|1206|2.4GHz Chip Antenna|0.0642|
