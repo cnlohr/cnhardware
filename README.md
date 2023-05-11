@@ -101,7 +101,8 @@ My random junk repo for random things.
 |[QMA7981](https://datasheet.lcsc.com/lcsc/2004281102_QST-QMA7981_C457290.pdf)|[C457290](https://www.lcsc.com/product-detail/Attitude-Sensor-Gyroscope_QST-QMA7981_C457290.html)|LGA-12(2x2)|Accelerometer, 14-bit, VERY low power LF mode.|0.3071|
 |[QMI8658C](https://datasheet.lcsc.com/lcsc/2108161930_QST-QMI8658C_C2842151.pdf)|[C2842151](https://www.lcsc.com/product-detail/Attitude-Sensor-Gyroscope_QST-QMI8658C_C2842151.html)|LGA-14(2.5x3)|Accelerometer + Gyro + Temp, 16-bit|0.9212|
 |[STK8BA58](https://datasheet.lcsc.com/lcsc/2109101230_SENSORTEK-STK8BA58-LGA-12PIN_C2890989.pdf)|[C2890989](https://www.lcsc.com/product-detail/Attitude-Sensor-Gyroscope_SENSORTEK-STK8BA58-LGA-12PIN_C2890989.html)|LGA-12(2x2)|Not as good as the QMA7981, but slighly cheaper|0.2976|
-
+|[MG1A01](https://datasheet.lcsc.com/lcsc/2106031833_Matrix-Opto-MG1A01_C2837797.pdf)|[C2837797](https://www.lcsc.com/product-detail/Hall-Sensor_Matrix-Opto-MG1A01_C2837797.html)|0.4 x 0.8|300 mT P-P analog Hall effect sensor|0.1096|
+|[QMC6308](https://datasheet.lcsc.com/lcsc/2203021830_QST-QMC6308_C462705.pdf)|[C462705](https://www.lcsc.com/product-detail/Hall-Sensor_QST-QMC6308_C462705.html)|0.8 x 0.8mm|3-axis Magnetometer, 16-bit, +/- 30 Gauss|0.2003|
 
 ## Other Random Things
 
