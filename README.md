@@ -61,6 +61,11 @@ My random junk repo for random things.
 |[1N4448HLP-7](https://datasheet.lcsc.com/lcsc/1912111437_Diodes-Incorporated-1N4448HLP-7_C154874.pdf)|[C154874](https://www.lcsc.com/product-detail/Switching-Diode_Diodes-Incorporated-1N4448HLP-7_C154874.html)|DFN-2(0.6x1)|Switching, 80v, 0.8v, 300mA|0.0232|
 |[PMEG3010AESBYL](https://datasheet.lcsc.com/lcsc/2004031109_Nexperia-PMEG3010AESBYL_C503409.pdf)|[C503409](https://www.lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_Nexperia-PMEG3010AESBYL_C503409.html)|DFN1006-2L|Schottky, 1A,(200mV@10mA),(280mV@100mA) (40pF) Wicked Awesome Case|0.0936|
 
+## TVS
+
+|Datasheet|LCSC|Footprint|Description|Cost 150|
+|--|--|--|--|--|
+|[USBLC6-2P6](https://datasheet.lcsc.com/lcsc/2108132230_TECH-PUBLIC-USBLC6-2P6_C2827693.pdf)|[C2827693](https://www.lcsc.com/product-detail/ESD-Protection-Devices_TECH-PUBLIC-USBLC6-2P6_C2827693.html)|SOT-666-6|USB TVS only 2 TVS channels, 5V Operating Voltage|0.0666|
 
 ## Various LiPo / LiIon Chips
 
