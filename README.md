@@ -124,6 +124,7 @@ My random junk repo for random things.
 |[WS2816B-2121](https://datasheet.lcsc.com/lcsc/2012110135_Worldsemi-WS2816B-2121_C965560.pdf)|[C965560](https://www.lcsc.com/product-detail/Light-Emitting-Diodes-LED_Worldsemi-WS2816B-2121_C965560.html)|[SMD,2.2x2.2mm](https://github.com/cnlohr/cnhardware/blob/master/kicad_parts/WS2816-2121.pretty/WS2816-2121.kicad_mod)|RGB Serial LED with Backup And Data Lines, 20mA (Pretty case)|0.0919|
 |[WS2816C-2121](https://datasheet.lcsc.com/lcsc/2012110135_Worldsemi-WS2816C-2121_C965561.pdf)|[C965561](https://www.lcsc.com/product-detail/Light-Emitting-Diodes-LED_Worldsemi-WS2816C-2121_C965561.html)|[SMD,2.2x2.2mm](https://github.com/cnlohr/cnhardware/blob/master/kicad_parts/WS2816-2121.pretty/WS2816-2121.kicad_mod)|RGB Serial LED with Backup And Data Lines, 10mA (Pretty case)|0.0893|
 |[WS2816B-2020](https://datasheet.lcsc.com/lcsc/2210181730_Worldsemi-WS2816B-2020_C4154877.pdf)|[C4154877](https://www.lcsc.com/product-detail/Light-Emitting-Diodes-LED_Worldsemi-WS2816B-2020_C4154877.html)|SMD,2x2.2mm|RGB Serial LED with Data and Backup, 20mA (more basic case)|0.0787|
+|[SK6805-EC15](https://datasheet.lcsc.com/lcsc/2108251530_OPSCO-Optoelectronics-SK6805-EC15_C2890035.pdf)|[C2890035](https://www.lcsc.com/product-detail/Light-Emitting-Diodes-LED_OPSCO-Optoelectronics-SK6805-EC15_C2890035.html)|SMD,2x2.2mm|RGB Serial LED with Data and Backup, 5mA|0.1312|
 
 
 ## Other Optos
