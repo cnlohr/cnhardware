@@ -109,6 +109,13 @@ My random junk repo for random things.
 |[MG1A01](https://datasheet.lcsc.com/lcsc/2106031833_Matrix-Opto-MG1A01_C2837797.pdf)|[C2837797](https://www.lcsc.com/product-detail/Hall-Sensor_Matrix-Opto-MG1A01_C2837797.html)|0.4 x 0.8|300 mT P-P analog Hall effect sensor|0.1096|
 |[QMC6308](https://datasheet.lcsc.com/lcsc/2203021830_QST-QMC6308_C462705.pdf)|[C462705](https://www.lcsc.com/product-detail/Hall-Sensor_QST-QMC6308_C462705.html)|0.8 x 0.8mm|3-axis Magnetometer, 16-bit, +/- 30 Gauss|0.2003|
 
+## Touch Stuff
+
+
+|Datasheet|LCSC|Footprint|Description|Cost 150|
+|--|--|--|--|--|
+|[AW93105DNR]()|[C5241002](https://www.lcsc.com/product-detail/span-style-background-color-ff0-Touch-span-Sensors_AWINIC-Shanghai-Awinic-Tech-AW93105DNR_C5241002.html)|DFN-10(1.8x2.1)|5-input touch sensor|0.0279|
+
 ## Other Random Things
 
 |Datasheet|LCSC|Footprint|Description|Cost 150|
