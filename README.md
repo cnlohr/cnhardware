@@ -228,7 +228,7 @@ These are ones I've found that are JLCPCB compatible.
 |[M3406-ADJ](https://datasheet.lcsc.com/lcsc/1811151539_XI-AN-Aerosemi-Tech-M3406-ADJ_C83224.pdf)|[C83224](https://www.lcsc.com/product-detail/DC-DC-Converters_XI-AN-Aerosemi-Tech-M3406-ADJ_C83224.html)|SOT-23-5|Step-down type SOT-23-5, 2-6.5 in, 800mA Out|0.025|
 |[RS3236-3-3YUTDN4](https://datasheet.lcsc.com/lcsc/2202251530_Jiangsu-RUNIC-Tech-RS3236-3-3YUTDN4_C379350.pdf)|[C379350](https://www.lcsc.com/product-detail/Linear-Voltage-Regulators-LDO_Jiangsu-RUNIC-Tech-RS3236-3-3YUTDN4_C379350.html)|X-DFN-4|3.3V 500mA LDO|0.0542|
 |[XT1861B362MR-G]()|[C236397](https://www.lcsc.com/product-detail/DC-DC-Converters_NATLINEAR-XT1861B362MR-G_C236397.html)|SOT-23|3.6V Boost LXmax 800mA|0.0511|
-
+|[AMS1117-3.3](https://datasheet.lcsc.com/lcsc/2304140030_Advanced-Monolithic-Systems-AMS1117-3-3_C6186.pdf)|[C6186](https://www.lcsc.com/product-detail/Linear-Voltage-Regulators-LDO_Advanced-Monolithic-Systems-AMS1117-3-3_C6186.html)|SOT-223|awesome cheap and reliable 3.3V fixed output linear regulator with up to 1A driving capability, there is also a 5V variant, both are basic parts at JLCPCB|0.1382|
 
 ## Totally random things
 
