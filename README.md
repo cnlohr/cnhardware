@@ -252,7 +252,7 @@ RF Stuff
 |Datasheet|LCSC|Footprint|Description|Cost 150|
 |--|--|--|--|--|
 |[SB2143392TT](https://datasheet.lcsc.com/lcsc/2108142130_JYJE-SB2143392TT_C2847068.pdf)|[C2847068](https://www.lcsc.com/product-detail/SAW-Resonators_JYJE-SB2143392TT_C2847068.html)|SMD2016-2P|433.92MHz SAW|0.0713|
-|[ADL5350ACPZ-R7](https://datasheet.lcsc.com/lcsc/1809131543_Analog-Devices-ADL5350ACPZ-R7_C206667.pdf)|[C206667](https://www.lcsc.com/product-detail/RF-Mixers_Analog-Devices-ADL5350ACPZ-R7_C206667.html)|DFN-8-EP(2x3)|750MHz to 4GHz mixer|
+|[ADL5350ACPZ-R7](https://datasheet.lcsc.com/lcsc/1809131543_Analog-Devices-ADL5350ACPZ-R7_C206667.pdf)|[C206667](https://www.lcsc.com/product-detail/RF-Mixers_Analog-Devices-ADL5350ACPZ-R7_C206667.html)|DFN-8-EP(2x3)|750MHz to 4GHz mixer|1.8789|
 |[B21D339210A010CT](https://datasheet.lcsc.com/lcsc/2211080930_JGHC-B21D339210A010CT_C5240375.pdf)|[C5240375](https://www.lcsc.com/product-detail/SAW-Oscillators_JGHC-B21D339210A010CT_C5240375.html)|SMD2016-2P|433.92MHz SAW|0.0593|
 |[RFANT3216120A5T](https://datasheet.lcsc.com/lcsc/1810201611_Walsin-Tech-Corp-RFANT3216120A5T_C127629.pdf)|[C127629](https://www.lcsc.com/product-detail/Antennas_Walsin-Tech-Corp-RFANT3216120A5T_C127629.html)|1206|2.4GHz Chip Antenna|0.0642|
 |[MAX2870ETJ](https://datasheet.lcsc.com/lcsc/2212222008_Maxim-Integrated-MAX2870ETJ-_C5181325.pdf)|[C5181325](https://www.lcsc.com/product-detail/Clock-Generators-Frequency-Synthesizers-PLL_Maxim-Integrated-MAX2870ETJ_C5181325.html)|TQFN-32(5x5)|Frequency Synthesizer 23.5MHz to 6.0GHz|17.28|
