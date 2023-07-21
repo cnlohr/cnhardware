@@ -234,8 +234,6 @@ These are ones I've found that are JLCPCB compatible.
 
 |Datasheet|LCSC|Footprint|Description|Cost 150|
 |--|--|--|--|--|
-|[SB2143392TT](https://datasheet.lcsc.com/lcsc/2108142130_JYJE-SB2143392TT_C2847068.pdf)|[C2847068](https://www.lcsc.com/product-detail/SAW-Resonators_JYJE-SB2143392TT_C2847068.html)|SMD2016-2P|433.92MHz SAW|0.0713|
-|[B21D339210A010CT](https://datasheet.lcsc.com/lcsc/2211080930_JGHC-B21D339210A010CT_C5240375.pdf)|[C5240375](https://www.lcsc.com/product-detail/SAW-Oscillators_JGHC-B21D339210A010CT_C5240375.html)|SMD2016-2P|433.92MHz SAW|0.0593|
 |[TS-1187A-B-A-B](https://datasheet.lcsc.com/lcsc/2002271431_XKB-Connectivity-TS-1187A-B-A-B_C318884.pdf)|[C318884](https://www.lcsc.com/product-detail/Tactile-Switches_XKB-Connectivity-TS-1187A-B-A-B_C318884.html)|Button_Switch_SMD:SW_SPST_TL3342|Cheap Basic Tactile|0.0103|
 |[TSA021](https://datasheet.lcsc.com/lcsc/1912171420_TNK-TSA021_C465987.pdf)|[C465987](https://www.lcsc.com/product-detail/Power-Transformer_TNK-TSA021_C465987.html)|17x13|PoE, Flyback Transformer for converting to 12V|.6953|
 |[MXD8921L](https://datasheet.lcsc.com/lcsc/1912111437_Maxscend-MXD8921L_C462324.pdf)|[C462324](https://www.lcsc.com/product-detail/Low-Noise-Amplifiers-LNA-RF_Maxscend-MXD8921L_C462324.html)|LGA-6(0.7x1.1)|Low Noise Amplifiers (LNA), 13dBm, 600M - 1.0GHz|0.1214|
@@ -244,14 +242,21 @@ These are ones I've found that are JLCPCB compatible.
 |[DRV8837CDSGR](https://datasheet.lcsc.com/lcsc/1810291821_Texas-Instruments-DRV8837CDSGR_C191000.pdf)|[C191000](https://www.lcsc.com/product-detail/Motor-Driver-ICs_Texas-Instruments-DRV8837CDSGR_C191000.html)|DFN-8(2x2)|Motor Driver (Full-bridge) 1A/1Ohm|0.1255|
 |[CN8001DHR](https://datasheet.lcsc.com/lcsc/2206231830_Xinbei-Electronics-Technology-CN8001DHR_C3039513.pdf)|[C3039513](https://www.lcsc.com/product-detail/Motor-Driver-ICs_Xinbei-Electronics-Technology-CN8001DHR_C3039513.html)|DFN-8(2x2)|Motor Driver (Full-bridge) 3A/.15Ohm|0.1324|
 |[NCP5901MNTBG](https://datasheet.lcsc.com/lcsc/1809111713_onsemi-NCP5901MNTBG_C154811.pdf)|[C154811](https://www.lcsc.com/product-detail/Gate-Drive-ICs_onsemi-NCP5901MNTBG_C154811.html)|DFN-8 (2x2)|Gate Driver (High-and-low)|0.0879|
-|[AD8317ACPZ-R7](https://datasheet.lcsc.com/lcsc/2009091233_Analog-Devices-AD8317ACPZ-R7_C578693.pdf)|[C578693](https://www.lcsc.com/product-detail/Special-Purpose-Amplifiers_Analog-Devices-AD8317ACPZ-R7_C578693.html)|LFCSP-8 (3x2)|Log Signal Detector|5.1323|
-|[AD8318ACPZ-REEL7](https://datasheet.lcsc.com/lcsc/2009141605_Analog-Devices-AD8318ACPZ-REEL7_C578694.pdf)|[C578694](https://www.lcsc.com/product-detail/RF-Detectors_Analog-Devices-AD8318ACPZ-REEL7_C578694.html)|LFCSP-16|1MHz to 8GHz Log Signal Detector|6.4607|
-|[MAX2870ETJ](https://datasheet.lcsc.com/lcsc/2212222008_Maxim-Integrated-MAX2870ETJ-_C5181325.pdf)|[C5181325](https://www.lcsc.com/product-detail/Clock-Generators-Frequency-Synthesizers-PLL_Maxim-Integrated-MAX2870ETJ_C5181325.html)|TQFN-32(5x5)|Frequency Synthesizer 23.5MHz to 6.0GHz|17.28|
-|[AD8314ARMZ-REEL7](https://datasheet.lcsc.com/lcsc/2012060304_Analog-Devices-AD8314ARMZ-REEL7_C459906.pdf)|[C459906](https://www.lcsc.com/product-detail/RF-Detectors_Analog-Devices-AD8314ARMZ-REEL7_C459906.html)|MSOP-8|Log Detector 100 MHz to 2.7 GHz|1.4557|
-|[AD8313ARMZ-REEL7](https://datasheet.lcsc.com/lcsc/2001132235_Analog-Devices-AD8313ARMZ-REEL7_C481897.pdf)|[C481897](https://www.lcsc.com/product-detail/RF-Detectors_Analog-Devices-AD8313ARMZ-REEL7_C481897.html)|MSOP-8|Log Detector 0.1 MHz to 2.7 GHz|4.838|
 |[LTR-553ALS-WA](https://datasheet.lcsc.com/lcsc/1912111437_Lite-On-LTR-553ALS-WA_C408178.pdf)|[C408178](https://www.lcsc.com/product-detail/New-Arrivals_Lite-On-LTR-553ALS-WA_C408178.html)|8-SMD (4x2)|ALS + Proximity Sensor|0.2466|
 |[VL53L0CXV0DH-1](https://datasheet.lcsc.com/lcsc/1811101103_STMicroelectronics-VL53L0CXV0DH-1_C91199.pdf)|[C91199](https://www.lcsc.com/product-detail/Position-Sensor_STMicroelectronics-VL53L0CXV0DH-1_C91199.html)|LGA-12 (4.4x2.4)|Time Of Flight / Gesture Sensor|1.5544|
 |[RPR-0521RS](https://datasheet.lcsc.com/lcsc/2109182030_ROHM-Semicon-RPR-0521RS_C509781.pdf)|[C509781](https://www.lcsc.com/product-detail/Proximity-Sensors_ROHM-Semicon-RPR-0521RS_C509781.html)|SMD-8 (4x2.5)|Prox, and ambient light sensor|0.4519|
 |[GH6210](https://datasheet.lcsc.com/lcsc/2301101530_Goodix-Technology-GH6210_C2960452.pdf)|[C2960452](https://www.lcsc.com/product-detail/Proximity-Sensors_Goodix-Technology-GH6210_C2960452.html)|WLCSP-8(0.9x1.8)|RF Prox, Cap Sensor, with MCU|0.358|
 |[ATB322515-0110-T000](https://datasheet.lcsc.com/lcsc/1912111437_TDK-ATB322515-0110-T000_C415291.pdf)|[C415291](https://www.lcsc.com/product-detail/Power-Transformer_TDK-ATB322515-0110-T000_C415291.html)|3.2 x 2.5|10:1 Flyback Transformer|0.4073|
+
+RF Stuff
+|Datasheet|LCSC|Footprint|Description|Cost 150|
+|--|--|--|--|--|
+|[SB2143392TT](https://datasheet.lcsc.com/lcsc/2108142130_JYJE-SB2143392TT_C2847068.pdf)|[C2847068](https://www.lcsc.com/product-detail/SAW-Resonators_JYJE-SB2143392TT_C2847068.html)|SMD2016-2P|433.92MHz SAW|0.0713|
+|[ADL5350ACPZ-R7](https://datasheet.lcsc.com/lcsc/1809131543_Analog-Devices-ADL5350ACPZ-R7_C206667.pdf)|[C206667](https://www.lcsc.com/product-detail/RF-Mixers_Analog-Devices-ADL5350ACPZ-R7_C206667.html)|DFN-8-EP(2x3)|750MHz to 4GHz mixer|
+|[B21D339210A010CT](https://datasheet.lcsc.com/lcsc/2211080930_JGHC-B21D339210A010CT_C5240375.pdf)|[C5240375](https://www.lcsc.com/product-detail/SAW-Oscillators_JGHC-B21D339210A010CT_C5240375.html)|SMD2016-2P|433.92MHz SAW|0.0593|
 |[RFANT3216120A5T](https://datasheet.lcsc.com/lcsc/1810201611_Walsin-Tech-Corp-RFANT3216120A5T_C127629.pdf)|[C127629](https://www.lcsc.com/product-detail/Antennas_Walsin-Tech-Corp-RFANT3216120A5T_C127629.html)|1206|2.4GHz Chip Antenna|0.0642|
+|[MAX2870ETJ](https://datasheet.lcsc.com/lcsc/2212222008_Maxim-Integrated-MAX2870ETJ-_C5181325.pdf)|[C5181325](https://www.lcsc.com/product-detail/Clock-Generators-Frequency-Synthesizers-PLL_Maxim-Integrated-MAX2870ETJ_C5181325.html)|TQFN-32(5x5)|Frequency Synthesizer 23.5MHz to 6.0GHz|17.28|
+|[AD8314ARMZ-REEL7](https://datasheet.lcsc.com/lcsc/2012060304_Analog-Devices-AD8314ARMZ-REEL7_C459906.pdf)|[C459906](https://www.lcsc.com/product-detail/RF-Detectors_Analog-Devices-AD8314ARMZ-REEL7_C459906.html)|MSOP-8|Log Detector 100 MHz to 2.7 GHz|1.4557|
+|[AD8313ARMZ-REEL7](https://datasheet.lcsc.com/lcsc/2001132235_Analog-Devices-AD8313ARMZ-REEL7_C481897.pdf)|[C481897](https://www.lcsc.com/product-detail/RF-Detectors_Analog-Devices-AD8313ARMZ-REEL7_C481897.html)|MSOP-8|Log Detector 0.1 MHz to 2.7 GHz|4.838|
+|[AD8317ACPZ-R7](https://datasheet.lcsc.com/lcsc/2009091233_Analog-Devices-AD8317ACPZ-R7_C578693.pdf)|[C578693](https://www.lcsc.com/product-detail/Special-Purpose-Amplifiers_Analog-Devices-AD8317ACPZ-R7_C578693.html)|LFCSP-8 (3x2)|Log Signal Detector|5.1323|
+|[AD8318ACPZ-REEL7](https://datasheet.lcsc.com/lcsc/2009141605_Analog-Devices-AD8318ACPZ-REEL7_C578694.pdf)|[C578694](https://www.lcsc.com/product-detail/RF-Detectors_Analog-Devices-AD8318ACPZ-REEL7_C578694.html)|LFCSP-16|1MHz to 8GHz Log Signal Detector|6.4607|
