@@ -98,6 +98,9 @@ My random junk repo for random things.
 |[W25Q64JVXGIQ](https://datasheet.lcsc.com/lcsc/2201121830_Winbond-Elec-W25Q64JVXGIQ_C2940195.pdf)|[C2940195](https://www.lcsc.com/product-detail/NOR-FLASH_Winbond-Elec-W25Q64JVXGIQ_C2940195.html)|USON-4x4|3.0-3.6V, 64Mbit, Dual, Quad SPI|.4964|
 
 ## RAM
+
+|Datasheet|LCSC|Footprint|Description|Cost 150|
+|--|--|--|--|--|
 |[VTI7064MSME](https://datasheet.lcsc.com/lcsc/1811151432_Vilsion-Tech-VTI7064MSME_C139966.pdf)|[C139966](https://www.lcsc.com/product-detail/SRAM_Vilsion-Tech-VTI7064MSME_C139966.html)|SOP-8 (4.8mm pad centers)|64-MBit PSRAM 2.7-3.3V|3.7339|
 
 ## IMUs, Accelerometers, Gyros, Magnetometers
