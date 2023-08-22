@@ -97,6 +97,12 @@ My random junk repo for random things.
 |[GD25Q128ESIGR](https://datasheet.lcsc.com/lcsc/2204011730_GigaDevice-Semicon-Beijing-GD25Q128EWIG_C2986327.pdf)|[C2928891](https://www.lcsc.com/product-detail/span-style-background-color-ff0-NOR-span-span-style-background-color-ff0-FLASH-span_GigaDevice-Semicon-Beijing-GD25Q128ESIGR_C2928891.html)|SOP-8-208mil|128 Mbit (16MByte) Flash Chip|0.7588|
 |[W25Q64JVXGIQ](https://datasheet.lcsc.com/lcsc/2201121830_Winbond-Elec-W25Q64JVXGIQ_C2940195.pdf)|[C2940195](https://www.lcsc.com/product-detail/NOR-FLASH_Winbond-Elec-W25Q64JVXGIQ_C2940195.html)|USON-4x4|3.0-3.6V, 64Mbit, Dual, Quad SPI|.4964|
 
+## RAM
+
+|Datasheet|LCSC|Footprint|Description|Cost 150|
+|--|--|--|--|--|
+|[VTI7064MSME](https://datasheet.lcsc.com/lcsc/1811151432_Vilsion-Tech-VTI7064MSME_C139966.pdf)|[C139966](https://www.lcsc.com/product-detail/SRAM_Vilsion-Tech-VTI7064MSME_C139966.html)|SOP-8 (4.8mm pad centers)|64-MBit PSRAM 2.7-3.3V|3.7339|
+
 ## IMUs, Accelerometers, Gyros, Magnetometers
 
 |Datasheet|LCSC|Footprint|Description|Cost 150|
@@ -187,6 +193,7 @@ These are ones I've found that are JLCPCB compatible.
 |[0402CG101J500NT](https://datasheet.lcsc.com/lcsc/1810151218_FH--Guangdong-Fenghua-Advanced-Tech-0402CG101J500NT_C1546.pdf)|[C1546](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_FH-Guangdong-Fenghua-Advanced-Tech-0402CG101J500NT_C1546.html)|0402|100pF 50v 0402 Capacitor|0.0005|
 |[CL05B104KO5NNNC](https://datasheet.lcsc.com/lcsc/1810191219_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.pdf)|[C1525](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html)|0402|100nF 16v 0402|0.0011|
 |[CL05A106MP5NUNC](https://datasheet.lcsc.com/lcsc/2007131004_Samsung-Electro-Mechanics-CL05A106MP5NUNC_C315248.pdf)|[C315248](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05A106MP5NUNC_C315248.html)|0402|10uF 10v 0402|0.0108|
+|[0402F333M500NT](https://datasheet.lcsc.com/lcsc/2304140030_FH--Guangdong-Fenghua-Advanced-Tech-0402F333M500NT_C1585.pdf)|[C1585](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_FH-Guangdong-Fenghua-Advanced-Tech-0402F333M500NT_C1585.html)|0402|33nF 50v 0402 BASIC|0.0027|
 |[CL05A106MQ5NUNC](https://datasheet.lcsc.com/lcsc/2208231630_Samsung-Electro-Mechanics-CL05A106MQ5NUNC_C15525.pdf)|[C15525](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05A106MQ5NUNC_C15525.html)|0402|10uF 6.3v 0402 BASIC PART|0.0056|
 |[CL05A105KA5NQNC](https://datasheet.lcsc.com/lcsc/1811091611_Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf)|[C52923](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.html)|0402|1uF 25v 0402 BASIC PART|0.0039|
 |[0603X225K250NT](https://datasheet.lcsc.com/lcsc/1810241343_YAGEO-AC0402FR-0724K3L_C226370.pdf)|[C99227](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_FH-Guangdong-Fenghua-Advanced-Tech-0603X225K250NT_C99227.html)|0603|2.2uF 25v|0.0095|
