@@ -130,6 +130,9 @@ My random junk repo for random things.
 |[0.5K-QX-5PWB](https://datasheet.lcsc.com/lcsc/2111151830_HDGC-0-5K-QX-5PWB_C2919476.pdf)|[C2919476](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_HDGC-0-5K-QX-5PWB_C2919476.html)|-|0.5mm Pitch Flex 5-Pin Top-And-Bottom Connector "Bottom Only"|0.0848|
 |[X05A10H06G](https://datasheet.lcsc.com/lcsc/2110111330_XKB-Connectivity-X05A10H06G_C528032.pdf)|[C528032](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_XKB-Connectivity-X05A10H06G_C528032.html)|[Flex Footprint](https://github.com/cnlohr/cnhardware/blob/master/kicad_parts/XCB-FPC-DS-06-0.5mm.pretty/XCB-FPC-DS-06-0.5mm.kicad_mod)|0.5mm Pitch Flex 6-Pin Top-And-Bottom Connector, Good for non-joycon replacement Joysticks|0.1503|
 |[HCTL-HC-FPC-05-09-6RLTAG](https://datasheet.lcsc.com/lcsc/2210261730_HCTL-HC-FPC-05-09-6RLTAG_C5213748.pdf)|[C5213748](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_HCTL-HC-FPC-05-09-6RLTAG_C5213748.html)|--|0.5mm Pitch Flex Connnector 6 Pin, Bottom-Only|0.0362|
+|[HCTL-XW05202-240R-00](https://datasheet.lcsc.com/lcsc/2311061541_HCTL-XW05202-240R-00_C2906121.pdf)|[C2906121](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_HCTL-XW05202-240R-00_C2906121.html)|--|0.5mm Pitch Flex Connector 24 Pin, Bottom-Only|0.0775|
+
+
 
 ## Smart LEDs
 |Datasheet|LCSC|Footprint|Description|Cost 150|
