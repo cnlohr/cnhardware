@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<LINK rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+<META charset="UTF-8">
+<STYLE>
+body { background-color: Canvas; color: CanvasText; }
+:root { color-scheme: dark; }
+input.bad-input, textarea { background: rgba(255.0, 0.0, 0.0, 0.2 ); }
+</STYLE>
+
+<SCRIPT>
+var chipSelect = "";
+
+function getClock( lname )
+{
+	return clocks.find( (element) => element.name == lname );
+}
+
+function iterateOptions( ths )
+{
+	if( ths.locked ) return false;
+
+	var next = ths.selopt + 1;
+	if( ths.selopt == ths.optionValues.length )
+	{
+		this.selopt = 0;
+		return false;
+	}
+	else
+	{
+		this.selopt = next;
+		return true;
+	}
+}
+
+
+function computePrediv2( ths )
+{
+	ths.value = getClock( "HSE" ).value / ths.options[ths.selIndex];
+}
+function computePLL2( ths )
+{
+	ths.value = getClock( "PREDIV2" ).value * ths.options[ths.selIndex];
+}
+
+function computePLL2VCO( ths )
+{
+	ths.value = getClock( "PLL2CLK" ).value * 2;
+}
+
+function computePLL3( ths )
+{
+	ths.value = getClock( "PREDIV2" ).value * ths.options[ths.selIndex];
+}
+
+function computePLL3VCO( ths )
+{
+	ths.value = getClock( "PLL3CLK" ).value * 2;
+}
+
+function computePREDIV1SRC( ths )
+{
+	ths.value = getClock( ths.selIndex ? "HSE" : "PLL2CLK" ).value;
+}
+
+function computePrediv1( ths )
+{
+	ths.value = getClock( "PREDIV1SRC" ).value / ths.options[ths.selIndex];
+}
+
+function computePLLSRC( ths )
+{
+	if( chipSelect == "d8c" )
+		ths.value = getClock( ths.selIndex ? "HSE" : "PREDIV1" ).value;
+	else if( chipSelect == "v23def" )
+		ths.value = getClock( ths.selIndex ? "HSE" : "PREDIV1" ).value;
+	else if( chipSelect == "d8w" )
+		ths.value = ths.selIndex ? (getClock( "HSE" ).value / 2) : getClock("PREDIV1" ).value;
+	else
+	{
+		ths.value = -5;
+	}
+}
+
+function computePLL( ths )
+{
+	ths.value = getClock( "PLLSRC" ).value * ths.options[ths.selIndex];
+}
+
+function computePLLVCO( ths )
+{
+	ths.value = getClock( "PLL" ).value * 2;
+}
+
+function computeSYSCLK( ths )
+{
+	ths.value = getClock( ths.options[ths.selIndex] ).value;
+}
+
+
+// Shadow parameters:
+//  .value = MHz
+//  .selIndex = index of selected option.
+//  .locked = target locking this value.
+
+var clocks = [
+	{ default : 8,    min : 8,  max : 8,  name : "HSI",          locked : true,  forceLocked : true, changable : false, type : "text" },
+	{ default : 24,   min : 3,  max : 25,  name : "HSE",         locked : true,  forceLocked : true, changable : true, type : "text" },
+	{ default : 24,   min : 3,  max : 25,  name : "PREDIV2",     locked : true, changable : true, type : "select",
+		options : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ],
+		optionValues : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ],
+		defaultOption : 3,
+		computeFunction : computePrediv2,
+		iterateFunction : iterateOptions,
+	},
+	{ default : 62.5, min : 30, max : 75, name : "PLL2CLK",     locked : true, changable : true, type : "select",
+		options : [ 2.5, 12.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,15, 16, 20 ],
+		optionValues : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ],
+		defaultOption : 4,
+		computeFunction : computePLL2,
+		iterateFunction : iterateOptions,
+	},
+	{ default : 125,  min : 60, max : 150,  name : "PLL2VCO",     locked : true, changable : false, computeFunction : computePLL2VCO, type : "text" },
+
+	{ default : 62.5, min : 30, max : 75, name : "PLL3CLK",     locked : true,  type : "select", changable : true,
+		options : [ 2.5, 12.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,15, 16, 20 ],
+		optionValues : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ],
+		defaultOption : 4,
+		computeFunction : computePLL3,
+		iterateFunction : iterateOptions,
+	},
+	{ default : 125,  min : 60, max : 150,  name : "PLL3VCO",     locked : true, changable : false, computeFunction : computePLL3VCO, type : "text" },
+
+	{ default : 8,   min : 3,  max : 150, name : "PREDIV1SRC",    locked : true, changable : true, type : "select",
+		options : [ "PLL2", "HSE" ],
+		optionValues : [ 0, 1 ],
+		defaultOption : 0,
+		computeFunction : computePREDIV1SRC,
+		iterateFunction : iterateOptions,
+	},
+
+	{ default : 8,   min : 3,  max : 150,  name : "PREDIV1",     locked : true, type : "select", changable : true, 
+		options : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ],
+		optionValues : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ],
+		defaultOption : 2,
+		computeFunction : computePrediv1,
+		iterateFunction : iterateOptions,
+	},
+
+
+	{ default : 8, min : 3, max : 25, name : "PLLSRC",           locked : true, type : "select", changable : true, 
+		options : [ "PREDIV1", "HSI" ],
+		optionValues : [ 0, 1 ],
+		defaultOption : 0,
+		computeFunction : computePLLSRC,
+		iterateFunction : iterateOptions,
+	},
+
+	{ default : 72, min : 30, max : 75, name : "PLL",            locked : true, type : "select", changable : true, 
+		options : [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18 ],
+		optionValues : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ],
+		defaultOption : 4,
+		computeFunction : computePLL,
+		iterateFunction : iterateOptions,
+	},
+	{ default : 144,  min : 60, max : 150,  name : "PLLVCO",     locked : true, changable : false, computeFunction : computePLLVCO, type : "text" },
+
+	{ default : 144, min : 1,   max : 150, name : "SYSCLK" ,     locked : true, changable : true, type : "select",
+		options : [  "HSI", "HSE", "PLLVCO" ],
+		optionValues : [ 0, 1, 2 ],
+		defaultOption : 2,
+		computeFunction : computeSYSCLK,
+		iterateFunction : iterateOptions,
+	},
+];
+
+function fieldUpdateText( e, fieldID )
+{
+	clocks[fieldID].value = e.value;
+	solve();
+}
+
+function fieldUpdateSelect( ths, fieldID )
+{
+	clocks[fieldID].selIndex = ths.value;
+	solve();
+}
+
+function updateOutput()
+{
+	for( var i = 0; i < clocks.length; i++ )
+	{
+		let c = clocks[i];
+		let tb = document.getElementById( c.name + "_text" );
+		tb.value = c.value;
+		if( c.value < c.min || c.value > c.max )
+			tb.classList.add("bad-input");
+		else
+			tb.classList.remove("bad-input");
+
+		if( c.type == "select" )
+		{
+			console.log( c.name + " " + c.selIndex );
+			document.getElementById( c.name + "_sel" ).value = c.selIndex;
+		}
+		if( c.changable )
+		{
+			document.getElementById( c.name + "_locked" ).checked = c.locked;
+		}
+	}
+}
+
+function solve()
+{
+	for( var i = 0; i < clocks.length; i++ )
+	{
+		let c = clocks[i];
+		if( c.computeFunction != undefined )
+		{
+			c.computeFunction( c );
+		}
+	}
+
+	updateOutput();
+}
+
+function onLoad()
+{
+	onCSChange();
+	solve();
+}
+
+function wheelSel(ths, e, i)
+{
+	if( ths.hasFocus ) return;
+	console.log( ths.selectedIndex );
+	let c = clocks[i];
+	if( e.deltaY < 0 )
+		ths.selectedIndex = 8;
+		//ths.selectedIndex = Math.max(ths.selectedIndex - 1, 0);
+	if (e.deltaY > 0)
+		ths.selectedIndex = 6;
+		//ths.selectedIndex = Math.min(ths.selectedIndex + 1, ths.length - 1);
+	//ths.value = clocks[i].optionValues[ths.selectedIndex];
+	console.log( Math.min(ths.selectedIndex + 1, ths.length - 1) );
+	console.log( ths.selectedIndex );
+	fieldUpdateSelect( this, i );
+	solve();
+}
+
+function onCSChange()
+{
+	chipSelect = document.getElementById("chipSelect").value;
+
+	if( chipSelect == "d8c" )
+	{
+		getClock( "PLL" ).options = [ 18, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 6.5, 15, 16 ];
+	}
+
+	for( var i = 0; i < clocks.length; i++ )
+	{
+		let c = clocks[i];
+		c.value = c.default;
+		if( c.type == "select" )
+		{
+			c.selIndex = c.defaultOption;
+		}
+	}	
+
+	var tabhtml = "<TABLE>";
+
+	for( var i = 0; i < clocks.length; i++ )
+	{
+		let c = clocks[i];
+		tabhtml += `<TR><TD>${c.name}</TD>`;
+		//if( c.type == "text" )
+		var enableText = (c.changable && c.type == "text");
+		tabhtml += `<TD><INPUT SIZE=8 ID="${c.name}_text" VALUE=${c.default} ONCHANGE="fieldUpdateText(this, ${i});" ONKEYUP="fieldUpdateText(this, ${i});"${enableText ?"":"DISABLED" } >`;
+		tabhtml += `</TD><TD>${c.min}-${c.max}</TD>`;
+		if( c.changable )
+		{
+			tabhtml += `<TD><INPUT TYPE=CHECKBOX ID="${c.name}_locked" VALUE="${c.locked}"></TD>`;
+		}
+		else
+		{
+			tabhtml += `<TD></TD>`;
+		}
+		if( c.type == "select" )
+		{
+			tabhtml += `<TD><SELECT ID="${c.name}_sel" VALUE=${c.selIndex} ONCHANGE="fieldUpdateSelect(this, ${i});" ONWHEEL="wheelSel(this, event, ${i});" >`;
+			for( var j = 0; j < c.options.length; j++ )
+			{
+				tabhtml += `<OPTION VALUE="${c.optionValues[j]}">${c.options[j]}</OPTION>`
+			}
+			tabhtml += `</SELECT></TD>`;
+		}
+		else
+		{
+			tabhtml += "<TD></TD>";
+		}
+		tabhtml += `</TR>`;
+	}
+
+	tabhtml += "</TABLE>";
+
+	tableConstraints = document.getElementById( "tableConstraints" );
+	tableConstraints.innerHTML = tabhtml;
+}
+
+</SCRIPT>
+
+</HEAD>
+<BODY onLoad="onLoad();">
+
+<SELECT ID="chipSelect" onChange="onCSChange();">
+<OPTION VALUE="d8c">CH32V30x_D8C, CH32V31x_D8C</option>
+<OPTION VALUE="v23def">CH32V20x_D6, CH32V20x_D8</option>
+<OPTION VALUE="d8w">CH32V20x_D8W, CH32V30x_D8</option>
+</SELECT>
+
+<DIV ID=tableConstraints></DIV>
+<!--
+<TABLE>
+<TR><TD>Input Clock</TD><TD><INPUT TYPE=TEXT ID=clk0 VALUE="24">MHz <INPUT TYPE=CHECKBOX ID=clkInputCheck NAME="Fix" CHECKED> <DIV ID="clk0range"></DIV></TD></TR>
+<TR><TD>PLL2CLK</TD><TD><INPUT TYPE=TEXT ID=clk1 VALUE="125">MHz <INPUT TYPE=CHECKBOX ID=clkInputCheck NAME="Fix" CHECKED> <DIV ID="clk1range"></DIV></TD></TR>
+<TR><TD>PLL2VCO</TD><TD><INPUT TYPE=TEXT ID=clk2 VALUE="60">MHz <INPUT TYPE=CHECKBOX ID=clkInputCheck NAME="Fix"><DIV ID="clk2range"></DIV></TD></TR>
+<TR><TD>PLL3CLK</TD><TD><INPUT TYPE=TEXT ID=clk1 VALUE="60">MHz <INPUT TYPE=CHECKBOX ID=clkInputCheck NAME="Fix" CHECKED><DIV ID="clk3range"></DIV></TD></TR>
+<TR><TD>PLL3VCO</TD><TD><INPUT TYPE=TEXT ID=clk2 VALUE="60">MHz <INPUT TYPE=CHECKBOX ID=clkInputCheck NAME="Fix"><DIV ID="clk4range"></DIV></TD></TR>
+</TABLE>
+-->
+
+General notes:
+<OL>
+<LI>If using 10Mbit ethernet, PLL3CLK needs to be 60MHz.
+<LI>If using GbE, PLL3VCO needs to be 125MHz.
+</OL>
+
+</BODY>
+</HTML>
