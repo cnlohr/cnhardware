@@ -10,6 +10,10 @@ input.bad-input, textarea { background: rgba(255.0, 0.0, 0.0, 0.2 ); }
 </STYLE>
 
 <SCRIPT>
+// TODO: Update URL at top with all values populated.
+// TODO: Handle solving
+// TODO: Solve in web worker?
+
 var chipSelect = "";
 
 function getClock( lname )
@@ -71,6 +75,7 @@ function computePrediv1( ths )
 
 function computePLLSRC( ths )
 {
+console.log( ">>>>" + ths.selIndex );
 	if( chipSelect == "d8c" )
 		ths.value = getClock( ths.selIndex ? "HSE" : "PREDIV1" ).value;
 	else if( chipSelect == "v23def" )
@@ -103,8 +108,8 @@ function computeSYSCLK( ths )
 //  .value = MHz
 //  .selIndex = index of selected option.
 //  .locked = target locking this value.
-
-var clocks = [
+var clocks = null;
+var clocks_ch32vx05_7 = [
 	{ default : 8,    min : 8,  max : 8,  name : "HSI",          locked : true,  forceLocked : true, changable : false, type : "text" },
 	{ default : 24,   min : 3,  max : 25,  name : "HSE",         locked : true,  forceLocked : true, changable : true, type : "text" },
 	{ default : 24,   min : 3,  max : 25,  name : "PREDIV2",     locked : true, changable : true, type : "select",
@@ -183,7 +188,7 @@ function fieldUpdateText( e, fieldID )
 
 function fieldUpdateSelect( ths, fieldID )
 {
-	clocks[fieldID].selIndex = ths.value;
+	clocks[fieldID].selIndex = Number( ths.value );
 	solve();
 }
 
@@ -237,15 +242,16 @@ function wheelSel(ths, e, i)
 	console.log( ths.selectedIndex );
 	let c = clocks[i];
 	if( e.deltaY < 0 )
-		ths.selectedIndex = 8;
-		//ths.selectedIndex = Math.max(ths.selectedIndex - 1, 0);
+	//	ths.selectedIndex = 8;
+		ths.selectedIndex = Math.max(ths.selectedIndex - 1, 0);
 	if (e.deltaY > 0)
-		ths.selectedIndex = 6;
-		//ths.selectedIndex = Math.min(ths.selectedIndex + 1, ths.length - 1);
-	//ths.value = clocks[i].optionValues[ths.selectedIndex];
+	//	ths.selectedIndex = 6;
+		ths.selectedIndex = Math.min(ths.selectedIndex + 1, ths.length - 1);
+	ths.selIndex = Number(ths.selectedIndex);
+	ths.value = clocks[i].optionValues[ths.selIndex];
 	console.log( Math.min(ths.selectedIndex + 1, ths.length - 1) );
 	console.log( ths.selectedIndex );
-	fieldUpdateSelect( this, i );
+	fieldUpdateSelect( ths, i );
 	solve();
 }
 
@@ -253,9 +259,15 @@ function onCSChange()
 {
 	chipSelect = document.getElementById("chipSelect").value;
 
-	if( chipSelect == "d8c" )
+	chipType = chipSelect.split(",");
+	console.log( chipType );
+	if( chipType[0] === "ch32vx05_7" )
 	{
-		getClock( "PLL" ).options = [ 18, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 6.5, 15, 16 ];
+		clocks = clocks_ch32vx05_7;
+		if( chipType[1] === "d8c" )
+		{
+			getClock( "PLL" ).options = [ 18, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 6.5, 15, 16 ];
+		}
 	}
 
 	for( var i = 0; i < clocks.length; i++ )
@@ -314,21 +326,12 @@ function onCSChange()
 <BODY onLoad="onLoad();">
 
 <SELECT ID="chipSelect" onChange="onCSChange();">
-<OPTION VALUE="d8c">CH32V30x_D8C, CH32V31x_D8C</option>
-<OPTION VALUE="v23def">CH32V20x_D6, CH32V20x_D8</option>
-<OPTION VALUE="d8w">CH32V20x_D8W, CH32V30x_D8</option>
+<OPTION VALUE="ch32vx05_7,d8c">CH32V30x_D8C, CH32V31x_D8C</option>
+<OPTION VALUE="ch32vx05_7,v23def">CH32V20x_D6, CH32V20x_D8</option>
+<OPTION VALUE="ch32vx05_7,d8w">CH32V20x_D8W, CH32V30x_D8</option>
 </SELECT>
 
 <DIV ID=tableConstraints></DIV>
-<!--
-<TABLE>
-<TR><TD>Input Clock</TD><TD><INPUT TYPE=TEXT ID=clk0 VALUE="24">MHz <INPUT TYPE=CHECKBOX ID=clkInputCheck NAME="Fix" CHECKED> <DIV ID="clk0range"></DIV></TD></TR>
-<TR><TD>PLL2CLK</TD><TD><INPUT TYPE=TEXT ID=clk1 VALUE="125">MHz <INPUT TYPE=CHECKBOX ID=clkInputCheck NAME="Fix" CHECKED> <DIV ID="clk1range"></DIV></TD></TR>
-<TR><TD>PLL2VCO</TD><TD><INPUT TYPE=TEXT ID=clk2 VALUE="60">MHz <INPUT TYPE=CHECKBOX ID=clkInputCheck NAME="Fix"><DIV ID="clk2range"></DIV></TD></TR>
-<TR><TD>PLL3CLK</TD><TD><INPUT TYPE=TEXT ID=clk1 VALUE="60">MHz <INPUT TYPE=CHECKBOX ID=clkInputCheck NAME="Fix" CHECKED><DIV ID="clk3range"></DIV></TD></TR>
-<TR><TD>PLL3VCO</TD><TD><INPUT TYPE=TEXT ID=clk2 VALUE="60">MHz <INPUT TYPE=CHECKBOX ID=clkInputCheck NAME="Fix"><DIV ID="clk4range"></DIV></TD></TR>
-</TABLE>
--->
 
 General notes:
 <OL>
