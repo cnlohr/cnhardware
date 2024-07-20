@@ -2,6 +2,8 @@
 
 My random junk repo for random things.
 
+If you're looking for ![hts codes, click here](https://github.com/cnlohr/cnhardware?tab=readme-ov-file#hts-codes)
+
 **NOTE** FOR PULL REQUESTS: I DO NOT ACCEPT MASS ADDS.  If you have 5-6 really awesome parts, I'll accept a pull request, but if you have say 10+ parts, I will not.  Select only the neatest.  Also, make sure JLCPCB offers the parts, if they're intended for board mounting!
 
 ## Small Combo Fets
@@ -280,3 +282,37 @@ RF Stuff
 |[AD8317ACPZ-R7](https://datasheet.lcsc.com/lcsc/2009091233_Analog-Devices-AD8317ACPZ-R7_C578693.pdf)|[C578693](https://www.lcsc.com/product-detail/Special-Purpose-Amplifiers_Analog-Devices-AD8317ACPZ-R7_C578693.html)|LFCSP-8 (3x2)|Log Signal Detector|5.1323|
 |[AD8318ACPZ-REEL7](https://datasheet.lcsc.com/lcsc/2009141605_Analog-Devices-AD8318ACPZ-REEL7_C578694.pdf)|[C578694](https://www.lcsc.com/product-detail/RF-Detectors_Analog-Devices-AD8318ACPZ-REEL7_C578694.html)|LFCSP-16|1MHz to 8GHz Log Signal Detector|6.4607|
 |[LMX2485SQX-NOPB](https://datasheet.lcsc.com/lcsc/2303011600_Texas-Instruments-LMX2485SQX-NOPB_C2662616.pdf)|[C2662616](https://www.lcsc.com/product-detail/Clock-Generators-Frequency-Synthesizers-PLL_Texas-Instruments-LMX2485SQX-NOPB_C2662616.html)|WQFN-24 (4x4)|500MHz - 3GHz Frequency Synthesizer|3.5621|
+
+## HTS Codes
+
+AS OF MAY 18, 2023
+
+Title 99 still only applies a very small (if any) tarrif to this: **Hand-Held Video Game Systems" - 9504.50.00**
+
+Title 99 (9903.88.01) applies a 25% tarrif to: **Controller/Circuit Board for radio, communications or well, it seems most computing equiment: 8538.10.00, 8538.90.40, 8538.90.60 and 8538.90.81**
+
+Codes from JLCPCB:
+| Description | Code |
+| -- | -- |
+| DIY Board | 902300 |
+| Development Board | 847330 |
+| Programmable Controller | 853890 |
+| Robot | 847990 |
+| Video / TV Game Player / Handheld Video Game | 950450 |
+| Charger | 850490 |
+| DC Stabilized Power Supply | 850490 |
+| Audio Equipment | 851890 |
+| Audio Amplifiers | 851890 |
+| Wireless Radio | 852990 |
+| Sound Conole | 854390 |
+| Effectors (???) | 854390 |
+| PC (Personal Computer) | 847330  -> TODO Look up subcode for card. |
+| Keyboard | 847330 |
+| SSD | 847330 |
+| Gateway | 851779 |
+| Reader | 847330 |
+| Temperature Sensor | 902590 |
+| Humidity Sensor | 902590 |
+| Pressure Sensor | 902690 |
+| Liquid Level Sensor | 902690 |
+| Oxygen Sensor | 902790 |
