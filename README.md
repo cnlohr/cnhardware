@@ -133,7 +133,7 @@ If you're looking for ![hts codes, click here](https://github.com/cnlohr/cnhardw
 |[X05A10H06G](https://datasheet.lcsc.com/lcsc/2110111330_XKB-Connectivity-X05A10H06G_C528032.pdf)|[C528032](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_XKB-Connectivity-X05A10H06G_C528032.html)|[Flex Footprint](https://github.com/cnlohr/cnhardware/blob/master/kicad_parts/XCB-FPC-DS-06-0.5mm.pretty/XCB-FPC-DS-06-0.5mm.kicad_mod)|0.5mm Pitch Flex 6-Pin Top-And-Bottom Connector, Good for non-joycon replacement Joysticks|0.1503|
 |[HCTL-HC-FPC-05-09-6RLTAG](https://datasheet.lcsc.com/lcsc/2210261730_HCTL-HC-FPC-05-09-6RLTAG_C5213748.pdf)|[C5213748](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_HCTL-HC-FPC-05-09-6RLTAG_C5213748.html)|--|0.5mm Pitch Flex Connnector 6 Pin, Bottom-Only|0.0362|
 |[HCTL-XW05202-240R-00](https://datasheet.lcsc.com/lcsc/2311061541_HCTL-XW05202-240R-00_C2906121.pdf)|[C2906121](https://www.lcsc.com/product-detail/FFC-FPC-Connectors_HCTL-XW05202-240R-00_C2906121.html)|[Flex Footprint](https://raw.githubusercontent.com/cnlohr/cnhardware/master/kicad_parts/cnhardware.pretty/XUNPU_FPC-05F-24PH15.kicad_mod)|0.5mm Pitch Flex Connector 24 Pin, Bottom-Only|0.0775|
-
+|[XFCN-MF254RS-11-05-0743](https://www.lcsc.com/datasheet/lcsc_datasheet_2006181336_XFCN-MF254RS-11-05-0743_C668121.pdf)|[C668121](https://www.lcsc.com/product-detail/Female-Headers_XFCN-MF254RS-11-05-0743_C668121.html)|2.54mm 5-pin right-angle connector|0.0896|
 
 
 ## Smart LEDs
