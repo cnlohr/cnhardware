@@ -1,6 +1,6 @@
 #include "ch32v003fun.h"
-#include "ch32v307gigabit.h"
 #include <stdio.h>
+#include "ch32v307gigabit.h"
 
 int main()
 {
@@ -13,8 +13,9 @@ int main()
 	printf( "R: %d\n",r );
 	while(1)
 	{
-		printf( "AAA\n" );
-		Delay_Ms( 10 );
-		Delay_Ms( 10 );
+		uint32_t start = SysTick->CNT;
+		Delay_Ms( 1000 );
+		uint32_t end = SysTick->CNT;
+		printf( "%d\n", (int)(end-start) );
 	}
 }
