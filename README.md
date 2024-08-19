@@ -227,7 +227,7 @@ These are ones I've found that are JLCPCB compatible.
 |0603WAF3301T5E|C22978|0603|3.3k 1% BASIC|0.0005|
 |0603WAF0000T5E|C21189|0603|0 Jumper BASIC|0.0005|
 |0402WGF220JTCE|C25092|0402|22 1% BASIC|0.0004|
-|[AMS1117-3.3](https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Advanced-Monolithic-Systems-AMS1117-3-3_C6186.pdf)|C6186|SOT-223|3.3V LDO BASIC PART|0.05|
+|[AMS1117-3.3](https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Advanced-Monolithic-Systems-AMS1117-3-3_C6186.pdf)|C6186|SOT-223|3.3V LDO BASIC PART|0.07|
 |[XC6206P332MR-G](https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Torex-Semicon-XC6206P332MR-G_C5446.pdf)|C5446|SOT-23|3.3V LDO BASIC PART|0.05|
 
 
