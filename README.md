@@ -227,6 +227,8 @@ These are ones I've found that are JLCPCB compatible.
 |0603WAF3301T5E|C22978|0603|3.3k 1% BASIC|0.0005|
 |0603WAF0000T5E|C21189|0603|0 Jumper BASIC|0.0005|
 |0402WGF220JTCE|C25092|0402|22 1% BASIC|0.0004|
+|[AMS1117-3.3](https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Advanced-Monolithic-Systems-AMS1117-3-3_C6186.pdf)|C6186|SOT-223|3.3V LDO BASIC PART|0.05|
+|[XC6206P332MR-G](https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Torex-Semicon-XC6206P332MR-G_C5446.pdf)|C5446|SOT-23|3.3V LDO BASIC PART|0.05|
 
 
 
@@ -248,7 +250,6 @@ These are ones I've found that are JLCPCB compatible.
 |[XT1861B362MR-G]()|[C236397](https://www.lcsc.com/product-detail/DC-DC-Converters_NATLINEAR-XT1861B362MR-G_C236397.html)|SOT-23|3.6V Boost LXmax 800mA|0.0511|
 |[AMS1117-3.3](https://datasheet.lcsc.com/lcsc/2304140030_Advanced-Monolithic-Systems-AMS1117-3-3_C6186.pdf)|[C6186](https://www.lcsc.com/product-detail/Linear-Voltage-Regulators-LDO_Advanced-Monolithic-Systems-AMS1117-3-3_C6186.html)|SOT-223|awesome cheap and reliable 3.3V fixed output linear regulator with up to 1A driving capability, there is also a 5V variant, both are basic parts at JLCPCB|0.1382|
 |[DS8561](https://datasheet.lcsc.com/lcsc/2305121704_DSTECH-DS8561-28D4_C5795640.pdf)|[C5795640](https://www.lcsc.com/product-detail/Linear-Voltage-Regulators-span-style-background-color-ff0-LDO-span_DSTECH-DS8561-28D4_C5795640.html)|XDFN-4|2.8V 300mA VERY low drop out|0.0286|
-|[AMS1117-3.3](https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Advanced-Monolithic-Systems-AMS1117-3-3_C6186.pdf)|C6186|SOT-223|3.3V LDO BASIC PART|0.05|
 |[XC6206P332MR-G](https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Torex-Semicon-XC6206P332MR-G_C5446.pdf)|C5446|SOT-23|3.3V LDO BASIC PART|0.05|
 
 ## Totally random things
