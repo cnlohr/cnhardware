@@ -16,6 +16,8 @@
 #define CH32V307GIGABIT_PHY_TIMEOUT 0x10000
 #endif
 
+// #define CH32V307GIGABIT_PHY_RSTB PA10
+
 static int ch32v307ethPHYRegWrite(uint32_t reg, uint32_t val);
 static int ch32v307ethPHYRegRead(uint32_t reg);
 static void ch32v307ethGetMacInUC( uint8_t * mac );
@@ -63,16 +65,14 @@ static void ch32v307ethGetMacInUC( uint8_t * mac )
 
 static int ch32v307ethInit()
 {
-	funPinMode( PA10, GPIO_CFGLR_OUT_50Mhz_PP ); //PHY_RSTB (For reset)
-	funDigitalWrite( PA10, FUN_LOW );
+#ifdef CH32V307GIGABIT_PHY_RSTB
+	funPinMode( CH32V307GIGABIT_PHY_RSTB, GPIO_CFGLR_OUT_50Mhz_PP ); //PHY_RSTB (For reset)
+	funDigitalWrite( CH32V307GIGABIT_PHY_RSTB, FUN_LOW );
+#endif
 
 	// Pull-up MDIO
-
 	funPinMode( PD9, GPIO_CFGLR_OUT_50Mhz_PP ); //Pull-up control (DO NOT CHECK IN, ADD RESISTOR)
 	funDigitalWrite( PD9, FUN_HIGH );
-
-	funPinMode( PB13, GPIO_CFGLR_OUT_50Mhz_AF_PP ); //GMII_MDIO
-	funPinMode( PB12, GPIO_CFGLR_OUT_50Mhz_AF_PP ); //GMII_MDC
 
 	// Will be required later.
 	RCC->APB2PCENR |= RCC_APB2Periph_AFIO;
@@ -134,6 +134,9 @@ static int ch32v307ethInit()
 	// Use RGMII
 	EXTEN->EXTEN_CTR |= (1<<3); //EXTEN_ETH_RGMII_SEL;
 
+	funPinMode( PB13, GPIO_CFGLR_OUT_50Mhz_AF_PP ); //GMII_MDIO
+	funPinMode( PB12, GPIO_CFGLR_OUT_50Mhz_AF_PP ); //GMII_MDC
+
 	// For clock output to Ethernet module.
 	funPinMode( PA8, GPIO_CFGLR_OUT_50Mhz_AF_PP ); // PHY_CKTAL
 
@@ -165,8 +168,8 @@ static int ch32v307ethInit()
 		( 0 << 29 ) | // No clock delay
 		( 0 << 23 ) | // Max RX = 2kB
 		( 0 << 22 ) | // Max TX = 2kB 
-		( 0 << 21 ) | // Rated Drive
-		( 1 << 20 ) | // Bizarre re-use of termination resistor terminology? TODO: Examine me.
+		( 0 << 21 ) | // Rated Drive (instead of energy savings mode) (10M PHY only)
+		( 1 << 20 ) | // Bizarre re-use of termination resistor terminology? (10M PHY Only)
 		( 0 << 17 ) | // IFG = 0, 96-bit guard time.
 		( 2 << 14 ) | // FES = 2 = 1 GBit/s
 		( 0 << 12 ) | // Self Loop = 0
@@ -190,40 +193,39 @@ static int ch32v307ethInit()
 	ETH->DMAOMR = 0; // Default DMA Forward Behavior
 
 	// Release PHY from reset.
+#ifdef CH32V307GIGABIT_PHY_RSTB
 	funDigitalWrite( PA10, FUN_HIGH );
+#endif
 
-	Delay_Ms(5); 	// Inconsistent at 3.5ms
+//	Delay_Ms(5); 	// Inconsistent at 3.5ms
 
 	// Reset the physical layer
 	ch32v307ethPHYRegWrite( PHY_BCR, PHY_Reset );
 
-	Delay_Ms(10);    // Consistent at ~9ms
+//	Delay_Ms(10);    // Consistent at ~9ms
 
 	ch32v307ethPHYRegWrite( PHY_BCR, 
 		1<<12 | // Auto negotiate
 		1<<8 | // Duplex
 		0 );
 
-	Delay_Ms(10);    // Consistent at ~9ms.
+//	Delay_Ms(10);    // Consistent at ~9ms.
 
-/*
     ch32v307ethPHYRegWrite( 0x1F, 0x0a43 );
 	// Need to sometimes double-read according to WCH.
-	Delay_Ms(10);    // Consistent at ~9ms.
-    ch32v307ethPHYRegRead( 0x1A);
-	Delay_Ms(10);    // Consistent at ~9ms.
-	int phy_stat = ch32v307ethPHYRegRead( 0x1A );
-*/
-	int phy_stat = 0;
+//	Delay_Ms(10);    // Consistent at ~9ms.
 
 while( 1 )
 {
 	Delay_Ms(100);    // Consistent at ~9ms.
 
-	ch32v307ethPHYRegRead( 0x11 );
-	Delay_Ms(10);    // Consistent at ~9ms.
+	ch32v307ethPHYRegRead( 0x1f );
+//	Delay_Ms(10);    // Consistent at ~9ms.
 
-	int gbsr = ch32v307ethPHYRegRead( 0x11 );
+	int gbsr = ch32v307ethPHYRegRead( 0x1f );
+    ch32v307ethPHYRegRead( 0x1A);
+//	Delay_Ms(10);    // Consistent at ~9ms.
+	int phy_stat = ch32v307ethPHYRegRead( 0x1A );
 	
 	// Next step: Start talking over MDIO.
 	printf( "%04x, %04x\n", gbsr, phy_stat );
