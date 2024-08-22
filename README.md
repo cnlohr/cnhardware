@@ -196,6 +196,7 @@ These are ones I've found that are JLCPCB compatible.
 |Datasheet|LCSC|Footprint|Description|Cost 150|
 |--|--|--|--|--|
 |[0402CG101J500NT](https://datasheet.lcsc.com/lcsc/1810151218_FH--Guangdong-Fenghua-Advanced-Tech-0402CG101J500NT_C1546.pdf)|[C1546](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_FH-Guangdong-Fenghua-Advanced-Tech-0402CG101J500NT_C1546.html)|0402|100pF 50v 0402 Capacitor|0.0005|
+|[CL10A106MA8NRNC](https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL10A106MA8NRNC_C96446.pdf)|[C96446]|0603|10uF 25V BASIC|0.0096|
 |[CL05B104KO5NNNC](https://datasheet.lcsc.com/lcsc/1810191219_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.pdf)|[C1525](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html)|0402|100nF 16v 0402|0.0011|
 |[CL05A106MP5NUNC](https://datasheet.lcsc.com/lcsc/2007131004_Samsung-Electro-Mechanics-CL05A106MP5NUNC_C315248.pdf)|[C315248](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05A106MP5NUNC_C315248.html)|0402|10uF 10v 0402|0.0108|
 |[0402F333M500NT](https://datasheet.lcsc.com/lcsc/2304140030_FH--Guangdong-Fenghua-Advanced-Tech-0402F333M500NT_C1585.pdf)|[C1585](https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_FH-Guangdong-Fenghua-Advanced-Tech-0402F333M500NT_C1585.html)|0402|33nF 50v 0402 BASIC|0.0027|
