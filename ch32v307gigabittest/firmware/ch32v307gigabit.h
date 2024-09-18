@@ -16,7 +16,9 @@
 #define CH32V307GIGABIT_PHY_TIMEOUT 0x10000
 #endif
 
-// #define CH32V307GIGABIT_PHY_RSTB PA10
+#ifndef CH32V307GIGABIT_PHY_RSTB
+#define CH32V307GIGABIT_PHY_RSTB PA10
+#endif
 
 static int ch32v307ethPHYRegWrite(uint32_t reg, uint32_t val);
 static int ch32v307ethPHYRegRead(uint32_t reg);
@@ -65,10 +67,18 @@ static void ch32v307ethGetMacInUC( uint8_t * mac )
 
 static int ch32v307ethInit()
 {
-#ifdef CH32V307GIGABIT_PHY_RSTB
 	funPinMode( CH32V307GIGABIT_PHY_RSTB, GPIO_CFGLR_OUT_50Mhz_PP ); //PHY_RSTB (For reset)
 	funDigitalWrite( CH32V307GIGABIT_PHY_RSTB, FUN_LOW );
-#endif
+
+	// Configure strapping.
+	funPinMode( PA1, GPIO_CFGLR_IN_PUPD ); // GMII_RXD3
+	funPinMode( PA0, GPIO_CFGLR_IN_PUPD ); // GMII_RXD2
+	funPinMode( PC3, GPIO_CFGLR_IN_PUPD ); // GMII_RXD1
+	funPinMode( PC2, GPIO_CFGLR_IN_PUPD ); // GMII_RXD0
+	funDigitalWrite( PA1, FUN_HIGH );
+	funDigitalWrite( PA0, FUN_HIGH );
+	funDigitalWrite( PC3, FUN_HIGH ); // No TX Delay
+	funDigitalWrite( PC2, FUN_HIGH );
 
 	// Pull-up MDIO
 	funPinMode( PD9, GPIO_CFGLR_OUT_50Mhz_PP ); //Pull-up control (DO NOT CHECK IN, ADD RESISTOR)
@@ -140,6 +150,9 @@ static int ch32v307ethInit()
 	// For clock output to Ethernet module.
 	funPinMode( PA8, GPIO_CFGLR_OUT_50Mhz_AF_PP ); // PHY_CKTAL
 
+	// Release PHY from reset.
+	funDigitalWrite( CH32V307GIGABIT_PHY_RSTB, FUN_HIGH );
+
 	funPinMode( PB0, GPIO_CFGLR_OUT_50Mhz_AF_PP ); // GMII_TXD3
 	funPinMode( PC5, GPIO_CFGLR_OUT_50Mhz_AF_PP ); // GMII_TXD2
 	funPinMode( PC4, GPIO_CFGLR_OUT_50Mhz_AF_PP ); // GMII_TXD1
@@ -192,43 +205,64 @@ static int ch32v307ethInit()
 
 	ETH->DMAOMR = 0; // Default DMA Forward Behavior
 
-	// Release PHY from reset.
-#ifdef CH32V307GIGABIT_PHY_RSTB
-	funDigitalWrite( PA10, FUN_HIGH );
-#endif
-
-//	Delay_Ms(5); 	// Inconsistent at 3.5ms
+	Delay_Ms(5); 	// Inconsistent at 3.5ms
 
 	// Reset the physical layer
-	ch32v307ethPHYRegWrite( PHY_BCR, PHY_Reset );
-
-//	Delay_Ms(10);    // Consistent at ~9ms
-
-	ch32v307ethPHYRegWrite( PHY_BCR, 
+	ch32v307ethPHYRegWrite( PHY_BCR,
+		PHY_Reset |
 		1<<12 | // Auto negotiate
 		1<<8 | // Duplex
+		1<<6 | // Speed Bit.
 		0 );
 
-//	Delay_Ms(10);    // Consistent at ~9ms.
 
-    ch32v307ethPHYRegWrite( 0x1F, 0x0a43 );
+	Delay_Ms(10);    // Consistent at ~9ms
+
+	// De-assert reset.
+	ch32v307ethPHYRegWrite( PHY_BCR,
+		1<<12 | // Auto negotiate
+		1<<8 | // Duplex
+		1<<6 | // Speed Bit.
+		0 );
+
+//	ch32v307ethPHYRegWrite( PHY_BCR, 
+	//	1<<12 | // Auto negotiate
+		//1<<8 | // Duplex
+//		0 );
+
+	Delay_Ms(10);    // Consistent at ~9ms.
+
+//    ch32v307ethPHYRegWrite( 0x1F, 0x0a43 );
 	// Need to sometimes double-read according to WCH.
-//	Delay_Ms(10);    // Consistent at ~9ms.
+	Delay_Ms(10);    // Consistent at ~9ms.
+
 
 while( 1 )
 {
-	Delay_Ms(100);    // Consistent at ~9ms.
+	Delay_Ms(10);
 
-	ch32v307ethPHYRegRead( 0x1f );
-//	Delay_Ms(10);    // Consistent at ~9ms.
+	//ch32v307ethPHYRegRead( 0x1f );
+	//int gbsr = ch32v307ethPHYRegRead( 0x1f );
 
-	int gbsr = ch32v307ethPHYRegRead( 0x1f );
-    ch32v307ethPHYRegRead( 0x1A);
+  //  ch32v307ethPHYRegRead( 0x1A);
+//	int phy_stat = ch32v307ethPHYRegRead( 0x1A );
+
+
+	ch32v307ethPHYRegRead( 0x11 );
+	int test = ch32v307ethPHYRegRead( 0x11 );
+	printf( "SPD:%d DUP:%d PR:%d SDR:%d LKR:%d MDI:%d PRLOK:%d JAB:%d LO: %04x\n",
+		(test>>14)&3, (test>>13)&1, (test>>12)&1, (test>>11)&1, (test>>10)&1,
+		(test>>6)&1, (test>>1)&1, test&1, test & 0b0000001110111100 );
+
+// {
+//	ch32v307ethPHYRegRead( 0x01 );
 //	Delay_Ms(10);    // Consistent at ~9ms.
-	int phy_stat = ch32v307ethPHYRegRead( 0x1A );
+//	int bsr = ch32v307ethPHYRegRead( 0x01 );
+//	printf( "BSR Check: %04x(==7949)\n", bsr );
+// }
 	
 	// Next step: Start talking over MDIO.
-	printf( "%04x, %04x\n", gbsr, phy_stat );
+	//printf( "%04x, %04x, %04x\n", test, gbsr, phy_stat );
 }
 	uint8_t mac[6] = { 0 };
 	ch32v307ethGetMacInUC( mac );
