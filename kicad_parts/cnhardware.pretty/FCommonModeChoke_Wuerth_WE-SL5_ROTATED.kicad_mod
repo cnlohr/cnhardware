@@ -1,0 +1,280 @@
+(footprint "FCommonModeChoke_Wuerth_WE-SL5_ROTATED"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "WE-SL5 SMT Common Mode Line Filter, 9.5x8.3mm, height 5mm, https://www.we-online.com/components/products/datasheet/744273222.pdf")
+	(tags "SMT Common Mode Line Filter")
+	(property "Reference" "FL1"
+		(at 0 -5.4 180)
+		(layer "F.SilkS")
+		(uuid "61baf4f3-d84c-498d-989f-4e5043dd5f25")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "WE-SL5"
+		(at 0 5.6 180)
+		(layer "F.Fab")
+		(uuid "e142e85c-d82a-4d08-b65a-cf3ef96ed34e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" "Inductor_SMD:L_CommonModeChoke_Wuerth_WE-SL5"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f4d5885c-c45c-4d74-9ffe-e4675af1b92f")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.schaffner.com/products/download/product/datasheet/rn-series-common-mode-chokes-new/"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f90fe633-0ed2-4d8c-8de2-53f574f3a089")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Common mode choke, 600mA, 300VAC, 4.4mH, 380mohm, RN-102"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "182059bd-08c7-4b58-9169-44804840f431")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC" "C2662473"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "079da2e3-fb0b-473c-aa32-ef7aca29fac5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -4.9 1.45)
+		(end -4.899999 -1.4)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "08cf56a6-57b2-4d5a-9042-805a455c7812")
+	)
+	(fp_line
+		(start -2.15 -4.72)
+		(end -5.25 -4.72)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c5d49df4-6249-45bf-979c-2c4718d2e417")
+	)
+	(fp_line
+		(start -2.15 -4.3)
+		(end -2.15 -4.72)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "98855059-ea8d-481b-aee2-56ef067e200b")
+	)
+	(fp_line
+		(start 2.15 -4.3)
+		(end -2.15 -4.3)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "6718a830-1047-4933-b829-93e4cf63f113")
+	)
+	(fp_line
+		(start 2.15 4.3)
+		(end -2.15 4.3)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7cb234a8-a0f3-49c8-be98-34fe05abe1c9")
+	)
+	(fp_line
+		(start 4.9 1.45)
+		(end 4.9 -1.45)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7a469650-420f-446c-9f61-15e4f17ea2ac")
+	)
+	(fp_line
+		(start -5.4 4.7)
+		(end -5.4 -4.7)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "19941a0d-4580-4be4-b4a2-255b96f20ad5")
+	)
+	(fp_line
+		(start 5.4 -4.7)
+		(end -5.4 -4.7)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "94828df6-de5f-4b10-b023-a118a3fccac3")
+	)
+	(fp_line
+		(start 5.4 4.7)
+		(end -5.4 4.7)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "4420f65e-aea9-4494-b7d1-789418e62f8d")
+	)
+	(fp_line
+		(start 5.4 4.7)
+		(end 5.4 -4.7)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "12403c21-9623-4203-960d-e7ba84b07e8d")
+	)
+	(fp_line
+		(start -4.75 -3.15)
+		(end -4.75 4.149999)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "d929c74c-35c4-4c2a-a37f-6a519cee24cc")
+	)
+	(fp_line
+		(start -4.75 4.149999)
+		(end 4.750001 4.15)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "168c6f99-84ad-4174-a33f-4b047719f0b5")
+	)
+	(fp_line
+		(start -3.75 -4.149999)
+		(end -4.75 -3.15)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "20edce89-7ac3-46f1-abfc-1459d7430161")
+	)
+	(fp_line
+		(start 4.75 -4.149999)
+		(end -3.75 -4.149999)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "80a2525a-053f-4b92-888b-01697ecccacf")
+	)
+	(fp_line
+		(start 4.75 -4.149999)
+		(end 4.750001 4.15)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "3c6589c1-7665-452d-8704-c56128c6383f")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(uuid "2cf7cc64-da1e-46f2-ae8c-25b50e52c807")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at 3.800001 -3.1 180)
+		(size 2.7 2.7)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio 0.09259259259)
+		(uuid "feb583d7-eb3a-47d4-9457-f506f427d660")
+	)
+	(pad "2" smd roundrect
+		(at -3.800001 -3.1 180)
+		(size 2.7 2.7)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio 0.09259259259)
+		(uuid "d4c896d8-4237-4ad6-92ee-d386db46e2f2")
+	)
+	(pad "3" smd roundrect
+		(at -3.800001 3.1 180)
+		(size 2.7 2.7)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio 0.09259259259)
+		(uuid "ca7fbc85-bd34-4702-a4b9-7f891cf8236b")
+	)
+	(pad "4" smd roundrect
+		(at 3.800001 3.1 180)
+		(size 2.7 2.7)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio 0.09259259259)
+		(uuid "9b038906-823e-4f6c-b327-b9cd0c5f3716")
+	)
+	(model "${KICAD7_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_CommonModeChoke_Wuerth_WE-SL5.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
