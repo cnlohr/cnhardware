@@ -237,7 +237,8 @@ static int ch32v307ethInit()
 	// Register setup.
 
 	// Configure MDC/MDIO
-	ETH->MACMIIAR = 0;
+	// Conflicting notes - some say /42, others don't.
+	ETH->MACMIIAR = ETH_MACMIIAR_CR_Div42;
 
 	// Update MACCR
 	ETH->MACCR =
@@ -267,6 +268,31 @@ static int ch32v307ethInit()
 	ETH->MACVLANTR = 0; // No VLAN tagging.
 
 	ETH->DMAOMR = 0; // Default DMA Forward Behavior
+
+	printf( "DMASR: %08x\n", ETH->DMASR );
+
+    ETH->MACFFR = (uint32_t)(ETH_ReceiveAll_Disable | // TODO: Consider turning this on.
+                          ETH_SourceAddrFilter_Disable |
+                          ETH_PassControlFrames_BlockAll |
+                          ETH_BroadcastFramesReception_Enable |
+                          ETH_DestinationAddrFilter_Normal |
+                          ETH_PromiscuousMode_Disable |
+                          ETH_MulticastFramesFilter_Perfect |
+                          ETH_UnicastFramesFilter_Perfect);
+
+    ETH->MACHTHR = (uint32_t)0;
+    ETH->MACHTLR = (uint32_t)0;
+
+
+    ETH->MACVLANTR = (uint32_t)(ETH_VLANTagComparison_16Bit);
+
+    ETH->DMAOMR =
+		ETH_DropTCPIPChecksumErrorFrame_Disable |
+		ETH_FlushReceivedFrame_Enable | 
+		ETH_ForwardErrorFrames_Disable |
+		ETH_ForwardUndersizedGoodFrames_Disable
+		;
+
 
 	Delay_Ms(5); 	// Inconsistent at 3.5ms
 
@@ -321,6 +347,8 @@ static int ch32v307ethInit()
 	// Receive a good frame half interrupt mask.
 	// Receive CRC error frame half interrupt mask.
 	ETH->MMCRIMR = ETH_MMCRIMR_RGUFM | ETH_MMCRIMR_RFCEM;
+
+	printf( "DMASR: %08x\n", ETH->DMASR );
 
 	ETH->DMAIER = ETH_DMA_IT_NIS | // Normal interrupt enable.
 				ETH_DMA_IT_R |     // Receive
