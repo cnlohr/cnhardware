@@ -13,9 +13,8 @@ int main()
 	printf( "R: %d\n",r );
 	while(1)
 	{
-		uint32_t start = SysTick->CNT;
 		Delay_Ms( 1000 );
-		uint32_t end = SysTick->CNT;
-		printf( "%d\n", (int)(end-start) );
+		PrintCurrentPHYState();
+		printf( "%08x\n", ETH->DMASR );
 	}
 }

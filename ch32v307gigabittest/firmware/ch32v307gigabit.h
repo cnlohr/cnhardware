@@ -1,8 +1,23 @@
 #ifndef _CH32V307GIGABIT_H
 #define _CH32V307GIGABIT_H
 
+/* This file is written against the RTL8211E
+
+  TODO:
+	1. Add interrupt features to PHY (see PHY_InterruptInit)
+
+
+*/
+
 // #define CH32V307GIGABIT_MCO25 1
 // #define CH32V307GIGABIT_PHYADDRESS 0
+
+#define CH32V307GIGABIT_RXBUFNB 8
+#define CH32V307GIGABIT_TXBUFNB 8
+#define CH32V307GIGABIT_BUFFSIZE 1520
+
+#define CH32V307GIGABIT_CFG_CLOCK_DELAY 4
+#define CH32V307GIGABIT_CFG_CLOCK_PHASE 0
 
 #ifndef CH32V307GIGABIT_MCO25
 #define CH32V307GIGABIT_MCO25 1
@@ -20,10 +35,48 @@
 #define CH32V307GIGABIT_PHY_RSTB PA10
 #endif
 
+
+// Additional definitions, not part of ch32v003fun.h
+
+// ETH DMA structure definition (From ch32v30x_eth.c
+typedef struct
+{
+  uint32_t   volatile Status;       /* Status */
+  uint32_t   ControlBufferSize;     /* Control and Buffer1, Buffer2 lengths */
+  uint32_t   Buffer1Addr;           /* Buffer1 address pointer */
+  uint32_t   Buffer2NextDescAddr;   /* Buffer2 or next descriptor address pointer */
+} ETH_DMADESCTypeDef;
+
+
+// Data pursuent to ethernet.
+uint8_t ch32v307eth_mac[6] = { 0 };
+ETH_DMADESCTypeDef ch32v307eth_DMARxDscrTab[CH32V307GIGABIT_RXBUFNB] __attribute__((aligned(4)));            // MAC receive descriptor, 4-byte aligned
+ETH_DMADESCTypeDef ch32v307eth_DMATxDscrTab[CH32V307GIGABIT_TXBUFNB] __attribute__((aligned(4)));            // MAC send descriptor, 4-byte aligned
+uint8_t  ch32v307eth_MACRxBuf[CH32V307GIGABIT_RXBUFNB*CH32V307GIGABIT_BUFFSIZE] __attribute__((aligned(4))); // MAC receive buffer, 4-byte aligned
+uint8_t  ch32v307eth_MACTxBuf[CH32V307GIGABIT_TXBUFNB*CH32V307GIGABIT_BUFFSIZE] __attribute__((aligned(4))); // MAC send buffer, 4-byte aligned
+ETH_DMADESCTypeDef * pDMARxSet;
+ETH_DMADESCTypeDef * pDMATxSet;
+
 static int ch32v307ethPHYRegWrite(uint32_t reg, uint32_t val);
 static int ch32v307ethPHYRegRead(uint32_t reg);
 static void ch32v307ethGetMacInUC( uint8_t * mac );
 static int ch32v307ethInit( );
+static void PrintCurrentPHYState();
+
+
+
+
+static void PrintCurrentPHYState()
+{
+	ch32v307ethPHYRegRead( 0x11 );
+	int test = ch32v307ethPHYRegRead( 0x11 );
+	int speed = ((test>>14)&3);
+	printf( "%02x:%02x:%02x:%02x:%02x:%02x\n", ch32v307eth_mac[0], ch32v307eth_mac[1], ch32v307eth_mac[2], ch32v307eth_mac[3], ch32v307eth_mac[4], ch32v307eth_mac[5] );
+	printf( "%s %dMBPs Duplex:%d PR:%d SDR:%d %s PLOK:%d JAB:%d\n",
+		((test>>10)&1)?"LINK OK":"NO LINK", (speed<2)?(speed==0)?10:100:(speed==2)?1000:0, (test>>13)&1, (test>>12)&1, (test>>11)&1,
+		((test>>6)&1)?"Crossover":"Straight", (test>>1)&1, test&1 );
+}
+
 
 // Based on ETH_WritePHYRegister
 static int ch32v307ethPHYRegWrite( uint32_t reg, uint32_t val )
@@ -67,6 +120,8 @@ static void ch32v307ethGetMacInUC( uint8_t * mac )
 
 static int ch32v307ethInit()
 {
+	int i;
+
 	funPinMode( CH32V307GIGABIT_PHY_RSTB, GPIO_CFGLR_OUT_50Mhz_PP ); //PHY_RSTB (For reset)
 	funDigitalWrite( CH32V307GIGABIT_PHY_RSTB, FUN_LOW );
 
@@ -141,6 +196,14 @@ static int ch32v307ethInit()
 
 	RCC->CFGR2 |= RCC_ETH1G_125M_EN; // Enable 125MHz clock.
 
+	ETH->DMABMR |= ETH_DMABMR_SR;
+
+	// Wait for reset to complete.
+	for( timeout = 10000; timeout > 0 && (ETH->DMABMR & ETH_DMABMR_SR); timeout-- )
+	{
+		Delay_Us(10);
+	}
+
 	// Use RGMII
 	EXTEN->EXTEN_CTR |= (1<<3); //EXTEN_ETH_RGMII_SEL;
 
@@ -174,11 +237,11 @@ static int ch32v307ethInit()
 	// Register setup.
 
 	// Configure MDC/MDIO
-    ETH->MACMIIAR = 0;
+	ETH->MACMIIAR = 0;
 
 	// Update MACCR
 	ETH->MACCR =
-		( 0 << 29 ) | // No clock delay
+		( CH32V307GIGABIT_CFG_CLOCK_DELAY << 29 ) | // No clock delay
 		( 0 << 23 ) | // Max RX = 2kB
 		( 0 << 22 ) | // Max TX = 2kB 
 		( 0 << 21 ) | // Rated Drive (instead of energy savings mode) (10M PHY only)
@@ -191,7 +254,7 @@ static int ch32v307ethInit()
 		( 1 << 7  ) | // APCS (automatically strip frames)
 		( 1 << 3  ) | // TE (Transmit enable!)
 		( 1 << 2  ) | // RE (Receive Enable)
-		( 0 << 1  ) | // TCF = 0 (Potentailly change if clocking is wrong)
+		( CH32V307GIGABIT_CFG_CLOCK_PHASE << 1  ) | // TCF = 0 (Potentailly change if clocking is wrong)
 		0;
 
 	ETH->MACFFR =
@@ -215,9 +278,6 @@ static int ch32v307ethInit()
 		1<<6 | // Speed Bit.
 		0 );
 
-
-	Delay_Ms(10);    // Consistent at ~9ms
-
 	// De-assert reset.
 	ch32v307ethPHYRegWrite( PHY_BCR,
 		1<<12 | // Auto negotiate
@@ -225,51 +285,95 @@ static int ch32v307ethInit()
 		1<<6 | // Speed Bit.
 		0 );
 
-//	ch32v307ethPHYRegWrite( PHY_BCR, 
-	//	1<<12 | // Auto negotiate
-		//1<<8 | // Duplex
-//		0 );
+	// TODO: Here is where we would want to configure the PHY to trigger interrupts on link changes.
 
-	Delay_Ms(10);    // Consistent at ~9ms.
+	ch32v307ethGetMacInUC( ch32v307eth_mac );
 
-//    ch32v307ethPHYRegWrite( 0x1F, 0x0a43 );
-	// Need to sometimes double-read according to WCH.
-	Delay_Ms(10);    // Consistent at ~9ms.
+	ETH->MACA0HR = (uint32_t)((ch32v307eth_mac[5]<<8) | ch32v307eth_mac[4]);
+	ETH->MACA0LR = (uint32_t)(ch32v307eth_mac[0] | (ch32v307eth_mac[1]<<8) | (ch32v307eth_mac[2]<<16) | (ch32v307eth_mac[3]<<24));
 
+	// Configure RX/TX chains.
+    ETH_DMADESCTypeDef *tdesc;
+	for(i = 0; i < CH32V307GIGABIT_TXBUFNB; i++)
+	{
+		tdesc = ch32v307eth_DMATxDscrTab + i;
+		tdesc->ControlBufferSize = 0;
+		tdesc->Status = ETH_DMATxDesc_TCH | ETH_DMATxDesc_IC;
+		tdesc->Buffer1Addr = (uint32_t)(&ch32v307eth_MACTxBuf[i * CH32V307GIGABIT_BUFFSIZE]);
+		tdesc->Buffer2NextDescAddr = (i < CH32V307GIGABIT_TXBUFNB - 1) ? ((uint32_t)(ch32v307eth_DMATxDscrTab + i + 1)) : (uint32_t)ch32v307eth_DMATxDscrTab;
+	}
+    ETH->DMATDLAR = (uint32_t)ch32v307eth_DMATxDscrTab;
+	for(i = 0; i < CH32V307GIGABIT_RXBUFNB; i++)
+	{
+		tdesc = ch32v307eth_DMARxDscrTab + i;
+		tdesc->Status = ETH_DMARxDesc_OWN;
+		tdesc->ControlBufferSize = ETH_DMARxDesc_RCH | (uint32_t)CH32V307GIGABIT_BUFFSIZE;
+		tdesc->Buffer1Addr = (uint32_t)(&ch32v307eth_MACRxBuf[i * CH32V307GIGABIT_BUFFSIZE]);
+		tdesc->Buffer2NextDescAddr = (i < CH32V307GIGABIT_RXBUFNB - 1) ? (uint32_t)(ch32v307eth_DMARxDscrTab + i + 1) : (uint32_t)(ch32v307eth_DMARxDscrTab);
+	}
+	ETH->DMARDLAR = (uint32_t)ch32v307eth_DMARxDscrTab;
+	pDMARxSet = ch32v307eth_DMARxDscrTab;
+	pDMATxSet = ch32v307eth_DMATxDscrTab;
 
-while( 1 )
-{
-	Delay_Ms(10);
+	// Transmit good frame half interrupt mask.
+	ETH->MMCTIMR = ETH_MMCTIMR_TGFM;
 
-	//ch32v307ethPHYRegRead( 0x1f );
-	//int gbsr = ch32v307ethPHYRegRead( 0x1f );
+	// Receive a good frame half interrupt mask.
+	// Receive CRC error frame half interrupt mask.
+	ETH->MMCRIMR = ETH_MMCRIMR_RGUFM | ETH_MMCRIMR_RFCEM;
 
-  //  ch32v307ethPHYRegRead( 0x1A);
-//	int phy_stat = ch32v307ethPHYRegRead( 0x1A );
+	ETH->DMAIER = ETH_DMA_IT_NIS | // Normal interrupt enable.
+				ETH_DMA_IT_R |     // Receive
+				ETH_DMA_IT_T |     // Transmit
+				ETH_DMA_IT_AIS |   // Abnormal interrupt 
+				ETH_DMA_IT_RBU;    // Receive buffer unavailable interrupt enable
 
+	NVIC_EnableIRQ( ETH_IRQn );
 
-	ch32v307ethPHYRegRead( 0x11 );
-	int test = ch32v307ethPHYRegRead( 0x11 );
-	printf( "SPD:%d DUP:%d PR:%d SDR:%d LKR:%d MDI:%d PRLOK:%d JAB:%d LO: %04x\n",
-		(test>>14)&3, (test>>13)&1, (test>>12)&1, (test>>11)&1, (test>>10)&1,
-		(test>>6)&1, (test>>1)&1, test&1, test & 0b0000001110111100 );
-
-// {
-//	ch32v307ethPHYRegRead( 0x01 );
-//	Delay_Ms(10);    // Consistent at ~9ms.
-//	int bsr = ch32v307ethPHYRegRead( 0x01 );
-//	printf( "BSR Check: %04x(==7949)\n", bsr );
-// }
-	
-	// Next step: Start talking over MDIO.
-	//printf( "%04x, %04x, %04x\n", test, gbsr, phy_stat );
-}
-	uint8_t mac[6] = { 0 };
-	ch32v307ethGetMacInUC( mac );
-	printf( "%02x:%02x:%02x:%02x:%02x:%02x\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5] );
 
 	return 0;
 }
+
+void ETH_IRQHandler( void ) __attribute__((interrupt));
+void ETH_IRQHandler( void )
+{
+    uint32_t int_sta;
+printf( "IRQ\n" );
+    int_sta = ETH->DMASR;
+    if (int_sta & ETH_DMA_IT_AIS)
+    {
+		// Receive buffer unavailable interrupt enable.
+        if (int_sta & ETH_DMA_IT_RBU)
+        {
+            ETH->DMASR = ETH_DMA_IT_RBU;
+            if((CHIP_ID & 0xf0) == 0x10)
+            {
+                ((ETH_DMADESCTypeDef *)(((ETH_DMADESCTypeDef *)(ETH->DMACHRDR))->Buffer2NextDescAddr))->Status = ETH_DMARxDesc_OWN;
+
+                /* Resume DMA reception */
+                ETH->DMARPDR = 0;
+            }
+        }
+        ETH->DMASR = ETH_DMA_IT_AIS;
+    }
+
+    if( int_sta & ETH_DMA_IT_NIS )
+    {
+        if( int_sta & ETH_DMA_IT_R )
+        {
+            /*If you don't use the Ethernet library,
+             * you can do some data processing operations here*/
+			printf( "GOT PACKET\n" );
+            ETH->DMASR = ETH_DMA_IT_R;
+        }
+        if( int_sta & ETH_DMA_IT_T )
+        {
+            ETH->DMASR = ETH_DMA_IT_T;
+        }
+        ETH->DMASR = ETH_DMA_IT_NIS;
+    }
+}
+
 
 #endif
 
