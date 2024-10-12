@@ -10309,6 +10309,16 @@
 		)
 		(uuid "fdb584ea-1640-4146-8ecc-682cc8ace366")
 	)
+	(text "PMEB (Magic Packe Wake) Not Connected"
+		(exclude_from_sim no)
+		(at 141.478 73.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2ae480fe-63c4-4db8-b5d3-040128ef4d79")
+	)
 	(text "EPB15 = U1TX"
 		(exclude_from_sim no)
 		(at 160.02 177.8 0)
@@ -24896,71 +24906,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 154.305 73.66 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "aeffeae2-edc3-466b-93c5-b6abb7d80884")
-		(property "Reference" "#PWR050"
-			(at 158.115 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 149.225 73.66 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 154.305 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 154.305 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 154.305 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8bdc928f-31f1-46d8-ad94-d3690763290f")
-		)
-		(instances
-			(project "ch32v307gigabit"
-				(path "/6bcec678-e6aa-4f8c-b36b-99dd703a4272"
-					(reference "#PWR050")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 92.71 191.77 0)
 		(unit 1)
@@ -28635,73 +28580,6 @@
 			(project "ch32v307gigabit"
 				(path "/6bcec678-e6aa-4f8c-b36b-99dd703a4272"
 					(reference "#PWR039")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 158.115 73.66 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(uuid "e7428f25-fe70-4a63-8e59-125511ee986f")
-		(property "Reference" "R11"
-			(at 158.115 73.66 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "NP"
-			(at 162.56 74.93 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 158.115 75.438 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 158.115 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 158.115 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "31b8fd42-f154-4d7f-b592-4802a929703c")
-		)
-		(pin "2"
-			(uuid "3a755455-5145-4c51-8d82-89091bbc8c64")
-		)
-		(instances
-			(project "ch32v307gigabit"
-				(path "/6bcec678-e6aa-4f8c-b36b-99dd703a4272"
-					(reference "R11")
 					(unit 1)
 				)
 			)
