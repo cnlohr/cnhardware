@@ -2,10 +2,6 @@
 #define _CH32V307GIGABIT_H
 
 /* This file is written against the RTL8211E
-
-  TODO:
-	1. Add interrupt features to PHY (see PHY_InterruptInit)
-
 */
 
 // #define CH32V307GIGABIT_MCO25 1
@@ -46,18 +42,24 @@ typedef struct
   uint32_t   Buffer2NextDescAddr;   /* Buffer2 or next descriptor address pointer */
 } ETH_DMADESCTypeDef;
 
+// You must provide:
 
-static int ch32v307ethPHYRegWrite( uint32_t reg, uint32_t val );
-static int ch32v307ethPHYRegRead( uint32_t reg );
+void ch32v307ethHandleReconfig( int link, int speed, int duplex );
+
+// Return non-zero to suppress OWN return (for if you are still holding onto the buffer)
+int ch32v307ethInitHandlePacket( uint8_t * data, int frame_length, ETH_DMADESCTypeDef * dmadesc );
+
+void ch32v307ethInitHandleTXC( void );
+
+// This library provides:
 static void ch32v307ethGetMacInUC( uint8_t * mac );
-static int ch32v307ethInit( );
-static int ch32v307ethTransmitStatic(const uint32_t * buffer, uint32_t length);  // Does not copy.
-
-static void PrintCurrentPHYState(); // For debug.
-
+static int ch32v307ethInit( void );
+static int ch32v307ethTransmitStatic(uint8_t * buffer, uint32_t length, int enable_txc);  // Does not copy.
+static int ch32v307ethTickPhy( void );
 
 // Data pursuent to ethernet.
 uint8_t ch32v307eth_mac[6] = { 0 };
+uint16_t ch32v307eth_mdio_update_state;
 ETH_DMADESCTypeDef ch32v307eth_DMARxDscrTab[CH32V307GIGABIT_RXBUFNB] __attribute__((aligned(4)));            // MAC receive descriptor, 4-byte aligned
 ETH_DMADESCTypeDef ch32v307eth_DMATxDscrTab[CH32V307GIGABIT_TXBUFNB] __attribute__((aligned(4)));            // MAC send descriptor, 4-byte aligned
 uint8_t  ch32v307eth_MACRxBuf[CH32V307GIGABIT_RXBUFNB*CH32V307GIGABIT_BUFFSIZE] __attribute__((aligned(4))); // MAC receive buffer, 4-byte aligned
@@ -65,15 +67,56 @@ ETH_DMADESCTypeDef * pDMARxGet;
 ETH_DMADESCTypeDef * pDMATxSet;
 
 
-static void PrintCurrentPHYState()
+// Internal functions
+static int ch32v307ethPHYRegWrite( uint32_t reg, uint32_t val );
+static int ch32v307ethPHYRegAsyncRead( int reg, int * value );
+
+
+static int ch32v307ethPHYRegAsyncRead( int reg, int * value )
 {
-	ch32v307ethPHYRegRead( 0x11 );
-	int test = ch32v307ethPHYRegRead( 0x11 );
-	int speed = ((test>>14)&3);
-	ETH->MACCR = (ETH->MACCR & ~(3<<14)) | speed<<14;
-	printf( "%s %dMBPs Duplex:%d PR:%d SDR:%d %s PLOK:%d JAB:%d\n",
-		((test>>10)&1)?"LINK OK":"NO LINK", (speed<2)?(speed==0)?10:100:(speed==2)?1000:0, (test>>13)&1, (test>>12)&1, (test>>11)&1,
-		((test>>6)&1)?"Crossover":"Straight", (test>>1)&1, test&1 );
+	static uint8_t reg_request_count = 0;
+
+	uint32_t miiar = ETH->MACMIIAR;
+	if( miiar & ETH_MACMIIAR_MB )
+	{
+		return -1;
+	}
+	if( ( ( miiar & ETH_MACMIIAR_MR ) >> 6 ) != reg || reg_request_count < 2 )
+	{
+		ETH->MACMIIAR = ETH_MACMIIAR_CR_Div42 /* = 0, per 27.1.8.1.4 */ |
+			((uint32_t)CH32V307GIGABIT_PHYADDRESS << 11) | // ETH_MACMIIAR_PA
+			(((uint32_t)reg << 6) & ETH_MACMIIAR_MR) |
+			(0 /*!ETH_MACMIIAR_MW*/) | ETH_MACMIIAR_MB;
+		reg_request_count++;
+		return -1;
+	}
+	reg_request_count = 0;
+	*value = ETH->MACMIIDR;
+	ETH->MACMIIAR |= ETH_MACMIIAR_MR; // Poison register.
+	return 0;
+}
+
+static int ch32v307ethTickPhy(void)
+{
+	const int reg = 0x11; // PHYSR
+	int miidr;
+	if( ch32v307ethPHYRegAsyncRead( reg, &miidr ) ) return -1;
+
+	int speed  = ((miidr>>14)&3);
+	int linked = ((miidr>>10)&1);
+	int duplex = ((miidr>>13)&1);
+	if( linked )
+	{
+		uint32_t oldmaccr = ETH->MACCR;
+		uint32_t newmaccr = (oldmaccr & ~( ( 1<<11 ) | (3<<14) ) ) | (speed<<14) | ( duplex<<11);
+		if( newmaccr != oldmaccr )
+		{
+			ETH->MACCR = newmaccr;
+			ch32v307ethHandleReconfig( linked, speed, duplex );
+			return 1;
+		}
+	}
+	return 0;
 }
 
 
@@ -93,20 +136,6 @@ static int ch32v307ethPHYRegWrite( uint32_t reg, uint32_t val )
 	return timeout ? 0 : -1;
 }
 
-static int ch32v307ethPHYRegRead( uint32_t reg )
-{
-	ETH->MACMIIAR = ETH_MACMIIAR_CR_Div42 /* = 0, per 27.1.8.1.4 */ |
-		((uint32_t)CH32V307GIGABIT_PHYADDRESS << 11) | // ETH_MACMIIAR_PA
-		(((uint32_t)reg << 6) & ETH_MACMIIAR_MR) |
-		(0 /*!ETH_MACMIIAR_MW*/) | ETH_MACMIIAR_MB;
-
-	uint32_t	timeout = 0x100000;
-	while( ( ETH->MACMIIAR & ETH_MACMIIAR_MB ) && --timeout );
-
-	// If timeout = 0, is an error.
-	return timeout ? ETH->MACMIIDR : -1;
-}
-
 static void ch32v307ethGetMacInUC( uint8_t * mac )
 {
 	// Mac is backwards.
@@ -117,7 +146,7 @@ static void ch32v307ethGetMacInUC( uint8_t * mac )
 	}
 }
 
-static int ch32v307ethInit()
+static int ch32v307ethInit( void )
 {
 	int i;
 
@@ -195,6 +224,11 @@ static int ch32v307ethInit()
 
 	RCC->CFGR2 |= RCC_ETH1G_125M_EN; // Enable 125MHz clock.
 
+	// Power on and reset.
+	RCC->AHBPCENR |= RCC_ETHMACEN | RCC_ETHMACTXEN | RCC_ETHMACRXEN;
+	RCC->AHBRSTR |= RCC_ETHMACRST;
+	RCC->AHBRSTR &=~RCC_ETHMACRST;
+
 	ETH->DMABMR |= ETH_DMABMR_SR;
 
 	// Wait for reset to complete.
@@ -234,13 +268,6 @@ static int ch32v307ethInit()
 	funDigitalWrite( PC2, FUN_HIGH ); // AN[1] = 1
 	funDigitalWrite( PC1, FUN_LOW );  // PHYAD[0]
 
-	// Power on and reset.
-	RCC->AHBPCENR |= RCC_ETHMACEN | RCC_ETHMACTXEN | RCC_ETHMACRXEN;
-	RCC->AHBRSTR |= RCC_ETHMACRST;
-	RCC->AHBRSTR &=~RCC_ETHMACRST;
-
-	// Register setup.
-
 	// Configure MDC/MDIO
 	// Conflicting notes - some say /42, others don't.
 	ETH->MACMIIAR = ETH_MACMIIAR_CR_Div42;
@@ -248,14 +275,14 @@ static int ch32v307ethInit()
 	// Update MACCR
 	ETH->MACCR =
 		( CH32V307GIGABIT_CFG_CLOCK_DELAY << 29 ) | // No clock delay
-		( 0 << 23 ) | // Max RX = 2kB
-		( 0 << 22 ) | // Max TX = 2kB 
+		( 0 << 23 ) | // Max RX = 2kB (Revisit if looking into jumbo frames)
+		( 0 << 22 ) | // Max TX = 2kB (Revisit if looking into jumbo frames)
 		( 0 << 21 ) | // Rated Drive (instead of energy savings mode) (10M PHY only)
 		( 1 << 20 ) | // Bizarre re-use of termination resistor terminology? (10M PHY Only)
 		( 0 << 17 ) | // IFG = 0, 96-bit guard time.
-		( 0 << 14 ) | // FES = 2 = GBE, 1=100MBit/s
+		( 0 << 14 ) | // FES = 2 = GBE, 1=100MBit/s (UNSET TO START)
 		( 0 << 12 ) | // Self Loop = 0
-		( 1 << 11 ) | // Full-Duplex Mode
+		( 0 << 11 ) | // Full-Duplex Mode (UNSET TO START)
 		( 1 << 10 ) | // IPCO = 1, Check TCP, UDP, ICMP header checksums.
 		( 1 << 7  ) | // APCS (automatically strip frames)
 		( 1 << 3  ) | // TE (Transmit enable!)
@@ -263,7 +290,7 @@ static int ch32v307ethInit()
 		( CH32V307GIGABIT_CFG_CLOCK_PHASE << 1  ) | // TCF = 0 (Potentailly change if clocking is wrong)
 		0;
 
-	Delay_Ms(5); 	// Inconsistent at 3.5ms
+	Delay_Ms(25); 	// Waiting for PHY to exit sleep.  This is inconsistent at 19ms.
 
 	// Reset the physical layer
 	ch32v307ethPHYRegWrite( PHY_BCR,
@@ -280,15 +307,12 @@ static int ch32v307ethInit()
 		1<<6 | // Speed Bit.
 		0 );
 
-	// TODO: Here is where we would want to configure the PHY to trigger interrupts on link changes.
-
 	ch32v307ethGetMacInUC( ch32v307eth_mac );
 
 	ETH->MACA0HR = (uint32_t)((ch32v307eth_mac[5]<<8) | ch32v307eth_mac[4]);
 	ETH->MACA0LR = (uint32_t)(ch32v307eth_mac[0] | (ch32v307eth_mac[1]<<8) | (ch32v307eth_mac[2]<<16) | (ch32v307eth_mac[3]<<24));
 
-
-    ETH->MACFFR = (uint32_t)(ETH_ReceiveAll_Disable | // TODO: Consider turning this on.
+    ETH->MACFFR = (uint32_t)(ETH_ReceiveAll_Disable |
                           ETH_SourceAddrFilter_Disable |
                           ETH_PassControlFrames_BlockAll |
                           ETH_BroadcastFramesReception_Enable |
@@ -299,8 +323,9 @@ static int ch32v307ethInit()
 
     ETH->MACHTHR = (uint32_t)0;
     ETH->MACHTLR = (uint32_t)0;
-	ETH->MACFCR = 0; // No pause frames.
     ETH->MACVLANTR = (uint32_t)(ETH_VLANTagComparison_16Bit);
+
+	ETH->MACFCR = 0; // No pause frames.
 
 	// Configure RX/TX chains.
     ETH_DMADESCTypeDef *tdesc;
@@ -308,9 +333,7 @@ static int ch32v307ethInit()
 	{
 		tdesc = ch32v307eth_DMATxDscrTab + i;
 		tdesc->ControlBufferSize = 0;
-		tdesc->Status = ETH_DMATxDesc_TCH | ETH_DMATxDesc_IC | ETH_DMATxDesc_FS | ETH_DMATxDesc_TTSE;
-		if( i == CH32V307GIGABIT_TXBUFNB-1)
-			tdesc->Status |= ETH_DMATxDesc_TER;
+		tdesc->Status = ETH_DMATxDesc_TCH | ETH_DMATxDesc_IC | ETH_DMATxDesc_FS;
 		tdesc->Buffer1Addr = (uint32_t)0; // Populate with data.
 		tdesc->Buffer2NextDescAddr = (i < CH32V307GIGABIT_TXBUFNB - 1) ? ((uint32_t)(ch32v307eth_DMATxDscrTab + i + 1)) : (uint32_t)ch32v307eth_DMATxDscrTab;
 	}
@@ -324,14 +347,14 @@ static int ch32v307ethInit()
 		tdesc->Buffer2NextDescAddr = (i < CH32V307GIGABIT_RXBUFNB - 1) ? (uint32_t)(ch32v307eth_DMARxDscrTab + i + 1) : (uint32_t)(ch32v307eth_DMARxDscrTab);
 	}
 	ETH->DMARDLAR = (uint32_t)ch32v307eth_DMARxDscrTab;
+
 	pDMARxGet = ch32v307eth_DMARxDscrTab;
 	pDMATxSet = ch32v307eth_DMATxDscrTab;
 
-	// Transmit good frame half interrupt mask.
-	ETH->MMCTIMR = ETH_MMCTIMR_TGFM;
-
 	// Receive a good frame half interrupt mask.
 	// Receive CRC error frame half interrupt mask.
+	// For the future: Why do we want this?
+	ETH->MMCTIMR = ETH_MMCTIMR_TGFM;
 	ETH->MMCRIMR = ETH_MMCRIMR_RGUFM | ETH_MMCRIMR_RFCEM;
 
 	ETH->DMAIER = ETH_DMA_IT_NIS | // Normal interrupt enable.
@@ -384,57 +407,62 @@ void ETH_IRQHandler( void )
 		    {
 				// Received a packet, normally.
 				// Status is in Table 27-17 Definitions of RDes0
-				uint32_t status = pDMARxGet->Status;
-
-		        ETH->DMASR = ETH_DMA_IT_R; // XXX TODO: Is this a good place to acknowledge? REVISIT: Should this go lower?
-
-				// We only have a valid packet in a specific situation.
-				// So, we take the status, then mask off the bits we care about
-				// And see if they're equal to the ones that need to be set/unset.
-				const uint32_t mask = 
-					ETH_DMARxDesc_OWN |
-					ETH_DMARxDesc_LS |
-					ETH_DMARxDesc_ES |
-					ETH_DMARxDesc_FS;
-				const uint32_t eq = 
-					0 |
-					ETH_DMARxDesc_LS |
-					0 |
-					ETH_DMARxDesc_FS;
-
-				if( ( status & mask ) == eq )
+				do
 				{
-					int32_t nFrameLength = ((status & ETH_DMARxDesc_FL) >> ETH_DMARXDESC_FRAME_LENGTHSHIFT) - 4;
-					if( nFrameLength > 0 )
+					// XXX TODO: Is this a good place to acknowledge? REVISIT: Should this go lower?
+					// XXX TODO: Restructure this to allow for 
+				    ETH->DMASR = ETH_DMA_IT_R;
+
+					uint32_t status = pDMARxGet->Status;
+					if( status & ETH_DMARxDesc_OWN ) break;
+
+					// We only have a valid packet in a specific situation.
+					// So, we take the status, then mask off the bits we care about
+					// And see if they're equal to the ones that need to be set/unset.
+					const uint32_t mask = 
+						ETH_DMARxDesc_OWN |
+						ETH_DMARxDesc_LS |
+						ETH_DMARxDesc_ES |
+						ETH_DMARxDesc_FS;
+					const uint32_t eq = 
+						0 |
+						ETH_DMARxDesc_LS |
+						0 |
+						ETH_DMARxDesc_FS;
+
+					int suppress_own = 0;
+
+					if( ( status & mask ) == eq )
 					{
-						uint8_t * data = (uint8_t*)pDMARxGet->Buffer1Addr;
-						printf( "VALID packet %d: %02x %02x %02x %02x %02x %02x %02x %02x %02x\n", 
-							(int)nFrameLength, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8] );
+						int32_t frame_length = ((status & ETH_DMARxDesc_FL) >> ETH_DMARXDESC_FRAME_LENGTHSHIFT) - 4;
+						if( frame_length > 0 )
+						{
+							uint8_t * data = (uint8_t*)pDMARxGet->Buffer1Addr;
+							suppress_own = ch32v307ethInitHandlePacket( data, frame_length, pDMARxGet );
+						}
 					}
-				}
-				else
-				{
-					printf( "INvalid packet\n" );
-				}
+					// Otherwise, Invalid Packet
 
-				// Relinquish control back to underlying hardware.
-				pDMARxGet->Status = ETH_DMARxDesc_OWN;
+					// Relinquish control back to underlying hardware.
+					if( !suppress_own )
+						pDMARxGet->Status = ETH_DMARxDesc_OWN;
 
-				// Tricky logic for figuring out the next packet. Originally
-				// discussed in ch32v30x_eth.c in ETH_DropRxPkt
-				if((pDMARxGet->ControlBufferSize & ETH_DMARxDesc_RCH) != (uint32_t)RESET)
-					pDMARxGet = (ETH_DMADESCTypeDef *)(pDMARxGet->Buffer2NextDescAddr);
-				else
-				{
-					if((pDMARxGet->ControlBufferSize & ETH_DMARxDesc_RER) != (uint32_t)RESET)
-						pDMARxGet = (ETH_DMADESCTypeDef *)(ETH->DMARDLAR);
+					// Tricky logic for figuring out the next packet. Originally
+					// discussed in ch32v30x_eth.c in ETH_DropRxPkt
+					if((pDMARxGet->ControlBufferSize & ETH_DMARxDesc_RCH) != (uint32_t)RESET)
+						pDMARxGet = (ETH_DMADESCTypeDef *)(pDMARxGet->Buffer2NextDescAddr);
 					else
-						pDMARxGet = (ETH_DMADESCTypeDef *)((uint32_t)pDMARxGet + 0x10 + ((ETH->DMABMR & ETH_DMABMR_DSL) >> 2));
-				}
+					{
+						if((pDMARxGet->ControlBufferSize & ETH_DMARxDesc_RER) != (uint32_t)RESET)
+							pDMARxGet = (ETH_DMADESCTypeDef *)(ETH->DMARDLAR);
+						else
+							pDMARxGet = (ETH_DMADESCTypeDef *)((uint32_t)pDMARxGet + 0x10 + ((ETH->DMABMR & ETH_DMABMR_DSL) >> 2));
+					}
+				} while( 1 );
 		    }
 		    if( int_sta & ETH_DMA_IT_T )
 		    {
-				printf( "TX Complete\n" );
+				ch32v307ethInitHandleTXC();
 		        ETH->DMASR = ETH_DMA_IT_T;
 		    }
 		    ETH->DMASR = ETH_DMA_IT_NIS;
@@ -442,7 +470,7 @@ void ETH_IRQHandler( void )
 	} while( 1 );
 }
 
-static int ch32v307ethTransmitStatic(const uint32_t * buffer, uint32_t length)
+static int ch32v307ethTransmitStatic(uint8_t * buffer, uint32_t length, int enable_txc)
 {
 	// The official SDK waits until ETH_DMATxDesc_TTSS is set.
 	// This also provides a transmit timestamp, which could be
@@ -452,33 +480,27 @@ static int ch32v307ethTransmitStatic(const uint32_t * buffer, uint32_t length)
 
 	if( pDMATxSet->Status & ETH_DMATxDesc_OWN )
 	{
-		// If the ethernet device has not relinquished this handle, we can't transmit.
+		ETH->DMATPDR = 0;
 		return -1;
 	}
 
-	printf( "STATUS: %08lx\n", pDMATxSet->Status );
     pDMATxSet->ControlBufferSize = (length & ETH_DMATxDesc_TBS1);
 	pDMATxSet->Buffer1Addr = (uint32_t)buffer;
 
 	// Status is in Table 27-12 "Definitions of TDes0 bits"
-    pDMATxSet->Status |= 
+	enable_txc = enable_txc ? ETH_DMATxDesc_IC : 0;
+    pDMATxSet->Status = 
 		ETH_DMATxDesc_LS |                  // Last Segment (This is all you need to have to transmit)
 		ETH_DMATxDesc_FS |                  // First Segment (Beginning of transmission)
-		ETH_DMATxDesc_IC |                  // Interrupt when complete
+		enable_txc |                        // Interrupt when complete
+		ETH_DMATxDesc_TCH |                 // Next Descriptor Address Valid
 		ETH_DMATxDesc_CIC_TCPUDPICMP_Full | // Do all header checksums.
-		ETH_DMATxDesc_OWN; // TODO Can this be combined?                 // Own back to hardware
-	//ETH->DMATDLAR = pDMATxSet;
-	ETH->DMAOMR |= ETH_DMAOMR_ST; // TODO: Is this needed?
+		ETH_DMATxDesc_OWN;                  // Own back to hardware
+
 	pDMATxSet = (ETH_DMADESCTypeDef*)pDMATxSet->Buffer2NextDescAddr;
 
-	// This basically always gets set unless we are somehow outrunning the sender.
-	ETH->DMASR = ETH_DMASR_TBUS;
+	ETH->DMASR = ETH_DMASR_TBUS; // This resets the transmit process (or "starts" it)
 	ETH->DMATPDR = 0;
-
-/*
-		tdesc->Status = ETH_DMATxDesc_TCH | ETH_DMATxDesc_IC | ETH_DMATxDesc_FS | ETH_DMATxDesc_TTSE;
-		if( i == CH32V307GIGABIT_TXBUFNB-1)
-			tdesc->Status |= ETH_DMATxDesc_TER;*/
 
 	return 0;
 }
