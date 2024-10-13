@@ -8591,12 +8591,6 @@
 		(uuid "3b7c5f79-1ec2-422d-9783-58f76aee63d8")
 	)
 	(junction
-		(at 227.33 83.82)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "47dc0e66-5278-46bd-a197-1baaab8435c1")
-	)
-	(junction
 		(at 261.62 150.495)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -8887,16 +8881,6 @@
 			(type default)
 		)
 		(uuid "185f6efc-5c92-44fa-88fb-43273ef59165")
-	)
-	(wire
-		(pts
-			(xy 227.33 83.82) (xy 227.33 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "18f509ed-d171-402c-98ac-d4cafbe304c8")
 	)
 	(wire
 		(pts
@@ -9640,7 +9624,7 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 83.82) (xy 227.33 87.63)
+			(xy 227.33 76.2) (xy 227.33 87.63)
 		)
 		(stroke
 			(width 0)
@@ -10060,16 +10044,6 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 83.82) (xy 227.33 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c46ba1ef-e697-4c8b-a06f-0c7e7e9e19f2")
-	)
-	(wire
-		(pts
 			(xy 260.35 81.28) (xy 260.35 60.96)
 		)
 		(stroke
@@ -10398,16 +10372,15 @@
 		)
 		(uuid "2ae480fe-63c4-4db8-b5d3-040128ef4d79")
 	)
-	(text "EPB15 = U1TX"
+	(text "was: C81114\nnow: C3011523\n"
 		(exclude_from_sim no)
-		(at 160.02 177.8 0)
+		(at 141.732 108.712 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
 		)
-		(uuid "7930506f-9c7a-4aae-a633-e223104adbff")
+		(uuid "44618f0c-de1c-42ca-baa1-05ed842a1a9d")
 	)
 	(text "TODO:\n* Try configuring without bootstraps [OK]\n* Try to configure without crystal [OK]\n* GMII_TXCTL is sus - is it needed? [R21]\n* Investigate BIAS on POE\n* EXPERIMENT FEEDBACK on POE\n* Test With connection MT2492\n* Test with R25 in."
 		(exclude_from_sim no)
@@ -10441,12 +10414,12 @@
 		)
 		(uuid "a13a762a-1d51-438d-a903-699f0ea035d6")
 	)
-	(text "INCOMPLETE AND UNTESTED"
+	(text "PoE Untested\n(Or more specifically not hardened)"
 		(exclude_from_sim no)
-		(at 93.98 24.13 0)
+		(at 92.964 24.638 0)
 		(effects
 			(font
-				(size 5 5)
+				(size 3.048 3.048)
 				(thickness 1)
 				(bold yes)
 			)
@@ -14986,7 +14959,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C706900"
+		(property "LCSC" "C7501280"
 			(at 139.7 153.67 0)
 			(effects
 				(font
@@ -16087,7 +16060,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
+		(property "Footprint" "Diode_SMD:D_SOD-323"
 			(at 238.76 130.175 90)
 			(effects
 				(font
@@ -16274,7 +16247,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C81114"
+		(property "LCSC" "C3011523"
 			(at 132.08 123.825 0)
 			(effects
 				(font
@@ -17980,7 +17953,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
+		(property "Footprint" "Diode_SMD:D_SOD-323"
 			(at 20.32 39.37 90)
 			(effects
 				(font
@@ -19023,7 +18996,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C81114"
+		(property "LCSC" "C3011523"
 			(at 132.08 99.695 0)
 			(effects
 				(font
@@ -22396,7 +22369,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C706900"
+		(property "LCSC" "C7501280"
 			(at 107.95 153.67 0)
 			(effects
 				(font
@@ -25833,7 +25806,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C237173"
+		(property "LCSC" "C52923"
 			(at 92.71 187.96 0)
 			(effects
 				(font
@@ -26570,7 +26543,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100v470n"
+		(property "Value" "100v100n"
 			(at 175.26 130.81 0)
 			(effects
 				(font
@@ -26606,7 +26579,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C596323"
+		(property "LCSC" "C28233"
 			(at 175.26 128.27 0)
 			(effects
 				(font
