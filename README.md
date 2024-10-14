@@ -331,3 +331,5 @@ Codes from JLCPCB:
 | Pressure Sensor | 902690 |
 | Liquid Level Sensor | 902690 |
 | Oxygen Sensor | 902790 |
+
+Also, another friend mentioned 8537.10.9170 is a common entry for general purpose circuit boards for controlling things. So may want to look into that if appropriate for your uses. Note: This has a 27% Tarriff at least in Oct, 2024
