@@ -310,7 +310,7 @@ Codes from JLCPCB:
 | Description | Code |
 | -- | -- |
 | DIY Board | 902300 |
-| Development Board | 847330 |
+| Development Board | 847330* |
 | Programmable Controller | 853890 |
 | Robot | 847990 |
 | Video / TV Game Player / Handheld Video Game | 950450 |
@@ -331,5 +331,7 @@ Codes from JLCPCB:
 | Pressure Sensor | 902690 |
 | Liquid Level Sensor | 902690 |
 | Oxygen Sensor | 902790 |
+
+* 8473.30 -> The board must be used in conjunction with a programmable machine (under HTS section 8471), in that it must: 1. store processing programs 2. be freely programmable by the user 3. must perform computations for users and 4. execute without human intervention.
 
 Also, another friend mentioned 8537.10.9170 is a common entry for general purpose circuit boards for controlling things. So may want to look into that if appropriate for your uses. Note: This has a 27% Tarriff at least in Oct, 2024
