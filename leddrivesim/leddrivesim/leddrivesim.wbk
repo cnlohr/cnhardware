@@ -1,0 +1,53 @@
+{
+  "last_sch_text_sim_command": "",
+  "tabs": [
+    {
+      "analysis": "TRAN",
+      "commands": [
+        ".tran 2n 100u",
+        ".kicad adjustpaths",
+        ".save all",
+        ".probe alli",
+        ".probe allp"
+      ],
+      "dottedSecondary": true,
+      "margins": {
+        "bottom": 45,
+        "left": 70,
+        "right": 70,
+        "top": 30
+      },
+      "measurements": [],
+      "showGrid": true,
+      "traces": [
+        {
+          "color": "rgb(255, 255, 51)",
+          "signal": "I(D1)",
+          "trace_type": 258
+        },
+        {
+          "color": "rgb(166, 216, 84)",
+          "signal": "I(D2)",
+          "trace_type": 258
+        },
+        {
+          "color": "rgb(255, 217, 47)",
+          "signal": "I(L1)",
+          "trace_type": 258
+        },
+        {
+          "color": "rgb(231, 138, 195)",
+          "signal": "V(ADC_A)",
+          "trace_type": 257
+        },
+        {
+          "color": "rgb(141, 160, 203)",
+          "signal": "V(ADC_B)",
+          "trace_type": 257
+        }
+      ]
+    }
+  ],
+  "user_defined_signals": [],
+  "version": 6
+}
