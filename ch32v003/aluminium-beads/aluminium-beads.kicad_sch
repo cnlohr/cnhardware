@@ -553,175 +553,6 @@
 				)
 			)
 		)
-		(symbol "Device:LED"
-			(pin_numbers hide)
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "LED"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Light emitting diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "LED diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "LED_0_1"
-				(polyline
-					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy 1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "LED_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Device:Q_NMOS_GSD"
 			(pin_names
 				(offset 0) hide)
@@ -1667,6 +1498,204 @@
 						)
 					)
 					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "cnhardware:LED_1W_3W"
+			(pin_numbers hide)
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D?"
+				(at -0.3174 -3.81 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Value" "LED_1W_3W"
+				(at -2.8574 -3.81 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Footprint" "cnhardware:LED_1W_3W_R8-FOR-ALUMINIUM-SUBSTRATE"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Light emitting diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "~"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "LED diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "LED_1W_3W_0_1"
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "LED_1W_3W_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "PAD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4150,6 +4179,73 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 71.12 110.49 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4490eabf-0aef-4f36-8fb5-a7d7a7e63cf0")
+		(property "Reference" "#PWR031"
+			(at 77.47 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 74.93 110.4899 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 71.12 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 71.12 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d5f96539-c509-4f65-8d36-811e7c606d88")
+		)
+		(instances
+			(project "aluminium-beads"
+				(path "/b09c8add-a633-4b6e-a4ca-29c545062a17"
+					(reference "#PWR031")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 60.96 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4595,7 +4691,7 @@
 		(dnp no)
 		(uuid "62033c0b-f8a9-4683-b6b2-371c8a38b461")
 		(property "Reference" "D7"
-			(at 100.33 108.9024 90)
+			(at 93.726 107.95 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4604,7 +4700,7 @@
 			)
 		)
 		(property "Value" "1A"
-			(at 99.822 110.998 90)
+			(at 94.234 112.776 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4885,7 +4981,7 @@
 		(dnp no)
 		(uuid "6a7f7607-c04c-4c90-bdd8-864b307101bf")
 		(property "Reference" "D5"
-			(at 63.5 108.9024 90)
+			(at 56.134 108.966 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4894,7 +4990,7 @@
 			)
 		)
 		(property "Value" "1A"
-			(at 62.992 110.998 90)
+			(at 56.642 111.252 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4963,7 +5059,7 @@
 		(dnp no)
 		(uuid "70504b95-4863-424f-97d0-a8e3739da73e")
 		(property "Reference" "D2"
-			(at 63.5 59.3724 90)
+			(at 56.134 59.182 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4972,7 +5068,7 @@
 			)
 		)
 		(property "Value" "1A"
-			(at 62.992 61.468 90)
+			(at 55.626 61.468 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5468,7 +5564,74 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
+		(lib_id "power:GND")
+		(at 107.95 60.96 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8f7f449d-a4da-41d7-83c2-4fd471cd78f4")
+		(property "Reference" "#PWR029"
+			(at 114.3 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 111.76 60.9599 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 107.95 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 107.95 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 107.95 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "804f5588-6124-4cdf-b603-f3e9a5291080")
+		)
+		(instances
+			(project "aluminium-beads"
+				(path "/b09c8add-a633-4b6e-a4ca-29c545062a17"
+					(reference "#PWR029")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "cnhardware:LED_1W_3W")
 		(at 68.58 60.96 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5478,21 +5641,21 @@
 		(fields_autoplaced yes)
 		(uuid "8fa0b93f-babf-4d44-935c-489077ef95b2")
 		(property "Reference" "D1"
-			(at 72.39 61.2774 90)
+			(at 66.04 61.2774 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "LED"
-			(at 72.39 63.8174 90)
+			(at 66.04 63.8174 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Footprint" "cnhardware:LED_1W_3W_R8-FOR-ALUMINIUM-SUBSTRATE"
@@ -5536,6 +5699,9 @@
 		)
 		(pin "2"
 			(uuid "f0c864b5-a54d-45e4-9222-65e6a512ba57")
+		)
+		(pin "3"
+			(uuid "a372e75b-da50-4c07-8bb0-3c8b6e7a7b45")
 		)
 		(instances
 			(project ""
@@ -5708,31 +5874,30 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
+		(lib_id "cnhardware:LED_1W_3W")
 		(at 105.41 60.96 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "96ecc8d1-8810-4533-ada5-edba873f8d98")
 		(property "Reference" "D4"
-			(at 109.22 61.2774 90)
+			(at 110.236 59.436 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "LED"
-			(at 109.22 63.8174 90)
+			(at 102.87 63.8174 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Footprint" "cnhardware:LED_1W_3W_R8-FOR-ALUMINIUM-SUBSTRATE"
@@ -5776,6 +5941,9 @@
 		)
 		(pin "2"
 			(uuid "dc1eb472-6730-4016-98af-96ba3224284e")
+		)
+		(pin "3"
+			(uuid "a5b01f92-b9e5-42c9-ab00-564922d80c91")
 		)
 		(instances
 			(project "aluminium-beads"
@@ -5869,31 +6037,30 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
+		(lib_id "cnhardware:LED_1W_3W")
 		(at 105.41 110.49 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "9b5d3ed3-cfe3-4af5-b11b-baebf7ccfe54")
 		(property "Reference" "D8"
-			(at 109.22 110.8074 90)
+			(at 110.49 109.22 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "LED"
-			(at 109.22 113.3474 90)
+			(at 102.87 113.3474 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Footprint" "cnhardware:LED_1W_3W_R8-FOR-ALUMINIUM-SUBSTRATE"
@@ -5937,6 +6104,9 @@
 		)
 		(pin "2"
 			(uuid "46a1958a-ed3d-4429-a167-06d74c69177e")
+		)
+		(pin "3"
+			(uuid "eadbd2da-017a-4d25-9f40-69d45e55a55b")
 		)
 		(instances
 			(project "aluminium-beads"
@@ -6235,7 +6405,7 @@
 		(dnp no)
 		(uuid "a5f80104-f229-45c7-97d5-8a020d97513d")
 		(property "Reference" "D3"
-			(at 100.33 59.3724 90)
+			(at 92.456 59.69 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6244,7 +6414,7 @@
 			)
 		)
 		(property "Value" "1A"
-			(at 99.822 61.468 90)
+			(at 92.71 61.468 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6819,6 +6989,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 107.95 110.49 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bd44d0f8-9d44-4265-aa7e-97518a405d67")
+		(property "Reference" "#PWR032"
+			(at 114.3 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 111.76 110.4899 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 107.95 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 107.95 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 107.95 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "37cfa794-af70-4986-b771-9580ed37ad0c")
+		)
+		(instances
+			(project "aluminium-beads"
+				(path "/b09c8add-a633-4b6e-a4ca-29c545062a17"
+					(reference "#PWR032")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 171.45 121.92 0)
 		(unit 1)
@@ -7165,31 +7402,30 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
+		(lib_id "cnhardware:LED_1W_3W")
 		(at 68.58 110.49 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "c80ef765-8139-4b56-a0c1-5ec9dabe1866")
 		(property "Reference" "D6"
-			(at 72.39 110.8074 90)
+			(at 66.802 107.696 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Value" "LED"
-			(at 72.39 113.3474 90)
+		(property "Value" "LED_1W_3W"
+			(at 66.04 113.3474 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Footprint" "cnhardware:LED_1W_3W_R8-FOR-ALUMINIUM-SUBSTRATE"
@@ -7233,6 +7469,9 @@
 		)
 		(pin "2"
 			(uuid "23acd580-20b4-4efc-9629-efa315e9c406")
+		)
+		(pin "3"
+			(uuid "0e6db2a5-21ca-44ff-a4e4-3d298a9c95a1")
 		)
 		(instances
 			(project "aluminium-beads"
@@ -7719,6 +7958,73 @@
 			(project "aluminium-beads"
 				(path "/b09c8add-a633-4b6e-a4ca-29c545062a17"
 					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 71.12 60.96 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f0331b14-46bc-4098-914a-565331003c1f")
+		(property "Reference" "#PWR030"
+			(at 77.47 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 74.93 60.9599 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 71.12 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 71.12 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e89b111b-52b4-4a25-9944-b9472fe20f3e")
+		)
+		(instances
+			(project "aluminium-beads"
+				(path "/b09c8add-a633-4b6e-a4ca-29c545062a17"
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
