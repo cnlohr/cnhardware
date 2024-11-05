@@ -65,6 +65,36 @@
 	)
 	(attr smd)
 	(fp_line
+		(start -4.17 2.1)
+		(end -4.17 -2.45)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Dwgs.User")
+		(uuid "34a56855-0ae5-49a0-83f4-667494e2e93b")
+	)
+	(fp_line
+		(start 4.17 2.1)
+		(end 4.17 -2.45)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Dwgs.User")
+		(uuid "272c931c-8162-470a-8638-28f673b3e74b")
+	)
+	(fp_line
+		(start 4.17 2.2)
+		(end -4.17 2.2)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Dwgs.User")
+		(uuid "a6d316d3-bde1-47ab-81bb-9242a3fdd350")
+	)
+	(fp_line
 		(start -3.25 -1.75)
 		(end -3.25 -1.25)
 		(stroke
@@ -194,8 +224,21 @@
 		(layer "Edge.Cuts")
 		(uuid "621e6df4-ca65-4587-b0fc-39f3bec3249c")
 	)
+	(fp_text user "REQ. 0.2mm Additional Clearance At Base"
+		(at -7.35 5.7 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "e71e9a78-9aac-4123-a8dd-6f4e8e3281a4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
 	(fp_text user "${REFERENCE}"
-		(at 0 2.5 0)
+		(at 3 3 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "e98d4e26-42e5-4976-ab6e-67b596a1721e")

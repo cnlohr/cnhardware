@@ -65,6 +65,17 @@
 		)
 	)
 	(attr smd)
+	(fp_rect
+		(start -5.8 -5.8)
+		(end 5.8 5.8)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "Dwgs.User")
+		(uuid "d8a07b7b-c583-4bc2-922f-20717159c1c6")
+	)
 	(fp_text user "${REFERENCE}"
 		(at 0 2.5 0)
 		(unlocked yes)
@@ -77,16 +88,17 @@
 			)
 		)
 	)
-	(pad "1" thru_hole circle
-		(at -1.905 5)
+	(pad "1" thru_hole roundrect
+		(at -4 5.35)
 		(size 1 1)
 		(drill 0.55)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
+		(roundrect_rratio 0.15)
 		(uuid "9a6bbbb2-08dd-4d16-9888-4efab348d91d")
 	)
 	(pad "2" thru_hole circle
-		(at -0.635 5)
+		(at -2 5.35)
 		(size 1 1)
 		(drill 0.55)
 		(layers "*.Cu" "*.Mask")
@@ -94,7 +106,7 @@
 		(uuid "75b1413a-bf56-4b16-8ec0-a975dd4bd346")
 	)
 	(pad "3" thru_hole circle
-		(at 0.635 5)
+		(at 0 5.35)
 		(size 1 1)
 		(drill 0.55)
 		(layers "*.Cu" "*.Mask")
@@ -102,7 +114,7 @@
 		(uuid "6a44d2f8-948f-41da-b24e-765f249612c5")
 	)
 	(pad "4" thru_hole circle
-		(at 1.905 5)
+		(at 2 5.35)
 		(size 1 1)
 		(drill 0.55)
 		(layers "*.Cu" "*.Mask")
@@ -110,7 +122,7 @@
 		(uuid "e0515244-3544-48d1-aaa4-abff4069db2b")
 	)
 	(pad "5" thru_hole circle
-		(at 3.175 5)
+		(at 4 5.35)
 		(size 1 1)
 		(drill 0.55)
 		(layers "*.Cu" "*.Mask")
@@ -118,7 +130,7 @@
 		(uuid "2c137c72-a6ca-4c19-a23d-184468272569")
 	)
 	(pad "6" thru_hole circle
-		(at 3.175 -5)
+		(at 4 -5.35)
 		(size 1 1)
 		(drill 0.55)
 		(layers "*.Cu" "*.Mask")
@@ -126,7 +138,7 @@
 		(uuid "3dda9a16-7656-4703-95dd-5faddd0bc60e")
 	)
 	(pad "7" thru_hole circle
-		(at 1.905 -5)
+		(at 2 -5.35)
 		(size 1 1)
 		(drill 0.55)
 		(layers "*.Cu" "*.Mask")
@@ -134,7 +146,7 @@
 		(uuid "bba9c41b-288f-4f57-97cc-4d32cb01a05a")
 	)
 	(pad "8" thru_hole circle
-		(at 0.635 -5)
+		(at 0 -5.35)
 		(size 1 1)
 		(drill 0.55)
 		(layers "*.Cu" "*.Mask")
@@ -142,7 +154,7 @@
 		(uuid "5411d625-2f94-4219-85e4-61f433b7cff6")
 	)
 	(pad "9" thru_hole circle
-		(at -0.635 -5)
+		(at -2 -5.35)
 		(size 1 1)
 		(drill 0.55)
 		(layers "*.Cu" "*.Mask")
@@ -150,7 +162,7 @@
 		(uuid "932fed44-06cd-4180-8c6a-f769b88a66c7")
 	)
 	(pad "10" thru_hole circle
-		(at -1.905 -5)
+		(at -4 -5.35)
 		(size 1 1)
 		(drill 0.55)
 		(layers "*.Cu" "*.Mask")
