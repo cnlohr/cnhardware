@@ -3728,15 +3728,15 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U"
-				(at 0 15.24 0)
+			(property "Reference" "U4"
+				(at 0 -19.05 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" ""
+			(property "Value" "~"
 				(at 1.27 0 0)
 				(effects
 					(font
@@ -3744,7 +3744,7 @@
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Transformer_SMD:Transformer_Ethernet_YDS_30F-51NL_SO-24_7.1x15.1mm"
 				(at 1.27 0 0)
 				(effects
 					(font
@@ -3771,6 +3771,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC" "C2837258"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(symbol "G2406S-Gigabit-Magnetics-Transformer_1_1"
 				(rectangle
 					(start -6.35 13.97)
@@ -3786,7 +3795,7 @@
 				(pin bidirectional line
 					(at -8.89 12.7 0)
 					(length 2.54)
-					(name "TCT1"
+					(name "MCT1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3804,7 +3813,7 @@
 				(pin bidirectional line
 					(at -8.89 -10.16 0)
 					(length 2.54)
-					(name "TCT4"
+					(name "MCT4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3822,7 +3831,7 @@
 				(pin bidirectional line
 					(at -8.89 -12.7 0)
 					(length 2.54)
-					(name "TD4+"
+					(name "MD4+"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3840,7 +3849,7 @@
 				(pin bidirectional line
 					(at -8.89 -15.24 0)
 					(length 2.54)
-					(name "TD4-"
+					(name "MD4-"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3858,7 +3867,7 @@
 				(pin bidirectional line
 					(at 8.89 -15.24 180)
 					(length 2.54)
-					(name "MX4-"
+					(name "TX4-"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3876,7 +3885,7 @@
 				(pin bidirectional line
 					(at 8.89 -12.7 180)
 					(length 2.54)
-					(name "MX4+"
+					(name "TX4+"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3894,7 +3903,7 @@
 				(pin bidirectional line
 					(at 8.89 -10.16 180)
 					(length 2.54)
-					(name "MCT4"
+					(name "TCT4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3912,7 +3921,7 @@
 				(pin bidirectional line
 					(at 8.89 -7.62 180)
 					(length 2.54)
-					(name "MX3-"
+					(name "TX3-"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3930,7 +3939,7 @@
 				(pin bidirectional line
 					(at 8.89 -5.08 180)
 					(length 2.54)
-					(name "MX3+"
+					(name "TX3+"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3948,7 +3957,7 @@
 				(pin bidirectional line
 					(at 8.89 -2.54 180)
 					(length 2.54)
-					(name "MCT3"
+					(name "TCT3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3966,7 +3975,7 @@
 				(pin bidirectional line
 					(at 8.89 0 180)
 					(length 2.54)
-					(name "MX2-"
+					(name "TX2-"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3984,7 +3993,7 @@
 				(pin bidirectional line
 					(at -8.89 10.16 0)
 					(length 2.54)
-					(name "TD1+"
+					(name "MD1+"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4002,7 +4011,7 @@
 				(pin bidirectional line
 					(at 8.89 2.54 180)
 					(length 2.54)
-					(name "MX2+"
+					(name "TX2+"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4020,7 +4029,7 @@
 				(pin bidirectional line
 					(at 8.89 5.08 180)
 					(length 2.54)
-					(name "MCT2"
+					(name "TCT2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4038,7 +4047,7 @@
 				(pin bidirectional line
 					(at 8.89 7.62 180)
 					(length 2.54)
-					(name "MX1-"
+					(name "TX1-"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4056,7 +4065,7 @@
 				(pin bidirectional line
 					(at 8.89 10.16 180)
 					(length 2.54)
-					(name "MX1+"
+					(name "TX1+"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4074,7 +4083,7 @@
 				(pin bidirectional line
 					(at 8.89 12.7 180)
 					(length 2.54)
-					(name "MCT1"
+					(name "TCT1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4092,7 +4101,7 @@
 				(pin bidirectional line
 					(at -8.89 7.62 0)
 					(length 2.54)
-					(name "TD1-"
+					(name "MD1-"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4110,7 +4119,7 @@
 				(pin bidirectional line
 					(at -8.89 5.08 0)
 					(length 2.54)
-					(name "TCT2"
+					(name "MCT2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4128,7 +4137,7 @@
 				(pin bidirectional line
 					(at -8.89 2.54 0)
 					(length 2.54)
-					(name "TD2+"
+					(name "MD2+"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4146,7 +4155,7 @@
 				(pin bidirectional line
 					(at -8.89 0 0)
 					(length 2.54)
-					(name "TD2-"
+					(name "MD2-"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4164,7 +4173,7 @@
 				(pin bidirectional line
 					(at -8.89 -2.54 0)
 					(length 2.54)
-					(name "TCT3"
+					(name "MCT3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4182,7 +4191,7 @@
 				(pin bidirectional line
 					(at -8.89 -5.08 0)
 					(length 2.54)
-					(name "TD3+"
+					(name "MD3+"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4200,7 +4209,7 @@
 				(pin bidirectional line
 					(at -8.89 -7.62 0)
 					(length 2.54)
-					(name "TD3-"
+					(name "MD3-"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -8603,6 +8612,12 @@
 		(uuid "52d0351c-505c-48da-9252-d53085ff194b")
 	)
 	(junction
+		(at 227.33 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "65a3deca-6987-4606-b304-12c9ae9cf9f9")
+	)
+	(junction
 		(at 194.31 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9624,7 +9639,7 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 76.2) (xy 227.33 87.63)
+			(xy 227.33 76.2) (xy 227.33 83.82)
 		)
 		(stroke
 			(width 0)
@@ -10134,6 +10149,16 @@
 	)
 	(wire
 		(pts
+			(xy 227.33 83.82) (xy 229.87 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db631092-6f4b-4d19-8695-a62ca500e04d")
+	)
+	(wire
+		(pts
 			(xy 261.62 142.875) (xy 265.43 142.875)
 		)
 		(stroke
@@ -10251,6 +10276,16 @@
 			(type default)
 		)
 		(uuid "f051c076-d37a-44ae-91da-4b7e3a1b5bb1")
+	)
+	(wire
+		(pts
+			(xy 227.33 83.82) (xy 227.33 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0f3a21b-8650-4875-9822-c4fcf28109bc")
 	)
 	(wire
 		(pts
@@ -10414,7 +10449,7 @@
 		)
 		(uuid "a13a762a-1d51-438d-a903-699f0ea035d6")
 	)
-	(text "PoE Untested\n(Or more specifically not hardened)"
+	(text "PoE Untested\n(Or more specifically not hardened)\n--new design with different magnetics untested--\nSwitched out magnetics\nTODO More POE Testing."
 		(exclude_from_sim no)
 		(at 92.964 24.638 0)
 		(effects
@@ -10933,6 +10968,28 @@
 			)
 		)
 	)
+	(global_label "CT1"
+		(shape input)
+		(at 247.65 60.96 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1a7f66be-f267-43a2-9fa7-e14895dc7b8b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 254.0823 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "EPA6"
 		(shape input)
 		(at 147.32 161.29 0)
@@ -11127,28 +11184,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "CT2"
-		(shape input)
-		(at 247.65 76.2 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "22d9b1e6-5f50-49f5-b8e7-d8e72c9420c3")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 254.0823 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -11351,6 +11386,28 @@
 			)
 		)
 	)
+	(global_label "CT4"
+		(shape input)
+		(at 247.65 68.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "355bb3c9-28da-4d23-a233-6e3904171f70")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 254.0823 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "EPA15"
 		(shape input)
 		(at 113.03 161.29 0)
@@ -11452,6 +11509,28 @@
 		(uuid "3caa381b-10c1-482e-a14a-192a94f8c795")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 63.5 25.1363 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CT3"
+		(shape input)
+		(at 247.65 76.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3e1a8f84-b32f-4883-b3c9-8309521997d9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 254.0823 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11584,28 +11663,6 @@
 		(uuid "44e37d19-ef79-4282-83e0-fa8aa43c92e7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 52.8176 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "CT3"
-		(shape input)
-		(at 247.65 68.58 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "489eb274-ef3a-4eef-99b6-ffcb8e48e448")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 254.0823 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12605,6 +12662,28 @@
 			)
 		)
 	)
+	(global_label "CT2"
+		(shape input)
+		(at 247.65 83.82 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "929309a4-3efc-4805-b408-3ffc46d15276")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 254.0823 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "EPC7"
 		(shape input)
 		(at 95.25 72.39 0)
@@ -13089,28 +13168,6 @@
 			)
 		)
 	)
-	(global_label "CT1"
-		(shape input)
-		(at 247.65 53.34 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "aedb9040-5cd7-44c9-8f1a-25170fb0cfae")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 254.0823 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "EPA6"
 		(shape input)
 		(at 53.34 96.52 270)
@@ -13234,28 +13291,6 @@
 		(uuid "b3a9dee3-501c-4453-82ec-e5caf186608f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 68.58 25.1363 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "CT4"
-		(shape input)
-		(at 247.65 60.96 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "b5694476-1f75-462f-8519-adb60043e220")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 254.0823 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27807,7 +27842,7 @@
 	)
 	(symbol
 		(lib_id "G2406S-Gigabit-Magnetics-Transformer:G2406S-Gigabit-Magnetics-Transformer")
-		(at 238.76 66.04 0)
+		(at 238.76 71.12 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -27815,7 +27850,7 @@
 		(dnp no)
 		(uuid "dcdb5975-1396-4ef7-9751-6ca974cadc13")
 		(property "Reference" "U4"
-			(at 238.76 85.09 0)
+			(at 238.76 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27823,7 +27858,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 240.03 66.04 0)
+			(at 237.49 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27831,7 +27866,7 @@
 			)
 		)
 		(property "Footprint" "Transformer_SMD:Transformer_Ethernet_YDS_30F-51NL_SO-24_7.1x15.1mm"
-			(at 240.03 66.04 0)
+			(at 237.49 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27840,7 +27875,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 240.03 66.04 0)
+			(at 237.49 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27849,7 +27884,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 238.76 66.04 0)
+			(at 238.76 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27857,8 +27892,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C507595"
-			(at 238.76 66.04 0)
+		(property "LCSC" "C2837258"
+			(at 238.76 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
