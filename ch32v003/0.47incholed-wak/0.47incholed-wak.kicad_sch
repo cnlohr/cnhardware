@@ -2506,16 +2506,6 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 48.26) (xy 187.96 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c5a31ca6-cff8-4198-a0df-a5ff50717129")
-	)
-	(wire
-		(pts
 			(xy 212.09 105.41) (xy 213.36 105.41)
 		)
 		(stroke
@@ -2554,15 +2544,25 @@
 		)
 		(uuid "f26c1d4a-178e-4009-bc0f-b8e3903a79ab")
 	)
-	(text "BS1: 1: I2C / 0: SPI"
+	(text "BS1: 1: I2C / 0: SPI\nWe must be in SPI mode."
 		(exclude_from_sim no)
-		(at 273.304 48.26 0)
+		(at 243.332 22.352 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
 		(uuid "74bdd2b2-d386-4fe4-9d17-0fb6873c0204")
+	)
+	(text "Note: OLED Configuration volates\npower off - it is not guarded.\n\nThis will void any OLED warranties."
+		(exclude_from_sim no)
+		(at 217.678 67.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c2b03646-8855-4f7f-97a7-111d6296c47b")
 	)
 	(global_label "D+"
 		(shape input)
@@ -2868,28 +2868,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "BS1"
-		(shape input)
-		(at 73.1147 21.5972 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "adf6ade2-72fc-4d8d-8b56-4366d8b39f51")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 79.7889 21.5972 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -5555,7 +5533,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e758bb29-f106-4721-95e9-cdeaee1463a8")
 		(property "Reference" "J2"
@@ -5580,6 +5558,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Datasheet" "https://www.usb.org/sites/default/files/documents/usb_type-c.zip"
