@@ -27,8 +27,8 @@ int frame = 0;
 const int scale = 6;
 const int screen_w = 72; // WIDTH
 const int screen_h = 40; // HEIGHT
-const int offset_x = 300;
-const int offset_y = 300;
+const int offset_x = 500;
+const int offset_y = 500;
 
 
 void HandleKey( int keycode, int bDown ) { }

@@ -38,7 +38,11 @@ static int frame;
 int main()
 {
 	SystemInit();
-	Delay_Ms(3); // Ensures USB re-enumeration after bootloader or reset; Spec demand >2.5µs ( TDDIS )
+	funPinMode( PD3, GPIO_CFGLR_OUT_50Mhz_PP );
+	funPinMode( PD4, GPIO_CFGLR_OUT_50Mhz_PP );
+	funDigitalWrite( PD3, FUN_LOW );
+	funDigitalWrite( PD4, FUN_LOW );
+	Delay_Ms(1000); // Ensures USB re-enumeration after bootloader or reset; Spec demand >2.5µs ( TDDIS )
 	usb_setup();
 
 	funGpioInitAll();
@@ -105,7 +109,7 @@ int main()
 	ssd1306_cmd( SSD1306_SETCONTRAST ); ssd1306_cmd( scratch[2] );
 	ssd1306_cmd( SSD1306_SETVCOMDETECT ); ssd1306_cmd( scratch[3] );
 
-			printf( "%d\n", start_leds );
+		//	printf( "%d\n", start_leds );
 
 			ssd1306_cmd(SSD1306_COLUMNADDR);
 			ssd1306_cmd(28);   // Column start address (0 = reset)
