@@ -34,95 +34,56 @@ static uint8_t frame;
 
 static void ConfigPinTri( int pin, int mode )
 {
-	funDigitalWrite( pin, mode );
+	if( mode == 2 )
+	{
+		funPinMode( pin, GPIO_CFGLR_IN_FLOAT );
+	}
+	else
+	{
+		funDigitalWrite( pin, mode );
+		funPinMode( pin, GPIO_CFGLR_IN_PUPD );
+	}
 }
 
 void UpdateLCD( uint32_t mask )
 {
 	int group;
 
-	// Digit 0
-	// 0,1,6,7,12,13,18,19
-	//mask = (0<<18) | (1<<12);
-	int onemask = mask & 0x7f;
-	//printf( "%02x\n", onemask );
-
-//	mask = (onemask&1) | (onemask&2) | (onemask&4)<<(6-2) | (onemask&8)<<(7-3) | (onemask&16)<<(12-4) |
-//			(onemask&32)<<(13-5) | (onemask&64)<<(18-6) | (1<<19); //((onemask&128)<<(19-7));
-
-	mask = 1<<2;// | 1<< 7;// | 1<<6;// | (onemask&1)<<12;
 
 	int invmask = (~mask);
 
-	const uint8_t patterntable[] = {
-		1, 0, 0, 0, // Odd 0
-		0, 1, 0, 0, // Odd 1
-		0, 0, 1, 0, // Odd 2
-		0, 0, 0, 1, // Odd 3
-		0, 0, 0, 0, // C (Odd)
-		0, 1, 1, 1, // Even 0
-		1, 0, 1, 1, // Even 1
-		1, 1, 0, 1, // Even 2
-		1, 1, 1, 0, // Even 3
-		1, 1, 1, 1, // C (Even)
-	};
-	const uint8_t * ptable = patterntable;
+	uint8_t pinset[4] = { LCDCOM1, LCDCOM2, LCDCOM3, LCDCOM4 };
 
 	uint32_t  tmask = mask;
 	uint32_t itmask = invmask;
+	LCDSEGBUF->BSHR = 0x3f;
 
-	uint8_t pinset[4] = { LCDCOM1, LCDCOM2, LCDCOM3, LCDCOM4 };
-	ConfigPinTri( pinset[0], 0 );
-	ConfigPinTri( pinset[1], 0 );
-	ConfigPinTri( pinset[2], 0 );
-	ConfigPinTri( pinset[3], 0 );
+	for( group = 0; group < 4; group++ )
+		ConfigPinTri( pinset[group], 2 );
+	LCDSEGBUF->BSHR = 0x3f<<16;
 
 	for( group = 0; group < 4; group++ )
 	{
-		int lmask = tmask & 0x3f;
-		int imask = itmask & 0x3f;
-
-		ConfigPinTri( pinset[group], 1 );
-		LCDSEGBUF->BSHR = lmask | (imask << 16);
-
-		ptable += 4;
-		tmask >>= 6;
-		itmask >>= 6;
-		Delay_Us(4000);
+		LCDSEGBUF->BSHR = tmask&0x3f;
 		ConfigPinTri( pinset[group], 0 );
+		Delay_Us(800);
+		LCDSEGBUF->BSHR = 0x3f<<16;
+		ConfigPinTri( pinset[group], 1 );
+		Delay_Us(2);
+		ConfigPinTri( pinset[group], 2 );
+		tmask>>=6;
 	}
 
-	LCDSEGBUF->BSHR = (0x3f << 16);
-
-
-	ptable += 4;
-	Delay_Us(1000);
-
+	LCDSEGBUF->BSHR = 0x3f<<16; // Setting this to ON makes things fade-y-er
 	ConfigPinTri( pinset[0], 1 );
 	ConfigPinTri( pinset[1], 1 );
 	ConfigPinTri( pinset[2], 1 );
 	ConfigPinTri( pinset[3], 1 );
+	//Delay_Us(2); // This forces it sharper, but at the cost of everything being darker.
+	LCDSEGBUF->BSHR = 0x3f;
 
-#if 1
-	 tmask = mask;
-	itmask = invmask;
-	for( group = 0; group < 4; group++ )
-	{
-		int lmask = tmask & 0x3f;
-		int imask = itmask & 0x3f;
+	Delay_Us(1000);
 
-		ConfigPinTri( pinset[group], 0 );
-		LCDSEGBUF->BSHR = imask | (lmask << 16);
-		ptable += 4;
-		tmask >>= 6;
-		itmask >>= 6;
-		Delay_Us(4000);
-		ConfigPinTri( pinset[group], 1 );
-	}
-#endif
-	LCDSEGBUF->BSHR = (0x3f);
-	ptable += 4;
-	Delay_Ms(10);
 }
 
 
@@ -150,7 +111,7 @@ int main()
 	while(1)
 	{
 		id++;
-		UpdateLCD( id >> 3 );
+		UpdateLCD( id );
 	}
 	while(1)
 	{
