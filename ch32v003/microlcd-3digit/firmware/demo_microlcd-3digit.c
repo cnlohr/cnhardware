@@ -50,7 +50,7 @@ void UpdateLCD( uint32_t mask )
 //	mask = (onemask&1) | (onemask&2) | (onemask&4)<<(6-2) | (onemask&8)<<(7-3) | (onemask&16)<<(12-4) |
 //			(onemask&32)<<(13-5) | (onemask&64)<<(18-6) | (1<<19); //((onemask&128)<<(19-7));
 
-	mask = ((onemask&1)<<0) | (1<<13);
+	mask = 1<<2;// | 1<< 7;// | 1<<6;// | (onemask&1)<<12;
 
 	int invmask = (~mask);
 

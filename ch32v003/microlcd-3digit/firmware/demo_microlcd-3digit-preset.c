@@ -49,7 +49,7 @@ void UpdateLCD( uint32_t mask )
 	int group;
 
 	// Digit 0
-	// 0,1,6,7,12,13,18,19
+	// 0,1,6,7,12,13,18
 	//mask = (0<<18) | (1<<12);
 
 	int onemask = mask & 0x7f;
@@ -58,7 +58,7 @@ void UpdateLCD( uint32_t mask )
 //	mask = (onemask&1) | (onemask&2) | (onemask&4)<<(6-2) | (onemask&8)<<(7-3) | (onemask&16)<<(12-4) |
 //			(onemask&32)<<(13-5) | (onemask&64)<<(18-6) | (1<<19); //((onemask&128)<<(19-7));
 
-	mask = 1<<7 | 1<<19 | 1<<18 | 1<<6 | (onemask&1)o<<0 | 1<<12;
+	mask = 1<<6 | (onemask&1)<<13;
 
 	int invmask = (~mask);
 /*
