@@ -23,69 +23,84 @@ uint8_t ledat;
 #define LEDSEG5 PC5
 
 
-#define drivepr GPIO_CFGLR_IN_PUPD
-//#define drivepr GPIO_CFGLR_OUT_2Mhz_PP
-#define drivenr GPIO_CFGLR_IN_FLOAT
-
 
 static uint8_t frame;
 
-// LCD Driving from https://www.nxp.com/docs/en/application-note/AN3219.pdf
+// LCD Is 10PIN TN Positive 3-Digits 7 Segment LCD Panel 3.0V
 
-static void ConfigPinTri( int pin, int mode )
+//  bbb
+//  a d
+//  ccc
+//  e f
+//  ggg
+// ab0000cd0000ef0000g0
+
+const uint32_t digits[16] = {
+	0b11000001000011000010, // 0
+	0b00000001000001000000, // 1
+	0b01000011000010000010, // 2
+	0b01000011000001000010, // 3
+	0b10000011000001000000, // 4
+	0b11000010000001000010, // 5
+	0b11000010000011000010, // 6
+	0b11000001000001000000, // 7
+	0b11000011000011000010, // 8
+	0b11000011000001000010, // 9
+	0b11000011000011000000, // A
+	0b10000010000011000010, // b
+	0b00000010000010000010, // c
+	0b00000011000011000010, // d
+	0b11000010000010000010, // e
+	0b11000010000010000000, // f
+};
+
+void UpdateLCDWithNumber( uint32_t val )
 {
-	if( mode == 2 )
+	int i;
+	uint32_t mask = 0;
+	for( i = 0; i < 3; i++ )
 	{
-		funPinMode( pin, GPIO_CFGLR_IN_FLOAT );
+		uint32_t vv = (val >> 8);
+		mask <<= 2;
+		if( vv > 0 || i == 2 )
+		{
+			mask |= digits[vv & 0xf];
+		}
+		val <<= 4;
 	}
-	else
-	{
-		funDigitalWrite( pin, mode );
-		funPinMode( pin, GPIO_CFGLR_IN_PUPD );
-	}
+	UpdateLCD( mask );
 }
 
 void UpdateLCD( uint32_t mask )
 {
 	int group;
-
-
-	int invmask = (~mask);
-
 	uint8_t pinset[4] = { LCDCOM1, LCDCOM2, LCDCOM3, LCDCOM4 };
 
-	uint32_t  tmask = mask;
-	uint32_t itmask = invmask;
-	LCDSEGBUF->BSHR = 0x3f;
+	#define drivepr GPIO_CFGLR_IN_PUPD
 
 	for( group = 0; group < 4; group++ )
-		ConfigPinTri( pinset[group], 2 );
-	LCDSEGBUF->BSHR = 0x3f<<16;
+		funPinMode( pinset[group], drivepr );
+
+	funPinMode( LEDSEG0, drivepr );
+	funPinMode( LEDSEG1, drivepr );
+	funPinMode( LEDSEG2, drivepr );
+	funPinMode( LEDSEG3, drivepr );
+	funPinMode( LEDSEG4, drivepr );
+	funPinMode( LEDSEG5, drivepr );
 
 	for( group = 0; group < 4; group++ )
 	{
-		LCDSEGBUF->BSHR = tmask&0x3f;
-		ConfigPinTri( pinset[group], 0 );
-		Delay_Us(800);
+		LCDSEGBUF->BSHR = mask&0x3f;
+		funDigitalWrite( pinset[group], 0 );
+		Delay_Us(300);
 		LCDSEGBUF->BSHR = 0x3f<<16;
-		ConfigPinTri( pinset[group], 1 );
-		Delay_Us(2);
-		ConfigPinTri( pinset[group], 2 );
-		tmask>>=6;
+		funDigitalWrite( pinset[group], 1 );
+		Delay_Us(10);
+		mask>>=6;
 	}
 
-	LCDSEGBUF->BSHR = 0x3f<<16; // Setting this to ON makes things fade-y-er
-	ConfigPinTri( pinset[0], 1 );
-	ConfigPinTri( pinset[1], 1 );
-	ConfigPinTri( pinset[2], 1 );
-	ConfigPinTri( pinset[3], 1 );
-	//Delay_Us(2); // This forces it sharper, but at the cost of everything being darker.
-	LCDSEGBUF->BSHR = 0x3f;
-
-	Delay_Us(1000);
-
+	Delay_Us(3000);
 }
-
 
 int main()
 {
@@ -95,23 +110,12 @@ int main()
 
 	funGpioInitAll();
 
-	funPinMode( LCDCOM1, drivepr );
-	funPinMode( LCDCOM2, drivepr );
-	funPinMode( LCDCOM3, drivepr );
-	funPinMode( LCDCOM4, drivepr );
-	funPinMode( LEDSEG0, drivepr );
-	funPinMode( LEDSEG1, drivepr );
-	funPinMode( LEDSEG2, drivepr );
-	funPinMode( LEDSEG3, drivepr );
-	funPinMode( LEDSEG4, drivepr );
-	funPinMode( LEDSEG5, drivepr );
-
 	int id = 0;
 
 	while(1)
 	{
 		id++;
-		UpdateLCD( id );
+		UpdateLCDWithNumber( id >> 4 );
 	}
 	while(1)
 	{
