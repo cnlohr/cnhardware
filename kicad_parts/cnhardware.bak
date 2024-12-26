@@ -538,6 +538,54 @@
 			)
 		)
 	)
+	(symbol "ARTWORK"
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(property "Reference" "A"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
 	(symbol "AW1505-LNA-RF-1.5GHz"
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10379,7 +10427,7 @@
 		(symbol "XL-1615RGBC-WS2812B_1_1"
 			(rectangle
 				(start -3.81 2.54)
-				(end 4.445 -2.54)
+				(end 3.81 -2.54)
 				(stroke
 					(width 0)
 					(type default)
@@ -10407,7 +10455,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 6.985 1.27 180)
+				(at 6.35 1.27 180)
 				(length 2.54)
 				(name "V+"
 					(effects
@@ -10443,7 +10491,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 6.985 -1.27 180)
+				(at 6.35 -1.27 180)
 				(length 2.54)
 				(name "DI"
 					(effects
