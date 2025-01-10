@@ -3584,6 +3584,28 @@
 			)
 		)
 	)
+	(global_label "VCOMH"
+		(shape input)
+		(at 269.24 66.04 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5e252624-c6c7-4376-962a-59398140ac63")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 259.7838 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "RFO"
 		(shape input)
 		(at 163.83 35.56 0)
@@ -4002,6 +4024,28 @@
 			)
 		)
 	)
+	(global_label "OVDDB"
+		(shape input)
+		(at 269.24 87.63 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b31946c5-b523-4b38-ba51-695cff18b5e7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 260.0257 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "RES"
 		(shape input)
 		(at 234.95 111.76 180)
@@ -4266,7 +4310,7 @@
 			)
 		)
 	)
-	(global_label "OVDD"
+	(global_label "OVDDB"
 		(shape input)
 		(at 234.95 96.52 180)
 		(fields_autoplaced yes)
@@ -4278,7 +4322,7 @@
 		)
 		(uuid "fd265d6c-2192-4817-896c-ed200675dc32")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 227.0057 96.52 0)
+			(at 225.7357 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4501,9 +4545,9 @@
 		(at 210.82 72.39 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "150b3a76-dd06-44d6-889d-73e5924ee44f")
 		(property "Reference" "J7"
@@ -5050,9 +5094,9 @@
 		(at 243.84 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "2636bd0f-6c4c-4f18-ab54-f53a15a53cf8")
 		(property "Reference" "J6"
@@ -5700,6 +5744,150 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 269.24 95.25 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "50c14c86-8fe6-4c99-90ed-6a139a8d923b")
+		(property "Reference" "#PWR039"
+			(at 269.24 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 269.24 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 269.24 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 269.24 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 269.24 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f609f702-ed15-422d-916c-4beb483e8034")
+		)
+		(instances
+			(project "badapple006"
+				(path "/88f86251-37ea-456e-9a8e-c00115fc8776"
+					(reference "#PWR039")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 269.24 91.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "52bb86ca-7f6e-48fd-8bbd-60976d7d941c")
+		(property "Reference" "C14"
+			(at 271.78 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2.2u16v"
+			(at 266.7 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 270.2052 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 269.24 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 269.24 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C72203"
+			(at 269.24 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f0796bf1-be06-4a5a-9964-dcd1b0b51680")
+		)
+		(pin "2"
+			(uuid "8bd2821d-533e-4118-99e6-c9d7cb041fb8")
+		)
+		(instances
+			(project "badapple006"
+				(path "/88f86251-37ea-456e-9a8e-c00115fc8776"
+					(reference "C14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 251.46 134.62 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6111,9 +6299,9 @@
 		(at 217.17 91.44 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "6ed1213a-dad1-4301-949e-4c588b45b379")
 		(property "Reference" "J10"
@@ -6741,9 +6929,9 @@
 		(at 237.49 73.66 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "9a751a49-a017-49e5-be28-128aeea27895")
 		(property "Reference" "J8"
@@ -7579,7 +7767,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "390k"
+		(property "Value" "1M"
 			(at 225.044 106.68 90)
 			(effects
 				(font
@@ -7615,7 +7803,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25782"
+		(property "LCSC" "C26083"
 			(at 227.33 106.68 0)
 			(effects
 				(font
@@ -7917,6 +8105,84 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 269.24 69.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c541ac50-4b2f-4a66-b4fe-601f6ecad04f")
+		(property "Reference" "C15"
+			(at 271.78 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2.2u16v"
+			(at 266.7 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 270.2052 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 269.24 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 269.24 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C72203"
+			(at 269.24 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e618eb02-3516-4410-abf7-277b29a302aa")
+		)
+		(pin "2"
+			(uuid "2ab0f737-ca2e-4c1d-83a3-2baff8d76b39")
+		)
+		(instances
+			(project "badapple006"
+				(path "/88f86251-37ea-456e-9a8e-c00115fc8776"
+					(reference "C15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 92.71 43.18 270)
 		(unit 1)
@@ -8160,6 +8426,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 128.27 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C42431288"
 			(at 128.27 46.99 0)
 			(effects
 				(font
@@ -8676,9 +8951,9 @@
 		(at 92.71 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "ecf15336-2ec3-4900-8077-4b780a918311")
 		(property "Reference" "J2"
 			(at 83.82 100.33 0)
@@ -8943,6 +9218,72 @@
 			(project "badapple006"
 				(path "/88f86251-37ea-456e-9a8e-c00115fc8776"
 					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 269.24 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fc0a9ff8-6d59-4671-b528-8c67dc96f78a")
+		(property "Reference" "#PWR040"
+			(at 269.24 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 269.24 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 269.24 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 269.24 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 269.24 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ffdd477f-6cb6-4b5a-b3aa-ffd803f26f83")
+		)
+		(instances
+			(project "badapple006"
+				(path "/88f86251-37ea-456e-9a8e-c00115fc8776"
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
