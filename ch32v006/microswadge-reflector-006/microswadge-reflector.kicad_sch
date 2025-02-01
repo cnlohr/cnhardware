@@ -697,6 +697,178 @@
 				)
 			)
 		)
+		(symbol "Device:Battery_Cell"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "BT"
+				(at 2.54 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Battery_Cell"
+				(at 2.54 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 1.524 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 1.524 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Single-cell battery"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "battery cell"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Battery_Cell_0_1"
+				(rectangle
+					(start -2.286 1.778)
+					(end 2.286 1.524)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -1.524 1.016)
+					(end 1.524 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.762) (xy 0 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.778) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 3.048) (xy 1.778 3.048)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 3.556) (xy 1.27 2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Battery_Cell_1_1"
+				(pin passive line
+					(at 0 5.08 270)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:C"
 			(pin_numbers hide)
 			(pin_names
@@ -1032,6 +1204,506 @@
 						(effects
 							(font
 								(size 0.762 0.762)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Device:LED_RAGB"
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 9.398 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "LED_RAGB"
+				(at 0 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "RGB LED, red/anode/green/blue"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "LED RGB diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "LED_RAGB_0_0"
+				(text "B"
+					(at -1.905 -6.35 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "G"
+					(at -1.905 -1.27 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "R"
+					(at -1.905 3.81 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(symbol "LED_RAGB_0_1"
+				(polyline
+					(pts
+						(xy -1.27 -5.08) (xy -2.54 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -5.08) (xy 1.27 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -3.81) (xy -1.27 -6.35)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 5.08) (xy -2.54 5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 5.08) (xy 1.27 5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 6.35) (xy -1.27 3.81)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 6.35) (xy -1.27 3.81) (xy -1.27 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -5.08) (xy 2.032 -5.08) (xy 2.032 5.08) (xy 1.27 5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -3.81) (xy 1.27 -6.35) (xy -1.27 -5.08) (xy 1.27 -3.81)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 6.35) (xy 1.27 3.81) (xy -1.27 5.08) (xy 1.27 6.35)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 -3.81) (xy 0.508 -2.286) (xy -0.254 -2.286) (xy 0.508 -2.286) (xy 0.508 -3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 1.27) (xy 0.508 2.794) (xy -0.254 2.794) (xy 0.508 2.794) (xy 0.508 2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 6.35) (xy 0.508 7.874) (xy -0.254 7.874) (xy 0.508 7.874) (xy 0.508 7.112)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.81) (xy 1.524 -2.286) (xy 0.762 -2.286) (xy 1.524 -2.286) (xy 1.524 -3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 1.524 2.794) (xy 0.762 2.794) (xy 1.524 2.794) (xy 1.524 2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 6.35) (xy 1.524 7.874) (xy 0.762 7.874) (xy 1.524 7.874) (xy 1.524 7.112)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 -1.27)
+					(end 1.27 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 1.27)
+					(end 1.27 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 3.81)
+					(end 1.27 6.35)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 6.35)
+					(end 1.27 6.35)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 2.794 8.382)
+					(end -2.794 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "LED_RAGB_1_1"
+				(pin passive line
+					(at -5.08 5.08 0)
+					(length 2.54)
+					(name "RK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "GK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 2.54)
+					(name "BK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
 							)
 						)
 					)
@@ -2413,6 +3085,12 @@
 		)
 	)
 	(junction
+		(at 90.17 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "14f8da0d-1de1-46e7-ae45-2e37de15810b")
+	)
+	(junction
 		(at 48.26 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2429,12 +3107,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bd88d1b3-3a16-4c11-82ad-e8f827e3cb14")
-	)
-	(junction
-		(at 81.28 91.44)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c5be06d1-04fe-4a4f-a2c9-2ebbbb3b6d10")
 	)
 	(junction
 		(at 186.69 96.52)
@@ -2459,16 +3131,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fe971b76-8470-4950-8ccb-7998859354df")
-	)
-	(wire
-		(pts
-			(xy 81.28 91.44) (xy 81.28 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0035934d-9433-4454-9d15-075760f09bef")
 	)
 	(wire
 		(pts
@@ -2582,16 +3244,6 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 91.44) (xy 81.28 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4632923a-fe6f-4cf6-9d65-4989771d7846")
-	)
-	(wire
-		(pts
 			(xy 186.69 95.25) (xy 186.69 96.52)
 		)
 		(stroke
@@ -2669,6 +3321,16 @@
 			(type default)
 		)
 		(uuid "8b16dd9f-82db-42bb-9d63-b36d6f631a34")
+	)
+	(wire
+		(pts
+			(xy 90.17 83.82) (xy 99.06 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90329f58-7f4b-4b27-b35c-11b86d31eedd")
 	)
 	(wire
 		(pts
@@ -2752,6 +3414,16 @@
 	)
 	(wire
 		(pts
+			(xy 81.28 86.36) (xy 81.28 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ecbbe3b4-9183-479d-9b1a-5ca04704bc4b")
+	)
+	(wire
+		(pts
 			(xy 124.46 68.58) (xy 124.46 71.12)
 		)
 		(stroke
@@ -2782,7 +3454,29 @@
 			)
 		)
 	)
-	(global_label "BVDD"
+	(global_label "LV0"
+		(shape input)
+		(at 214.63 137.16 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "050021c8-5ec1-4f28-aed8-845b11a8c63c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 214.63 130.8486 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VNTC"
 		(shape input)
 		(at 62.23 86.36 180)
 		(fields_autoplaced yes)
@@ -2794,7 +3488,73 @@
 		)
 		(uuid "0b418bd7-b7fe-4d2b-ab35-55465c3c6ed8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 54.3462 86.36 0)
+			(at 54.5881 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LV2"
+		(shape input)
+		(at 182.88 137.16 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0bca479f-78e8-41bf-86c2-8b5486dc36ed")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 182.88 130.8486 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T2C4"
+		(shape input)
+		(at 187.96 147.32 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "14feb2d9-e476-44fa-b625-512619caeca3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 187.96 154.9618 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T2C4"
+		(shape input)
+		(at 248.92 147.32 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "18a88d84-8bbb-4617-a911-4804b162a92b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 248.92 154.9618 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2936,9 +3696,31 @@
 			)
 		)
 	)
+	(global_label "T1C3"
+		(shape input)
+		(at 219.71 147.32 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3992ee7c-dbb5-45de-909a-c44c98d13b6d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 219.71 154.9618 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "T1C2"
 		(shape input)
-		(at 115.57 144.78 0)
+		(at 107.95 144.78 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2948,12 +3730,34 @@
 		)
 		(uuid "3bf4bdfe-b9e8-42bb-858d-9ea752976163")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 123.2118 144.78 0)
+			(at 115.5918 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T1C1"
+		(shape input)
+		(at 209.55 147.32 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3e5a2793-f158-493b-beb0-7b7a865d46f8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 209.55 154.9618 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -2982,7 +3786,7 @@
 	)
 	(global_label "T2C1"
 		(shape input)
-		(at 29.21 139.7 180)
+		(at 36.83 139.7 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2992,7 +3796,73 @@
 		)
 		(uuid "496642a7-decc-4b87-87e0-48e7acd993f2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 21.5682 139.7 0)
+			(at 29.1882 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T2C1"
+		(shape input)
+		(at 243.84 120.65 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "54c9cd94-da33-4002-acd2-2bb7271e40f8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 243.84 128.2918 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T2C1"
+		(shape input)
+		(at 182.88 147.32 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "559a0246-ab86-47b7-b16a-5b78295b240a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 182.88 154.9618 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T2C1"
+		(shape input)
+		(at 243.84 147.32 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "56e7438a-0426-41e9-b755-6932c74d3788")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 243.84 154.9618 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3004,7 +3874,7 @@
 	)
 	(global_label "T1C3"
 		(shape input)
-		(at 115.57 142.24 0)
+		(at 107.95 142.24 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3014,7 +3884,7 @@
 		)
 		(uuid "61c408ad-b8e0-4e7c-ab69-844a1fd1bb20")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 123.2118 142.24 0)
+			(at 115.5918 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3037,6 +3907,28 @@
 		(uuid "652da734-a33c-4470-8280-ead7a6dad9cb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 30.2767 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T1C2"
+		(shape input)
+		(at 214.63 147.32 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6b15e016-7454-47c4-9cd8-fde5d04c1011")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 214.63 154.9618 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3090,9 +3982,53 @@
 			)
 		)
 	)
+	(global_label "LV1"
+		(shape input)
+		(at 214.63 110.49 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "77f45f7f-696f-48dd-9476-e5245e7a183b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 214.63 104.1786 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LV0"
+		(shape input)
+		(at 243.84 137.16 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7ae6bb40-2053-482b-a1ea-0bcff7c7eb10")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 243.84 130.8486 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "T1C1"
 		(shape input)
-		(at 115.57 147.32 0)
+		(at 107.95 147.32 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3102,12 +4038,34 @@
 		)
 		(uuid "7eff5f1b-e3cb-40a2-aeaf-97fb83d381f3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 123.2118 147.32 0)
+			(at 115.5918 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T1C2"
+		(shape input)
+		(at 214.63 120.65 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "81cc1f8c-b5f5-4da0-9b1e-ecd2327b0c6d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 214.63 128.2918 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -3134,9 +4092,75 @@
 			)
 		)
 	)
+	(global_label "LV2"
+		(shape input)
+		(at 153.67 137.16 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8693b8cc-e6a8-4809-a64a-b4ccf0f460c5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 153.67 130.8486 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T1C3"
+		(shape input)
+		(at 158.75 147.32 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "88b82ef4-6fdb-450d-ab75-a2a53ef05240")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 158.75 154.9618 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VNTC"
+		(shape input)
+		(at 49.53 64.77 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8ff6c50e-39fb-447a-b1cb-389c6e282e43")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 41.8881 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "T2C4"
 		(shape input)
-		(at 115.57 124.46 0)
+		(at 107.95 124.46 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3146,12 +4170,78 @@
 		)
 		(uuid "9287eb9d-8ac5-4ce0-9bff-d6ed6c214086")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 123.2118 124.46 0)
+			(at 115.5918 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BVDD"
+		(shape input)
+		(at 57.15 64.77 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a8922097-f75b-4ea4-acce-dfeda981e47f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 65.0338 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T2C4"
+		(shape input)
+		(at 248.92 120.65 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b669427c-862d-4a5c-b6b0-9b465d6a4559")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 248.92 128.2918 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T2C3"
+		(shape input)
+		(at 177.8 147.32 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b6e59b74-437c-4c00-8c5b-1a75f4db9aac")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 177.8 154.9618 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -3180,7 +4270,7 @@
 	)
 	(global_label "T2C3"
 		(shape input)
-		(at 29.21 147.32 180)
+		(at 36.83 147.32 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3190,12 +4280,122 @@
 		)
 		(uuid "bf36aa2a-0ea3-41d8-8f13-fbd41e25c766")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 21.5682 147.32 0)
+			(at 29.1882 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VNTC"
+		(shape input)
+		(at 77.47 91.44 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "bfbca602-42d5-4b79-a9ba-4db754a00025")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 77.47 99.0819 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T1C3"
+		(shape input)
+		(at 219.71 120.65 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c250c053-45ef-458d-b6a7-afb11c1ed325")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 219.71 128.2918 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T2C3"
+		(shape input)
+		(at 238.76 147.32 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c902b9a9-1b0a-4b64-860a-32a52c4c5e09")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 238.76 154.9618 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T1C1"
+		(shape input)
+		(at 209.55 120.65 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c99b57e5-990a-4983-9d7e-ce8507bd014d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 209.55 128.2918 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LV1"
+		(shape input)
+		(at 243.84 110.49 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "cd4d1ab1-83a7-4e2c-8060-33417f7325c6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 243.84 104.1786 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -3262,6 +4462,72 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T2C3"
+		(shape input)
+		(at 238.76 120.65 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "dcecf9db-5950-455f-9a0c-ee3c1302d8ed")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 238.76 128.2918 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T1C2"
+		(shape input)
+		(at 153.67 147.32 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ed581444-8066-4f12-a33e-6ac8283a2220")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 153.67 154.9618 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "T1C1"
+		(shape input)
+		(at 148.59 147.32 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ee79cc09-8d9a-42e6-9e6c-a857266b0097")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 148.59 154.9618 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -4066,6 +5332,82 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED_RAGB")
+		(at 182.88 142.24 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "38fa764e-adda-4963-b811-380f843849ed")
+		(property "Reference" "D2"
+			(at 191.77 140.9699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LED_RAGB"
+			(at 191.77 143.5099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 184.15 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 184.15 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, red/anode/green/blue"
+			(at 182.88 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "3a91211f-4b69-4804-80d2-170714bd0979")
+		)
+		(pin "1"
+			(uuid "d59dec35-3ae5-400b-a5a2-694292d77f46")
+		)
+		(pin "3"
+			(uuid "a1d40f79-c7cd-4d39-87b6-19fb2ad86ff7")
+		)
+		(pin "4"
+			(uuid "cfa85768-5e17-440d-9447-5c0dccbaa723")
+		)
+		(instances
+			(project "microswadge-reflector"
+				(path "/6b359244-dc08-4c4b-ab95-8795fdd2a661"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 171.45 120.65 0)
 		(unit 1)
@@ -4779,118 +6121,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Swadge_Parts:R_US")
-		(at 111.76 124.46 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5d010ae4-f491-4688-828b-c1743da89f97")
-		(property "Reference" "R9"
-			(at 116.078 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "120Ω"
-			(at 111.76 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 112.014 123.444 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 111.76 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 111.76 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Cost100" "10"
-			(at 157.48 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey" "~"
-			(at 157.48 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Substitutable" "Y"
-			(at 157.48 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C25079"
-			(at 111.76 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Cost @ 2.5k" "0.0008"
-			(at 111.76 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f70ed61c-c283-4078-acde-96bd181daf93")
-		)
-		(pin "2"
-			(uuid "2c73603d-6483-4714-bebb-99a303309d79")
-		)
-		(instances
-			(project "microswadge-reflector"
-				(path "/6b359244-dc08-4c4b-ab95-8795fdd2a661"
-					(reference "R9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 196.85 90.17 90)
 		(unit 1)
@@ -5281,118 +6511,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Swadge_Parts:R_US")
-		(at 111.76 147.32 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7c126dc3-7ff2-4374-9251-e479da98a8ba")
-		(property "Reference" "R12"
-			(at 108.712 149.606 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "120Ω"
-			(at 114.046 149.606 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 112.014 146.304 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 111.76 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 111.76 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Cost100" "10"
-			(at 157.48 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey" "~"
-			(at 157.48 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Substitutable" "Y"
-			(at 157.48 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C25079"
-			(at 111.76 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Cost @ 2.5k" "0.0008"
-			(at 111.76 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b29b7afc-817f-447e-a499-90078e4a09cf")
-		)
-		(pin "2"
-			(uuid "5d230be1-ad61-44d6-bac1-bffc3367659c")
-		)
-		(instances
-			(project "microswadge-reflector"
-				(path "/6b359244-dc08-4c4b-ab95-8795fdd2a661"
-					(reference "R12")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 81.28 95.25 0)
 		(mirror y)
@@ -5403,7 +6521,7 @@
 		(dnp no)
 		(uuid "7d7bf7e9-1dd3-423c-9590-658a33881881")
 		(property "Reference" "C3"
-			(at 78.74 93.98 0)
+			(at 84.074 93.218 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5466,118 +6584,6 @@
 			(project "microswadge-reflector"
 				(path "/6b359244-dc08-4c4b-ab95-8795fdd2a661"
 					(reference "C3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Swadge_Parts:R_US")
-		(at 111.76 144.78 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "80d822ea-cac9-4ace-bec0-a91903e561c0")
-		(property "Reference" "R11"
-			(at 114.3 146.05 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "120Ω"
-			(at 109.982 143.764 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 112.014 143.764 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 111.76 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 111.76 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Cost100" "10"
-			(at 157.48 193.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey" "~"
-			(at 157.48 193.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Substitutable" "Y"
-			(at 157.48 193.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C25079"
-			(at 111.76 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Cost @ 2.5k" "0.0008"
-			(at 111.76 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1060faca-fbb0-4221-bc8a-5247ff07c5dc")
-		)
-		(pin "2"
-			(uuid "38a074b7-189c-4617-9bbe-24d3de610b99")
-		)
-		(instances
-			(project "microswadge-reflector"
-				(path "/6b359244-dc08-4c4b-ab95-8795fdd2a661"
-					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -5657,6 +6663,82 @@
 			(project "microswadge-reflector"
 				(path "/6b359244-dc08-4c4b-ab95-8795fdd2a661"
 					(reference "C10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_RAGB")
+		(at 153.67 142.24 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "88d352a5-cef3-449c-b9a6-8722d1aa36d7")
+		(property "Reference" "D1"
+			(at 162.56 140.9699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LED_RAGB"
+			(at 162.56 143.5099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 154.94 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 154.94 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, red/anode/green/blue"
+			(at 153.67 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "7ba8a10f-0dc0-41ac-8881-0e99a04b25f4")
+		)
+		(pin "1"
+			(uuid "a872421c-64d7-4930-bd97-9383dbf4a508")
+		)
+		(pin "3"
+			(uuid "599c7b6c-3f9b-48f2-bd46-44daee75de1b")
+		)
+		(pin "4"
+			(uuid "abee4bc6-3c1c-4e10-9e6f-bd333dedc99c")
+		)
+		(instances
+			(project ""
+				(path "/6b359244-dc08-4c4b-ab95-8795fdd2a661"
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -5998,6 +7080,158 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED_RAGB")
+		(at 214.63 142.24 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a1230f12-3a0a-44bf-8791-0bf9b6ce3ce6")
+		(property "Reference" "D3"
+			(at 223.52 140.9699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LED_RAGB"
+			(at 223.52 143.5099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 215.9 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 215.9 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, red/anode/green/blue"
+			(at 214.63 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "9a916f13-cecc-4739-812c-5271c10f2149")
+		)
+		(pin "1"
+			(uuid "94267869-d26b-4113-8d8b-266f638ba4c8")
+		)
+		(pin "3"
+			(uuid "4d14f704-8259-44c7-9678-217a1dd8d1d3")
+		)
+		(pin "4"
+			(uuid "50f79c19-33d2-4905-b8b5-f24b38a46f90")
+		)
+		(instances
+			(project "microswadge-reflector"
+				(path "/6b359244-dc08-4c4b-ab95-8795fdd2a661"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_RAGB")
+		(at 214.63 115.57 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b2b82e46-52ea-4cba-8cf7-9afa2c3eb643")
+		(property "Reference" "D5"
+			(at 223.52 114.2999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LED_RAGB"
+			(at 223.52 116.8399 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 215.9 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 215.9 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, red/anode/green/blue"
+			(at 214.63 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "7df8f8ea-b5a3-4f27-a0a9-19a081f13905")
+		)
+		(pin "1"
+			(uuid "84c4b2ab-644b-449f-bfdf-893de533087c")
+		)
+		(pin "3"
+			(uuid "150c90fd-1166-4078-999b-854fc926784e")
+		)
+		(pin "4"
+			(uuid "5fad6157-353b-4310-925f-70fd477d1681")
+		)
+		(instances
+			(project "microswadge-reflector"
+				(path "/6b359244-dc08-4c4b-ab95-8795fdd2a661"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 19.05 106.68 180)
 		(unit 1)
@@ -6266,6 +7500,72 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 99.06 91.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c5ddd7dd-6e41-47aa-91f6-deca0798e441")
+		(property "Reference" "#PWR024"
+			(at 99.06 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 99.06 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 99.06 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 99.06 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 99.06 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "22fa1c90-46ea-40d6-90bd-6fc4178b1a85")
+		)
+		(instances
+			(project "microswadge-reflector"
+				(path "/6b359244-dc08-4c4b-ab95-8795fdd2a661"
+					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 26.67 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6330,32 +7630,35 @@
 		)
 	)
 	(symbol
-		(lib_id "Swadge_Parts:R_US")
-		(at 111.76 142.24 90)
+		(lib_id "Device:LED_RAGB")
+		(at 243.84 142.24 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c938f01d-0470-46d5-b712-6c035d85b929")
-		(property "Reference" "R10"
-			(at 116.078 139.7 90)
+		(fields_autoplaced yes)
+		(uuid "c8b55111-2d8b-4e6f-ab36-d3ea4d26125d")
+		(property "Reference" "D4"
+			(at 252.73 140.9699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Value" "120Ω"
-			(at 111.76 139.7 90)
+		(property "Value" "LED_RAGB"
+			(at 252.73 143.5099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 112.014 141.224 90)
+		(property "Footprint" ""
+			(at 245.11 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6364,7 +7667,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 111.76 142.24 0)
+			(at 245.11 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6372,70 +7675,31 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 111.76 142.24 0)
+		(property "Description" "RGB LED, red/anode/green/blue"
+			(at 243.84 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(property "Cost100" "10"
-			(at 157.48 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey" "~"
-			(at 157.48 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Substitutable" "Y"
-			(at 157.48 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C25079"
-			(at 111.76 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Cost @ 2.5k" "0.0008"
-			(at 111.76 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1b932ab9-cd42-42c2-b868-0d6bd14bfc6f")
 		)
 		(pin "2"
-			(uuid "1bec4d75-2bd9-4195-9d20-4c2075b043f5")
+			(uuid "343f665c-c9fe-4632-9409-49a88a84beb5")
+		)
+		(pin "1"
+			(uuid "f8dc8758-ecda-41cb-b48a-1a2199f518af")
+		)
+		(pin "3"
+			(uuid "6fb19c52-3d31-47b4-84d9-945d277c2401")
+		)
+		(pin "4"
+			(uuid "7ec61cb7-7080-412e-97ce-a687f8454f73")
 		)
 		(instances
 			(project "microswadge-reflector"
 				(path "/6b359244-dc08-4c4b-ab95-8795fdd2a661"
-					(reference "R10")
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -6548,118 +7812,6 @@
 			(project "microswadge-reflector"
 				(path "/6b359244-dc08-4c4b-ab95-8795fdd2a661"
 					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Swadge_Parts:R_US")
-		(at 33.02 147.32 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d5217c1f-c376-4782-aa17-29693b80f6c3")
-		(property "Reference" "R14"
-			(at 21.844 149.86 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "120Ω"
-			(at 26.67 149.86 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 33.274 146.304 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 33.02 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 33.02 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Cost100" "10"
-			(at 78.74 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey" "~"
-			(at 78.74 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Substitutable" "Y"
-			(at 78.74 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C25079"
-			(at 33.02 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Cost @ 2.5k" "0.0008"
-			(at 33.02 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "aa8519e5-1659-4cb3-a402-00f0dff98ee7")
-		)
-		(pin "2"
-			(uuid "7ae6111f-bbb3-4a25-b30a-c66e00d42767")
-		)
-		(instances
-			(project "microswadge-reflector"
-				(path "/6b359244-dc08-4c4b-ab95-8795fdd2a661"
-					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -7187,32 +8339,34 @@
 		)
 	)
 	(symbol
-		(lib_id "Swadge_Parts:R_US")
-		(at 33.02 139.7 90)
+		(lib_id "Device:Battery_Cell")
+		(at 99.06 88.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ef1edca4-fb2a-4dc0-9653-df6858d6aaa7")
-		(property "Reference" "R13"
-			(at 21.844 142.24 90)
+		(uuid "ea859d58-61a6-4b4b-ac06-84f59ae0d0d2")
+		(property "Reference" "BT1"
+			(at 102.108 85.344 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "120Ω"
-			(at 26.67 142.24 90)
+		(property "Value" "Battery_Cell"
+			(at 99.568 89.662 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 33.274 138.684 90)
+		(property "Footprint" "Battery:BatteryHolder_Keystone_3009_1x2450"
+			(at 99.06 87.376 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7221,7 +8375,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 33.02 139.7 0)
+			(at 99.06 87.376 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7229,53 +8383,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 33.02 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Cost100" "10"
-			(at 78.74 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey" "~"
-			(at 78.74 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Substitutable" "Y"
-			(at 78.74 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C25079"
-			(at 33.02 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Cost @ 2.5k" "0.0008"
-			(at 33.02 139.7 0)
+		(property "Description" "Single-cell battery"
+			(at 99.06 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7284,15 +8393,203 @@
 			)
 		)
 		(pin "1"
-			(uuid "615451ce-e4f7-4790-ae6a-af1850855563")
+			(uuid "0206d6fd-91d1-4311-9ee5-fa8828e6a864")
 		)
 		(pin "2"
-			(uuid "90f6b349-831a-4903-beec-f24982980668")
+			(uuid "bcc6f703-17ca-42fd-a905-c0bcc621b8dc")
+		)
+		(instances
+			(project ""
+				(path "/6b359244-dc08-4c4b-ab95-8795fdd2a661"
+					(reference "BT1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Swadge_Parts:R_US")
+		(at 53.34 64.77 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "eb1d3918-6e38-488d-8cec-ac08bb0aa38f")
+		(property "Reference" "R5"
+			(at 52.705 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "12kΩ"
+			(at 53.34 67.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 53.086 65.786 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 53.34 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 53.34 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" "10"
+			(at 7.62 16.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" "~"
+			(at 7.62 16.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" "Y"
+			(at 7.62 16.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22790"
+			(at 53.34 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" "0.0008"
+			(at 53.34 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5800e812-92be-4cea-a7da-a4f26b3ae85b")
+		)
+		(pin "2"
+			(uuid "f835fbc4-7259-4a99-883e-ad5bf57dfc6c")
 		)
 		(instances
 			(project "microswadge-reflector"
 				(path "/6b359244-dc08-4c4b-ab95-8795fdd2a661"
-					(reference "R13")
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_RAGB")
+		(at 243.84 115.57 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f68bb4b9-2ca3-4323-a46f-f755b7a06071")
+		(property "Reference" "D6"
+			(at 252.73 114.2999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LED_RAGB"
+			(at 252.73 116.8399 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 245.11 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 245.11 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, red/anode/green/blue"
+			(at 243.84 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e3e6c54e-807b-4e3c-855e-3b8c73ffb41c")
+		)
+		(pin "1"
+			(uuid "399df3b1-265b-44b9-a522-d003accf290d")
+		)
+		(pin "3"
+			(uuid "79dee2da-7b77-495f-b5d2-a79425e95f91")
+		)
+		(pin "4"
+			(uuid "07fbc462-8d43-4ced-ad6a-b1c815b78be7")
+		)
+		(instances
+			(project "microswadge-reflector"
+				(path "/6b359244-dc08-4c4b-ab95-8795fdd2a661"
+					(reference "D6")
 					(unit 1)
 				)
 			)
