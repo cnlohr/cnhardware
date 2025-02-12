@@ -44,21 +44,23 @@ int main()
 	{
 		0xAE, // Display off
 		//0x00, 0x12, 0x40, 0xB0,
-		0x81, 0xCF, // Contrast control
+		0xD5, 0x80, // Function Selection
+		0xA8, 0x2F, // Set Multiplex Ratio
+		0xD3, 0x00, // Set Display Offset
+		0x40,
 		0xA1, // Segment remap
+		0xC8, // Set COM output scan direction
+		0xDA, 0x12, // Set COM pins hardware configuration
+		0x81, 0xCF, // Contrast control
+		0xD9, 0x22, // Set Pre-Charge Period
+		0xDB, 0x30, // Set VCOMH Deselect Level
 		0xA4, // Entire display on (a5)/off(a4)
 		0xA6, // Normal (a6)/inverse (a7)
-		0xA8, 0x2F, // Set Multiplex Ratio
-		0xC8, // Set COM output scan direction
-		0xD3, 0x00, // Set Display Offset
-		0xD5, 0x80, // Function Selection
-		0xD9, 0x22, // Set Pre-Charge Period
-		0xDA, 0x12, // Set COM pins hardware configuration
-		0xDB, 0x30, // Set VCOMH Deselect Level
-		0x8D, 0x14, // Set Charge Pump
+		0x8D, 0x10, // Set Charge Pump
 		0xAF, // Display On
 	};
 
+#if 1
 	int i;
 	for( i = 0; i < sizeof( ssd1306_init_array ); i++ )
 	{
@@ -68,7 +70,13 @@ int main()
 			printf( "Failed to send OLED command at %d\n", i );
 		}
 	}
-
+#else
+	// Trying another mode
+	if( ssd1306_pkt_send( ssd1306_init_array, sizeof(ssd1306_init_array), 1 ) )
+	{
+		printf( "Failed to setup\n" );
+	}
+#endif
 	int x, y;
 	int t = 0;
 
@@ -84,6 +92,7 @@ int main()
 		memset( ssd1306_buffer, 0xAA, sizeof(ssd1306_buffer) );
 		t++;
 		ssd1306_refresh();
+		Delay_Ms(200);
 	}
 }
 
