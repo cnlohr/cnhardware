@@ -9,7 +9,7 @@
 #define SSD1306_FULLUSE
 #define SSD1306_W (64) 
 #define SSD1306_H (48)
-#define SSD1306_OFFSET 0
+#define SSD1306_OFFSET 32
 
 #define SSD1306_RST_PIN PC0
 
@@ -43,7 +43,8 @@ int main()
 	static const uint8_t ssd1306_init_array[] =
 	{
 		0xAE, // Display off
-		//0x00, 0x12, 0x40, 0xB0,
+		0x20, 0x00, // Horizontal addresing mode
+		0x00, 0x12, 0x40, 0xB0,
 		0xD5, 0x80, // Function Selection
 		0xA8, 0x2F, // Set Multiplex Ratio
 		0xD3, 0x00, // Set Display Offset
@@ -56,11 +57,11 @@ int main()
 		0xDB, 0x30, // Set VCOMH Deselect Level
 		0xA4, // Entire display on (a5)/off(a4)
 		0xA6, // Normal (a6)/inverse (a7)
-		0x8D, 0x10, // Set Charge Pump
+		0x8D, 0x14, // Set Charge Pump
 		0xAF, // Display On
 	};
 
-#if 1
+#if 0
 	int i;
 	for( i = 0; i < sizeof( ssd1306_init_array ); i++ )
 	{
@@ -86,12 +87,23 @@ int main()
 		{
 			for( x = 0; x < 96; x+=8 )
 			{
-				ssd1306_buffer[(x>>3)+y*8] = 0xaa;//(y&1)?0xfa:0x00;
+				ssd1306_buffer[(x>>3)+y*96/8] = 0x00;//(y&1)?0xfa:0x00;
 			}
 		}
-		memset( ssd1306_buffer, 0xAA, sizeof(ssd1306_buffer) );
+		memset( ssd1306_buffer, 0xaa, sizeof(ssd1306_buffer) );
 		t++;
-		ssd1306_refresh();
+		//ssd1306_refresh();
+	ssd1306_cmd(SSD1306_COLUMNADDR);
+	ssd1306_cmd(SSD1306_OFFSET);   // Column start address (0 = reset)
+	ssd1306_cmd(SSD1306_OFFSET+SSD1306_W-1); // Column end address (127 = reset)
+	
+	ssd1306_cmd(SSD1306_PAGEADDR);
+	ssd1306_cmd(0); // Page start address (0 = reset)
+	ssd1306_cmd(7); // Page end address
+
+	/* send PSZ block of data */
+	ssd1306_data(ssd1306_buffer, sizeof(ssd1306_buffer));
+
 		Delay_Ms(200);
 	}
 }
