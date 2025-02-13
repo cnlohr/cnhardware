@@ -8,13 +8,16 @@
 #define SSD1306_I2C_ADDR 0x3C
 #define SSD1306_FULLUSE
 #define SSD1306_W (64) 
-#define SSD1306_H (48)
+#define SSD1306_H (64)
 #define SSD1306_OFFSET 32
 
 #define SSD1306_RST_PIN PC0
 
 #include "ssd1306_i2c_bitbang.h"
 #include "ssd1306.h"
+
+#define RANDOM_STRENGTH 2
+#include "lib_rand.h"
 
 int main()
 {
@@ -45,7 +48,7 @@ int main()
 		0xAE, // Display off
 		0x20, 0x00, // Horizontal addresing mode
 		0x00, 0x12, 0x40, 0xB0,
-		0xD5, 0x80, // Function Selection
+		0xD5, 0x00, // Function Selection   <<< This controls scan speed.
 		0xA8, 0x2F, // Set Multiplex Ratio
 		0xD3, 0x00, // Set Display Offset
 		0x40,
@@ -77,34 +80,94 @@ int main()
 	{
 		printf( "Failed to setup\n" );
 	}
-#endif
-	int x, y;
-	int t = 0;
 
-	while(1)
-	{
-		for( y = 0; y < 64; y++ )
-		{
-			for( x = 0; x < 96; x+=8 )
-			{
-				ssd1306_buffer[(x>>3)+y*96/8] = 0x00;//(y&1)?0xfa:0x00;
-			}
-		}
-		memset( ssd1306_buffer, 0xaa, sizeof(ssd1306_buffer) );
-		t++;
-		//ssd1306_refresh();
-	ssd1306_cmd(SSD1306_COLUMNADDR);
-	ssd1306_cmd(SSD1306_OFFSET);   // Column start address (0 = reset)
-	ssd1306_cmd(SSD1306_OFFSET+SSD1306_W-1); // Column end address (127 = reset)
-	
 	ssd1306_cmd(SSD1306_PAGEADDR);
 	ssd1306_cmd(0); // Page start address (0 = reset)
 	ssd1306_cmd(7); // Page end address
 
-	/* send PSZ block of data */
-	ssd1306_data(ssd1306_buffer, sizeof(ssd1306_buffer));
+#endif
+	int x, y;
+	int t = 0;
 
-		Delay_Ms(200);
+
+	int32_t nextFrame = SysTick->CNT;
+	uint32_t freeTime;
+
+	#define DROPCOUNT 16
+	static int drops[DROPCOUNT][3]; // x,y,age
+	static int drophead = 0;
+
+	while(1)
+	{
+
+		#if 0
+		for( y = 0; y < 64; y++ )
+		{
+			for( x = 0; x < 64; x+=8 )
+			{
+				ssd1306_buffer[(x>>3)+y*64/8] =
+					 //(((t)+(x>>3))&1)?0xaa:0x55;
+					//((t & 0x3f) == y)?0xff:0;
+					1<<(t&7);
+			}
+		}
+		#endif
+
+		//memset( ssd1306_buffer, 0, sizeof( ssd1306_buffer ) );
+
+		uint32_t sz = sizeof( ssd1306_buffer )/4;
+		uint32_t i;
+		for( i = 0; i < sz; i++ )
+		{
+			((uint32_t*)ssd1306_buffer)[i] = 0;
+		}
+
+		//char st[12];
+		//sprintf( st, "%d", freeTime );
+		//ssd1306_drawstr( 0, 0, st, 1);
+
+		if( (t & 0xf) == (rand()%0xf) )
+		{
+			drophead = (drophead+1)&(DROPCOUNT-1);
+			int * dr = drops[drophead];
+			dr[0] = rand()%64;
+			dr[1] = rand()%48;
+			dr[2] = 1;
+		}
+
+		int d;
+		for( d = 0; d < DROPCOUNT; d++ )
+		{
+			int * dr = drops[d];
+			if( !dr[2] ) continue;
+			ssd1306_drawCircle( dr[0], dr[1], dr[2], 1 );
+			dr[2]++;
+			if( dr[2] > 100 ) dr[2] = 0;
+		}
+
+
+		//memset( ssd1306_buffer, ((t+x+y)&1)?0xaa:0x55, sizeof( ssd1306_buffer ) );
+		t++;
+		//ssd1306_refresh();
+		ssd1306_cmd(SSD1306_COLUMNADDR);
+		ssd1306_cmd(SSD1306_OFFSET);   // Column start address (0 = reset)
+		ssd1306_cmd(SSD1306_OFFSET+SSD1306_W-1); // Column end address (127 = reset)
+
+		freeTime = nextFrame - SysTick->CNT;
+		while( (int32_t)(SysTick->CNT - nextFrame) < 0 );
+		nextFrame += 1600000/3; // 1600000 is 30Hz, 800000 is 60Hz, 755555 is 90Hz -- 90Hz seems about tha max you can go.
+
+		ssd1306_pkt_send( (const uint8_t[]){0xD3, 0x32}, 2, 1 );
+		ssd1306_pkt_send( (const uint8_t[]){0xA8, 0x01}, 2, 1 );
+
+		/* send PSZ block of data */
+		ssd1306_data(ssd1306_buffer, 64*48/8);
+
+		//ssd1306_pkt_send( (const uint8_t[]){0xD5, 0x8f}, 2, 1 );
+		ssd1306_pkt_send( (const uint8_t[]){0xD3, 0x3e}, 2, 1 ); // Need to hide little stripe off edge of screen.
+		ssd1306_pkt_send( (const uint8_t[]){0xA8, 0x31}, 2, 1 );
+		//ssd1306_pkt_send( (const uint8_t[]){0xD5, 0x80}, 2, 1 );
+
 	}
 }
 
