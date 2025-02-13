@@ -48,7 +48,7 @@ int main()
 		0xAE, // Display off
 		0x20, 0x00, // Horizontal addresing mode
 		0x00, 0x12, 0x40, 0xB0,
-		0xD5, 0x00, // Function Selection   <<< This controls scan speed.
+		0xD5, 0xf0, // Function Selection   <<< This controls scan speed. F0 is fastest.
 		0xA8, 0x2F, // Set Multiplex Ratio
 		0xD3, 0x00, // Set Display Offset
 		0x40,
@@ -97,6 +97,8 @@ int main()
 	static int drops[DROPCOUNT][3]; // x,y,age
 	static int drophead = 0;
 
+int ict = 0;
+
 	while(1)
 	{
 
@@ -122,17 +124,19 @@ int main()
 			((uint32_t*)ssd1306_buffer)[i] = 0;
 		}
 
-		//char st[12];
-		//sprintf( st, "%d", freeTime );
-		//ssd1306_drawstr( 0, 0, st, 1);
-
-		if( (t & 0xf) == (rand()%0xf) )
+		char st[12];
+		sprintf( st, "%d", freeTime );
+		ssd1306_drawstr( 0, 0, st, 1);
+if( ict < 10 )
+{
+		if( (t & 0x1f) == (rand()%0x1f) )
 		{
 			drophead = (drophead+1)&(DROPCOUNT-1);
 			int * dr = drops[drophead];
 			dr[0] = rand()%64;
 			dr[1] = rand()%48;
 			dr[2] = 1;
+			ict++;
 		}
 
 		int d;
@@ -140,11 +144,18 @@ int main()
 		{
 			int * dr = drops[d];
 			if( !dr[2] ) continue;
-			ssd1306_drawCircle( dr[0], dr[1], dr[2], 1 );
 			dr[2]++;
-			if( dr[2] > 100 ) dr[2] = 0;
+			if( dr[2] > 80 ) dr[2] = 0;
 		}
+}
 
+		int d;
+		for( d = 0; d < DROPCOUNT; d++ )
+		{
+			int * dr = drops[d];
+			if( !dr[2] ) continue;
+			ssd1306_drawCircle( dr[0], dr[1], dr[2], 1 );
+		}
 
 		//memset( ssd1306_buffer, ((t+x+y)&1)?0xaa:0x55, sizeof( ssd1306_buffer ) );
 		t++;
@@ -155,19 +166,20 @@ int main()
 
 		freeTime = nextFrame - SysTick->CNT;
 		while( (int32_t)(SysTick->CNT - nextFrame) < 0 );
-		nextFrame += 1600000/3; // 1600000 is 30Hz, 800000 is 60Hz, 755555 is 90Hz -- 90Hz seems about tha max you can go.
+		nextFrame += 400000; 
+		// 1600000 is 30Hz
+		// 800000 is 60Hz
+		// 533333 is 90Hz -- 90Hz seems about tha max you can go.
+		// 400000 is 120Hz
 
-		ssd1306_pkt_send( (const uint8_t[]){0xD3, 0x32}, 2, 1 );
-		ssd1306_pkt_send( (const uint8_t[]){0xA8, 0x01}, 2, 1 );
+ssd1306_pkt_send( (const uint8_t[]){0xD3, 0x32}, 2, 1 ); // Move the cursor "off screen"
+ssd1306_pkt_send( (const uint8_t[]){0xA8, 0x01}, 2, 1 ); // Scan over two scanlines to hide updates
 
-		/* send PSZ block of data */
-		ssd1306_data(ssd1306_buffer, 64*48/8);
+// Send data
+ssd1306_data(ssd1306_buffer, 64*48/8);
 
-		//ssd1306_pkt_send( (const uint8_t[]){0xD5, 0x8f}, 2, 1 );
-		ssd1306_pkt_send( (const uint8_t[]){0xD3, 0x3e}, 2, 1 ); // Need to hide little stripe off edge of screen.
-		ssd1306_pkt_send( (const uint8_t[]){0xA8, 0x31}, 2, 1 );
-		//ssd1306_pkt_send( (const uint8_t[]){0xD5, 0x80}, 2, 1 );
-
+ssd1306_pkt_send( (const uint8_t[]){0xD3, 0x3e}, 2, 1 ); // Make it so it "would be" off screen but only by 2 pixels.
+ssd1306_pkt_send( (const uint8_t[]){0xA8, 0x31}, 2, 1 ); // Overscan screen by 2 pixels, but release from 2-scanline mode.
 	}
 }
 
