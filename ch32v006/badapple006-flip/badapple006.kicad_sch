@@ -2941,6 +2941,36 @@
 		)
 		(uuid "fc23ab5d-506a-4ffc-b13e-399dffa596b2")
 	)
+	(text "3"
+		(exclude_from_sim no)
+		(at 210.82 39.116 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "06f8eabe-b23a-42d9-8f5a-2a8fe65275ba")
+	)
+	(text "7"
+		(exclude_from_sim no)
+		(at 214.63 51.054 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "102c562d-51a8-4c63-827c-2b26297f8787")
+	)
+	(text "5"
+		(exclude_from_sim no)
+		(at 210.82 44.958 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "462ea1db-20b7-442d-97de-b0c86080f80a")
+	)
 	(text "alt: C466530 / C5213749"
 		(exclude_from_sim no)
 		(at 232.41 36.83 0)
@@ -2952,9 +2982,49 @@
 		)
 		(uuid "9c552692-3a67-4989-ada2-58f118814710")
 	)
+	(text "8"
+		(exclude_from_sim no)
+		(at 219.456 54.102 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a7062089-a97a-4dc3-a733-82301bf51419")
+	)
+	(text "2"
+		(exclude_from_sim no)
+		(at 210.82 36.576 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ae010c62-b77e-4886-b44b-161fcae5fb19")
+	)
+	(text "6"
+		(exclude_from_sim no)
+		(at 214.376 48.514 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "da0846c0-2c86-44a3-82d6-0f63c688c127")
+	)
+	(text "4"
+		(exclude_from_sim no)
+		(at 210.82 42.164 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ea4f7a5c-4fba-4d3a-a25d-6a7199faeb25")
+	)
 	(text "OLED DISPLAY: RB6448TSWHG04 (Ronboe)"
 		(exclude_from_sim no)
-		(at 184.15 29.21 0)
+		(at 173.482 29.464 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2962,6 +3032,16 @@
 			(justify left bottom)
 		)
 		(uuid "f08aecb5-507d-4720-a1e0-4036e30e34d4")
+	)
+	(text "1"
+		(exclude_from_sim no)
+		(at 210.82 34.036 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f67a0349-ad4e-416b-ba37-2c01d2cc2d80")
 	)
 	(global_label "SBU"
 		(shape input)
@@ -3025,6 +3105,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SCL"
+		(shape input)
+		(at 246.38 53.34 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "263f7b27-88f3-4f5b-a473-14d89c23abf5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 239.8872 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -3152,6 +3254,28 @@
 		(uuid "62427f8c-a190-40a6-babd-4b675ccd2c7f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 213.0357 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SDA"
+		(shape input)
+		(at 246.38 59.69 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "64383c56-2452-429d-b40e-25a4e6670693")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 239.8267 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3460,28 +3584,6 @@
 		(uuid "bc0ee4c8-7d8c-4dee-946d-cfa42bbe5a10")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 86.0963 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "OVDD"
-		(shape input)
-		(at 92.71 58.42 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "bcfee4a4-ec74-4f10-a1bf-f943b707f88f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 84.7657 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5501,6 +5603,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:VDD")
+		(at 172.72 78.74 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8a2e0e00-fc62-4aee-92d9-496aabcb7fdc")
+		(property "Reference" "#PWR028"
+			(at 168.91 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VDD"
+			(at 176.53 78.7399 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 172.72 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 172.72 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 172.72 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f9de7b76-b7ef-407c-99c3-fce1823cd6d4")
+		)
+		(instances
+			(project "badapple006"
+				(path "/88f86251-37ea-456e-9a8e-c00115fc8776"
+					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 92.71 139.7 0)
 		(unit 1)
@@ -6273,7 +6442,7 @@
 		(dnp no)
 		(uuid "b3a91647-13a2-45ec-9c37-f1431e17fc5e")
 		(property "Reference" "C7"
-			(at 73.66 50.8 0)
+			(at 71.628 49.784 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6282,7 +6451,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 73.66 53.34 0)
+			(at 68.58 46.736 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6820,6 +6989,140 @@
 			(project "badapple006"
 				(path "/88f86251-37ea-456e-9a8e-c00115fc8776"
 					(reference "#PWR021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 251.46 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "d05c91d0-7a9e-4c0a-bbf0-201cef76ac0f")
+		(property "Reference" "J10"
+			(at 254 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SCL"
+			(at 254 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 251.46 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 251.46 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 251.46 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ab3cb52e-3f30-4665-b744-17a234b6b476")
+		)
+		(instances
+			(project "badapple006"
+				(path "/88f86251-37ea-456e-9a8e-c00115fc8776"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 251.46 59.69 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "d438c547-8fee-4698-b178-09b59f06eee9")
+		(property "Reference" "J11"
+			(at 254 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SDA"
+			(at 254 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 251.46 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 251.46 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 251.46 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "709ba0b2-eb63-4e87-8fc0-3fed5f8b1688")
+		)
+		(instances
+			(project "badapple006"
+				(path "/88f86251-37ea-456e-9a8e-c00115fc8776"
+					(reference "J11")
 					(unit 1)
 				)
 			)
@@ -7533,7 +7836,7 @@
 		(dnp no)
 		(uuid "f0ded054-8703-490c-9360-a3b09332293a")
 		(property "Reference" "C4"
-			(at 82.55 50.8 0)
+			(at 80.518 49.784 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7542,7 +7845,7 @@
 			)
 		)
 		(property "Value" "2.2u16v"
-			(at 82.55 53.34 0)
+			(at 76.2 46.736 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7596,73 +7899,6 @@
 			(project "badapple006"
 				(path "/88f86251-37ea-456e-9a8e-c00115fc8776"
 					(reference "C4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x01")
-		(at 177.8 78.74 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "f3bc93f8-8a4b-4ab8-b0f3-97ffe2a9725d")
-		(property "Reference" "J10"
-			(at 180.34 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "OVDD"
-			(at 180.34 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 177.8 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 177.8 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 177.8 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "cda2a17b-0bc8-4a64-8194-aafb5cafa72a")
-		)
-		(instances
-			(project "badapple006"
-				(path "/88f86251-37ea-456e-9a8e-c00115fc8776"
-					(reference "J10")
 					(unit 1)
 				)
 			)
