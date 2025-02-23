@@ -86,7 +86,7 @@ int main()
 	ssd1306_cmd(7); // Page end address
 
 #endif
-	int x, y;
+	//int x, y;
 	int t = 0;
 
 
@@ -97,7 +97,7 @@ int main()
 	static int drops[DROPCOUNT][3]; // x,y,age
 	static int drophead = 0;
 
-int ict = 0;
+	int totalcircles = 0;
 
 	while(1)
 	{
@@ -124,38 +124,44 @@ int ict = 0;
 			((uint32_t*)ssd1306_buffer)[i] = 0;
 		}
 
-		char st[12];
-		sprintf( st, "%d", freeTime );
-		ssd1306_drawstr( 0, 0, st, 1);
-if( ict < 10 )
-{
-		if( (t & 0x1f) == (rand()%0x1f) )
+		#define profile 0
+		if( !profile || totalcircles < 8 )
 		{
-			drophead = (drophead+1)&(DROPCOUNT-1);
-			int * dr = drops[drophead];
-			dr[0] = rand()%64;
-			dr[1] = rand()%48;
-			dr[2] = 1;
-			ict++;
-		}
+			if( (t & 0xf) == (rand()%0xf) )
+			{
+				drophead = (drophead+1)&(DROPCOUNT-1);
+				int * dr = drops[drophead];
+				dr[0] = rand()%64;
+				dr[1] = rand()%48;
+				dr[2] = 1;
+				totalcircles++;
+			}
 
-		int d;
-		for( d = 0; d < DROPCOUNT; d++ )
+			int d;
+			for( d = 0; d < DROPCOUNT; d++ )
+			{
+				int * dr = drops[d];
+				if( !dr[2] ) continue;
+				dr[2]++;
+				if( dr[2] > 80 ) dr[2] = 0;
+			}
+		}
+		if( profile )
 		{
-			int * dr = drops[d];
-			if( !dr[2] ) continue;
-			dr[2]++;
-			if( dr[2] > 80 ) dr[2] = 0;
+			char st[12];
+			sprintf( st, "%ld", freeTime );
+			ssd1306_drawstr( 0, 0, st, 1);
 		}
-}
-
-		int d;
-		for( d = 0; d < DROPCOUNT; d++ )
+		//uint32_t profile_start = SysTick->CNT;
+		for( int d = 0; d < DROPCOUNT; d++ )
 		{
 			int * dr = drops[d];
 			if( !dr[2] ) continue;
 			ssd1306_drawCircle( dr[0], dr[1], dr[2], 1 );
+			//ssd1306_fillRect( dr[0]-dr[2], dr[1]-dr[2], dr[2]*2, dr[2]*2, 1 );
+			//ssd1306_drawLine( dr[0], dr[1], dr[0]-dr[2], dr[1]-dr[2]/2, 1 );
 		}
+		//freeTime = SysTick->CNT - profile_start;
 
 		//memset( ssd1306_buffer, ((t+x+y)&1)?0xaa:0x55, sizeof( ssd1306_buffer ) );
 		t++;
@@ -169,17 +175,17 @@ if( ict < 10 )
 		nextFrame += 400000; 
 		// 1600000 is 30Hz
 		// 800000 is 60Hz
-		// 533333 is 90Hz -- 90Hz seems about tha max you can go.
-		// 400000 is 120Hz
+		// 533333 is 90Hz -- 90Hz seems about the max you can go with default 0xd5 settings.
+		// 400000 is 120Hz -- Only possible when cranking D5 at 0xF0 and 0xa8 == 0x31
 
-ssd1306_pkt_send( (const uint8_t[]){0xD3, 0x32}, 2, 1 ); // Move the cursor "off screen"
-ssd1306_pkt_send( (const uint8_t[]){0xA8, 0x01}, 2, 1 ); // Scan over two scanlines to hide updates
+		ssd1306_pkt_send( (const uint8_t[]){0xD3, 0x32}, 2, 1 ); // Move the cursor "off screen"
+		ssd1306_pkt_send( (const uint8_t[]){0xA8, 0x01}, 2, 1 ); // Scan over two scanlines to hide updates
 
-// Send data
-ssd1306_data(ssd1306_buffer, 64*48/8);
+		// Send data
+		ssd1306_data(ssd1306_buffer, 64*48/8);
 
-ssd1306_pkt_send( (const uint8_t[]){0xD3, 0x3e}, 2, 1 ); // Make it so it "would be" off screen but only by 2 pixels.
-ssd1306_pkt_send( (const uint8_t[]){0xA8, 0x31}, 2, 1 ); // Overscan screen by 2 pixels, but release from 2-scanline mode.
+		ssd1306_pkt_send( (const uint8_t[]){0xD3, 0x3e}, 2, 1 ); // Make it so it "would be" off screen but only by 2 pixels.
+		ssd1306_pkt_send( (const uint8_t[]){0xA8, 0x31}, 2, 1 ); // Overscan screen by 2 pixels, but release from 2-scanline mode.
 	}
 }
 
