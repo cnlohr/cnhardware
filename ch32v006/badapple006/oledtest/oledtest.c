@@ -11,7 +11,7 @@
 #define SSD1306_H (64)
 #define SSD1306_OFFSET 32
 
-#define SSD1306_RST_PIN PC0
+#define SSD1306_RST_PIN PC3
 
 #include "ssd1306_i2c_bitbang.h"
 #include "ssd1306.h"
