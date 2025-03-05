@@ -13,9 +13,9 @@
 
 #define SSD1306_RST_PIN PC3
 
-#define I2CDELAY_FUNC
+#define I2CDELAY_FUNC( x )
 
-#include "ssd1306_i2c_bitbang.h"
+#include "ssd1306mini.h"
 #include "ssd1306.h"
 
 #define RANDOM_STRENGTH 2
@@ -26,16 +26,7 @@ int main()
 	SystemInit();
 	funGpioInitAll();
 
-	// On the 006, only GPIO_CFGLR_OUT_10Mhz_PP is available.
-
-//	funPinMode( PC3, GPIO_CFGLR_OUT_10Mhz_PP ); // VDD On
-//	funDigitalWrite( PC3, 1 );
-	//funPinMode( PC0, GPIO_CFGLR_OUT_10Mhz_PP ); // VDD On
-	//funDigitalWrite( PC0, 1 );
-	Delay_Ms(1);
-	ssd1306_rst();
-	ssd1306_i2c_setup();
-	Delay_Ms(1);
+	ssd1306_mini_i2c_setup();
 
 	static const uint8_t ssd1306_init_array[] =
 	{
@@ -50,7 +41,7 @@ int main()
 		0xC8, // Set COM output scan direction
 		0xDA, 0x12, // Set COM pins hardware configuration
 		0x81, 0xCF, // Contrast control
-		0xD9, 0x22, // Set Pre-Charge Period
+		//0xD9, 0x22, // Set Pre-Charge Period  (Not used)
 		0xDB, 0x30, // Set VCOMH Deselect Level
 		0xA4, // Entire display on (a5)/off(a4)
 		0xA6, // Normal (a6)/inverse (a7)
@@ -60,10 +51,7 @@ int main()
 	};
 
 	// Trying another mode
-	if( ssd1306_pkt_send( ssd1306_init_array, sizeof(ssd1306_init_array), 1 ) )
-	{
-		puts( "Failed to setup\n" );
-	}
+	ssd1306_mini_pkt_send( ssd1306_init_array, sizeof(ssd1306_init_array), 1 );
 
 	//int x, y;
 	int t = 0;
@@ -80,6 +68,8 @@ int main()
 
 	while(1)
 	{
+		#define profile 0
+
 		uint32_t sz = sizeof( ssd1306_buffer )/4;
 		uint32_t i;
 		for( i = 0; i < sz; i++ )
@@ -87,7 +77,6 @@ int main()
 			((uint32_t*)ssd1306_buffer)[i] = 0;
 		}
 
-		#define profile 0
 		if( !profile || totalcircles < 8 )
 		{
 			if( (t & 0xf) == (rand()%0xf) )
@@ -121,12 +110,16 @@ int main()
 			int * dr = drops[d];
 			if( !dr[2] ) continue;
 			ssd1306_drawCircle( dr[0], dr[1], dr[2], 1 );
+
 			//ssd1306_fillRect( dr[0]-dr[2], dr[1]-dr[2], dr[2]*2, dr[2]*2, 1 );
 			//ssd1306_drawLine( dr[0], dr[1], dr[0]-dr[2], dr[1]-dr[2]/2, 1 );
 		}
+
+
 		//freeTime = SysTick->CNT - profile_start;
 
 		//memset( ssd1306_buffer, ((t+x+y)&1)?0xaa:0x55, sizeof( ssd1306_buffer ) );
+		//memset( ssd1306_buffer, 0xff, sizeof( ssd1306_buffer ) );
 		t++;
 
 		freeTime = nextFrame - SysTick->CNT;
@@ -139,7 +132,7 @@ int main()
 
 		// Move the cursor "off screen"
 		// Scan over two scanlines to hide updates
-		ssd1306_pkt_send( 
+		ssd1306_mini_pkt_send( 
 			(const uint8_t[]){0xD3, 0x32, 0xA8, 0x01,
 			// Column start address (0 = reset)
 			// Column end address (127 = reset)
@@ -147,11 +140,11 @@ int main()
 			7, 1 );
 
 		// Send data
-		ssd1306_data(ssd1306_buffer, 64*48/8);
+		ssd1306_mini_data(ssd1306_buffer, 64*48/8);
 
 		// Make it so it "would be" off screen but only by 2 pixels.
 		// Overscan screen by 2 pixels, but release from 2-scanline mode.
-		ssd1306_pkt_send( (const uint8_t[]){0xD3, 0x3e, 0xA8, 0x31}, 4, 1 ); 
+		ssd1306_mini_pkt_send( (const uint8_t[]){0xD3, 0x3e, 0xA8, 0x31}, 4, 1 ); 
 	}
 }
 
