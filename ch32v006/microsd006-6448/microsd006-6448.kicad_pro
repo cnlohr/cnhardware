@@ -38,8 +38,8 @@
         "other_text_upright": false,
         "pads": {
           "drill": 0.0,
-          "height": 4.5,
-          "width": 4.5
+          "height": 0.7,
+          "width": 1.0
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.5
+          "min_clearance": 0.23
         }
       },
       "diff_pair_dimensions": [
@@ -97,12 +97,12 @@
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
         "silk_edge_clearance": "warning",
-        "silk_over_copper": "warning",
+        "silk_over_copper": "ignore",
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
         "starved_thermal": "ignore",
-        "text_height": "warning",
+        "text_height": "ignore",
         "text_thickness": "warning",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
@@ -118,7 +118,7 @@
         "max_error": 0.005,
         "min_clearance": 0.0,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.5,
+        "min_copper_edge_clearance": 0.25,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.25,
         "min_microvia_diameter": 0.2,
@@ -127,10 +127,10 @@
         "min_silk_clearance": 0.0,
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
-        "min_through_hole_diameter": 0.24,
+        "min_through_hole_diameter": 0.28,
         "min_track_width": 0.0,
         "min_via_annular_width": 0.1,
-        "min_via_diameter": 0.45,
+        "min_via_diameter": 0.5,
         "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
@@ -444,7 +444,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "microswadge-reflector.kicad_pro",
+    "filename": "microsd006-6448.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -456,14 +456,14 @@
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
-        "microvia_diameter": 0.25,
+        "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.19,
-        "via_diameter": 0.46,
-        "via_drill": 0.25,
+        "via_diameter": 0.5,
+        "via_drill": 0.28,
         "wire_width": 6
       }
     ],
@@ -479,8 +479,8 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "microswadge-reflector-006-rev-",
-      "pos_files": "microswadge-reflector-006-rev-",
+      "plot": "microsd006-6448-rev-",
+      "pos_files": "microsd006-6448-rev-/",
       "specctra_dsn": "",
       "step": "",
       "svg": "",
@@ -490,7 +490,7 @@
   },
   "schematic": {
     "annotate_start_num": 0,
-    "bom_export_filename": "microswadge-reflector-006-rev-/microswadge-reflector-006-rev-BOM.csv",
+    "bom_export_filename": "microsd006-6448-rev-/microsd006-6448-rev-BOM.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -512,7 +512,7 @@
           "show": true
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "Value",
           "name": "Value",
           "show": true
@@ -548,40 +548,10 @@
           "show": false
         },
         {
-          "group_by": false,
-          "label": "Cost @ 2.5k",
-          "name": "Cost @ 2.5k",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Cost100",
-          "name": "Cost100",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Digikey",
-          "name": "Digikey",
-          "show": false
-        },
-        {
           "group_by": true,
           "label": "LCSC",
           "name": "LCSC",
           "show": true
-        },
-        {
-          "group_by": false,
-          "label": "Notes",
-          "name": "Notes",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Substitutable",
-          "name": "Substitutable",
-          "show": false
         },
         {
           "group_by": false,
@@ -623,7 +593,7 @@
     "meta": {
       "version": 1
     },
-    "net_format_name": "Spice",
+    "net_format_name": "",
     "page_layout_descr_file": "",
     "plot_directory": "",
     "spice_current_sheet_as_root": false,
@@ -637,7 +607,7 @@
   },
   "sheets": [
     [
-      "6b359244-dc08-4c4b-ab95-8795fdd2a661",
+      "88f86251-37ea-456e-9a8e-c00115fc8776",
       "Root"
     ]
   ],
