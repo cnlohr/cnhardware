@@ -18,6 +18,10 @@
 #include "ssd1306mini.h"
 #include "ssd1306.h"
 
+
+#define RAINDROPS 1
+// If not defined, does a grey test.
+
 #define RANDOM_STRENGTH 2
 #include "lib_rand.h"
 
@@ -33,14 +37,14 @@ int main()
 		0xAE, // Display off
 		0x20, 0x00, // Horizontal addresing mode
 		0x00, 0x12, 0x40, 0xB0,
-		0xD5, 0xf0, // Function Selection   <<< This controls scan speed. F0 is fastest.
+		0xD5, 0xf0, // Function Selection   <<< This controls scan speed. F0 is fastest.  The LSN = D divisor.
 		0xA8, 0x2F, // Set Multiplex Ratio
 		0xD3, 0x00, // Set Display Offset
 		0x40,
 		0xA1, // Segment remap
 		0xC8, // Set COM output scan direction
 		0xDA, 0x12, // Set COM pins hardware configuration
-		0x81, 0xCF, // Contrast control
+		0x81, 0xcf, // Contrast control
 		//0xD9, 0x22, // Set Pre-Charge Period  (Not used)
 		0xDB, 0x30, // Set VCOMH Deselect Level
 		0xA4, // Entire display on (a5)/off(a4)
@@ -72,6 +76,9 @@ int main()
 
 		uint32_t sz = sizeof( ssd1306_buffer )/4;
 		uint32_t i;
+
+#if RAINDROPS
+
 		for( i = 0; i < sz; i++ )
 		{
 			((uint32_t*)ssd1306_buffer)[i] = 0;
@@ -119,7 +126,9 @@ int main()
 		//freeTime = SysTick->CNT - profile_start;
 
 		//memset( ssd1306_buffer, ((t+x+y)&1)?0xaa:0x55, sizeof( ssd1306_buffer ) );
-		//memset( ssd1306_buffer, 0xff, sizeof( ssd1306_buffer ) );
+#else
+#endif
+
 		t++;
 
 		freeTime = nextFrame - SysTick->CNT;
@@ -129,22 +138,44 @@ int main()
 		// 800000 is 60Hz
 		// 533333 is 90Hz -- 90Hz seems about the max you can go with default 0xd5 settings.
 		// 400000 is 120Hz -- Only possible when cranking D5 at 0xF0 and 0xa8 == 0x31
+		// 320000 is 150Hz -- A biiig stretch. but on some displays achievable.
+		// 266666 is 180Hz -- DOES NOT WORK
 
 		// Move the cursor "off screen"
 		// Scan over two scanlines to hide updates
+
 		ssd1306_mini_pkt_send( 
 			(const uint8_t[]){0xD3, 0x32, 0xA8, 0x01,
 			// Column start address (0 = reset)
 			// Column end address (127 = reset)
-			SSD1306_COLUMNADDR, SSD1306_OFFSET, SSD1306_OFFSET+SSD1306_W-1 },
-			7, 1 );
+			SSD1306_COLUMNADDR, SSD1306_OFFSET, SSD1306_OFFSET+SSD1306_W-1, 0xb0 },
+			8, 1 );
+
+
+		if( t == 2 ) t = 0;
+#if RAINDROPS
+		// May be needed at lower framerates.
+		Delay_Us(200);
 
 		// Send data
 		ssd1306_mini_data(ssd1306_buffer, 64*48/8);
+#else
+		ssd1306_mini_i2c_sendstart();
+		ssd1306_mini_i2c_sendbyte( SSD1306_I2C_ADDR<<1 );
+		ssd1306_mini_i2c_sendbyte( 0x40 ); // Data
+
+		Delay_Us(100);
+		int n;
+		uint8_t go = (t == 0 || t == 2) ? 0xff : 0x00;
+		for( n = 0; n < 6*8*8; n++ )
+			ssd1306_mini_i2c_sendbyte( go );
+
+		ssd1306_mini_i2c_sendstop();
+#endif
 
 		// Make it so it "would be" off screen but only by 2 pixels.
 		// Overscan screen by 2 pixels, but release from 2-scanline mode.
-		ssd1306_mini_pkt_send( (const uint8_t[]){0xD3, 0x3e, 0xA8, 0x31}, 4, 1 ); 
+		ssd1306_mini_pkt_send( (const uint8_t[]){0xD3, 0x3e, 0xA8, 0x31}, 4, 1 );  // There are other conditions where this is better if it's 0xA8 0x31.
 	}
 }
 

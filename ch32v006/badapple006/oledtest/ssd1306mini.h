@@ -1,6 +1,12 @@
 #ifndef _SSD1306_6448_MINI_H
 #define _SSD1306_6448_MINI_H
 
+
+#ifndef SSD1306_COLUMNADDR
+#define SSD1306_COLUMNADDR 0x21
+#define SSD1306_PAGEADDR   0x22
+#endif
+
 // SSD1306 I2C address
 #ifndef SSD1306_I2C_ADDR
 #define SSD1306_I2C_ADDR 0x3c
@@ -17,7 +23,6 @@
 
 static inline void ssd1306_mini_i2c_setup(void)
 {
-//	funGpioInitAll();
 	funPinMode( SSD1306_I2C_BITBANG_SDA, GPIO_CFGLR_OUT_10Mhz_PP );
 	funDigitalWrite( SSD1306_I2C_BITBANG_SDA, 1 );
 	funPinMode( SSD1306_I2C_BITBANG_SCL, GPIO_CFGLR_OUT_10Mhz_PP );
