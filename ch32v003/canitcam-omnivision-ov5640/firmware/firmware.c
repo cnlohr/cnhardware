@@ -39,6 +39,8 @@ int CamWriteReg( unsigned int addy, unsigned int data );
 
 uint8_t rawBuffer[1836] __attribute__((aligned(8)));
 
+void SetupDMA();
+
 int main()
 {
 	SystemInit();
@@ -67,27 +69,9 @@ int main()
 
 
 
-	// DMA2 can be configured to attach to T1CH1
-	// The system can only DMA out at ~2.2MSPS.  2MHz is stable.
-	// The idea here is that this copies, byte-at-a-time from the memory
-	// into the peripheral addres.
-	DMA1_Channel4->CNTR = sizeof(rawBuffer) / sizeof(rawBuffer[0]);
-	DMA1_Channel4->MADDR = (uint32_t)rawBuffer;
-	DMA1_Channel4->PADDR = (uint32_t)&GPIOC->INDR; // This is the output register for out buffer.
-	DMA1_Channel4->CFGR = 
-		DMA_DIR_PeripheralSRC |              // !MEM2PERIPHERAL
-		DMA_CFGR1_PL_1 |                       // High priority.
-		0 |                                  // 8-bit memory
-		0 |                                  // 8-bit peripheral
-		DMA_CFGR1_MINC |                     // Increase memory.
-		/*DMA_CFGR1_CIRC |*/                     // Circular mode.
-		/*DMA_CFGR1_HTIE |*/                    // Half-trigger
-		/*DMA_CFGR1_TCIE |*/                     // Whole-trigger
-		DMA_CFGR1_EN;                        // Enable
+	SetupDMA();
 
-	//NVIC_EnableIRQ( DMA1_Channel2_IRQn );
-	DMA1_Channel4->CFGR |= DMA_CFGR1_EN;
-
+/*
 //	DMA1_Channel0->CNTR = DMA1_Channel4->CNTR; DMA1_Channel0->MADDR = DMA1_Channel4->MADDR; DMA1_Channel0->PADDR = DMA1_Channel4->PADDR; DMA1_Channel0->CFGR = DMA1_Channel4->CFGR;
 	DMA1_Channel1->CNTR = DMA1_Channel4->CNTR; DMA1_Channel1->MADDR = DMA1_Channel4->MADDR; DMA1_Channel1->PADDR = DMA1_Channel4->PADDR; DMA1_Channel1->CFGR = DMA1_Channel4->CFGR;
 	DMA1_Channel2->CNTR = DMA1_Channel4->CNTR; DMA1_Channel2->MADDR = DMA1_Channel4->MADDR; DMA1_Channel2->PADDR = DMA1_Channel4->PADDR; DMA1_Channel3->CFGR = DMA1_Channel4->CFGR;
@@ -95,7 +79,7 @@ int main()
 	DMA1_Channel5->CNTR = DMA1_Channel4->CNTR; DMA1_Channel5->MADDR = DMA1_Channel4->MADDR; DMA1_Channel5->PADDR = DMA1_Channel4->PADDR; DMA1_Channel5->CFGR = DMA1_Channel4->CFGR;
 	DMA1_Channel6->CNTR = DMA1_Channel4->CNTR; DMA1_Channel6->MADDR = DMA1_Channel4->MADDR; DMA1_Channel6->PADDR = DMA1_Channel4->PADDR; DMA1_Channel6->CFGR = DMA1_Channel4->CFGR;
 	DMA1_Channel7->CNTR = DMA1_Channel4->CNTR; DMA1_Channel7->MADDR = DMA1_Channel4->MADDR; DMA1_Channel7->PADDR = DMA1_Channel4->PADDR; DMA1_Channel7->CFGR = DMA1_Channel4->CFGR;
-
+*/
 
 	// TIM1_TRIG/TIM1_COM/TIM1_CH4 -> DMA1_Channel4
 
@@ -144,32 +128,40 @@ int main()
 //	while( funDigitalRead( PD5 ) == 0 ) printf( "%02x", GPIOC->INDR );
 //	while( funDigitalRead( PD5 ) == 0 );
 //	while( funDigitalRead( PD5 ) == 1 );
-	DMA1_Channel4->CFGR = 0; // Disable DMA.
 
-	printf( "Remain:%d/%d/%d/%d/%d/%d/%d / %d\n", 
-		DMA1_Channel1->CNTR, DMA1_Channel2->CNTR,
-		DMA1_Channel3->CNTR, DMA1_Channel4->CNTR,
-		DMA1_Channel5->CNTR, DMA1_Channel6->CNTR,
-		DMA1_Channel7->CNTR, 
-		TIM1->CNT );
-	int i;
-	printf( "printf " );
-	for( i = 0; i < sizeof(rawBuffer) - DMA1_Channel4->CNTR;i+=4)
-	{
-		char buffer[9];
-		sprintf( buffer+0,"%02x", rawBuffer[i] );
-		sprintf( buffer+2,"%02x", rawBuffer[i+1] );
-		sprintf( buffer+4,"%02x", rawBuffer[i+2] );
-		sprintf( buffer+6,"%02x", rawBuffer[i+3] );
-		_write( 0, buffer, 8);
-	}
-	printf( " | xxd -r -p > test.jpg\n" );
 
 	printf( "Chip: %02x%02x\n", CamReadReg( 0x300A ), CamReadReg( 0x300B ) );
 	while(1)
 	{
-		Delay_Ms( 25 );
-		printf( "%04x = %02x (%d) / %d\n", 0x4417, CamReadReg( 0x471D ), TIM1->CNT, DMA1_Channel4->CNTR );
+		DMA1_Channel4->CFGR = 0; // Disable DMA.
+
+		printf( "Remain:%d/%d/%d/%d/%d/%d/%d / %d\n", 
+			DMA1_Channel1->CNTR, DMA1_Channel2->CNTR,
+			DMA1_Channel3->CNTR, DMA1_Channel4->CNTR,
+			DMA1_Channel5->CNTR, DMA1_Channel6->CNTR,
+			DMA1_Channel7->CNTR, 
+			TIM1->CNT );
+		int i;
+		printf( "printf " );
+		for( i = 0; i < sizeof(rawBuffer) - DMA1_Channel4->CNTR;i+=4)
+		{
+			char buffer[9];
+			sprintf( buffer+0,"%02x", rawBuffer[i] );
+			sprintf( buffer+2,"%02x", rawBuffer[i+1] );
+			sprintf( buffer+4,"%02x", rawBuffer[i+2] );
+			sprintf( buffer+6,"%02x", rawBuffer[i+3] );
+			_write( 0, buffer, 8);
+		}
+		printf( " | xxd -r -p > test.jpg\n" );
+		//Delay_Ms( 25 );
+		//printf( "%04x = %02x (%d) / %d\n", 0x4417, CamReadReg( 0x471D ), TIM1->CNT, DMA1_Channel4->CNTR );
+
+		while( funDigitalRead( PD5 ) == 0 );// printf( "%02x", GPIOC->INDR );
+		while( funDigitalRead( PD5 ) == 1 );// printf( "%02x", GPIOC->INDR );
+		SetupDMA();
+		while( funDigitalRead( PD5 ) == 0 );// printf( "%02x", GPIOC->INDR );
+		while( funDigitalRead( PD5 ) == 1 );// printf( "%02x", GPIOC->INDR );
+
 	}
 }
 
@@ -316,7 +308,7 @@ void ConfigureCamera()
 
 		//{ 0x3501, 0xff},// Exposure?
 		//{ 0x350a, 0x03},// Gain?
-		{ 0x3501, 0x03},// Full auto
+		{ 0x3503, 0x03},// Full auto? yes. WHY SO BAD?
 
 		{0x4407, 0xff}, // JPEG Quality https://community.st.com/t5/stm32-mcus-embedded-software/ov5640-jpeg-compression-issue-when-storing-images-on-sd-card/td-p/663684
 
@@ -347,4 +339,29 @@ void ConfigureCamera()
 	return;
 fail:
 	printf( "Fail on cmd %d\n", i );
+}
+
+
+void SetupDMA()
+{
+	// DMA2 can be configured to attach to T1CH1
+	// The system can only DMA out at ~2.2MSPS.  2MHz is stable.
+	// The idea here is that this copies, byte-at-a-time from the memory
+	// into the peripheral addres.
+	DMA1_Channel4->CNTR = sizeof(rawBuffer) / sizeof(rawBuffer[0]);
+	DMA1_Channel4->MADDR = (uint32_t)rawBuffer;
+	DMA1_Channel4->PADDR = (uint32_t)&GPIOC->INDR; // This is the output register for out buffer.
+	DMA1_Channel4->CFGR = 
+		DMA_DIR_PeripheralSRC |              // !MEM2PERIPHERAL
+		DMA_CFGR1_PL_1 |                       // High priority.
+		0 |                                  // 8-bit memory
+		0 |                                  // 8-bit peripheral
+		DMA_CFGR1_MINC |                     // Increase memory.
+		/*DMA_CFGR1_CIRC |*/                     // Circular mode.
+		/*DMA_CFGR1_HTIE |*/                    // Half-trigger
+		/*DMA_CFGR1_TCIE |*/                     // Whole-trigger
+		DMA_CFGR1_EN;                        // Enable
+
+	//NVIC_EnableIRQ( DMA1_Channel2_IRQn );
+	DMA1_Channel4->CFGR |= DMA_CFGR1_EN;
 }
