@@ -37,7 +37,7 @@ int CamReadReg( unsigned int addy );
 int CamWriteReg( unsigned int addy, unsigned int data );
 
 
-uint8_t rawBuffer[1836] __attribute__((aligned(8)));
+uint8_t rawBuffer[1536] __attribute__((aligned(8)));
 
 int main()
 {
@@ -103,16 +103,13 @@ int main()
 	AFIO->PCFR1 |=AFIO_PCFR1_TIM1_REMAP_1;
 
 	funPinMode( PIN_PCK,   GPIO_CFGLR_IN_FLOAT );
-
-	// BIG NOTE: 1<<15 can be set!!  (ETP) to change polarity.
-	TIM1->SMCFGR = (7<<4) /* External trigger*/ | (0<<8) | (0<<7) | (0<<14) | (7) | (0<<12) | (1<<15) | (0<<14); // External
+	TIM1->SMCFGR = (7<<4) /* External trigger*/ | (0<<8) | (0<<7) | (0<<14) | (7) | (0<<12) | (0<<15) | (0<<14); // External
 	TIM1->PSC = 0x0000;      // Prescaler 
 	TIM1->ATRLR = 65535;       // Auto Reload - sets period
 	TIM1->SWEVGR |= TIM_UG;	 // Reload immediately
 	TIM1->DMAINTENR = (1<<15) | (1<<14) | (1<<13) | (1<<8) | (1<<5); // can trigger off of (1<<12)
 	TIM1->CTLR1 |= TIM_CEN; // Enable
 	TIM1->CNT = 0;
-	TIM1->CTLR2 = 1<<2;
 
 	// TIM2 full remap, to get output on PD6
 	AFIO->PCFR1 |= AFIO_PCFR1_TIM2_REMAP;
@@ -134,11 +131,6 @@ int main()
 
 	ConfigureCamera();
 
-	printf( "%d\n", (CamReadReg( 0x3804 ) << 8) | CamReadReg( 0x3805) );
-	printf( "%d\n", (CamReadReg( 0x3806 ) << 8) | CamReadReg( 0x3807) );
-
-	while( funDigitalRead( PD5 ) == 0 );// printf( "%02x", GPIOC->INDR );
-	while( funDigitalRead( PD5 ) == 1 );// printf( "%02x", GPIOC->INDR );
 	while( funDigitalRead( PD5 ) == 0 );// printf( "%02x", GPIOC->INDR );
 	while( funDigitalRead( PD5 ) == 1 );// printf( "%02x", GPIOC->INDR );
 //	while( funDigitalRead( PD5 ) == 0 ) printf( "%02x", GPIOC->INDR );
@@ -153,17 +145,10 @@ int main()
 		DMA1_Channel7->CNTR, 
 		TIM1->CNT );
 	int i;
-	printf( "printf " );
-	for( i = 0; i < sizeof(rawBuffer) - DMA1_Channel4->CNTR;i+=4)
+	for( i = 0; i < sizeof(rawBuffer);i++)
 	{
-		char buffer[9];
-		sprintf( buffer+0,"%02x", rawBuffer[i] );
-		sprintf( buffer+2,"%02x", rawBuffer[i+1] );
-		sprintf( buffer+4,"%02x", rawBuffer[i+2] );
-		sprintf( buffer+6,"%02x", rawBuffer[i+3] );
-		_write( 0, buffer, 8);
+		printf( "%02x", rawBuffer[i] );
 	}
-	printf( " | xxd -r -p > test.jpg\n" );
 
 	printf( "Chip: %02x%02x\n", CamReadReg( 0x300A ), CamReadReg( 0x300B ) );
 	while(1)
@@ -219,7 +204,7 @@ int CamReadReg( unsigned int addy )
 void ConfigureCamera()
 {
 	#define CAMERA_ADDRESS 0x78
-	const static struct CamCmd sccbs[] = {
+	struct CamCmd sccbs[] = {
 		{0x3008, 0x80}, // Software reset
 		{0x3008, 0x00}, // Unreset
 		{0x3f00, 0x01}, // Reset MCU
@@ -242,9 +227,9 @@ void ConfigureCamera()
 		{0x3007, 0xe7}, // Enable all clocks, except MIPI
 
 		// Neat! This slows down the pclk, which is useful for JPEG mode.
-		{0x3108, 0x36}, // SYSTEM ROOT DIVIDER, (0x16) pll_clki/2 = default, switching to pll_clki/8 (0x36 seems to work)
-//		{0x460C, 0x21}, // PCK Divisor override.
-//		{0x3824, 0x1f}, // New divisor
+		{0x3108, 0x16}, // SYSTEM ROOT DIVIDER, (0x16) pll_clki/2 = default, switching to pll_clki/8 (0x36 seems to work)
+		{0x460C, 0x21}, // PCK Divisor override.
+		{0x3824, 0x1f}, // New divisor
 
 		// TODO:
 		//  It looks like there is a Y only mode to this. Look into that.
@@ -257,12 +242,9 @@ void ConfigureCamera()
 		{0x370c, 0x02},//!!IMPORTANT
 		{0x3634, 0x40},//!!IMPORTANT
 		//isp control
-		{0x5000, 0xa7},
-		//{0x5001, 0xa3},//ISP CONTROL 01 -- enable scaling
-		//{0x5003, 0x0a},//special_effect + bin enable
-		// Same, without special
-		{0x5001, 0x83},//ISP CONTROL 01 -- enable scaling
-		{0x5003, 0x02},//special_effect + bin enable
+		//{0x5000, 0xa7},
+		{0x5001, 0xa3},//ISP CONTROL 01 -- enable scaling
+		{0x5003, 0x08},//special_effect
 
 		// No idea. this came from the ESP32 camera notes.
 		// The author seems very sure that this is important
@@ -277,28 +259,20 @@ void ConfigureCamera()
 
 		// width/height control.
 		{0x4602, 0},// 256
-		{0x4603, 48},
+		{0x4603, 128},
 		{0x4604, 0},
-		{0x4605, 48},//192
+		{0x4605, 96},//192
 
 		{0x3808, 0}, //TIMING DVPHO
-		{0x3809, 48}, 
+		{0x3809, 128}, 
 		{0x380A, 0}, //TIMING DVPHO
-		{0x380B, 48},
+		{0x380B, 96}, 
 		{0x3810, 0}, //TIMING DVPHO
-		{0x3811, 0}, 
+		{0x3811, 128}, 
 		{0x3812, 0}, //TIMING DVPHO
-		{0x3813, 0}, 
+		{0x3813, 96}, 
 
-		{0x5601, 0x55}, // Scale (/8, /8)
-
-		// Full size is 2592 x 1944
-		{0x3800, 6}, //TIMING DVPHO This is an offset
-		{0x3801, 0}, 
-		{0x3802, 4}, //TIMING DVPHO This is an offset
-		{0x3803, 0}, 
-
-		{0x4407, 0x2c}, // JPEG Quality https://community.st.com/t5/stm32-mcus-embedded-software/ov5640-jpeg-compression-issue-when-storing-images-on-sd-card/td-p/663684
+		{0x4407, 0x0c}, //https://community.st.com/t5/stm32-mcus-embedded-software/ov5640-jpeg-compression-issue-when-storing-images-on-sd-card/td-p/663684
 
 		{0x3017, 0x7f},  // Pad output control, FREX = 0, vsync, href, pclk outputs. D9:6 enable.
 		{0x3018, 0xfc},  // Pad output enable, D5:0 = 1.  GPIO0/1 = off.
