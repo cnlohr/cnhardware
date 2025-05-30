@@ -123,6 +123,7 @@ int main()
 
 	while( funDigitalRead( PD5 ) == 0 );// printf( "%02x", GPIOC->INDR );
 	while( funDigitalRead( PD5 ) == 1 );// printf( "%02x", GPIOC->INDR );
+	SetupDMA(); // really wait for next frame.
 	while( funDigitalRead( PD5 ) == 0 );// printf( "%02x", GPIOC->INDR );
 	while( funDigitalRead( PD5 ) == 1 );// printf( "%02x", GPIOC->INDR );
 //	while( funDigitalRead( PD5 ) == 0 ) printf( "%02x", GPIOC->INDR );
@@ -143,7 +144,9 @@ int main()
 			TIM1->CNT );
 		int i;
 		printf( "printf " );
-		for( i = 0; i < sizeof(rawBuffer) - DMA1_Channel4->CNTR;i+=4)
+
+		// Skip first byte just because
+		for( i = 1; i < sizeof(rawBuffer) - DMA1_Channel4->CNTR;i+=4)
 		{
 			char buffer[9];
 			sprintf( buffer+0,"%02x", rawBuffer[i] );
@@ -306,11 +309,12 @@ void ConfigureCamera()
 		{0x5601, 0x55}, // Scale (/16, /16)
 		//{0x5601, 0x00}, // Scale (/1, /1)
 
-		//{ 0x3501, 0xff},// Exposure?
-		//{ 0x350a, 0x03},// Gain?
+		{ 0x3500, 0x07},// Exposure?
+		{ 0x3501, 0xff},// Exposure?
+		{ 0x350a, 0x00},// Gain?
 		{ 0x3503, 0x03},// Full auto? yes. WHY SO BAD?
 
-		{0x4407, 0xff}, // JPEG Quality https://community.st.com/t5/stm32-mcus-embedded-software/ov5640-jpeg-compression-issue-when-storing-images-on-sd-card/td-p/663684
+		{0x4407, 0x0f}, // JPEG Quality https://community.st.com/t5/stm32-mcus-embedded-software/ov5640-jpeg-compression-issue-when-storing-images-on-sd-card/td-p/663684
 
 		{0x3017, 0x7f},  // Pad output control, FREX = 0, vsync, href, pclk outputs. D9:6 enable.
 		{0x3018, 0xfc},  // Pad output enable, D5:0 = 1.  GPIO0/1 = off.
@@ -364,4 +368,5 @@ void SetupDMA()
 
 	//NVIC_EnableIRQ( DMA1_Channel2_IRQn );
 	DMA1_Channel4->CFGR |= DMA_CFGR1_EN;
+	TIM1->CNT = 0;
 }
