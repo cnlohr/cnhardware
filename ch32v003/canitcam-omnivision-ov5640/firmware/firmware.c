@@ -80,7 +80,7 @@ int main()
 		0 |                                  // 8-bit memory
 		0 |                                  // 8-bit peripheral
 		DMA_CFGR1_MINC |                     // Increase memory.
-		DMA_CFGR1_CIRC |                     // Circular mode.
+		/*DMA_CFGR1_CIRC |*/                     // Circular mode.
 		/*DMA_CFGR1_HTIE |*/                    // Half-trigger
 		/*DMA_CFGR1_TCIE |*/                     // Whole-trigger
 		DMA_CFGR1_EN;                        // Enable
@@ -243,8 +243,8 @@ void ConfigureCamera()
 
 		// Neat! This slows down the pclk, which is useful for JPEG mode.
 		{0x3108, 0x36}, // SYSTEM ROOT DIVIDER, (0x16) pll_clki/2 = default, switching to pll_clki/8 (0x36 seems to work)
-//		{0x460C, 0x21}, // PCK Divisor override.
-//		{0x3824, 0x1f}, // New divisor
+		//{0x460C, 0x21}, // PCK Divisor override.  // this causes corruption
+		//{0x3824, 0x0f}, // New divisor
 
 		// TODO:
 		//  It looks like there is a Y only mode to this. Look into that.
@@ -257,11 +257,11 @@ void ConfigureCamera()
 		{0x370c, 0x02},//!!IMPORTANT
 		{0x3634, 0x40},//!!IMPORTANT
 		//isp control
-		{0x5000, 0xa7},
+		{0x5000, 0x00}, // Disabling most features for now, seems to cause problems. was a7 or so
 		//{0x5001, 0xa3},//ISP CONTROL 01 -- enable scaling
 		//{0x5003, 0x0a},//special_effect + bin enable
 		// Same, without special
-		{0x5001, 0x83},//ISP CONTROL 01 -- enable scaling
+		{0x5001, 0x23},//ISP CONTROL 01 -- enable scaling
 		{0x5003, 0x02},//special_effect + bin enable
 
 		// No idea. this came from the ESP32 camera notes.
@@ -269,45 +269,64 @@ void ConfigureCamera()
 		// for some reason, and it sounds like there was a lot
 		// of blood sweat and tears that went into it.
 		//  "//0xd0 to 0x50 !!!"
-		{0x471c, 0x50}, 
+		{0x471c, 0xd0}, 
 
 		{0x4740, 0x0C}, //POLARITY CTRL00 gate PCK
+
 
 		//{0x4741, 0x00}, // Enable test pattern (Set to 0x07 for test pattern)
 
 		// width/height control.
-		{0x4602, 0},// 256
-		{0x4603, 48},
+		{0x4602, 0},
+		{0x4603, 128},
 		{0x4604, 0},
-		{0x4605, 48},//192
+		{0x4605, 96},
 
 		{0x3808, 0}, //TIMING DVPHO
-		{0x3809, 48}, 
+		{0x3809, 128}, 
 		{0x380A, 0}, //TIMING DVPHO
-		{0x380B, 48},
+		{0x380B, 96},
+
+		// A mode mentioned in espressif's example
+	    //    mw,   mh,  sx,  sy,   ex,   ey, ox, oy,   tx,   ty
+		//    1920, 1920, 320,   0, 2543, 1951, 32, 16, 2684, 1968 }, //1x1
+
+		// Full size is 2592 x 1944
+		{0x3800, 1},
+		{0x3801, 40},  // sx
+		{0x3802, 0},
+		{0x3803, 0},  // sy
+		{0x3804, 9},
+		{0x3805, 239},  // ex
+		{0x3806, 7},
+		{0x3807, 159},  // ey
+		{0x380c, 10}, 
+		{0x380d, 124}, // tx 
+		{0x380e, 7}, 
+		{0x380f, 176}, // ty
+	
 		{0x3810, 0}, //TIMING DVPHO
 		{0x3811, 0}, 
 		{0x3812, 0}, //TIMING DVPHO
 		{0x3813, 0}, 
 
-		{0x5600, 0x3f}, // Scale (/16, /16)
-		{0x5601, 0x33}, // Scale (/8, /8)
+		{0x5600, 0x3f},
+		{0x5601, 0x55}, // Scale (/16, /16)
+		//{0x5601, 0x00}, // Scale (/1, /1)
 
-		// Full size is 2592 x 1944
-		{0x3800, 6}, //TIMING DVPHO This is an offset
-		{0x3801, 0}, 
-		{0x3802, 4}, //TIMING DVPHO This is an offset
-		{0x3803, 0}, 
+		//{ 0x3501, 0xff},// Exposure?
+		//{ 0x350a, 0x03},// Gain?
+		{ 0x3501, 0x03},// Full auto
 
-		{0x4407, 0x2c}, // JPEG Quality https://community.st.com/t5/stm32-mcus-embedded-software/ov5640-jpeg-compression-issue-when-storing-images-on-sd-card/td-p/663684
+		{0x4407, 0xff}, // JPEG Quality https://community.st.com/t5/stm32-mcus-embedded-software/ov5640-jpeg-compression-issue-when-storing-images-on-sd-card/td-p/663684
 
 		{0x3017, 0x7f},  // Pad output control, FREX = 0, vsync, href, pclk outputs. D9:6 enable.
 		{0x3018, 0xfc},  // Pad output enable, D5:0 = 1.  GPIO0/1 = off.
 
 		{0x4404, 0x34}, // JPEG CTRL04, normally 0x24, But, Enable gated clock = 1
 		{0x4713, 0x01}, // JPEG mode (Default 2)
-		//{0x4600, 0}, // VFIFO CTRL00 0x00
-		{0x3821, 0x20}, // COMPRESSION ENABLE ... by default 0x00, and BINNING MODE set to true.
+		{0x4600, 0}, // VFIFO CTRL00 0x00 (Make line numbers variable)
+		{0x3821, 0x23}, // COMPRESSION ENABLE ... by default 0x00, and BINNING MODE set to true.
 	};
 
 
