@@ -12,8 +12,8 @@
 #define PIN_SCL   PD0
 #define PIN_SDA   PD3
 #define PIN_PCK   PD4
-#define PIN_VS    PD2
-#define PIN_HS    PD5 // Maybe not needed?
+#define PIN_VS    PD2 // NOT USED
+#define PIN_HS    PD5 // NEEDED
 #define PIN_RST   PD7
 
 #define DELAY1 Delay_Us(1);
@@ -290,7 +290,8 @@ void ConfigureCamera()
 		{0x3812, 0}, //TIMING DVPHO
 		{0x3813, 0}, 
 
-		{0x5601, 0x55}, // Scale (/8, /8)
+		{0x5600, 0x3f}, // Scale (/16, /16)
+		{0x5601, 0x33}, // Scale (/8, /8)
 
 		// Full size is 2592 x 1944
 		{0x3800, 6}, //TIMING DVPHO This is an offset
