@@ -45,8 +45,8 @@ void SetupDMA();
 
 void WaitToggle()
 {
-	while( funDigitalRead( PIN_VS ) == 0 );// printf( "%02x", GPIOC->INDR );
 	while( funDigitalRead( PIN_VS ) == 1 );// printf( "%02x", GPIOC->INDR );
+	while( funDigitalRead( PIN_VS ) == 0 );// printf( "%02x", GPIOC->INDR );
 //	while( funDigitalRead( PD5 ) == 0 );// printf( "%02x", GPIOC->INDR );
 //	while( funDigitalRead( PD5 ) == 1 );// printf( "%02x", GPIOC->INDR );
 }
@@ -131,7 +131,6 @@ int main()
 	{
 		int cntrl = DMA1_Channel4->CNTR;
 		DMA1_Channel4->CFGR = 0; // Disable DMA.
-		SetupDMA();
 
 		printf( "%ld / %d\n", DMA1_Channel4->CNTR, TIM1->CNT );
 
@@ -149,6 +148,8 @@ int main()
 			_write( 0, buffer, 8);
 		}
 		printf( " | xxd -r -p > test.jpg\n" );
+		WaitToggle();
+		SetupDMA();
 		//Delay_Ms( 25 );
 		//printf( "%04x = %02x (%d) / %d\n", 0x4417, CamReadReg( 0x471D ), TIM1->CNT, DMA1_Channel4->CNTR );
 		WaitToggle();
@@ -215,30 +216,45 @@ void ConfigureCamera()
 		{0x3005, 0x00}, // 
 		{0x3006, 0x00}, // 
 
+		{0x3002, 0x1c}, // SYSTEM RESET02 / Force system out of reest.
 		{0x3002, 0x00}, // SYSTEM RESET02 / Force system out of reest.
 
 		// BIG NOTE: This seems to control the internal PLL for a variety of purposes!!
 		{0x3034, 0x10}, // SC PLL CONTRL0  This one is tricky: Bottom nibble claims MIPI stuff, but if I sent it higher things get wacky. 
 		{0x3035, 0x1f}, // SC PLL CONTRL1 - This actually controls our PCLK.
-		{0x3036, 0x39}, // was 0x69 Main system PLL Speed ??? dunno what it is but it seems stable.
+		{0x3036, 0x38}, // was 0x69 Main system PLL Speed ??? dunno what it is but it seems stable.
 		{0x3037, 0x03}, // SC PLL CONTRL3 - default 0x03
 		{0x3039, 0x00}, // SC PLL CONTRL5 - default 0x00 -- setting to 0x80 bypasses PLL
 
 		{0x3004, 0xff}, // CLOCK ENABLE00 - Enable BIST, MCU, OTP, STROBE, D5060, Timing and Array 
-		{0x3005, 0xff}, // CLOCK ENABLE01 - Enable AWB, AFC, ISP, FC, S2P, BLC, AEC
+		{0x3005, 0xf7}, // CLOCK ENABLE01 - Enable AWB, AFC, ISP, FC, NO S2P, BLC, AEC
 		{0x3006, 0xff}, // CLOCK ENABLE02 - Enable PS, FMT, JPG, JPGx2, MUX, Avearge
 		{0x3007, 0xe7}, // Enable all clocks, except MIPI
 
 		// Neat! This slows down the pclk, which is useful for JPEG mode.
 		{0x3108, 0x36}, // SYSTEM ROOT DIVIDER, (0x16) pll_clki/2 = default, switching to pll_clki/8 (0x36 seems to work)
-		{0x460C, 0xa3}, {0x3824, 0x07}, // PCK Divisor override.  // this causes corruption if you slow it down.
+		{0x460C, 0xa3}, {0x3824, 0x06}, // PCK Divisor override.  // this causes corruption if you slow it down.
 		//{0x460D, 0xff},
 
-		{0x3103, 0x02}, // System clock input = PLL
+		{0x3103, 0x03}, // System clock input = PLL, Some things note that it should really be source 3?
 
+		// The following are mentioned here, they don't seem to cause anything
+		// https://github.com/xenpac/sun4i_csi/blob/master/device/ov5640.c
+		{0x300e, 0x58}, // Default DVP mode
+		{0x460b, 0x35}, // Some sort of DVP setting
+		{0x4837, 0xff}, // (DOES NOTHING): PCK Period (Does not appear to do anything) (Seems to be MIPI only) 
+		{0x302e, 0x00}, // ?? according to them?  I see no pattern of change here.
+		{0x3001, 0x08}, // Enable some blocks, no s2p.
+		{0x5025, 0x00}, // ??
+
+		// scale2 settings?  dunno what it means But it does look visually nicer.
+		{0x3618, 0x00},
+		{0x3612, 0x29},
+		{0x3709, 0x52},
+		{0x370c, 0x03}, 
 
 		// 0x43xx are FORMAT registers, appear to not be in use in JPEG mode.
-		//{0x4300, 0x30}, // FORMAT CONTROL 00 YUV422 (Does not seem to control for JPEG mode)
+		{0x4300, 0x30}, // FORMAT CONTROL 00 YUV422 (Does not seem to control for JPEG mode)
 		//REG16( 0x4302, 0x7ff ), //YMAX
 		//REG16( 0x4304, 0x00 ), //YMIN
 		//REG16( 0x4306, 0x7ff ), //UMAX
@@ -255,7 +271,7 @@ void ConfigureCamera()
 		//{0x3634, 0x40},//!!IMPORTANT
 		// These don't seem important.
 		//isp control
-		{0x5000, 0x07},
+		{0x5000, 0x87}, // was 0x07, but suni4_csi says make it a7
 		{0x5001, 0x23},//ISP CONTROL 01 -- enable scaling + (Disable SDE)
 		{0x5003, 0x04},// bin enable
 
@@ -267,8 +283,10 @@ void ConfigureCamera()
 		// subsampling Making these smaller will subsample from a larger
 		// image but will take longer. ... or not this is weird.
 		// Setting to 88 will cause weird artifacts.
-		{0x3814, 0x44},
-		{0x3815, 0x44},
+		// BIG NOTE: increasing this to 71 71 will help
+		// speed up ISP and JPEG, for higher framerate.
+		{0x3814, 0x71},
+		{0x3815, 0x71},
 
 		// default is 0x01,
 		// 0x00 in jpeg makes it so vsync isn't going crazy in the middle.
@@ -294,10 +312,10 @@ void ConfigureCamera()
 
 		// width/height control.
 		REG16( 0x4602, 192 ), //JPEG VFIFO HSIZE
-		REG16( 0x4604, 144 ), //JPEG VFIFO VSIZE
+		REG16( 0x4604, 128 ), //JPEG VFIFO VSIZE
 
 		REG16( 0x3808, 192 ), // X_OUTPUT_SIZE (ISP output)
-		REG16( 0x380A, 144 ), // Y_OUTPUT_SIZE (ISP output)
+		REG16( 0x380A, 128 ), // Y_OUTPUT_SIZE (ISP output)
 
 		// A mode mentioned in espressif's example
 	    //    mw,   mh,  sx,  sy,   ex,   ey, ox, oy,   tx,   ty
@@ -306,12 +324,12 @@ void ConfigureCamera()
 		// Full size is 2592 x 1944
 
 		// Original
-		REG16( 0x3800, 296 ), // X_ADDR_ST
+		REG16( 0x3800, 0 ), // X_ADDR_ST
 		REG16( 0x3802, 0 ), // Y_ADDR_ST
-		REG16( 0x3804, 2543 ), // X_ADDR_END
+		REG16( 0x3804, 2623 ), // X_ADDR_END
 		REG16( 0x3806, 1951 ), // Y_ADDR_END
-		REG16( 0x380c, 2648 ), // Total Horizontal Size
-		REG16( 0x380e, 1968 ), // Total Vertical Size
+		REG16( 0x380c, 1344 ), //  Decreasing this  squeezes the frame time-wise but is harder to deal with.
+		REG16( 0x380e, 800 ), // 
 		REG16( 0x3810, 0 ), // X_OFFSET (inside of window offset)
 		REG16( 0x3812, 0 ), // Y_OFFSET (inside of window offset)
 
@@ -323,7 +341,7 @@ void ConfigureCamera()
 		//{0x503D, 0xc0},
 
 
-		{0x501D, 1<<4}, //ISP MISC
+		{0x501D, 1<<4}, //ISP MISC (Average size manual enable)
 
 		{0x5600, 0x1a}, // Scale control, 0x10 is OK, but 0xff looks better?  Though it is dropping. Tweak me.
 		// If you don't average the image quality is potato 0xfa = average 0xff = no.
@@ -336,7 +354,7 @@ void ConfigureCamera()
 		REG16( 0x5602, 14 ),
 		REG16( 0x5604, 14 ),
 
-		REG16( 0x3500, 0x03ff ),// Exposure?
+		REG16( 0x3500, 0x07ff ),// Exposure?
 		REG16( 0x350a, 0x00ff ),// Gain
 		{ 0x3503, 0x00},// Auto enable.
 
@@ -349,7 +367,8 @@ void ConfigureCamera()
 		// 0x7f is the lowest possible quality.
 		{0x4407, 0x3f}, // JPEG Quality https://community.st.com/t5/stm32-mcus-embedded-software/ov5640-jpeg-compression-issue-when-storing-images-on-sd-card/td-p/663684
 
-		{0x3017, 0x7f},  // Pad output control, FREX = 0, vsync, href, pclk outputs. D9:6 enable.
+		// Do we want FREX?
+		{0x3017, 0xff},  // Pad output control, FREX = 0, vsync, href, pclk outputs. D9:6 enable.
 		{0x3018, 0xfc},  // Pad output enable, D5:0 = 1.  GPIO0/1 = off.
 
 		{0x4713, 0x02}, // JPEG mode (Default 2)
@@ -357,7 +376,7 @@ void ConfigureCamera()
 		// very important.  This allows dynamic sizing
 		{0x4600, 0x80}, // VFIFO CTRL00 0x00 default - but we can set it to Compression output fixedheight enable = true if in mode 2, it seems more relaible
 
-		{0x3821, 0x21}, // JPEG + Horizontal Bin enable = true.
+		{0x3821, 0x20}, // JPEG + Horizontal Bin enable = true.
 	};
 
 
