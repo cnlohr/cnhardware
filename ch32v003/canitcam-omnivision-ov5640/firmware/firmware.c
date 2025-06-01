@@ -291,9 +291,11 @@ void ConfigureCamera()
 		// default is 0x01,
 		// 0x00 in jpeg makes it so vsync isn't going crazy in the middle.
 		// 0x02 in jpeg makes it so vsync becomes a notch right before the jpeg data.
-		{0x471D, 0x01},
+		// HIDDEN MODES: Just found out you can shrink vsync by setting
+		{0x471D, 0x05},
  
-		//{0x471F, 0x00}, // DVP HREF CTRL HREF Minimum Blanking in JPEGMode23 (0x40 default) Not useful.
+		//{0x471F, 0x30}, // DVP HREF CTRL HREF Minimum Blanking in JPEGMode23 (0x40 default) Not useful.
+		//{0x471e, 0x10}, // DVP HREF CTRL HREF Minimum Blanking in JPEGMode23 (0x40 default) Not useful.
 		//{0x4723, 0x02}, // Skip line number (Doesn't seem to do anything)
 		//{ 0x4730, 0xff }, // Clip data disable. ?? Doesn't do anything? default is 0.
 
@@ -305,8 +307,6 @@ void ConfigureCamera()
 		// It seems to squeeze some of the jpeg things closer together to be more
 		// chaotic, but in our case that's probably a good thing.
 		{0x471c, 0xd0}, 
-
-		{0x4740, 0x0c}, //POLARITY CTRL00 gate PCK
 
 		//{0x4741, 0x00}, // Enable test pattern (Set to 0x07 for test pattern)
 
@@ -336,8 +336,11 @@ void ConfigureCamera()
  	// These seem to do nothing.
 	//	REG16( 0x3816, 0 ), // HSYNC Start point.
  	//	REG16( 0x3818, 16 ), // HSYNC Width (Doesn't seem to do anything)
- 	//	{0x4721, 0x0f},
- 	//	{0x4722, 0x0f},
+ //		{0x4721, 0x0f},
+ //		{0x4722, 0x0f},		
+ //		{0x471f, 0x0f},		
+ //		{0x4722, 0x0f},		
+ //		{0x471b, 0x01}, //HSYNC mode enable?
 
 		// VSYNC width PCLK unit, does nothing in this mode?
 		//REG16( 0x470A, 2048 ),
@@ -377,12 +380,25 @@ void ConfigureCamera()
 		{0x3017, 0xff},  // Pad output control, FREX = 0, vsync, href, pclk outputs. D9:6 enable.
 		{0x3018, 0xfc},  // Pad output enable, D5:0 = 1.  GPIO0/1 = off.
 
+		// 2 is default and ok, 1 gets weird clocky
 		{0x4713, 0x02}, // JPEG mode (Default 2)
 
 		// very important.  This allows dynamic sizing
 		{0x4600, 0x80}, // VFIFO CTRL00 0x00 default - but we can set it to Compression output fixedheight enable = true if in mode 2, it seems more relaible
 
 		{0x3821, 0x23}, // JPEG +  (And mirror) / lsb = Horizontal Bin enable = true.
+
+		// This gates the pclk with href/vref
+		{0x4740, 0x0c}, //POLARITY CTRL00 gate PCK
+
+		{0x4709, 0x01}, // Shrink Vsync
+		//{0x470a, 0x00}, // no impact
+		//{0x470b, 0x00}, // no impact
+		// Does not seem to have an impact.
+		//{0x440a, 0x01}, //JFIF output delay.
+
+		// What does gated clock do?  It doesn't seem to do anything? -- even in conjunction with 
+		{0x4404, 0x34}, // enable gated clock, and this is where you turn the header on and off.
 	};
 
 
