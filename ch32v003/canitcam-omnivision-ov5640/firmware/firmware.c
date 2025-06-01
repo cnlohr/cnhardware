@@ -233,7 +233,7 @@ void ConfigureCamera()
 
 		// Neat! This slows down the pclk, which is useful for JPEG mode.
 		{0x3108, 0x36}, // SYSTEM ROOT DIVIDER, (0x16) pll_clki/2 = default, switching to pll_clki/8 (0x36 seems to work)
-		{0x460C, 0xa3}, {0x3824, 0x01}, // PCK Divisor override.  // this causes corruption if you slow it down.
+		{0x460C, 0xa3}, {0x3824, 0x02}, // PCK Divisor override.  // this causes corruption if you slow it down.
 		//{0x460D, 0xff},
 
 		{0x3103, 0x03}, // System clock input = PLL, Some things note that it should really be source 3?
