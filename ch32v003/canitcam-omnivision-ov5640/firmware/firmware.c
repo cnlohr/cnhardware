@@ -241,7 +241,7 @@ void ConfigureCamera()
 		// The following are mentioned here, they don't seem to cause anything
 		// https://github.com/xenpac/sun4i_csi/blob/master/device/ov5640.c
 		{0x300e, 0x58}, // Default DVP mode
-		{0x460b, 0x35}, // Some sort of DVP setting
+		{0x460b, 0xf4}, // Some sort of DVP setting (Was 0x35, but 0xf4 works better)
 		{0x4837, 0xff}, // (DOES NOTHING): PCK Period (Does not appear to do anything) (Seems to be MIPI only) 
 		{0x302e, 0x00}, // ?? according to them?  I see no pattern of change here.
 		{0x3001, 0x08}, // Enable some blocks, no s2p.
@@ -333,6 +333,12 @@ void ConfigureCamera()
 		REG16( 0x3810, 0 ), // X_OFFSET (inside of window offset)
 		REG16( 0x3812, 0 ), // Y_OFFSET (inside of window offset)
 
+ 	// These seem to do nothing.
+	//	REG16( 0x3816, 0 ), // HSYNC Start point.
+ 	//	REG16( 0x3818, 16 ), // HSYNC Width (Doesn't seem to do anything)
+ 	//	{0x4721, 0x0f},
+ 	//	{0x4722, 0x0f},
+
 		// VSYNC width PCLK unit, does nothing in this mode?
 		//REG16( 0x470A, 2048 ),
 		//{0x4711, 0x80 }, // PAD LEFT CTRL // Does nothing?
@@ -365,7 +371,7 @@ void ConfigureCamera()
 		{0x4401, 0x01}, // Other speeds control.  Does not seem useful
 
 		// 0x7f is the lowest possible quality.
-		{0x4407, 0x3f}, // JPEG Quality https://community.st.com/t5/stm32-mcus-embedded-software/ov5640-jpeg-compression-issue-when-storing-images-on-sd-card/td-p/663684
+		{0x4407, 0x1f}, // JPEG Quality https://community.st.com/t5/stm32-mcus-embedded-software/ov5640-jpeg-compression-issue-when-storing-images-on-sd-card/td-p/663684
 
 		// Do we want FREX?
 		{0x3017, 0xff},  // Pad output control, FREX = 0, vsync, href, pclk outputs. D9:6 enable.
