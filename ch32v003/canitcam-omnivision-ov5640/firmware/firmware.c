@@ -14,8 +14,8 @@
 #define PIN_PCK   PD4
 
 // There are other modes I'm finding where VS is more useful than HS.
-#define PIN_VS    PD2 // 
-#define PIN_HS    PD5 // 
+#define PIN_VS    PD2 //  THIS IS USED
+#define PIN_HS    PD5 //  THIS IS IGNORED
 #define PIN_RST   PD7
 
 #define DELAY1 Delay_Us(1);
