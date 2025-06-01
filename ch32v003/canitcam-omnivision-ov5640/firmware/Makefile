@@ -13,6 +13,9 @@ optionbytes :
 	#$(MINICHLINK)/minichlink -w +a55acf30 option # Disable bootloader, enable RESET
 
 
+termo :
+	stdbuf -oL -eL $(MINICHLINK)/minichlink -w firmware.bin flash -b -T | stdbuf -oL -eL grep printf | bash
+
 flash : cv_flash
 clean : cv_clean
 
