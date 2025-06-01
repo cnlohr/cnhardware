@@ -221,8 +221,8 @@ void ConfigureCamera()
 
 		// BIG NOTE: This seems to control the internal PLL for a variety of purposes!!
 		{0x3034, 0x10}, // SC PLL CONTRL0  This one is tricky: Bottom nibble claims MIPI stuff, but if I sent it higher things get wacky. 
-		{0x3035, 0x1f}, // SC PLL CONTRL1 - This actually controls our PCLK.
-		{0x3036, 0x38}, // was 0x69 Main system PLL Speed ??? dunno what it is but it seems stable.
+		{0x3035, 0x2f}, // SC PLL CONTRL1 - This actually controls our PCLK. (or not? I am confused)
+		{0x3036, 0x69}, // was 0x69 Main system PLL Speed ??? dunno what it is but it seems stable.
 		{0x3037, 0x03}, // SC PLL CONTRL3 - default 0x03
 		{0x3039, 0x00}, // SC PLL CONTRL5 - default 0x00 -- setting to 0x80 bypasses PLL
 
@@ -233,7 +233,7 @@ void ConfigureCamera()
 
 		// Neat! This slows down the pclk, which is useful for JPEG mode.
 		{0x3108, 0x36}, // SYSTEM ROOT DIVIDER, (0x16) pll_clki/2 = default, switching to pll_clki/8 (0x36 seems to work)
-		{0x460C, 0xa3}, {0x3824, 0x06}, // PCK Divisor override.  // this causes corruption if you slow it down.
+		{0x460C, 0xa3}, {0x3824, 0x01}, // PCK Divisor override.  // this causes corruption if you slow it down.
 		//{0x460D, 0xff},
 
 		{0x3103, 0x03}, // System clock input = PLL, Some things note that it should really be source 3?
@@ -329,7 +329,7 @@ void ConfigureCamera()
 		REG16( 0x3804, 2623 ), // X_ADDR_END
 		REG16( 0x3806, 1951 ), // Y_ADDR_END
 		REG16( 0x380c, 1344 ), //  Decreasing this  squeezes the frame time-wise but is harder to deal with.
-		REG16( 0x380e, 800 ), // 
+		REG16( 0x380e, 650 ), // 
 		REG16( 0x3810, 0 ), // X_OFFSET (inside of window offset)
 		REG16( 0x3812, 0 ), // Y_OFFSET (inside of window offset)
 
@@ -345,7 +345,7 @@ void ConfigureCamera()
 
 		{0x5600, 0x1a}, // Scale control, 0x10 is OK, but 0xff looks better?  Though it is dropping. Tweak me.
 		// If you don't average the image quality is potato 0xfa = average 0xff = no.
-		{0x5601, 0x55}, // Scale (/16, /16) = 0x55  --- This seems to not do anything in some cases?
+		{0x5601, 0x33}, // Scale (/16, /16) = 0x55  --- This seems to not do anything in some cases?
 
 		// Curiously when the above is not 0x55, the JPEG engine seems to accumulate errors.
 
@@ -355,8 +355,8 @@ void ConfigureCamera()
 		REG16( 0x5604, 14 ),
 
 		REG16( 0x3500, 0x07ff ),// Exposure?
-		REG16( 0x350a, 0x00ff ),// Gain
-		{ 0x3503, 0x00},// Auto enable.
+		REG16( 0x350a, 0x01ff ),// Gain
+		{ 0x3503, 0x03},// Auto enable.
 
 
 		// XXX TODO see if this makes things more reliable.
@@ -376,7 +376,7 @@ void ConfigureCamera()
 		// very important.  This allows dynamic sizing
 		{0x4600, 0x80}, // VFIFO CTRL00 0x00 default - but we can set it to Compression output fixedheight enable = true if in mode 2, it seems more relaible
 
-		{0x3821, 0x20}, // JPEG + Horizontal Bin enable = true.
+		{0x3821, 0x23}, // JPEG +  (And mirror) / lsb = Horizontal Bin enable = true.
 	};
 
 
