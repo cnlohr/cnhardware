@@ -12,8 +12,10 @@
 #define PIN_SCL   PD0
 #define PIN_SDA   PD3
 #define PIN_PCK   PD4
-#define PIN_VS    PD2 // NOT USED
-#define PIN_HS    PD5 // NEEDED
+
+// There are other modes I'm finding where VS is more useful than HS.
+#define PIN_VS    PD2 // 
+#define PIN_HS    PD5 // 
 #define PIN_RST   PD7
 
 #define DELAY1 Delay_Us(1);
@@ -40,6 +42,14 @@ int CamWriteReg( unsigned int addy, unsigned int data );
 uint8_t rawBuffer[1836] __attribute__((aligned(8)));
 
 void SetupDMA();
+
+void WaitToggle()
+{
+	while( funDigitalRead( PIN_VS ) == 0 );// printf( "%02x", GPIOC->INDR );
+	while( funDigitalRead( PIN_VS ) == 1 );// printf( "%02x", GPIOC->INDR );
+//	while( funDigitalRead( PD5 ) == 0 );// printf( "%02x", GPIOC->INDR );
+//	while( funDigitalRead( PD5 ) == 1 );// printf( "%02x", GPIOC->INDR );
+}
 
 int main()
 {
@@ -111,15 +121,9 @@ int main()
 	printf( "%d\n", (CamReadReg( 0x3804 ) << 8) | CamReadReg( 0x3805) );
 	printf( "%d\n", (CamReadReg( 0x3806 ) << 8) | CamReadReg( 0x3807) );
 
-	while( funDigitalRead( PD5 ) == 0 );// printf( "%02x", GPIOC->INDR );
-	while( funDigitalRead( PD5 ) == 1 );// printf( "%02x", GPIOC->INDR );
+	WaitToggle();
 	SetupDMA(); // really wait for next frame.
-	while( funDigitalRead( PD5 ) == 0 );// printf( "%02x", GPIOC->INDR );
-	while( funDigitalRead( PD5 ) == 1 );// printf( "%02x", GPIOC->INDR );
-//	while( funDigitalRead( PD5 ) == 0 ) printf( "%02x", GPIOC->INDR );
-//	while( funDigitalRead( PD5 ) == 0 );
-//	while( funDigitalRead( PD5 ) == 1 );
-
+	WaitToggle();
 	int frameno = 0;
 
 	printf( "Chip: %02x%02x\n", CamReadReg( 0x300A ), CamReadReg( 0x300B ) );
@@ -133,7 +137,7 @@ int main()
 
 		int i;
 		printf( "printf " );
-		if( frameno == 0 ) printf( "ff" );
+		if( frameno == 0 || rawBuffer[1] != 0xff ) printf( "ff" );
 		// Skip first byte just because
 		for( i = 1; i < sizeof(rawBuffer) - cntrl;i+=4)
 		{
@@ -147,11 +151,7 @@ int main()
 		printf( " | xxd -r -p > test.jpg\n" );
 		//Delay_Ms( 25 );
 		//printf( "%04x = %02x (%d) / %d\n", 0x4417, CamReadReg( 0x471D ), TIM1->CNT, DMA1_Channel4->CNTR );
-
-		while( funDigitalRead( PD5 ) == 0 );// printf( "%02x", GPIOC->INDR );
-		while( funDigitalRead( PD5 ) == 1 );// printf( "%02x", GPIOC->INDR );
-		//while( funDigitalRead( PD5 ) == 0 );// printf( "%02x", GPIOC->INDR );
-		//while( funDigitalRead( PD5 ) == 1 );// printf( "%02x", GPIOC->INDR );
+		WaitToggle();
 		frameno++;
 	}
 }
@@ -198,6 +198,9 @@ int CamReadReg( unsigned int addy )
 
 // Learned a few things from https://github.com/espressif/esp32-camera/blob/4467667b71f22a4c7db226f24105a9350abe7a05/sensors/ov5640.c#L394
 
+
+#define REG16( x, v ) { (x), (v)>>8 }, { (x)+1, (v)&0xff }
+
 // Configure OV5640 over SCCB
 void ConfigureCamera()
 {
@@ -215,7 +218,9 @@ void ConfigureCamera()
 		{0x3002, 0x00}, // SYSTEM RESET02 / Force system out of reest.
 
 		// BIG NOTE: This seems to control the internal PLL for a variety of purposes!!
-		{0x3034, 0x69}, // SC PLL CONTRL2 - default 0x69
+		{0x3034, 0x10}, // SC PLL CONTRL0  This one is tricky: Bottom nibble claims MIPI stuff, but if I sent it higher things get wacky. 
+		{0x3035, 0x1f}, // SC PLL CONTRL1 - This actually controls our PCLK.
+		{0x3036, 0x39}, // was 0x69 Main system PLL Speed ??? dunno what it is but it seems stable.
 		{0x3037, 0x03}, // SC PLL CONTRL3 - default 0x03
 		{0x3039, 0x00}, // SC PLL CONTRL5 - default 0x00 -- setting to 0x80 bypasses PLL
 
@@ -226,96 +231,146 @@ void ConfigureCamera()
 
 		// Neat! This slows down the pclk, which is useful for JPEG mode.
 		{0x3108, 0x36}, // SYSTEM ROOT DIVIDER, (0x16) pll_clki/2 = default, switching to pll_clki/8 (0x36 seems to work)
-		//{0x460C, 0x21}, // PCK Divisor override.  // this causes corruption
-		//{0x3824, 0x0f}, // New divisor
+		{0x460C, 0xa3}, {0x3824, 0x07}, // PCK Divisor override.  // this causes corruption if you slow it down.
+		//{0x460D, 0xff},
 
-		// TODO:
-		//  It looks like there is a Y only mode to this. Look into that.
-		{0x4300, 0x30}, // FORMAT CONTROL 00 YUV422
+		{0x3103, 0x02}, // System clock input = PLL
+
+
+		// 0x43xx are FORMAT registers, appear to not be in use in JPEG mode.
+		//{0x4300, 0x30}, // FORMAT CONTROL 00 YUV422 (Does not seem to control for JPEG mode)
+		//REG16( 0x4302, 0x7ff ), //YMAX
+		//REG16( 0x4304, 0x00 ), //YMIN
+		//REG16( 0x4306, 0x7ff ), //UMAX
+		//REG16( 0x4308, 0x00 ), //UMIN
+		//REG16( 0x430a, 0x7ff ), //VMAX
+		//REG16( 0x430c, 0x00 ), //VMIN
 		{0x501F, 0x00}, // FORMAT MUX CONTROL (ISP YUV422)
-
+		//{0x501E, 1<<6}, // Scale manual enable.  Does nothing?
+		//{0x501D, 1<<4}, // Scale manual enable. Does nothing?
 
 		// Unknown stuff from ESP driver
 		//unknown
-		{0x370c, 0x02},//!!IMPORTANT
-		{0x3634, 0x40},//!!IMPORTANT
+		//{0x370c, 0x02},//!!IMPORTANT
+		//{0x3634, 0x40},//!!IMPORTANT
+		// These don't seem important.
 		//isp control
-		{0x5000, 0x00}, // Disabling most features for now, seems to cause problems. was a7 or so
-		//{0x5001, 0xa3},//ISP CONTROL 01 -- enable scaling
-		//{0x5003, 0x0a},//special_effect + bin enable
-		// Same, without special
-		{0x5001, 0x23},//ISP CONTROL 01 -- enable scaling
-		{0x5003, 0x00},//special_effect + bin enable
+		{0x5000, 0x07},
+		{0x5001, 0x23},//ISP CONTROL 01 -- enable scaling + (Disable SDE)
+		{0x5003, 0x04},// bin enable
+
+		//  If you turn on SDE you can do things like this,
+		// to use this, 0x5001 must be |0x80
+		{0x5580, 0x02}, // Special effects, Saturation enable.
+
+
+		// subsampling Making these smaller will subsample from a larger
+		// image but will take longer. ... or not this is weird.
+		// Setting to 88 will cause weird artifacts.
+		{0x3814, 0x44},
+		{0x3815, 0x44},
+
+		// default is 0x01,
+		// 0x00 in jpeg makes it so vsync isn't going crazy in the middle.
+		// 0x02 in jpeg makes it so vsync becomes a notch right before the jpeg data.
+		{0x471D, 0x01},
+ 
+		//{0x471F, 0x00}, // DVP HREF CTRL HREF Minimum Blanking in JPEGMode23 (0x40 default) Not useful.
+		//{0x4723, 0x02}, // Skip line number (Doesn't seem to do anything)
+		//{ 0x4730, 0xff }, // Clip data disable. ?? Doesn't do anything? default is 0.
 
 		// No idea. this came from the ESP32 camera notes.
 		// The author seems very sure that this is important
 		// for some reason, and it sounds like there was a lot
 		// of blood sweat and tears that went into it.
 		//  "//0xd0 to 0x50 !!!"
+		// It seems to squeeze some of the jpeg things closer together to be more
+		// chaotic, but in our case that's probably a good thing.
 		{0x471c, 0xd0}, 
 
-		{0x4740, 0x0C}, //POLARITY CTRL00 gate PCK
-
+		{0x4740, 0x0c}, //POLARITY CTRL00 gate PCK
 
 		//{0x4741, 0x00}, // Enable test pattern (Set to 0x07 for test pattern)
 
 		// width/height control.
-		{0x4602, 0},
-		{0x4603, 128},
-		{0x4604, 0},
-		{0x4605, 96},
+		REG16( 0x4602, 192 ), //JPEG VFIFO HSIZE
+		REG16( 0x4604, 144 ), //JPEG VFIFO VSIZE
 
-		{0x3808, 0}, //TIMING DVPHO
-		{0x3809, 128}, 
-		{0x380A, 0}, //TIMING DVPHO
-		{0x380B, 96},
+		REG16( 0x3808, 192 ), // X_OUTPUT_SIZE (ISP output)
+		REG16( 0x380A, 144 ), // Y_OUTPUT_SIZE (ISP output)
 
 		// A mode mentioned in espressif's example
 	    //    mw,   mh,  sx,  sy,   ex,   ey, ox, oy,   tx,   ty
 		//    1920, 1920, 320,   0, 2543, 1951, 32, 16, 2684, 1968 }, //1x1
 
 		// Full size is 2592 x 1944
-		{0x3800, 1},
-		{0x3801, 40},  // sx
-		{0x3802, 0},
-		{0x3803, 0},  // sy
-		{0x3804, 9},
-		{0x3805, 239},  // ex
-		{0x3806, 7},
-		{0x3807, 159},  // ey
-		{0x380c, 10}, 
-		{0x380d, 124}, // tx 
-		{0x380e, 7}, 
-		{0x380f, 176}, // ty
-	
-		{0x3810, 0}, //TIMING DVPHO
-		{0x3811, 0}, 
-		{0x3812, 0}, //TIMING DVPHO
-		{0x3813, 0}, 
 
-		{0x5600, 0x3f},
-		{0x5601, 0x55}, // Scale (/16, /16)
+		// Original
+		REG16( 0x3800, 296 ), // X_ADDR_ST
+		REG16( 0x3802, 0 ), // Y_ADDR_ST
+		REG16( 0x3804, 2543 ), // X_ADDR_END
+		REG16( 0x3806, 1951 ), // Y_ADDR_END
+		REG16( 0x380c, 2648 ), // Total Horizontal Size
+		REG16( 0x380e, 1968 ), // Total Vertical Size
+		REG16( 0x3810, 0 ), // X_OFFSET (inside of window offset)
+		REG16( 0x3812, 0 ), // Y_OFFSET (inside of window offset)
+
+		// VSYNC width PCLK unit, does nothing in this mode?
+		//REG16( 0x470A, 2048 ),
+		//{0x4711, 0x80 }, // PAD LEFT CTRL // Does nothing?
+
+		// Test image. (This one works)
+		//{0x503D, 0xc0},
+
+
+		{0x501D, 1<<4}, //ISP MISC
+
+		{0x5600, 0x1a}, // Scale control, 0x10 is OK, but 0xff looks better?  Though it is dropping. Tweak me.
+		// If you don't average the image quality is potato 0xfa = average 0xff = no.
+		{0x5601, 0x55}, // Scale (/16, /16) = 0x55  --- This seems to not do anything in some cases?
+
+		// Curiously when the above is not 0x55, the JPEG engine seems to accumulate errors.
+
 		//{0x5601, 0x00}, // Scale (/1, /1)
+		// Other scale stuff seems not to do anything.
+		REG16( 0x5602, 14 ),
+		REG16( 0x5604, 14 ),
 
-		{ 0x3500, 0x07},// Exposure?
-		{ 0x3501, 0xff},// Exposure?
-		{ 0x350a, 0x00},// Gain?
-		{ 0x3503, 0x03},// Full auto? yes. WHY SO BAD?
+		REG16( 0x3500, 0x03ff ),// Exposure?
+		REG16( 0x350a, 0x00ff ),// Gain
+		{ 0x3503, 0x00},// Auto enable.
 
-		{0x4407, 0x0f}, // JPEG Quality https://community.st.com/t5/stm32-mcus-embedded-software/ov5640-jpeg-compression-issue-when-storing-images-on-sd-card/td-p/663684
+
+		// XXX TODO see if this makes things more reliable.
+		// This can slow down internal JPEG read speeds
+		{0x4400, 0x81}, // Other speeds control.  Does not seem useful
+		{0x4401, 0x01}, // Other speeds control.  Does not seem useful
+
+		// 0x7f is the lowest possible quality.
+		{0x4407, 0x3f}, // JPEG Quality https://community.st.com/t5/stm32-mcus-embedded-software/ov5640-jpeg-compression-issue-when-storing-images-on-sd-card/td-p/663684
 
 		{0x3017, 0x7f},  // Pad output control, FREX = 0, vsync, href, pclk outputs. D9:6 enable.
 		{0x3018, 0xfc},  // Pad output enable, D5:0 = 1.  GPIO0/1 = off.
 
-		{0x4404, 0x34}, // JPEG CTRL04, normally 0x24, But, Enable gated clock = 1
-		{0x4713, 0x01}, // JPEG mode (Default 2)
-		{0x4600, 0}, // VFIFO CTRL00 0x00 (Make line numbers variable)
-		{0x3821, 0x22}, // COMPRESSION ENABLE ... by default 0x00, and BINNING MODE set to true.
+		{0x4713, 0x02}, // JPEG mode (Default 2)
+
+		// very important.  This allows dynamic sizing
+		{0x4600, 0x80}, // VFIFO CTRL00 0x00 default - but we can set it to Compression output fixedheight enable = true if in mode 2, it seems more relaible
+
+		{0x3821, 0x21}, // JPEG + Horizontal Bin enable = true.
 	};
 
 
 		//{0x4837, 0xff}, // PCK Period (Does not appear to do anything) (Seems to be MIPI only) (DOES NOTHING)
 		//{0x470b, 0x0f},  //VSYNC WIDTH PCLK UNIT -- does this matter, by default 0x01 (DOES NOTHING?)
+
+		// These seem to do nothing
+		//{0x4404, 0x34}, // JPEG CTRL04, normally 0x24, But, Enable gated clock = 1
+		//{0x440b, 0xf0}, //Slow end of dummy down.
+		//{0x440c, 0xff}, //Slow end of dummy down.
+		//{0x4400, 0x88}, // Mode/JFIFO read speed **** Important!!  We can slow the JPEG down.
+		//{0x4401, 0xff}, // Other speeds control.  Does not seem useful
+		//{0x4402, 0x94},
 
 
 	int i;
@@ -358,3 +413,5 @@ void SetupDMA()
 	DMA1_Channel4->CFGR |= DMA_CFGR1_EN;
 	TIM1->CNT = 0;
 }
+
+
