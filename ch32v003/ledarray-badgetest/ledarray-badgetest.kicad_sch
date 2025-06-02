@@ -1435,6 +1435,17 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "LEDs to Try\n* C965811 Pink, 22 Ohm >> OUT OF STOCK\n* C5355458 Ice Blue, 22 Ohm\n* C7371898 Purple, 22 Ohm\n* C7371900 Red, 47 Ohm\n* C2977076 Pink, 5mA 22 Ohm\n* C965807 Blue, 22 Ohm\n* C965810 Yellow, 22 Ohm\n\n* C965804 Emerald, 33 Ohm\n* C965802 Other Yellow, 49.9 Ohm\n\n22 = C25092\n49.9 C25120\n33 = C25105"
+		(exclude_from_sim no)
+		(at 207.772 32.004 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "adda6daa-8572-4283-846b-7f0bd2f3d918")
+	)
 	(junction
 		(at 264.16 91.44)
 		(diameter 0)
@@ -2819,7 +2830,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 176.53) (xy 111.76 176.53)
+			(xy 116.84 176.53) (xy 123.19 176.53)
 		)
 		(stroke
 			(width 0)
@@ -3036,16 +3047,6 @@
 			(type default)
 		)
 		(uuid "9f8785ff-ac68-4f1d-b918-81225493e9cd")
-	)
-	(wire
-		(pts
-			(xy 119.38 176.53) (xy 123.19 176.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9fd5a8fd-29c4-42d9-b81e-2379120c4ff1")
 	)
 	(wire
 		(pts
@@ -5737,7 +5738,7 @@
 				)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "22"
 			(at 204.47 63.5 90)
 			(effects
 				(font
@@ -5772,7 +5773,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17168"
+		(property "LCSC" "C25092"
 			(at 204.47 63.5 90)
 			(effects
 				(font
@@ -6809,82 +6810,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 115.57 176.53 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4a5d0b27-dd86-4448-a756-1e1b9a546f81")
-		(property "Reference" "R9"
-			(at 115.57 174.498 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0"
-			(at 115.57 176.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 115.57 178.308 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 115.57 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 115.57 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C17168"
-			(at 115.57 176.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "0cf6d49c-b583-4763-a706-8063f96f8648")
-		)
-		(pin "1"
-			(uuid "4d1ea532-2b08-4b6d-b72d-206b958621c6")
-		)
-		(instances
-			(project "ledarray-badgetest"
-				(path "/7a961afe-69e2-43ca-af9e-929b11778488"
-					(reference "R9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:LED_45deg")
 		(at 238.76 104.14 0)
 		(unit 1)
@@ -7847,7 +7772,7 @@
 				)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "22"
 			(at 204.47 71.12 90)
 			(effects
 				(font
@@ -7882,7 +7807,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17168"
+		(property "LCSC" "C25092"
 			(at 204.47 71.12 90)
 			(effects
 				(font
@@ -8829,7 +8754,7 @@
 				)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "22"
 			(at 204.47 116.84 90)
 			(effects
 				(font
@@ -8864,7 +8789,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17168"
+		(property "LCSC" "C25092"
 			(at 204.47 116.84 90)
 			(effects
 				(font
@@ -8905,7 +8830,7 @@
 				)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "22"
 			(at 204.47 101.6 90)
 			(effects
 				(font
@@ -8940,7 +8865,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17168"
+		(property "LCSC" "C25092"
 			(at 204.47 101.6 90)
 			(effects
 				(font
@@ -10672,7 +10597,7 @@
 				)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "22"
 			(at 204.47 93.98 90)
 			(effects
 				(font
@@ -10707,7 +10632,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17168"
+		(property "LCSC" "C25092"
 			(at 204.47 93.98 90)
 			(effects
 				(font
@@ -11416,7 +11341,7 @@
 				)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "22"
 			(at 204.47 78.74 90)
 			(effects
 				(font
@@ -11451,7 +11376,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17168"
+		(property "LCSC" "C25092"
 			(at 204.47 78.74 90)
 			(effects
 				(font
@@ -11578,7 +11503,7 @@
 				)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "22"
 			(at 204.47 109.22 90)
 			(effects
 				(font
@@ -11613,7 +11538,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17168"
+		(property "LCSC" "C25092"
 			(at 204.47 109.22 90)
 			(effects
 				(font
@@ -11654,7 +11579,7 @@
 				)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "22"
 			(at 204.47 86.36 90)
 			(effects
 				(font
@@ -11689,7 +11614,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17168"
+		(property "LCSC" "C25092"
 			(at 204.47 86.36 90)
 			(effects
 				(font
@@ -11801,7 +11726,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 109.22 176.53 0)
+		(at 116.84 176.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11810,7 +11735,7 @@
 		(fields_autoplaced yes)
 		(uuid "e8bb02d9-075e-4c5f-bb7f-86b5347c6af2")
 		(property "Reference" "#PWR06"
-			(at 109.22 180.34 0)
+			(at 116.84 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11819,7 +11744,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 109.22 171.45 0)
+			(at 116.84 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11827,7 +11752,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 109.22 176.53 0)
+			(at 116.84 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11836,7 +11761,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 109.22 176.53 0)
+			(at 116.84 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11845,7 +11770,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 109.22 176.53 0)
+			(at 116.84 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
