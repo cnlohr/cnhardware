@@ -351,10 +351,10 @@ void ConfigureCamera()
 
 		// width/height control.
 		REG16( 0x4602, 160 ), //JPEG VFIFO HSIZE
-		REG16( 0x4604, 122 ), //JPEG VFIFO VSIZE
+		REG16( 0x4604, 120 ), //JPEG VFIFO VSIZE
 
 		REG16( 0x3808, 160 ), // X_OUTPUT_SIZE (ISP output)
-		REG16( 0x380A, 122 ), // Y_OUTPUT_SIZE (ISP output)
+		REG16( 0x380A, 120 ), // Y_OUTPUT_SIZE (ISP output)
 
 
 		// A mode mentioned in espressif's example
@@ -365,13 +365,13 @@ void ConfigureCamera()
 
 		// Original
 		REG16( 0x3800, 0 ), // X_ADDR_ST
-		REG16( 0x3802, 0 ), // Y_ADDR_ST
+		REG16( 0x3802, 3 ), // Y_ADDR_ST
 		REG16( 0x3804, 2623 ), // X_ADDR_END
 		REG16( 0x3806, 1951 ), // Y_ADDR_END
-		REG16( 0x380c, 1344 ), //  TIMING_HTS Decreasing this  squeezes the frame time-wise but is harder to deal with.
-		REG16( 0x380e, 640/2 ), //   TIMING_VTS
+		REG16( 0x380c, 1280 ), //  TIMING_HTS Decreasing this  squeezes the frame time-wise but is harder to deal with.
+		REG16( 0x380e, 460 ), //   TIMING_VTS
 		REG16( 0x3810, 0 ), // X_OFFSET (inside of window offset)
-		REG16( 0x3812, 0 ), // Y_OFFSET (inside of window offset)
+		REG16( 0x3812, 1 ), // Y_OFFSET (inside of window offset)
 
 		// Test image. (This one works)
 		//{0x503D, 0xc0},
@@ -392,8 +392,8 @@ void ConfigureCamera()
 		REG16( 0x5604, 14 ),
 
 		REG16( 0x3500, 0x3750 ),// Exposure?
-		REG16( 0x350a, 0x00ff ),// Gain
-		{ 0x3503, 0x03},// Auto enable.
+		REG16( 0x350a, 0x03ff ),// Gain
+		{ 0x3503, 0x03},// Auto control.
 
 
 		// XXX TODO see if this makes things more reliable.
