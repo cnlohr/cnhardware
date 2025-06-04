@@ -121,9 +121,9 @@ int main()
 	printf( "%d\n", (CamReadReg( 0x3804 ) << 8) | CamReadReg( 0x3805) );
 	printf( "%d\n", (CamReadReg( 0x3806 ) << 8) | CamReadReg( 0x3807) );
 
-	WaitToggle();
+	//WaitToggle();
 	SetupDMA(); // really wait for next frame.
-	WaitToggle();
+	//WaitToggle();
 	int frameno = 0;
 
 	printf( "Chip: %02x%02x\n", CamReadReg( 0x300A ), CamReadReg( 0x300B ) );
@@ -131,6 +131,8 @@ int main()
 	{
 		int cntrl = DMA1_Channel4->CNTR;
 		DMA1_Channel4->CFGR = 0; // Disable DMA.
+		//CamWriteReg( 0x380e, 640 ); //   TIMING_VTS
+		//CamWriteReg( 0x380c, 1344 );
 
 		printf( "%ld / %d\n", DMA1_Channel4->CNTR, TIM1->CNT );
 
@@ -148,6 +150,13 @@ int main()
 			_write( 0, buffer, 8);
 		}
 		printf( " | xxd -r -p > test.jpg\n" );
+		while( funDigitalRead( PIN_VS ) == 1 );// printf( "%02x", GPIOC->INDR );
+		//CamWriteReg( 0x380e, 640 ); //   TIMING_VTS
+		//CamWriteReg( 0x380c, 1344 );
+		//CamWriteReg( 0x3820, 0x40 );
+		//CamWriteReg( 0x3820, 0x00 );
+		//while( funDigitalRead( PIN_VS ) == 0 );// printf( "%02x", GPIOC->INDR );
+
 		WaitToggle();
 		SetupDMA();
 		//Delay_Ms( 25 );
@@ -216,12 +225,37 @@ void ConfigureCamera()
 		{0x3005, 0x00}, // 
 		{0x3006, 0x00}, // 
 
+
+
+//https://cdn.arducam.com/downloads/modules/OV5640/OV5640_Software_app_note_parallel.pdf
+// This seems to have no effect, but interesting.
+// ???? This improves the weird gradient issue.
+		{ 0x3703, 0x5a },
+		{ 0x3715, 0x78 },
+		{ 0x3717, 0x01 },
+		{ 0x370b, 0x60 },
+		{ 0x3705, 0x1a },
+		{ 0x3905, 0x02 },
+		{ 0x3906, 0x10 },
+		{ 0x3901, 0x0a },
+/*
+		{ 0x3731, 0x12 },
+		{ 0x3600, 0x08 }, // VCM debug
+		{ 0x3601, 0x33 }, // VCM debug
+		{ 0x302d, 0x60 }, // system control
+		{ 0x3620, 0x52 },
+		{ 0x371b, 0x20 },
+*/
+
 		{0x3002, 0x1c}, // SYSTEM RESET02 / Force system out of reest.
 		{0x3002, 0x00}, // SYSTEM RESET02 / Force system out of reest.
 
 		// BIG NOTE: This seems to control the internal PLL for a variety of purposes!!
 		{0x3034, 0x10}, // SC PLL CONTRL0  This one is tricky: Bottom nibble claims MIPI stuff, but if I sent it higher things get wacky. 
-		{0x3035, 0x2f}, // SC PLL CONTRL1 - This actually controls our PCLK. (or not? I am confused)
+
+		// GENERAL NOTE: 0x2f seems plausible, but the image quality suffers.
+		// 0x4f seems to work better, but it's hard to keep everything purring.
+		{0x3035, 0x35}, // SC PLL CONTRL1 - This actually controls our PCLK. (or not? I am confused)
 		{0x3036, 0x69}, // was 0x69 Main system PLL Speed ??? dunno what it is but it seems stable.
 		{0x3037, 0x03}, // SC PLL CONTRL3 - default 0x03
 		{0x3039, 0x00}, // SC PLL CONTRL5 - default 0x00 -- setting to 0x80 bypasses PLL
@@ -233,8 +267,10 @@ void ConfigureCamera()
 
 		// Neat! This slows down the pclk, which is useful for JPEG mode.
 		{0x3108, 0x36}, // SYSTEM ROOT DIVIDER, (0x16) pll_clki/2 = default, switching to pll_clki/8 (0x36 seems to work)
-		{0x460C, 0xa3}, {0x3824, 0x02}, // PCK Divisor override.  // this causes corruption if you slow it down.
+		{0x460C, 0xa3}, {0x3824, 0x04}, // PCK Divisor override.  // this causes corruption if you slow it down.
 		//{0x460D, 0xff},
+
+		// PHYSICAL PCLK out is described by lower nibble of 0x3035 + 0x3824 + the upper nibble of 0x3108
 
 		{0x3103, 0x03}, // System clock input = PLL, Some things note that it should really be source 3?
 
@@ -262,8 +298,8 @@ void ConfigureCamera()
 		//REG16( 0x430a, 0x7ff ), //VMAX
 		//REG16( 0x430c, 0x00 ), //VMIN
 		{0x501F, 0x00}, // FORMAT MUX CONTROL (ISP YUV422)
-		//{0x501E, 1<<6}, // Scale manual enable.  Does nothing?
-		//{0x501D, 1<<4}, // Scale manual enable. Does nothing?
+		//{0x501E, 1<<6}, // Scale manual enable. If enabled, means it overrides output scale.
+		//{0x501D, 0x00}, // Scale manual enable. Does nothing? No visible effect.
 
 		// Unknown stuff from ESP driver
 		//unknown
@@ -271,8 +307,9 @@ void ConfigureCamera()
 		//{0x3634, 0x40},//!!IMPORTANT
 		// These don't seem important.
 		//isp control
-		{0x5000, 0x87}, // was 0x07, but suni4_csi says make it a7
-		{0x5001, 0x23},//ISP CONTROL 01 -- enable scaling + (Disable SDE)
+		{0x5000, 0xa7}, // was 0x07, but suni4_csi says make it a7.. setting to a7 makes it brighter.
+
+		{0x5001, 0xa7},//ISP CONTROL 01 -- enable scaling + (Disable SDE)
 		{0x5003, 0x04},// bin enable
 
 		//  If you turn on SDE you can do things like this,
@@ -285,13 +322,13 @@ void ConfigureCamera()
 		// Setting to 88 will cause weird artifacts.
 		// BIG NOTE: increasing this to 71 71 will help
 		// speed up ISP and JPEG, for higher framerate.
-		{0x3814, 0x71},
-		{0x3815, 0x71},
+		{0x3814, 0x71}, // You cannot change 0x3814 to 0xf1
+		{0x3815, 0xf1}, // But you can change 0x3815
 
 		// default is 0x01,
 		// 0x00 in jpeg makes it so vsync isn't going crazy in the middle.
 		// 0x02 in jpeg makes it so vsync becomes a notch right before the jpeg data.
-		// HIDDEN MODES: Just found out you can shrink vsync by setting
+		// 0x05 HIDDEN MODES: Just found out you can shrink vsync by setting
 		{0x471D, 0x05},
  
 		//{0x471F, 0x30}, // DVP HREF CTRL HREF Minimum Blanking in JPEGMode23 (0x40 default) Not useful.
@@ -306,16 +343,20 @@ void ConfigureCamera()
 		//  "//0xd0 to 0x50 !!!"
 		// It seems to squeeze some of the jpeg things closer together to be more
 		// chaotic, but in our case that's probably a good thing.
-		{0x471c, 0xd0}, 
+		// 0x00 lets you go faster.
+		// TO BE CLEAR This is surprisingly critical. Without this you are pretty
+		// Limited on how fast (FPS-wise) you can go.
+		{0x471c, 0x00}, 
 
 		//{0x4741, 0x00}, // Enable test pattern (Set to 0x07 for test pattern)
 
 		// width/height control.
-		REG16( 0x4602, 192 ), //JPEG VFIFO HSIZE
-		REG16( 0x4604, 128 ), //JPEG VFIFO VSIZE
+		REG16( 0x4602, 160 ), //JPEG VFIFO HSIZE
+		REG16( 0x4604, 122 ), //JPEG VFIFO VSIZE
 
-		REG16( 0x3808, 192 ), // X_OUTPUT_SIZE (ISP output)
-		REG16( 0x380A, 128 ), // Y_OUTPUT_SIZE (ISP output)
+		REG16( 0x3808, 160 ), // X_OUTPUT_SIZE (ISP output)
+		REG16( 0x380A, 122 ), // Y_OUTPUT_SIZE (ISP output)
+
 
 		// A mode mentioned in espressif's example
 	    //    mw,   mh,  sx,  sy,   ex,   ey, ox, oy,   tx,   ty
@@ -328,23 +369,10 @@ void ConfigureCamera()
 		REG16( 0x3802, 0 ), // Y_ADDR_ST
 		REG16( 0x3804, 2623 ), // X_ADDR_END
 		REG16( 0x3806, 1951 ), // Y_ADDR_END
-		REG16( 0x380c, 1344 ), //  Decreasing this  squeezes the frame time-wise but is harder to deal with.
-		REG16( 0x380e, 650 ), // 
+		REG16( 0x380c, 1344 ), //  TIMING_HTS Decreasing this  squeezes the frame time-wise but is harder to deal with.
+		REG16( 0x380e, 640/2 ), //   TIMING_VTS
 		REG16( 0x3810, 0 ), // X_OFFSET (inside of window offset)
 		REG16( 0x3812, 0 ), // Y_OFFSET (inside of window offset)
-
- 	// These seem to do nothing.
-	//	REG16( 0x3816, 0 ), // HSYNC Start point.
- 	//	REG16( 0x3818, 16 ), // HSYNC Width (Doesn't seem to do anything)
- //		{0x4721, 0x0f},
- //		{0x4722, 0x0f},		
- //		{0x471f, 0x0f},		
- //		{0x4722, 0x0f},		
- //		{0x471b, 0x01}, //HSYNC mode enable?
-
-		// VSYNC width PCLK unit, does nothing in this mode?
-		//REG16( 0x470A, 2048 ),
-		//{0x4711, 0x80 }, // PAD LEFT CTRL // Does nothing?
 
 		// Test image. (This one works)
 		//{0x503D, 0xc0},
@@ -354,7 +382,8 @@ void ConfigureCamera()
 
 		{0x5600, 0x1a}, // Scale control, 0x10 is OK, but 0xff looks better?  Though it is dropping. Tweak me.
 		// If you don't average the image quality is potato 0xfa = average 0xff = no.
-		{0x5601, 0x33}, // Scale (/16, /16) = 0x55  --- This seems to not do anything in some cases?
+		//{0x5601, 0x22}, // Scale (/16, /16) = 0x55  --- This seems to not do anything in some cases?
+		// I think it's overridden by auto scaling.  
 
 		// Curiously when the above is not 0x55, the JPEG engine seems to accumulate errors.
 
@@ -363,18 +392,20 @@ void ConfigureCamera()
 		REG16( 0x5602, 14 ),
 		REG16( 0x5604, 14 ),
 
-		REG16( 0x3500, 0x07ff ),// Exposure?
-		REG16( 0x350a, 0x01ff ),// Gain
+		REG16( 0x3500, 0x3750 ),// Exposure?
+		REG16( 0x350a, 0x007f ),// Gain
 		{ 0x3503, 0x03},// Auto enable.
 
 
 		// XXX TODO see if this makes things more reliable.
-		// This can slow down internal JPEG read speeds
+		// This can slow down internal JPEG read speeds.
+		// I think if things are unreliable you can slow it down to fix it.
 		{0x4400, 0x81}, // Other speeds control.  Does not seem useful
 		{0x4401, 0x01}, // Other speeds control.  Does not seem useful
+		{0x4402, 0x91}, // TODO: MSB here, what does it mean? "SFIFO output control mode"
 
 		// 0x7f is the lowest possible quality.
-		{0x4407, 0x1f}, // JPEG Quality https://community.st.com/t5/stm32-mcus-embedded-software/ov5640-jpeg-compression-issue-when-storing-images-on-sd-card/td-p/663684
+		{0x4407, 0x0f}, // JPEG Quality https://community.st.com/t5/stm32-mcus-embedded-software/ov5640-jpeg-compression-issue-when-storing-images-on-sd-card/td-p/663684
 
 		// Do we want FREX?
 		{0x3017, 0xff},  // Pad output control, FREX = 0, vsync, href, pclk outputs. D9:6 enable.
@@ -395,12 +426,25 @@ void ConfigureCamera()
 		//{0x470a, 0x00}, // no impact
 		//{0x470b, 0x00}, // no impact
 		// Does not seem to have an impact.
-		//{0x440a, 0x01}, //JFIF output delay.
+		{0x440a, 0x01}, //JFIF output delay.
 
 		// What does gated clock do?  It doesn't seem to do anything? -- even in conjunction with 
 		{0x4404, 0x34}, // enable gated clock, and this is where you turn the header on and off.
 	};
 
+
+ 	// These seem to do nothing.
+	//	REG16( 0x3816, 0 ), // HSYNC Start point.
+ 	//	REG16( 0x3818, 16 ), // HSYNC Width (Doesn't seem to do anything)
+ //		{0x4721, 0x0f},
+ //		{0x4722, 0x0f},		
+ //		{0x471f, 0x0f},		
+ //		{0x4722, 0x0f},		
+ //		{0x471b, 0x01}, //HSYNC mode enable?
+
+		// VSYNC width PCLK unit, does nothing in this mode?
+		//REG16( 0x470A, 5 ),
+		//{0x4711, 0x80 }, // PAD LEFT CTRL // Does nothing?
 
 		//{0x4837, 0xff}, // PCK Period (Does not appear to do anything) (Seems to be MIPI only) (DOES NOTHING)
 		//{0x470b, 0x0f},  //VSYNC WIDTH PCLK UNIT -- does this matter, by default 0x01 (DOES NOTHING?)
@@ -411,7 +455,62 @@ void ConfigureCamera()
 		//{0x440c, 0xff}, //Slow end of dummy down.
 		//{0x4400, 0x88}, // Mode/JFIFO read speed **** Important!!  We can slow the JPEG down.
 		//{0x4401, 0xff}, // Other speeds control.  Does not seem useful
-		//{0x4402, 0x94},
+
+
+//https://cdn.arducam.com/downloads/modules/OV5640/OV5640_Software_app_note_parallel.pdf
+// This seems to have no effect, but interesting.
+
+/*
+	{ 0x3630, 0x36 },
+	{ 0x3631, 0x0e },
+	{ 0x3632, 0xe2 },
+	{ 0x3633, 0x12 },
+	{ 0x3621, 0xe0 },
+//	{ 0x3704, 0xa0 }, This breaks everything
+*/
+
+/*
+// from https://cdn.arducam.com/downloads/modules/OV5640/OV5640_Software_app_note_parallel.pdf
+// does darken image some but, overall not a big help.
+{ 0x5480, 0x01 }, // BIAS plus on
+{ 0x5481, 0x08 },
+{ 0x5482, 0x14 },
+{ 0x5483, 0x28 },
+{ 0x5484, 0x51 },
+{ 0x5485, 0x65 },
+{ 0x5486, 0x71 },
+{ 0x5487, 0x7d },
+{ 0x5488, 0x87 },
+{ 0x5489, 0x91 },
+{ 0x548a, 0x9a },
+{ 0x548b, 0xaa },
+{ 0x548c, 0xb8 },
+{ 0x548d, 0xcd },
+{ 0x548e, 0xdd },
+{ 0x548f, 0xea },
+{ 0x5490, 0x1d },
+//color matrix
+{ 0x5381, 0x1e }, // CMX1 for Y
+{ 0x5382, 0x5b }, // CMX2 for Y
+{ 0x5383, 0x08 }, // CMX3 for Y
+{ 0x5384, 0x0a }, // CMX4 for U
+{ 0x5385, 0x7e }, // CMX5 for U
+{ 0x5386, 0x88 }, // CMX6 for U
+{ 0x5387, 0x7c }, // CMX7 for V
+{ 0x5388, 0x6c }, // CMX8 for V
+{ 0x5389, 0x10 }, // CMX9 for V
+{ 0x538a, 0x01 }, // sign[9]
+{ 0x538b, 0x98 }, // s
+{0x5580, 0x06}, // brightness on, saturation on
+{0x5583, 0x40}, // Sat U
+{0x5584, 0x10}, // Sat V
+{0x5589, 0x10}, // UV adjust th1
+{0x558a, 0x00}, // UV adjust th2[8]
+{0x558b, 0xf8}, // UV adjust th2[7:0]
+{0x501d, 0x40}, // enable manual offset in contrast
+*/
+
+//		{0x440e, 0x00}, // Unknown Undocumented, but supposadly something is here.
 
 
 	int i;
