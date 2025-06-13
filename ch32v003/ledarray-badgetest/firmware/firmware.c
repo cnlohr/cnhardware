@@ -107,8 +107,6 @@ int main()
 	DMA1_Channel5->PADDR = (uint32_t)&GPIOC->OUTDR;
 	DMA1_Channel5->CFGR = DMA_DIR_PeripheralDST | DMA_CFGR1_PL_0 | DMA_CFGR1_MINC | DMA_CFGR1_CIRC | DMA_CFGR1_EN /* 8-bit in, 8-bit out */;
 
-	// BIG NOTE: 1<<15 can be set!!  (ETP) to change polarity.
-	//TIM1->SMCFGR = (7<<4) /* External trigger*/ | (0<<8) | (0<<7) | (0<<14) | (7) | (0<<12) | (1<<15) | (0<<14); // External
 	TIM2->PSC = 0x4;      // Prescaler  (Fastest we can reliably go without race conditions) (3 works _almost_ all the time, 4 is always reliable)
 	TIM2->ATRLR = 20;       // Auto Reload - sets period  (This is how fast each pixel works per set)
 	TIM2->SWEVGR = TIM_UG;	 // Reload immediately
