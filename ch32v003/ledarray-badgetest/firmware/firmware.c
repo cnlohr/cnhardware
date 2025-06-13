@@ -9,7 +9,7 @@ void ConfigureCamera();
 int CamReadReg( unsigned int addy );
 int CamWriteReg( unsigned int addy, unsigned int data );
 
-#define MAX_INTENSITY 64
+#define MAX_INTENSITY 128
 
 uint8_t LEDSets[9*MAX_INTENSITY];
 const uint16_t Coordmap[8*16] = {
@@ -81,7 +81,6 @@ int main()
 	//static uint8_t As[] = { PD0, PA1, PA2, PD2, PD3, PD4, PD5, PD6, PD7 };
 	static volatile uint32_t * RowControls[] = { &GPIOD->OUTDR, &GPIOA->OUTDR, &GPIOA->OUTDR, &GPIOD->OUTDR, &GPIOD->OUTDR, &GPIOD->OUTDR, &GPIOD->OUTDR, &GPIOD->OUTDR, &GPIOD->OUTDR };
 	static uint8_t    RowValue[] = { ~0x01, 0xff, ~0x02, 0xff, ~0x04, 0xff, ~0x04, 0xff, ~0x08, 0xff, ~0x10, 0xff, ~0x20, 0xff, ~0x40, 0xff, 0x7f,  0xff };
-	static uint8_t    RowOff[] = { 0xff };
 
 	// T2C3 is the DMA->DMA Control, DMAC1
 	// T1C2/C4 is the DMA->ROW Control, DMAC7
@@ -120,7 +119,6 @@ int main()
 	#define DROPLIFE 1200
 	#define SEPARATION 2
 
-	int drophead = 0;
 	int droptime[CONCURRENT_DROPS];
 	int droplife[CONCURRENT_DROPS];
 	int dropx[CONCURRENT_DROPS];
@@ -151,9 +149,9 @@ int main()
 				int usex = (x < 6)?x:(x+SEPARATION);
 				int dx = usex - dropx[d];
 				int dy = y - dropy[d];
-				int apd = ((apsqrt( dx*dx*64+dy*dy*64 ) - droptime[d]) ) + 10;
+				int apd = ((apsqrt( dx*dx*MAX_INTENSITY*64+dy*dy*MAX_INTENSITY*64 ) - droptime[d]*(MAX_INTENSITY/8)) ) + MAX_INTENSITY;
 				if( apd < 0 ) apd = -apd;
-				int inten = (16 - apd);
+				int inten = (MAX_INTENSITY - apd - 1);
 				if( inten < 0 ) inten = 0;
 				inten += framebuffer[i];
 				if( inten >= MAX_INTENSITY ) inten = MAX_INTENSITY-1;
@@ -168,7 +166,7 @@ int main()
 			if( droplife[d] < 0 )
 			{
 				droptime[d] = 0;
-				droplife[d] = (rand() % 100)+140;
+				droplife[d] = (rand() % 80)+80;
 				dropx[d] = rand() % (12+SEPARATION);
 				dropy[d] = rand() % 6;
 			}
