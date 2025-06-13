@@ -72,9 +72,12 @@ int main()
 	RCC->APB2PCENR = RCC_APB2Periph_TIM1 | RCC_APB2Periph_AFIO | RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD;
 	RCC->APB1PCENR = RCC_APB1Periph_TIM2;
 
+	//Configure most IOs ar output.
 	GPIOC->CFGLR = 0x22222222; // GPIO_CFGLR_IN_FLOAT = 4, 
 	GPIOD->CFGLR = 0x22222242; // GPIO_CFGLR_OUT_2Mhz_PP = 2
 	GPIOA->CFGLR = 0x220; // GPIO_CFGLR_OUT_2Mhz_PP = 2
+
+	// Configure default output values.
 	GPIOA->BSHR = 6;
 	GPIOD->BSHR = 0xfd;
 
@@ -82,9 +85,12 @@ int main()
 	static volatile uint32_t * RowControls[] = { &GPIOD->OUTDR, &GPIOA->OUTDR, &GPIOA->OUTDR, &GPIOD->OUTDR, &GPIOD->OUTDR, &GPIOD->OUTDR, &GPIOD->OUTDR, &GPIOD->OUTDR, &GPIOD->OUTDR };
 	static uint8_t    RowValue[] = { ~0x01, 0xff, ~0x02, 0xff, ~0x04, 0xff, ~0x04, 0xff, ~0x08, 0xff, ~0x10, 0xff, ~0x20, 0xff, ~0x40, 0xff, 0x7f,  0xff };
 
-	// T2C3 is the DMA->DMA Control, DMAC1
+	// T2C3 is the DMA->DMA Control, DMAC1.
+	//	  DMAC1 reads from RowControls and sets the OUTDR for DMAC7.
 	// T1C2/C4 is the DMA->ROW Control, DMAC7
+	//    This trigegrs 2x as fast as the others, and sets a row.
 	// T2C1 is the DMA->PC Control, DMAC5
+	//    This outputs to a Column.  I.e. Port C.
 
 	DMA1_Channel1->CNTR = 9;
 	DMA1_Channel1->MADDR = (uint32_t)&RowControls[0];
