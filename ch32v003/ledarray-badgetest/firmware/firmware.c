@@ -109,7 +109,7 @@ int main()
 
 	// BIG NOTE: 1<<15 can be set!!  (ETP) to change polarity.
 	//TIM1->SMCFGR = (7<<4) /* External trigger*/ | (0<<8) | (0<<7) | (0<<14) | (7) | (0<<12) | (1<<15) | (0<<14); // External
-	TIM2->PSC = 0x4;      // Prescaler  (Fastest we can reliably go without race conditions)
+	TIM2->PSC = 0x4;      // Prescaler  (Fastest we can reliably go without race conditions) (3 works _almost_ all the time, 4 is always reliable)
 	TIM2->ATRLR = 20;       // Auto Reload - sets period  (This is how fast each pixel works per set)
 	TIM2->SWEVGR = TIM_UG;	 // Reload immediately
 	TIM2->DMAINTENR = TIM_COMDE | TIM_TDE | TIM_UDE | TIM_CC2DE | TIM_CC1DE | TIM_CC3DE | TIM_CC4DE;
