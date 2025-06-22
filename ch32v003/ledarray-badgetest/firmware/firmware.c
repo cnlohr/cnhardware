@@ -178,8 +178,7 @@ int main()
 	{
 		//static uint16_t t1cmp;
 		//for( ; t1cmp != TIM1->CNT; t1cmp++ ) if( ( t1cmp & 7 ) == 0 ) printf( "." );
-		//printf( "%d\n", TIM1->CNT/8 );
-
+		//printf( "." );
 		int y, x, i;
 		int d;
 		uint8_t framebuffer[12*6];
