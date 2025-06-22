@@ -9,9 +9,9 @@ void ConfigureCamera();
 int CamReadReg( unsigned int addy );
 int CamWriteReg( unsigned int addy, unsigned int data );
 
-#define MAX_INTENSITY 128
+#define MAX_INTENSITY 255
 
-uint8_t LEDSets[9*MAX_INTENSITY];
+uint8_t LEDSets[9*8];
 const uint16_t Coordmap[8*16] = {
 	0x0000, 0x0100, 0x0200, 0x0300, 0x0400, 0x0500, 0xffff, 0xffff,
 	0x0002, 0x0102, 0x0202, 0x0302, 0x0402, 0x0502, 0xffff, 0xffff,
@@ -36,20 +36,32 @@ void SetPixel( int x, int y, int intensity )
 	int ox = coord & 0xff;
 	int oy = coord >> 8;
 
-	int imask = ~(1<<oy);
 	int ofs = ox;
 	uint8_t * ledo = &LEDSets[ofs];
+	int imask = ~(1<<oy);
+	int mask = ~imask;
+
+	for( i = 0; i < 8; i++ )
+	{
+		if( intensity & (1<<i) )
+			*ledo |= mask;
+		else
+			*ledo &= imask;
+		ledo += 9;
+	}
+
+#if 0
 	for( i = MAX_INTENSITY-1; i >= intensity; i-- )
 	{
 		*ledo &= imask;
 		ledo += 9;
 	}
-	int mask = ~imask;
 	for( ; i >= 0; i-- )
 	{
 		*ledo |= mask;
 		ledo += 9;
 	}
+#endif
 }
 
 int apsqrt( int i )
@@ -85,12 +97,20 @@ int main()
 	static volatile uint32_t * RowControls[] = { &GPIOD->OUTDR, &GPIOA->OUTDR, &GPIOA->OUTDR, &GPIOD->OUTDR, &GPIOD->OUTDR, &GPIOD->OUTDR, &GPIOD->OUTDR, &GPIOD->OUTDR, &GPIOD->OUTDR };
 	static uint8_t    RowValue[] = { ~0x01, 0xff, ~0x02, 0xff, ~0x04, 0xff, ~0x04, 0xff, ~0x08, 0xff, ~0x10, 0xff, ~0x20, 0xff, ~0x40, 0xff, 0x7f,  0xff };
 
+	#define CLONESET(x)   x, x, x, x, x, x, x, x, x
+	#define CLONESETM2(x) x, x, x, x, x, x, x
+	static uint16_t    PrescaleChange[] = { 
+		CLONESETM2(1), CLONESET(3), CLONESET(7), CLONESET(15), CLONESET(31), CLONESET(63), CLONESET(127), CLONESET(255), 1, 1
+	};
+	//3, 7, 15, 31, 63, 127, 255, 511 };
+
 	// T2C3 is the DMA->DMA Control, DMAC1.
 	//	  DMAC1 reads from RowControls and sets the OUTDR for DMAC7.
 	// T1C2/C4 is the DMA->ROW Control, DMAC7
 	//    This trigegrs 2x as fast as the others, and sets a row.
 	// T2C1 is the DMA->PC Control, DMAC5
 	//    This outputs to a Column.  I.e. Port C.
+	// T2U is the timer to change the timer speed in DMAC2
 
 	DMA1_Channel1->CNTR = 9;
 	DMA1_Channel1->MADDR = (uint32_t)&RowControls[0];
@@ -107,13 +127,18 @@ int main()
 	DMA1_Channel5->PADDR = (uint32_t)&GPIOC->OUTDR;
 	DMA1_Channel5->CFGR = DMA_DIR_PeripheralDST | DMA_CFGR1_PL_0 | DMA_CFGR1_MINC | DMA_CFGR1_CIRC | DMA_CFGR1_EN /* 8-bit in, 8-bit out */;
 
+	DMA1_Channel2->CNTR = sizeof(PrescaleChange)/sizeof(PrescaleChange[0]);
+	DMA1_Channel2->MADDR = (uint32_t)PrescaleChange;
+	DMA1_Channel2->PADDR = (uint32_t)&TIM2->PSC;
+	DMA1_Channel2->CFGR = DMA_DIR_PeripheralDST | DMA_CFGR1_PL /* Highest Priority*/ | DMA_CFGR1_MINC | DMA_CFGR1_CIRC | DMA_CFGR1_EN | DMA_MemoryDataSize_HalfWord | DMA_PeripheralDataSize_HalfWord /* 8-bit in, 8-bit out */;
+
 	TIM2->PSC = 0x4;      // Prescaler  (Fastest we can reliably go without race conditions) (3 works _almost_ all the time, 4 is always reliable)
 	TIM2->ATRLR = 20;       // Auto Reload - sets period  (This is how fast each pixel works per set)
 	TIM2->SWEVGR = TIM_UG;	 // Reload immediately
 	TIM2->DMAINTENR = TIM_COMDE | TIM_TDE | TIM_UDE | TIM_CC2DE | TIM_CC1DE | TIM_CC3DE | TIM_CC4DE;
-	TIM2->CH1CVR = 1;
-	TIM2->CH2CVR = 2;
-	TIM2->CH3CVR = 0;
+	TIM2->CH1CVR = 2;
+	TIM2->CH2CVR = 4;
+	TIM2->CH3CVR = 1;
 	TIM2->CH4CVR = 20; // This must be ATLAR.
 	TIM2->CNT = 0;
 	TIM2->CTLR1 |= TIM_CEN; // Enable
@@ -136,14 +161,14 @@ int main()
 		dropy[i] = rand() % 6;
 		droplife[i] = rand() % 100;
 	}
+
+
 	while(1)
 	{
-//		printf( "%08x %08x\n", DMA1_Channel7->CNTR , DMA1_Channel1->CNTR);
-
 		int y, x, i;
 		int d;
 		uint8_t framebuffer[12*6];
-
+#if 1 // Raindrops animation
 		for( d = 0; d < CONCURRENT_DROPS; d++ )
 		{
 			i = 0;
@@ -153,7 +178,7 @@ int main()
 				int usex = (x < 6)?x:(x+SEPARATION);
 				int dx = usex - dropx[d];
 				int dy = y - dropy[d];
-				int apd = ((apsqrt( dx*dx*MAX_INTENSITY*64+dy*dy*MAX_INTENSITY*64 ) - droptime[d]*(MAX_INTENSITY/8)) ) + MAX_INTENSITY;
+				int apd = ((apsqrt( dx*dx*MAX_INTENSITY*64+dy*dy*MAX_INTENSITY*64 ) - droptime[d]*(MAX_INTENSITY/64)) ) + MAX_INTENSITY;
 				if( apd < 0 ) apd = -apd;
 				int inten = (MAX_INTENSITY - apd - 1);
 				if( inten < 0 ) inten = 0;
@@ -170,7 +195,7 @@ int main()
 			if( droplife[d] < 0 )
 			{
 				droptime[d] = 0;
-				droplife[d] = (rand() % 80)+80;
+				droplife[d] = (rand() % 220)+700;
 				dropx[d] = rand() % (12+SEPARATION);
 				dropy[d] = rand() % 6;
 			}
@@ -184,7 +209,20 @@ int main()
 			framebuffer[i] = 0;
 			i++;
 		}
+		//Delay_Ms(5);
+
+#else // Gradient
+
+		i = 0;
+		for( y = 0; y < 6; y++ )
+		for( x = 0; x < 12; x++ )
+		{
+			SetPixel( x, y, x+y*12 ); 
+			//(x+y*31)&0xff );
+		}
 		Delay_Ms(5);
+
+#endif
 
 /*
 		int y, x;
