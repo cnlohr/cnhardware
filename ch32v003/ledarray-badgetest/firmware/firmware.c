@@ -134,7 +134,7 @@ int main()
 
 	TIM2->PSC = 0x4;      // Prescaler  (Fastest we can reliably go without race conditions) (3 works _almost_ all the time, 4 is always reliable)
 	TIM2->ATRLR = 20;       // Auto Reload - sets period  (This is how fast each pixel works per set)
-	TIM2->SWEVGR = TIM_UG;	 // Reload immediately
+	TIM2->SWEVGR = TIM_UG;	 // Reload immediately (This does not seem to be working?)  see the M2 we need to do in CLONESETM2?  But not having it is worse.
 	TIM2->DMAINTENR = TIM_COMDE | TIM_TDE | TIM_UDE | TIM_CC2DE | TIM_CC1DE | TIM_CC3DE | TIM_CC4DE;
 	TIM2->CH1CVR = 2;
 	TIM2->CH2CVR = 4;
@@ -142,6 +142,18 @@ int main()
 	TIM2->CH4CVR = 20; // This must be ATLAR.
 	TIM2->CNT = 0;
 	TIM2->CTLR1 |= TIM_CEN; // Enable
+
+	// Trigger TIM1 with TIM2  We just use TIM1 like a frame counter.
+	// ITR0(TS=000) => From timer 2 to timer 1.
+	// This triggers one bit per 
+
+	TIM1->PSC = 0;
+	TIM1->ATRLR = 65535;
+	TIM1->SWEVGR = TIM_UG;	 // Reload immediately
+	TIM1->DMAINTENR = 0;
+	TIM1->CNT = 0;
+	TIM1->SMCFGR = TIM_SMS | TIM_TS_2 | TIM_TS_1; // TS = 110: Filtered timer input 2 (TI2FP2).  SMS = Mode 7.
+	TIM1->CTLR1 |= TIM_CEN; // Enable
 
 	int frameno = 0;
 	#define CONCURRENT_DROPS 3
@@ -162,30 +174,38 @@ int main()
 		droplife[i] = rand() % 100;
 	}
 
-
 	while(1)
 	{
+		//static uint16_t t1cmp;
+		//for( ; t1cmp != TIM1->CNT; t1cmp++ ) if( ( t1cmp & 7 ) == 0 ) printf( "." );
+		//printf( "%d\n", TIM1->CNT/8 );
+
 		int y, x, i;
 		int d;
 		uint8_t framebuffer[12*6];
+
+		// Raindrops runs at about 400 FPS
+		// LED Shifting runs at about 500 FPS
+
 #if 1 // Raindrops animation
 		for( d = 0; d < CONCURRENT_DROPS; d++ )
 		{
-			i = 0;
+			i = -1;
 			for( y = 0; y < 6; y++ )
 			for( x = 0; x < 12; x++ )
 			{
+				i++;
+
 				int usex = (x < 6)?x:(x+SEPARATION);
 				int dx = usex - dropx[d];
 				int dy = y - dropy[d];
 				int apd = ((apsqrt( dx*dx*MAX_INTENSITY*64+dy*dy*MAX_INTENSITY*64 ) - droptime[d]*(MAX_INTENSITY/64)) ) + MAX_INTENSITY;
 				if( apd < 0 ) apd = -apd;
 				int inten = (MAX_INTENSITY - apd - 1);
-				if( inten < 0 ) inten = 0;
+				if( inten < 0 ) continue;
 				inten += framebuffer[i];
 				if( inten >= MAX_INTENSITY ) inten = MAX_INTENSITY-1;
 				framebuffer[i] = inten;
-				i++;
 				//SetPixel( x, y, ((x*2142*y*2472+fxo)>>8)&(MAX_INTENSITY-1));
 				
 			}
@@ -209,7 +229,6 @@ int main()
 			framebuffer[i] = 0;
 			i++;
 		}
-		//Delay_Ms(5);
 
 #else // Gradient
 
