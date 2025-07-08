@@ -310,9 +310,9 @@ Codes from JLCPCB:
 | Description | Code |
 | -- | -- |
 | DIY Board | 902300 |
-| Development Board | 847330* |
+| Development Board | ~~847330*~~ Don't use this HTS Code, is for Nuclear apparatus. |
 | Programmable Controller | 853890 |
-| Robot | 847990 |
+| Robot | ~~847990~~ Don't use this HTS Code, is for Nuclear apparatus. |
 | Video / TV Game Player / Handheld Video Game | 950450 |
 | Charger | 850490 |
 | DC Stabilized Power Supply | 850490 |
