@@ -1,7 +1,7 @@
 (footprint "SOT-723-COMPACT"
-	(version 20240108)
+	(version 20241229)
 	(generator "pcbnew")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(layer "F.Cu")
 	(descr "http://toshiba.semicon-storage.com/info/docget.jsp?did=5879&prodName=RN1104MFV")
 	(tags "sot 723")
@@ -25,19 +25,6 @@
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(property "Footprint" ""
-		(at 0 0 0)
-		(unlocked yes)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "17d4decf-0e84-41d9-8ddb-3f9b20e70e36")
-		(effects
-			(font
-				(size 1.27 1.27)
 				(thickness 0.15)
 			)
 		)
@@ -179,39 +166,28 @@
 		(layer "F.Fab")
 		(uuid "daadcd68-92db-4521-bf32-294d773314f0")
 	)
-	(fp_text user "${REFERENCE}"
-		(at 0.8 0 90)
-		(layer "User.9")
-		(hide yes)
-		(uuid "49763cce-cc4a-4909-b486-058d9478fac2")
-		(effects
-			(font
-				(size 0.5 0.5)
-				(thickness 0.075)
-			)
-		)
-	)
 	(pad "1" smd roundrect
-		(at -0.575 -0.4)
-		(size 0.45 0.4)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(at -0.535 -0.4)
+		(size 0.41 0.38)
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "b4c9c990-8a13-47c2-8bee-4486aad34221")
 	)
 	(pad "2" smd roundrect
-		(at -0.575 0.4)
-		(size 0.45 0.4)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(at -0.535 0.4)
+		(size 0.41 0.38)
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "22ef4777-a06e-4724-bf81-747c1cb06058")
 	)
 	(pad "3" smd roundrect
-		(at 0.575 0)
-		(size 0.45 0.4)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(at 0.535 0)
+		(size 0.41 0.38)
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
 		(uuid "7ec5c12b-b617-42b5-8218-722af02f96aa")
 	)
+	(embedded_fonts no)
 	(model "${KICAD8_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/Texas_DRT-3.wrl"
 		(offset
 			(xyz 0 0 0)
