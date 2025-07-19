@@ -14,7 +14,6 @@ If you're looking for ![hts codes, click here](https://github.com/cnlohr/cnhardw
 * [Breakdown voltages of enameld copper wire](https://www.edaboard.com/threads/breakdown-voltage-of-enamelled-copper-wire.407275/)
 * [Enameld wire datasheet](https://www.elektrisola.com/en-us/Products/Enamelled-Wire/Technical-Data)
 
-
 ## Small Combo Fets
 
 |Datasheet|LCSC|Footprint|Description|Cost 150|
@@ -240,8 +239,6 @@ These are ones I've found that are JLCPCB compatible.
 |0402WGF220JTCE|C25092|0402|22 1% BASIC|0.0004|
 |[AMS1117-3.3](https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Advanced-Monolithic-Systems-AMS1117-3-3_C6186.pdf)|C6186|SOT-223|3.3V LDO BASIC PART|0.07|
 |[XC6206P332MR-G](https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Torex-Semicon-XC6206P332MR-G_C5446.pdf)|C5446|SOT-23|3.3V LDO BASIC PART|0.05|
-
-
 
 ## TXCO's (Very precise oscillators)
 
