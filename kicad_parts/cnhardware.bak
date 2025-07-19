@@ -5933,7 +5933,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(property "Reference" "U"
-			(at 0 -7.874 0)
+			(at 0 -10.414 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5987,7 +5987,7 @@
 		(symbol "CH570Q_1_1"
 			(rectangle
 				(start -34.29 6.35)
-				(end 34.29 -6.35)
+				(end 34.29 -8.89)
 				(stroke
 					(width 0)
 					(type solid)
@@ -6169,6 +6169,24 @@
 					)
 				)
 				(number "6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at 36.83 -7.62 180)
+				(length 2.54)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "11"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -12304,6 +12322,55 @@
 						)
 					)
 				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "USB_ESD_DFN_RCLAMP0502N"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "U"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(embedded_fonts no)
