@@ -5556,7 +5556,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 49.53 86.36 180)
+		(at 49.53 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5565,7 +5565,7 @@
 		(fields_autoplaced yes)
 		(uuid "19153d42-ccb3-4931-8433-2a67a30fcacb")
 		(property "Reference" "D1"
-			(at 51.1175 78.74 0)
+			(at 47.9425 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5573,7 +5573,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 51.1175 81.28 0)
+			(at 47.9425 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7784,71 +7784,6 @@
 			(project ""
 				(path "/76da760b-f79a-4bcf-9a8a-a4a2206c5f63"
 					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 53.34 86.36 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5c250d98-33c5-436f-b058-fc630396b85a")
-		(property "Reference" "#PWR09"
-			(at 53.34 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 53.34 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 53.34 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 53.34 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 53.34 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e70d92b4-a09e-4727-8e6b-b74e62a43520")
-		)
-		(instances
-			(project "ch570ittyahrs"
-				(path "/76da760b-f79a-4bcf-9a8a-a4a2206c5f63"
-					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -11524,6 +11459,72 @@
 			(project "ch570ittyahrs"
 				(path "/76da760b-f79a-4bcf-9a8a-a4a2206c5f63"
 					(reference "#PWR070")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VDD")
+		(at 53.34 86.36 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e450f354-a6b1-488f-80ad-d83308263633")
+		(property "Reference" "#PWR09"
+			(at 49.53 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VDD"
+			(at 53.594 84.328 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 53.34 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 53.34 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "08bd4681-ff19-4a48-a911-7f325d69bfc1")
+		)
+		(instances
+			(project "ch570ittyahrs"
+				(path "/76da760b-f79a-4bcf-9a8a-a4a2206c5f63"
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
