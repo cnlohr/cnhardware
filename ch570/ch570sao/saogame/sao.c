@@ -113,12 +113,14 @@ int main()
 		funPinMode( PA2, GPIO_CFGLR_IN_PU );
 		funPinMode( PA3, GPIO_CFGLR_IN_PU );
 		funDigitalWrite( PA7, FUN_LOW );
-		Delay_Us(5);
+		Delay_Us(1);
 		int thisMask = ( !funDigitalRead(PA3) ) | (( !funDigitalRead(PA2) )<<1);
 		funPinMode( PA2, GPIO_CFGLR_OUT_2Mhz_PP );
 		funPinMode( PA3, GPIO_CFGLR_OUT_2Mhz_PP );
 		funPinMode( PA7, GPIO_CFGLR_IN_FLOAT );
 
+		// Make sure we don't mess up the OLED.
+		ssd1306_i2c_sendstop();
 #else
 		int thisMask = (( GPIOA->INDR >> 1 ) & 3) ^ 3;
 #endif

@@ -19,6 +19,10 @@
 
 #define I2CDELAY_FUNC(x) 	//ADD_N_NOPS(x)
 
+// Force functions to RAM.
+unsigned char ssd1306_i2c_sendbyte( unsigned char data ) __attribute__((section(".srodata")));
+uint8_t ssd1306_pkt_send(const uint8_t *data, int sz, uint8_t cmd) __attribute__((section(".srodata")));
+
 #include "ssd1306_i2c_bitbang.h"
 #include "ssd1306.h"
 
@@ -66,42 +70,40 @@ int main()
 	ssd1306_cmd( SSD1306_SETCONTRAST ); ssd1306_cmd( 0xf1 );
 	ssd1306_cmd( SSD1306_SETVCOMDETECT ); ssd1306_cmd( 0x40 );
 	ssd1306_cmd( 0xad ); ssd1306_cmd( 0x90 ); // Set Charge pump (set to 0x90 for extra bright)
+	ssd1306_cmd( SSD1306_COMSCANINC );
+	ssd1306_cmd( SSD1306_SEGREMAP );
 
 
 	Delay_Ms(2);
 
 	int frameno = 0;
 
+	int debug = 0;
+
+	unsigned start;
+
 	while(1)
 	{
-		int i;
-		//ssd1306_setbuf(1);
 		//ssd1306_refresh();
 
 		char st[128];
-		sprintf( st, "%08x", SysTick->CNT );
+		sprintf( st, "%08x", (int)SysTick->CNT );
 		ssd1306_drawstr_sz(0, 0, st, 1, 2 );
 
-		ssd1306_refresh();
-/*
+		sprintf( st, "%d", debug>>8 );
+		ssd1306_drawstr_sz(0, 24, st, 1, 2 );
+
+		start = SysTick->CNT;
+//		ssd1306_refresh();
 		ssd1306_cmd(SSD1306_COLUMNADDR);
 		ssd1306_cmd(28);   // Column start address (0 = reset)
 		ssd1306_cmd(28+71); // Column end address (127 = reset)
-		
 		ssd1306_cmd(SSD1306_PAGEADDR);
 		ssd1306_cmd(0); // Page start address (0 = reset)
 		ssd1306_cmd(5); // Page end address
+		ssd1306_data(ssd1306_buffer, sizeof(ssd1306_buffer));
 
-		for(i=0;i<sizeof(ssd1306_buffer);i+=SSD1306_PSZ)
-		{
-			ssd1306_data(&ssd1306_buffer[i], SSD1306_PSZ);
-		}
-*/
+		debug = SysTick->CNT - start;
 		frameno++;
-
-		if( frameno == 100 )
-		{
-			
-		}
 	}
 }
