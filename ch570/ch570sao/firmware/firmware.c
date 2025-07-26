@@ -15,6 +15,7 @@
 
 #define SSD1306_I2C_BITBANG_SDA PA2
 #define SSD1306_I2C_BITBANG_SCL PA3
+#define SSD1306_RST_PIN         PA4 // Not really, but just to make it happy.
 
 #define I2CDELAY_FUNC(x) 	//ADD_N_NOPS(x)
 
@@ -78,7 +79,7 @@ int main()
 		//ssd1306_refresh();
 
 		char st[128];
-		sprintf( st, "%d", frameno );
+		sprintf( st, "%08x", SysTick->CNT );
 		ssd1306_drawstr_sz(0, 0, st, 1, 2 );
 
 		ssd1306_refresh();
