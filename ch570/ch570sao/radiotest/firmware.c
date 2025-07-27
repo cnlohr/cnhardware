@@ -82,7 +82,7 @@ int main()
 		//incoming_frame_handler();
 
 		int f = rxFrames; rxFrames = 0;
-//		printf( "%d\n", f );
+		printf( "%d\n", f );
 
 //PFIC->SCTLR = 0x0e; // Sleep, Deep, WFE
 //__ASM volatile ("wfi");
