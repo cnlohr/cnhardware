@@ -3997,7 +3997,7 @@
 		)
 		(uuid "4816cc58-f3be-4113-9d96-770177a4512c")
 	)
-	(text "CHANGES:\n1. Fixed pull-up for PWRINT.\n2. Add 2.8V regulator."
+	(text "CHANGES:\n1. Fixed pull-up for PWRINT.\n2. Add 2.8V regulator.\n3. See if we can read Vbatt via LED."
 		(exclude_from_sim no)
 		(at 179.324 36.068 0)
 		(effects
@@ -4042,6 +4042,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9b0a09b6-e9f6-451c-9ad4-beb92a1f5e4e")
+	)
+	(junction
+		(at 104.14 162.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bfc9eb11-88fa-47f4-bc7c-4c2c5425394f")
 	)
 	(junction
 		(at 90.17 156.21)
@@ -4181,6 +4187,16 @@
 	)
 	(wire
 		(pts
+			(xy 104.14 162.56) (xy 104.14 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74863f0f-3b2b-4825-809f-e932dd81c1cf")
+	)
+	(wire
+		(pts
 			(xy 229.87 111.76) (xy 234.95 111.76)
 		)
 		(stroke
@@ -4241,7 +4257,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 156.21) (xy 104.14 170.18)
+			(xy 104.14 156.21) (xy 104.14 162.56)
 		)
 		(stroke
 			(width 0)
@@ -4675,22 +4691,22 @@
 	)
 	(global_label "LED"
 		(shape input)
-		(at 38.1 86.36 180)
+		(at 119.38 162.56 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "a4c5d7c3-5fc0-42d7-a65c-03cf56f26e25")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 31.6677 86.36 0)
+			(at 125.8123 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -5504,7 +5520,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 49.53 86.36 0)
+		(at 107.95 162.56 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5513,7 +5529,7 @@
 		(fields_autoplaced yes)
 		(uuid "19153d42-ccb3-4931-8433-2a67a30fcacb")
 		(property "Reference" "D1"
-			(at 47.9425 80.01 0)
+			(at 109.5375 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5521,7 +5537,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 47.9425 82.55 0)
+			(at 109.5375 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5529,7 +5545,7 @@
 			)
 		)
 		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
-			(at 49.53 86.36 0)
+			(at 107.95 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5538,7 +5554,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 49.53 86.36 0)
+			(at 107.95 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5547,7 +5563,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 49.53 86.36 0)
+			(at 107.95 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5556,7 +5572,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 49.53 86.36 0)
+			(at 107.95 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5565,7 +5581,7 @@
 			)
 		)
 		(property "LCSC" "C2290"
-			(at 49.53 86.36 0)
+			(at 107.95 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10176,7 +10192,7 @@
 	)
 	(symbol
 		(lib_id "Swadge_Parts:R_US")
-		(at 41.91 86.36 270)
+		(at 115.57 162.56 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10184,7 +10200,7 @@
 		(dnp no)
 		(uuid "b4613e15-5f4c-4ac0-b558-582ceaed186a")
 		(property "Reference" "R10"
-			(at 44.45 88.9 90)
+			(at 113.03 160.02 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10192,7 +10208,7 @@
 			)
 		)
 		(property "Value" "220Ω"
-			(at 39.37 88.9 90)
+			(at 118.11 160.02 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10200,7 +10216,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:R_0402_1005Metric_COMPACT"
-			(at 41.656 87.376 90)
+			(at 115.824 161.544 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10209,7 +10225,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 41.91 86.36 0)
+			(at 115.57 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10218,7 +10234,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 41.91 86.36 0)
+			(at 115.57 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10227,7 +10243,7 @@
 			)
 		)
 		(property "Cost100" "10"
-			(at -83.82 43.18 0)
+			(at 241.3 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10236,7 +10252,7 @@
 			)
 		)
 		(property "Digikey" "~"
-			(at -83.82 43.18 0)
+			(at 241.3 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10245,7 +10261,7 @@
 			)
 		)
 		(property "Substitutable" "Y"
-			(at -83.82 43.18 0)
+			(at 241.3 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10254,7 +10270,7 @@
 			)
 		)
 		(property "LCSC" "C25091"
-			(at 41.91 86.36 0)
+			(at 115.57 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10263,7 +10279,7 @@
 			)
 		)
 		(property "Cost @ 2.5k" "0.0008"
-			(at 41.91 86.36 0)
+			(at 115.57 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11373,72 +11389,6 @@
 			(project "ch570ittyahrs"
 				(path "/76da760b-f79a-4bcf-9a8a-a4a2206c5f63"
 					(reference "#PWR070")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VDD")
-		(at 53.34 86.36 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e450f354-a6b1-488f-80ad-d83308263633")
-		(property "Reference" "#PWR09"
-			(at 49.53 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VDD"
-			(at 53.594 84.328 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 53.34 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 53.34 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 53.34 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "08bd4681-ff19-4a48-a911-7f325d69bfc1")
-		)
-		(instances
-			(project "ch570ittyahrs"
-				(path "/76da760b-f79a-4bcf-9a8a-a4a2206c5f63"
-					(reference "#PWR09")
 					(unit 1)
 				)
 			)
