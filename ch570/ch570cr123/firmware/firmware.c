@@ -1,5 +1,4 @@
-/* Small example showing how to use the SWIO programming pin to 
-   do printf through the debug interface */
+// Tested, good example, talking to AW32001, LSM6DS3 (with FIFO), QMI8658 (with FIFIO) and QMC6309.
 
 #include "ch32fun.h"
 #include <stdio.h>
@@ -25,6 +24,7 @@
 #define AW32001_ADDRESS 0x49
 #define LSM6DS3_ADDRESS 0x6a
 #define QMI8658_ADDRESS 0x6b
+#define QMC6309_ADDRESS 0x7c
 
 int SetupRegisterMap( int address, const uint8_t * regptr, int regs, const char * name )
 {
@@ -55,6 +55,83 @@ void ProcessQMI8658() __attribute__((section(".srodata")));
 void ProcessQMI8658()
 {
 	int tsamp = 0;
+	int timeout = 100;
+	int rb = 0;
+
+
+
+	SendStart();
+	SendByte( QMI8658_ADDRESS<<1 );
+	SendByte( 0x15 );
+	SendStart();
+	SendByte( 1|(QMI8658_ADDRESS<<1) );
+	int btor = GetByte(0);
+	btor |= GetByte(1) << 8;
+	SendStop();
+
+	int toread = (btor & 0x3ff);
+
+
+	if( toread > 0 )
+	{
+
+		SendStart();
+		SendByte( QMI8658_ADDRESS<<1 );
+		SendByte( 0x0a );
+		SendByte( 0x05 );
+		SendStop();
+
+		do
+		{
+			SendStart();
+			SendByte( QMI8658_ADDRESS<<1 );
+			SendByte( 0x45 );
+			SendStart();
+			SendByte( 1|(QMI8658_ADDRESS<<1) );
+			rb = GetByte(1);
+			SendStop();
+			if( timeout-- <= 0 ) { printf( "Timeout\n" ); return; }
+		} while ( !(rb & 0x80) );
+
+//	printf( "RB: %02x / btor: %04x\n", rb, btor );
+
+		SendStart();
+		SendByte( QMI8658_ADDRESS<<1 );
+		SendByte( 0x17 );
+		SendStart();
+		SendByte( (QMI8658_ADDRESS<<1)|1 );
+		printf( "%d ", toread );
+		for( int i = 0; i < toread; i++ )
+		{
+			int by = 0;
+			for( by = 0; by < 1; by++ )
+			{
+				int r = GetByte(0);
+				r |= GetByte( i == toread-1 )<<8;
+				printf( "%04x ", r );
+			}
+		}
+		printf( "\n" );
+		SendStop();
+
+
+		SendStart();
+		SendByte( QMI8658_ADDRESS<<1 );
+		SendByte( 0x14 );
+		SendByte( 0x0d ); // reset FIFO_rd_mode
+		SendStop(); 
+
+
+	}
+
+#if 0
+	SendStart();
+	SendByte( QMI8658_ADDRESS<<1 );
+	SendByte( 0x45 );
+	SendStart();
+	SendByte( (QMI8658_ADDRESS<<1)|1 );
+	printf( "---> %02x\n", GetByte(1) );
+	SendStop();
 
 	SendStart();
 	int ra = SendByte( QMI8658_ADDRESS<<1 );
@@ -64,20 +141,32 @@ void ProcessQMI8658()
 
 	uint32_t sw = 0;
 	sw = GetByte( 0 );
-	sw = GetByte( 0 ) << 8;
+	sw = GetByte( 1 ) << 8;
+	SendStop();
+
 
 	if( sw & 0x4000 )
 	{
 		printf( "Full SW: %06x [%d %d %d]\n", (int)sw, ra, rb, rc );
 		// Need to reset fifo.
-		GetByte(1);
-		SendStop();
 
-		SetupRegisterMap( LSM6DS3_ADDRESS, 
-			(const uint8_t[]){ 0x0a, 0x28, 0x0a, 0x2e },
-			2, "LSM6DS3 Overflow" );
+		SetupRegisterMap( QMI8658_ADDRESS, 
+			(const uint8_t[]){ 0x0a, 0x04, 0x45, 0x00 },
+			2, "QMI8658 Overflow" );
 		return;
 	}
+
+
+	SetupRegisterMap( QMI8658_ADDRESS, 
+		(const uint8_t[]){ 0x0a, 0x0d },
+		1, "QMI8658 Read" );
+
+
+	SendStart();
+	SendByte( QMI8658_ADDRESS<<1 );
+	SendByte( 0x0a );
+	SendStart();
+	SendByte( (QMI8658_ADDRESS<<1)|1 );
 
 	printf( "%06x ", sw );
 	//pattern |= GetByte( 0 ) << 8;
@@ -105,6 +194,14 @@ void ProcessQMI8658()
 	printf( "\n" );
 
 	SendStop();
+
+
+	SetupRegisterMap( QMI8658_ADDRESS, 
+		(const uint8_t[]){ 0x0a, 0x0d },
+		1, "QMI8658 Read" );
+
+#endif
+
 }
 
 void ProcessLSM6DS3() __attribute__((section(".srodata")));
@@ -171,6 +268,43 @@ void ProcessLSM6DS3()
 
 	SendStop();
 }
+
+void ProcessQMC6309()
+{
+	int tsamp = 0;
+
+	SendStart();
+	int r = SendByte( QMC6309_ADDRESS<<1 );
+	SendByte( 0x09 );
+	SendStart();
+	SendByte( (QMC6309_ADDRESS<<1)|1 );
+	uint32_t magstat = GetByte( 1 );
+	SendStop();
+
+	if( r ) 
+	{
+		printf( "Failed to read from QMC6309\n" );
+		return;
+	}
+
+	if( (magstat & 1) )
+	{
+		SendStart();
+		SendByte( QMC6309_ADDRESS<<1 );
+		SendByte( 0x01 );
+		SendStart();
+		SendByte( (QMC6309_ADDRESS<<1)|1 );
+		int n;
+		for( n = 1; n <= 6; n++ )
+		{
+			printf( "%02x ", GetByte( n == 6 ) );
+		}
+		printf( "\n" );
+		SendStop();
+	}
+
+}
+
 
 int main()
 {
@@ -242,18 +376,25 @@ int main()
 
 
 	const static uint8_t QMI8658Regmap[] = {
-		0x02, 0x61, // CTRL1 = Enable
-		0x03, 0x25, // CTLR2 = 8G's, 250 (235) Hz
+		0x03, 0x25, // CTRL2 = 8G's, 250 (235) Hz
 		0x04, 0x35, // CTRL3 = 512dps, 235Hz
 
 		0x06, 0x00, // Disable LPF
 		0x07, 0x00, // No motion detection
 
-		0x08, 0x30, // high speed, enable gyro, accel.
+		0x08, 0x03, // high speed, enable gyro, accel.
 		0x13, 0x80, // FIFO HWM
 		0x14, 0x0d, // 128 samples, FIFO mode.
+		0x0a, 0x04, // Clear FIFO.
+		0x45, 0x00, // Clear FIFO.
 	};
 	SetupRegisterMap( QMI8658_ADDRESS, QMI8658Regmap, sizeof(QMI8658Regmap)/2, "QMI8658" );
+
+	const static uint8_t QMC6309Regmap[] = {
+		0x0b, 0x00, // CTRL2 = 8G's, 250 (235) Hz
+		0x0a, 0x63, // CTRL3 = 512dps, 235Hz
+	};
+	SetupRegisterMap( QMC6309_ADDRESS, QMC6309Regmap, sizeof(QMC6309Regmap)/2, "QMC6309" );
 
 /*
 	Delay_Ms(6000);
@@ -269,9 +410,10 @@ int main()
 		frameno++;
 
 		//ProcessLSM6DS3();
-		ProcessQMI8658();
+		//ProcessQMI8658();
+		ProcessQMC6309();
 
-#if 1
+#if 0
 		// Monitor a bunch of registers.
 		printf( "  " ); for( i = 0; i < 16; i++ ) printf( "  %x", i );
 		for( i = 0; i < 0x80; i++ )
