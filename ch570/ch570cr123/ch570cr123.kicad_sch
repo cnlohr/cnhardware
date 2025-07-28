@@ -5346,7 +5346,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "TODO:\n * Changed VSYS for part, can we monitor Vbat via LED?"
+	(text "TODO:\n * Changed VSYS for part, can we monitor Vbat via LED?\n * Remove SCL pullup (disabling clock stretching)"
 		(exclude_from_sim no)
 		(at 72.39 66.548 0)
 		(effects
@@ -13409,9 +13409,9 @@
 		(at 147.32 129.54 90)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "c7e1a137-97ea-49de-8217-e7fc4b5eb43b")
 		(property "Reference" "R4"
 			(at 147.574 131.572 90)
