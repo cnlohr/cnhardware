@@ -267,6 +267,7 @@ These are ones I've found that are JLCPCB compatible.
 |[AMS1117-3.3](https://datasheet.lcsc.com/lcsc/2304140030_Advanced-Monolithic-Systems-AMS1117-3-3_C6186.pdf)|[C6186](https://www.lcsc.com/product-detail/Linear-Voltage-Regulators-LDO_Advanced-Monolithic-Systems-AMS1117-3-3_C6186.html)|SOT-223|awesome cheap and reliable 3.3V fixed output linear regulator with up to 1A driving capability, there is also a 5V variant, both are basic parts at JLCPCB|0.1382|
 |[DS8561](https://datasheet.lcsc.com/lcsc/2305121704_DSTECH-DS8561-28D4_C5795640.pdf)|[C5795640](https://www.lcsc.com/product-detail/Linear-Voltage-Regulators-span-style-background-color-ff0-LDO-span_DSTECH-DS8561-28D4_C5795640.html)|XDFN-4|2.8V 300mA VERY low drop out|0.0286|
 |[XC6206P332MR-G](https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Torex-Semicon-XC6206P332MR-G_C5446.pdf)|C5446|SOT-23|3.3V LDO BASIC PART|0.05|
+|[SM80952EIHD](https://lcsc.com/datasheet/lcsc_datasheet_2206281845_Silergy-SM80592EIHD_C3151902.pdf)|[C3151902](https://lcsc.com/product-detail/dc-dc-converters_silergy-corp-sm80592eihd_C3151902.html)|DFN-0.9x1.3|0.15|
 
 ## Totally random things
 
