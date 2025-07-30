@@ -113,6 +113,14 @@ If you're looking for ![hts codes, click here](https://github.com/cnlohr/cnhardw
 |--|--|--|--|--|
 |[VTI7064MSME](https://datasheet.lcsc.com/lcsc/1811151432_Vilsion-Tech-VTI7064MSME_C139966.pdf)|[C139966](https://www.lcsc.com/product-detail/SRAM_Vilsion-Tech-VTI7064MSME_C139966.html)|SOP-8 (4.8mm pad centers)|64-MBit PSRAM 2.7-3.3V|3.7339|
 
+## PCI Express
+
+|Datasheet|LCSC|Footprint|Description|Cost 150|
+|--|--|--|--|--|
+|[CH382](https://lcsc.com/datasheet/lcsc_datasheet_2506051505_WCH-CH382L_C2685237.pdf)|[C2685237](https://lcsc.com/product-detail/Interface-PCIs-PCIEs_WCH-CH382L_C2685237.html)|LQFP-64(7x7)|PCI-Express COM+Parallel|3.46|
+|[UPD720202](https://docs.rs-online.com/04cd/0900766b814f5802.pdf)|[C2916548](https://lcsc.com/product-detail/image/UPD720202K8-701-BAA-A_C2916548.html)|QFN-48 (7x7)|2-port USB 2.0/3.0 Host Controller|3.3187|
+
+
 ## IMUs, Accelerometers, Gyros, Magnetometers
 
 |Datasheet|LCSC|Footprint|Description|Cost 150|
