@@ -17,7 +17,7 @@
 #include "ch32fun.h"
 #include <stdio.h>
 
-#define CAPACITANCE 0.000000134
+#define CAPACITANCE 0.000000135
 #define RESISTANCE  5100.0
 #define VREF 0.1
 
@@ -37,7 +37,6 @@ void TMR1_IRQHandler(void)
 {
 	R8_TMR_INT_FLAG = 2;
 	lastfifo = R32_TMR_FIFO;
-	funPinMode( PA7, GPIO_ModeOut_PP_20mA );
 }
 
 
@@ -70,9 +69,10 @@ int main()
 
 	while(1)
 	{
-		Delay_Ms(1);
+		Delay_Ms(2);
 		EventRelease();
 		Delay_Ms(10);
+		funPinMode( PA7, GPIO_ModeOut_PP_20mA );
 
 		// tau = R * C
 		// Vcomp = Vmeas(1 - 2.718 ^ (-t/tau))
@@ -95,7 +95,7 @@ int main()
 		// 3060=60000000*(5100*0.0000001)*0.1
 		//
 		// 3060000/ticks + 50 in millivolts.
-		#define COEFFICIENT (const uint32_t)(FUNCONF_SYSTEM_CORE_CLOCK*(RESISTANCE*CAPACITANCE)*VREF*1000)
+		#define COEFFICIENT (const uint32_t)(FUNCONF_SYSTEM_CORE_CLOCK*(RESISTANCE*CAPACITANCE)*VREF*1000+0.5)
 		int r = lastfifo;
 		int vtot = COEFFICIENT/r + 100; //100mV offset (vComp)
 		printf( "%d %d\n", r, vtot );
