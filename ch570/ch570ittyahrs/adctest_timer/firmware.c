@@ -72,7 +72,7 @@ int main()
 	{
 		Delay_Ms(1);
 		EventRelease();
-		Delay_Ms(1);
+		Delay_Ms(10);
 
 		// tau = R * C
 		// Vcomp = Vmeas(1 - 2.718 ^ (-t/tau))
