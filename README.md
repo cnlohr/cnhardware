@@ -113,6 +113,14 @@ If you're looking for ![hts codes, click here](https://github.com/cnlohr/cnhardw
 |--|--|--|--|--|
 |[VTI7064MSME](https://datasheet.lcsc.com/lcsc/1811151432_Vilsion-Tech-VTI7064MSME_C139966.pdf)|[C139966](https://www.lcsc.com/product-detail/SRAM_Vilsion-Tech-VTI7064MSME_C139966.html)|SOP-8 (4.8mm pad centers)|64-MBit PSRAM 2.7-3.3V|3.7339|
 
+## PCI Express
+
+|Datasheet|LCSC|Footprint|Description|Cost 150|
+|--|--|--|--|--|
+|[CH382](https://lcsc.com/datasheet/lcsc_datasheet_2506051505_WCH-CH382L_C2685237.pdf)|[C2685237](https://lcsc.com/product-detail/Interface-PCIs-PCIEs_WCH-CH382L_C2685237.html)|LQFP-64(7x7)|PCI-Express COM+Parallel|3.46|
+|[UPD720202](https://docs.rs-online.com/04cd/0900766b814f5802.pdf)|[C2916548](https://lcsc.com/product-detail/image/UPD720202K8-701-BAA-A_C2916548.html)|QFN-48 (7x7)|2-port USB 2.0/3.0 Host Controller|3.3187|
+
+
 ## IMUs, Accelerometers, Gyros, Magnetometers
 
 |Datasheet|LCSC|Footprint|Description|Cost 150|
@@ -259,6 +267,7 @@ These are ones I've found that are JLCPCB compatible.
 |[AMS1117-3.3](https://datasheet.lcsc.com/lcsc/2304140030_Advanced-Monolithic-Systems-AMS1117-3-3_C6186.pdf)|[C6186](https://www.lcsc.com/product-detail/Linear-Voltage-Regulators-LDO_Advanced-Monolithic-Systems-AMS1117-3-3_C6186.html)|SOT-223|awesome cheap and reliable 3.3V fixed output linear regulator with up to 1A driving capability, there is also a 5V variant, both are basic parts at JLCPCB|0.1382|
 |[DS8561](https://datasheet.lcsc.com/lcsc/2305121704_DSTECH-DS8561-28D4_C5795640.pdf)|[C5795640](https://www.lcsc.com/product-detail/Linear-Voltage-Regulators-span-style-background-color-ff0-LDO-span_DSTECH-DS8561-28D4_C5795640.html)|XDFN-4|2.8V 300mA VERY low drop out|0.0286|
 |[XC6206P332MR-G](https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Torex-Semicon-XC6206P332MR-G_C5446.pdf)|C5446|SOT-23|3.3V LDO BASIC PART|0.05|
+|[SM80952EIHD](https://lcsc.com/datasheet/lcsc_datasheet_2206281845_Silergy-SM80592EIHD_C3151902.pdf)|[C3151902](https://lcsc.com/product-detail/dc-dc-converters_silergy-corp-sm80592eihd_C3151902.html)|DFN-0.9x1.3|Very small 2A 5.5V in buck|0.15|
 
 ## Totally random things
 
