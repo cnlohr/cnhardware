@@ -8,12 +8,20 @@
 //  Increasing resistance will improve reading quality, and reduce ripple, but take longer.
 //  Increasing capacitance will reduce ripple, take more power and take longer.
 //
+// NOTE: the measurement is EXTREMELY sensitive to the capacitance.
+//
 // NOTE: Most capacitors in the 0.1-10uF range are more than their listed value.
 // You should calibrate.
 // NOTE: You may use PA4, but will need to change the code.
 
 #include "ch32fun.h"
 #include <stdio.h>
+
+#define OVERSAMPLE  8
+#define CAPACITANCE 0.0000001167
+#define RESISTANCE  5100.0
+#define VREF 0.1
+
 
 // VERF = 100mV and PA7 - CMP_VERF
 // Timer Capture comes from Input (not that it matters) + Enable.
@@ -22,7 +30,6 @@
 // After a lot of testing 100mV seems best.
 
 #define CMP_CONFIG ( 0x2 << 4 ) | 0b1111 | (0b00<<10)
-		#define OVERSAMPLE  8
 
 volatile unsigned switch_time;
 
@@ -147,9 +154,6 @@ int main()
 		// 3060=60000000*(5100*0.0000001)*0.1
 		//
 		// 3060000/ticks + 50 in millivolts.
-		#define CAPACITANCE 0.0000001167
-		#define RESISTANCE  5100.0
-		#define VREF 0.1
 		#define COEFFICIENT (const uint32_t)(FUNCONF_SYSTEM_CORE_CLOCK*(RESISTANCE*CAPACITANCE)*VREF*1000*OVERSAMPLE)
 
 		int vtot = COEFFICIENT/r + 100; //100mV offset (vComp)
