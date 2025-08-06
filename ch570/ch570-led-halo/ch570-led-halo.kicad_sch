@@ -2868,6 +2868,185 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "cnhardware:USB_ESD_DFN_RCLAMP0502N"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_DFN_QFN:DFN-6_1.6x1.3mm_P0.4mm"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C23380881"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "USB_ESD_DFN_RCLAMP0502N_1_1"
+				(rectangle
+					(start -5.08 3.81)
+					(end 5.08 -3.81)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin bidirectional line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 7.62 2.54 180)
+					(length 2.54)
+					(name "VB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "IO2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name "IO1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+5V"
 			(power)
 			(pin_numbers
@@ -3342,6 +3521,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Prefer MG6229D4-28 / C48678131\nTesting with NCP114AMX280TCG / C133054"
+		(exclude_from_sim no)
+		(at 165.354 141.224 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "14fbf9b4-8275-4e28-a200-1c66c05008e7")
+	)
 	(text "AW32001 = 0x49 (7 bit)"
 		(exclude_from_sim no)
 		(at 80.264 83.058 0)
@@ -3352,6 +3541,16 @@
 		)
 		(uuid "4816cc58-f3be-4113-9d96-770177a4512c")
 	)
+	(text "crystal \nideal: C7294697\nalternate: C718072 / X201632MKB4SI"
+		(exclude_from_sim no)
+		(at 48.514 22.86 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "7703b306-4ccf-45bd-bcc2-0b09d1b10584")
+	)
 	(text "TEST: Can we drive the crown LEDs directly?\nTEST: Do we want R11 or not?"
 		(exclude_from_sim no)
 		(at 154.686 119.126 0)
@@ -3361,6 +3560,16 @@
 			)
 		)
 		(uuid "9c56596d-95cb-4a86-ba46-4d38f3cd250b")
+	)
+	(text "Default: C23380881\nAlternate: C344005"
+		(exclude_from_sim no)
+		(at 64.008 193.802 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "aa0bb706-5615-4138-a8ef-272609e634c3")
 	)
 	(junction
 		(at 132.08 153.67)
@@ -3844,6 +4053,28 @@
 			)
 		)
 	)
+	(global_label "SWCLK"
+		(shape input)
+		(at 71.12 186.69 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1f2e7ee6-4e31-4487-8eaf-c17f21b0405b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 80.3342 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "VMEASURE"
 		(shape input)
 		(at 144.78 44.45 180)
@@ -4064,6 +4295,28 @@
 			)
 		)
 	)
+	(global_label "SWD"
+		(shape input)
+		(at 55.88 189.23 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "84c68929-17e4-4b03-9cef-98cd2f0a70e1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 48.9639 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "PA3"
 		(shape input)
 		(at 60.96 35.56 90)
@@ -4104,6 +4357,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWD"
+		(shape input)
+		(at 71.12 189.23 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b7c5ee6b-237e-4fc6-962b-984fba1e1bcd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 78.0361 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -4236,6 +4511,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK"
+		(shape input)
+		(at 55.88 186.69 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "dd606d2e-ede6-481f-8f19-380b5f0719a6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 46.6658 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -4385,6 +4682,42 @@
 		)
 		(property "LCSC" "C5125890"
 			(at 114.554 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" ""
+			(at 104.14 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 104.14 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 104.14 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 104.14 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4747,6 +5080,42 @@
 				(hide yes)
 			)
 		)
+		(property "Cost @ 2.5k" ""
+			(at 25.4 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 25.4 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 25.4 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 25.4 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "4e6671fd-48f3-46d1-a01f-e4e831a7b045")
 		)
@@ -5024,6 +5393,42 @@
 				(hide yes)
 			)
 		)
+		(property "Cost @ 2.5k" ""
+			(at 143.51 163.83 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 143.51 163.83 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 143.51 163.83 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 143.51 163.83 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "257f4a67-a36f-4d91-b66b-e4189111c78e")
 		)
@@ -5095,6 +5500,42 @@
 			)
 		)
 		(property "LCSC" "C52923"
+			(at 118.11 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" ""
+			(at 118.11 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 118.11 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 118.11 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
 			(at 118.11 180.34 0)
 			(effects
 				(font
@@ -5182,6 +5623,42 @@
 				(hide yes)
 			)
 		)
+		(property "Cost @ 2.5k" ""
+			(at 127 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 127 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 127 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 127 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b6b6d66a-9f21-448a-a377-affcb2c0b966")
 		)
@@ -5252,6 +5729,42 @@
 			)
 		)
 		(property "LCSC" "C7294697"
+			(at 54.61 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" ""
+			(at 54.61 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 54.61 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 54.61 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
 			(at 54.61 35.56 0)
 			(effects
 				(font
@@ -5605,6 +6118,42 @@
 				(hide yes)
 			)
 		)
+		(property "Cost @ 2.5k" ""
+			(at 49.53 158.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 49.53 158.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 49.53 158.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 49.53 158.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "41baf883-9e4e-418a-8ab0-48fc81dfb242")
 		)
@@ -5743,6 +6292,42 @@
 			)
 		)
 		(property "LCSC" "C307331"
+			(at 146.05 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" ""
+			(at 146.05 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 146.05 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 146.05 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
 			(at 146.05 87.63 0)
 			(effects
 				(font
@@ -5955,6 +6540,42 @@
 				(hide yes)
 			)
 		)
+		(property "Cost @ 2.5k" ""
+			(at 30.48 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 30.48 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 30.48 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 30.48 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b75577c8-6c97-4f77-b681-82d21e0bb001")
 		)
@@ -6023,6 +6644,42 @@
 			)
 		)
 		(property "LCSC" "C25905"
+			(at 49.53 156.21 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" ""
+			(at 49.53 156.21 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 49.53 156.21 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 49.53 156.21 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
 			(at 49.53 156.21 90)
 			(effects
 				(font
@@ -6100,6 +6757,42 @@
 			)
 		)
 		(property "LCSC" "C2765186"
+			(at 30.48 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" ""
+			(at 30.48 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 30.48 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 30.48 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
 			(at 30.48 166.37 0)
 			(effects
 				(font
@@ -6563,6 +7256,42 @@
 				(hide yes)
 			)
 		)
+		(property "Cost @ 2.5k" ""
+			(at 34.29 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 34.29 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 34.29 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 34.29 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "af20dde0-9f0b-48d6-99b7-fd547c711e6f")
 		)
@@ -6639,6 +7368,42 @@
 				(hide yes)
 			)
 		)
+		(property "Cost @ 2.5k" ""
+			(at 69.85 96.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 69.85 96.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 69.85 96.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 69.85 96.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "1d624760-a845-4653-b6f7-47942a31a01f")
 		)
@@ -6649,6 +7414,139 @@
 			(project "ch570-led-halo"
 				(path "/76da760b-f79a-4bcf-9a8a-a4a2206c5f63"
 					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "cnhardware:USB_ESD_DFN_RCLAMP0502N")
+		(at 63.5 186.69 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8c166467-4b86-4170-8aad-b1ae86915152")
+		(property "Reference" "U3"
+			(at 63.5 181.864 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "RCLAMP0502N"
+			(at 63.5 180.086 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "cnhardware:DFN-6_1.2x1.0mm_P0.4mm"
+			(at 63.5 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 63.5 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C23380881"
+			(at 63.5 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Field6" ""
+			(at 63.5 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" ""
+			(at 63.5 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 63.5 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 63.5 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 63.5 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "32c28452-8778-4fd6-a4d5-a30702163747")
+		)
+		(pin "6"
+			(uuid "c71b4f8d-8277-4a54-a9cc-a475cc69b073")
+		)
+		(pin "1"
+			(uuid "fed1b2bc-aa15-4db2-b44f-55abef787aee")
+		)
+		(pin "3"
+			(uuid "34652697-124f-41d8-8c2e-710da96cb771")
+		)
+		(pin "2"
+			(uuid "b83c69fa-3d56-47c1-ba07-210c9a3f95f7")
+		)
+		(pin "4"
+			(uuid "b68ffb02-25e5-46aa-8480-ac6fed98b092")
+		)
+		(instances
+			(project "ch570-led-halo"
+				(path "/76da760b-f79a-4bcf-9a8a-a4a2206c5f63"
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -6784,6 +7682,42 @@
 				(hide yes)
 			)
 		)
+		(property "Cost @ 2.5k" ""
+			(at 123.19 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 123.19 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 123.19 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 123.19 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e1654a5a-074b-4be5-9da8-47d2046deb0f")
 		)
@@ -6846,6 +7780,42 @@
 			)
 		)
 		(property "Description" "Inductor"
+			(at 39.37 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" ""
+			(at 39.37 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 39.37 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 39.37 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
 			(at 39.37 50.8 0)
 			(effects
 				(font
@@ -6925,6 +7895,42 @@
 			)
 		)
 		(property "LCSC" "C5290177"
+			(at 85.09 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" ""
+			(at 85.09 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 85.09 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 85.09 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
 			(at 85.09 153.67 0)
 			(effects
 				(font
@@ -7071,6 +8077,42 @@
 			)
 		)
 		(property "LCSC" "C124381"
+			(at 80.01 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" ""
+			(at 80.01 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 80.01 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 80.01 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
 			(at 80.01 104.14 0)
 			(effects
 				(font
@@ -7312,6 +8354,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 71.12 184.15 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a5976ecf-502d-458f-9532-9804becb4f0c")
+		(property "Reference" "#PWR09"
+			(at 67.31 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 74.93 184.1499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 71.12 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 71.12 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8eb7873d-3a02-4fa3-9a85-c3ed52915a11")
+		)
+		(instances
+			(project "ch570-led-halo"
+				(path "/76da760b-f79a-4bcf-9a8a-a4a2206c5f63"
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 39.37 54.61 0)
 		(mirror y)
@@ -7431,6 +8540,42 @@
 			)
 		)
 		(property "LCSC" "C25905"
+			(at 33.02 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" ""
+			(at 33.02 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 33.02 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 33.02 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
 			(at 33.02 95.25 90)
 			(effects
 				(font
@@ -7641,6 +8786,42 @@
 			)
 		)
 		(property "LCSC" "C46597863"
+			(at 87.63 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" ""
+			(at 87.63 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 87.63 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 87.63 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
 			(at 87.63 45.72 0)
 			(effects
 				(font
@@ -7914,6 +9095,42 @@
 				(hide yes)
 			)
 		)
+		(property "Cost @ 2.5k" ""
+			(at 130.81 176.53 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 130.81 176.53 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 130.81 176.53 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 130.81 176.53 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e92c821b-e08d-4e84-8121-1dd720e6a9d7")
 		)
@@ -8124,6 +9341,42 @@
 				(hide yes)
 			)
 		)
+		(property "Cost @ 2.5k" ""
+			(at 142.24 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 142.24 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 142.24 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 142.24 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "5"
 			(uuid "fc7bd6a9-8dbd-4c1a-9c6a-9cc62c23d0c8")
 		)
@@ -8209,6 +9462,42 @@
 				(hide yes)
 			)
 		)
+		(property "Cost @ 2.5k" ""
+			(at 91.44 179.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 91.44 179.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 91.44 179.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 91.44 179.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3bac32be-de70-4413-98d6-60635afe3ac1")
 		)
@@ -8277,6 +9566,42 @@
 			)
 		)
 		(property "LCSC" "C25905"
+			(at 33.02 92.71 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" ""
+			(at 33.02 92.71 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 33.02 92.71 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 33.02 92.71 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
 			(at 33.02 92.71 90)
 			(effects
 				(font
@@ -8562,6 +9887,42 @@
 				(hide yes)
 			)
 		)
+		(property "Cost @ 2.5k" ""
+			(at 144.78 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 144.78 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 144.78 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 144.78 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "916dabf9-da2d-4d38-9586-c224536aed2c")
 		)
@@ -8705,6 +10066,42 @@
 				(hide yes)
 			)
 		)
+		(property "Cost @ 2.5k" ""
+			(at 156.21 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 156.21 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 156.21 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 156.21 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "70aeca58-d6b4-4833-9111-a2bcaf7f9f9e")
 		)
@@ -8773,6 +10170,42 @@
 			)
 		)
 		(property "LCSC" "C25077"
+			(at 67.31 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" ""
+			(at 67.31 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 67.31 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 67.31 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
 			(at 67.31 99.06 90)
 			(effects
 				(font
@@ -8857,6 +10290,42 @@
 				(hide yes)
 			)
 		)
+		(property "Cost @ 2.5k" ""
+			(at 67.31 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 67.31 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 67.31 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 67.31 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "12acc568-d121-4c63-ac9a-b6147cae006f")
 		)
@@ -8928,6 +10397,42 @@
 			)
 		)
 		(property "LCSC" "C368809"
+			(at 134.62 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" ""
+			(at 134.62 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 134.62 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 134.62 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
 			(at 134.62 87.63 0)
 			(effects
 				(font
@@ -9082,6 +10587,42 @@
 				(hide yes)
 			)
 		)
+		(property "Cost @ 2.5k" ""
+			(at 111.76 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 111.76 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 111.76 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 111.76 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d1eb7de5-d9e0-4a58-91e9-76e1a13538b0")
 		)
@@ -9159,6 +10700,73 @@
 			(project "ch570-led-halo"
 				(path "/76da760b-f79a-4bcf-9a8a-a4a2206c5f63"
 					(reference "#PWR039")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 55.88 184.15 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fb841451-290b-4f36-8992-c81eeeb7aa09")
+		(property "Reference" "#PWR07"
+			(at 49.53 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 52.578 181.864 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 55.88 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 55.88 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 55.88 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2ce6b228-d3b4-4ab4-9698-c2b1fbc45b9d")
+		)
+		(instances
+			(project "ch570-led-halo"
+				(path "/76da760b-f79a-4bcf-9a8a-a4a2206c5f63"
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)

@@ -113,7 +113,7 @@
 			(mirror no)
 			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "ch570cr123")
+			(outputdirectory "ch570cr123-revA")
 		)
 	)
 	(net 0 "")
@@ -15477,16 +15477,6 @@
 		(uuid "d61c8808-96b5-49a0-8cea-d535c666ce16")
 	)
 	(gr_line
-		(start 70.1 50.374998)
-		(end 70.6 50.374998)
-		(stroke
-			(width 0.15)
-			(type default)
-		)
-		(layer "F.SilkS")
-		(uuid "5019c4f6-6c72-4087-a53f-d98b1cb757e6")
-	)
-	(gr_line
 		(start 64.25 34.25)
 		(end 105.25 34.25)
 		(stroke
@@ -15569,6 +15559,18 @@
 		)
 		(layer "Edge.Cuts")
 		(uuid "ee854c0d-d124-49c6-b53f-a78ff72e4cbc")
+	)
+	(gr_text "+"
+		(at 69.82 52.57 0)
+		(layer "F.SilkS")
+		(uuid "61bc741b-b165-418a-8ebc-9bc2adf85096")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
 	)
 	(gr_text "ch570cr123 - revA"
 		(at 95.47 39.7 0)
@@ -17753,6 +17755,15 @@
 		(free yes)
 		(net 2)
 		(uuid "e50f017b-6e1d-46eb-ba99-de8277f724a9")
+	)
+	(via
+		(at 67.64 48.27)
+		(size 0.5)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(free yes)
+		(net 2)
+		(uuid "e5845816-7f15-422a-b0e8-827db32654b7")
 	)
 	(via
 		(at 85.85 54.2)
