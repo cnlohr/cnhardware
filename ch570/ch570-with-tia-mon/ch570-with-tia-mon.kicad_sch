@@ -3271,7 +3271,7 @@
 		)
 		(uuid "4816cc58-f3be-4113-9d96-770177a4512c")
 	)
-	(text "TEST: Can we drive the crown LEDs directly?"
+	(text "TEST: Can we drive the crown LEDs directly?\nTEST: Can we remove C9"
 		(exclude_from_sim no)
 		(at 154.686 119.126 0)
 		(effects
@@ -3344,6 +3344,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "772679d2-1af9-4d4a-beec-7cb1c09b1db1")
+	)
+	(junction
+		(at 228.6 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7946402e-6d82-4f59-9105-294b63da823c")
 	)
 	(junction
 		(at 232.41 99.06)
@@ -3596,6 +3602,16 @@
 			(type default)
 		)
 		(uuid "628a6e0b-0144-47cc-93c6-8473e6b6763d")
+	)
+	(wire
+		(pts
+			(xy 220.98 99.06) (xy 228.6 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69193c37-fa6e-4d92-9d95-98c55a0de679")
 	)
 	(wire
 		(pts
@@ -5414,6 +5430,130 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 220.98 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3a106fdc-6e42-4a1e-ad35-471d17258446")
+		(property "Reference" "C9"
+			(at 224.79 101.5999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 224.79 104.1399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 221.9452 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 220.98 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 220.98 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C307331"
+			(at 220.98 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost @ 2.5k" ""
+			(at 220.98 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ""
+			(at 220.98 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" ""
+			(at 220.98 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Field6" ""
+			(at 220.98 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" ""
+			(at 220.98 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8b90e4dc-e222-43fa-8ef3-6da0a09e12b1")
+		)
+		(pin "2"
+			(uuid "9b05cb73-4c35-4b5d-9777-2c09310b2563")
+		)
+		(instances
+			(project "ch570-with-tia-mon"
+				(path "/76da760b-f79a-4bcf-9a8a-a4a2206c5f63"
+					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VDD")
 		(at 232.41 91.44 270)
 		(unit 1)
@@ -6897,7 +7037,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2765186"
+		(property "LCSC" ""
 			(at 30.48 166.37 0)
 			(effects
 				(font
@@ -7716,6 +7856,73 @@
 			(project "ch570cr123"
 				(path "/76da760b-f79a-4bcf-9a8a-a4a2206c5f63"
 					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 220.98 106.68 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "950dbbdb-bcce-43cb-8b1a-a1cd17270819")
+		(property "Reference" "#PWR042"
+			(at 220.98 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 226.822 108.458 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 220.98 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 220.98 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 220.98 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fdabe700-247a-481d-ab7d-b52a7c5a2cba")
+		)
+		(instances
+			(project "ch570-with-tia-mon"
+				(path "/76da760b-f79a-4bcf-9a8a-a4a2206c5f63"
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
