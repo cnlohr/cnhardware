@@ -644,6 +644,119 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector_Generic:Conn_01x01"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x01"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x01_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector_Generic:Conn_01x05"
 			(pin_names
 				(offset 1.016)
@@ -3111,7 +3224,7 @@
 	)
 	(text "fHSE = 8MHz\nfPREDIV2 = 8MHz\nfPLL2VCO = 64MHz\nfMCO = 32MHz\n"
 		(exclude_from_sim no)
-		(at 159.512 20.32 0)
+		(at 167.64 22.098 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3156,6 +3269,16 @@
 	)
 	(wire
 		(pts
+			(xy 259.08 43.18) (xy 264.16 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f94a439-1e0f-40f9-aaf3-33825a6d12f0")
+	)
+	(wire
+		(pts
 			(xy 78.74 69.85) (xy 78.74 73.66)
 		)
 		(stroke
@@ -3163,6 +3286,16 @@
 			(type default)
 		)
 		(uuid "2f6709ba-fcac-488d-99ea-cc659742994c")
+	)
+	(wire
+		(pts
+			(xy 259.08 66.04) (xy 264.16 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bde5ca9-6478-4444-84af-3af842891b58")
 	)
 	(wire
 		(pts
@@ -3216,6 +3349,26 @@
 	)
 	(wire
 		(pts
+			(xy 264.16 113.03) (xy 259.08 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb553794-aa47-4d95-9c8a-25866128534c")
+	)
+	(wire
+		(pts
+			(xy 259.08 88.9) (xy 264.16 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddeff431-df6a-4369-823b-7cbc692ea188")
+	)
+	(wire
+		(pts
 			(xy 71.12 63.5) (xy 78.74 63.5)
 		)
 		(stroke
@@ -3233,6 +3386,182 @@
 			(type default)
 		)
 		(uuid "e71218fb-6787-4528-8564-d56868e6dbda")
+	)
+	(global_label "COMSWD0"
+		(shape input)
+		(at 83.82 49.53 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "091cc0e0-0251-4d71-b534-4c4a5c5e46fc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 71.6425 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TCOM0"
+		(shape input)
+		(at 259.08 96.52 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "094a9402-7868-4469-b590-2c88eb00d78e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 268.2942 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TCOM0"
+		(shape input)
+		(at 137.16 50.8 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "10d0d0dc-01dc-4a1d-8b6a-1a71280005d8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 127.9458 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MCO"
+		(shape input)
+		(at 143.51 158.75 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "116d27e7-6ee4-4e61-8a0e-d1f68cab1086")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 150.5471 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MCO"
+		(shape input)
+		(at 259.08 68.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "16dedb56-f8d8-48e7-93a1-8110f5a0e4c4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 266.1171 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MCO"
+		(shape input)
+		(at 259.08 138.43 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1a9f90b0-4907-4957-a635-145db68b32ac")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 266.1171 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TCOM1"
+		(shape input)
+		(at 143.51 140.97 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1c696755-f243-408e-a376-4bc8ccdfbd51")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 152.7242 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COMSWD1"
+		(shape input)
+		(at 69.85 184.15 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2539677c-e849-4bc5-9967-467a6d09ef64")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.6725 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
 	)
 	(global_label "SWCLK"
 		(shape input)
@@ -3252,6 +3581,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TCOM1"
+		(shape input)
+		(at 143.51 163.83 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2a4853bd-16b0-4024-970e-efc2ed6d14e9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 152.7242 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -3278,6 +3629,28 @@
 			)
 		)
 	)
+	(global_label "RCOM1"
+		(shape input)
+		(at 143.51 166.37 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "36568c3f-87d3-42f4-8d40-4f47f947dc91")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 153.0266 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "DM"
 		(shape input)
 		(at 134.62 76.2 0)
@@ -3296,6 +3669,182 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TCOM0"
+		(shape input)
+		(at 259.08 50.8 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3a1192ea-f268-4600-9d1e-3c768e3cd66e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 268.2942 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COMSWD1"
+		(shape input)
+		(at 134.62 104.14 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "42abdbf8-62d1-4c64-a029-ab27b0efd902")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 146.7975 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RCOM0"
+		(shape input)
+		(at 259.08 76.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "49b257c6-befc-42c8-b027-c9b111e4133e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 268.5966 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COMSWD1"
+		(shape input)
+		(at 69.85 138.43 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4d661407-12f3-48cc-9ce1-df20a39e70fc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.6725 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK1"
+		(shape input)
+		(at 185.42 73.66 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4e7b283c-24e1-4dbc-95cf-82acd92cac59")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 174.9963 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TCOM0"
+		(shape input)
+		(at 259.08 73.66 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4ea1e5d1-d79d-4731-8bcc-49be070ba94f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 268.2942 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COMSWD1"
+		(shape input)
+		(at 88.9 44.45 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "50b73e8a-b1cd-493e-921e-b6b7875d204e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 76.7225 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK1"
+		(shape input)
+		(at 78.74 101.6 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "52032fbc-61e6-4fc4-b193-582de7f2e0d0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 68.3163 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -3344,6 +3893,72 @@
 			)
 		)
 	)
+	(global_label "SWCLK1"
+		(shape input)
+		(at 69.85 163.83 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5e036326-227b-4f01-9f05-bbe460fae1fe")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 59.4263 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TCOM0"
+		(shape input)
+		(at 78.74 81.28 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "645abeca-c183-4d4a-b1f0-65e35dae3a3d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 69.5258 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RCOM1"
+		(shape input)
+		(at 134.62 83.82 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6cb28d80-1e2d-4049-b810-c2bc25fdab54")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.1366 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "DP"
 		(shape input)
 		(at 40.64 82.55 0)
@@ -3362,6 +3977,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COMSWD1"
+		(shape input)
+		(at 185.42 140.97 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7002320e-3f3e-4f74-8a83-c28972350140")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 173.2425 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -3388,9 +4025,31 @@
 			)
 		)
 	)
+	(global_label "RCOM0"
+		(shape input)
+		(at 137.16 55.88 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "73b7b54b-3793-4dc9-84f0-0dd637d0c847")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 127.6434 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "MCO"
 		(shape input)
-		(at 248.92 49.53 0)
+		(at 259.08 45.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3400,12 +4059,56 @@
 		)
 		(uuid "74fc9fd3-835d-4db7-8847-526d6e80deea")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 255.9571 49.53 0)
+			(at 266.1171 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RCOM0"
+		(shape input)
+		(at 259.08 53.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "767b12c9-b179-4fde-803e-50a4627ec888")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 268.5966 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK2"
+		(shape input)
+		(at 33.02 139.7 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "792a734a-8921-4c02-8372-0883c60830ad")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 22.5963 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -3423,6 +4126,28 @@
 		(uuid "7d20aa7b-5822-403d-87a6-fbcc19512289")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 143.8342 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RCOM1"
+		(shape input)
+		(at 143.51 189.23 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "809c505f-78cc-4136-834c-98e152dc484a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 153.0266 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3476,6 +4201,94 @@
 			)
 		)
 	)
+	(global_label "MCO"
+		(shape input)
+		(at 143.51 181.61 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8765a5de-d5d8-4fbb-a37e-7710fc5cc8cb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 150.5471 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK0"
+		(shape input)
+		(at 78.74 99.06 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8897cda6-ddd6-4397-8a70-0882fd87bdac")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 68.3163 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK3"
+		(shape input)
+		(at 185.42 120.65 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8e4845ed-1f1a-4dfe-962b-a7aba115c303")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 174.9963 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK0"
+		(shape input)
+		(at 69.85 186.69 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9210a935-00ad-4335-b189-d48c21633142")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 59.4263 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "NRST"
 		(shape input)
 		(at 33.02 107.95 180)
@@ -3520,6 +4333,160 @@
 			)
 		)
 	)
+	(global_label "RCOM0"
+		(shape input)
+		(at 78.74 83.82 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "94dee6ce-abb2-43f4-8416-3da47964f0cf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 69.2234 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK2"
+		(shape input)
+		(at 69.85 140.97 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9957c3c9-643f-4c16-9332-c4d44c73d317")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 59.4263 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK3"
+		(shape input)
+		(at 185.42 143.51 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9ad481c6-beac-4fd8-a402-dc4d0ee59fa4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 174.9963 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RCOM0"
+		(shape input)
+		(at 259.08 123.19 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9c412b24-6f09-4b40-98cf-e0be5b030760")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 268.5966 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK3"
+		(shape input)
+		(at 78.74 106.68 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9d6ab80a-23d7-4411-ae48-dcebafb1f857")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 68.3163 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COMSWD0"
+		(shape input)
+		(at 185.42 71.12 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9ecd9eb0-9a11-4098-81c7-36fef80213ac")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 173.2425 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK0"
+		(shape input)
+		(at 33.02 128.27 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9f497bac-5875-4731-b58d-e32c3ca5c0fb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 22.5963 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "DP"
 		(shape input)
 		(at 53.34 45.72 0)
@@ -3542,6 +4509,248 @@
 			)
 		)
 	)
+	(global_label "MCO"
+		(shape input)
+		(at 143.51 135.89 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a29b4b74-7dbf-4df9-96dc-effac37f3d6a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 150.5471 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COMSWD0"
+		(shape input)
+		(at 134.62 106.68 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a2dea775-6728-4007-bab0-a09df78fb788")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 146.7975 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COMSWD0"
+		(shape input)
+		(at 185.42 93.98 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a3b88851-98a2-4b0d-847a-6034331ddacc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 173.2425 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RCOM1"
+		(shape input)
+		(at 110.49 50.8 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a761d66f-7792-4245-8424-41e435eff0a6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 100.9734 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TCOM1"
+		(shape input)
+		(at 143.51 186.69 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a923a5a7-17c5-44e7-81aa-7b194b7573ea")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 152.7242 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TCOM1"
+		(shape input)
+		(at 110.49 55.88 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ac1fff1d-5280-4e1c-b692-bd429af1f182")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 101.2758 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MCO"
+		(shape input)
+		(at 259.08 115.57 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "acbda1b1-e9dc-4ed2-900c-a488424d5a18")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 266.1171 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TCOM1"
+		(shape input)
+		(at 259.08 143.51 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ad1678e2-edbd-4e30-bd72-d852e86a2e8b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 268.2942 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK2"
+		(shape input)
+		(at 185.42 96.52 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b638117d-3ff4-42ab-bbaf-9e6da577e050")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 174.9963 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MCO"
+		(shape input)
+		(at 259.08 91.44 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b67985c4-1319-416c-9e91-36f8e505ba19")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 266.1171 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RCOM0"
+		(shape input)
+		(at 259.08 99.06 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b7cfbb25-ccd9-468e-8c66-92f908d4df0f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 268.5966 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "SWD"
 		(shape input)
 		(at 33.02 100.33 180)
@@ -3555,6 +4764,248 @@
 		(uuid "c6713701-2d21-4f1f-8d83-9664b669a535")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 26.1039 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK0"
+		(shape input)
+		(at 185.42 50.8 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ca562378-2c7f-457a-a381-f285c7049957")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 174.9963 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK2"
+		(shape input)
+		(at 78.74 104.14 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cdbb4518-3f17-49a4-849e-595fa6c3ca24")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 68.3163 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK1"
+		(shape input)
+		(at 33.02 133.35 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d1502632-d82c-4c38-98d9-25be861b24e9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 22.5963 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RCOM1"
+		(shape input)
+		(at 259.08 146.05 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d55bc5d4-c417-413b-80a6-67e487ceedac")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 268.5966 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RCOM1"
+		(shape input)
+		(at 143.51 143.51 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d6653e59-4bdf-47be-9c6f-fc861e704e24")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 153.0266 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK3"
+		(shape input)
+		(at 33.02 147.32 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e542358a-84e4-4635-9e23-afeead50412a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 22.5963 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COMSWD0"
+		(shape input)
+		(at 185.42 118.11 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e6e649bc-7273-4f4a-b4b5-64cf472b7a3b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 173.2425 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TCOM1"
+		(shape input)
+		(at 134.62 86.36 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ecdf8e2f-926f-4e3b-bba1-ddd40446b115")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 143.8342 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TCOM0"
+		(shape input)
+		(at 259.08 120.65 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f1bbe639-0cd1-4bf9-b513-a22e965b75bf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 268.2942 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COMSWD0"
+		(shape input)
+		(at 185.42 48.26 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f6d48ec3-9d59-4cbd-abd9-13ef4d9f3ef2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 173.2425 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COMSWD1"
+		(shape input)
+		(at 69.85 161.29 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f8c284db-f619-4b79-b22a-01a03edb293b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.6725 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3587,17 +5038,17 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 78.74 27.94 0)
-		(mirror y)
+		(lib_id "power:+5V")
+		(at 100.33 20.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "05d6fade-f84e-4a49-a517-c3243ecbacd0")
-		(property "Reference" "#PWR011"
-			(at 78.74 34.29 0)
+		(fields_autoplaced yes)
+		(uuid "002a5a86-9f83-4cd6-8a79-05e9cd890c78")
+		(property "Reference" "#PWR073"
+			(at 100.33 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3605,17 +5056,16 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 80.264 31.75 0)
+		(property "Value" "+5V"
+			(at 100.33 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 78.74 27.94 0)
+			(at 100.33 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3624,7 +5074,148 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 78.74 27.94 0)
+			(at 100.33 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 100.33 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a9867231-1c08-4830-87a3-d62836adde99")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR073")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 147.32 179.07 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "011f2a3c-0f14-4536-8604-c76171b87f1a")
+		(property "Reference" "C22"
+			(at 144.526 176.022 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10p"
+			(at 150.622 176.53 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 151.13 178.1048 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 147.32 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 147.32 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C32949"
+			(at 147.32 179.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "340876ff-4612-4293-80c2-88a4ddca9777")
+		)
+		(pin "1"
+			(uuid "eaaca219-031f-4247-b2d4-4d6971f55c80")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "C22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "cnhardware:CH570Q")
+		(at 222.25 118.11 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "017ac2c1-ce87-465e-a9c1-85f0a89ddce2")
+		(property "Reference" "U6"
+			(at 222.25 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CH570Q"
+			(at 222.25 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DFN_QFN:DFN-10-1EP_3x3mm_P0.5mm_EP1.7x2.5mm"
+			(at 222.504 115.316 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 222.25 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3633,7 +5224,113 @@
 			)
 		)
 		(property "Description" ""
-			(at 78.74 27.94 0)
+			(at 222.25 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C49260680"
+			(at 222.25 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "7"
+			(uuid "78ae7860-226d-4281-86a1-9b8bceedca07")
+		)
+		(pin "10"
+			(uuid "fa5a98f3-d780-4105-949a-21781085d95a")
+		)
+		(pin "9"
+			(uuid "7a69853f-5358-48c7-bc7e-6f93fc093002")
+		)
+		(pin "1"
+			(uuid "ef7e3ff2-49cf-45b3-8d02-0b25cc6647ab")
+		)
+		(pin "2"
+			(uuid "7780fbcd-5b3f-4dc9-824a-9ec57b3192ff")
+		)
+		(pin "3"
+			(uuid "9bcc44df-0bd4-4753-957b-d64dcd4b2064")
+		)
+		(pin "4"
+			(uuid "4ef7ab2d-3b48-4140-b787-6288a7846f38")
+		)
+		(pin "5"
+			(uuid "b3232cbd-c5ff-424e-8010-ff63b597f8d5")
+		)
+		(pin "6"
+			(uuid "746f9479-b71f-40a0-81f4-d8fc8be06063")
+		)
+		(pin "11"
+			(uuid "69ceb185-87fd-44ed-aeba-abb64f6925e4")
+		)
+		(pin "8"
+			(uuid "2236deea-6f0c-49ee-b5a2-c546fb80937d")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "U6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 74.93 27.94 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "05d6fade-f84e-4a49-a517-c3243ecbacd0")
+		(property "Reference" "#PWR011"
+			(at 74.93 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 76.454 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 74.93 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 74.93 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 74.93 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3648,6 +5345,216 @@
 			(project "ch32v305-radioset"
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 267.97 88.9 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "065ba0b3-ff7c-4db6-ae94-da04d369d4f2")
+		(property "Reference" "C21"
+			(at 265.176 85.852 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10p"
+			(at 271.272 86.36 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 271.78 87.9348 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 267.97 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 267.97 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C32949"
+			(at 267.97 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ab06fa30-6c4f-4e62-894f-691f08544707")
+		)
+		(pin "1"
+			(uuid "bee92cc7-ccce-46ae-a3fc-4c4fd4920f2f")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "C21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 185.42 138.43 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "07a33171-ac08-4c11-aa98-a7f42e8201cc")
+		(property "Reference" "#PWR057"
+			(at 189.23 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 181.61 138.4299 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 185.42 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 185.42 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 185.42 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d9bcb4c0-af5f-4b0c-ad2b-a9b4f94fbd7d")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR057")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 69.85 156.21 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0859f82f-ba3f-44e9-9dc4-fcbf5ba54dde")
+		(property "Reference" "#PWR062"
+			(at 73.66 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 66.04 156.2099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 69.85 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1e6f60e0-c425-43b6-b767-42aeea7a54a2")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR062")
 					(unit 1)
 				)
 			)
@@ -3878,6 +5785,140 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 160.02 44.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0ef933e3-8b6f-4acb-b046-44022626f0bf")
+		(property "Reference" "J19"
+			(at 162.56 43.1799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 162.56 45.7199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 160.02 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 160.02 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 160.02 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9b5188c3-90fc-4e89-9b79-19050de4e9f2")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 233.68 19.05 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "10156ea8-ce91-480a-ae4c-b4b2b027d4f7")
+		(property "Reference" "J3"
+			(at 236.22 17.7799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MH"
+			(at 236.22 20.3199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad"
+			(at 233.68 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 233.68 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 233.68 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "407926ca-eac5-4611-a45d-d5261c959190")
+		)
+		(instances
+			(project ""
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 30.48 63.5 0)
 		(mirror y)
@@ -3945,6 +5986,482 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 143.51 191.77 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1673df16-0e72-4d01-bcc2-e954fa21f2a8")
+		(property "Reference" "#PWR067"
+			(at 149.86 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 150.368 191.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 143.51 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 143.51 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 143.51 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "47361639-eab8-4f01-9be7-5118d87de299")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR067")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "cnhardware:CH570Q")
+		(at 106.68 138.43 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "16d8904c-7ab2-45f9-827c-b08ca4af93cc")
+		(property "Reference" "U8"
+			(at 106.68 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CH570Q"
+			(at 106.68 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DFN_QFN:DFN-10-1EP_3x3mm_P0.5mm_EP1.7x2.5mm"
+			(at 106.934 135.636 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 106.68 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C49260680"
+			(at 106.68 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "7"
+			(uuid "19efba85-fee8-48af-8a84-34df094b4df1")
+		)
+		(pin "10"
+			(uuid "202b80ac-41e7-4aed-add9-f45b5be520e1")
+		)
+		(pin "9"
+			(uuid "326bfd2c-e5b4-4321-970d-60b5af13f949")
+		)
+		(pin "1"
+			(uuid "0fdc5087-02cd-44da-a8f4-a84eec0e5531")
+		)
+		(pin "2"
+			(uuid "b11f88ba-038c-4a71-ae63-44b4c5502d88")
+		)
+		(pin "3"
+			(uuid "80434a4d-a7ad-45f6-982d-940f5fb19911")
+		)
+		(pin "4"
+			(uuid "74c27a44-7a0f-49b1-b5ec-978afaa35e7d")
+		)
+		(pin "5"
+			(uuid "21a884f8-30ad-455a-93b3-7f7ff833dca0")
+		)
+		(pin "6"
+			(uuid "58a88c76-7977-4dd2-baf1-8314cfc39dd3")
+		)
+		(pin "11"
+			(uuid "236552da-0d3e-4d16-9d54-61cf46ea89ed")
+		)
+		(pin "8"
+			(uuid "b3e64fa9-d9ae-4150-8219-fb8df4934aca")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "U8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 142.24 44.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1960bd98-234e-4b06-9a85-89062395083f")
+		(property "Reference" "J8"
+			(at 144.78 43.1799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "3v3"
+			(at 144.78 45.7199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 142.24 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 142.24 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 142.24 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1d962d52-58b3-46b8-a623-f42f39d09a48")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "cnhardware:CH570Q")
+		(at 106.68 161.29 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1cc50f64-09cc-48c1-83dc-db321bb4a08e")
+		(property "Reference" "U9"
+			(at 106.68 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CH570Q"
+			(at 106.68 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DFN_QFN:DFN-10-1EP_3x3mm_P0.5mm_EP1.7x2.5mm"
+			(at 106.934 158.496 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 106.68 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C49260680"
+			(at 106.68 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "7"
+			(uuid "3da5e185-6cbe-4c96-93ec-72a53d24d23a")
+		)
+		(pin "10"
+			(uuid "d7a47be1-d506-4df3-beb4-968a019b7401")
+		)
+		(pin "9"
+			(uuid "e8e560c3-6718-4002-b3cd-6b79cac57af9")
+		)
+		(pin "1"
+			(uuid "bdc653a0-5e52-4c5f-ac10-98a161a70e40")
+		)
+		(pin "2"
+			(uuid "4a53e121-c37e-40e9-949d-99f350a4afee")
+		)
+		(pin "3"
+			(uuid "7180e83e-a76b-45a8-9641-f7ade9685253")
+		)
+		(pin "4"
+			(uuid "5bd2d714-f5a1-4abc-a3aa-053f8b4cae00")
+		)
+		(pin "5"
+			(uuid "2f02d2b4-fa8c-48af-926f-8ce2ec169f45")
+		)
+		(pin "6"
+			(uuid "54ab279e-2256-49e5-aaab-339973638ac7")
+		)
+		(pin "11"
+			(uuid "45c19fdc-eee2-423f-af4d-fe8a255c6039")
+		)
+		(pin "8"
+			(uuid "6d006b3d-7af8-43cb-85e5-c0d756ffdcdb")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "U9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 185.42 68.58 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1ccd879f-d809-4a9b-82b2-134a0a0824d8")
+		(property "Reference" "#PWR048"
+			(at 189.23 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 181.61 68.5799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 185.42 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 185.42 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 185.42 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3d0ff17c-cec9-408d-89c4-a1d029b45e27")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR048")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 185.42 115.57 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "200cc422-54ae-442b-aec2-030f95219e9c")
+		(property "Reference" "#PWR054"
+			(at 189.23 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 181.61 115.5699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 185.42 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 185.42 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 185.42 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1090cd36-51d0-47e9-bae6-9bb67bbcba9e")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR054")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 125.73 20.32 0)
 		(unit 1)
@@ -4005,6 +6522,73 @@
 			(project "ch32v305-radioset"
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "#PWR031")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 259.08 125.73 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "25167311-3757-4d0f-b297-0ccfb7aa5328")
+		(property "Reference" "#PWR055"
+			(at 265.43 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 265.938 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 259.08 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 259.08 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 259.08 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bfbe6c3b-e7bc-4ede-a891-31cbf11bd7c9")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR055")
 					(unit 1)
 				)
 			)
@@ -4102,6 +6686,110 @@
 			(project "ch32v305-radioset"
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "cnhardware:CH570Q")
+		(at 106.68 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "26fba4b3-1475-417b-9cab-36a2069fcade")
+		(property "Reference" "U10"
+			(at 106.68 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CH570Q"
+			(at 106.68 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DFN_QFN:DFN-10-1EP_3x3mm_P0.5mm_EP1.7x2.5mm"
+			(at 106.934 181.356 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 106.68 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C49260680"
+			(at 106.68 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "7"
+			(uuid "3cc3978e-9963-4bb8-a76e-91807f3d169d")
+		)
+		(pin "10"
+			(uuid "7751b7fc-4d4e-4638-a3bf-77423f8c5e86")
+		)
+		(pin "9"
+			(uuid "b0205d4f-5a9e-478f-8c59-df6f067620aa")
+		)
+		(pin "1"
+			(uuid "de456fd0-aa23-4c13-843a-466c1863dcc7")
+		)
+		(pin "2"
+			(uuid "afd95fab-84a7-40c3-a950-1ddb4ad3dc60")
+		)
+		(pin "3"
+			(uuid "a610ea72-b12d-49e7-9785-0ff54d85486f")
+		)
+		(pin "4"
+			(uuid "c4db2917-50ca-4eb3-8104-df5bd81f2c32")
+		)
+		(pin "5"
+			(uuid "26c22d8c-064e-42a1-b7c5-8ecbd7800e9f")
+		)
+		(pin "6"
+			(uuid "797dd441-9114-427a-a59a-1dfe859d7c47")
+		)
+		(pin "11"
+			(uuid "30086d37-c973-4a35-9c35-9e772bbd5614")
+		)
+		(pin "8"
+			(uuid "efa793dd-8cd8-41a6-b281-7d77067fbbf1")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "U10")
 					(unit 1)
 				)
 			)
@@ -4308,6 +6996,83 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 275.59 113.03 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "312f7a05-1bb4-46d8-a778-deb749623a23")
+		(property "Reference" "A8"
+			(at 275.59 106.68 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 275.59 109.22 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_2010_5025Metric"
+			(at 275.59 114.808 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 275.59 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 275.59 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22467691"
+			(at 275.59 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e4b92e64-2282-4984-ac02-dd4ffff4bc23")
+		)
+		(pin "1"
+			(uuid "10ed6696-70c0-4d66-8c2c-2c6579455fa9")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "A8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 40.64 77.47 270)
 		(unit 1)
@@ -4442,35 +7207,33 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 73.66 27.94 0)
-		(mirror y)
+		(lib_id "cnhardware:CH570Q")
+		(at 222.25 93.98 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "39c22220-e740-4943-a90f-e488d83a7615")
-		(property "Reference" "#PWR09"
-			(at 73.66 34.29 0)
+		(fields_autoplaced yes)
+		(uuid "39076364-c318-46ec-a6a4-d7bab2ea7e94")
+		(property "Reference" "U5"
+			(at 222.25 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 75.692 31.75 0)
+		(property "Value" "CH570Q"
+			(at 222.25 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 73.66 27.94 0)
+		(property "Footprint" "Package_DFN_QFN:DFN-10-1EP_3x3mm_P0.5mm_EP1.7x2.5mm"
+			(at 222.504 91.186 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4479,7 +7242,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 73.66 27.94 0)
+			(at 222.25 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4488,7 +7251,113 @@
 			)
 		)
 		(property "Description" ""
-			(at 73.66 27.94 0)
+			(at 222.25 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C49260680"
+			(at 222.25 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "7"
+			(uuid "3e1e2c95-e3e3-45f2-9825-7202297c7b77")
+		)
+		(pin "10"
+			(uuid "e5143d92-501f-42e8-b8bd-61b85cafd97a")
+		)
+		(pin "9"
+			(uuid "2822e1fb-8bbb-468c-9a53-5eb917ebf3c4")
+		)
+		(pin "1"
+			(uuid "bddc69e8-0863-4222-897e-39dd48e596a6")
+		)
+		(pin "2"
+			(uuid "a14d4250-8182-40a5-b085-7c4030a5d264")
+		)
+		(pin "3"
+			(uuid "fcec5728-32c9-4e27-ad3a-372e4305e402")
+		)
+		(pin "4"
+			(uuid "5b496a2e-fd04-498f-b391-52cc5addb8d9")
+		)
+		(pin "5"
+			(uuid "c4286076-a8e8-4da1-9126-f4fde0f79957")
+		)
+		(pin "6"
+			(uuid "b174f88b-c994-471e-a6fe-82881999b336")
+		)
+		(pin "11"
+			(uuid "779a467f-d7da-42b9-8907-1c5e08dab04f")
+		)
+		(pin "8"
+			(uuid "a2206a22-4956-43b7-9f6f-876f4d56bf0e")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 69.85 27.94 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "39c22220-e740-4943-a90f-e488d83a7615")
+		(property "Reference" "#PWR09"
+			(at 69.85 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 71.882 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 69.85 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4509,16 +7378,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 73.66 24.13 0)
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 88.9 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "3bf2f95f-46b2-4ecf-acca-c7936c7bbfc1")
-		(property "Reference" "C15"
-			(at 74.422 21.844 0)
+		(fields_autoplaced yes)
+		(uuid "3b9670db-25fd-4f0c-8344-09d2cbf44744")
+		(property "Reference" "J14"
+			(at 91.44 48.2599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4526,8 +7396,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1u"
-			(at 74.168 26.162 0)
+		(property "Value" "COMSWD0"
+			(at 91.44 50.7999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4535,8 +7405,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 74.6252 27.94 0)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 88.9 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4545,7 +7415,139 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 73.66 24.13 0)
+			(at 88.9 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 88.9 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "df35b4ab-903d-4bca-a3b9-9927d922572c")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 151.13 20.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3bf13c3a-720a-49df-aec7-77cae5a65f5f")
+		(property "Reference" "#PWR069"
+			(at 151.13 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 151.13 15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 151.13 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 151.13 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "79804b15-5272-4a24-a9cc-eee3cec7707a")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR069")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 69.85 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3bf2f95f-46b2-4ecf-acca-c7936c7bbfc1")
+		(property "Reference" "C15"
+			(at 70.612 21.844 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1u"
+			(at 70.358 26.162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 70.8152 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 69.85 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4554,7 +7556,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 73.66 24.13 0)
+			(at 69.85 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4563,7 +7565,7 @@
 			)
 		)
 		(property "LCSC" "C52923"
-			(at 73.66 24.13 0)
+			(at 69.85 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4572,7 +7574,7 @@
 			)
 		)
 		(property "Field6" ""
-			(at 73.66 24.13 0)
+			(at 69.85 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4597,7 +7599,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 88.9 20.32 0)
+		(at 85.09 20.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4606,7 +7608,7 @@
 		(fields_autoplaced yes)
 		(uuid "3ca8886e-4983-49ee-a1c5-087670d6c663")
 		(property "Reference" "#PWR016"
-			(at 88.9 24.13 0)
+			(at 85.09 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4615,7 +7617,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 88.9 15.24 0)
+			(at 85.09 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4623,7 +7625,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 88.9 20.32 0)
+			(at 85.09 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4632,7 +7634,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 88.9 20.32 0)
+			(at 85.09 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4641,7 +7643,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 88.9 20.32 0)
+			(at 85.09 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4789,6 +7791,216 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 38.1 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3df2345f-ffac-43d3-900b-2eebb7db76ce")
+		(property "Reference" "J16"
+			(at 40.64 132.0799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SWCLK1"
+			(at 40.64 134.6199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 38.1 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 38.1 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 38.1 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "deabbd3a-5fb9-4111-80e7-cf52d06bb1e0")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 69.85 179.07 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3f660b46-8d71-4d09-acab-26a151707ba1")
+		(property "Reference" "#PWR065"
+			(at 73.66 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 66.04 179.0699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 69.85 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "156794e9-f1cb-4f41-aef3-03b4164236bd")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR065")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 262.89 135.89 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4081a9a0-95ec-4655-8987-0bdfdc40abe3")
+		(property "Reference" "C16"
+			(at 260.096 132.842 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10p"
+			(at 266.192 133.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 266.7 134.9248 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 262.89 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 262.89 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C32949"
+			(at 262.89 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "44fd498a-e720-411c-95bb-9e8a398a054b")
+		)
+		(pin "1"
+			(uuid "f8bee086-5093-4fb6-b8cc-9686b955a07f")
+		)
+		(instances
+			(project ""
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "C16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 33.02 102.87 270)
 		(mirror x)
@@ -4850,6 +8062,73 @@
 			(project "ch32v305-radioset"
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "#PWR041")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 123.19 44.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "48169876-3b26-43d6-9ab0-5d7360a6446e")
+		(property "Reference" "J7"
+			(at 125.73 43.1799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 125.73 45.7199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 123.19 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 123.19 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 123.19 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8320f392-116e-4bf8-9e8d-ad5df9e0b1fe")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J7")
 					(unit 1)
 				)
 			)
@@ -5009,7 +8288,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 88.9 24.13 0)
+		(at 85.09 24.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5017,7 +8296,7 @@
 		(dnp no)
 		(uuid "4c0e33aa-1543-47d9-aeec-ac3cfb2bdf1e")
 		(property "Reference" "C3"
-			(at 89.408 21.844 0)
+			(at 85.598 21.844 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5026,7 +8305,7 @@
 			)
 		)
 		(property "Value" "1u"
-			(at 89.154 26.416 0)
+			(at 85.344 26.416 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5035,7 +8314,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 89.8652 27.94 0)
+			(at 86.0552 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5044,7 +8323,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 88.9 24.13 0)
+			(at 85.09 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5053,7 +8332,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 88.9 24.13 0)
+			(at 85.09 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5062,7 +8341,7 @@
 			)
 		)
 		(property "LCSC" "C52923"
-			(at 88.9 24.13 0)
+			(at 85.09 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5071,7 +8350,7 @@
 			)
 		)
 		(property "Field6" ""
-			(at 88.9 24.13 0)
+			(at 85.09 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5089,6 +8368,160 @@
 			(project "ch32v305-radioset"
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 143.51 146.05 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4cd3b9a2-cb2c-4a3f-9da6-a73ee825e378")
+		(property "Reference" "#PWR061"
+			(at 149.86 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 150.368 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 143.51 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 143.51 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 143.51 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "17f7f01b-cb75-41d6-bb02-9dc8a784a117")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR061")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 161.29 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4e14ea4c-6cf1-4320-ade5-aae12a1de7bf")
+		(property "Reference" "C28"
+			(at 161.798 21.844 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1u"
+			(at 161.544 26.416 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 162.2552 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 161.29 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 161.29 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C52923"
+			(at 161.29 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Field6" ""
+			(at 161.29 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ce5ce1a0-d83c-43c6-8a77-602b6df0332c")
+		)
+		(pin "2"
+			(uuid "9985f443-9601-452c-bb44-d182795f3912")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "C28")
 					(unit 1)
 				)
 			)
@@ -5161,8 +8594,75 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 69.85 181.61 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4eee4a47-caf8-499f-979c-de4b2fdcc523")
+		(property "Reference" "#PWR066"
+			(at 73.66 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 66.04 181.6099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 69.85 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2bd64d1a-606b-43fe-adda-da6a8ef3dd4b")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR066")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
-		(at 93.98 24.13 0)
+		(at 90.17 24.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5170,7 +8670,7 @@
 		(dnp no)
 		(uuid "51684b91-e73b-453b-b9a2-77a1f7e911ff")
 		(property "Reference" "C4"
-			(at 94.488 21.844 0)
+			(at 90.678 21.844 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5179,7 +8679,7 @@
 			)
 		)
 		(property "Value" "1u"
-			(at 94.234 26.416 0)
+			(at 90.424 26.416 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5188,7 +8688,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 94.9452 27.94 0)
+			(at 91.1352 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5197,7 +8697,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 93.98 24.13 0)
+			(at 90.17 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5206,7 +8706,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 93.98 24.13 0)
+			(at 90.17 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5215,7 +8715,7 @@
 			)
 		)
 		(property "LCSC" "C52923"
-			(at 93.98 24.13 0)
+			(at 90.17 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5224,7 +8724,7 @@
 			)
 		)
 		(property "Field6" ""
-			(at 93.98 24.13 0)
+			(at 90.17 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5448,6 +8948,83 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 270.51 135.89 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5363a6aa-a6f4-4ae2-9abd-baf60c7b2148")
+		(property "Reference" "A5"
+			(at 270.51 129.54 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 270.51 132.08 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_2010_5025Metric"
+			(at 270.51 137.668 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 270.51 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 270.51 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22467691"
+			(at 270.51 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ee62647f-750d-4136-9b79-acc7680bbc69")
+		)
+		(pin "1"
+			(uuid "0ead3600-86d7-4fbf-9e73-c1ea61d1a6e1")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "A5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 45.72 25.4 0)
 		(unit 1)
@@ -5515,7 +9092,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 88.9 27.94 0)
+		(at 85.09 27.94 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5524,7 +9101,7 @@
 		(dnp no)
 		(uuid "55788992-09e9-4a7b-84cf-97829fff082f")
 		(property "Reference" "#PWR017"
-			(at 88.9 34.29 0)
+			(at 85.09 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5533,7 +9110,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 90.424 31.75 0)
+			(at 86.614 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5542,7 +9119,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 88.9 27.94 0)
+			(at 85.09 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5551,7 +9128,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 88.9 27.94 0)
+			(at 85.09 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5560,7 +9137,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 88.9 27.94 0)
+			(at 85.09 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5575,6 +9152,160 @@
 			(project "ch32v305-radioset"
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 156.21 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "56ae0366-06f7-491f-87ee-d01148ccca8a")
+		(property "Reference" "C25"
+			(at 156.718 21.844 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1u"
+			(at 156.464 26.416 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 157.1752 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 156.21 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 156.21 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C52923"
+			(at 156.21 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Field6" ""
+			(at 156.21 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "33b98aa3-fb0c-4f8a-b9b9-5d6b02fcc84b")
+		)
+		(pin "2"
+			(uuid "50e79779-be18-4971-8bdf-2228ea1080fd")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "C25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 185.42 135.89 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "56f1fd90-4b6a-497a-8de5-e416307a5173")
+		(property "Reference" "#PWR056"
+			(at 189.23 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 181.61 135.8899 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 185.42 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 185.42 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 185.42 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f24a2c5a-92ec-47d8-ad93-bf47a452c5b8")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR056")
 					(unit 1)
 				)
 			)
@@ -5667,6 +9398,225 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 154.94 44.45 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "59200a3c-c176-4cb3-9dec-6ae69ff73e50")
+		(property "Reference" "#PWR085"
+			(at 148.59 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 147.828 44.196 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 154.94 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 154.94 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 154.94 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3b473337-8734-4269-a34c-eb06f94abadc")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR085")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 267.97 113.03 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "597f023b-b1d5-4f99-a33e-0a52ae85031e")
+		(property "Reference" "C19"
+			(at 265.176 109.982 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10p"
+			(at 271.272 110.49 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 271.78 112.0648 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 267.97 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 267.97 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C32949"
+			(at 267.97 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "c1ad45b9-e2ad-484b-b58f-b350abcfed5e")
+		)
+		(pin "1"
+			(uuid "297cdc04-b99b-414c-b933-f7aaa6eb477a")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "C19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 147.32 133.35 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5a44c53d-d6d5-46a7-b4c3-bf1e9f7cf214")
+		(property "Reference" "C20"
+			(at 144.526 130.302 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10p"
+			(at 150.622 130.81 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 151.13 132.3848 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 147.32 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 147.32 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C32949"
+			(at 147.32 133.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "74cf7654-e3f2-43f8-84d5-51c248633b44")
+		)
+		(pin "1"
+			(uuid "d64d19e4-e8dd-4a91-bca4-58c4a01f4cf9")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "C20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 130.81 27.94 0)
 		(mirror y)
 		(unit 1)
@@ -5727,6 +9677,73 @@
 			(project "ch32v305-radioset"
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "#PWR034")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 259.08 101.6 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5d45202b-1cae-484d-934a-94891f6f397d")
+		(property "Reference" "#PWR052"
+			(at 265.43 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 265.938 101.6 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 259.08 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 259.08 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 259.08 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b842800b-c9c9-4664-9405-0397cf3b7bbe")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR052")
 					(unit 1)
 				)
 			)
@@ -5821,16 +9838,16 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 78.74 20.32 0)
+		(at 185.42 91.44 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "650de8cc-7b7c-4b8a-8fe3-afc6376dd5bb")
-		(property "Reference" "#PWR010"
-			(at 78.74 24.13 0)
+		(uuid "5d75dfe8-5128-4fda-bde1-439e6dad167d")
+		(property "Reference" "#PWR051"
+			(at 189.23 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5839,15 +9856,16 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 78.74 15.24 0)
+			(at 181.61 91.4399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 78.74 20.32 0)
+			(at 185.42 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5856,7 +9874,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 78.74 20.32 0)
+			(at 185.42 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5865,7 +9883,303 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 78.74 20.32 0)
+			(at 185.42 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8be41e5a-0e26-42ca-b93c-f5f961c68aa7")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR051")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 154.94 156.21 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "620e0a04-de8c-4fa5-8749-2beb142d54ce")
+		(property "Reference" "A7"
+			(at 154.94 149.86 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 154.94 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_2010_5025Metric"
+			(at 154.94 157.988 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 154.94 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 154.94 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22467691"
+			(at 154.94 156.21 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "5871ec11-ae76-4385-8989-f23547d8c108")
+		)
+		(pin "1"
+			(uuid "7824b9fb-e275-414a-b700-d2e1134923b8")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "A7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 100.33 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6255476e-0d19-4c19-9fe4-cf9bb2c639c9")
+		(property "Reference" "C26"
+			(at 100.838 21.844 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1u"
+			(at 100.584 26.416 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 101.2952 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 100.33 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 100.33 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C52923"
+			(at 100.33 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Field6" ""
+			(at 100.33 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c4fe4e9d-062c-44ad-ad42-596228af5144")
+		)
+		(pin "2"
+			(uuid "c80be172-2c15-4e2b-9548-181339130c10")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "C26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 156.21 20.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "64fd4feb-f3b8-4908-a0e6-0c2a963e965d")
+		(property "Reference" "#PWR071"
+			(at 156.21 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 156.21 15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 156.21 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 156.21 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 156.21 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "25225e99-fa21-4b4c-99c4-31827204a553")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR071")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 74.93 20.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "650de8cc-7b7c-4b8a-8fe3-afc6376dd5bb")
+		(property "Reference" "#PWR010"
+			(at 74.93 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 74.93 15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 74.93 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 74.93 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 74.93 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5880,6 +10194,140 @@
 			(project "ch32v305-radioset"
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 161.29 27.94 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "66bcd1f8-5fca-47d6-a863-196bda8ce914")
+		(property "Reference" "#PWR078"
+			(at 161.29 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 161.036 35.052 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 161.29 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 161.29 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 161.29 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7508ebbb-6c81-4ea7-bad5-bd32c9e1f27e")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR078")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 264.16 19.05 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "69d1015f-737c-46b8-87b8-9b64a7f249b4")
+		(property "Reference" "#PWR081"
+			(at 257.81 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 257.302 19.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 264.16 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 264.16 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 264.16 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c826fdfe-9d8d-4917-a7d9-02c3eb62571e")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR081")
 					(unit 1)
 				)
 			)
@@ -5973,6 +10421,93 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 105.41 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6b836b1c-8937-45f7-90f1-7e300ce261c8")
+		(property "Reference" "C27"
+			(at 105.918 21.844 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1u"
+			(at 105.664 26.416 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 106.3752 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 105.41 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 105.41 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C52923"
+			(at 105.41 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Field6" ""
+			(at 105.41 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e675c053-1c9f-454c-b322-43ba60b50c97")
+		)
+		(pin "2"
+			(uuid "dd2872c3-2d90-46db-a3e9-d31506154fa7")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "C27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 115.57 20.32 0)
 		(unit 1)
@@ -6039,17 +10574,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 259.08 78.74 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6fd25f11-ee09-42d0-b46e-afad5be3310d")
+		(property "Reference" "#PWR049"
+			(at 265.43 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 265.938 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 259.08 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 259.08 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 259.08 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "301b81c8-c2ff-487f-a832-d5e34fb6c78c")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR049")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
-		(at 252.73 46.99 90)
+		(at 275.59 88.9 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "79c62f04-c0cc-4877-917a-116c142bcfad")
+		(uuid "706b4bf4-7940-448a-acec-bc986aa2f51b")
 		(property "Reference" "A1"
-			(at 252.73 40.64 90)
+			(at 275.59 82.55 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6057,15 +10659,15 @@
 			)
 		)
 		(property "Value" "R"
-			(at 252.73 43.18 90)
+			(at 275.59 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
-			(at 252.73 48.768 90)
+		(property "Footprint" "RF_Antenna:Coilcraft_MA5532-AE_RFID"
+			(at 275.59 90.678 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6074,7 +10676,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 252.73 46.99 0)
+			(at 275.59 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6083,7 +10685,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 252.73 46.99 0)
+			(at 275.59 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6091,8 +10693,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C127629"
-			(at 252.73 46.99 90)
+		(property "LCSC" "C99665"
+			(at 275.59 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6101,15 +10703,169 @@
 			)
 		)
 		(pin "2"
-			(uuid "501ff41d-bad4-474d-ae23-94d466b96209")
+			(uuid "75693fbd-3131-4c31-bd84-18732dea04a5")
 		)
 		(pin "1"
-			(uuid "6bf78016-e54c-40bf-a021-77d6393afb1e")
+			(uuid "18eb25a0-8930-4ab8-bfb9-d47586fd24b1")
 		)
 		(instances
-			(project ""
+			(project "ch32v305-radioset"
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "A1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 151.13 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "74fda2ed-c4c7-4703-8218-fa75d8438d53")
+		(property "Reference" "C24"
+			(at 151.638 21.844 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1u"
+			(at 151.384 26.416 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 152.0952 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 151.13 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 151.13 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C52923"
+			(at 151.13 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Field6" ""
+			(at 151.13 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "92ce75b2-7036-4e17-8d13-2c79c83b3b93")
+		)
+		(pin "2"
+			(uuid "509f54cd-928c-4398-a7a3-6142aa40e186")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "C24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 78.74 88.9 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "793c10d1-4bea-4b4c-99b9-13d2aad0ed81")
+		(property "Reference" "#PWR068"
+			(at 72.39 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 71.628 88.646 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 78.74 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "86cacc78-2c22-4ba9-b50b-0b8af3a5aef5")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR068")
 					(unit 1)
 				)
 			)
@@ -6358,17 +11114,17 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 73.66 20.32 0)
+		(lib_id "power:+3.3V")
+		(at 185.42 88.9 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "9088f55f-a19d-420e-a925-5341e9c47b0b")
-		(property "Reference" "#PWR07"
-			(at 73.66 24.13 0)
+		(uuid "7e6f4895-6f19-4e47-b7f2-debebf7b853c")
+		(property "Reference" "#PWR050"
+			(at 189.23 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6376,16 +11132,17 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
-			(at 73.66 15.24 0)
+		(property "Value" "+3.3V"
+			(at 181.61 88.8999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 73.66 20.32 0)
+			(at 185.42 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6394,7 +11151,342 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 73.66 20.32 0)
+			(at 185.42 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 185.42 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fe2d00ff-0927-4f51-a855-75fd05c34bd8")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR050")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 185.42 66.04 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "82769aba-101d-428c-bf4a-215338ff1299")
+		(property "Reference" "#PWR047"
+			(at 189.23 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 181.61 66.0399 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 185.42 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 185.42 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 185.42 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ce2dc253-9e90-48e9-a3f6-08557759325a")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR047")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 251.46 19.05 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "84c9457d-80ba-4b06-924c-ff370071fdb1")
+		(property "Reference" "J4"
+			(at 254 17.7799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MH"
+			(at 254 20.3199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad"
+			(at 251.46 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 251.46 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 251.46 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ad1af757-b411-4435-9fa9-c91ea4dd3230")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 115.57 50.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "85fe8145-875f-4540-ae88-305cb0723dea")
+		(property "Reference" "J11"
+			(at 118.11 49.5299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RCOM1"
+			(at 118.11 52.0699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 115.57 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 115.57 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 115.57 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "078f7d1b-a2b3-408a-9548-fc4441603ae8")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 228.6 19.05 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "89b1281d-471d-48af-9792-8e43a3850f89")
+		(property "Reference" "#PWR079"
+			(at 222.25 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 221.742 19.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 228.6 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 228.6 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4d123bbf-856d-4ec2-a46b-9d1ce66c6238")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR079")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 69.85 158.75 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8ac42687-6255-4f1f-8944-7081eff0b903")
+		(property "Reference" "#PWR063"
+			(at 73.66 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 66.04 158.7499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6403,7 +11495,140 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 73.66 20.32 0)
+			(at 69.85 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a0b649d1-21b7-4181-b03f-277692384e1c")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR063")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 185.42 113.03 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8ef80551-33f5-410c-bbc2-f747c9369982")
+		(property "Reference" "#PWR053"
+			(at 189.23 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 181.61 113.0299 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 185.42 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 185.42 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 185.42 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "04494d02-78e1-4e9c-af95-70e22b6d1dd6")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR053")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 69.85 20.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9088f55f-a19d-420e-a925-5341e9c47b0b")
+		(property "Reference" "#PWR07"
+			(at 69.85 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 69.85 15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 69.85 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6485,6 +11710,73 @@
 			(project "ch32v305-radioset"
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "#PWR043")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 151.13 27.94 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9228642f-2187-4e12-be92-ffde200bf480")
+		(property "Reference" "#PWR070"
+			(at 151.13 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 150.876 35.052 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 151.13 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 151.13 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fc19d536-018f-4144-9214-26c0a5507d0d")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR070")
 					(unit 1)
 				)
 			)
@@ -6645,6 +11937,140 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 269.24 19.05 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9b507e10-dde7-40ee-a061-cf3c2c858378")
+		(property "Reference" "J5"
+			(at 271.78 17.7799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MH"
+			(at 271.78 20.3199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad"
+			(at 269.24 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 269.24 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 269.24 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4984937f-7c4e-4a36-812e-048485d2a415")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 259.08 148.59 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9bdd995a-5072-452a-b874-fab0e36035cb")
+		(property "Reference" "#PWR058"
+			(at 265.43 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 265.938 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 259.08 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 259.08 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 259.08 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "375dd948-53ae-4f85-9fc3-b3f3d683483a")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR058")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Swadge_Parts:R_US")
 		(at 49.53 45.72 270)
 		(unit 1)
@@ -6766,6 +12192,140 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3V")
+		(at 137.16 44.45 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9ce707b6-698c-44ad-a138-0314cdb94d61")
+		(property "Reference" "#PWR084"
+			(at 140.97 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 133.35 44.4499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 137.16 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 137.16 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 137.16 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "924a78a8-640b-4205-9c30-2015ffb26d94")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR084")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 69.85 135.89 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a1496ff9-89b0-4c9d-a11a-59abdcdd150c")
+		(property "Reference" "#PWR060"
+			(at 73.66 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 66.04 135.8899 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 69.85 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a8164f64-28a6-4c2e-9fad-c45400e65f47")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR060")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:L")
 		(at 146.05 99.06 90)
 		(unit 1)
@@ -6783,7 +12343,7 @@
 				)
 			)
 		)
-		(property "Value" "1uH"
+		(property "Value" "470nH"
 			(at 146.05 96.52 90)
 			(effects
 				(font
@@ -6818,7 +12378,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C963789"
+		(property "LCSC" "C84476"
 			(at 146.05 99.06 90)
 			(effects
 				(font
@@ -6978,7 +12538,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 248.92 59.69 90)
+		(at 259.08 55.88 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6987,7 +12547,7 @@
 		(dnp no)
 		(uuid "a66cce89-a54b-450e-8ad3-8bacece6984c")
 		(property "Reference" "#PWR08"
-			(at 255.27 59.69 0)
+			(at 265.43 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6996,7 +12556,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 255.778 59.69 90)
+			(at 265.938 55.88 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7005,7 +12565,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 248.92 59.69 0)
+			(at 259.08 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7014,7 +12574,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 248.92 59.69 0)
+			(at 259.08 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7023,7 +12583,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 248.92 59.69 0)
+			(at 259.08 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7156,7 +12716,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "cnhardware:USB_C_MOD_Receptacle_HRO_TYPE-C-31-M-12"
 			(at 34.29 40.64 0)
 			(effects
 				(font
@@ -7247,8 +12807,75 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 38.1 147.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "afcdc3f4-fc7b-444a-b525-e55884d3ca3e")
+		(property "Reference" "J18"
+			(at 40.64 146.0499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SWCLK3"
+			(at 40.64 148.5899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 38.1 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 38.1 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 38.1 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8c07d64a-0dbf-404a-8193-abe1ea37ab32")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
-		(at 83.82 27.94 0)
+		(at 80.01 27.94 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7257,7 +12884,7 @@
 		(dnp no)
 		(uuid "b21c93d4-6148-43bb-9700-6194310e4cb9")
 		(property "Reference" "#PWR013"
-			(at 83.82 34.29 0)
+			(at 80.01 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7266,7 +12893,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 85.344 31.75 0)
+			(at 81.534 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7275,7 +12902,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 83.82 27.94 0)
+			(at 80.01 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7284,7 +12911,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 83.82 27.94 0)
+			(at 80.01 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7293,7 +12920,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 83.82 27.94 0)
+			(at 80.01 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7308,6 +12935,73 @@
 			(project "ch32v305-radioset"
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 38.1 139.7 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b2299c1f-929a-405e-94d1-d8546852914f")
+		(property "Reference" "J17"
+			(at 40.64 138.4299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SWCLK2"
+			(at 40.64 140.9699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 38.1 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 38.1 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 38.1 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "63f331c3-1438-4fdf-8c2a-b92a093a0d53")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J17")
 					(unit 1)
 				)
 			)
@@ -7375,6 +13069,140 @@
 			(project "ch32v305-radioset"
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "#PWR032")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 69.85 133.35 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b4656b5d-0394-42e3-bda4-afee726c721b")
+		(property "Reference" "#PWR059"
+			(at 73.66 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 66.04 133.3499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 69.85 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7c8a6231-8ca2-4e9b-a2f9-7ffb0c664230")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR059")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 100.33 27.94 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b675af13-6113-4722-884c-78f56f7a132e")
+		(property "Reference" "#PWR074"
+			(at 100.33 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 101.854 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 100.33 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.33 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 100.33 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aa01b78e-b970-4ac9-8133-00797d0da0f6")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR074")
 					(unit 1)
 				)
 			)
@@ -7462,6 +13290,407 @@
 			(project "ch32v305-radioset"
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "cnhardware:CH570Q")
+		(at 222.25 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b747ca06-c621-4f44-9bc5-56266977423b")
+		(property "Reference" "U4"
+			(at 222.25 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CH570Q"
+			(at 222.25 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DFN_QFN:DFN-10-1EP_3x3mm_P0.5mm_EP1.7x2.5mm"
+			(at 222.504 68.326 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 222.25 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 222.25 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C49260680"
+			(at 222.25 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "7"
+			(uuid "90a81b2e-e859-4823-a45a-8df6a2cd8aea")
+		)
+		(pin "10"
+			(uuid "f3883560-0b6b-4f72-986e-c3f38f0f6d21")
+		)
+		(pin "9"
+			(uuid "b128c17f-9e27-4afd-a38d-8c24fd2bad85")
+		)
+		(pin "1"
+			(uuid "8749f3fa-3879-4e2c-b3b3-cfeca1422aa9")
+		)
+		(pin "2"
+			(uuid "066c11b5-90ed-49d7-9a18-98303b0edf58")
+		)
+		(pin "3"
+			(uuid "e14b015f-3437-4495-ada2-0be305145ea3")
+		)
+		(pin "4"
+			(uuid "ffd7883a-08c2-47d8-8a36-3547d1aed928")
+		)
+		(pin "5"
+			(uuid "b80bfb62-ce3b-4d4b-a165-d3f9e72b3ee9")
+		)
+		(pin "6"
+			(uuid "9cabba5d-a17c-4bf1-9385-3a8d7c09ebca")
+		)
+		(pin "11"
+			(uuid "37238c48-4971-486f-8679-05f625e188e1")
+		)
+		(pin "8"
+			(uuid "57c81458-cacc-4863-8644-8fe46d80ba08")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 154.94 179.07 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b87a0017-304d-41a1-9fca-44f2e4cd9240")
+		(property "Reference" "A2"
+			(at 154.94 172.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 154.94 175.26 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "RF_Antenna:Coilcraft_MA5532-AE_RFID"
+			(at 154.94 180.848 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 154.94 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 154.94 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C99665"
+			(at 154.94 179.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "5d2d4f02-d4af-4527-a8f8-3f011a96746d")
+		)
+		(pin "1"
+			(uuid "9047f7d5-f6c3-4efb-99e4-4738e8e0fc8a")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "A2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 275.59 43.18 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b8cc88ce-9e58-489b-8dd7-1cdfa61f51d3")
+		(property "Reference" "A3"
+			(at 275.59 36.83 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 275.59 39.37 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "RF_Antenna:Coilcraft_MA5532-AE_RFID"
+			(at 275.59 44.958 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 275.59 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 275.59 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C99665"
+			(at 275.59 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "827758c5-145b-4848-824b-106e3b4ab5de")
+		)
+		(pin "1"
+			(uuid "c3e3eba1-aa55-4d63-9ed5-e1886e28adb3")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "A3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 118.11 44.45 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b91b899b-031b-455c-aab0-dbf0a171eda3")
+		(property "Reference" "#PWR083"
+			(at 111.76 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 110.998 44.196 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 118.11 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 118.11 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 118.11 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "338d757a-9345-44df-8e35-bb6608138730")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR083")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 267.97 43.18 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b957674b-a381-454d-af86-6af62bc10f25")
+		(property "Reference" "C23"
+			(at 265.176 40.132 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10p"
+			(at 271.272 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 271.78 42.2148 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 267.97 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 267.97 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C32949"
+			(at 267.97 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "fed33f2c-5cac-4e48-8881-e885f8d2a476")
+		)
+		(pin "1"
+			(uuid "bb302333-9bde-459b-8cb2-8246fdea1ed1")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "C23")
 					(unit 1)
 				)
 			)
@@ -7589,6 +13818,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3V")
+		(at 161.29 20.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bbdc1d04-3930-46ec-a1ee-e430dfcd8d78")
+		(property "Reference" "#PWR077"
+			(at 161.29 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 161.29 15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 161.29 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 161.29 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 161.29 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f1ec90fc-a4db-4ecd-8fc1-fe41e74efea3")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR077")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 130.81 24.13 0)
 		(unit 1)
@@ -7676,6 +13971,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 115.57 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bcd1afc0-7225-4ad4-83b1-bfac49249721")
+		(property "Reference" "J12"
+			(at 118.11 54.6099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TCOM1"
+			(at 118.11 57.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 115.57 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 115.57 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 115.57 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1af4b161-4db7-4b3d-8cee-7213b599172b")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 120.65 27.94 0)
 		(mirror y)
@@ -7737,6 +14099,73 @@
 			(project "ch32v305-radioset"
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "#PWR030")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 38.1 128.27 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "be490aa4-a711-44bd-86d0-6bcb1662b40a")
+		(property "Reference" "J15"
+			(at 40.64 126.9999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SWCLK0"
+			(at 40.64 129.5399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 38.1 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 38.1 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 38.1 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cc99d487-b746-4740-a271-754637e11872")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J15")
 					(unit 1)
 				)
 			)
@@ -7877,7 +14306,7 @@
 	)
 	(symbol
 		(lib_id "cnhardware:CH570Q")
-		(at 212.09 52.07 0)
+		(at 222.25 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7886,7 +14315,7 @@
 		(fields_autoplaced yes)
 		(uuid "c011bc8b-4f75-4f95-a403-c8939e338e0c")
 		(property "Reference" "U2"
-			(at 212.09 40.64 0)
+			(at 222.25 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7894,7 +14323,7 @@
 			)
 		)
 		(property "Value" "CH570Q"
-			(at 212.09 43.18 0)
+			(at 222.25 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7902,7 +14331,7 @@
 			)
 		)
 		(property "Footprint" "Package_DFN_QFN:DFN-10-1EP_3x3mm_P0.5mm_EP1.7x2.5mm"
-			(at 212.344 49.276 0)
+			(at 222.504 45.466 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7911,7 +14340,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 212.09 52.07 0)
+			(at 222.25 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7920,7 +14349,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 212.09 52.07 0)
+			(at 222.25 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7929,7 +14358,7 @@
 			)
 		)
 		(property "LCSC" "C49260680"
-			(at 212.09 46.99 0)
+			(at 222.25 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7981,7 +14410,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 78.74 24.13 0)
+		(at 74.93 24.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7989,7 +14418,7 @@
 		(dnp no)
 		(uuid "c3231b27-ed6c-4c64-8e60-bc58eae546a6")
 		(property "Reference" "C1"
-			(at 79.248 21.844 0)
+			(at 75.438 21.844 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7998,7 +14427,7 @@
 			)
 		)
 		(property "Value" "1u"
-			(at 78.994 26.416 0)
+			(at 75.184 26.416 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8007,7 +14436,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 79.7052 27.94 0)
+			(at 75.8952 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8016,7 +14445,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 78.74 24.13 0)
+			(at 74.93 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8025,7 +14454,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 78.74 24.13 0)
+			(at 74.93 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8034,7 +14463,7 @@
 			)
 		)
 		(property "LCSC" "C52923"
-			(at 78.74 24.13 0)
+			(at 74.93 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8043,7 +14472,7 @@
 			)
 		)
 		(property "Field6" ""
-			(at 78.74 24.13 0)
+			(at 74.93 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8067,8 +14496,75 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 210.82 19.05 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c4547383-d6a4-4f47-bf4b-2a39ebfd4696")
+		(property "Reference" "#PWR082"
+			(at 204.47 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 203.962 19.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 210.82 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 210.82 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 210.82 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e9cd9498-4250-4fda-820b-9c9291375c39")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR082")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
-		(at 99.06 24.13 0)
+		(at 95.25 24.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8076,7 +14572,7 @@
 		(dnp no)
 		(uuid "c737f31a-0d1d-4ab1-af54-2965c7a24a49")
 		(property "Reference" "C5"
-			(at 99.568 21.844 0)
+			(at 95.758 21.844 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8085,7 +14581,7 @@
 			)
 		)
 		(property "Value" "1u"
-			(at 99.314 26.416 0)
+			(at 95.504 26.416 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8094,7 +14590,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 100.0252 27.94 0)
+			(at 96.2152 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8103,7 +14599,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 99.06 24.13 0)
+			(at 95.25 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8112,7 +14608,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 99.06 24.13 0)
+			(at 95.25 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8121,7 +14617,7 @@
 			)
 		)
 		(property "LCSC" "C52923"
-			(at 99.06 24.13 0)
+			(at 95.25 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8130,7 +14626,7 @@
 			)
 		)
 		(property "Field6" ""
-			(at 99.06 24.13 0)
+			(at 95.25 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8222,7 +14718,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 83.82 24.13 0)
+		(at 80.01 24.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8230,7 +14726,7 @@
 		(dnp no)
 		(uuid "c91488f4-5527-45e4-beaf-249fa5920d61")
 		(property "Reference" "C2"
-			(at 84.328 21.844 0)
+			(at 80.518 21.844 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8239,7 +14735,7 @@
 			)
 		)
 		(property "Value" "1u"
-			(at 84.074 26.416 0)
+			(at 80.264 26.416 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8248,7 +14744,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 84.7852 27.94 0)
+			(at 80.9752 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8257,7 +14753,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 83.82 24.13 0)
+			(at 80.01 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8266,7 +14762,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 83.82 24.13 0)
+			(at 80.01 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8275,7 +14771,7 @@
 			)
 		)
 		(property "LCSC" "C52923"
-			(at 83.82 24.13 0)
+			(at 80.01 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8284,7 +14780,7 @@
 			)
 		)
 		(property "Field6" ""
-			(at 83.82 24.13 0)
+			(at 80.01 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8309,7 +14805,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 93.98 20.32 0)
+		(at 90.17 20.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8318,7 +14814,7 @@
 		(fields_autoplaced yes)
 		(uuid "cab26dfc-bd0a-4e44-8e3e-5a425f24b4d1")
 		(property "Reference" "#PWR018"
-			(at 93.98 24.13 0)
+			(at 90.17 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8327,7 +14823,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 93.98 15.24 0)
+			(at 90.17 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8335,7 +14831,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 93.98 20.32 0)
+			(at 90.17 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8344,7 +14840,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 93.98 20.32 0)
+			(at 90.17 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8353,7 +14849,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 93.98 20.32 0)
+			(at 90.17 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8435,6 +14931,72 @@
 			(project "ch32v305-radioset"
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "#PWR044")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 105.41 20.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cb1b94b7-c652-4345-b45f-7be43fbf260c")
+		(property "Reference" "#PWR075"
+			(at 105.41 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 105.41 15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 105.41 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 105.41 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 105.41 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2ce42904-a4d7-4105-b1de-ddf282258cf2")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR075")
 					(unit 1)
 				)
 			)
@@ -8596,7 +15158,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 175.26 46.99 90)
+		(at 185.42 43.18 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8605,7 +15167,7 @@
 		(fields_autoplaced yes)
 		(uuid "d640801f-3157-48e6-ab1b-9b4360a11dc9")
 		(property "Reference" "#PWR022"
-			(at 179.07 46.99 0)
+			(at 189.23 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8614,7 +15176,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 171.45 46.9899 90)
+			(at 181.61 43.1799 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8623,7 +15185,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 175.26 46.99 0)
+			(at 185.42 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8632,7 +15194,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 175.26 46.99 0)
+			(at 185.42 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8641,7 +15203,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 175.26 46.99 0)
+			(at 185.42 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8656,6 +15218,73 @@
 			(project ""
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "#PWR022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 215.9 19.05 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d86dca72-6e57-4108-9147-72cfebe42d8d")
+		(property "Reference" "J6"
+			(at 218.44 17.7799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MH"
+			(at 218.44 20.3199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad"
+			(at 215.9 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 215.9 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 215.9 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a31c8bba-e62d-49b0-a90b-36d09d90f5b6")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J6")
 					(unit 1)
 				)
 			)
@@ -8750,7 +15379,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 93.98 27.94 0)
+		(at 90.17 27.94 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8759,7 +15388,7 @@
 		(dnp no)
 		(uuid "dea6e50d-c4c3-412a-80b9-7ce5a15aef82")
 		(property "Reference" "#PWR019"
-			(at 93.98 34.29 0)
+			(at 90.17 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8768,7 +15397,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 95.504 31.75 0)
+			(at 91.694 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8777,7 +15406,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 93.98 27.94 0)
+			(at 90.17 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8786,7 +15415,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 93.98 27.94 0)
+			(at 90.17 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8795,7 +15424,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 93.98 27.94 0)
+			(at 90.17 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8817,16 +15446,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 99.06 27.94 0)
+		(at 105.41 27.94 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e1cdf586-d055-4ec1-a285-74f3b2307fc4")
-		(property "Reference" "#PWR021"
-			(at 99.06 34.29 0)
+		(uuid "dfd491d4-0fa6-4bde-aedf-25e3d77860a4")
+		(property "Reference" "#PWR076"
+			(at 105.41 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8835,7 +15464,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 100.584 31.75 0)
+			(at 106.934 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8844,7 +15473,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 99.06 27.94 0)
+			(at 105.41 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8853,7 +15482,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 99.06 27.94 0)
+			(at 105.41 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8862,7 +15491,151 @@
 			)
 		)
 		(property "Description" ""
-			(at 99.06 27.94 0)
+			(at 105.41 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5f7f5e40-d609-4461-9d4d-354a639c9364")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR076")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 275.59 66.04 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e1c64944-e93e-4401-b77c-4694bae7bda5")
+		(property "Reference" "A6"
+			(at 275.59 59.69 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 275.59 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_2010_5025Metric"
+			(at 275.59 67.818 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 275.59 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 275.59 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22467691"
+			(at 275.59 66.04 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "40cb40d7-be7e-408c-b932-3988c3cd8234")
+		)
+		(pin "1"
+			(uuid "d44b52cb-c407-4444-848b-13e8270a36e6")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "A6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 95.25 27.94 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e1cdf586-d055-4ec1-a285-74f3b2307fc4")
+		(property "Reference" "#PWR021"
+			(at 95.25 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 96.774 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 95.25 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 95.25 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 95.25 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8883,8 +15656,75 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 142.24 50.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e2981ebf-ac81-492b-8f97-0f3afb12f88a")
+		(property "Reference" "J9"
+			(at 144.78 49.5299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TCOM0"
+			(at 144.78 52.0699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 142.24 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 142.24 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 142.24 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ed52e945-92c9-400d-99f8-f0c3a26c443d")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
-		(at 175.26 49.53 90)
+		(at 185.42 45.72 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8893,7 +15733,7 @@
 		(fields_autoplaced yes)
 		(uuid "e3ea1347-ffcf-4366-9b3c-e2ee8b56bd8e")
 		(property "Reference" "#PWR02"
-			(at 179.07 49.53 0)
+			(at 189.23 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8902,7 +15742,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 171.45 49.5299 90)
+			(at 181.61 45.7199 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8911,7 +15751,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 175.26 49.53 0)
+			(at 185.42 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8920,7 +15760,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 175.26 49.53 0)
+			(at 185.42 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8929,7 +15769,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 175.26 49.53 0)
+			(at 185.42 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8951,7 +15791,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 99.06 20.32 0)
+		(at 95.25 20.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8960,7 +15800,7 @@
 		(fields_autoplaced yes)
 		(uuid "e8f908da-92e5-41a8-baec-595406e383db")
 		(property "Reference" "#PWR020"
-			(at 99.06 24.13 0)
+			(at 95.25 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8969,7 +15809,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 99.06 15.24 0)
+			(at 95.25 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8977,7 +15817,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 99.06 20.32 0)
+			(at 95.25 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8986,7 +15826,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 99.06 20.32 0)
+			(at 95.25 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8995,7 +15835,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 99.06 20.32 0)
+			(at 95.25 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9083,6 +15923,607 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 147.32 156.21 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "eadef803-ac46-4800-81f6-453e01566229")
+		(property "Reference" "C18"
+			(at 144.526 153.162 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10p"
+			(at 150.622 153.67 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 151.13 155.2448 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 147.32 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 147.32 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C32949"
+			(at 147.32 156.21 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "95169089-5679-4c07-be5b-131aabd8725e")
+		)
+		(pin "1"
+			(uuid "0e3adc69-00ea-416b-ae69-1df2ca73faac")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "C18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 93.98 44.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "eb017813-b813-4567-a394-ef6071cbd8da")
+		(property "Reference" "J13"
+			(at 96.52 43.1799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "COMSWD1"
+			(at 96.52 45.7199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 93.98 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 93.98 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 93.98 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0c8158ba-7264-458a-880f-9307daa5f4ef")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "cnhardware:CH570Q")
+		(at 222.25 140.97 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "eb9f2ff3-511a-4a67-988b-990fd45c88f6")
+		(property "Reference" "U7"
+			(at 222.25 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CH570Q"
+			(at 222.25 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DFN_QFN:DFN-10-1EP_3x3mm_P0.5mm_EP1.7x2.5mm"
+			(at 222.504 138.176 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 222.25 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 222.25 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C49260680"
+			(at 222.25 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "7"
+			(uuid "91752416-0a6b-4bba-a608-0bef29930f3a")
+		)
+		(pin "10"
+			(uuid "801e6726-c5cf-42a4-a753-27426ed53813")
+		)
+		(pin "9"
+			(uuid "8cd0c328-087e-4506-a58e-ecc37d278677")
+		)
+		(pin "1"
+			(uuid "7882342a-9b70-4141-807d-b6ab20358f25")
+		)
+		(pin "2"
+			(uuid "d4bb660e-a88c-4c19-a2d4-f40c20019d74")
+		)
+		(pin "3"
+			(uuid "7965cb09-6542-4d43-806a-15148c751026")
+		)
+		(pin "4"
+			(uuid "58a61b2a-2b39-4430-964a-ed6d77aadb51")
+		)
+		(pin "5"
+			(uuid "28cced23-4e1d-4664-91bd-16cfbc54ccb5")
+		)
+		(pin "6"
+			(uuid "45e3701a-93aa-4bfe-b7b3-6b75e1b171ee")
+		)
+		(pin "11"
+			(uuid "430b318c-176d-43df-adf4-b9e54cb898c6")
+		)
+		(pin "8"
+			(uuid "e4af1038-e773-4089-90cd-a2ce9d9fa7eb")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "U7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 246.38 19.05 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ec98d04f-1bba-4e45-b820-42ce4b9408f8")
+		(property "Reference" "#PWR080"
+			(at 240.03 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 239.522 19.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 246.38 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 246.38 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1733f0c6-4ada-4c6e-bae5-77c562519017")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR080")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 154.94 133.35 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "eda3ba9d-b5fe-4f5e-abaa-dc591267fedd")
+		(property "Reference" "A4"
+			(at 154.94 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 154.94 129.54 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "RF_Antenna:Coilcraft_MA5532-AE_RFID"
+			(at 154.94 135.128 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 154.94 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 154.94 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C99665"
+			(at 154.94 133.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "bb01041d-b8a8-4cd8-9270-2378e0663b7e")
+		)
+		(pin "1"
+			(uuid "c99a8c4b-d695-4620-8d2f-a28567a8dadb")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "A4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 143.51 168.91 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ee3f6cee-d8fc-4fa0-a96b-01d8c97db691")
+		(property "Reference" "#PWR064"
+			(at 149.86 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 150.368 168.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 143.51 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 143.51 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 143.51 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "59b9a082-4f1c-4cce-8f69-7c8ea26effbc")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR064")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 267.97 66.04 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ee68f33a-9532-4d36-9647-bee2ad93052c")
+		(property "Reference" "C17"
+			(at 265.176 62.992 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10p"
+			(at 271.272 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 271.78 65.0748 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 267.97 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 267.97 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C32949"
+			(at 267.97 66.04 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "12be729c-12ea-4c4c-83ad-490448a1b1f5")
+		)
+		(pin "1"
+			(uuid "85ba6b43-4159-4521-8966-ca4b1db07776")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "C17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 156.21 27.94 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ef294d24-2717-4704-81e3-5b963ef5cc09")
+		(property "Reference" "#PWR072"
+			(at 156.21 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 155.956 35.052 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 156.21 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 156.21 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 156.21 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e141957a-6865-495b-a51e-0064587ce0a6")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "#PWR072")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 78.74 86.36 90)
 		(unit 1)
@@ -9151,7 +16592,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 83.82 20.32 0)
+		(at 80.01 20.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9160,7 +16601,7 @@
 		(fields_autoplaced yes)
 		(uuid "fd4b955e-9198-4702-8efb-790ee444a971")
 		(property "Reference" "#PWR012"
-			(at 83.82 24.13 0)
+			(at 80.01 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9169,7 +16610,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 83.82 15.24 0)
+			(at 80.01 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9177,7 +16618,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 83.82 20.32 0)
+			(at 80.01 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9186,7 +16627,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 83.82 20.32 0)
+			(at 80.01 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9195,7 +16636,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 83.82 20.32 0)
+			(at 80.01 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9210,6 +16651,73 @@
 			(project "ch32v305-radioset"
 				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
 					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 142.24 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fd6ff78b-a2c4-46c6-aad4-df4a24b9ba4d")
+		(property "Reference" "J10"
+			(at 144.78 54.6099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RCOM0"
+			(at 144.78 57.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 142.24 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 142.24 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 142.24 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "174763eb-1e41-4dbd-973d-8661790a18ba")
+		)
+		(instances
+			(project "ch32v305-radioset"
+				(path "/57b5c8c4-cba4-463a-a768-ad8c54185005"
+					(reference "J10")
 					(unit 1)
 				)
 			)
