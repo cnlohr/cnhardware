@@ -88,7 +88,7 @@
         "items_not_allowed": "error",
         "length_out_of_range": "error",
         "lib_footprint_issues": "warning",
-        "lib_footprint_mismatch": "warning",
+        "lib_footprint_mismatch": "ignore",
         "malformed_courtyard": "error",
         "microvia_drill_out_of_range": "error",
         "mirrored_text_on_front_layer": "warning",
@@ -125,7 +125,7 @@
         "max_error": 0.005,
         "min_clearance": 0.0,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.5,
+        "min_copper_edge_clearance": 0.3,
         "min_groove_width": 0.0,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.25,
@@ -463,7 +463,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "ch570cr123.kicad_pro",
+    "filename": "ch570aaonlyswadge.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -499,8 +499,8 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "ch570cr123-revA",
-      "pos_files": "ch570cr123-revA/",
+      "plot": "ch570aaonlyswadge-rev-",
+      "pos_files": "ch570aaonlyswadge-rev-/",
       "specctra_dsn": "",
       "step": "",
       "svg": "",
@@ -510,7 +510,7 @@
   },
   "schematic": {
     "annotate_start_num": 0,
-    "bom_export_filename": "ch570cr123-revA/ch570cr123.csv",
+    "bom_export_filename": "ch570aaonlyswadge-rev-/ch570aaonlyswadge-rev-.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -619,6 +619,24 @@
           "group_by": false,
           "label": "Field6",
           "name": "Field6",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Notes",
+          "name": "Notes",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Device",
+          "name": "Sim.Device",
           "show": false
         }
       ],
