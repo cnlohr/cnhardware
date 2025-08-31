@@ -305,7 +305,7 @@ RF Stuff
 |[AD8318ACPZ-REEL7](https://datasheet.lcsc.com/lcsc/2009141605_Analog-Devices-AD8318ACPZ-REEL7_C578694.pdf)|[C578694](https://www.lcsc.com/product-detail/RF-Detectors_Analog-Devices-AD8318ACPZ-REEL7_C578694.html)|LFCSP-16|1MHz to 8GHz Log Signal Detector|6.4607|
 |[LMX2485SQX-NOPB](https://datasheet.lcsc.com/lcsc/2303011600_Texas-Instruments-LMX2485SQX-NOPB_C2662616.pdf)|[C2662616](https://www.lcsc.com/product-detail/Clock-Generators-Frequency-Synthesizers-PLL_Texas-Instruments-LMX2485SQX-NOPB_C2662616.html)|WQFN-24 (4x4)|500MHz - 3GHz Frequency Synthesizer|3.5621|
 
-Tuners:
+## Tuners / Up/Down Converters
 
  * RDA5815 - 250 to 2300MHz - I/Q output - $3.18 ea? mentioned by RFS on my discord.
  * MAX2120:
