@@ -305,6 +305,59 @@ RF Stuff
 |[AD8318ACPZ-REEL7](https://datasheet.lcsc.com/lcsc/2009141605_Analog-Devices-AD8318ACPZ-REEL7_C578694.pdf)|[C578694](https://www.lcsc.com/product-detail/RF-Detectors_Analog-Devices-AD8318ACPZ-REEL7_C578694.html)|LFCSP-16|1MHz to 8GHz Log Signal Detector|6.4607|
 |[LMX2485SQX-NOPB](https://datasheet.lcsc.com/lcsc/2303011600_Texas-Instruments-LMX2485SQX-NOPB_C2662616.pdf)|[C2662616](https://www.lcsc.com/product-detail/Clock-Generators-Frequency-Synthesizers-PLL_Texas-Instruments-LMX2485SQX-NOPB_C2662616.html)|WQFN-24 (4x4)|500MHz - 3GHz Frequency Synthesizer|3.5621|
 
+Tuners:
+
+ * RDA5815 - 250 to 2300MHz - I/Q output - $3.18 ea? mentioned by RFS on my discord.
+ * MAX2120:
+   * $3
+   * Officially 925 to 2175MHz
+   * Probably works down at around 860-930MHz Not Does not work for 2.4GHz
+   * 1 SS I/Q Output
+   * Fully integrated
+   * Programmable bandwidth 4-40MHz
+   * Analog Out
+ * RF2051TR13
+   * $8
+   * 30 to 2500MHz
+   * 2SS Real Only
+   * Analog Out
+   * Fully integrated. Unknown bandwidth control.
+ * at86rf215:
+   * $6
+   * 389 to 2483 MHz, but spotty random parts (Supports 860-930 OR  2.4GHz)
+   * 1 SS I/Q Output
+   * Fully integated
+   * ⚠️ May not be able to interface to CH32V305
+   * 4MHz Bandwidth MAX
+ * R820T2:
+   * $3
+   * Supports 50M-1GHz
+   * 30 - 1800MHz realistically.
+   * IF output ONLY
+   * Would require 20MSPS ADC.
+
+Downconverter:
+ * LTC5567
+   * 300 MHz to 4GHz
+   * $6.197 $1
+   * Downconverter only real only, output must be AC, 5 to 2500 MHz
+   * No internal PLL
+ * ADL5801
+   * 10 to 6000 MHz
+   * $6.47 @ 100
+   * Up/down converter (Real only, no oscallator)
+ * LT5560
+   * 0.01 to 4000 MHz
+   * $3.58 @ 100
+   * Seems very basic and generic (Interesting)  Looks like it can downconvert close to DC?
+ * AD8342
+   * Low to 3800 MHz
+   * $1.95 @ 100
+   * Seems basic and generic.
+
+FYI INMARSAT Aero is 3600 - 3629MHz
+
+
 ## HTS Codes
 
 AS OF MAY 18, 2023
