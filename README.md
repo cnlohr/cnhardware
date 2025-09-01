@@ -355,6 +355,27 @@ Downconverter:
    * $1.95 @ 100
    * Seems basic and generic.
 
+Synthesizer:
+ * ADF4350
+   * $4.87 @ 100
+   * No quadrature output
+   * 137.5 to 4400 MHz
+ * ADF4351
+   * $12.98 @ 100
+   * No quadrature output
+   * 35 to 4400 MHz
+ * SI5351A
+   * $0.55 @ 1000
+   * 2.5kHz to 200MHz
+   * 3 unique outputs
+ * ADF4106
+   * $3.30 @ 1000
+   * But dual-part, "Could" go up to 6GHz but needs to be paired with a VCO 
+ * LMX2572
+   * $10ish
+   * 12.5MHz to 6.4GHz
+   * Two outputs
+
 FYI INMARSAT Aero is 3600 - 3629MHz
 
 
