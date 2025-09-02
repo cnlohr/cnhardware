@@ -355,6 +355,18 @@ Downconverter:
    * $1.95 @ 100
    * Seems basic and generic.
 
+IQ Demodulator
+ * LTC5586
+   * $20 ($9.66 @ 1k)
+   * 300 to 6000MHz
+   * Includes PGA
+   * Quadrature output with single fLO
+ * LTC5594
+   * $40 ($19.39 @ 1k)
+   * 500 to 9000MHz
+   * Includes PGA
+   * Quadrature output with single fLO
+
 Synthesizer:
  * ADF4350
    * $4.87 @ 100
@@ -370,6 +382,7 @@ Synthesizer:
    * 3 unique outputs
  * ADF4106
    * $3.30 @ 1000
+   * REQUIRES External PLL!
    * But dual-part, "Could" go up to 6GHz but needs to be paired with a VCO 
  * LMX2572
    * $10ish
