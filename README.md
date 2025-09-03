@@ -366,6 +366,11 @@ IQ Demodulator
    * 500 to 9000MHz
    * Includes PGA
    * Quadrature output with single fLO
+ * ADL5380ACPZ-R7
+   * 400 to 6000 MHz
+   * $14 ($9@1k)
+   * Looks very simple and clear.
+   * Recommend broad spectrum balun TCM1-63AX+
 
 Synthesizer:
  * ADF4350
