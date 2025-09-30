@@ -3009,6 +3009,12 @@
 		(uuid "6a3b0615-9ebd-4cc8-aec0-244fa42431de")
 	)
 	(junction
+		(at 107.95 130.81)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8fe72475-0d48-4c0a-b503-961aceadc810")
+	)
+	(junction
 		(at 107.95 120.65)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3055,6 +3061,16 @@
 			(type default)
 		)
 		(uuid "0d302150-d125-46e3-aa57-e3d49e64ec39")
+	)
+	(wire
+		(pts
+			(xy 107.95 130.81) (xy 107.95 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ec98b27-1050-442b-86cc-28bcc5839ad4")
 	)
 	(wire
 		(pts
@@ -3288,7 +3304,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 129.54) (xy 107.95 132.08)
+			(xy 107.95 129.54) (xy 107.95 130.81)
 		)
 		(stroke
 			(width 0)
@@ -3308,7 +3324,7 @@
 	)
 	(global_label "SBU"
 		(shape input)
-		(at 129.54 97.79 0)
+		(at 115.57 130.81 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3316,9 +3332,9 @@
 			)
 			(justify left)
 		)
-		(uuid "02b12790-8c58-44cd-8d5b-c305cea9de97")
+		(uuid "04fbc280-41b9-4ed8-adc4-1e330d994153")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 136.3352 97.79 0)
+			(at 122.3652 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3693,28 +3709,6 @@
 		(uuid "7890251e-3dbb-4608-b839-634812045619")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 114.4755 115.4906 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "SBU"
-		(shape input)
-		(at 107.95 132.08 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "8e7d6095-d4ac-4e98-a3c9-94f09e3f513d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 114.7452 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4923,6 +4917,84 @@
 			(project "badapple006"
 				(path "/88f86251-37ea-456e-9a8e-c00115fc8776"
 					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 111.76 130.81 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2a56180e-1cc3-4e33-ad22-d8d2b594e7d2")
+		(property "Reference" "C12"
+			(at 109.728 136.144 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10u6.3v"
+			(at 108.458 134.112 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 107.95 131.7752 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 111.76 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 111.76 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15525"
+			(at 111.76 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4e7a33b0-366b-40e0-bea2-8071d78e332d")
+		)
+		(pin "2"
+			(uuid "78d2e631-2539-434a-a21a-e0c3a5ca7276")
+		)
+		(instances
+			(project "badapple006"
+				(path "/88f86251-37ea-456e-9a8e-c00115fc8776"
+					(reference "C12")
 					(unit 1)
 				)
 			)
