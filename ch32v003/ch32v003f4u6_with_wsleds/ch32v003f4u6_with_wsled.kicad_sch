@@ -2598,27 +2598,41 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Regulator_Linear:NCP115AMX120TCG"
+		(symbol "Regulator_Linear:AZ1117-5.0"
+			(pin_names
+				(offset 0.254)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "U"
-				(at 2.54 10.16 0)
+				(at -3.81 3.175 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "NCP115AMX120TCG"
-				(at 10.16 7.62 0)
+			(property "Value" "AZ1117-5.0"
+				(at 0 3.175 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Footprint" "Package_DFN_QFN:OnSemi_XDFN4-1EP_1.0x1.0mm_EP0.52x0.52mm"
+			(property "Footprint" ""
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.diodes.com/assets/Datasheets/AZ1117.pdf"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2627,7 +2641,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NCP115-D.PDF"
+			(property "Description" "1A 20V Fixed LDO Linear Regulator, 5.0V, SOT-89/SOT-223/TO-220/TO-252/TO-263"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2636,7 +2650,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "300mA Low-Dropout Linear Regulators, 1.2V output voltage, LDO with low noise and enable pin, XDFN-4"
+			(property "ki_keywords" "Fixed Voltage Regulator 1A Positive LDO"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2645,7 +2659,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "Single Output LDO"
+			(property "ki_fp_filters" "SOT?223* SOT?89* TO?220* TO?252* TO?263*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2654,19 +2668,10 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "OnSemi*XDFN4*1EP*1.0x1.0mm*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "NCP115AMX120TCG_0_1"
+			(symbol "AZ1117-5.0_0_1"
 				(rectangle
-					(start -7.62 5.08)
-					(end 7.62 -5.08)
+					(start -5.08 1.905)
+					(end 5.08 -5.08)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -2676,29 +2681,11 @@
 					)
 				)
 			)
-			(symbol "NCP115AMX120TCG_1_1"
+			(symbol "AZ1117-5.0_1_1"
 				(pin power_in line
-					(at -10.16 2.54 0)
+					(at -7.62 0 0)
 					(length 2.54)
-					(name "IN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -10.16 -2.54 0)
-					(length 2.54)
-					(name "EN"
+					(name "VI"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2723,26 +2710,7 @@
 							)
 						)
 					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -7.62 90)
-					(length 2.54)
-					(hide yes)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2751,16 +2719,16 @@
 					)
 				)
 				(pin power_out line
-					(at 10.16 2.54 180)
+					(at 7.62 0 180)
 					(length 2.54)
-					(name "OUT"
+					(name "VO"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "1"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4314,6 +4282,16 @@
 			(justify left bottom)
 		)
 		(uuid "a30fa01f-9628-4132-9b71-ce8fc69e764f")
+	)
+	(text "How to rv003usb program"
+		(exclude_from_sim no)
+		(at 42.418 138.684 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "b8c71bcb-c784-4e58-9ec1-e30640a7aa60")
 	)
 	(text "1k-10k\nOK"
 		(exclude_from_sim no)
@@ -6654,72 +6632,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 151.13 34.29 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "08882b26-d63f-4207-b434-08954f23105b")
-		(property "Reference" "#PWR0138"
-			(at 154.94 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 143.51 34.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 151.13 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 151.13 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 151.13 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b01e87b6-8ae9-4801-9ac9-a6d7bef81008")
-		)
-		(instances
-			(project ""
-				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
-					(reference "#PWR0138")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:VD")
 		(at 227.33 57.15 90)
 		(unit 1)
@@ -6780,92 +6692,6 @@
 			(project ""
 				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
 					(reference "#PWR0126")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Regulator_Linear:NCP115AMX120TCG")
-		(at 161.29 31.75 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1275c285-dcc4-4121-beb2-a038930ee6df")
-		(property "Reference" "U2"
-			(at 161.29 22.9702 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "3.3vReg"
-			(at 161.29 25.5071 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "xdfn_reg:xdfn-reg"
-			(at 161.29 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NCP115-D.PDF"
-			(at 161.29 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 161.29 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C81114"
-			(at 161.29 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9602213a-1314-4d07-9207-7fb5e4be0836")
-		)
-		(pin "2"
-			(uuid "7eabc692-8609-46c8-a401-05b77d58ae40")
-		)
-		(pin "3"
-			(uuid "44cf3af4-2ed4-4ee0-b236-874cdaca8685")
-		)
-		(pin "4"
-			(uuid "04f2ae4d-6353-495c-976e-7c0a0c1f0c27")
-		)
-		(pin "5"
-			(uuid "2d887fd3-56df-404b-b539-dada5992e9da")
-		)
-		(instances
-			(project ""
-				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
-					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -7392,8 +7218,8 @@
 		(at 40.64 151.13 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(in_bom no)
+		(on_board no)
 		(dnp no)
 		(uuid "3e04cd05-646b-43cd-8b01-cf30e36cad80")
 		(property "Reference" "R8"
@@ -7612,6 +7438,72 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 205.74 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "417917a8-63c9-4538-9197-b4654f325c35")
+		(property "Reference" "#PWR05"
+			(at 205.74 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 205.74 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 205.74 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 205.74 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 205.74 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5c94b24f-103e-4092-b080-ccfb4ea58fb4")
+		)
+		(instances
+			(project "ch32v003f4u6_with_wsled"
+				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
+					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 91.44 138.43 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7738,72 +7630,6 @@
 			(project ""
 				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
 					(reference "#PWR0133")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 151.13 29.21 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4ab96c0d-5335-49bc-9754-e46cc30f5156")
-		(property "Reference" "#PWR0137"
-			(at 154.94 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 143.51 29.21 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 151.13 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 151.13 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 151.13 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5f127e9e-9a2c-4ce6-b36a-5bac1b173910")
-		)
-		(instances
-			(project ""
-				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
-					(reference "#PWR0137")
 					(unit 1)
 				)
 			)
@@ -9749,8 +9575,8 @@
 		(at 48.26 147.32 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(in_bom no)
+		(on_board no)
 		(dnp no)
 		(uuid "9a8404d6-3bef-4979-9342-07a0338d2abd")
 		(property "Reference" "C6"
@@ -10590,72 +10416,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 161.29 39.37 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a76d173c-6bd6-4200-827b-90dc20778e08")
-		(property "Reference" "#PWR0136"
-			(at 161.29 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 161.29 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 161.29 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 161.29 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 161.29 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "63a102d0-618e-4096-9f05-202cde02d1fd")
-		)
-		(instances
-			(project ""
-				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
-					(reference "#PWR0136")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 123.19 121.92 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11275,6 +11035,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:VCC")
+		(at 213.36 27.94 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c04254c5-36ef-4a05-bbce-b1a58e1a7296")
+		(property "Reference" "#PWR06"
+			(at 209.55 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VCC"
+			(at 216.535 28.3738 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 213.36 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 213.36 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "70d69abb-c507-47f6-bbf2-5b6373043488")
+		)
+		(instances
+			(project "ch32v003f4u6_with_wsled"
+				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
+					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VD")
 		(at 177.8 57.15 90)
 		(unit 1)
@@ -11485,73 +11312,6 @@
 			(project ""
 				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
 					(reference "D6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VCC")
-		(at 171.45 29.21 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cc140718-c5c7-4322-8259-46f2f679894e")
-		(property "Reference" "#PWR0139"
-			(at 167.64 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VCC"
-			(at 174.625 29.6438 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 171.45 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 171.45 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 171.45 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c3238833-8922-4205-863a-3945120c9599")
-		)
-		(instances
-			(project ""
-				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
-					(reference "#PWR0139")
 					(unit 1)
 				)
 			)
@@ -11981,6 +11741,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 198.12 27.94 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e6de99f0-3e2b-4a29-86d6-b0473beca2e5")
+		(property "Reference" "#PWR04"
+			(at 201.93 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 190.5 27.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 198.12 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 198.12 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 198.12 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c58e8d6a-4f9b-46ec-8bf4-793f73cf7346")
+		)
+		(instances
+			(project "ch32v003f4u6_with_wsled"
+				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
+					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 36.83 165.1 0)
 		(unit 1)
@@ -12324,6 +12150,87 @@
 			(project ""
 				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
 					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Regulator_Linear:AZ1117-5.0")
+		(at 205.74 27.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fab79386-eeb3-4dca-aeb7-d2259de54ca5")
+		(property "Reference" "U3"
+			(at 205.74 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "XC6206P332"
+			(at 205.74 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 205.74 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 205.74 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "200mA 3.3V LDO"
+			(at 205.74 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5446"
+			(at 205.74 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cc4c8041-6a44-45af-8325-9aa203c3add6")
+		)
+		(pin "2"
+			(uuid "976700ff-fcf7-4fc3-9dd3-4db66c46c410")
+		)
+		(pin "3"
+			(uuid "8f639e88-46f5-4ffe-b453-7fd43879403f")
+		)
+		(instances
+			(project "ch32v003f4u6_with_wsled"
+				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
+					(reference "U3")
 					(unit 1)
 				)
 			)
