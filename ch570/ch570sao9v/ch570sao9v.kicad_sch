@@ -3526,6 +3526,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Question: Can we re-use BS1 after boot?"
+		(exclude_from_sim no)
+		(at 58.166 26.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "63ad4c38-5768-4c93-9517-886b71a442b4")
+	)
 	(text "Vfb = 0.596\n0.596/(51/251) = Vdd = 2.93V\n0.596/(33/133) = Vdd = 2.4V"
 		(exclude_from_sim no)
 		(at 205.232 154.94 0)
@@ -3587,6 +3597,12 @@
 		(uuid "b7dcc331-2e8d-42ab-85bc-76e378f14bb4")
 	)
 	(junction
+		(at 106.68 127)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c3a4e642-db8d-491b-9b95-050f9ce48897")
+	)
+	(junction
 		(at 208.28 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3628,6 +3644,16 @@
 	)
 	(wire
 		(pts
+			(xy 106.68 140.97) (xy 106.68 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16a1a327-1455-41f0-abbf-01b2175357e4")
+	)
+	(wire
+		(pts
 			(xy 237.49 140.97) (xy 238.76 140.97)
 		)
 		(stroke
@@ -3655,6 +3681,16 @@
 			(type default)
 		)
 		(uuid "2b045f54-b8b6-4943-81f1-731310ec463c")
+	)
+	(wire
+		(pts
+			(xy 109.22 140.97) (xy 106.68 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b260c70-6944-45b7-8083-f763b7a11250")
 	)
 	(wire
 		(pts
@@ -3718,7 +3754,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 127) (xy 109.22 127)
+			(xy 99.06 127) (xy 106.68 127)
 		)
 		(stroke
 			(width 0)
@@ -3755,6 +3791,16 @@
 			(type default)
 		)
 		(uuid "638e2cac-17a0-4694-ab8e-3bc8461d4663")
+	)
+	(wire
+		(pts
+			(xy 106.68 127) (xy 109.22 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "690bed79-ad71-44bd-a0c7-783fdcb18758")
 	)
 	(wire
 		(pts
@@ -4948,6 +4994,73 @@
 			(project "ch570sao"
 				(path "/8b3ca9c1-ec01-472e-975f-b13c767b5c47"
 					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 109.22 146.05 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "118194c8-3091-408d-b294-287a4176474f")
+		(property "Reference" "TP9"
+			(at 114.3 144.7799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 114.3 147.3199 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 109.22 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 109.22 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 109.22 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b5c860c2-9476-4573-a91c-1a2a5b4ebcf0")
+		)
+		(instances
+			(project "ch570sao9v"
+				(path "/8b3ca9c1-ec01-472e-975f-b13c767b5c47"
+					(reference "TP9")
 					(unit 1)
 				)
 			)
@@ -6198,6 +6311,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 203.2 96.52 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3923e5fd-9a15-453f-9143-3a3638110f35")
+		(property "Reference" "TP8"
+			(at 208.28 95.2499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 208.28 97.7899 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 203.2 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 203.2 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 203.2 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a016e1a6-5f22-494b-8d90-fb986b2bcbd0")
+		)
+		(instances
+			(project "ch570sao9v"
+				(path "/8b3ca9c1-ec01-472e-975f-b13c767b5c47"
+					(reference "TP8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:Crystal_GND24_Small")
 		(at 119.38 35.56 0)
 		(mirror y)
@@ -6687,6 +6867,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 109.22 140.97 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "50226e77-a6f1-414e-9573-32c7b2ace28e")
+		(property "Reference" "TP7"
+			(at 114.3 139.6999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "VBAT"
+			(at 114.3 142.2399 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 109.22 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 109.22 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 109.22 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b19c979c-70cb-4b77-978a-3ae048adcff6")
+		)
+		(instances
+			(project "ch570sao9v"
+				(path "/8b3ca9c1-ec01-472e-975f-b13c767b5c47"
+					(reference "TP7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:L_Small")
 		(at 234.95 135.89 90)
 		(unit 1)
@@ -6758,6 +7005,72 @@
 			(project "ch570sao"
 				(path "/8b3ca9c1-ec01-472e-975f-b13c767b5c47"
 					(reference "L2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 109.22 146.05 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5273938b-5a37-41f2-96a2-a2b43b5457bb")
+		(property "Reference" "#PWR058"
+			(at 102.87 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 101.6 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 109.22 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 109.22 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 109.22 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fd64b184-89ba-4f05-bd35-74295a6ff9ef")
+		)
+		(instances
+			(project "ch570sao9v"
+				(path "/8b3ca9c1-ec01-472e-975f-b13c767b5c47"
+					(reference "#PWR058")
 					(unit 1)
 				)
 			)
@@ -10071,6 +10384,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 203.2 96.52 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c382ea28-c640-4b5e-9643-24307556dfbf")
+		(property "Reference" "#PWR057"
+			(at 196.85 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 195.58 96.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 203.2 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 203.2 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 203.2 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "18ca0f45-4c83-4637-9bc5-8f4ccce7dd01")
+		)
+		(instances
+			(project "ch570sao9v"
+				(path "/8b3ca9c1-ec01-472e-975f-b13c767b5c47"
+					(reference "#PWR057")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VPP")
 		(at 281.94 134.62 0)
 		(unit 1)
@@ -11487,16 +11866,16 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_SPDT")
-		(at 114.3 127 0)
+		(at 114.3 124.46 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "f889708e-d771-4a69-9443-32210b9b172a")
 		(property "Reference" "SW4"
-			(at 114.3 118.11 0)
+			(at 114.3 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11504,7 +11883,7 @@
 			)
 		)
 		(property "Value" "SW_SPDT"
-			(at 114.3 120.65 0)
+			(at 114.3 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11512,7 +11891,7 @@
 			)
 		)
 		(property "Footprint" "swadgeparts:SW_SPDT_PCM12"
-			(at 114.3 127 0)
+			(at 114.3 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11521,7 +11900,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 114.3 134.62 0)
+			(at 114.3 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11530,7 +11909,7 @@
 			)
 		)
 		(property "Description" "Switch, single pole double throw"
-			(at 114.3 127 0)
+			(at 114.3 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11539,7 +11918,7 @@
 			)
 		)
 		(property "LCSC" "C221841"
-			(at 114.3 127 0)
+			(at 114.3 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
