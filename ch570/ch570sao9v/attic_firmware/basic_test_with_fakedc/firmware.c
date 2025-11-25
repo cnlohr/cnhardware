@@ -43,11 +43,12 @@
 
 volatile uint32_t lastfifo = 0;
 
+// This is triggered after the timer capture event happens.
 void TMR1_IRQHandler(void) __attribute__((interrupt))  __attribute__((section(".srodata")));
 void TMR1_IRQHandler(void)
 {
-	R8_TMR_INT_FLAG = 2;
-	lastfifo = R32_TMR_FIFO;
+	R8_TMR_INT_FLAG = 2; // Clear flag
+	lastfifo = R32_TMR_FIFO; // Read out time.
 	funPinMode( PA2, GPIO_ModeOut_PP_20mA ); // Lock measurement pin back down.
 }
 
