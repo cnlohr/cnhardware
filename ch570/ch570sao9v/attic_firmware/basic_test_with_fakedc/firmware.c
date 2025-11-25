@@ -39,6 +39,7 @@ uint32_t count;
 // This speed is dependent on the schmitt trigger, the resistor, capacitor and voltage
 // on the other side of the resistor. Thankfully most of these can be calibrated!
 //
+// All 4 readings take about 735us (Assuming C=10nF, R=33k)
 
 #define CAPACITANCE 0.00000001
 #define RESISTANCE  33000.0
@@ -144,6 +145,11 @@ int main()
 
 		uint32_t pressures[4];
 
+		funDigitalWrite( SSD1306_DC_PIN, 0 ); // Profile
+
+		ssd1306_setbuf(0x00);
+		funDigitalWrite( SSD1306_DC_PIN, 1 ); // Profile
+
 		int btn = 0;
 		for( btn = 0; btn < 4; btn++ )
 		{
@@ -178,10 +184,11 @@ int main()
 			int vtot = COEFFICIENT/r + ((const uint32_t)(VREF*FIXEDPOINT_SCALE));
 			pressures[btn] = vtot - 70;
 		}
+		funDigitalWrite( SSD1306_DC_PIN, 0 ); // 
+
 		debug = SysTick->CNT - start;
 		frameno++;
 		
-		ssd1306_setbuf(0x00);
 
 		char st[128];
 		sprintf( st, "%08x", (int)SysTick->CNT );
