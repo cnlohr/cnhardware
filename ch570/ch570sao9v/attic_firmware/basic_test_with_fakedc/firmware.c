@@ -33,6 +33,12 @@ uint32_t count;
 // This is functionally like this code except it doesn't rely on an ADC.
 //   https://github.com/cnlohr/ch32fun/tree/master/examples_ch5xx/comparator_adc_demo
 //
+// This code drives a pin low, then releases it and sees how long it takes for it to
+// traverse from 0V to the trigger voltage. 
+//
+// This speed is dependent on the schmitt trigger, the resistor, capacitor and voltage
+// on the other side of the resistor. Thankfully most of these can be calibrated!
+//
 
 #define CAPACITANCE 0.00000001
 #define RESISTANCE  33000.0
