@@ -30,6 +30,9 @@ uint32_t count;
 // Fake digital-to-analog, by looking at the time constant on a capcaitor
 // and waiting for the scmitt trigger flip.
 //
+// This is functionally like this code except it doesn't rely on an ADC.
+//   https://github.com/cnlohr/ch32fun/tree/master/examples_ch5xx/comparator_adc_demo
+//
 
 #define CAPACITANCE 0.00000001
 #define RESISTANCE  33000.0
