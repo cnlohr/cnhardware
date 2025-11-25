@@ -48,7 +48,7 @@ void TMR1_IRQHandler(void)
 {
 	R8_TMR_INT_FLAG = 2;
 	lastfifo = R32_TMR_FIFO;
-	funPinMode( PA2, GPIO_ModeOut_PP_20mA );
+	funPinMode( PA2, GPIO_ModeOut_PP_20mA ); // Lock measurement pin back down.
 }
 
 
@@ -58,7 +58,10 @@ void EventRelease(void)
 {
 	R8_TMR_CTRL_MOD = 0b00000010; // Reset Timer
 	R8_TMR_CTRL_MOD = 0b11000101; // Capture mode rising edge
-	funPinMode( PA2, GPIO_ModeIN_Floating );
+	funPinMode( PA2, GPIO_ModeIN_Floating ); // Allow measurement pin to float up.
+
+	// The timer is started here and will write into R32_TMR_FIFO 
+	// the exact time the time crosses the threshold.
 }
 
 void SetupADC(void)
