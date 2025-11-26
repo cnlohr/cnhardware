@@ -180,6 +180,7 @@ int main()
 
 			#define COEFFICIENT (const uint32_t)(FUNCONF_SYSTEM_CORE_CLOCK*(RESISTANCE*CAPACITANCE)*VREF*FIXEDPOINT_SCALE+0.5)
 			int r = lastfifo - 2; // 2 cycles back.
+			if( btn == 0 ) printf( "%d\n", r );
 			int vtot = COEFFICIENT/r + ((const uint32_t)(VREF*FIXEDPOINT_SCALE));
 			pressures[btn] = vtot - 70;
 		}
