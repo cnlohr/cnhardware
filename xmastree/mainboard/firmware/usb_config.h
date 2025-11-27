@@ -23,8 +23,8 @@ static const uint8_t device_descriptor[] = {
 	0x0, //Device Subclass
 	0x0, //Device Protocol  (000 = use config descriptor)
 	64, //Max packet size for EP0
-	0x09, 0x12, //ID Vendor
-	0x35, 0xd0, //ID Product
+	0x34, 0x12, //ID Vendor
+	0x01, 0x00, //ID Product
 	0x03, 0x00, //ID Rev
 	1, //Manufacturer string
 	2, //Product string

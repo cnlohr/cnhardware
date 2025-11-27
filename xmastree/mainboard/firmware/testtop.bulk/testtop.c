@@ -6,20 +6,18 @@
 #include <libusb-1.0/libusb.h>
 #include "os_generic.h"
 
-#define USB_VENDOR_ID  0x1209
-#define USB_PRODUCT_ID 0xD035
+#define USB_VENDOR_ID  0x1234
+#define USB_PRODUCT_ID 0x0001
 
 #define USB_TIMEOUT 1024
 
 
-const int block_size = 512;
-int bRx = 1;
-//#define SYNCHRONOUS_TEST
-//#define ASYNC_CONTROL
-#define BULKTEST
+#define block_size  512
 
 #define TRANSFERS 8
 
+
+uint8_t buffers[TRANSFERS][block_size];
 
 static libusb_context *ctx = NULL;
 static libusb_device_handle *handle;
@@ -34,11 +32,66 @@ static void sighandler(int signum)
 
 int xfertotal = 0;
 
+int Fill( uint8_t * data )
+{
+	static int ledstate;
+	const int leds_per_transfer = 10;
+	const int num_leds_per_string = 210;
+	static int frame_num;
+
+	uint16_t * lb = (uint16_t*)data;
+
+	// 21 LEDs per bulk transfer.
+	int terminal = 0;
+	int ledno = ledstate * leds_per_transfer;
+	int ledremain = num_leds_per_string - ledno;
+	if( ledremain <= leds_per_transfer )
+	{
+		terminal = 1;
+	}
+	else
+	{
+		ledremain = leds_per_transfer;
+	}
+
+	lb[0] = (terminal?0x8000:0x0000) | ledstate*leds_per_transfer*24; // Offset
+	lb[1] = ledremain * 24;
+
+	uint16_t * lbo = lb+2;
+
+	int l;
+	for( l = 0; l < leds_per_transfer; l++ )
+	{
+		int bit;
+		int ledid = leds_per_transfer * ledstate + l;
+		for( bit = 0; bit < 24; bit++ )
+		{
+			if( ( frame_num % num_leds_per_string ) != ledid )
+				lbo[bit+l*24] = 0x0000;
+			else
+				lbo[bit+l*24] = 0xffff;
+		}
+	}
+
+
+	if( terminal )
+	{
+		frame_num++;
+		ledstate = 0;
+	}
+	else
+	{
+		ledstate++;
+	}
+
+	return 512;
+}
+
 void xcallback (struct libusb_transfer *transfer)
 {
 	xfertotal += transfer->actual_length;
+	transfer->length = Fill( transfer->buffer );
 	libusb_submit_transfer( transfer );
-	//printf( "%d\n", transfer->actual_length );
 }
 
 
@@ -72,126 +125,10 @@ int main(int argc, char **argv)
 	double dLastPrint = OGGetAbsoluteTime();
 	int rtotal = 0, stotal = 0;
 
-#if defined(SYNCHRONOUS_TEST)
-	// Slow (synchronous) mode.
-	if( bRx )
-	{
-		while(!abortLoop)
-		{
-			uint8_t buffer[block_size];
-			int nread, ret;
-			ret = libusb_bulk_transfer( handle, 0x84, buffer, sizeof( buffer ), &nread, USB_TIMEOUT );
-
-			double dNow = OGGetAbsoluteTime();
-			if( ret ) nread = 0;
-			rtotal += nread;
-
-			if( dNow - dLastPrint > 1 )
-			{
-				dRecvTotalTime = dNow - dLastPrint;
-				printf( "%f MB/s RX\n", rtotal / (dRecvTotalTime * 1024 * 1024) );
-				rtotal = 0;
-				dRecvTotalTime = 0;
-				dLastPrint = dNow;
-			}
-		}
-	}
-	else
-	{
-		uint8_t buffer[block_size];
-		int i;
-		for( i = 0; i < block_size; i++ )
-		{
-			buffer[i] = i;
-		}
-		while (!abortLoop)
-		{
-			int ret;
-			int nwrite = 0;
-			double dStartSend = OGGetAbsoluteTime();
-			ret = libusb_bulk_transfer( handle, 0x05, buffer, sizeof( buffer ), &nwrite, USB_TIMEOUT );
-			double dNow = OGGetAbsoluteTime();
-			dSendTotalTime += dNow - dStartSend;
-			if( ret ) nwrite = 0;
-			stotal += nwrite;
-
-
-			if( dNow - dLastPrint > 1 )
-			{
-				dSendTotalTime = dNow - dLastPrint;
-				printf( "%f MB/s TX\n", stotal / (dSendTotalTime * 1024 * 1024) );
-				stotal = 0;
-				dSendTotalTime = 0;
-				dLastPrint = dNow;
-			}
-		}
-	}
-
-#elif defined( ASYNC_CONTROL ) // Async-control (Still slow, don't use, if you want this just use HIDAPI) but this lets you go at about 10Mbit/s
-	struct libusb_transfer * transfers[TRANSFERS];
-	uint8_t buffers[TRANSFERS][block_size];
-	int n;
-	for( n = 0; n < TRANSFERS; n++ )
-	{
-		int k;
-		for( k = 0; k < block_size; k++ )
-		{
-			buffers[n][k] = k;
-		}
-
-		struct libusb_transfer * t = transfers[n] = libusb_alloc_transfer( 0 );
-		if( bRx )
-		{
-			libusb_fill_control_setup( buffers[n],
-				0xA0, //	uint8_t  	bmRequestType,
-				0x01, // HID_GET_REPORT, //	uint8_t  	bRequest,
-				0x00aa, //	uint16_t  	wValue,
-				0x0000, //	uint16_t  	wIndex,
-				block_size - 8 //	uint16_t  	wLength 
-			);
-		}
-		else
-		{
-			libusb_fill_control_setup( buffers[n],
-				0x20, //	uint8_t  	bmRequestType,
-				0x09, // HID_SET_REPORT, //	uint8_t  	bRequest,
-				0x00aa, //	uint16_t  	wValue,
-				0x0000, //	uint16_t  	wIndex,
-				block_size - 8 //	uint16_t  	wLength 
-			);
-		}
-		libusb_fill_control_transfer ( t, handle, buffers[n], xcallback, (void*)(intptr_t)n, 1000 );
-		libusb_submit_transfer( t );
-	}
-
-	while(!abortLoop)
-	{
-			double dNow = OGGetAbsoluteTime();
-
-			libusb_handle_events(ctx);
-
-			if( dNow - dLastPrint > 1 )
-			{
-				dSendTotalTime = dNow - dLastPrint;
-				printf( "%f MB/s TX\n", xfertotal / (dSendTotalTime * 1024 * 1024) );
-				xfertotal = 0;
-				dSendTotalTime = 0;
-				dLastPrint = dNow;
-			}
-	}
-
-	for( n = 0; n < TRANSFERS; n++ )
-	{
-		libusb_cancel_transfer( transfers[n] );
-	 	libusb_free_transfer( transfers[n] );
-	}
-
-#elif defined( BULKTEST )
 	// Async (Fast, bulk)
 	// About 260-320 Mbit/s
 
 	struct libusb_transfer * transfers[TRANSFERS];
-	uint8_t buffers[TRANSFERS][block_size];
 	int n;
 	for( n = 0; n < TRANSFERS; n++ )
 	{
@@ -201,7 +138,8 @@ int main(int argc, char **argv)
 			buffers[n][k] = k;
 		}
 		struct libusb_transfer * t = transfers[n] = libusb_alloc_transfer( 0 );
-		libusb_fill_bulk_transfer( t, handle, bRx ? 0x84 : 0x05, buffers[n], block_size, xcallback, (void*)(intptr_t)n, 1000 );
+		libusb_fill_bulk_transfer( t, handle, 0x05 /*Endpoint for send */, buffers[n], block_size, xcallback, (void*)(intptr_t)n, 1000 );
+		t->length = Fill( t->buffer );
 		libusb_submit_transfer( t );
 	}
 
@@ -215,7 +153,7 @@ int main(int argc, char **argv)
 			if( dNow - dLastPrint > 1 )
 			{
 				dSendTotalTime = dNow - dLastPrint;
-				printf( "%f MB/s %cX\n", xfertotal / (dSendTotalTime * 1024 * 1024), bRx?'R':'T' );
+				printf( "%f MB/s %cX\n", xfertotal / (dSendTotalTime * 1024 * 1024), 'T' );
 				xfertotal = 0;
 				dSendTotalTime = 0;
 				dLastPrint = dNow;
@@ -227,7 +165,6 @@ int main(int argc, char **argv)
 		libusb_cancel_transfer( transfers[n] );
 	 	libusb_free_transfer( transfers[n] );
 	}
-#endif
 
 	libusb_release_interface (handle, 0);
 	libusb_close(handle);
