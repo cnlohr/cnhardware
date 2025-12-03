@@ -31,7 +31,7 @@ int main()
 	TIM1->PSC = 0x0000;
 
 	// Auto Reload - sets period
-	TIM1->ATRLR = 10;
+	TIM1->ATRLR = 90;
 
 	// Reload immediately
 	TIM1->SWEVGR |= TIM_UG;
@@ -43,7 +43,7 @@ int main()
 	TIM1->CHCTLR1 |= TIM_OC1M_2 | TIM_OC1M_1;
 
 	// Set the Capture Compare Register value to 50% initially
-	TIM1->CH1CVR = 8;
+	TIM1->CH1CVR = 71;
 	
 	// Enable TIM1 outputs
 	TIM1->BDTR |= TIM_MOE;

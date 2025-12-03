@@ -3650,6 +3650,17 @@
 		)
 		(uuid "24f66339-6678-4af1-8067-ca42254c6b87")
 	)
+	(text "Charge Pump: 5.6mA @ 6.7V "
+		(exclude_from_sim no)
+		(at 247.65 156.718 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.1588)
+			)
+		)
+		(uuid "7896eafe-49a8-451a-816d-3e15641743ce")
+	)
 	(text "Also can use C2927039 for USB"
 		(exclude_from_sim no)
 		(at 21.59 20.32 0)
@@ -3663,7 +3674,7 @@
 	)
 	(text "Do not use 10nF decoupling on slave processor.\n\nPC6, PC5, PC1, PC2 are unrestricted.\n\n\nIs it possible to make a variable supply with a charge pump?\n\nCan we direct-drive the low end of VPP?"
 		(exclude_from_sim no)
-		(at 195.072 134.112 0)
+		(at 178.308 134.62 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3690,10 +3701,34 @@
 		(uuid "1838e31c-58de-4fd9-8559-f69e106714d2")
 	)
 	(junction
+		(at 259.08 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6f8af026-6e95-4ba8-aac7-4ff23f4ad510")
+	)
+	(junction
+		(at 246.38 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "724a41af-6180-454c-819b-844de95cf7bc")
+	)
+	(junction
 		(at 240.03 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7758ad58-1562-4b85-9fdc-25fc987b1241")
+	)
+	(junction
+		(at 233.68 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "84ac8de2-bd75-44c9-9065-5df46be3eaeb")
+	)
+	(junction
+		(at 233.68 153.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a44c2da5-d943-427b-84ca-b6b483993490")
 	)
 	(junction
 		(at 240.03 33.02)
@@ -3735,6 +3770,36 @@
 	)
 	(wire
 		(pts
+			(xy 246.38 135.89) (xy 246.38 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01ab2e85-7b1d-4e7b-aa24-38c522e1e2c5")
+	)
+	(wire
+		(pts
+			(xy 233.68 153.67) (xy 259.08 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "025ef0ef-38b8-423b-9939-48bb12f9cbbb")
+	)
+	(wire
+		(pts
+			(xy 259.08 133.35) (xy 261.62 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0bfef8fb-9547-4e4b-8153-c99413504bd2")
+	)
+	(wire
+		(pts
 			(xy 57.15 45.72) (xy 62.23 45.72)
 		)
 		(stroke
@@ -3765,6 +3830,16 @@
 	)
 	(wire
 		(pts
+			(xy 233.68 133.35) (xy 232.41 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2bbfed82-4aa7-420c-b776-42486728c55d")
+	)
+	(wire
+		(pts
 			(xy 52.07 39.37) (xy 49.53 39.37)
 		)
 		(stroke
@@ -3785,6 +3860,36 @@
 	)
 	(wire
 		(pts
+			(xy 233.68 135.89) (xy 233.68 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34bf02c8-6fe7-40b6-a8d2-9ba2572b5524")
+	)
+	(wire
+		(pts
+			(xy 236.22 133.35) (xy 233.68 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35ade216-0e75-40ec-8df7-90b1a82cd35a")
+	)
+	(wire
+		(pts
+			(xy 228.6 153.67) (xy 233.68 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bd050de-4dbf-4287-aff7-afe1bfbf7c79")
+	)
+	(wire
+		(pts
 			(xy 66.04 39.37) (xy 66.04 36.83)
 		)
 		(stroke
@@ -3795,6 +3900,26 @@
 	)
 	(wire
 		(pts
+			(xy 259.08 135.89) (xy 259.08 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "492ff26b-9e9e-4d6d-9c5d-8b962621e911")
+	)
+	(wire
+		(pts
+			(xy 256.54 133.35) (xy 259.08 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a96c5a0-6f6a-4de5-abfb-82ac45ce9213")
+	)
+	(wire
+		(pts
 			(xy 49.53 49.53) (xy 49.53 50.8)
 		)
 		(stroke
@@ -3802,6 +3927,16 @@
 			(type default)
 		)
 		(uuid "4ac764d1-1649-4ba9-9960-4576a131aa55")
+	)
+	(wire
+		(pts
+			(xy 259.08 153.67) (xy 259.08 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "638674fe-f2da-405f-9214-f31c428994bc")
 	)
 	(wire
 		(pts
@@ -3885,6 +4020,16 @@
 	)
 	(wire
 		(pts
+			(xy 246.38 133.35) (xy 248.92 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab0f5b8b-9e8e-4a69-9040-cfbbff9b45f7")
+	)
+	(wire
+		(pts
 			(xy 49.53 44.45) (xy 49.53 45.72)
 		)
 		(stroke
@@ -3905,6 +4050,16 @@
 	)
 	(wire
 		(pts
+			(xy 269.24 135.89) (xy 269.24 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8cb2446-c41c-45e1-8c47-5c35a7701e11")
+	)
+	(wire
+		(pts
 			(xy 49.53 50.8) (xy 49.53 52.07)
 		)
 		(stroke
@@ -3912,6 +4067,26 @@
 			(type default)
 		)
 		(uuid "e2ee2ffc-699d-4baf-a076-977a458d775d")
+	)
+	(wire
+		(pts
+			(xy 233.68 143.51) (xy 233.68 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee31dc29-3708-4569-b05a-91bf6000f367")
+	)
+	(wire
+		(pts
+			(xy 243.84 133.35) (xy 246.38 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f14c8979-eb6d-403b-874c-d3a1effe81a2")
 	)
 	(wire
 		(pts
@@ -4029,6 +4204,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NCTRLB"
+		(shape input)
+		(at 228.6 153.67 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2b4f5f18-2933-4eec-b6e4-c51e93b3dc81")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 218.4786 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -4425,6 +4622,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PCTRLB"
+		(shape input)
+		(at 224.79 133.35 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6be4f368-1e04-4c62-85b1-367aa327fde3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 214.7291 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -5045,6 +5264,28 @@
 			)
 		)
 	)
+	(global_label "SLVCC"
+		(shape input)
+		(at 269.24 133.35 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ea7d9cb5-e8e6-4688-a65b-c11be4bb1720")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 278.0914 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "SWIO"
 		(shape input)
 		(at 127 100.33 0)
@@ -5064,6 +5305,72 @@
 				)
 				(justify left)
 				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 269.24 143.51 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "00d86024-c2eb-4990-92e0-212113c0bc85")
+		(property "Reference" "#PWR010"
+			(at 269.24 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 269.24 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 269.24 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 269.24 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 269.24 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "da1257b0-9430-4287-9151-56df7b1e3166")
+		)
+		(instances
+			(project "pfs-programmer-padauk"
+				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
+					(reference "#PWR010")
+					(unit 1)
+				)
 			)
 		)
 	)
@@ -5337,6 +5644,161 @@
 			(project ""
 				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
 					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 269.24 139.7 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2c94d04b-a520-4005-aa80-4abedd54fd4f")
+		(property "Reference" "C7"
+			(at 273.05 138.4299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1u"
+			(at 273.05 140.9699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 270.2052 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 269.24 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 269.24 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 269.24 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6e74316f-41da-4877-b0d4-5c19fb3566e4")
+		)
+		(pin "2"
+			(uuid "430c6d31-1f7a-41a2-92fb-3d4099aa98da")
+		)
+		(instances
+			(project "pfs-programmer-padauk"
+				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
+					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 240.03 133.35 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "33a3f3df-7eda-4f74-b1c2-e702141e8288")
+		(property "Reference" "D4"
+			(at 240.3475 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1A 25A 40V"
+			(at 240.3475 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-323_HandSoldering"
+			(at 240.03 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 240.03 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 240.03 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C191023"
+			(at 240.03 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a4220222-71ed-49d0-b348-035ff3032bb9")
+		)
+		(pin "2"
+			(uuid "61dc7888-b813-4978-b899-4fb1c3268400")
+		)
+		(instances
+			(project "pfs-programmer-padauk"
+				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -6317,6 +6779,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 233.68 139.7 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "62ae1c21-2eef-4ed5-b6eb-e497a57771cc")
+		(property "Reference" "C2"
+			(at 237.49 138.4299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1u"
+			(at 237.49 140.9699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 234.6452 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 233.68 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 233.68 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 233.68 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "575e13ee-0b90-4d14-bc49-e4434e31744f")
+		)
+		(pin "2"
+			(uuid "b4561902-e230-44ca-8da0-095c21b916f5")
+		)
+		(instances
+			(project "pfs-programmer-padauk"
+				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
+					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:Q_NMOS_GSD")
 		(at 237.49 41.91 0)
 		(unit 1)
@@ -6620,6 +7161,82 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 228.6 133.35 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "77154e50-c03f-428c-97a0-7a2cc6d7f6e5")
+		(property "Reference" "D3"
+			(at 228.9175 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1A 25A 40V"
+			(at 228.9175 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-323_HandSoldering"
+			(at 228.6 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 228.6 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 228.6 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C191023"
+			(at 228.6 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "177524f8-7d8c-493b-a485-8bf5521e0d84")
+		)
+		(pin "2"
+			(uuid "5f0ce8c7-8aba-4833-8b16-6a5b4c369b67")
+		)
+		(instances
+			(project "pfs-programmer-padauk"
+				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 87.63 58.42 0)
 		(unit 1)
@@ -6680,6 +7297,82 @@
 			(project ""
 				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
 					(reference "#PWR0134")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 265.43 133.35 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7a1a2049-654c-45ca-a308-2ba62a4f56bc")
+		(property "Reference" "D6"
+			(at 265.7475 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1A 25A 40V"
+			(at 265.7475 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-323_HandSoldering"
+			(at 265.43 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 265.43 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 265.43 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C191023"
+			(at 265.43 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "751d0383-c20d-474e-b717-8f3985e25f8b")
+		)
+		(pin "2"
+			(uuid "e7360330-9584-4cf2-a83d-70b8ee68c205")
+		)
+		(instances
+			(project "pfs-programmer-padauk"
+				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
+					(reference "D6")
 					(unit 1)
 				)
 			)
@@ -7887,6 +8580,85 @@
 	)
 	(symbol
 		(lib_id "Device:C")
+		(at 259.08 139.7 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a9b34317-ec3f-490b-b1e1-28b4300d914e")
+		(property "Reference" "C6"
+			(at 262.89 138.4299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1u"
+			(at 262.89 140.9699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 260.0452 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 259.08 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 259.08 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 259.08 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2777c6e7-0ee4-456a-8b94-b2e92fd2e668")
+		)
+		(pin "2"
+			(uuid "4c2db2e6-4f09-483b-862c-ef714df093ab")
+		)
+		(instances
+			(project "pfs-programmer-padauk"
+				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
+					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
 		(at 99.06 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8392,6 +9164,82 @@
 			(project ""
 				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
 					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 252.73 133.35 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d96877ba-ed63-45f3-a14d-41977ade765b")
+		(property "Reference" "D5"
+			(at 253.0475 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1A 25A 40V"
+			(at 253.0475 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-323_HandSoldering"
+			(at 252.73 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 252.73 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 252.73 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C191023"
+			(at 252.73 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8c1f35e3-ce8a-4a56-ae81-99fc1d4dcd9d")
+		)
+		(pin "2"
+			(uuid "e1aae50e-aed3-4ec7-8216-65790326c370")
+		)
+		(instances
+			(project "pfs-programmer-padauk"
+				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
+					(reference "D5")
 					(unit 1)
 				)
 			)
@@ -8912,6 +9760,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 246.38 143.51 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fd3ef3bb-e355-4498-98dd-ac8a73d8f8e0")
+		(property "Reference" "#PWR012"
+			(at 246.38 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 246.38 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 246.38 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 246.38 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7b819048-b738-4232-9bdd-d5000ae2d201")
+		)
+		(instances
+			(project "pfs-programmer-padauk"
+				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:Q_PMOS_GSD")
 		(at 218.44 62.23 270)
 		(mirror x)
@@ -8986,6 +9900,85 @@
 			(project "direct-buck-boost"
 				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
 					(reference "Q3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 246.38 139.7 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ff279e77-7afa-44c0-b5a0-e41c7f70ea30")
+		(property "Reference" "C3"
+			(at 250.19 138.4299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1u"
+			(at 250.19 140.9699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 247.3452 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 246.38 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 246.38 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 246.38 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cea0a593-451f-495b-8153-c1c30e1de84c")
+		)
+		(pin "2"
+			(uuid "a32fc5c0-0a38-41aa-a422-d8a8921b1885")
+		)
+		(instances
+			(project "pfs-programmer-padauk"
+				(path "/58ab71e8-deab-4616-a762-2b0b00886567"
+					(reference "C3")
 					(unit 1)
 				)
 			)
