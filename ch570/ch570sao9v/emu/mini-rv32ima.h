@@ -598,7 +598,7 @@ MINIRV32_STEPPROTO
                                         break;                // EBREAK 3 = "Breakpoint"
                                     case 0x105:               // WFI (Wait for interrupts)
                                         CSR(mstatus) |= 8;    // Enable interrupts
-                                        CSR(extraflags) |= 4; // Infor environment we want to go to sleep.
+                                        CSR(extraflags) |= 4; // Inform environment we want to go to sleep.
                                         SETCSR(pc, pc + 4);
                                         return 1;
                                     default:

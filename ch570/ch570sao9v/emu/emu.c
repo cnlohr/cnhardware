@@ -45,6 +45,24 @@ int HandleDestroy()
 	return 0;
 }
 
+void Handle_R8_TMR_CTRL_MOD( uint8_t regset )
+{
+//	R8_TMR_CTRL_MOD = 0b00000010; // Reset Timer
+//	R8_TMR_CTRL_MOD = 0b11000101; // Capture mode rising edge
+	if( regset & 1 )
+	{
+		uint64_t tm = (ch570state.timerl) | (((uint64_t)ch570state.timerh)<<32);
+
+		tm += 600;
+
+		ch570state.mie |= (1 << 7);
+		ch570state.mstatus |= 0x8;
+
+		ch570state.timermatchl = tm & 0xffffffff;
+		ch570state.timermatchh = tm >> 32;
+	}
+}
+
 void Handle_R8_SPI_BUFFER( uint8_t regset )
 {
 	int is_data = 0;

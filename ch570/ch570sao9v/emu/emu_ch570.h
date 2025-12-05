@@ -29,6 +29,8 @@ extern volatile int ch570runMode;
 extern uint8_t ch570flash[FLASH_SIZE];
 extern uint8_t ch570ram[RAM_SIZE];
 extern struct MiniRV32IMAState ch570state;
+
+void Handle_R8_TMR_CTRL_MOD( uint8_t regset );
 void Handle_R8_SPI_BUFFER( uint8_t regset );
 
 
@@ -223,7 +225,7 @@ static inline int8_t MINIRV32_LOAD1_SIGNEDs(uint32_t ofs, uint32_t* rval, uint32
 			pc = (((CSR(mtvec) & ~3) + 4 * CSR(mcause)) - 4);	   \
 			break;												  \
 		case 3:													 \
-			pc = ((MINIRV32_LOAD4((CSR(mtvec) & ~3) + 4 * 3)) - 4); \
+			pc = ((MINIRV32_LOAD4((CSR(mtvec) & ~3) + 4 * 3)) /* - 4  I thought we needed this */); \
 			break;												  \
 	}
 
@@ -703,7 +705,7 @@ static int CHPStore(uint32_t address, uint32_t regset, int size)
 	}
 	else if( address == 0x40002400 )
 	{
-		// R8_TMR_CTRL_MOD
+		Handle_R8_TMR_CTRL_MOD( regset );
 	}
 	else if( address == 0x40004000 )
 	{
