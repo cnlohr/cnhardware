@@ -29,11 +29,13 @@ extern volatile int ch570runMode;
 extern uint8_t ch570flash[FLASH_SIZE];
 extern uint8_t ch570ram[RAM_SIZE];
 extern struct MiniRV32IMAState ch570state;
+extern volatile uint32_t pressures[4];
 
 void Handle_R8_TMR_CTRL_MOD( uint8_t regset );
 void Handle_R8_SPI_BUFFER( uint8_t regset );
 
 
+uint32_t debugpc; // Debug PC
 
 static int CHPLoad(uint32_t address, uint32_t* regret, int size);
 static int CHPStore(uint32_t address, uint32_t regret, int size);
@@ -86,6 +88,7 @@ static int CHPStore(uint32_t address, uint32_t regret, int size);
 		}												  \
 	}
 #define MINIRV32_STORE1(ofs, val)						  \
+   { \
 	if (ofs < FLASH_SIZE - 0)							  \
 	{													  \
 		*(uint8_t*)(ch570flash + ofs) = val;			\
@@ -101,7 +104,7 @@ static int CHPStore(uint32_t address, uint32_t regret, int size);
 			trap = (7 + 1);								\
 			rval = ofs;									\
 		}												  \
-	}
+	} }
 static inline uint32_t MINIRV32_LOAD4s(uint32_t ofs, uint32_t* rval, uint32_t* trap)
 {
 	uint32_t tmp = 0;
@@ -251,12 +254,12 @@ static inline int8_t MINIRV32_LOAD1_SIGNEDs(uint32_t ofs, uint32_t* rval, uint32
 				uint32_t uimm = (((ir >> 5) & 1) << 6) | (((ir >> 6) & 1) << 2) | (((ir >> 10) & 7) << 3);			 \
 				switch (ir >> 13)																					  \
 				{																									  \
-					case 0b000: /*c.addi4spn ADD Imm * 4 + SP TODO*/												   \
+					case 0b000: /*c.addi4spn ADD Imm * 4 + SP (I think this is right?  Maybe)?*/				   \
 						cimm = (((ir >> 5) & 1) << 3) | (((ir >> 6) & 1) << 2) | (((ir >> 7) & 0xf) << 6)			  \
 							   | (((ir >> 11) & 3) << 4);															  \
 						cimmext = (cimm & 0x200) ? (cimm | 0xfffffc00) : cimm;										 \
 						rdid	= ((ir >> 2) & 7) + 8;																 \
-						/*printf( "c.addi4spn %08x %d / %d\n", REG( 2 ), cimmext, rdid );*/							\
+						/*printf( "c.addi4spn %08x %d / %d @ %08x\n", REG( 2 ), cimmext, rdid, debugpc );*/							\
 						rval = REG(2) + cimmext;																	   \
 						break;																						 \
 					case 0b010: /*c.lw*/																			   \
@@ -270,6 +273,7 @@ static inline int8_t MINIRV32_LOAD1_SIGNEDs(uint32_t ofs, uint32_t* rval, uint32
 						rdid = 0;																					  \
 						break;																						 \
 					default:																						   \
+printf( "Unknown Opcode at %08x\n", debugpc );                                                                     \
 						trap = (2 + 1);																				\
 						break;																						 \
 				}																									  \
@@ -336,6 +340,7 @@ static inline int8_t MINIRV32_LOAD1_SIGNEDs(uint32_t ofs, uint32_t* rval, uint32
 										rval = REG(rdid) & (rs2);													  \
 										break;																		 \
 									default: /* res   */															   \
+printf( "Unknown Opcode at %08x\n", debugpc );                                                                     \
 										trap = (2 + 1);																\
 										break;																		 \
 								}																					  \
@@ -388,6 +393,7 @@ static inline int8_t MINIRV32_LOAD1_SIGNEDs(uint32_t ofs, uint32_t* rval, uint32
 						break;																						 \
 					}																								  \
 					default:																						   \
+printf( "Unknown Opcode at %08x\n", debugpc );                                                                     \
 						trap = (2 + 1);																				\
 						break;																						 \
 				}																									  \
@@ -410,21 +416,24 @@ static inline int8_t MINIRV32_LOAD1_SIGNEDs(uint32_t ofs, uint32_t* rval, uint32
 							}																						  \
 							else if (rdid != 0)																		\
 							{																						  \
-								rdid = 1; /* c.jalr */																 \
 								rval = pc + 4;																		 \
 								pc   = REG(rdid) - 4; /*c.jr*/														 \
+								rdid = 1; /* c.jalr */																 \
 							}																						  \
 							else																					   \
 							{																						  \
+printf( "Unknown Opcode at %08x\n", debugpc );                                                                     \
 								trap = (3 + 1);																		\
 								break; /* EBREAK 3 = "Breakpoint" */												   \
 							}																						  \
 						}																							  \
 						else																						   \
-						{																							  \
+						{                                                                                         \
 							if ((((ir >> 2) & 0x1f) != 0) && rdid != 0)												\
 							{																						  \
+								/* c.mv */                                                                     \
 								rval = REG((ir >> 2) & 0x1f);														  \
+							/*	printf( "c.mv %d %d -> %08x @ %08x\n", rdid, (ir >> 2) & 0x1f, rval,pc);  */      	\
 							}																						  \
 							else if (rdid != 0)																		\
 							{																						  \
@@ -434,6 +443,7 @@ static inline int8_t MINIRV32_LOAD1_SIGNEDs(uint32_t ofs, uint32_t* rval, uint32
 							else																					   \
 							{																						  \
 								/* illegal opcode */																   \
+printf( "Unknown Opcode at %08x\n", debugpc );                                                                     \
 								trap = (2 + 1);																		\
 								break;																				 \
 							}																						  \
@@ -454,11 +464,13 @@ static inline int8_t MINIRV32_LOAD1_SIGNEDs(uint32_t ofs, uint32_t* rval, uint32
 						rdid = ((ir >> 7) & 0x1f);																	 \
 						break;																						 \
 					default:																						   \
+printf( "Unknown Opcode at %08x\n", debugpc );                                                                     \
 						trap = (2 + 1);																				\
 						break;																						 \
 				}																									  \
 				break;																								 \
 			default:																								   \
+printf( "Unknown Opcode at %08x\n", debugpc );                                                                     \
 				trap = (2 + 1);																						\
 				break;																								 \
 		}																											  \
@@ -579,13 +591,33 @@ static int CHPLoad(uint32_t address, uint32_t* regret, int size)
 	{
 		*regret = R32_PA_DIR;
 	}
+	else if( address == 0x4fff0000 )
+	{
+		*regret = 0xaaaaaaaa;
+	}
+	else if( address == 0x4fff0004 )
+	{
+		*regret = pressures[0];
+	}
+	else if( address == 0x4fff0008 )
+	{
+		*regret = pressures[1];
+	}
+	else if( address == 0x4fff000c )
+	{
+		*regret = pressures[2];
+	}
+	else if( address == 0x4fff0010 )
+	{
+		*regret = pressures[3];
+	}
 	else if (address >= 0x40000000 && address < 0x50000000)
 	{
-		printf( "Unknown hardware read %08x\n", address ); *regret = 0;
+		printf( "Unknown hardware read %08x @ %08x ra: %08x\n", address, debugpc, ch570state.regs[1] ); *regret = 0;
 	}
 	else
 	{
-		printf("Load fail at %08x\n", address);
+		printf("Load fail at %08x @ %08x, ra: %08x\n", address, debugpc, ch570state.regs[1]);
 		return -1;
 	}
 	return 0;
@@ -613,7 +645,7 @@ static int CHPStore(uint32_t address, uint32_t regset, int size)
 
 	if (size != 4)
 	{
-		printf("Misaligned system store %08x\n", address);
+		printf("Misaligned system store %08x @ %08x\n", address, debugpc);
 		return -1;
 	}
 
@@ -640,6 +672,12 @@ static int CHPStore(uint32_t address, uint32_t regset, int size)
 			DMDATA[0] = 0;
 		}
 	}
+	else if( address == 0x40001805 )
+	{
+	} // (R32_FLASH_CONTROL) (STUB)
+	else if( address == 0x40001807 )
+	{
+	} // (R32_FLASH_*) (STUB)
 	else if (address == 0x40022000)
 	{
 	} // FLASH->ACTLR
@@ -731,13 +769,23 @@ static int CHPStore(uint32_t address, uint32_t regset, int size)
 	{
 		//R8_HFCK_PWR_CTRL 
 	}
+	else if( address == 0x40001008 )
+	{
+		//R8_CLK_SYS_CFG 
+	}
+	else if ( address == 0x4000101a )
+	{
+		// R16_PIN_ALTERNATE_H (STUB)
+	}
+	else if( address == 0x4000240c ); // R32_TMR_CNT_END 
+	else if( address == 0x40002402 ); // R8_TMR_INTER_EN
 	else if (address >= 0x40000000 && address < 0x50000000)
 	{
-		 printf( "Unknown hardware write %08x = %08x\n", address, regset );
+		 printf( "Unknown hardware write %08x = %08x @ %08x; ra: %08x\n", address, regset, debugpc, ch570state.regs[1] );
 	}
 	else
 	{
-		printf("Store fail at %08x\n", address);
+		printf("Store fail at %08x @ %08x; ra: %08x\n", address, debugpc, ch570state.regs[1] );
 		return -1;
 	}
 	return 0;

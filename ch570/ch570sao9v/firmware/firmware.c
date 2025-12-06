@@ -158,16 +158,22 @@ int main()
 				break;
 			}
 
+			if( *((uint32_t*)0x4fff0000) == 0xaaaaaaaa )
+			{
+				pressures[btn] = *((uint32_t*)(0x4fff0004+4*btn));
+			}
+			else
+			{
+				lastfifo = 0;
+				EventRelease();
+				int to = 4000;
+				while( !lastfifo && --to );
 
-			lastfifo = 0;
-			EventRelease();
-			int to = 4000;
-			while( !lastfifo && --to );
-
-			#define COEFFICIENT (const uint32_t)(FUNCONF_SYSTEM_CORE_CLOCK*(RESISTANCE*CAPACITANCE)*VREF*FIXEDPOINT_SCALE+0.5)
-			int r = lastfifo - 2; // 2 cycles back.
-			int vtot = COEFFICIENT/r + ((const uint32_t)(VREF*FIXEDPOINT_SCALE));
-			pressures[btn] = vtot - 70;
+				#define COEFFICIENT (const uint32_t)(FUNCONF_SYSTEM_CORE_CLOCK*(RESISTANCE*CAPACITANCE)*VREF*FIXEDPOINT_SCALE+0.5)
+				int r = lastfifo - 2; // 2 cycles back.
+				int vtot = COEFFICIENT/r + ((const uint32_t)(VREF*FIXEDPOINT_SCALE));
+				pressures[btn] = vtot - 70;
+			}
 		}
 		debug = SysTick->CNT - start;
 		frameno++;
@@ -190,7 +196,6 @@ int main()
 			//ssd1306_drawCircle( x, y, 
 			ssd1306_fillCircle( x, y, p, 1 );
 		}
-
 
 		ssd1306_refresh();
 	}

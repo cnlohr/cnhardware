@@ -19,6 +19,7 @@ uint32_t R32_PFIC_IENR1;
 
 volatile int ch32v003quitMode = 0;
 volatile int ch570runMode;
+volatile uint32_t pressures[4];
 
 #define OLED_W 128
 #define OLED_H 128
@@ -30,6 +31,13 @@ uint8_t oled[OLED_W*OLED_H/8];
 
 void HandleKey( int keycode, int bDown )
 {
+	const int pDown = 10000;
+	switch( keycode )
+	{
+		case 'z': case 'Z': pressures[0] = bDown ? pDown : 0; break;
+		case 'x': case 'X': pressures[1] = bDown ? pDown : 0; break;
+		case 'c': case 'C': pressures[2] = bDown ? pDown : 0; break;
+	}
 }
 
 void HandleButton( int x, int y, int button, int bDown )
@@ -49,6 +57,8 @@ void Handle_R8_TMR_CTRL_MOD( uint8_t regset )
 {
 //	R8_TMR_CTRL_MOD = 0b00000010; // Reset Timer
 //	R8_TMR_CTRL_MOD = 0b11000101; // Capture mode rising edge
+
+#if 0
 	if( regset & 1 )
 	{
 		uint64_t tm = (ch570state.timerl) | (((uint64_t)ch570state.timerh)<<32);
@@ -58,9 +68,11 @@ void Handle_R8_TMR_CTRL_MOD( uint8_t regset )
 		ch570state.mie |= (1 << 7);
 		ch570state.mstatus |= 0x8;
 
+		printf( "Setup Match\n" );
 		ch570state.timermatchl = tm & 0xffffffff;
 		ch570state.timermatchh = tm >> 32;
 	}
+#endif
 }
 
 void Handle_R8_SPI_BUFFER( uint8_t regset )
@@ -70,11 +82,17 @@ void Handle_R8_SPI_BUFFER( uint8_t regset )
 		is_data = 1;
 
 	static int oled_ptr = 0;
-	if( is_data == 0 )
-		oled_ptr = 0;
+
+	if( !is_data )
+	{
+		if( ( regset & 0xf0 ) == 0xb0 )
+		{
+			oled_ptr = (regset & 0xf)*128;
+		}
+	}
 	else
 	{
-		if( oled_ptr < sizeof( oled_ptr ) )
+		if( oled_ptr < sizeof( oled ) )
 		{
 			oled[oled_ptr] = regset;
 		}
@@ -140,7 +158,9 @@ int main( int argc, char ** argv )
 
 	ch570thread = OGCreateThread( core_execution, 0 );
 
-	CNFGSetup( "ch570 sao emulator", 800, 500 );
+	CNFGSetup( "ch570 sao emulator", 800, 512 );
+
+	CNFGBGColor = 0x101010ff;
 
 	while(CNFGHandleInput())
 	{
@@ -201,8 +221,8 @@ int main( int argc, char ** argv )
 				uint32_t col = 0xff000000;
 				int ix = x / iaspect;
 				int iy = y / iaspect;
-				int pix = (ix+iy*OLED_W);
-				int v = oled[pix>>3] & (1<<(pix&7));
+				int pix = ((ix+(iy>>3)*OLED_W));
+				int v = oled[pix] & (1<<(iy&7));
 				if( v )
 					col |= 0xffffffff;
 				oledimage[x+y*iaspect*OLED_W] = col;
