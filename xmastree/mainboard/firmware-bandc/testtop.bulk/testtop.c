@@ -12,8 +12,7 @@
 
 #define USB_TIMEOUT 1024
 
-#define NR_LEDS 200
-
+#define NR_LEDS 212
 #define block_size  512
 
 #define TRANSFERS 8
@@ -44,7 +43,6 @@ int Fill( uint8_t * data )
 
 	uint32_t * lb = (uint32_t*)data;
 
-	// 21 LEDs per bulk transfer.
 	int terminal = 0;
 	int ledno = ledstate * leds_per_transfer;
 	int ledremain = num_leds_per_string - ledno;
