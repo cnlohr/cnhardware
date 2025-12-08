@@ -12,19 +12,80 @@ int dummy = 1; // Dummy data being sent (no host)
 int streaming = 0;
 int need_to_confirm = 0;
 
-#define BUFFER_SIZE_SHORTS 6120
-volatile uint16_t memory_buffer[BUFFER_SIZE_SHORTS] __attribute__((aligned(4)));
+#define BUFFER_SIZE_WORDS 7344 // 306 LEDs max.
+volatile uint32_t memory_buffer[BUFFER_SIZE_WORDS] __attribute__((aligned(4)));
+
+
+#define TRIG_FULLCYCLE 34                         // Minimum = 32 --> Selecting 33 or 34
+#define TRIG_INITIAL 0 
+#define TRIG_DATA 13                         // Minimum = 9
+#define TRIG_ZERO 25                        //  Minimum = 22
 
 
 int last = 0;
+int lrx = 0;
+uint8_t scratchpad[2048];
+
+void TriggerEnable( int nrsamps )
+{
+	DMA1_Channel3->CNTR = nrsamps;
+	DMA1_Channel3->MADDR = (uint32_t)(memory_buffer);
+	DMA1_Channel3->PADDR = (uint32_t)&GPIOC->OUTDR;
+	DMA1_Channel3->CFGR = 
+		DMA_CFGR1_DIR |                      // MEM2PERIPHERAL
+		DMA_CFGR1_PL |                       // High priority.
+		DMA_CFGR1_MSIZE_1 |                  // 32-bit memory
+		DMA_CFGR1_PSIZE_0 |                  // 16-bit peripheral
+		DMA_CFGR1_MINC |                     // Increase memory.
+		0 |                     // Circular mode.
+		DMA_CFGR1_HTIE |                     // Half-trigger
+		DMA_CFGR1_TCIE |                     // Whole-trigger
+		DMA_CFGR1_EN;                        // Enable
+
+	// Stagger timer controls.
+	TIM1->CTLR1 = TIM_CEN;
+
+	DMA1_Channel5->CNTR = nrsamps;
+	DMA1_Channel5->MADDR = ((uint32_t)memory_buffer)+2;
+	DMA1_Channel5->PADDR = (uint32_t)&GPIOB->OUTDR;
+	DMA1_Channel5->CFGR = 
+		DMA_CFGR1_DIR |                      // MEM2PERIPHERAL
+		DMA_CFGR1_PL |                       // High priority.
+		DMA_CFGR1_MSIZE_1 |                  // 32-bit memory
+		DMA_CFGR1_PSIZE_0 |                  // 16-bit peripheral
+		DMA_CFGR1_MINC |                     // Increase memory.
+		0 |                     // Circular mode.
+		DMA_CFGR1_HTIE |                     // Half-trigger
+		DMA_CFGR1_TCIE |                     // Whole-trigger
+		DMA_CFGR1_EN;                        // Enable
+
+	TIM2->CTLR1 = TIM_CEN;
+
+	DMA2_Channel8->CNTR = nrsamps;
+	DMA2_Channel8->MADDR = ((uint32_t)memory_buffer)+2;
+	DMA2_Channel8->PADDR = (uint32_t)&GPIOA->OUTDR;
+	DMA2_Channel8->CFGR = 
+		DMA_CFGR1_DIR |                      // MEM2PERIPHERAL
+		DMA_CFGR1_PL |                       // High priority.
+		DMA_CFGR1_MSIZE_1 |                  // 16-bit memory
+		0              |                  // 16-bit peripheral
+		DMA_CFGR1_MINC |                     // Increase memory.
+		0 |                     // Circular mode.
+		DMA_CFGR1_HTIE |                     // Half-trigger
+		DMA_CFGR1_TCIE |                     // Whole-trigger
+		DMA_CFGR1_EN;                        // Enable
+
+	TIM10->CTLR1 = TIM_CEN;
+
+	streaming = 1;
+
+}
+
 void handle_debug_input( int numbytes, uint8_t * data )
 {
 	last = data[0];
 	count += numbytes;
 }
-
-int lrx = 0;
-uint8_t scratchpad[2048];
 
 int HandleHidUserSetReportSetup( struct _USBState * ctx, tusb_control_request_t * req )
 {
@@ -120,23 +181,7 @@ void HandleGotEPComplete( struct _USBState * ctx, int ep )
 
 		if( term )
 		{
-			//printf( "OE: %d\n", ofs_end );
-			DMA1_Channel3->CNTR = ofs_end;// sizeof(memory_buffer) / sizeof(memory_buffer[0]);
-			DMA1_Channel3->MADDR = (uint32_t)memory_buffer;
-			DMA1_Channel3->PADDR = (uint32_t)&GPIOC->OUTDR;
-			DMA1_Channel3->CFGR = 
-				DMA_CFGR1_DIR |                      // MEM2PERIPHERAL
-				DMA_CFGR1_PL |                       // High priority.
-				DMA_CFGR1_MSIZE_0 |                  // 16-bit memory
-				DMA_CFGR1_PSIZE_0 |                  // 16-bit peripheral
-				DMA_CFGR1_MINC |                     // Increase memory.
-				0 |                                  // Circular mode.
-				DMA_CFGR1_HTIE |                     // Half-trigger
-				DMA_CFGR1_TCIE |                     // Whole-trigger
-				DMA_CFGR1_EN;                        // Enable
-
-			TIM1->CTLR1 = TIM_CEN;
-			streaming = 1;
+			TriggerEnable( (offset + remain + 1) );
 		}
 		else
 		{
@@ -344,35 +389,35 @@ int main()
 
 	// Timer 1 setup.
 	TIM1->PSC = 0x0003;                      // Prescaler 
-	TIM1->ATRLR = 33;                        // Minimum = 32 --> Selecting 33
+	TIM1->ATRLR = TRIG_FULLCYCLE;
 	TIM1->SWEVGR = TIM_UG | TIM_TG;          // Reload immediately + Trigger DMA
 
-	TIM1->CH1CVR = 0;                        // T1C1 triggers DMA
-	TIM1->CH2CVR = 12;                        // T1C1 triggers DMA // Minimum = 9
-	TIM1->CH3CVR = 24;                       // T1C1 triggers DMA // Minimum = 22
+	TIM1->CH1CVR = TRIG_INITIAL;
+	TIM1->CH2CVR = TRIG_DATA;
+	TIM1->CH3CVR = TRIG_ZERO;
 	TIM1->CTLR1 = TIM_CEN;                   // Enable TIM1
 	TIM1->DMAINTENR = TIM_CC1DE | TIM_CC2DE | TIM_CC3DE;   // Trigger DMA on TC match 1 (DMA Ch2) and TC match 2 (DMA Ch3)
 
 
 	// Timer 2 setup.
 	TIM2->PSC = 0x0003;                      // Prescaler 
-	TIM2->ATRLR = 33;                        // Minimum = 32 --> Selecting 33
+	TIM2->ATRLR = TRIG_FULLCYCLE;
 	TIM2->SWEVGR = TIM_UG | TIM_TG;          // Reload immediately + Trigger DMA
 
-	TIM2->CH1CVR = 0;                        // T1C1 triggers DMA
-	TIM2->CH2CVR = 12;                        // T1C1 triggers DMA // Minimum = 9
-	TIM2->CH3CVR = 24;                       // T1C1 triggers DMA // Minimum = 22
+	TIM2->CH1CVR = TRIG_INITIAL;
+	TIM2->CH2CVR = TRIG_DATA;
+	TIM2->CH3CVR = TRIG_ZERO;
 	TIM2->CTLR1 = TIM_CEN;                   // Enable TIM1
 	TIM2->DMAINTENR = TIM_CC1DE | TIM_CC2DE | TIM_CC3DE;   // Trigger DMA on TC match 1 (DMA Ch2) and TC match 2 (DMA Ch3)
 
 	// Timer 10 setup.
 	TIM10->PSC = 0x0003;                      // Prescaler 
-	TIM10->ATRLR = 33;                        // Minimum = 32 --> Selecting 33
+	TIM10->ATRLR = TRIG_FULLCYCLE;
 	TIM10->SWEVGR = TIM_UG | TIM_TG;          // Reload immediately + Trigger DMA
 
-	TIM10->CH1CVR = 0;                        // T1C1 triggers DMA
-	TIM10->CH2CVR = 12;                        // T1C1 triggers DMA // Minimum = 9
-	TIM10->CH3CVR = 24;                       // T1C1 triggers DMA // Minimum = 22
+	TIM10->CH1CVR = TRIG_INITIAL;
+	TIM10->CH2CVR = TRIG_DATA;
+	TIM10->CH3CVR = TRIG_ZERO;
 	TIM10->CTLR1 = TIM_CEN;                   // Enable TIM1
 	TIM10->DMAINTENR = TIM_CC1DE | TIM_CC2DE | TIM_CC3DE;   // Trigger DMA on TC match 1 (DMA Ch2) and TC match 2 (DMA Ch3)
 
@@ -381,7 +426,7 @@ int main()
 	USBHSD->UEP5_MAX_LEN = 1024; // Max allowed.
 	USBHSD->UEP5_RX_DMA = (uintptr_t)scratchpad;
 
-	int tickcount = 0;
+
     int loopcount = 0;
 
 
@@ -483,96 +528,58 @@ int main()
 
 				streaming = 0;
 
-				Delay_Us(280);
+				//Delay_Us(280);
 				static int frame;
 				frame++;
 
 				int i;
 
-				for( i = 0; i < BUFFER_SIZE_SHORTS; i++ )
+				for( i = 0; i < BUFFER_SIZE_WORDS; i++ )
 				{
 				   // memory_buffer[i] = (i&1)?0xffff:0x0000;
 					int lno = i/24;
 					int pos = i-(lno*24);
 
-					if( ( lno + (frame>>5) ) & 1 )
+					int sel = ( (lno) + (frame>>5) ) & 3;
+
+					switch (sel)
 					{
+					case 0:
 						if( pos < 8 )
-							memory_buffer[i] = 0xffff;
+							memory_buffer[i] = 0xffffffff;
 						else if( pos < 16 )
-							memory_buffer[i] = 0x0000;
+							memory_buffer[i] = 0x00000000;
 						else
-							memory_buffer[i] = 0xffff;
-					}
-					else
-					{
+							memory_buffer[i] = 0xffffffff;
+						break;
+					case 1:
 						if( pos < 8 )
-							memory_buffer[i] = 0x0000;
+							memory_buffer[i] = 0x00000000;
 						else if( pos < 16 )
-							memory_buffer[i] = 0x0000;
+							memory_buffer[i] = 0xffffffff;
 						else
-							memory_buffer[i] = 0xffff;
+							memory_buffer[i] = 0xffffffff;
+						break;
+					case 2:
+						if( pos < 8 )
+							memory_buffer[i] = 0xffffffff;
+						else if( pos < 16 )
+							memory_buffer[i] = 0xffffffff;
+						else
+							memory_buffer[i] = 0000000000;
+						break;
+					default:
+						if( pos < 8 )
+							memory_buffer[i] = 0x00000000;
+						else if( pos < 16 )
+							memory_buffer[i] = 0x00000000;
+						else
+							memory_buffer[i] = 0x00000000;
+						break;
 					}
 				}
 
-
-				DMA1_Channel3->CNTR = sizeof(memory_buffer) / sizeof(memory_buffer[0]);
-				DMA1_Channel3->MADDR = (uint32_t)(memory_buffer);
-				DMA1_Channel3->PADDR = (uint32_t)&GPIOC->OUTDR;
-				DMA1_Channel3->CFGR = 
-					DMA_CFGR1_DIR |                      // MEM2PERIPHERAL
-					DMA_CFGR1_PL |                       // High priority.
-					DMA_CFGR1_MSIZE_1 |                  // 32-bit memory
-					DMA_CFGR1_PSIZE_0 |                  // 16-bit peripheral
-					DMA_CFGR1_MINC |                     // Increase memory.
-					0 |                     // Circular mode.
-					DMA_CFGR1_HTIE |                     // Half-trigger
-					DMA_CFGR1_TCIE |                     // Whole-trigger
-					DMA_CFGR1_EN;                        // Enable
-
-				// Stagger timer controls.
-				TIM1->CTLR1 = TIM_CEN;
-
-				ADD_N_NOPS(5);
-
-				DMA1_Channel5->CNTR = sizeof(memory_buffer) / sizeof(memory_buffer[0]);
-				DMA1_Channel5->MADDR = ((uint32_t)memory_buffer)+2;
-				DMA1_Channel5->PADDR = (uint32_t)&GPIOB->OUTDR;
-				DMA1_Channel5->CFGR = 
-					DMA_CFGR1_DIR |                      // MEM2PERIPHERAL
-					DMA_CFGR1_PL |                       // High priority.
-					DMA_CFGR1_MSIZE_1 |                  // 32-bit memory
-					DMA_CFGR1_PSIZE_0 |                  // 16-bit peripheral
-					DMA_CFGR1_MINC |                     // Increase memory.
-					0 |                     // Circular mode.
-					DMA_CFGR1_HTIE |                     // Half-trigger
-					DMA_CFGR1_TCIE |                     // Whole-trigger
-					DMA_CFGR1_EN;                        // Enable
-
-				TIM2->CTLR1 = TIM_CEN;
-
-				ADD_N_NOPS(5);
-
-
-				DMA2_Channel8->CNTR = sizeof(memory_buffer) / sizeof(memory_buffer[0]);
-				DMA2_Channel8->MADDR = ((uint32_t)memory_buffer)+2;
-				DMA2_Channel8->PADDR = (uint32_t)&GPIOA->OUTDR;
-				DMA2_Channel8->CFGR = 
-					DMA_CFGR1_DIR |                      // MEM2PERIPHERAL
-					DMA_CFGR1_PL |                       // High priority.
-					DMA_CFGR1_MSIZE_1 |                  // 16-bit memory
-					0              |                  // 16-bit peripheral
-					DMA_CFGR1_MINC |                     // Increase memory.
-					0 |                     // Circular mode.
-					DMA_CFGR1_HTIE |                     // Half-trigger
-					DMA_CFGR1_TCIE |                     // Whole-trigger
-					DMA_CFGR1_EN;                        // Enable
-
-				TIM10->CTLR1 = TIM_CEN;
-
-
-
-				streaming = 1;
+				TriggerEnable(sizeof(memory_buffer) / sizeof(memory_buffer[0]));
 			}
 		}
 
