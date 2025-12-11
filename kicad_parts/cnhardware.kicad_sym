@@ -13266,8 +13266,8 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(property "Reference" "U"
-			(at 0 0 0)
+		(property "Reference" "U2"
+			(at 10.16 6.4202 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13275,7 +13275,7 @@
 			)
 		)
 		(property "Value" "OPA567"
-			(at 6.096 -2.286 0)
+			(at 10.16 3.8802 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13316,6 +13316,20 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(symbol "OPA567_0_1"
+			(polyline
+				(pts
+					(xy 5.08 -2.54) (xy 5.08 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
 			)
 		)
 		(symbol "OPA567_1_1"
@@ -13368,6 +13382,42 @@
 				)
 			)
 			(pin input line
+				(at -5.08 10.16 270)
+				(length 2.54)
+				(name "V+"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -5.08 -10.16 90)
+				(length 2.54)
+				(name "V-"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
 				(at -2.54 10.16 270)
 				(length 2.54)
 				(name "V+"
@@ -13377,7 +13427,7 @@
 						)
 					)
 				)
-				(number "1,12"
+				(number "1"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -13395,7 +13445,7 @@
 						)
 					)
 				)
-				(number "4,5"
+				(number "5"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -13439,7 +13489,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin output line
 				(at 2.54 10.16 270)
 				(length 2.54)
 				(name "TF"
@@ -13476,6 +13526,24 @@
 				)
 			)
 			(pin output line
+				(at 5.08 10.16 270)
+				(length 2.54)
+				(name "IFLAG"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
 				(at 7.62 0 180)
 				(length 2.54)
 				(name "VO"
@@ -13485,7 +13553,25 @@
 						)
 					)
 				)
-				(number "2,3"
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 7.62 -2.54 180)
+				(length 2.54)
+				(name "VO"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
 					(effects
 						(font
 							(size 1.27 1.27)
