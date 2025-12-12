@@ -3876,6 +3876,16 @@
 	)
 	(wire
 		(pts
+			(xy 119.38 124.46) (xy 119.38 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba1092b8-f6f6-4f4c-8d15-1c3186437a59")
+	)
+	(wire
+		(pts
 			(xy 195.58 129.54) (xy 204.47 129.54)
 		)
 		(stroke
@@ -3883,6 +3893,16 @@
 			(type default)
 		)
 		(uuid "ba5e5d2b-e6a6-4305-884a-73d7ceadea59")
+	)
+	(wire
+		(pts
+			(xy 119.38 114.3) (xy 121.92 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cdda6f55-eb87-43c6-b473-003dd86a2c99")
 	)
 	(wire
 		(pts
@@ -10103,7 +10123,7 @@
 	)
 	(symbol
 		(lib_id "power:+9V")
-		(at 119.38 124.46 270)
+		(at 129.54 114.3 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10112,7 +10132,7 @@
 		(fields_autoplaced yes)
 		(uuid "b90cddb8-d5fb-4e74-856b-825c7400f3a0")
 		(property "Reference" "#PWR022"
-			(at 115.57 124.46 0)
+			(at 125.73 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10121,7 +10141,7 @@
 			)
 		)
 		(property "Value" "+9V"
-			(at 123.19 124.4599 90)
+			(at 133.35 114.2999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10130,7 +10150,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 119.38 124.46 0)
+			(at 129.54 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10139,7 +10159,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 119.38 124.46 0)
+			(at 129.54 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10148,7 +10168,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+9V\""
-			(at 119.38 124.46 0)
+			(at 129.54 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10160,7 +10180,7 @@
 			(uuid "5aba100e-c5e1-4f22-97e0-3c9dbe842a1e")
 		)
 		(instances
-			(project "ch570sao"
+			(project "ch570sao9v"
 				(path "/8b3ca9c1-ec01-472e-975f-b13c767b5c47"
 					(reference "#PWR022")
 					(unit 1)
@@ -10723,6 +10743,101 @@
 			(project "ch570sao"
 				(path "/8b3ca9c1-ec01-472e-975f-b13c767b5c47"
 					(reference "C11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 125.73 114.3 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cb0ba53d-17f1-4504-b4c2-5272b8c4f317")
+		(property "Reference" "D2"
+			(at 125.73 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 125.73 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-323"
+			(at 125.73 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 125.73 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 125.73 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 125.73 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 125.73 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2128"
+			(at 125.73 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "a95facd0-8dec-46da-b16d-4e80dbd7b9ea")
+		)
+		(pin "1"
+			(uuid "4ca747cd-f4da-41a0-8bdd-ceff53a952a9")
+		)
+		(instances
+			(project "ch570sao9v"
+				(path "/8b3ca9c1-ec01-472e-975f-b13c767b5c47"
+					(reference "D2")
 					(unit 1)
 				)
 			)
