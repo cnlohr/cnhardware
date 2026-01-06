@@ -116,7 +116,7 @@ int main()
 	{
 		uint8_t ue = USART1->DATAR;
 		int i;
-printf( "%02x\n", ue );
+//printf( "%02x\n", ue );
 		for( i = BRIGHTNESS_QUEUE - 1; i > 0; i--)
 		{
 			brightnessqueue[i] = brightnessqueue[i-1];
