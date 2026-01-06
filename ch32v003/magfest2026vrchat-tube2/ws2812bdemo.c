@@ -19,7 +19,7 @@ uint16_t phases[NR_LEDS];
 int frameno;
 volatile int tween = -NR_LEDS;
 
-#define BRIGHTNESS_QUEUE 64 // 
+#define BRIGHTNESS_QUEUE 128 // 
 uint8_t brightnessqueue[BRIGHTNESS_QUEUE];
 uint8_t active_mode[BRIGHTNESS_QUEUE];
 
@@ -28,8 +28,8 @@ uint8_t active_mode[BRIGHTNESS_QUEUE];
 uint32_t WS2812BLEDCallback( int ledno )
 {
 #if 1
-	int selo = brightnessqueue[ledno>>2];
-	int tfo = active_mode[ledno>>2];
+	int selo = brightnessqueue[(ledno>>2)+63];
+	int tfo = active_mode[(ledno>>2)+63];
 	if( (tfo << 2) > selo )
 	{
 		uint8_t index = (phases[ledno])>>8;
@@ -116,7 +116,7 @@ int main()
 	{
 		uint8_t ue = USART1->DATAR;
 		int i;
-//printf( "%02x\n", ue );
+printf( "%02x\n", ue );
 		for( i = BRIGHTNESS_QUEUE - 1; i > 0; i--)
 		{
 			brightnessqueue[i] = brightnessqueue[i-1];
