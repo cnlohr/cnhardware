@@ -150,7 +150,7 @@ int main()
 
 		GPIOD->BSHR = 1;	 // Turn on GPIOD0
 		// Wait for LEDs to totally finish.
-		Delay_Ms( 12 );
+		Delay_Ms( 8 );
 		GPIOD->BSHR = 1<<16; // Turn it off
 
 		while( WS2812BLEDInUse );

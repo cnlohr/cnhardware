@@ -8,8 +8,9 @@ uint32_t clickcount_raw = 0;
 uint32_t activate_time = 0;
 int is_activated = 0;
 
-#define BONUS_TIME 168000000
-#define MAX_CLICKS 100
+//6 seconds
+#define BONUS_TIME 288000000
+#define MAX_CLICKS 420
 
 typedef struct {
 	volatile uint8_t len;
@@ -112,10 +113,9 @@ void scan_keyboard(void)
 
 	}
 	clickcount+=dcc;
-printf( "%d\n", clickcount );
 	clickcount_raw+=dcc;
 
-	if( clickcount > MAX_CLICKS && !is_activated )
+	if( clickcount >= MAX_CLICKS && !is_activated )
 	{
 		clickcount = MAX_CLICKS;
 		is_activated = 1;
@@ -134,6 +134,7 @@ printf( "%d\n", clickcount );
 		uint8_t midi_msg[4] = {0x09, 0xB0, 0x40, 0x7F}; // Control Channel
 		midi_msg[2] = (clickcount >> 3);
 		midi_msg[3] = (clickcount & 7)<<4;
+//printf( "%d\n", clickcount );
 		midi_send(midi_msg, 4);
 	}
 

@@ -28,8 +28,8 @@ uint8_t active_mode[BRIGHTNESS_QUEUE];
 uint32_t WS2812BLEDCallback( int ledno )
 {
 #if 1
-	int selo = brightnessqueue[ledno>>2];
-	int tfo = active_mode[ledno>>2];
+	int selo = brightnessqueue[62-(ledno>>2)];
+	int tfo = active_mode[62-(ledno>>2)];
 	if( (tfo << 2) > selo )
 	{
 		uint8_t index = (phases[ledno])>>8;
@@ -150,7 +150,7 @@ int main()
 
 		GPIOD->BSHR = 1;	 // Turn on GPIOD0
 		// Wait for LEDs to totally finish.
-		Delay_Ms( 12 );
+		Delay_Ms( 8 );
 		GPIOD->BSHR = 1<<16; // Turn it off
 
 		while( WS2812BLEDInUse );
