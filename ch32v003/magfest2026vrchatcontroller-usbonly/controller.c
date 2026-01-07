@@ -9,7 +9,7 @@ uint32_t activate_time = 0;
 int is_activated = 0;
 
 //6 seconds
-#define BONUS_TIME 288000000
+#define BONUS_TIME 240000000
 #define MAX_CLICKS 420
 
 typedef struct {
