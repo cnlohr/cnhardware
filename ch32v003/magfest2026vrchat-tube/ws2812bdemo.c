@@ -19,17 +19,22 @@ uint16_t phases[NR_LEDS];
 int frameno;
 volatile int tween = -NR_LEDS;
 
-#define BRIGHTNESS_QUEUE 64 // 
+#define BRIGHTNESS_QUEUE 256 // 
 uint8_t brightnessqueue[BRIGHTNESS_QUEUE];
 uint8_t active_mode[BRIGHTNESS_QUEUE];
 
+#define CHECKBANKS 4
+uint32_t * bankptr[CHECKBANKS] = { (uint32_t*)(0x08003700), (uint32_t*) (0x08003800), (uint32_t*) (0x08003900), (uint32_t*) (0x08003a00) };
+uint32_t numClicks;
+int bwid = 0;
+int hadDelta = 0;
 
 // Callbacks that you must implement.
 uint32_t WS2812BLEDCallback( int ledno )
 {
 #if 1
-	int selo = brightnessqueue[62-(ledno>>2)];
-	int tfo = active_mode[62-(ledno>>2)];
+	int selo = brightnessqueue[124+(ledno>>1)];
+	int tfo = active_mode[124+(ledno>>1)];
 	if( (tfo << 2) > selo )
 	{
 		uint8_t index = (phases[ledno])>>8;
@@ -73,6 +78,8 @@ int main()
 	int k;
 	SystemInit();
 
+	int i;
+
 	// Enable GPIOD (for debugging)
 	RCC->APB2PCENR |= RCC_APB2Periph_GPIOD;
 
@@ -108,9 +115,41 @@ int main()
 	int last_num = 0;
 
 
+	{
+		// Unkock flash - be aware you need extra stuff for the bootloader.
+		FLASH->KEYR = FLASH_KEY1;
+		FLASH->KEYR = FLASH_KEY2;
+
+		// For unlocking programming, in general.
+		FLASH->MODEKEYR = FLASH_KEY1;
+		FLASH->MODEKEYR = FLASH_KEY2;
+
+		printf( "FLASH->CTLR = %08x\n", (unsigned int)FLASH->CTLR );
+		if( FLASH->CTLR & 0x8080 ) 
+		{
+			printf( "Flash still locked\n" );
+			while(1);
+		}
+
+		for( i = 0; i < CHECKBANKS; i++ )
+		{
+			printf( "Bank %d: %08x %08x ", (int)i, (unsigned int)bankptr[i][0], (unsigned int)bankptr[i][1] );
+			if( (bankptr[i][0] ^ bankptr[i][1]) == 0xffffffff )
+			{
+				printf( "%d\n", (unsigned int)bankptr[i] );
+				if( bankptr[i][0] > numClicks ) numClicks = bankptr[i][0];
+			}
+			else
+			{
+				printf( " CORRUPT\n" );
+			}
+		}
+	}
+	printf( "Num Clicks: %d\n", (unsigned)numClicks );
+
 	WS2812BDMAInit( );
 
-
+	
 
 	while(1)
 	{
@@ -149,8 +188,52 @@ int main()
 		last_num += delta;
 
 		GPIOD->BSHR = 1;	 // Turn on GPIOD0
+		if( delta )
+		{
+			static int even_or_odd;
+			// Don't trigger first.
+			if( hadDelta )
+				numClicks += delta;
+			hadDelta = 1;
+
+				uint32_t * ptr = bankptr[bwid];
+
+			if( even_or_odd == 0 )
+			{
+				while( FLASH->STATR & FLASH_STATR_BSY );
+
+				FLASH->CTLR = CR_PAGE_ER;
+				FLASH->ADDR = (intptr_t)ptr;
+				FLASH->CTLR = CR_STRT_Set | CR_PAGE_ER;
+
+				while( FLASH->STATR & FLASH_STATR_BSY );  // Takes about 3ms.
+
+				// Clear buffer and prep for flashing.
+				FLASH->CTLR = CR_PAGE_PG;  // synonym of FTPG.
+				FLASH->CTLR = CR_BUF_RST | CR_PAGE_PG;
+				FLASH->ADDR = (intptr_t)ptr;  // This can actually happen about anywhere toward the end here.
+				even_or_odd = 1;
+			} else if( even_or_odd == 1 )
+			{
+				ptr[0] = numClicks;
+				FLASH->CTLR = CR_PAGE_PG | FLASH_CTLR_BUF_LOAD; // Load the buffer.
+				while( FLASH->STATR & FLASH_STATR_BSY );  // Only needed if running from RAM.
+
+				ptr[1] = numClicks^0xffffffff;
+				FLASH->CTLR = CR_PAGE_PG | FLASH_CTLR_BUF_LOAD; // Load the buffer.
+				while( FLASH->STATR & FLASH_STATR_BSY );  // Only needed if running from RAM.
+
+				// Actually write the flash out. (Takes about 3ms)
+				FLASH->CTLR = CR_PAGE_PG|CR_STRT_Set;
+				even_or_odd = 0;
+				bwid = ( bwid + 1 ) & (CHECKBANKS-1);
+	
+			}
+		}
+
 		// Wait for LEDs to totally finish.
-		Delay_Ms( 8 );
+//		Delay_Ms( 8 );
+
 		GPIOD->BSHR = 1<<16; // Turn it off
 
 		while( WS2812BLEDInUse );
