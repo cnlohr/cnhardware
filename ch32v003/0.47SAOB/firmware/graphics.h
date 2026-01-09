@@ -25,7 +25,7 @@
 #include "font8x8_basic_trunrot.h"
 
 #ifndef EMU
-#include "ch32v003fun.h"
+#include "ch32fun.h"
 #endif
 
 #include "swadge2025font.h"

@@ -1,5 +1,5 @@
 #ifndef EMU
-#include "ch32v003fun.h"
+#include "ch32fun.h"
 #else
 #include "emu.h"
 #endif
