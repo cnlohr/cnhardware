@@ -1,6 +1,7 @@
 # Tempalte repo for demo swadge
 
  * Single AA Battery, BH-AA-A1AJ020
+ * USB
  * CPU: CH584M (C42381470)
    * 78MHz, RISC-V, IMBC
    * 504kB Flash
@@ -46,7 +47,6 @@
 | LEDs 4x | $0.18 | 2mA to 62mA |
 | LSM6DS3TR | $0.66 | 450uA (Active mode) |
 
-
 Silicone button candidates:
  * ![PS3 controller](https://www.alibaba.com/product-detail/Conductive-Silicone-Button-Pad-for-GB_1601404877559.html)
  * ![Various Controllers](https://www.alibaba.com/product-detail/2026R-Silicone-Rubber-Pad-for-Ps5_1601622066102.html)
@@ -59,4 +59,11 @@ PCB:
  * Assumes PCBWay, 35x60, 2L, Lead-free HASL
  * If no case, need 2 extra PCBs to sandwich buttons and OLED/LCD panel.
 
+## Software Recommendations
+
+ * Recommend CH32FUN
+ * Recommend compressed loading for game mode.
+ * Common funcitons remain in FLASH.
+ * Each game has 100% of RAM to itself.
+ * Assets **may** stay in FLASH or be loaded into RAM.
 
