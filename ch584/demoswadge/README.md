@@ -4,7 +4,8 @@
    * 78MHz, RISC-V, IMBC
    * 504kB Flash
    * 96kB RAM
-   * 2.4GHz support
+   * 2.4GHz (BLE-only, no wifi) support
+   * NFC (13.56 MHz RFID)
    * USBFS (Could be USBHS if 585M)
    * 40 GPIOs
  * Single AA Battery, BH-AA-A1AJ020
