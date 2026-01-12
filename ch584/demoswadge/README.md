@@ -26,9 +26,9 @@
 | CPU | $0.56 | 10uA - 1mA - 7mA (RX) - peak 12mA (TX) |
 | Boost Supply x2 | $0.09 | 10-20uA |
 | Battery Holder | $0.22 | - |
-| LCD | $2.00 to $3.00 (depending) | - |
-| Silicone Buttons | $0.16 | - |
-| PCB | $0.21 | - |
+| LCD/OLED | $2.00-$3.00 | - |
+| Silicone Buttons | $0.06-$0.35 | - |
+| PCB | $0.21-$0.63 | - |
 | Misc Discretes | $0.15 | - |
 | USB (SOUHAN connector) | $0.05 | - |
 | Mic (GMI4013S-2C56DB) | $0.14 | - |
@@ -41,9 +41,13 @@
 Silicone button candidates:
  * ![PS3 controller](https://www.alibaba.com/product-detail/Conductive-Silicone-Button-Pad-for-GB_1601404877559.html)
  * ![Various Controllers](https://www.alibaba.com/product-detail/2026R-Silicone-Rubber-Pad-for-Ps5_1601622066102.html)
+ * DonGuan Deson Insulated MAterial Co., LTD 10x6x9 Clear, 30k, $0.017/ea
 
 LEDs:
  * LC8805C
 
 PCB:
  * Assumes PCBWay, 35x60, 2L, Lead-free HASL
+ * If no case, need 2 extra PCBs to sandwich buttons and OLED/LCD panel.
+
+
