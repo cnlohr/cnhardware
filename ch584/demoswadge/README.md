@@ -3,7 +3,7 @@
  * Single AA Battery, BH-AA-A1AJ020
  * CPU: CH584M (C42381470)
    * 78MHz, RISC-V, IMBC
-   * 504kB Flash
+   * 504kB Flash (Optional +512kB in CH584X)
    * 96kB RAM
    * 2.4GHz (BLE-only, no wifi) support
    * NFC (13.56 MHz RFID)
