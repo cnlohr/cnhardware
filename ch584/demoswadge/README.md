@@ -33,7 +33,7 @@
 | USB (SOUHAN connector) | $0.05 | - |
 | Mic (GMI4013S-2C56DB) | $0.14 | - |
 | Headphones PJ-307C | $0.04 | - |
-| --- | --- | --- |
+| --- | Optional | --- |
 | LEDs 4x | $0.18 | 2mA to 62mA |
 | LSM6DS3TR | $0.66 | 450uA (Active mode) |
 
