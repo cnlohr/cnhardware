@@ -1,5 +1,6 @@
 # Tempalte repo for demo swadge
 
+ * Single AA Battery, BH-AA-A1AJ020
  * CPU: CH584M (C42381470)
    * 78MHz, RISC-V, IMBC
    * 504kB Flash
@@ -8,15 +9,22 @@
    * NFC (13.56 MHz RFID)
    * USBFS (Could be USBHS if 585M)
    * 40 GPIOs
- * Single AA Battery, BH-AA-A1AJ020
+   * Processor current is:
+     * 5uA Standby (with RTC)
+     * 2mA Operating, no radio
+     * 7mA (RX)
+     * 12mA (Peak TX)
  * Boost supply
    * C5345596
    * 2.2V VDD
- * OLED or LCD (Needs more discussion) 
+ * OLED or LCD
+   * Consider OLED because lower power
+   * Consider monochrome OLED for cost (Could 2bit greyscale)
+   * Consider LCD but higher power, for color.
  * Silicone Buttons	
  * LEDs (Recommend no LEDs) LC8805C
  * SMALLER PCB (Recommend 35x60)
- * Add a case (Need to explore)
+ * Add a case (not quoted) or triple-stack PCB
  * Recommend no speaker, but headphone jack. Digital volume control.
  * Consider soft-power-switch-only to enable RTC
 
@@ -24,7 +32,7 @@
 
 | Component | Cost | Energy (Active, 100% RX) |
 | --- | --- | --- |
-| CPU | $0.56 | 10uA - 1mA - 7mA (RX) - peak 12mA (TX) |
+| CPU | $0.56 | 9mA |
 | Boost Supply x2 | $0.09 | 10-20uA |
 | Battery Holder | $0.22 | - |
 | LCD/OLED | $2.00-$3.00 | - |
