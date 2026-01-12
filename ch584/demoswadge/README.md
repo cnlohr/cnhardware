@@ -26,8 +26,12 @@
 | Battery Holder | $0.22 | - |
 | LCD | $2.00 to $3.00 (depending) | - |
 | Silicone Buttons | $0.16 | - |
-| LEDs 4x | $0.18 | 2mA to 62mA |
 | PCB | $0.21 | - |
+| Misc Discretes | $0.15 | - |
+| --- | --- | --- |
+| LEDs 4x | $0.18 | 2mA to 62mA |
+| LSM6DS3TR | $0.66 | 450uA (Active mode) |
+
 
 Silicone button candidates:
  * ![PS3 controller](https://www.alibaba.com/product-detail/Conductive-Silicone-Button-Pad-for-GB_1601404877559.html)
