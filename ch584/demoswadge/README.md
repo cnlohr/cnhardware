@@ -15,8 +15,8 @@
      * 7mA (RX)
      * 12mA (Peak TX)
  * Boost supply
-   * C5345596
-   * 2.2V VDD
+   * C5345596, 2.2V VDD, CH584 can run at low voltage.
+   
  * OLED or LCD
    * Consider OLED because lower power
    * Consider monochrome OLED for cost (Could 2bit greyscale)
@@ -33,7 +33,7 @@
 | Component | Cost | Energy (Active, 100% RX) |
 | --- | --- | --- |
 | CPU | $0.56 | 9mA |
-| Boost Supply x2 | $0.09 | 10-20uA |
+| Boost x2, LDO | $0.11 | 10-20uA |
 | Battery Holder | $0.22 | - |
 | LCD/OLED | $2.00-$3.00 | - |
 | Silicone Buttons | $0.06-$0.35 | - |
