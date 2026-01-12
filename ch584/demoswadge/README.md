@@ -23,7 +23,7 @@
 
 | Component | Cost | Energy (Active, 100% RX) |
 | --- | --- | --- |
-| CPU | $0.559 | 10uA - 1mA - 7mA (RX) - peak 12mA (TX) |
+| CPU | $0.56 | 10uA - 1mA - 7mA (RX) - peak 12mA (TX) |
 | Boost Supply x2 | $0.09 | 10-20uA |
 | Battery Holder | $0.22 | - |
 | LCD | $2.00 to $3.00 (depending) | - |
