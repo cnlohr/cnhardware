@@ -1,7 +1,6 @@
-# Tempalte repo for demo swadge
+# cnlohr's ideal mini swadge
 
  * Single AA Battery, BH-AA-A1AJ020
- * USB
  * CPU: CH584M (C42381470)
    * 78MHz, RISC-V, IMBC
    * 504kB Flash
@@ -28,6 +27,7 @@
  * Add a case (not quoted) or triple-stack PCB
  * Recommend no speaker, but headphone jack. Digital volume control.
  * Consider soft-power-switch-only to enable RTC
+ * USB (For programmability or other features)
 
 ### Costs (@1000)
 
