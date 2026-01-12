@@ -16,18 +16,23 @@
  * LEDs (Recommend no LEDs) LC8805C
  * SMALLER PCB (Recommend 35x60)
  * Add a case (Need to explore)
+ * Recommend no speaker, but headphone jack. Digital volume control.
+ * Consider soft-power-switch-only to enable RTC
 
 ### Costs (@1000)
 
 | Component | Cost | Energy (Active, 100% RX) |
 | --- | --- | --- |
 | CPU | $0.559 | 10uA - 1mA - 7mA (RX) - peak 12mA (TX) |
-| Boost Supply | $0.046 | 10uA |
+| Boost Supply x2 | $0.09 | 10-20uA |
 | Battery Holder | $0.22 | - |
 | LCD | $2.00 to $3.00 (depending) | - |
 | Silicone Buttons | $0.16 | - |
 | PCB | $0.21 | - |
 | Misc Discretes | $0.15 | - |
+| USB (SOUHAN connector) | $0.05 | - |
+| Mic (GMI4013S-2C56DB) | $0.14 | - |
+| Headphones PJ-307C | $0.04 | - |
 | --- | --- | --- |
 | LEDs 4x | $0.18 | 2mA to 62mA |
 | LSM6DS3TR | $0.66 | 450uA (Active mode) |
