@@ -1,5 +1,23 @@
 # cnlohr's ideal mini swadge
 
+## Goals
+ * Swadges have lost their novelty because they're all the same
+ * Swadges are too heavy and big.  Smaller. Lighter.
+ * Swadges are expensive, what if we make them much cheaper? Can we make more?
+ * Keep as much connectivity/features as are visible.  We have to pick and choose.
+   * USB ($0.05)
+   * Buttons ($0.10)
+   * Audio Out ($0.14)
+   * Audio In ($0.18)
+   * LEDs ($0.35)
+   * IMU ($0.55)
+   * Compatibility with ESP32-S2 wireless ($1.80)
+   * Display ($1.20)
+   * Color Display ($2.80)
+ * Needs to be more enclosed.
+
+## Spec
+
  * Single AA Battery, BH-AA-A1AJ020
  * CPU: CH584M (C42381470)
    * 78MHz, RISC-V, IMBC
