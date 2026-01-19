@@ -86,3 +86,7 @@ PCB:
  * Each game has 100% of RAM to itself.
  * Assets **may** stay in FLASH or be loaded into RAM.
 
+## Avenues
+ * ESP32-S3 + new screen // AND // Microswadge
+ * Micro-swadge only with LCD?
+
