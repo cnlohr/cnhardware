@@ -54,7 +54,7 @@
 	(attr through_hole)
 	(fp_circle
 		(center 0 0)
-		(end 2.6 0)
+		(end 2.35 0)
 		(stroke
 			(width 0.12)
 			(type solid)
@@ -472,6 +472,41 @@
 			)
 		)
 		(uuid "397210f0-4d52-4992-a0a7-bb13f3e5dba1")
+	)
+	(zone
+		(net 0)
+		(net_name "")
+		(layer "F.Cu")
+		(uuid "a509e71f-2fbe-42cb-b6ec-0bf9d161d66d")
+		(hatch edge 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(filled_areas_thickness no)
+		(keepout
+			(tracks allowed)
+			(vias allowed)
+			(pads allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+		)
+		(polygon
+			(pts
+				(xy -3.12 0.93) (xy -3.24 -0.28) (xy -3 -1.26) (xy -2.6 -1.96) (xy -2.19 -2.44) (xy -1.5 -2.89)
+				(xy -0.68 -3.19) (xy -0.05 -3.23) (xy 0.67 -3.18) (xy 1.46 -2.92) (xy 1.98 -2.6) (xy 2.53 -2.06)
+				(xy 2.96 -1.42) (xy 3.22 -0.56) (xy 3.23 0.47) (xy 2.96 1.44) (xy 2.44 2.2) (xy 1.61 2.83) (xy 0.75 3.18)
+				(xy -0.03 3.26) (xy -0.82 3.15) (xy -1.58 2.84) (xy -2.16 2.44) (xy -2.73 1.77)
+			)
+		)
 	)
 	(embedded_fonts no)
 )

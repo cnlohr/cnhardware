@@ -364,7 +364,7 @@ int main()
 		0x06, 0x60, // FIFO_CTRL1 - FIFO size.
 		0x07, 0x00, // FIFO_CTRL2 - No temperature in FIFO.
 		0x08, 0x09, // FIFO_CTRL3 - Put accel+gyro in FIFO.
-		0x09, 0x00, // FIFO_CTRL4 - No decimation
+		0x09, 0x00, // FIFO_CTRL4 - No decimation  TODO: I think this is wrong!!!!!! I think it should be 0x05.
 		0x0a, 0x2b, // FIFO_CTRL5 - 208Hz, Continuous mode FIFO. (was 0x2e) - if 12.5Hz (set to 0x0e)
 		0x13, 0x00, // CTRL4_C - No extra stuff, don't stop on fth.
 		0x15, 0x10, // CTRL6_C - High Performance.
