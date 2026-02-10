@@ -46,6 +46,7 @@
    * OLEDs allow for advanced 3D 15kSPS mode.
    * LCDs are color.
    * There are new LCDs now.
+   * Reflective LCDs round to zero power used.
  * Silicone Buttons	
  * LEDs - Use our LC8805C
  * SMALLER PCB (Recommend 35x60)
