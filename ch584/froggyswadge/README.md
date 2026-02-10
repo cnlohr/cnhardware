@@ -3,6 +3,7 @@
 ## Goals
  * Swadges have lost their novelty because they're all the same
  * Swadges are too heavy and big.  Smaller. Lighter.
+ * The screen-to-swadge ratio is all outta whack.
  * Swadges are expensive, what if we make them much cheaper? Can we make more?
  * Keep as much connectivity/features as are visible.  We have to pick and choose.
    * USB ($0.05)
@@ -14,11 +15,12 @@
    * Compatibility with ESP32-S2 wireless (Varies)
    * Display ($0.50 to $2.80)
  * Needs to be more enclosed.
+ * Constraints breed creativity.
 
 ## Spec
 
- * Single AA Battery, BH-AA-A1AJ020
- * CPU: CH584M (C42381470)
+ * Single AA Battery, BH-AA-A1AJ020 -or- Rechargeable CR123
+ * CPU: CH584M (C42381470) (54¢)
    * 78MHz, RISC-V, IMBC
    * 504kB Flash (Optional +512kB in CH584X)
    * 96kB RAM
@@ -34,12 +36,17 @@
  * Boost supply
    * C5345596, 2.2V VDD, CH584 can run at low voltage.
    * LDO for USB operation to 3.3VDD.
+ * If rechargeable, need buck.
  * OLED or LCD
    * Consider OLED because lower power
-   * Consider monochrome OLED for cost (Could 2bit greyscale)
+   * Consider monochrome OLED for cost.  Many support greyscale.
    * Consider LCD but higher power, for color.
+   * Strongly desire 60 FPS.
+   * OLEDs allow for advanced 3D 15kSPS mode.
+   * LCDs are color.
+   * There are new LCDs now.
  * Silicone Buttons	
- * LEDs (Recommend no LEDs) LC8805C
+ * LEDs - Use our LC8805C
  * SMALLER PCB (Recommend 35x60)
  * Add a case (not quoted) or triple-stack PCB
  * Recommend no speaker, but headphone jack. Digital volume control.
@@ -50,23 +57,23 @@
 
 | Ronbo Part# | Res | Cost | Size |
 | --- | --- | --- | --- |
-| RB132-2896GSWHG01 | 128x96  | $2.0 | 1.3 inch |
-| RB150-2828KSWKG01 | 128x128 | $2.5 | 1.5 inch |
-| RB066-6448TSWHG04 | 64x48   | $0.8 | .66 Inch |
-| RB042-7240TSWCG01 | 72x40   | $0.7 | .42 Inch |
 | RB032-6032TSWDG02 | 60x32   | $0.5 | .32 Inch |
+| RB042-7240TSWCG01 | 72x40   | $0.7 | .42 Inch |
+| RB066-6448TSWHG04 | 64x48   | $0.8 | .66 Inch |
 | RB096-2864KSWYG01 | 128x64  | $0.7 | .96 Inch |
+| RB132-2896GSWHG01 | 128x96  | $2.0 | 1.3 inch |
 | RB130-2864KSWXG01 | 128x64  | $1.2 | 1.3 Inch |
+| RB150-2828KSWKG01 | 128x128 | $2.5 | 1.5 inch |
 
 #### LCD Displays:
 
-
 | Ronbo Part# | Res | Cost | Size |
 | --- | --- | --- | --- |
-| RB017A-1505A | 240X280 | $1.2*** / $2.8 | 1.69 Inch (Rounded Edges) |
-| RB014A-1211A | 240x240 | $1.2*** | 1.4 Inch |
-| RB013A-1201A | 240x240 | $1.1*** | 1.3 Inch |
-| RB020A-1501A | 240x296 | $1.3*** | 2.01 Inch (Rounded Edges) |
+| RB017A1505A | 240X280 | $1.2*** / $2.8 | 1.69 Inch (Current Screen) |
+| RB0128Y1202A | 240x240 | $1.5*** | 1.28 Round Circle |
+| RB014A1211A | 240x240 | $1.2*** | 1.4 Inch |
+| RB013A1201A | 240x240 | $1.1*** | 1.3 Inch |
+| RB020A1501A | 240x296 | $1.3*** | 2.01 Inch (Rounded Edges) |
 
 ### Costs (@1000)
 
