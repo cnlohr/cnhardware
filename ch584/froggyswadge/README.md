@@ -9,11 +9,10 @@
    * Buttons ($0.10)
    * Audio Out ($0.14)
    * Audio In ($0.18)
-   * LEDs ($0.35)
+   * LEDs ($0.10-$0.35)
    * IMU ($0.55)
-   * Compatibility with ESP32-S2 wireless ($1.80)
-   * Display ($1.20)
-   * Color Display ($2.80)
+   * Compatibility with ESP32-S2 wireless (Varies)
+   * Display ($0.50 to $2.80)
  * Needs to be more enclosed.
 
 ## Spec
@@ -46,6 +45,17 @@
  * Recommend no speaker, but headphone jack. Digital volume control.
  * Consider soft-power-switch-only to enable RTC
  * USB (For programmability or other features)
+
+### OLED Displays:
+
+| --- | --- | --- | --- |
+| RB132-2896GSWHG01 | 128x96  | $2.0 | 1.3 inch |
+| RB150-2828KSWKG01 | 128x128 | $2.5 | 1.5 inch |
+| RB066-6448TSWHG04 | 64x48   | $0.8 | .66 Inch |
+| RB042-7240TSWCG01 | 72x40   | $0.7 | .42 Inch |
+| RB032-6032TSWDG02 | 60x32   | $0.5 | .32 Inch |
+| RB096-2864KSWYG01 | 128x64  | $0.7 | .96 Inch |
+| RB130-2864KSWXG01 | 128x64  | $1.2 | 1.3 Inch |
 
 ### Costs (@1000)
 
