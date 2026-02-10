@@ -5,6 +5,7 @@
  * Swadges are too heavy and big.  Smaller. Lighter.
  * The screen-to-swadge ratio is all outta whack.
  * Swadges are expensive, what if we make them much cheaper? Can we make more?
+ * I want something **cute** - maybe Tamagotchi like
  * Keep as much connectivity/features as are visible.  We have to pick and choose.
    * USB ($0.05)
    * Buttons ($0.10)
