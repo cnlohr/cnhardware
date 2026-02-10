@@ -46,8 +46,9 @@
  * Consider soft-power-switch-only to enable RTC
  * USB (For programmability or other features)
 
-### OLED Displays:
+#### OLED Displays:
 
+| Ronbo Part# | Res | Cost | Size |
 | --- | --- | --- | --- |
 | RB132-2896GSWHG01 | 128x96  | $2.0 | 1.3 inch |
 | RB150-2828KSWKG01 | 128x128 | $2.5 | 1.5 inch |
@@ -56,6 +57,15 @@
 | RB032-6032TSWDG02 | 60x32   | $0.5 | .32 Inch |
 | RB096-2864KSWYG01 | 128x64  | $0.7 | .96 Inch |
 | RB130-2864KSWXG01 | 128x64  | $1.2 | 1.3 Inch |
+
+#### LCD Displays:
+
+
+| Ronbo Part# | Res | Cost | Size |
+| --- | --- | --- | --- || RB017A-1505A | 240X280 | $1.2*** / $2.8 | 1.69 Inch |
+| RB014A-1211A | 240x240 | $1.2*** | 1.4 Inch |
+| RB013A-1201A | 240x240 | $1.1*** | 1.3 Inch |
+| RB020A-1501A | 240x296 | $1.3*** | 2.01 Inch |
 
 ### Costs (@1000)
 
