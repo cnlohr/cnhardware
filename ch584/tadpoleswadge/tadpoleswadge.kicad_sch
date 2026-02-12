@@ -6610,7 +6610,7 @@
 	)
 	(text "TODO:\n1. If all I want on is the RTC, what voltage can the CH585 go down to?\n2. Can R4 be removed?  Shorted?\n3. Can we remove LCDRESET? If not, remove R8\n4. TODO: Can we enter shipping mode with a PFET? (To cut front power)"
 		(exclude_from_sim no)
-		(at 99.314 171.958 0)
+		(at 74.93 184.912 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6619,15 +6619,26 @@
 		)
 		(uuid "36bb1317-e213-4442-a68b-0dba3b8c0829")
 	)
-	(text "QMC6309 = 0x7C (7 bit)\nLSM6DS3 = 0x6a (7 bit)\nQMI8658 = 0x6b (7 bit)\nAW32001 = 0x49 (7 bit)\n\nTODO:\n * Are QMI8658 / LSM6DS3"
+	(text "Electrical:\nCH584:\n  NO-USB: 1.85-3.6V\n  USB: 3.15-3.45V\n\nAccel:\n  IO:  1.2 -3.6V\n  VDD: 1.62-3.6V\n  Ipwdn = <1uA\n  Ioper=2-100uA\n\nMic:\n  VCC: 2.1V-3.6V\n  Ioper=300uA\n\nLCD:\n  VCC: 2.65-2.8-3.3 (10mA)\n  VIO: 1.8-2.8\n  VBL: 2.8-3.2 (40mA)"
 		(exclude_from_sim no)
-		(at 135.636 147.828 0)
+		(at 116.586 146.558 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "798e710c-0c94-4532-9fa1-31d553186ea1")
+	)
+	(text "AW32001 = 0x49 (7 bit)"
+		(exclude_from_sim no)
+		(at 90.424 131.318 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
-		(uuid "596040ac-40cc-47e8-9dff-221ff4cd0544")
+		(uuid "874b2a36-8be6-4b74-a4d0-3ec7e01cecc6")
 	)
 	(text "Actually an antenna"
 		(exclude_from_sim no)
@@ -6668,6 +6679,16 @@
 			)
 		)
 		(uuid "e7d3a4be-10f3-4acd-bad6-b42d2765d36f")
+	)
+	(text "For prototyping, consider C2890041 or C5378735 for RGB side, because it's economical."
+		(exclude_from_sim no)
+		(at 240.03 4.064 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f4f27521-8dea-424a-bdeb-3a38a50e7476")
 	)
 	(junction
 		(at 34.29 143.51)
