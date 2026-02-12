@@ -1,0 +1,270 @@
+(footprint "BatteryHolder_Bulgin_BX0123_1xCR123"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Battery holder, Bulgin BX0123, battery type 1xCR123 (Script generated with StandardBox.py) (https://www.bulgin.com/products/pub/media/import/attachments/Battery_holders.pdf#page=7)")
+	(tags "horizontal single")
+	(property "Reference" "BT1"
+		(at 0.2 -11.29 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "be14ddb4-7688-40bc-acef-e2321256e789")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Battery"
+		(at 18.9 11.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "473a61b3-4387-4bb9-a8b6-0132277f7d94")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "~"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ae87d7b4-a940-4322-b0a9-df78b2f75f11")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Multiple-cell battery"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "74ed0fde-46e4-47ec-8394-46719b17cc3b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC" "C5290177"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c1fa245f-b7d4-4da9-8914-8cc43de1cde3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -2.06 -10.31)
+		(end -2.06 10.31)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "031aeb71-bc1e-4d8f-a83f-0bf56851c690")
+	)
+	(fp_line
+		(start -2.06 -10.31)
+		(end 39.86 -10.31)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d4409300-740a-4ac2-9f03-d41368febdb1")
+	)
+	(fp_line
+		(start -2.06 10.31)
+		(end 39.86 10.31)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "202a55f0-a518-4fdb-bc6e-346b55c8ea8c")
+	)
+	(fp_line
+		(start 39.86 -10.31)
+		(end 39.86 10.31)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f78a57a5-5c8d-46bb-8093-ea33ce9c8991")
+	)
+	(fp_line
+		(start -2.26 -10.51)
+		(end -2.26 10.51)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "d910cd92-0bcc-4124-b37e-7b0a97919983")
+	)
+	(fp_line
+		(start -2.26 10.51)
+		(end 40.06 10.51)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a33cc0e6-8e6b-4ffb-a043-dda2908f0a1b")
+	)
+	(fp_line
+		(start 40.06 -10.51)
+		(end -2.26 -10.51)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "1548bcfb-213d-4f43-89ed-6181ec100ea2")
+	)
+	(fp_line
+		(start 40.06 10.51)
+		(end 40.06 -10.51)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "6eea8658-214b-438c-b9e0-d0d82a7ec6cc")
+	)
+	(fp_rect
+		(start -1.75 -10)
+		(end 39.55 10)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "4542a02d-fcd7-4c73-9160-701cac907a6d")
+	)
+	(fp_text user "+"
+		(at -4 -0.2 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "267a82f0-cc6c-4187-8939-7851590195c4")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 18.9 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "356e1e7c-a52b-405b-9e54-9a69a4a3640d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "+"
+		(at 4 -0.2 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "40ad3936-1657-42e3-8f42-a6b2c1f2defa")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "" np_thru_hole circle
+		(at 0 -8.4)
+		(size 2 2)
+		(drill 2)
+		(layers "*.Cu" "*.Mask")
+		(uuid "aa49d0cb-41f9-4e11-8ab5-b1965a988e35")
+	)
+	(pad "" np_thru_hole circle
+		(at 10.425 0)
+		(size 3.2 3.2)
+		(drill 3.2)
+		(layers "*.Cu" "*.Mask")
+		(uuid "eaa9829b-ce0a-48a2-bd93-924420f7f25e")
+	)
+	(pad "" np_thru_hole circle
+		(at 27.375 0)
+		(size 3.2 3.2)
+		(drill 3.2)
+		(layers "*.Cu" "*.Mask")
+		(uuid "2abd9381-1b53-4b59-a39f-37f698aaa85c")
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 3 3)
+		(drill 1.6)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges no)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "2f575659-48a4-4370-835e-7110240d9a43")
+	)
+	(pad "2" thru_hole circle
+		(at 37.8 0)
+		(size 3 3)
+		(drill 1.6)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges no)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "b1538d72-cb5b-4946-a6dc-ce8e2bb55c7f")
+	)
+	(embedded_fonts no)
+	(model "${KICAD9_3DMODEL_DIR}/Battery.3dshapes/BatteryHolder_Bulgin_BX0123_1xCR123.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
