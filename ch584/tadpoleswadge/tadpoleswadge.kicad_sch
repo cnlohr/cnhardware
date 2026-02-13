@@ -6608,7 +6608,7 @@
 		)
 		(uuid "1b6f6ea2-bfd2-46ab-81ae-05d8d2ddf6f1")
 	)
-	(text "TODO:\n1. If all I want on is the RTC, what voltage can the CH585 go down to?\n2. Can R4 be removed?  Shorted?\n3. Can we remove LCDRESET? If not, remove R8\n4. TODO: Can we enter shipping mode with a PFET? (To cut front power)"
+	(text "TODO:\n1. If all I want on is the RTC, what voltage can the CH585 go down to?\n2. Can R4 be removed?  Shorted?\n3. Can we remove LCDRESET? If not, remove R8\n4. TODO: Can we enter shipping mode with a PFET? (To cut front power)\n5. CAn we remove MT3406"
 		(exclude_from_sim no)
 		(at 74.93 184.912 0)
 		(effects
@@ -6697,6 +6697,12 @@
 		(uuid "0701cda8-8ec2-4b39-ac7e-4e9716c1a45d")
 	)
 	(junction
+		(at 205.74 146.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "14716d60-2668-491a-90a3-37f67a1814e1")
+	)
+	(junction
 		(at 19.05 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6715,10 +6721,22 @@
 		(uuid "1e7c1792-e7c6-4045-a847-ca8a6888c951")
 	)
 	(junction
+		(at 205.74 143.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "26413c03-74d7-48a8-a3ef-2ad909eb7f95")
+	)
+	(junction
 		(at 242.57 66.04)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "26d52124-2a7c-423a-9a56-90353a1370cd")
+	)
+	(junction
+		(at 224.79 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "26d8b6fe-9555-45dd-b7e0-63fc58457965")
 	)
 	(junction
 		(at 33.02 186.69)
@@ -6731,6 +6749,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "29034994-1ed9-4754-ac5f-d46e5aad37e2")
+	)
+	(junction
+		(at 224.79 125.73)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3273522d-c6e0-4234-84ba-8921109a42f7")
 	)
 	(junction
 		(at 255.27 54.61)
@@ -6749,6 +6773,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3d44aa4c-b208-4577-9af5-dc5facbea2c8")
+	)
+	(junction
+		(at 59.69 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "40fb7797-4e24-4551-b420-1bc4dca30c4c")
 	)
 	(junction
 		(at 71.12 102.87)
@@ -6793,6 +6823,12 @@
 		(uuid "6e593af7-309a-480f-b0de-c2144ada6f7d")
 	)
 	(junction
+		(at 87.63 96.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8200cd44-b81b-445f-a75c-d49bbaa71ca6")
+	)
+	(junction
 		(at 182.88 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6809,6 +6845,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b1e4ab54-003e-48d0-97ea-49950b17c47d")
+	)
+	(junction
+		(at 224.79 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b7ad400a-8a71-4ffb-92da-7956797f2c26")
+	)
+	(junction
+		(at 205.74 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c6e4a846-a7a4-4a08-84f3-0a5fc492c534")
 	)
 	(junction
 		(at 73.66 119.38)
@@ -6829,10 +6877,40 @@
 		(uuid "d73f6cc5-6d55-4a09-92a6-c215965732b2")
 	)
 	(junction
+		(at 224.79 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "df81119a-4a73-4e78-990f-b67582b98382")
+	)
+	(junction
+		(at 224.79 135.89)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e3588517-085f-4e9e-93f7-22dd57c800b0")
+	)
+	(junction
+		(at 205.74 140.97)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e60f51cc-d2d0-496b-8448-bd1acbc1f24d")
+	)
+	(junction
 		(at 237.49 21.59)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e76f9fdc-5b7d-4712-8041-95dc692803c2")
+	)
+	(junction
+		(at 224.79 130.81)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e7af6a9e-8bcd-47bc-8e08-f9849aac4cac")
+	)
+	(junction
+		(at 205.74 135.89)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ee02ce05-8df3-4d7d-a636-e5fc75d9fb3e")
 	)
 	(junction
 		(at 25.4 38.1)
@@ -6936,7 +7014,7 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 96.52) (xy 91.44 96.52)
+			(xy 83.82 96.52) (xy 87.63 96.52)
 		)
 		(stroke
 			(width 0)
@@ -7623,6 +7701,16 @@
 			(type default)
 		)
 		(uuid "da60ab2a-b905-4561-9cb9-feb3c46645d5")
+	)
+	(wire
+		(pts
+			(xy 87.63 96.52) (xy 91.44 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "daf1110e-a316-4136-9569-b4132203b4ad")
 	)
 	(wire
 		(pts
@@ -11482,6 +11570,163 @@
 		)
 	)
 	(symbol
+		(lib_id "Swadge_Parts:RB017A1505A_Connector")
+		(at 214.63 134.62 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "21807d9e-45c8-4ce9-b317-3eb758099117")
+		(property "Reference" "U7"
+			(at 217.424 120.142 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "RB017A1505A_Connector"
+			(at 214.63 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Swadge_Parts:HCTL HC-FPC-03-10-15RLTAG-TUCKED"
+			(at 214.63 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2206141915_HCTL-HC-FPC-03-10-15RLTAG_C3012328.pdf"
+			(at 214.63 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 214.63 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Notes" ""
+			(at 214.63 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey" "A141392TR-ND"
+			(at 214.63 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Cost100" ".0688"
+			(at 214.63 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitutable" "Y"
+			(at 214.63 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C3012328"
+			(at 214.63 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "abedf0f5-f8ef-4e12-b6bb-15616c0ff547")
+		)
+		(pin "10"
+			(uuid "18f85501-5c25-4c4b-b4c2-fae45a1b2610")
+		)
+		(pin "11"
+			(uuid "9b953627-b3c3-42a1-b499-fa596ead06f2")
+		)
+		(pin "12"
+			(uuid "c65a7e50-b4e0-4a57-9b81-bc6048351e04")
+		)
+		(pin "13"
+			(uuid "4264d121-860b-4616-8ffb-821eae1c0d09")
+		)
+		(pin "14"
+			(uuid "ea5c7478-b2fe-466e-9ecd-9d5d776066b5")
+		)
+		(pin "15"
+			(uuid "6d1c1c1a-08b1-4e52-b528-7d42031078d7")
+		)
+		(pin "16"
+			(uuid "87e392c9-2750-4ec9-a189-cba3565925b4")
+		)
+		(pin "17"
+			(uuid "e96465b6-bb9e-491f-a81d-3a53e549cc88")
+		)
+		(pin "2"
+			(uuid "1b4c0baa-d3ee-4b80-b094-b447ab660a43")
+		)
+		(pin "3"
+			(uuid "67c12f59-dfe4-40ec-ac14-e19baffe67de")
+		)
+		(pin "4"
+			(uuid "260e0458-3d86-4a5b-b6d7-15b503cb55b2")
+		)
+		(pin "5"
+			(uuid "0284bae4-21e3-4f80-ba3c-f8413644f7d2")
+		)
+		(pin "6"
+			(uuid "4e78d017-b1c0-43d8-bc08-103a0d35f956")
+		)
+		(pin "7"
+			(uuid "7d8d7896-6346-45ec-afe5-12e1501ccb14")
+		)
+		(pin "8"
+			(uuid "9b7d76b2-5e11-4471-af4d-f4bb2b91e9bd")
+		)
+		(pin "9"
+			(uuid "926155b7-affd-4f21-9fc8-3d3993626cd8")
+		)
+		(instances
+			(project "tadpoleswadge"
+				(path "/4097c567-c295-40dc-aafd-464498afbfbc"
+					(reference "U7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 71.12 110.49 0)
 		(mirror y)
@@ -13039,6 +13284,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 87.63 96.52 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "330d131f-f116-47a8-afde-fdea489a48a3")
+		(property "Reference" "TP14"
+			(at 90.17 98.5519 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "3V2"
+			(at 90.17 101.0919 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 82.55 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 82.55 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 87.63 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9e3c2c8f-06ce-4379-ad81-dbfa5a253dc6")
+		)
+		(instances
+			(project "tadpoleswadge"
+				(path "/4097c567-c295-40dc-aafd-464498afbfbc"
+					(reference "TP14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Swadge_Parts:GND")
 		(at 185.42 30.48 270)
 		(unit 1)
@@ -13165,6 +13477,71 @@
 			(project "demoswadge"
 				(path "/4097c567-c295-40dc-aafd-464498afbfbc"
 					(reference "TP4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 59.69 86.36 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3b516f5f-8265-482f-8eae-dd5a8dfd9e55")
+		(property "Reference" "TP13"
+			(at 56.388 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VSYS"
+			(at 56.388 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 59.69 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 59.69 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 59.69 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "79bf5189-d42c-478a-8939-c5613e82b4e6")
+		)
+		(instances
+			(project "tadpoleswadge"
+				(path "/4097c567-c295-40dc-aafd-464498afbfbc"
+					(reference "TP13")
 					(unit 1)
 				)
 			)
@@ -14037,71 +14414,6 @@
 			(project "demoswadge"
 				(path "/4097c567-c295-40dc-aafd-464498afbfbc"
 					(reference "#PWR059")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Swadge_Parts:GND")
-		(at 185.42 39.37 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "49f6a82d-36bf-4aff-ac38-63ac088a2aa9")
-		(property "Reference" "#PWR095"
-			(at 179.07 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 183.642 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 185.42 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 185.42 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 185.42 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "62e294f6-98ca-4cde-a402-444c41af622a")
-		)
-		(instances
-			(project "demoswadge"
-				(path "/4097c567-c295-40dc-aafd-464498afbfbc"
-					(reference "#PWR095")
 					(unit 1)
 				)
 			)
@@ -15964,7 +16276,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "cnhardware:BatteryHolder_Bulgin_BX0123_1xCR123"
+		(property "Footprint" "cnhardware:2460"
 			(at 11.43 113.03 90)
 			(effects
 				(font
@@ -15982,7 +16294,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "CR123 Battery Holder"
+		(property "Description" ""
 			(at 19.05 124.46 0)
 			(effects
 				(font
@@ -15991,7 +16303,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5290177"
+		(property "LCSC" ""
 			(at 19.05 124.46 0)
 			(effects
 				(font
@@ -19922,91 +20234,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x01")
-		(at 190.5 39.37 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b5399251-6f9c-4eda-8065-7782e866a989")
-		(property "Reference" "J6"
-			(at 193.04 38.0999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MOUNT"
-			(at 193.04 40.6399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "cnhardware:SMTSO20xx"
-			(at 190.5 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 190.5 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 190.5 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C2916318"
-			(at 190.5 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Cost100" "0.0719"
-			(at 190.5 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "05b69f9d-c9ad-446e-bb97-c1d58ca8a810")
-		)
-		(instances
-			(project "demoswadge"
-				(path "/4097c567-c295-40dc-aafd-464498afbfbc"
-					(reference "J6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+BATT")
 		(at 67.31 116.84 270)
 		(unit 1)
@@ -22599,7 +22826,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Swadge_Parts:HCTL HC-FPC-03-10-15RLTAG-TUCKED"
+		(property "Footprint" "cnhardware:0.3K-HX-15PWB-LCD-CONNECTOR-TOP"
 			(at 214.63 105.41 0)
 			(effects
 				(font
@@ -22635,16 +22862,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" "A141392TR-ND"
-			(at 214.63 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Cost100" ".0688"
+		(property "Cost100" ".20"
 			(at 214.63 115.57 0)
 			(effects
 				(font
@@ -22662,7 +22880,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C3012328"
+		(property "LCSC" "C2919525"
 			(at 214.63 134.62 0)
 			(effects
 				(font
