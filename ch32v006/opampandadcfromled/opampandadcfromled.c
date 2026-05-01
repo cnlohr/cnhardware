@@ -159,7 +159,7 @@ int main()
 		OPA_CTLR1_FB_EN1 | // FB_EN1 = 1 (Enable feedback)
 		OPA_CTLR1_OPA_EN1 | // Enable Op-Amp
 		OPA_CTLR1_OPA_HS1 | // High speed mode.
-		1<<18 |
+		0b10<<1; // Disable output
 		0;
 
 	adc_init();
