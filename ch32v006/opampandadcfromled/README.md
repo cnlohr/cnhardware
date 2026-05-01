@@ -7,6 +7,8 @@ You can turn it back into an LED by driving the pins the other way.
 
 It operates with the built-in op-amp as a TIA.
 
+<img width="1915" height="1836" alt="image" src="https://github.com/user-attachments/assets/6a3bce90-6b68-435e-a4dc-f3565a46fcb6" />
+
 
 # Options:
 
