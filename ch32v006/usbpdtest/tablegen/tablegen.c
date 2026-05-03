@@ -17,7 +17,7 @@ int main()
 	fprintf( dc, "#ifndef _DECODETABLE_H\n" );
 	fprintf( dc, "#define _DECODETABLE_H\n" );
 	fprintf( dc, "\n" );
-	fprintf( dc, "const uint8_t bitDecodeLUT[] = {" );
+
 	int instate = 0;
 	for( instate = 0; instate < 64; instate++ )
 	{

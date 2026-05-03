@@ -3,12 +3,70 @@
 
 #include "ch32fun.h"
 #include <stdio.h>
+#include "pd_info.h"
 #include "decodetable.h"
+
 
 uint32_t count;
 
 #define ADCBUFSIZ 1024
 volatile uint32_t adc_buffer[ADCBUFSIZ/2];
+
+static int PDPacketPlace;
+static uint8_t PDPacket[128];
+
+#define CRC_POLY 0x04C11DB7
+#define CRC_INIT 0xffffffff // Determined experimentally.
+
+static uint32_t current_crc = CRC_INIT;
+
+void PDResetPacket( ) __attribute__((noinline));
+void PDProcessPacket( ) __attribute__((noinline));
+int PDAcceptByte( uint8_t by ) __attribute__((noinline));
+
+void PDResetPacket( )
+{
+	PDPacketPlace = 0;
+	current_crc = CRC_INIT; // Tricky: Using this value makes our final crc 0
+}
+
+void PDProcessPacket()
+{
+    uint32_t ret = 0;
+    uint32_t j, bit;
+	uint32_t initialrcrc = current_crc;
+    current_crc = ~current_crc;
+    for(int i=0;i<32;i++) {
+        j = 31-i;
+        bit = (current_crc>>i) & 1;
+        ret |= bit<<j;
+    }
+
+	printf( "%08x %08x\n", initialrcrc, ret );
+	int i;
+	for( i = 0; i < PDPacketPlace; i++ )
+	{
+		printf( "%02x, ", PDPacket[i] );
+	}
+	printf( "\n" );
+}
+
+int PDAcceptByte( uint8_t by )
+{
+	if( PDPacketPlace >= sizeof( PDPacket ) ) return 1;
+	PDPacket[PDPacketPlace++] = by;
+
+	uint32_t newbit, newword;
+	uint32_t rl_crc;
+	for(int i=0; i<8; i++) {
+		newbit = ((current_crc>>31) ^ ((by>>i)&1)) & 1;
+		if(newbit) newword=CRC_POLY-1; else newword=0;
+		rl_crc = (current_crc<<1) | newbit;
+		current_crc = rl_crc ^ newword;
+	}
+
+	return 0;
+}
 
 void process( void ) __attribute__((noinline)) __attribute__( ( section( ".srodata" ) ) );
 
@@ -27,8 +85,9 @@ void process( void )
 	struct decodeState
 	{
 		uint8_t stage;    // range?
-		uint8_t bitplace;
+		uint8_t bitplace; // 0..5
 		uint8_t word;     // 5 bits at a time.
+		uint8_t outcode;
 	};
 
 	static uint8_t stateBits_s;
@@ -94,8 +153,12 @@ void process( void )
 						}
 						else if( state.bitplace == 1 )
 						{
-							if( bit == 1 ) state.bitplace = 2;
-							else state.stage = 2; // keep bitplace @ 2.
+							state.bitplace = 2;
+							if( bit == 1 );
+							else
+							{
+								state.stage = 1; // keep bitplace @ 2.
+							}
 						}
 						else if( state.bitplace == 2 )
 						{
@@ -103,41 +166,79 @@ void process( void )
 							if( bit == 0 ) state.bitplace = 1;
 							else fail = 1;
 						}
+#if 0
+						if( observeTrigger ) {
+							printf("\n" );
+							for( i = 0; i < observeTrigger; i++ )
+							{
+								printf( "%06x,", observe[i] );
+							}
+							observeTrigger = 0;
+						}
+#endif
+
 						break;
 					case 1: // In SOP, expect S1, S1, S1, S2.
 					case 2: // In later SOP, already got S1 (may happen multiple times)
 					case 3: // In data.
+					case 4: // In data (Alt)
 					{
 						int nextword = state.word;
-						nextword = (nextword<<1) | bit;
 						int nextbit = state.bitplace;
+						nextword = nextword | ( bit << nextbit );
 						nextbit++;
+
 						if( nextbit == 5 )
 						{
-
-			if( observeTrigger )
-			{
-					observe[observeTrigger++] = nextword; //( thisSample << 8 ) | stateBits;
-					if( observeTrigger == 100 )
-					{
-						printf("\n" );
-						for( i = 0; i < 100; i++ )
-						{
-							printf( "%02x,", observe[i] );
-						}
-						observeTrigger = 0;
-					}
-			} else if( thisSample == 0 )
-			{
-				observeTrigger = 1;
-			}
+							int kcode = pd_kcode_lut[ nextword ];
 
 							switch( state.stage )
 							{
 							case 1:
+								if( kcode == KCODE_SYNC1 ) state.stage = 2;
+								else fail = 1;
+								break;
 							case 2:
+								if( kcode == KCODE_SYNC1 ) state.stage = 2;
+								else if( kcode == KCODE_SYNC2 )
+								{
+									state.stage = 3;
+									PDResetPacket();
+								}
+								else fail = 1;
+								break;
 							case 3:
+							case 4:
+								if( kcode == KCODE_EOP )
+								{
+									PDProcessPacket();
+								}
+								else if( kcode >= 0x10 )
+								{
+									fail = 1;
+								}
+								else
+								{
+									if( state.stage == 3 )
+									{
+										state.outcode = kcode;
+										state.stage = 4;
+									}
+									else
+									{
+										fail = PDAcceptByte( ( kcode << 4 ) | state.outcode );
+										state.stage = 3;
+									}
+								}
+
+								break;
+
 							}
+#if 0
+							if( observeTrigger < 100 )
+								observe[observeTrigger++] = nextword | (fail<<8) | (state.stage<<16); //( thisSample << 8 ) | stateBits;
+#endif
+
 							nextword = 0;
 							nextbit = 0;
 
