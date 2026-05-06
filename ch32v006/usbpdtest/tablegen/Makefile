@@ -4,7 +4,7 @@ tablegen : tablegen.c
 	gcc -o $@ $^ -Wall
 
 crcfinder : crcfinder.c
-	gcc -o $@ $^ -Wall -fsanitize=undefined,address
+	gcc -o $@ $^ -Wall  -Wno-unused -fsanitize=undefined,address
 
 clean :
 	rm -rf *.o *~ tablegen crcfinder
