@@ -1,3 +1,7 @@
+
+//           FLASH:        3932 B        62 KB      6.19%
+//             RAM:        2688 B         8 KB     32.81%
+
 /* Small example showing how to use the SWIO programming pin to 
    do printf through the debug interface */
 
@@ -6,71 +10,175 @@
 #include "pd_info.h"
 #include "decodetable.h"
 
-
-uint32_t count;
-
 #define ADCBUFSIZ 1024
 volatile uint32_t adc_buffer[ADCBUFSIZ/2];
 
-static int PDPacketPlace;
-static uint8_t PDPacket[128];
+struct cnpd_decodeState_t
+{
+	uint8_t stage;    // range?
+	uint8_t bitplace; // 0..5
+	uint8_t word;     // 5 bits at a time.
+	uint8_t outcode;
+} __attribute__((packed));
+
+
+struct cnpd_t
+{
+	uint8_t stateBits;
+	uint8_t  reserved;
+	uint16_t reserved2;
+	uint32_t adctail;
+	struct cnpd_decodeState_t state;
+	int PDCRCErrors;
+	int PDDecodeErrors;
+	int PDPacketPlace;
+	uint32_t current_crc;
+	uint8_t PDPacket[128];
+} __attribute__((aligned(16)));
+
 
 #define CRC_POLY 0x04C11DB7
 #define CRC_INIT 0xffffffff // Determined experimentally.
 
-static uint32_t current_crc = CRC_INIT;
+static const uint32_t crc_pd_table[] = {
+	0x00000000, 0x04c11db7, 0x09823b6e, 0x0d4326d9,
+	0x130476dc, 0x17c56b6b, 0x1a864db2, 0x1e475005,
+	0x2608edb8, 0x22c9f00f, 0x2f8ad6d6, 0x2b4bcb61,
+	0x350c9b64, 0x31cd86d3, 0x3c8ea00a, 0x384fbdbd,
+};
+static const uint8_t crc_pd_rev[] = { 0b0000, 0b1000, 0b0100, 0b1100, 0b0010, 0b1010, 0b0110, 0b1110, 0b0001, 0b1001, 0b0101, 0b1101, 0b0011, 0b1011, 0b0111, 0b1111 };
 
-void PDResetPacket( ) __attribute__((noinline));
-void PDProcessPacket( ) __attribute__((noinline));
-int PDAcceptByte( uint8_t by ) __attribute__((noinline));
+void PDResetPacket( struct cnpd_t * pd ) __attribute__((noinline));
+void PDProcessPacket( struct cnpd_t * pd ) __attribute__((noinline));
+int PDAcceptByte( struct cnpd_t * pd, uint8_t by ) __attribute__((noinline));
 
-void PDResetPacket( )
+
+void PDResetPacket( struct cnpd_t *pd )
 {
-	PDPacketPlace = 0;
-	current_crc = CRC_INIT; // Tricky: Using this value makes our final crc 0
+	pd->PDPacketPlace = 0;
+	pd->current_crc = CRC_INIT; // Tricky: Using this value makes our final crc 0
 }
 
-void PDProcessPacket()
+void PrintPDO( uint32_t p )
 {
-    uint32_t ret = 0;
-    uint32_t j, bit;
-	uint32_t initialrcrc = current_crc;
-    current_crc = ~current_crc;
-    for(int i=0;i<32;i++) {
-        j = 31-i;
-        bit = (current_crc>>i) & 1;
-        ret |= bit<<j;
-    }
-
-	printf( "%08x %08x\n", initialrcrc, ret );
-	int i;
-	for( i = 0; i < PDPacketPlace; i++ )
+	int type = p>>30;
+	printf( "    %08x: ", (int)p );
+	switch( type )
 	{
-		printf( "%02x, ", PDPacket[i] );
+		case 0b00: // Fixed (Tables 6.8-6.10)
+		{
+			int peak = (p>>20)&3;
+			int V = (p>>10)&0x3ff;
+			int A = (p>>0)&0x3ff;
+			printf( " FIXED Peak: %d, %dmV %dmA\n", peak, V*50, A*10 );
+			break;
+		}
+		case 0b10: // Variable (Table 6.12)
+		case 0b01: // Battery (Table 6.11)
+		{
+			int Vmax = (p>>20)&0x3ff;
+			int Vmin = (p>>10)&0x3ff;
+			int A = (p>>0)&0x3ff;
+			if( type == 0b01 )
+				printf( " BATTERY :  %dmV - %dmV %dW\n", Vmin*50, Vmax*50, A/4 );
+			else
+				printf( " VARIABLE:  %dmV - %dmV %dmA\n", Vmin*50, Vmax*50, A*10 );
+			break;
+		}
+		case 0b11: // APDO (Table 6.7)
+		{
+			int apdt = (p>>28)&3;
+			static const char * APDOTYPE[] = { "PPS", "EPR AVS", "SPR AVS", "invalid" };
+			if( apdt == 0 )
+			{
+				int Vmax = (p>>17)&0xff;
+				int Vmin = (p>>8)&0xff;
+				int I = (p)&0x7f;
+				printf( " PPS: L:%d %dmV - %dmV %dmA\n", (int)((p>>27)&1), Vmin*100, Vmax*100, I*50 );
+			}
+			else
+			{
+				printf( " APDO Type: %s\n", APDOTYPE[apdt] );
+			}
+			break;
+		}
+			
 	}
-	printf( "\n" );
 }
 
-int PDAcceptByte( uint8_t by )
+void PDProcessPacket( struct cnpd_t * pd)
 {
-	if( PDPacketPlace >= sizeof( PDPacket ) ) return 1;
-	PDPacket[PDPacketPlace++] = by;
-
-	uint32_t newbit, newword;
-	uint32_t rl_crc;
-	for(int i=0; i<8; i++) {
-		newbit = ((current_crc>>31) ^ ((by>>i)&1)) & 1;
-		if(newbit) newword=CRC_POLY-1; else newword=0;
-		rl_crc = (current_crc<<1) | newbit;
-		current_crc = rl_crc ^ newword;
+	if( pd->current_crc != 0xc704dd7b )
+	{
+		pd->PDCRCErrors++;
+		return;
 	}
 
+	// Ordering goes:
+	//  Message Header (LSB)
+	//     [ Spec Rev 7..6] [Port Data Role 5] [Message Type 4..0]
+	//  Message Header (MSB)
+	//     [ Extended 7 ] [Number of Objects 14..12] [Message ID 11..9] [Port Power Role 8]
+	uint16_t * p16 = (uint16_t*)pd->PDPacket;
+	uint16_t header = (p16)[0];
+	int type = header & 0x1f;
+	int objects = (header>>12)&7;
+	int extended = header >> 15;
+
+	int handled = 0;
+	printf( "Spec: %d / Data Role: %d / Type: %2d\n", (header>>6)&3, (header>>5)&1, type );
+	printf( "Extended: %d / Objects: %d / Message ID: %d / PPR: %d\n", extended, objects, (header>>9)&7, (header>>8)&1 );
+
+	if( extended || objects )
+	{
+		// ??? Extended is also this?
+		// Data message: Table 6.5
+		static const char * DataTypes[16] = { 
+			"RSV", "SRCCAP", "REQ", "BIST",
+			"SINKCAP", "BATSTAT", "ALERT", "COUNTRY",
+			"ENTUSB", "EPRREQ", "EPRMOD", "SRCINFO",
+			"REVISION", "RESV", "RESV", "VEND" };
+		const char * typ = (type < 16)?DataTypes[type]:"RESV";
+		printf( "DATA: %s\n", typ );
+		switch( type )
+		{
+		case 0b00001: // SRCCAP
+		case 0b00100: // SINKCAP
+			for( int n = 0; n < objects; n++ ) PrintPDO( ( p16[n*2+1]) | ( p16[n*2+2] << 16) );
+			handled = 1;
+			break;
+		}
+	}
+	else
+	{
+		// Control message: Table 6.4
+	}
+
+	if( !handled )
+	{
+		int i;
+		for( i = 0; i < pd->PDPacketPlace; i++ )
+		{
+			printf( "%02x, ", pd->PDPacket[i] );
+		}
+		printf( "\n" );
+	}
+}
+
+int PDAcceptByte( struct cnpd_t * pd, uint8_t by )
+{
+	if( pd->PDPacketPlace >= sizeof( pd->PDPacket ) ) return 1;
+	pd->PDPacket[pd->PDPacketPlace++] = by;
+	uint32_t current_crc = pd->current_crc;
+	current_crc = ( ( current_crc << 4 ) ) ^ crc_pd_table[((current_crc >> 28) ^ crc_pd_rev[by&0xf] )];
+	current_crc = ( ( current_crc << 4 ) ) ^ crc_pd_table[((current_crc >> 28) ^ crc_pd_rev[by>>4 ] )];
+	pd->current_crc = current_crc;
 	return 0;
 }
 
-void process( void ) __attribute__((noinline)) __attribute__( ( section( ".srodata" ) ) );
+void process( struct cnpd_t * pd ) __attribute__((noinline)) __attribute__( ( section( ".srodata" ) ) );
 
-void process( void )
+void process( struct cnpd_t * pd )
 {
 //#define COUNTDOWN
 	int i;
@@ -79,25 +187,12 @@ void process( void )
 #endif
 	volatile uint32_t * dmacntr = &DMA1_Channel1->CNTR;
 
-	static int observeTrigger = 0;
-	static uint32_t observe[256];
+	//static int observeTrigger = 0;
+	//static uint32_t observe[256];
 
-	struct decodeState
-	{
-		uint8_t stage;    // range?
-		uint8_t bitplace; // 0..5
-		uint8_t word;     // 5 bits at a time.
-		uint8_t outcode;
-	};
-
-	static uint8_t stateBits_s;
-	uint8_t stateBits = stateBits_s;
-
-	static struct decodeState state_s;
-	struct decodeState state = state_s;
-
-	static uint32_t adctail_s = 0;
-	uint32_t adctail = adctail_s;
+	uint8_t stateBits = pd->stateBits;
+	struct cnpd_decodeState_t state = pd->state;
+	uint32_t adctail = pd->adctail;
 
 	volatile uint16_t * adcbufptr = (uint16_t*)adc_buffer;
 
@@ -111,8 +206,7 @@ void process( void )
 		// No outstanding data to process.
 		if( !outstanding ) break;
 
-		if( outstanding > 200 ) printf( "Underflow (%d %d)\n", head, adctail );
-
+		if( outstanding > 200 ) printf( "Underflow (%d %d)\n", (int)head, (int)adctail );
 
 		while( outstanding-- )
 		{
@@ -137,7 +231,7 @@ void process( void )
 				if( bit > 1 )
 				{
 					// Fault!
-					state = (struct decodeState){ 0 };
+					state = (struct cnpd_decodeState_t){ 0 };
 				}
 				else
 				{
@@ -203,7 +297,7 @@ void process( void )
 								else if( kcode == KCODE_SYNC2 )
 								{
 									state.stage = 3;
-									PDResetPacket();
+									PDResetPacket( pd );
 								}
 								else fail = 1;
 								break;
@@ -211,7 +305,8 @@ void process( void )
 							case 4:
 								if( kcode == KCODE_EOP )
 								{
-									PDProcessPacket();
+									PDProcessPacket( pd );
+									goto skip_to_complete;
 								}
 								else if( kcode >= 0x10 )
 								{
@@ -226,7 +321,7 @@ void process( void )
 									}
 									else
 									{
-										fail = PDAcceptByte( ( kcode << 4 ) | state.outcode );
+										fail = PDAcceptByte( pd, ( kcode << 4 ) | state.outcode );
 										state.stage = 3;
 									}
 								}
@@ -252,21 +347,22 @@ void process( void )
 					// Not else case since we may still fail.
 					if( fail )
 					{
-						state = (struct decodeState){ 0 };
+						pd->PDDecodeErrors++;
+skip_to_complete:
+						state = (struct cnpd_decodeState_t){ 0 };
 					}
-
 				}
 			}
 		}
 	}
-	state_s = state;
-	stateBits_s = stateBits;
-	adctail_s = adctail;
+	pd->state = state;
+	pd->stateBits = stateBits;
+	pd->adctail = adctail;
 	return;
 }
 
 
-void adc_init( void )
+void adc_init( struct cnpd_t * pd )
 {
 	// Enable GPIOD and ADC
 	RCC->APB2PCENR |= RCC_APB2Periph_ADC1;
@@ -317,6 +413,12 @@ void adc_init( void )
 	ADC1->CTLR2 |= ADC_CONT | ADC_DMA | ADC_EXTSEL | ADC_SWSTART;
 }
 
+void HandlePDBusinessLogic()
+{
+	
+}
+
+
 int main()
 {
 	SystemInit();
@@ -326,14 +428,21 @@ int main()
 	
 	//funPinMode( PC4, GPIO_CFGLR_IN_ANALOG ); // AIN2
 	//funPinMode( PD2, GPIO_CFGLR_IN_ANALOG ); // AIN3
-	funPinMode( PC4, GPIO_CFGLR_IN_FLOAT ); // AIN2
-	funPinMode( PD2, GPIO_CFGLR_IN_FLOAT ); // AIN3
+	//funPinMode( PC4, GPIO_CFGLR_IN_FLOAT ); // AIN2
+	//funPinMode( PD2, GPIO_CFGLR_IN_FLOAT ); // AIN3
 
-	adc_init();
+	funPinMode( PC4, GPIO_CNF_OUT_OD ); // AIN2
+	funPinMode( PD2, GPIO_CNF_OUT_OD ); // AIN3
+	funDigitalWrite( PC4, 1 );
+	funDigitalWrite( PD2, 1 );
+
+	struct cnpd_t pd;
+
+	adc_init( &pd );
 
 	while(1)
 	{
-		process();
+		process( &pd );
 	}
 }
 
