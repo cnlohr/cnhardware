@@ -25,15 +25,19 @@ struct cnpd_decodeState_t
 struct cnpd_t
 {
 	uint8_t stateBits;
-	uint8_t  reserved;
-	uint16_t reserved2;
+	uint8_t  iopin;
+	uint16_t bshrmask; // BSHLR IO for turning IO on.
 	uint32_t adctail;
 	struct cnpd_decodeState_t state;
 	int PDCRCErrors;
 	int PDDecodeErrors;
-	int PDPacketPlace;
+	int payloadPlace;
 	uint32_t current_crc;
-	uint8_t PDPacket[128];
+
+	// Hardware-out.
+	volatile GPIO_TypeDef * ioport;
+
+	uint8_t payload[128];
 } __attribute__((aligned(16)));
 
 
@@ -50,16 +54,18 @@ static const uint8_t crc_pd_rev[] = { 0b0000, 0b1000, 0b0100, 0b1100, 0b0010, 0b
 
 void PDResetPacket( struct cnpd_t * pd ) __attribute__((noinline));
 void PDProcessPacket( struct cnpd_t * pd ) __attribute__((noinline));
-int PDAcceptByte( struct cnpd_t * pd, uint8_t by ) __attribute__((noinline));
-
+int  PDAcceptByte( struct cnpd_t * pd, uint8_t by ) __attribute__((noinline));
+void PDTick( struct cnpd_t * pd ) __attribute__((noinline)) __attribute__( ( section( ".srodata" ) ) );
+void PDTransmit( struct cnpd_t * pd )  __attribute__((noinline));// __attribute__( ( section( ".srodata" ) ) );
+void PDInit( struct cnpd_t * pd );
 
 void PDResetPacket( struct cnpd_t *pd )
 {
-	pd->PDPacketPlace = 0;
+	pd->payloadPlace = 0;
 	pd->current_crc = CRC_INIT; // Tricky: Using this value makes our final crc 0
 }
 
-void PrintPDO( uint32_t p )
+void PDPrintPDO( uint32_t p )
 {
 	int type = p>>30;
 	printf( "    %08x: ", (int)p );
@@ -119,7 +125,7 @@ void PDProcessPacket( struct cnpd_t * pd)
 	//     [ Spec Rev 7..6] [Port Data Role 5] [Message Type 4..0]
 	//  Message Header (MSB)
 	//     [ Extended 7 ] [Number of Objects 14..12] [Message ID 11..9] [Port Power Role 8]
-	uint16_t * p16 = (uint16_t*)pd->PDPacket;
+	uint16_t * p16 = (uint16_t*)pd->payload;
 	uint16_t header = (p16)[0];
 	int type = header & 0x1f;
 	int objects = (header>>12)&7;
@@ -144,7 +150,7 @@ void PDProcessPacket( struct cnpd_t * pd)
 		{
 		case 0b00001: // SRCCAP
 		case 0b00100: // SINKCAP
-			for( int n = 0; n < objects; n++ ) PrintPDO( ( p16[n*2+1]) | ( p16[n*2+2] << 16) );
+			for( int n = 0; n < objects; n++ ) PDPrintPDO( ( p16[n*2+1]) | ( p16[n*2+2] << 16) );
 			handled = 1;
 			break;
 		}
@@ -157,18 +163,20 @@ void PDProcessPacket( struct cnpd_t * pd)
 	if( !handled )
 	{
 		int i;
-		for( i = 0; i < pd->PDPacketPlace; i++ )
+		for( i = 0; i < pd->payloadPlace; i++ )
 		{
-			printf( "%02x, ", pd->PDPacket[i] );
+			printf( "%02x, ", pd->payload[i] );
 		}
 		printf( "\n" );
 	}
+
+	PDTransmit( pd );
 }
 
 int PDAcceptByte( struct cnpd_t * pd, uint8_t by )
 {
-	if( pd->PDPacketPlace >= sizeof( pd->PDPacket ) ) return 1;
-	pd->PDPacket[pd->PDPacketPlace++] = by;
+	if( pd->payloadPlace >= sizeof( pd->payload ) ) return 1;
+	pd->payload[pd->payloadPlace++] = by;
 	uint32_t current_crc = pd->current_crc;
 	current_crc = ( ( current_crc << 4 ) ) ^ crc_pd_table[((current_crc >> 28) ^ crc_pd_rev[by&0xf] )];
 	current_crc = ( ( current_crc << 4 ) ) ^ crc_pd_table[((current_crc >> 28) ^ crc_pd_rev[by>>4 ] )];
@@ -176,12 +184,9 @@ int PDAcceptByte( struct cnpd_t * pd, uint8_t by )
 	return 0;
 }
 
-void process( struct cnpd_t * pd ) __attribute__((noinline)) __attribute__( ( section( ".srodata" ) ) );
-
-void process( struct cnpd_t * pd )
+void PDTick( struct cnpd_t * pd )
 {
 //#define COUNTDOWN
-	int i;
 #ifdef COUNTDOWN
 	static int countdown = 100000;
 #endif
@@ -362,7 +367,7 @@ skip_to_complete:
 }
 
 
-void adc_init( struct cnpd_t * pd )
+void PDInit( struct cnpd_t * pd )
 {
 	// Enable GPIOD and ADC
 	RCC->APB2PCENR |= RCC_APB2Periph_ADC1;
@@ -411,13 +416,53 @@ void adc_init( struct cnpd_t * pd )
 	
 	// Enable continuous conversion and DMA
 	ADC1->CTLR2 |= ADC_CONT | ADC_DMA | ADC_EXTSEL | ADC_SWSTART;
+
+	// For now PD2
+	pd->bshrmask = (1<<2);
+	pd->iopin = 2;
+	pd->ioport = GPIOD;
 }
 
-void HandlePDBusinessLogic()
+void PDTransmit( struct cnpd_t * pd )
 {
-	
-}
+#if FUNCONF_SYSTICK_USE_HCLK != 1
+#error FUNCONF_SYSTICK_USE_HCLK must be set to 1 in your funconfig.h
+#endif
 
+	uint32_t bitTime = FUNCONF_SYSTEM_CORE_CLOCK / 600000;
+	uint32_t nextTime = SysTick->CNT + bitTime;
+
+	volatile GPIO_TypeDef * port = pd->ioport;
+	uint32_t tmp = 0;
+	int iopincfgshift = pd->iopin*4;
+	uint32_t cfgmaskclear = ~(0xf<<iopincfgshift);
+	uint32_t cfgmaskfloat = 0b1001<<(iopincfgshift);
+	uint32_t cfgmaskdrive = 0b0001<<(iopincfgshift);
+	uint32_t pon = pd->bshrmask;
+
+	int i;
+	for( i = 0; i < 16; i++ )
+	{
+		while( ((int)( SysTick->CNT - nextTime )) < 0 );
+		tmp = (port->CFGLR & cfgmaskclear) | cfgmaskdrive;
+		asm volatile( "" : : : "memory" ); // Force barrier.
+		port->BCR = pon; // OFF
+		port->CFGLR = tmp; // DRIVE DOWN
+		nextTime += bitTime;
+		while( ((int)( SysTick->CNT - nextTime )) < 0 );
+
+		//tmp = (port->CFGLR & cfgmaskclear) | (i<<iopincfgshift);
+		//port->CFGLR = tmp; // Release
+
+		tmp = (port->CFGLR & cfgmaskclear) | cfgmaskfloat;
+		asm volatile( "" : : : "memory" ); // Force barrier.
+		port->BSHR = pon; // ON
+		port->CFGLR = tmp; // Release
+		nextTime += bitTime;
+	}
+	funPinMode( PC4, GPIO_CFGLR_IN_FLOAT ); // AIN2
+	funPinMode( PD2, GPIO_CFGLR_IN_FLOAT ); // AIN3
+}
 
 int main()
 {
@@ -431,18 +476,18 @@ int main()
 	//funPinMode( PC4, GPIO_CFGLR_IN_FLOAT ); // AIN2
 	//funPinMode( PD2, GPIO_CFGLR_IN_FLOAT ); // AIN3
 
-	funPinMode( PC4, GPIO_CNF_OUT_OD ); // AIN2
-	funPinMode( PD2, GPIO_CNF_OUT_OD ); // AIN3
-	funDigitalWrite( PC4, 1 );
-	funDigitalWrite( PD2, 1 );
+	funPinMode( PC4, GPIO_CFGLR_IN_FLOAT ); // AIN2
+	funPinMode( PD2, GPIO_CFGLR_IN_FLOAT ); // AIN3
+	funDigitalWrite( PC4, 0 );
+	funDigitalWrite( PD2, 0 );
 
 	struct cnpd_t pd;
 
-	adc_init( &pd );
+	PDInit( &pd );
 
 	while(1)
 	{
-		process( &pd );
+		PDTick( &pd );
 	}
 }
 
