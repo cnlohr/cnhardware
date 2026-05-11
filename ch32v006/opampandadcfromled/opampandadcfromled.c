@@ -18,21 +18,6 @@ uint32_t count;
 volatile uint16_t adc_buffer[ADCBUFSIZ];
 int adctail;
 
-/*
- * start conversion, wait and return result
- */
-uint16_t adc_get( void )
-{
-	// start sw conversion (auto clears)
-	ADC1->CTLR2 |= ADC_FLAG_STRT;
-	
-	// wait for conversion complete
-	while(!(ADC1->STATR & ADC_EOC));
-	
-	// get result
-	return ADC1->RDATAR;
-}
-
 uint32_t adc_oversample( void )
 {
 	uint32_t sum = 0;
@@ -76,7 +61,7 @@ void adc_init( void )
 	ADC1->CTLR2 |= ADC_ADON;
 
 	// Set up single conversion on chl 7  ### is this necessary?
-	ADC1->RSQR1 = (1<<20); // 1 channel
+	ADC1->RSQR1 = (0<<20); // 1 channel
 	ADC1->RSQR2 = 0;
 	ADC1->RSQR3 = 9;	// 0-9 for 8 ext inputs and two internals
 	
@@ -84,7 +69,7 @@ void adc_init( void )
 	ADC1->SAMPTR2 &= ~(ADC_SMP0<<(3*9));
 
 	// No differences.
-	ADC1->SAMPTR2 |= 3<<(3*9);	// 0:7 => 3.5/7.5/11.5/19.5/35.5/55.5/71.5/239.5 cycles
+	ADC1->SAMPTR2 |= 2<<(3*9);	// 0:7 => 3.5/7.5/11.5/19.5/35.5/55.5/71.5/239.5 cycles
 
 	RCC->AHBPCENR |= RCC_AHBPeriph_DMA1;
 	
@@ -120,6 +105,7 @@ int main()
 	SystemInit();
 
 	funGpioInitAll();
+	printf( "Start\n" );
 	
 	// LED power
 	funPinMode( PC0, GPIO_CFGLR_OUT_10Mhz_PP );
@@ -133,7 +119,7 @@ int main()
 	funDigitalWrite( PA2, 0 );
 
 	// NSEL (+)
-	funPinMode( PA1, GPIO_CFGLR_IN_FLOAT );
+	funPinMode( PA1, GPIO_CFGLR_IN_ANALOG );
 	funDigitalWrite( PA1, 0 );
 
 	// Unexposed PA4, to tie to PGADIF
@@ -160,7 +146,6 @@ int main()
 		OPA_CTLR1_OPA_EN1 | // Enable Op-Amp
 		OPA_CTLR1_OPA_HS1 | // High speed mode.
 		0b10<<1; // Disable output
-		0;
 
 	adc_init();
 

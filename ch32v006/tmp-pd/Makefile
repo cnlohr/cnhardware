@@ -1,8 +1,8 @@
 all : decode
 
 decode : decode.c
-	gcc -o $@ $^
+	gcc -o $@ $^ -g -Og
 
 clean :
-	rm -rf *.o *~
+	rm -rf *.o *~ decode
 

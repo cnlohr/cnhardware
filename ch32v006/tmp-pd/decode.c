@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <stdint.h>
+#include "tests.h"
+
 
 int main()
 {
@@ -7,18 +10,22 @@ int main()
 	int i;
 
 
-	int last = tests[0][i] > 512;
-
 	int running = 0;
 	int is_decoding_short = 1;
 
-	for( i = 1; i < 127; i++ )
+	int last = tests[1][i] > 512;
+
+	for( i = 1; i < 255; i++ )
 	{
-		int this = tests[0][i] > 512;
-		int next = tests[0][i+1] > 512;
+		int this = tests[1][i] > 512;
+		int next = tests[1][i+1] > 512;
 
 		if( this == last) running++;
-
+		else
+		{
+			printf( "%d\n", running+1 );
+			running = 0;
+		}
 
 		last = this;
 	}

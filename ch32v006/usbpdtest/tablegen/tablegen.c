@@ -18,6 +18,8 @@ int main()
 	fprintf( dc, "#define _DECODETABLE_H\n" );
 	fprintf( dc, "\n" );
 
+	fprintf( dc, "static const uint8_t bitDecodeLUT[] = {\n" );
+
 	int instate = 0;
 	for( instate = 0; instate < 64; instate++ )
 	{
@@ -74,10 +76,50 @@ int main()
 		}
 		last = val;
 		uint8_t outcode = emit | (last<<1) | (expectShort<<2) | (run<<3) | (bit<<6) | (fault<<7);
-		printf( "%d %d (%08x)\n", val, last, outcode );
+		//printf( "%d %d (%08x)\n", val, last, outcode );
 		fprintf( dc, "0x%02x, ", outcode );
 	}
-	fprintf( dc, "\n};\n" );
+	fprintf( dc, "\n};\n\n" );
+
+
+	fprintf( dc, "static const uint8_t crc_pd_rev[] = {\n" );
+	fprintf( dc, "	0b0000, 0b1000, 0b0100, 0b1100,\n" );
+	fprintf( dc, "	0b0010, 0b1010, 0b0110, 0b1110,\n" );
+	fprintf( dc, "	0b0001, 0b1001, 0b0101, 0b1101,\n" );
+	fprintf( dc, "	0b0011, 0b1011, 0b0111, 0b1111 };\n" );
+
+#define CRC_POLY 0x04C11DB7
+#define CHECKCRC_VALID 0xc704dd7b
+
+	fprintf( dc, "#define CRC_POLY 0x04C11DB7\n" );
+	fprintf( dc, "#define CRC_INIT 0xffffffff\n" );
+	fprintf( dc, "#define CHECKCRC_VALID 0xc704dd7b\n" );
+
+	fprintf( dc, "static const uint32_t crc_pd_table[] = {\n" );
+	int symbol;
+	for( symbol = 0; symbol < 16; symbol++ )
+	{
+
+		uint32_t USE_POLY = CRC_POLY;
+		uint32_t current_crc = 0;
+
+		{
+			uint8_t by = symbol;
+
+			uint32_t newbit, newword;
+			uint32_t rl_crc;
+			for(int i=0; i<4; i++) {
+				newbit = ((current_crc>>31) ^ ((by>>(3-i))&1)) & 1;
+				if(newbit) newword=USE_POLY-1; else newword=0;
+				rl_crc = (current_crc<<1) | newbit;
+				current_crc = rl_crc ^ newword;
+			}
+		}
+		if( (symbol & 3) == 0 ) fprintf( dc, "\t" );
+		fprintf( dc, "0x%08x, ", current_crc );
+		if( (symbol & 3) == 3 ) fprintf( dc, "\n" );
+	}
+	fprintf( dc, "};\n" );
 
 
 	fprintf( dc, "#endif\n" );

@@ -10,9 +10,12 @@
 #include "pd_info.h"
 #include "decodetable.h"
 
-#define ADCBUFSIZ 1024
+#define ADCBUFSIZ 128
 volatile uint32_t adc_buffer[ADCBUFSIZ/2];
 
+// Worded this way to keep the code clean but
+// internally, GCC will register-allocate each
+// one of these fields as a byte.
 struct cnpd_decodeState_t
 {
 	uint8_t stage;    // range?
@@ -24,13 +27,18 @@ struct cnpd_decodeState_t
 
 struct cnpd_t
 {
+	// Organize struct so bytes are first, shorts are second, and
+	// everything else in uint32_t are 4-byte-aligned.
 	uint8_t stateBits;
 	uint8_t  iopin;
-	uint16_t bshrmask; // BSHLR IO for turning IO on.
+
+	uint16_t reserved; //
+
 	uint32_t adctail;
 	struct cnpd_decodeState_t state;
-	int PDCRCErrors;
-	int PDDecodeErrors;
+	int ErrCtCRC;
+	int ErrCtDecode;
+	int ErrCtUnderflow;
 	int payloadPlace;
 	uint32_t current_crc;
 
@@ -40,17 +48,6 @@ struct cnpd_t
 	uint8_t payload[128];
 } __attribute__((aligned(16)));
 
-
-#define CRC_POLY 0x04C11DB7
-#define CRC_INIT 0xffffffff // Determined experimentally.
-
-static const uint32_t crc_pd_table[] = {
-	0x00000000, 0x04c11db7, 0x09823b6e, 0x0d4326d9,
-	0x130476dc, 0x17c56b6b, 0x1a864db2, 0x1e475005,
-	0x2608edb8, 0x22c9f00f, 0x2f8ad6d6, 0x2b4bcb61,
-	0x350c9b64, 0x31cd86d3, 0x3c8ea00a, 0x384fbdbd,
-};
-static const uint8_t crc_pd_rev[] = { 0b0000, 0b1000, 0b0100, 0b1100, 0b0010, 0b1010, 0b0110, 0b1110, 0b0001, 0b1001, 0b0101, 0b1101, 0b0011, 0b1011, 0b0111, 0b1111 };
 
 void PDResetPacket( struct cnpd_t * pd ) __attribute__((noinline));
 void PDProcessPacket( struct cnpd_t * pd ) __attribute__((noinline));
@@ -114,9 +111,9 @@ void PDPrintPDO( uint32_t p )
 
 void PDProcessPacket( struct cnpd_t * pd)
 {
-	if( pd->current_crc != 0xc704dd7b )
+	if( pd->current_crc != CHECKCRC_VALID )
 	{
-		pd->PDCRCErrors++;
+		pd->ErrCtCRC++;
 		return;
 	}
 
@@ -192,9 +189,6 @@ void PDTick( struct cnpd_t * pd )
 #endif
 	volatile uint32_t * dmacntr = &DMA1_Channel1->CNTR;
 
-	//static int observeTrigger = 0;
-	//static uint32_t observe[256];
-
 	uint8_t stateBits = pd->stateBits;
 	struct cnpd_decodeState_t state = pd->state;
 	uint32_t adctail = pd->adctail;
@@ -211,7 +205,7 @@ void PDTick( struct cnpd_t * pd )
 		// No outstanding data to process.
 		if( !outstanding ) break;
 
-		if( outstanding > 200 ) printf( "Underflow (%d %d)\n", (int)head, (int)adctail );
+		if( outstanding > (ADCBUFSIZ*3/4) ) pd->ErrCtUnderflow++;
 
 		while( outstanding-- )
 		{
@@ -224,14 +218,13 @@ void PDTick( struct cnpd_t * pd )
 
 			int thisSample = val > 700;
 
-			stateBits = bitDecodeLUT[stateBits | thisSample];
+			stateBits = bitDecodeLUT[ (stateBits & 0x3e) | thisSample];
 
 			if( stateBits & 1 )
 			{
 
 				// Emit!
 				int bit = stateBits >> 6; // May contain failure info.
-				stateBits &= 0x3e; // Clear out output bits.
 
 				if( bit > 1 )
 				{
@@ -243,9 +236,8 @@ void PDTick( struct cnpd_t * pd )
 					int fail = 0;
 
 					// Got a 0 or a 1 bit.
-					switch( state.stage )
+					if( state.stage == 0 )
 					{
-					case 0: // Preamble, expect 1
 						if( state.bitplace == 0 )
 						{
 							state.bitplace = bit + 1; // 1 or 2.
@@ -265,94 +257,86 @@ void PDTick( struct cnpd_t * pd )
 							if( bit == 0 ) state.bitplace = 1;
 							else fail = 1;
 						}
-#if 0
-						if( observeTrigger ) {
-							printf("\n" );
-							for( i = 0; i < observeTrigger; i++ )
-							{
-								printf( "%06x,", observe[i] );
-							}
-							observeTrigger = 0;
-						}
-#endif
 
-						break;
-					case 1: // In SOP, expect S1, S1, S1, S2.
-					case 2: // In later SOP, already got S1 (may happen multiple times)
-					case 3: // In data.
-					case 4: // In data (Alt)
+					}
+					else
 					{
-						int nextword = state.word;
-						int nextbit = state.bitplace;
-						nextword = nextword | ( bit << nextbit );
-						nextbit++;
-
-						if( nextbit == 5 )
+						switch( state.stage )
 						{
-							int kcode = pd_kcode_lut[ nextword ];
+						case 1: // In SOP, expect S1, S1, S1, S2.
+						case 2: // In later SOP, already got S1 (may happen multiple times)
+						case 3: // In data.
+						case 4: // In data (Alt)
+						{
+							int nextword = state.word;
+							int nextbit = state.bitplace;
+							nextword = nextword | ( bit << nextbit );
+							nextbit++;
 
-							switch( state.stage )
+							if( nextbit == 5 )
 							{
-							case 1:
-								if( kcode == KCODE_SYNC1 ) state.stage = 2;
-								else fail = 1;
-								break;
-							case 2:
-								if( kcode == KCODE_SYNC1 ) state.stage = 2;
-								else if( kcode == KCODE_SYNC2 )
+								int kcode = pd_kcode_lut[ nextword ];
+
+								switch( state.stage )
 								{
-									state.stage = 3;
-									PDResetPacket( pd );
-								}
-								else fail = 1;
-								break;
-							case 3:
-							case 4:
-								if( kcode == KCODE_EOP )
-								{
-									PDProcessPacket( pd );
-									goto skip_to_complete;
-								}
-								else if( kcode >= 0x10 )
-								{
-									fail = 1;
-								}
-								else
-								{
-									if( state.stage == 3 )
+								case 1:
+									if( kcode == KCODE_SYNC1 ) state.stage = 2;
+									else fail = 1;
+									break;
+								case 2:
+									if( kcode == KCODE_SYNC1 ) { }
+									else if( kcode == KCODE_SYNC2 )
 									{
-										state.outcode = kcode;
-										state.stage = 4;
+										// Accepted start of packet.
+										state.stage = 3;
+										PDResetPacket( pd );
+									}
+									else fail = 1;
+									break;
+								case 3:
+								case 4:
+									if( kcode == KCODE_EOP )
+									{
+										PDProcessPacket( pd );
+										goto skip_to_complete;
+									}
+									else if( kcode >= 0x10 )
+									{
+										fail = 1;
 									}
 									else
 									{
-										fail = PDAcceptByte( pd, ( kcode << 4 ) | state.outcode );
-										state.stage = 3;
+										if( state.stage == 3 )
+										{
+											state.outcode = kcode;
+											state.stage = 4;
+										}
+										else
+										{
+											fail = PDAcceptByte( pd, ( kcode << 4 ) | state.outcode );
+											state.stage = 3;
+										}
 									}
+
+									break;
+
 								}
 
-								break;
+								nextword = 0;
+								nextbit = 0;
 
 							}
-#if 0
-							if( observeTrigger < 100 )
-								observe[observeTrigger++] = nextword | (fail<<8) | (state.stage<<16); //( thisSample << 8 ) | stateBits;
-#endif
-
-							nextword = 0;
-							nextbit = 0;
-
+							state.word = nextword;
+							state.bitplace = nextbit;
+							break;
 						}
-						state.word = nextword;
-						state.bitplace = nextbit;
-						break;
-					}
+						}
 					}
 
 					// Not else case since we may still fail.
 					if( fail )
 					{
-						pd->PDDecodeErrors++;
+						pd->ErrCtDecode++;
 skip_to_complete:
 						state = (struct cnpd_decodeState_t){ 0 };
 					}
@@ -418,7 +402,6 @@ void PDInit( struct cnpd_t * pd )
 	ADC1->CTLR2 |= ADC_CONT | ADC_DMA | ADC_EXTSEL | ADC_SWSTART;
 
 	// For now PD2
-	pd->bshrmask = (1<<2);
 	pd->iopin = 2;
 	pd->ioport = GPIOD;
 }
@@ -438,7 +421,7 @@ void PDTransmit( struct cnpd_t * pd )
 	uint32_t cfgmaskclear = ~(0xf<<iopincfgshift);
 	uint32_t cfgmaskfloat = 0b1001<<(iopincfgshift);
 	uint32_t cfgmaskdrive = 0b0001<<(iopincfgshift);
-	uint32_t pon = pd->bshrmask;
+	uint32_t pon = 1<<pd->iopin;
 
 	int i;
 	for( i = 0; i < 16; i++ )
