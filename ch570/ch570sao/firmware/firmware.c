@@ -87,10 +87,10 @@ int main()
 		//ssd1306_refresh();
 
 		char st[128];
-		sprintf( st, "%08x", (int)SysTick->CNT );
+		snprintf( st, sizeof(st), "%08x", (int)SysTick->CNT );
 		ssd1306_drawstr_sz(0, 0, st, 1, 2 );
 
-		sprintf( st, "%d", debug>>8 );
+		snprintf( st, sizeof(st), "%d", debug>>8 );
 		ssd1306_drawstr_sz(0, 24, st, 1, 2 );
 
 		start = SysTick->CNT;
