@@ -5,7 +5,7 @@
 	(uuid "7cd715cc-a370-41fa-9dbc-2b192a3d4328")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Connector:USB_C_Receptacle_USB2.0_14P"
+		(symbol "Connector:USB_C_Receptacle_USB2.0"
 			(pin_names
 				(offset 1.016)
 			)
@@ -13,19 +13,21 @@
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "J"
-				(at 0 22.225 0)
+				(at -10.16 19.05 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Value" "USB_C_Receptacle_USB2.0_14P"
-				(at 0 19.685 0)
+			(property "Value" "USB_C_Receptacle_USB2.0"
+				(at 19.05 19.05 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify right)
 				)
 			)
 			(property "Footprint" ""
@@ -46,7 +48,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "USB 2.0-only 14P Type-C Receptacle connector"
+			(property "Description" "USB 2.0-only Type-C Receptacle connector"
 				(at 0 0 0)
 				(effects
 					(font
@@ -73,7 +75,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "USB_C_Receptacle_USB2.0_14P_0_0"
+			(symbol "USB_C_Receptacle_USB2.0_0_0"
 				(rectangle
 					(start -0.254 -17.78)
 					(end 0.254 -16.764)
@@ -162,8 +164,30 @@
 						(type none)
 					)
 				)
+				(rectangle
+					(start 10.16 -12.446)
+					(end 9.144 -12.954)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 10.16 -14.986)
+					(end 9.144 -15.494)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 			)
-			(symbol "USB_C_Receptacle_USB2.0_14P_0_1"
+			(symbol "USB_C_Receptacle_USB2.0_0_1"
 				(rectangle
 					(start -10.16 17.78)
 					(end 10.16 -17.78)
@@ -364,7 +388,7 @@
 					)
 				)
 			)
-			(symbol "USB_C_Receptacle_USB2.0_14P_1_1"
+			(symbol "USB_C_Receptacle_USB2.0_1_1"
 				(pin passive line
 					(at -7.62 -22.86 90)
 					(length 5.08)
@@ -641,6 +665,42 @@
 						)
 					)
 				)
+				(pin bidirectional line
+					(at 15.24 -12.7 180)
+					(length 5.08)
+					(name "SBU1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "A8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -15.24 180)
+					(length 5.08)
+					(name "SBU2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "B8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
 			(embedded_fonts no)
 		)
@@ -776,6 +836,214 @@
 						(effects
 							(font
 								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:Crystal_GND24_Small"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Y"
+				(at 1.27 4.445 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Crystal_GND24_Small"
+				(at 1.27 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Four pin crystal, GND on pins 2 and 4, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "quartz ceramic resonator oscillator"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Crystal*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Crystal_GND24_Small_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 1.905) (xy 1.27 1.905) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -0.762) (xy -1.27 0.762)
+					)
+					(stroke
+						(width 0.381)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 -1.905) (xy 1.27 -1.905) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -0.762 -1.524)
+					(end 0.762 1.524)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -0.762) (xy 1.27 0.762)
+					)
+					(stroke
+						(width 0.381)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Crystal_GND24_Small_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 1.27)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0.762 0.762)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 2.54 270)
+					(length 0.635)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 0.762 0.762)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 0.635)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0.762 0.762)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 1.27)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 0.762 0.762)
 							)
 						)
 					)
@@ -1059,6 +1327,113 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Mechanical:MountingHole_Pad"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole_Pad"
+				(at 0 4.445 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole with connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*Pad*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_Pad_0_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_1_1"
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2774,6 +3149,12 @@
 		(uuid "7f0b9a64-ee8f-4053-a9cf-88badd1e7302")
 	)
 	(junction
+		(at 229.87 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "990a2c9b-fc91-4bfa-8ffb-845c43edc24d")
+	)
+	(junction
 		(at 182.88 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2804,6 +3185,12 @@
 		(uuid "cc36d667-649f-4473-a6ab-83420a7072e8")
 	)
 	(junction
+		(at 148.59 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e9734e0d-bd65-4d2a-9708-4ba4b0f4010e")
+	)
+	(junction
 		(at 62.23 158.75)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2821,7 +3208,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 129.54) (xy 179.07 129.54)
+			(xy 149.86 130.81) (xy 156.21 130.81)
 		)
 		(stroke
 			(width 0)
@@ -2831,17 +3218,57 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 124.46) (xy 179.07 124.46)
+			(xy 148.59 111.76) (xy 154.94 111.76)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "22d91adc-b26e-4a67-9a54-70f41875af28")
+		(uuid "0c82041e-cfde-4c7e-80f9-a73a92176e0a")
 	)
 	(wire
 		(pts
-			(xy 158.75 129.54) (xy 165.1 129.54)
+			(xy 148.59 111.76) (xy 148.59 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28deb632-d412-41d6-b8f9-c74b7e34bc7c")
+	)
+	(wire
+		(pts
+			(xy 130.81 30.48) (xy 139.7 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38ffdb25-8024-4df6-a473-936339bcb4ba")
+	)
+	(wire
+		(pts
+			(xy 229.87 130.81) (xy 238.76 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b377381-96d2-43e5-a779-d2c6f8eec8be")
+	)
+	(wire
+		(pts
+			(xy 233.68 125.73) (xy 233.68 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c6da3ae-a317-44cc-a233-c215225bf483")
+	)
+	(wire
+		(pts
+			(xy 139.7 130.81) (xy 142.24 130.81)
 		)
 		(stroke
 			(width 0)
@@ -2851,13 +3278,33 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 132.08) (xy 171.45 132.08)
+			(xy 229.87 107.95) (xy 229.87 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53458f4e-a131-4c09-9488-f147eb480586")
+	)
+	(wire
+		(pts
+			(xy 139.7 133.35) (xy 148.59 133.35)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "57436bfa-5138-4718-944f-8cc9343c998d")
+	)
+	(wire
+		(pts
+			(xy 229.87 119.38) (xy 229.87 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65b45914-b0b6-4868-9154-f9dd66b51327")
 	)
 	(wire
 		(pts
@@ -2868,6 +3315,16 @@
 			(type default)
 		)
 		(uuid "748dc8d3-0030-4e5a-9cc7-433902e1f96d")
+	)
+	(wire
+		(pts
+			(xy 229.87 107.95) (xy 234.95 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78755636-3891-48b2-aa74-42775d350918")
 	)
 	(wire
 		(pts
@@ -2891,6 +3348,16 @@
 	)
 	(wire
 		(pts
+			(xy 139.7 111.76) (xy 148.59 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83d418cc-7182-474e-b00e-4a7d76520e16")
+	)
+	(wire
+		(pts
 			(xy 175.26 69.85) (xy 194.31 69.85)
 		)
 		(stroke
@@ -2898,6 +3365,26 @@
 			(type default)
 		)
 		(uuid "953af6c8-b2fc-416e-87e5-f8474168b4ab")
+	)
+	(wire
+		(pts
+			(xy 238.76 130.81) (xy 238.76 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "95d114c3-cf0e-4826-9319-e94694113f21")
+	)
+	(wire
+		(pts
+			(xy 224.79 119.38) (xy 229.87 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9dd2e7dd-9909-459c-b2cd-019ff4742b8b")
 	)
 	(wire
 		(pts
@@ -2911,6 +3398,36 @@
 	)
 	(wire
 		(pts
+			(xy 233.68 128.27) (xy 229.87 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "beb22751-6cf7-4f09-924e-14d17946984f")
+	)
+	(wire
+		(pts
+			(xy 130.81 33.02) (xy 148.59 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca3d5be2-334b-4c07-8d0f-e47a8696719f")
+	)
+	(wire
+		(pts
+			(xy 148.59 109.22) (xy 148.59 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ecdb1e1d-a905-468c-b4cf-cda8613691ef")
+	)
+	(wire
+		(pts
 			(xy 207.01 55.88) (xy 207.01 64.77)
 		)
 		(stroke
@@ -2918,6 +3435,16 @@
 			(type default)
 		)
 		(uuid "fd08dfa2-7f8a-41b5-9859-deef766aaa85")
+	)
+	(wire
+		(pts
+			(xy 148.59 125.73) (xy 156.21 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff43d61f-95a9-46e5-8922-428e3fa3851d")
 	)
 	(global_label "LED1"
 		(shape input)
@@ -2943,7 +3470,7 @@
 	)
 	(global_label "LED4"
 		(shape input)
-		(at 113.03 163.83 0)
+		(at 69.85 139.7 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2953,7 +3480,7 @@
 		)
 		(uuid "0a351db2-6697-4dda-8a81-a166b6adafc2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 120.6718 163.83 0)
+			(at 77.4918 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2963,24 +3490,24 @@
 			)
 		)
 	)
-	(global_label "D-"
+	(global_label "SWD"
 		(shape input)
-		(at 170.18 35.56 270)
+		(at 229.87 135.89 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
-		(uuid "1a59da8b-3157-49ca-adb3-205079cfb552")
+		(uuid "12cd7819-1635-41a1-ab9e-bddab15d195b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 170.18 41.3876 90)
+			(at 236.7861 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -3075,7 +3602,7 @@
 	)
 	(global_label "LED3"
 		(shape input)
-		(at 113.03 139.7 0)
+		(at 69.85 163.83 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3085,7 +3612,7 @@
 		)
 		(uuid "5bedc94b-911d-4b20-9b46-8ab51dbfe0f0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 120.6718 139.7 0)
+			(at 77.4918 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3119,7 +3646,7 @@
 	)
 	(global_label "LED1"
 		(shape input)
-		(at 113.03 91.44 0)
+		(at 113.03 115.57 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3129,7 +3656,7 @@
 		)
 		(uuid "6bf311ab-549d-479c-bb80-2b63d7bf1a8b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 120.6718 91.44 0)
+			(at 120.6718 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3141,7 +3668,7 @@
 	)
 	(global_label "LED6"
 		(shape input)
-		(at 69.85 115.57 0)
+		(at 69.85 91.44 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3151,7 +3678,7 @@
 		)
 		(uuid "6e6ef2cf-0482-4eac-8e4c-52792571e7ec")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 77.4918 115.57 0)
+			(at 77.4918 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3163,7 +3690,7 @@
 	)
 	(global_label "D+"
 		(shape input)
-		(at 158.75 132.08 180)
+		(at 139.7 133.35 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3173,7 +3700,7 @@
 		)
 		(uuid "748ada9e-e43c-4664-afab-4765bca1b840")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 152.9224 132.08 0)
+			(at 133.8724 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3337,6 +3864,28 @@
 			)
 		)
 	)
+	(global_label "CC2"
+		(shape input)
+		(at 156.21 33.02 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8ec74581-1cfd-4288-8335-d914b2909b87")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 162.9447 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "D+"
 		(shape input)
 		(at 226.06 49.53 180)
@@ -3361,7 +3910,7 @@
 	)
 	(global_label "LED0"
 		(shape input)
-		(at 69.85 163.83 0)
+		(at 113.03 139.7 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3371,7 +3920,7 @@
 		)
 		(uuid "91631221-9a45-41cc-977f-9c839d0f9d4a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 77.4918 163.83 0)
+			(at 120.6718 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3381,9 +3930,9 @@
 			)
 		)
 	)
-	(global_label "CC1"
+	(global_label "SWC"
 		(shape input)
-		(at 130.81 30.48 0)
+		(at 240.03 133.35 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3391,9 +3940,9 @@
 			)
 			(justify left)
 		)
-		(uuid "9607bce1-939c-44b1-b8be-9608d735a8aa")
+		(uuid "9f604df5-47c2-444b-9a45-94fff8a461f5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 137.5447 30.48 0)
+			(at 246.9461 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3447,31 +3996,9 @@
 			)
 		)
 	)
-	(global_label "CC2"
-		(shape input)
-		(at 130.81 33.02 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a93bc407-88de-416e-ad5a-b89d4625ba51")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 137.5447 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "D-"
 		(shape input)
-		(at 158.75 129.54 180)
+		(at 139.7 130.81 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3481,12 +4008,34 @@
 		)
 		(uuid "a9b1808d-008f-499c-858b-d12dcfabc766")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 152.9224 129.54 0)
+			(at 133.8724 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CC1"
+		(shape input)
+		(at 147.32 30.48 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b8a5784b-b7bf-47ad-924e-dcbffdbca033")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 154.0547 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -3537,7 +4086,7 @@
 	)
 	(global_label "LED7"
 		(shape input)
-		(at 69.85 139.7 0)
+		(at 113.03 163.83 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3547,7 +4096,7 @@
 		)
 		(uuid "e3b1eff9-e9e9-4b4e-88a1-33a7319d166c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 77.4918 139.7 0)
+			(at 120.6718 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3559,7 +4108,7 @@
 	)
 	(global_label "LED5"
 		(shape input)
-		(at 69.85 91.44 0)
+		(at 69.85 115.57 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3569,7 +4118,7 @@
 		)
 		(uuid "e7da1821-59a8-487f-a253-ad82c4428133")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 77.4918 91.44 0)
+			(at 77.4918 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3579,9 +4128,53 @@
 			)
 		)
 	)
+	(global_label "SWD"
+		(shape input)
+		(at 130.81 43.18 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e84f291e-e459-4929-b914-d447e558c5ea")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 137.7261 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PCTL"
+		(shape input)
+		(at 156.21 135.89 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ed9a2fbd-fced-4dbd-af24-1928e5b4142a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 148.6891 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "LED2"
 		(shape input)
-		(at 113.03 115.57 0)
+		(at 113.03 91.44 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3591,7 +4184,7 @@
 		)
 		(uuid "fd7321b7-6703-4fda-b7ce-222dccc845c9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 120.6718 115.57 0)
+			(at 120.6718 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3660,7 +4253,7 @@
 			(uuid "b6275225-09f4-4f9c-8018-451a050e54d1")
 		)
 		(instances
-			(project ""
+			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR08")
 					(unit 1)
@@ -3749,7 +4342,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 168.91 129.54 90)
+		(at 146.05 130.81 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3758,7 +4351,7 @@
 		(fields_autoplaced yes)
 		(uuid "0162b466-69e8-4be8-a102-00e1edc1973c")
 		(property "Reference" "R6"
-			(at 168.91 123.19 90)
+			(at 146.05 124.46 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3766,15 +4359,15 @@
 			)
 		)
 		(property "Value" "33"
-			(at 168.91 125.73 90)
+			(at 146.05 127 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 168.91 131.318 90)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 146.05 132.588 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3783,7 +4376,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 168.91 129.54 0)
+			(at 146.05 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3792,7 +4385,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 168.91 129.54 0)
+			(at 146.05 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3800,8 +4393,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25105"
-			(at 168.91 129.54 90)
+		(property "LCSC" "C23140"
+			(at 146.05 130.81 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3891,6 +4484,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 234.95 107.95 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "023a35a5-3322-4867-ba46-84d19238f265")
+		(property "Reference" "#PWR053"
+			(at 234.95 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 233.426 105.918 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 234.95 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 234.95 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 234.95 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "300ebb73-c331-44cc-95f7-c668548112d6")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR053")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Transistor_FET:Q_NMOS_GSD")
 		(at 107.95 163.83 180)
 		(unit 1)
@@ -3916,6 +4575,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
@@ -4033,6 +4693,83 @@
 			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR043")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 220.98 119.38 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "04aab519-d583-4a43-9daa-ae7e3418bb5d")
+		(property "Reference" "C10"
+			(at 220.98 111.76 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7p"
+			(at 220.98 114.3 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 217.17 120.3452 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 220.98 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 220.98 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 220.98 119.38 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bbb4075d-a4ae-4c09-bfc8-5fa65ad57875")
+		)
+		(pin "2"
+			(uuid "ea4ddacb-228d-4c0d-9740-07faf403572e")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -4254,6 +4991,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:VBUS")
+		(at 186.69 86.36 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0c41ee2b-35bc-4c54-96c5-821b04ffa8b9")
+		(property "Reference" "#PWR069"
+			(at 186.69 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VBUS"
+			(at 186.69 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 186.69 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 186.69 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VBUS\""
+			(at 186.69 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "59775659-6edd-4bca-abb7-39a647bb9575")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR069")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 105.41 168.91 0)
 		(unit 1)
@@ -4386,6 +5189,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3V")
+		(at 242.57 86.36 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "11ca2c58-a56f-4fb4-af3e-db83ae65bb45")
+		(property "Reference" "#PWR067"
+			(at 242.57 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.6V"
+			(at 242.57 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 242.57 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 242.57 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 242.57 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "88f7a45b-ac04-4c71-8c4b-9f89d7ed41ea")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR067")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 199.39 93.98 0)
 		(unit 1)
@@ -4446,6 +5315,72 @@
 			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR051")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 139.7 119.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "151c579c-327c-4270-9621-8e85b04e26af")
+		(property "Reference" "#PWR064"
+			(at 139.7 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 139.7 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 139.7 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "31932e51-6eda-4b19-b480-93446d8c6931")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR064")
 					(unit 1)
 				)
 			)
@@ -4531,17 +5466,16 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 231.14 86.36 0)
+		(lib_id "power:GND")
+		(at 236.22 128.27 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "17dc3c7e-d988-460e-a629-b5bf79a92e1c")
-		(property "Reference" "#PWR048"
-			(at 231.14 90.17 0)
+		(uuid "15e55c82-99de-48ae-943f-1d8875f346cd")
+		(property "Reference" "#PWR055"
+			(at 236.22 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4549,16 +5483,17 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3.6V"
-			(at 231.14 81.28 0)
+		(property "Value" "GND"
+			(at 230.632 129.794 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 86.36 0)
+			(at 236.22 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4567,7 +5502,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 86.36 0)
+			(at 236.22 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4575,8 +5510,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 231.14 86.36 0)
+		(property "Description" ""
+			(at 236.22 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4585,12 +5520,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "149c1fab-bab4-4cc9-a90b-66a0cb39942a")
+			(uuid "50cbdf20-ca9b-45e7-8924-5481833c7c60")
 		)
 		(instances
 			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
-					(reference "#PWR048")
+					(reference "#PWR055")
 					(unit 1)
 				)
 			)
@@ -4624,7 +5559,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 162.052 67.31 90)
 			(effects
 				(font
@@ -4651,7 +5586,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25768"
+		(property "LCSC" "C31850"
 			(at 163.83 67.31 0)
 			(effects
 				(font
@@ -4957,6 +5892,218 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 229.87 115.57 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2116a66c-2dad-4eca-80b2-1a21389ad054")
+		(property "Reference" "A1"
+			(at 232.41 114.2999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "PRO-OB-440"
+			(at 232.41 116.8399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "RF_Antenna:Abracon_PRO-OB-440"
+			(at 231.648 115.57 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 229.87 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 229.87 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5122736"
+			(at 229.87 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "7c872437-3bc0-41a8-be94-95fa7e95e5f9")
+		)
+		(pin "1"
+			(uuid "1fd895ba-2788-48d0-9c90-32a3ca837210")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "A1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 229.87 133.35 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "24811ab3-036e-4767-ae4f-e707c84ad702")
+		(property "Reference" "#PWR02"
+			(at 236.22 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 234.95 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 229.87 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 229.87 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 229.87 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ff6f5a81-37e0-4ad8-890d-3badd1887239")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 217.17 119.38 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2527171d-ca6b-4ef2-81b6-f3da4547bb5d")
+		(property "Reference" "#PWR056"
+			(at 210.82 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 215.646 113.792 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 217.17 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 217.17 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 217.17 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cc166ff8-d13a-40b2-90f2-71d5ebe072b7")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR056")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 182.88 54.61 0)
 		(unit 1)
@@ -5237,9 +6384,155 @@
 			(uuid "e6fb45de-d7d4-4575-8afa-cc52b0d358a4")
 		)
 		(instances
-			(project ""
+			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 139.7 115.57 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3634566d-bdc9-496f-bf0d-53aa5d42b311")
+		(property "Reference" "C7"
+			(at 143.51 114.2999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10u"
+			(at 143.51 116.8399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 138.7348 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 139.7 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 139.7 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
+			(at 139.7 115.57 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d13b3fb2-e0f4-4f58-a2f6-ed2ce1b124ba")
+		)
+		(pin "2"
+			(uuid "60fd9255-9ee8-4c77-a9c5-b392d14afaa2")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 260.35 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "38b39cac-2368-40d1-ad71-d78b2a02cabf")
+		(property "Reference" "H1"
+			(at 262.89 78.7399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MH"
+			(at 262.89 81.2799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad"
+			(at 260.35 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 260.35 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 260.35 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7f3bd285-b6da-4554-90b1-890a783b8d90")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "H1")
 					(unit 1)
 				)
 			)
@@ -5307,6 +6600,88 @@
 			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Crystal_GND24_Small")
+		(at 236.22 125.73 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3d34530d-5f97-463b-a189-c16b067e9cb1")
+		(property "Reference" "Y1"
+			(at 242.57 124.968 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "32M"
+			(at 242.57 127.508 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm"
+			(at 236.22 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Four pin crystal, GND on pins 2 and 4, small symbol"
+			(at 236.22 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C718072"
+			(at 236.22 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "9c672317-87d2-4c07-a55c-048ab37f32b1")
+		)
+		(pin "1"
+			(uuid "d06d1bab-f888-4d78-8415-ae7bf224e753")
+		)
+		(pin "4"
+			(uuid "55bd1da5-75ad-4c55-ad90-ac81a9634eb3")
+		)
+		(pin "2"
+			(uuid "25aeeb96-deda-4577-b3f9-f555f5fc90d1")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "Y1")
 					(unit 1)
 				)
 			)
@@ -6000,9 +7375,86 @@
 			(uuid "53db2926-7a14-40cb-80c9-6a5923c04946")
 		)
 		(instances
-			(project ""
+			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 152.4 33.02 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4b5eff36-d684-4782-92ea-ed58dcad759d")
+		(property "Reference" "R10"
+			(at 152.4 26.67 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "33"
+			(at 152.4 29.21 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 152.4 34.798 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 152.4 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 152.4 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C23140"
+			(at 152.4 33.02 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b5784e7f-1944-49f7-974f-740656dd7e9b")
+		)
+		(pin "1"
+			(uuid "76ff17d0-e649-45ed-90dc-aa1d981705ed")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -6213,36 +7665,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:USB_C_Receptacle_USB2.0_14P")
-		(at 241.3 44.45 0)
-		(mirror y)
+		(lib_id "power:GND")
+		(at 267.97 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "5717b25d-c8e4-46f5-a963-d8c223a7cd7a")
-		(property "Reference" "J1"
-			(at 252.73 43.1799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "USB_C_Receptacle_USB2.0_14P"
-			(at 252.73 45.7199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "cnhardware:USB_C_MEZZANINE_Receptacle_Amphenol_12401948E412A"
-			(at 237.49 44.45 0)
+		(uuid "5476f8dd-7505-40a3-8abc-87a989ec0d72")
+		(property "Reference" "#PWR071"
+			(at 267.97 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6250,8 +7683,16 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.usb.org/sites/default/files/documents/usb_type-c.zip"
-			(at 237.49 44.45 0)
+		(property "Value" "GND"
+			(at 267.97 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 267.97 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6259,8 +7700,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "USB 2.0-only 14P Type-C Receptacle connector"
-			(at 241.3 44.45 0)
+		(property "Datasheet" ""
+			(at 267.97 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6268,55 +7709,22 @@
 				(hide yes)
 			)
 		)
-		(pin "B5"
-			(uuid "fc96443c-cee9-4ec0-8220-6b06cf527c75")
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 267.97 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(pin "S1"
-			(uuid "d74cff71-5afa-46db-8a4a-c8bc70b6b07e")
-		)
-		(pin "B6"
-			(uuid "b588f98e-1547-4c0e-9c39-f1b31ab0e5eb")
-		)
-		(pin "A5"
-			(uuid "51727c97-77fc-4d94-a325-dd8655987e5d")
-		)
-		(pin "A9"
-			(uuid "d534bccd-35a8-484f-ab8f-9a375ace275f")
-		)
-		(pin "B9"
-			(uuid "413f3deb-30a1-4b76-b08a-eb7a45e23a6d")
-		)
-		(pin "A6"
-			(uuid "eccc8764-de30-4427-97de-c9e3fb6c6098")
-		)
-		(pin "A12"
-			(uuid "a6c43203-05f2-4437-bc93-ef4b03744613")
-		)
-		(pin "B12"
-			(uuid "9ea9c5da-4ca9-48ea-bbd1-b4cce0676fb8")
-		)
-		(pin "B7"
-			(uuid "176ecb7d-2035-4b5b-88f5-67714148b4bd")
-		)
-		(pin "A4"
-			(uuid "81ec4376-e207-4230-acc1-06c37e133107")
-		)
-		(pin "B1"
-			(uuid "05d072a6-0a24-4848-b606-aabff212b162")
-		)
-		(pin "B4"
-			(uuid "5905896e-0d2c-4d47-8994-324c116296b4")
-		)
-		(pin "A1"
-			(uuid "8d906114-eef0-4305-893a-84eacd56a02e")
-		)
-		(pin "A7"
-			(uuid "a4b3d641-bfaa-447d-b4b6-38bbaed7af84")
+		(pin "1"
+			(uuid "c43d6343-dee6-4a4d-ab40-a1a3fbe5f57a")
 		)
 		(instances
-			(project ""
+			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
-					(reference "J1")
+					(reference "#PWR071")
 					(unit 1)
 				)
 			)
@@ -6467,7 +7875,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 252.73 137.16 0)
+		(at 229.87 138.43 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6476,7 +7884,7 @@
 		(fields_autoplaced yes)
 		(uuid "5ae325d9-8f25-4c93-a27d-0e4e2cbd8d35")
 		(property "Reference" "#PWR052"
-			(at 252.73 143.51 0)
+			(at 229.87 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6485,15 +7893,16 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 252.73 142.24 0)
+			(at 229.87 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
-			(at 252.73 137.16 0)
+			(at 229.87 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6502,7 +7911,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 252.73 137.16 0)
+			(at 229.87 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6511,7 +7920,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 252.73 137.16 0)
+			(at 229.87 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6840,6 +8249,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
@@ -6897,6 +8307,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 236.22 123.19 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5e829239-3776-49c2-ba15-fa615f1d9f1e")
+		(property "Reference" "#PWR054"
+			(at 236.22 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 242.062 121.412 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 236.22 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 236.22 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 236.22 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ed140daf-e0a6-4a10-acce-0a2efd0c92c4")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR054")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Transistor_FET:Q_NMOS_GSD")
 		(at 107.95 91.44 180)
 		(unit 1)
@@ -6922,6 +8398,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
@@ -6970,9 +8447,88 @@
 			(uuid "ec03c261-b9bf-4850-b2a4-721c5af1fc61")
 		)
 		(instances
-			(project ""
+			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 170.18 96.52 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "608efd1e-5132-4b66-bead-1a461c3edbfc")
+		(property "Reference" "C4"
+			(at 173.99 95.2499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10u"
+			(at 173.99 97.7899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 169.2148 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 170.18 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 170.18 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
+			(at 170.18 96.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6be94240-e3bd-49e7-9450-8af8e5114061")
+		)
+		(pin "2"
+			(uuid "a6b55915-a4dd-4010-a6a7-56fb287b3b17")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -7047,7 +8603,7 @@
 			(uuid "cad412b2-91e5-44c8-b190-14bd420e233e")
 		)
 		(instances
-			(project ""
+			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C1")
 					(unit 1)
@@ -7206,7 +8762,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 175.26 132.08 90)
+		(at 152.4 133.35 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7215,7 +8771,7 @@
 		(fields_autoplaced yes)
 		(uuid "689c4c12-3314-47ff-a697-d28c9fc24737")
 		(property "Reference" "R4"
-			(at 175.26 125.73 90)
+			(at 152.4 127 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7223,15 +8779,15 @@
 			)
 		)
 		(property "Value" "33"
-			(at 175.26 128.27 90)
+			(at 152.4 129.54 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 175.26 133.858 90)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 152.4 135.128 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7240,7 +8796,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 175.26 132.08 0)
+			(at 152.4 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7249,7 +8805,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 175.26 132.08 0)
+			(at 152.4 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7257,8 +8813,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25105"
-			(at 175.26 132.08 90)
+		(property "LCSC" "C23140"
+			(at 152.4 133.35 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7276,85 +8832,6 @@
 			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 231.14 90.17 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "691c4775-117c-4c0e-b50d-64fe000d78a4")
-		(property "Reference" "C4"
-			(at 234.95 88.8999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "22n"
-			(at 234.95 91.4399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 230.1748 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 231.14 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 231.14 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C1532"
-			(at 231.14 90.17 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9ba2755f-220c-48cf-b9d9-e57efbc948f3")
-		)
-		(pin "2"
-			(uuid "7ef7f921-5e06-4ab8-8d28-2fe06510b83d")
-		)
-		(instances
-			(project "led-boostset"
-				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
-					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -7745,7 +9222,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 173.482 66.04 90)
 			(effects
 				(font
@@ -7772,7 +9249,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25768"
+		(property "LCSC" "C31850"
 			(at 175.26 66.04 0)
 			(effects
 				(font
@@ -7870,6 +9347,151 @@
 			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 148.59 105.41 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "739804fc-92d1-496d-8760-811f0c031d1d")
+		(property "Reference" "R11"
+			(at 151.13 104.1399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "33"
+			(at 151.13 106.6799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 150.368 105.41 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 148.59 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 148.59 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C23140"
+			(at 148.59 105.41 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ef6e29fa-ef0f-41af-adfa-cbf134978cd1")
+		)
+		(pin "1"
+			(uuid "639f2c40-07c0-44f4-8942-fc52821ff1b6")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 186.69 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "74decc36-bf48-4eb0-8336-a0578f1002f4")
+		(property "Reference" "#PWR068"
+			(at 186.69 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 186.69 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 186.69 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 186.69 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 186.69 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "44da804d-3662-4bd4-9acd-686acd113410")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR068")
 					(unit 1)
 				)
 			)
@@ -8231,6 +9853,72 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 242.57 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8be8f4ad-f41f-4636-92b5-6847326d0f6d")
+		(property "Reference" "#PWR066"
+			(at 242.57 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 242.57 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 242.57 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 242.57 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 242.57 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "30cfaf34-d7ec-4997-8147-877602c5a75a")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR066")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 220.98 93.98 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8290,85 +9978,6 @@
 			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR046")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 170.18 31.75 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "938256ab-5683-4f9f-8b53-326d3b8e4051")
-		(property "Reference" "R1"
-			(at 172.72 30.4799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1.5k"
-			(at 172.72 33.0199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 168.402 31.75 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 170.18 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 170.18 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C25867"
-			(at 170.18 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5eabdb81-b1e7-4ccc-8909-0d5c5e128b21")
-		)
-		(pin "2"
-			(uuid "2b111d7f-cef7-41d1-88cb-c8fa2a24a8ee")
-		)
-		(instances
-			(project ""
-				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
-					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -8519,6 +10128,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 186.69 90.17 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9b06adeb-22d7-4286-99fd-77e06fc5bcd2")
+		(property "Reference" "C9"
+			(at 190.5 88.8999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10u"
+			(at 190.5 91.4399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 185.7248 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 186.69 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 186.69 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
+			(at 186.69 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b026df59-387b-4f28-96cf-ec90460a79c3")
+		)
+		(pin "2"
+			(uuid "f833dd68-c954-47a8-8bb1-3ccde3d1094d")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 175.26 73.66 0)
 		(unit 1)
@@ -8592,6 +10280,73 @@
 			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 267.97 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "9cf21eda-2368-45a1-bde2-13895a637845")
+		(property "Reference" "H2"
+			(at 270.51 78.7399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MH"
+			(at 270.51 81.2799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad"
+			(at 267.97 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 267.97 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 267.97 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bce9b37c-31fc-4b93-afb5-e38374124fd7")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -9246,7 +11001,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 172.72 124.46 0)
+		(at 148.59 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9255,7 +11010,7 @@
 		(fields_autoplaced yes)
 		(uuid "c02a15ee-bbdd-4c6a-bcca-945f12a3975b")
 		(property "Reference" "#PWR047"
-			(at 172.72 128.27 0)
+			(at 148.59 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9264,7 +11019,7 @@
 			)
 		)
 		(property "Value" "+3.6V"
-			(at 172.72 119.38 0)
+			(at 148.59 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9272,7 +11027,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 172.72 124.46 0)
+			(at 148.59 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9281,7 +11036,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 172.72 124.46 0)
+			(at 148.59 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9290,7 +11045,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 172.72 124.46 0)
+			(at 148.59 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9378,6 +11133,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 242.57 90.17 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c0e89481-40a9-433d-a653-d64a1f5e6e4c")
+		(property "Reference" "C8"
+			(at 246.38 88.8999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10u"
+			(at 246.38 91.4399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 241.6048 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 242.57 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 242.57 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
+			(at 242.57 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1fb7b637-4d83-4c0e-af73-6420ec5abd5f")
+		)
+		(pin "2"
+			(uuid "08d894bb-0ca9-424f-93c8-c407726d7175")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 193.04 31.75 0)
 		(unit 1)
@@ -9451,72 +11285,6 @@
 			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 231.14 93.98 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cb686b11-97c0-4dd6-9a9f-7f85cf7913c8")
-		(property "Reference" "#PWR049"
-			(at 231.14 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 231.14 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 231.14 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 231.14 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 231.14 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b84b5281-0f96-455f-b5c4-df43157951ef")
-		)
-		(instances
-			(project "led-boostset"
-				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
-					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -9650,6 +11418,138 @@
 			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 260.35 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cfb270d5-8a4f-445e-a83d-c0e960479626")
+		(property "Reference" "#PWR070"
+			(at 260.35 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 260.35 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 260.35 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 260.35 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 260.35 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b70be77e-b67e-481d-808e-ce6c876d6761")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR070")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VBUS")
+		(at 170.18 92.71 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cff67695-5442-442d-9d25-6b1abc6324ae")
+		(property "Reference" "#PWR048"
+			(at 170.18 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VBUS"
+			(at 170.18 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 170.18 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VBUS\""
+			(at 170.18 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "534e39c8-38aa-4209-97b6-7654fe302061")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -10062,9 +11962,86 @@
 			(uuid "af6e7fb5-aaf4-417b-ab93-00cea43bc195")
 		)
 		(instances
-			(project ""
+			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 143.51 30.48 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dbe944f2-cb56-44ef-a927-296f2c0fd6f7")
+		(property "Reference" "R1"
+			(at 143.51 24.13 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "33"
+			(at 143.51 26.67 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 143.51 32.258 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 143.51 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 143.51 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C23140"
+			(at 143.51 30.48 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "7d5e506b-9f7f-4b0d-9133-42a9e2ce975f")
+		)
+		(pin "1"
+			(uuid "539816c8-38c5-4502-8b8b-c9fb27718b08")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -10131,6 +12108,72 @@
 			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR045")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 170.18 100.33 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e18218ad-018a-4339-ba85-402204ca6f7c")
+		(property "Reference" "#PWR049"
+			(at 170.18 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 170.18 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 170.18 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 170.18 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1a9fe55a-7ee4-40a7-a7f8-e370f60fbacc")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -10204,33 +12247,35 @@
 		)
 	)
 	(symbol
-		(lib_id "cnhardware:CH570Q")
-		(at 215.9 129.54 0)
+		(lib_id "Connector:USB_C_Receptacle_USB2.0")
+		(at 241.3 44.45 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e8ceb6b1-9048-4496-b866-7a03dcea11de")
-		(property "Reference" "U3"
-			(at 215.9 118.11 0)
+		(uuid "e758bb29-f106-4721-95e9-cdeaee1463a8")
+		(property "Reference" "J2"
+			(at 252.73 45.7201 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Value" "CH570Q"
-			(at 215.9 120.65 0)
+		(property "Value" "USB_C_Receptacle_USB2.0"
+			(at 252.73 43.1801 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Footprint" "Package_DFN_QFN:DFN-10-1EP_3x3mm_P0.5mm_EP1.7x2.5mm"
-			(at 216.154 126.746 0)
+		(property "Footprint" "cnhardware:USB_C_SMT_ONLY_Receptacle_USB2.0"
+			(at 237.49 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10238,8 +12283,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 215.9 129.54 0)
+		(property "Datasheet" "https://www.usb.org/sites/default/files/documents/usb_type-c.zip"
+			(at 237.49 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10248,7 +12293,129 @@
 			)
 		)
 		(property "Description" ""
-			(at 215.9 129.54 0)
+			(at 241.3 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2927040"
+			(at 241.3 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "A1"
+			(uuid "3545a0ab-78ae-429e-a258-2bde5d96081d")
+		)
+		(pin "A12"
+			(uuid "4ba6099e-7159-48b5-b092-959a3cc9e900")
+		)
+		(pin "A4"
+			(uuid "61dbbc51-4878-40a2-b88f-65331a6eee07")
+		)
+		(pin "A5"
+			(uuid "4ee212a1-6a8d-4d37-a390-48373e5858e3")
+		)
+		(pin "A6"
+			(uuid "b99efc85-8382-4938-b77a-9286f9341edc")
+		)
+		(pin "A7"
+			(uuid "e0eef97c-26a6-476a-845c-1444e4aea9c2")
+		)
+		(pin "A8"
+			(uuid "e44af35c-2055-4231-9c09-f49260b75673")
+		)
+		(pin "A9"
+			(uuid "9e68f964-e482-4fe3-95dd-ef0b3c3286a5")
+		)
+		(pin "B1"
+			(uuid "d5d8c946-262d-4995-a356-dc1915688ef1")
+		)
+		(pin "B12"
+			(uuid "8c4034d4-fa51-47da-aca2-914e7df84d6f")
+		)
+		(pin "B4"
+			(uuid "17e2a3e7-af5f-48ac-bef7-8314c91f800f")
+		)
+		(pin "B5"
+			(uuid "dab2c9ea-e49e-4cc0-a939-a39c2e12d148")
+		)
+		(pin "B6"
+			(uuid "bd729a24-d2f4-4296-8ac1-5184d3f38423")
+		)
+		(pin "B7"
+			(uuid "18276af1-72b4-41e9-b6db-0b4cf51552a2")
+		)
+		(pin "B8"
+			(uuid "5e9a6022-7fbd-4d35-9faf-9d4e44440d37")
+		)
+		(pin "B9"
+			(uuid "32fbd5c3-4f98-45fe-90b7-91de0187c678")
+		)
+		(pin "S1"
+			(uuid "6f1ea3b9-cc7d-4a2c-a96a-2d62776d5407")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "cnhardware:CH570Q")
+		(at 193.04 130.81 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e8ceb6b1-9048-4496-b866-7a03dcea11de")
+		(property "Reference" "U3"
+			(at 193.04 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CH570Q"
+			(at 193.04 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DFN_QFN:DFN-10-1EP_3x3mm_P0.5mm_EP1.7x2.5mm"
+			(at 193.294 128.016 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 193.04 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 193.04 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10257,7 +12424,7 @@
 			)
 		)
 		(property "LCSC" "C49260680"
-			(at 215.9 124.46 0)
+			(at 193.04 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10299,7 +12466,7 @@
 			(uuid "974d040f-f2b5-46c6-a044-a61170196044")
 		)
 		(instances
-			(project ""
+			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "U3")
 					(unit 1)
@@ -10370,9 +12537,75 @@
 			(uuid "34b930dc-52eb-40c9-b397-188ff937b99e")
 		)
 		(instances
-			(project ""
+			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 154.94 119.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ec512e95-a790-4251-8968-adb0f12d5861")
+		(property "Reference" "#PWR065"
+			(at 154.94 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 154.94 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 154.94 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 154.94 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9dc7f549-b20c-4ad5-905a-da7c052653e0")
+		)
+		(instances
+			(project "led-boostset"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR065")
 					(unit 1)
 				)
 			)
@@ -10436,7 +12669,7 @@
 			(uuid "cae2b149-933d-4965-be5a-65290055aebb")
 		)
 		(instances
-			(project ""
+			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR03")
 					(unit 1)
@@ -10445,17 +12678,35 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 170.18 27.94 0)
+		(lib_id "Device:C")
+		(at 154.94 115.57 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "f7a5702c-b24c-4139-abe5-428e6609acec")
-		(property "Reference" "#PWR02"
-			(at 170.18 31.75 0)
+		(uuid "fb80a1ec-4182-4ae7-9109-089844862b4b")
+		(property "Reference" "C6"
+			(at 158.75 114.2999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "22n"
+			(at 158.75 116.8399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 153.9748 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10463,16 +12714,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3.6V"
-			(at 170.18 22.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 170.18 27.94 0)
+		(property "Datasheet" "~"
+			(at 154.94 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10480,8 +12723,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 170.18 27.94 0)
+		(property "Description" "Unpolarized capacitor"
+			(at 154.94 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10489,8 +12732,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 170.18 27.94 0)
+		(property "LCSC" "C1532"
+			(at 154.94 115.57 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10499,12 +12742,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "06a9affd-81cc-4ddc-b5b9-523147a12d81")
+			(uuid "6bbdb918-f9a3-42f8-851c-d60190c582d6")
+		)
+		(pin "2"
+			(uuid "baa04053-5404-40d0-9343-cf72603dbde7")
 		)
 		(instances
 			(project "led-boostset"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
-					(reference "#PWR02")
+					(reference "C6")
 					(unit 1)
 				)
 			)
