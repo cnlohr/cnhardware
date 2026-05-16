@@ -3124,16 +3124,27 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "TODO:\n1. Consider 10-channel.\n2. Make sure you use N-channel fets!"
+	(text "Retily Avaialable LEDs:\n* Warm White 3000K\n* Cold White 6500K\n* Cold White 10000K\n* Cold White 20000K\n* Cold White 30000K\n* UV 365-370nm\n* UV 380-385nm\n* UV 395-400nm\n* UV 410-420nm\n* UV 420-430nm\n* Full Spectrum Pink\n* Royal Blue 440nm\n* Royal Blue 450nm\n* Blue 470nm\n* Cyan 495nm\n* Green 520nm\n* Cyan yellow 575nm  (Looks phosphor)\n* Yellow 590-595nm\n* Orange 595nm (Looks phosphor)\n* Red 620nm\n* Deep Red 660nm\n* IR 730nm\n* IR 850nm\n* IR 940nm\n"
 		(exclude_from_sim no)
-		(at 200.152 153.924 0)
+		(at 101.854 144.018 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify left top)
 		)
-		(uuid "ae9eed00-2af7-4485-9ce7-63adb9c4d1e1")
+		(uuid "0a0d2040-0118-49d3-8618-a73267d78995")
+	)
+	(text "Recommended roll:\n\n* Royal Blue 440nm + 30\n* Blue 470nm + 25\n* Cyan 495nm + 25\n* Green 520nm + 40\nGreen 560?\n* Cyan yellow 575nm  (Looks phosphor) +<<>>\n* Yellow 590-595nm (May be orange)? + 30\n* Red 620nm +40\n* Deep Red 660nm +60\n* IR 730nm"
+		(exclude_from_sim no)
+		(at 139.446 145.542 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "8e2242b9-7cd0-4eb4-8fa1-7e2e7eec8da6")
 	)
 	(text "RY8401 and MT2492 have same pinout\nRY8401 goes up to 40V though!"
 		(exclude_from_sim no)
@@ -3146,31 +3157,31 @@
 		(uuid "fe2cac20-5266-46de-957e-dd65862abd00")
 	)
 	(junction
-		(at 60.96 102.87)
+		(at 33.02 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2a9770be-3c79-477f-b647-9c2a58eaaf9f")
 	)
 	(junction
-		(at 104.14 176.53)
+		(at 76.2 176.53)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3320b4d6-8098-4f65-b960-ea36456acfe8")
 	)
 	(junction
-		(at 60.96 78.74)
+		(at 33.02 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4939f664-6f19-43dc-8cf5-016408228403")
 	)
 	(junction
-		(at 104.14 127)
+		(at 76.2 127)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4b740ce5-ea2b-4256-b458-1d24d5a0b62c")
 	)
 	(junction
-		(at 60.96 127)
+		(at 33.02 127)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7f0b9a64-ee8f-4053-a9cf-88badd1e7302")
@@ -3188,19 +3199,19 @@
 		(uuid "a3352c59-6e2f-4c80-a826-04ce3937af91")
 	)
 	(junction
-		(at 104.14 151.13)
+		(at 76.2 151.13)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b9450a2e-c65e-48e0-b40a-eb2e18d649b4")
 	)
 	(junction
-		(at 104.14 102.87)
+		(at 76.2 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c718d089-7ff1-4e50-804c-49b7d4a3c87b")
 	)
 	(junction
-		(at 104.14 78.74)
+		(at 76.2 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ca9debfd-4d9c-46c3-b58b-6e4e932de29d")
@@ -3218,13 +3229,13 @@
 		(uuid "e9734e0d-bd65-4d2a-9708-4ba4b0f4010e")
 	)
 	(junction
-		(at 60.96 151.13)
+		(at 33.02 151.13)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fa51f220-15a9-4bec-8110-2682c724f4ff")
 	)
 	(junction
-		(at 60.96 176.53)
+		(at 33.02 176.53)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fd581e7d-34f8-4ab0-bf0c-79f724bc6b37")
@@ -3491,7 +3502,7 @@
 	)
 	(global_label "BST1"
 		(shape input)
-		(at 104.14 102.87 90)
+		(at 76.2 102.87 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3501,7 +3512,7 @@
 		)
 		(uuid "051b7905-8495-4931-95ec-6e0c22a89c66")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 104.14 95.2282 90)
+			(at 76.2 95.2282 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3535,7 +3546,7 @@
 	)
 	(global_label "LED4"
 		(shape input)
-		(at 68.58 132.08 0)
+		(at 40.64 132.08 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3545,7 +3556,7 @@
 		)
 		(uuid "0a351db2-6697-4dda-8a81-a166b6adafc2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 76.2218 132.08 0)
+			(at 48.2818 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3557,7 +3568,7 @@
 	)
 	(global_label "BST0"
 		(shape input)
-		(at 104.14 127 90)
+		(at 76.2 127 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3567,7 +3578,7 @@
 		)
 		(uuid "0c5b538a-2299-466e-85b2-33813dd901d8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 104.14 119.3582 90)
+			(at 76.2 119.3582 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3601,7 +3612,7 @@
 	)
 	(global_label "LED9"
 		(shape input)
-		(at 68.58 181.61 0)
+		(at 40.64 181.61 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3611,7 +3622,7 @@
 		)
 		(uuid "19bc52e3-6a91-47c3-9a99-bbaf1e95ba02")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 76.2218 181.61 0)
+			(at 48.2818 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3623,7 +3634,7 @@
 	)
 	(global_label "BST4"
 		(shape input)
-		(at 60.96 127 90)
+		(at 33.02 127 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3633,7 +3644,7 @@
 		)
 		(uuid "1c8590dc-d68e-4745-be56-288166fcb03e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 60.96 119.3582 90)
+			(at 33.02 119.3582 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3645,7 +3656,7 @@
 	)
 	(global_label "BST2"
 		(shape input)
-		(at 104.14 78.74 90)
+		(at 76.2 78.74 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3655,7 +3666,7 @@
 		)
 		(uuid "1d93e16f-2234-45fb-81cd-1db8f2359198")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 104.14 71.0982 90)
+			(at 76.2 71.0982 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3733,7 +3744,7 @@
 	)
 	(global_label "BST3"
 		(shape input)
-		(at 60.96 151.13 90)
+		(at 33.02 151.13 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3743,7 +3754,7 @@
 		)
 		(uuid "352bfd85-51f0-4511-abea-73830c5cd058")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 60.96 143.4882 90)
+			(at 33.02 143.4882 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3755,7 +3766,7 @@
 	)
 	(global_label "BST6"
 		(shape input)
-		(at 60.96 78.74 90)
+		(at 33.02 78.74 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3765,7 +3776,7 @@
 		)
 		(uuid "3e51a56a-fd87-466c-9842-055b00c47b05")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 60.96 71.0982 90)
+			(at 33.02 71.0982 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3799,7 +3810,7 @@
 	)
 	(global_label "LED3"
 		(shape input)
-		(at 68.58 156.21 0)
+		(at 40.64 156.21 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3809,7 +3820,7 @@
 		)
 		(uuid "5bedc94b-911d-4b20-9b46-8ab51dbfe0f0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 76.2218 156.21 0)
+			(at 48.2818 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3843,7 +3854,7 @@
 	)
 	(global_label "BST5"
 		(shape input)
-		(at 60.96 102.87 90)
+		(at 33.02 102.87 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3853,7 +3864,7 @@
 		)
 		(uuid "5e84f67e-9863-4788-9b6e-4c5f45be9e22")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 60.96 95.2282 90)
+			(at 33.02 95.2282 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3865,7 +3876,7 @@
 	)
 	(global_label "LED1"
 		(shape input)
-		(at 111.76 107.95 0)
+		(at 83.82 107.95 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3875,7 +3886,7 @@
 		)
 		(uuid "6bf311ab-549d-479c-bb80-2b63d7bf1a8b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 119.4018 107.95 0)
+			(at 91.4618 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3887,7 +3898,7 @@
 	)
 	(global_label "BST7"
 		(shape input)
-		(at 104.14 151.13 90)
+		(at 76.2 151.13 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3897,7 +3908,7 @@
 		)
 		(uuid "6e3a284b-22ac-449a-846b-d19c630d4a3d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 104.14 143.4882 90)
+			(at 76.2 143.4882 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3909,7 +3920,7 @@
 	)
 	(global_label "LED6"
 		(shape input)
-		(at 68.58 83.82 0)
+		(at 40.64 83.82 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3919,7 +3930,7 @@
 		)
 		(uuid "6e6ef2cf-0482-4eac-8e4c-52792571e7ec")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 76.2218 83.82 0)
+			(at 48.2818 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4019,7 +4030,7 @@
 	)
 	(global_label "BST9"
 		(shape input)
-		(at 60.96 176.53 90)
+		(at 33.02 176.53 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4029,7 +4040,7 @@
 		)
 		(uuid "7a41a592-5107-43f6-a088-a1817054ad6b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 60.96 168.8882 90)
+			(at 33.02 168.8882 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4041,7 +4052,7 @@
 	)
 	(global_label "LED8"
 		(shape input)
-		(at 111.76 181.61 0)
+		(at 83.82 181.61 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4051,7 +4062,7 @@
 		)
 		(uuid "7c8f349a-95af-46cf-a5a8-34798f73098e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 119.4018 181.61 0)
+			(at 91.4618 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4239,7 +4250,7 @@
 	)
 	(global_label "LED0"
 		(shape input)
-		(at 111.76 132.08 0)
+		(at 83.82 132.08 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4249,7 +4260,7 @@
 		)
 		(uuid "91631221-9a45-41cc-977f-9c839d0f9d4a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 119.4018 132.08 0)
+			(at 91.4618 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4371,7 +4382,7 @@
 	)
 	(global_label "BST8"
 		(shape input)
-		(at 104.14 176.53 90)
+		(at 76.2 176.53 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4381,7 +4392,7 @@
 		)
 		(uuid "ccf66ab7-c2b6-420e-94f9-d87fdaf09a7f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 104.14 168.8882 90)
+			(at 76.2 168.8882 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4437,7 +4448,7 @@
 	)
 	(global_label "LED7"
 		(shape input)
-		(at 111.76 156.21 0)
+		(at 83.82 156.21 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4447,7 +4458,7 @@
 		)
 		(uuid "e3b1eff9-e9e9-4b4e-88a1-33a7319d166c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 119.4018 156.21 0)
+			(at 91.4618 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4459,7 +4470,7 @@
 	)
 	(global_label "LED5"
 		(shape input)
-		(at 68.58 107.95 0)
+		(at 40.64 107.95 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4469,7 +4480,7 @@
 		)
 		(uuid "e7da1821-59a8-487f-a253-ad82c4428133")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 76.2218 107.95 0)
+			(at 48.2818 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4525,7 +4536,7 @@
 	)
 	(global_label "LED2"
 		(shape input)
-		(at 111.76 83.82 0)
+		(at 83.82 83.82 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4535,7 +4546,7 @@
 		)
 		(uuid "fd7321b7-6703-4fda-b7ce-222dccc845c9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 119.4018 83.82 0)
+			(at 91.4618 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4604,7 +4615,7 @@
 			(uuid "b6275225-09f4-4f9c-8018-451a050e54d1")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR08")
 					(unit 1)
@@ -4683,7 +4694,7 @@
 			(uuid "582dfae6-a93d-4f18-a257-cab523573c69")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C3")
 					(unit 1)
@@ -4760,7 +4771,7 @@
 			(uuid "9f12d82b-39bc-4da4-b55b-0b66c1b54f1f")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R6")
 					(unit 1)
@@ -4770,7 +4781,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 60.96 88.9 0)
+		(at 33.02 88.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4779,7 +4790,7 @@
 		(fields_autoplaced yes)
 		(uuid "01801124-ee08-4efc-8af7-d46537df8460")
 		(property "Reference" "#PWR035"
-			(at 60.96 95.25 0)
+			(at 33.02 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4788,7 +4799,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 60.96 93.98 0)
+			(at 33.02 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4796,7 +4807,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 60.96 88.9 0)
+			(at 33.02 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4805,7 +4816,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 60.96 88.9 0)
+			(at 33.02 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4814,7 +4825,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 60.96 88.9 0)
+			(at 33.02 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4826,7 +4837,7 @@
 			(uuid "d664b2ce-3627-42b5-8cde-c26901694832")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR035")
 					(unit 1)
@@ -4892,7 +4903,7 @@
 			(uuid "300ebb73-c331-44cc-95f7-c668548112d6")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR053")
 					(unit 1)
@@ -4902,7 +4913,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:Q_NMOS_GSD")
-		(at 106.68 156.21 0)
+		(at 78.74 156.21 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4911,7 +4922,7 @@
 		(dnp no)
 		(uuid "03bab073-54f4-46b7-b317-88c606e272e4")
 		(property "Reference" "Q4"
-			(at 100.33 157.4801 0)
+			(at 72.39 157.4801 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4920,7 +4931,7 @@
 			)
 		)
 		(property "Value" "AO3400A"
-			(at 100.33 154.9401 0)
+			(at 72.39 154.9401 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4930,7 +4941,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:SOT-23-EXTRASPACE"
-			(at 101.6 153.67 0)
+			(at 73.66 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4939,7 +4950,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 106.68 156.21 0)
+			(at 78.74 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4948,7 +4959,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 106.68 156.21 0)
+			(at 78.74 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4957,7 +4968,7 @@
 			)
 		)
 		(property "LCSC" "C20917"
-			(at 106.68 156.21 0)
+			(at 78.74 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4975,7 +4986,7 @@
 			(uuid "d5e68708-1956-4938-8157-0026c8fd5957")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "Q4")
 					(unit 1)
@@ -5041,7 +5052,7 @@
 			(uuid "f307cee0-593c-48e2-89f5-234d5e3caea8")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR043")
 					(unit 1)
@@ -5118,7 +5129,7 @@
 			(uuid "ea4ddacb-228d-4c0d-9740-07faf403572e")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C10")
 					(unit 1)
@@ -5128,7 +5139,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:Q_NMOS_GSD")
-		(at 63.5 107.95 0)
+		(at 35.56 107.95 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5137,7 +5148,7 @@
 		(dnp no)
 		(uuid "07bb4571-7ed0-4cb5-9a48-e0663cf31da8")
 		(property "Reference" "Q6"
-			(at 57.15 109.2201 0)
+			(at 29.21 109.2201 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5146,7 +5157,7 @@
 			)
 		)
 		(property "Value" "AO3400A"
-			(at 57.15 106.6801 0)
+			(at 29.21 106.6801 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5155,7 +5166,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:SOT-23-EXTRASPACE"
-			(at 58.42 105.41 0)
+			(at 30.48 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5164,7 +5175,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 63.5 107.95 0)
+			(at 35.56 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5173,7 +5184,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 63.5 107.95 0)
+			(at 35.56 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5182,7 +5193,7 @@
 			)
 		)
 		(property "LCSC" "C20917"
-			(at 63.5 107.95 0)
+			(at 35.56 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5200,7 +5211,7 @@
 			(uuid "815e8db1-0b18-4ffc-abdf-d9f7845872d3")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "Q6")
 					(unit 1)
@@ -5266,7 +5277,7 @@
 			(uuid "5a4dd6af-7b3a-44f3-b97a-2e63edda6375")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR019")
 					(unit 1)
@@ -5276,7 +5287,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 96.52 102.87 90)
+		(at 68.58 102.87 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5285,7 +5296,7 @@
 		(fields_autoplaced yes)
 		(uuid "09c1c2e0-81af-434a-8be3-9044d79c0c4d")
 		(property "Reference" "#PWR022"
-			(at 100.33 102.87 0)
+			(at 72.39 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5294,7 +5305,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 92.71 102.8699 90)
+			(at 64.77 102.8699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5303,7 +5314,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 96.52 102.87 0)
+			(at 68.58 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5312,7 +5323,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 102.87 0)
+			(at 68.58 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5321,7 +5332,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 96.52 102.87 0)
+			(at 68.58 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5333,7 +5344,7 @@
 			(uuid "1514aff9-c31d-460b-be7f-0d952fb98767")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR022")
 					(unit 1)
@@ -5399,7 +5410,7 @@
 			(uuid "59775659-6edd-4bca-abb7-39a647bb9575")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR069")
 					(unit 1)
@@ -5409,7 +5420,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 104.14 161.29 0)
+		(at 76.2 161.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5418,7 +5429,7 @@
 		(fields_autoplaced yes)
 		(uuid "0d18fef2-955f-4404-8291-73266272eabd")
 		(property "Reference" "#PWR029"
-			(at 104.14 167.64 0)
+			(at 76.2 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5427,7 +5438,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 104.14 166.37 0)
+			(at 76.2 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5435,7 +5446,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 104.14 161.29 0)
+			(at 76.2 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5444,7 +5455,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 104.14 161.29 0)
+			(at 76.2 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5453,7 +5464,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 104.14 161.29 0)
+			(at 76.2 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5465,7 +5476,7 @@
 			(uuid "11ba3a70-0e0a-4e81-be4a-76151b3e893b")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR029")
 					(unit 1)
@@ -5475,7 +5486,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 104.14 113.03 0)
+		(at 76.2 113.03 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5484,7 +5495,7 @@
 		(fields_autoplaced yes)
 		(uuid "0e68e782-2b3a-443f-9d41-58368e41db91")
 		(property "Reference" "#PWR023"
-			(at 104.14 119.38 0)
+			(at 76.2 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5493,7 +5504,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 104.14 118.11 0)
+			(at 76.2 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5501,7 +5512,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 104.14 113.03 0)
+			(at 76.2 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5510,7 +5521,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 104.14 113.03 0)
+			(at 76.2 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5519,7 +5530,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 104.14 113.03 0)
+			(at 76.2 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5531,7 +5542,7 @@
 			(uuid "e69a69de-8af5-4892-851b-516cb0215793")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR023")
 					(unit 1)
@@ -5597,7 +5608,7 @@
 			(uuid "88f7a45b-ac04-4c71-8c4b-9f89d7ed41ea")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR067")
 					(unit 1)
@@ -5663,7 +5674,7 @@
 			(uuid "fd90f047-d12b-48f4-abfa-25db5294c02d")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR051")
 					(unit 1)
@@ -5729,7 +5740,7 @@
 			(uuid "0443f3cb-20c3-40b7-ad16-ae6f4ba2d446")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR063")
 					(unit 1)
@@ -5795,7 +5806,7 @@
 			(uuid "31932e51-6eda-4b19-b480-93446d8c6931")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR064")
 					(unit 1)
@@ -5874,7 +5885,7 @@
 			(uuid "ddb6eb28-c336-47a2-8369-010cac3139a2")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C5")
 					(unit 1)
@@ -5940,7 +5951,7 @@
 			(uuid "50cbdf20-ca9b-45e7-8924-5481833c7c60")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR055")
 					(unit 1)
@@ -6019,7 +6030,7 @@
 			(uuid "99893584-5458-4315-9e67-5060afad4a13")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R8")
 					(unit 1)
@@ -6029,7 +6040,7 @@
 	)
 	(symbol
 		(lib_id "cnhardware:LED_3535_3W_W_TP")
-		(at 100.33 151.13 0)
+		(at 72.39 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6038,7 +6049,7 @@
 		(fields_autoplaced yes)
 		(uuid "1a0fa363-4b73-420a-ad4a-a3d444902c81")
 		(property "Reference" "D4"
-			(at 100.33 144.78 0)
+			(at 72.39 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6046,7 +6057,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 100.33 147.32 0)
+			(at 72.39 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6054,7 +6065,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:LED_3535_3W_W_PAD"
-			(at 100.33 151.13 0)
+			(at 72.39 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6063,7 +6074,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 151.13 0)
+			(at 72.39 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6072,7 +6083,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 100.33 151.13 0)
+			(at 72.39 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6090,7 +6101,7 @@
 			(uuid "24ea462b-6fb6-4729-821e-223db8386523")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "D4")
 					(unit 1)
@@ -6100,7 +6111,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 64.77 127 90)
+		(at 36.83 127 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6109,7 +6120,7 @@
 		(fields_autoplaced yes)
 		(uuid "1d24e167-c16b-4457-9d3d-f18b821b0426")
 		(property "Reference" "L8"
-			(at 64.77 121.92 90)
+			(at 36.83 121.92 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6117,7 +6128,7 @@
 			)
 		)
 		(property "Value" "4.7u"
-			(at 64.77 124.46 90)
+			(at 36.83 124.46 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6125,7 +6136,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_1008_2520Metric"
-			(at 64.77 127 0)
+			(at 36.83 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6134,7 +6145,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 64.77 127 0)
+			(at 36.83 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6143,7 +6154,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 64.77 127 0)
+			(at 36.83 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6152,7 +6163,7 @@
 			)
 		)
 		(property "LCSC" " C88528"
-			(at 64.77 127 90)
+			(at 36.83 127 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6167,7 +6178,7 @@
 			(uuid "96aee4cd-6114-4746-9665-19f296a17b1e")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "L8")
 					(unit 1)
@@ -6177,7 +6188,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 53.34 151.13 90)
+		(at 25.4 151.13 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6186,7 +6197,7 @@
 		(fields_autoplaced yes)
 		(uuid "1dc56e0f-d225-4f20-aae7-bc3a53a52fca")
 		(property "Reference" "#PWR034"
-			(at 57.15 151.13 0)
+			(at 29.21 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6195,7 +6206,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 49.53 151.1299 90)
+			(at 21.59 151.1299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6204,7 +6215,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 53.34 151.13 0)
+			(at 25.4 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6213,7 +6224,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 53.34 151.13 0)
+			(at 25.4 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6222,7 +6233,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 53.34 151.13 0)
+			(at 25.4 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6234,7 +6245,7 @@
 			(uuid "8439ff51-876c-419c-ac19-92f3397be276")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR034")
 					(unit 1)
@@ -6244,7 +6255,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 60.96 161.29 0)
+		(at 33.02 161.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6253,7 +6264,7 @@
 		(fields_autoplaced yes)
 		(uuid "20f98899-14c9-4541-971f-19a52a55900e")
 		(property "Reference" "#PWR038"
-			(at 60.96 167.64 0)
+			(at 33.02 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6262,7 +6273,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 60.96 166.37 0)
+			(at 33.02 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6270,7 +6281,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 60.96 161.29 0)
+			(at 33.02 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6279,7 +6290,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 60.96 161.29 0)
+			(at 33.02 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6288,7 +6299,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 60.96 161.29 0)
+			(at 33.02 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6300,7 +6311,7 @@
 			(uuid "30a06517-9a87-494d-8925-58bc9189a7ae")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR038")
 					(unit 1)
@@ -6379,7 +6390,7 @@
 			(uuid "1fd895ba-2788-48d0-9c90-32a3ca837210")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "A1")
 					(unit 1)
@@ -6446,7 +6457,7 @@
 			(uuid "ff6f5a81-37e0-4ad8-890d-3badd1887239")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR02")
 					(unit 1)
@@ -6512,7 +6523,7 @@
 			(uuid "cc166ff8-d13a-40b2-90f2-71d5ebe072b7")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR056")
 					(unit 1)
@@ -6522,7 +6533,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 104.14 186.69 0)
+		(at 76.2 186.69 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6531,7 +6542,7 @@
 		(fields_autoplaced yes)
 		(uuid "271cb9fe-e67c-4e71-8723-bc3c34301973")
 		(property "Reference" "#PWR061"
-			(at 104.14 193.04 0)
+			(at 76.2 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6540,7 +6551,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 104.14 191.77 0)
+			(at 76.2 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6548,7 +6559,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 104.14 186.69 0)
+			(at 76.2 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6557,7 +6568,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 104.14 186.69 0)
+			(at 76.2 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6566,7 +6577,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 104.14 186.69 0)
+			(at 76.2 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6578,7 +6589,7 @@
 			(uuid "362bcbb3-3314-4b64-832a-046c44a190cb")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR061")
 					(unit 1)
@@ -6644,7 +6655,7 @@
 			(uuid "a69c7136-0aed-443d-affd-f50d484b5e37")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR014")
 					(unit 1)
@@ -6654,7 +6665,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 111.76 102.87 270)
+		(at 83.82 102.87 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6663,7 +6674,7 @@
 		(fields_autoplaced yes)
 		(uuid "2d689a4c-cf99-4bcf-935d-c9030270c16d")
 		(property "Reference" "#PWR024"
-			(at 107.95 102.87 0)
+			(at 80.01 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6672,7 +6683,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 115.57 102.8699 90)
+			(at 87.63 102.8699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6681,7 +6692,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 111.76 102.87 0)
+			(at 83.82 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6690,7 +6701,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 111.76 102.87 0)
+			(at 83.82 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6699,7 +6710,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 111.76 102.87 0)
+			(at 83.82 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6711,7 +6722,7 @@
 			(uuid "389a9e94-0691-4c37-a6ec-1bd1e9781962")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR024")
 					(unit 1)
@@ -6778,7 +6789,7 @@
 			(uuid "3e0b3d82-2e52-4b7d-9f71-c825cc69b624")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR012")
 					(unit 1)
@@ -6867,7 +6878,7 @@
 			(uuid "e6fb45de-d7d4-4575-8afa-cc52b0d358a4")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "U2")
 					(unit 1)
@@ -6946,7 +6957,7 @@
 			(uuid "60fd9255-9ee8-4c77-a9c5-b392d14afaa2")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C7")
 					(unit 1)
@@ -6956,7 +6967,7 @@
 	)
 	(symbol
 		(lib_id "cnhardware:LED_3535_3W_W_TP")
-		(at 100.33 176.53 0)
+		(at 72.39 176.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6965,7 +6976,7 @@
 		(fields_autoplaced yes)
 		(uuid "379c3466-af61-4e6c-8cdf-d47a1c946a9f")
 		(property "Reference" "D9"
-			(at 100.33 170.18 0)
+			(at 72.39 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6973,7 +6984,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 100.33 172.72 0)
+			(at 72.39 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6981,7 +6992,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:LED_3535_3W_W_PAD"
-			(at 100.33 176.53 0)
+			(at 72.39 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6990,7 +7001,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 176.53 0)
+			(at 72.39 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6999,7 +7010,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 100.33 176.53 0)
+			(at 72.39 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7017,7 +7028,7 @@
 			(uuid "b7c15018-33d3-4a86-9821-c27a598c413e")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "D9")
 					(unit 1)
@@ -7084,7 +7095,7 @@
 			(uuid "7f3bd285-b6da-4554-90b1-890a783b8d90")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "H1")
 					(unit 1)
@@ -7094,7 +7105,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 96.52 176.53 90)
+		(at 68.58 176.53 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7103,7 +7114,7 @@
 		(fields_autoplaced yes)
 		(uuid "3aa1e1df-ff2f-40ea-a803-3141c1dbefa0")
 		(property "Reference" "#PWR060"
-			(at 100.33 176.53 0)
+			(at 72.39 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7112,7 +7123,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 92.71 176.5299 90)
+			(at 64.77 176.5299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7121,7 +7132,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 96.52 176.53 0)
+			(at 68.58 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7130,7 +7141,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 176.53 0)
+			(at 68.58 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7139,7 +7150,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 96.52 176.53 0)
+			(at 68.58 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7151,7 +7162,7 @@
 			(uuid "f4c0c285-991a-4d91-8372-9a0f7742abff")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR060")
 					(unit 1)
@@ -7161,7 +7172,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 96.52 127 90)
+		(at 68.58 127 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7170,7 +7181,7 @@
 		(fields_autoplaced yes)
 		(uuid "3b90f92c-a741-4179-9f45-8c4ec38f90fa")
 		(property "Reference" "#PWR025"
-			(at 100.33 127 0)
+			(at 72.39 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7179,7 +7190,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 92.71 126.9999 90)
+			(at 64.77 126.9999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7188,7 +7199,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 96.52 127 0)
+			(at 68.58 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7197,7 +7208,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 127 0)
+			(at 68.58 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7206,7 +7217,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 96.52 127 0)
+			(at 68.58 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7218,7 +7229,7 @@
 			(uuid "c05cc161-6ea4-420f-9aea-bdf05345019c")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR025")
 					(unit 1)
@@ -7297,7 +7308,7 @@
 			(uuid "99ec35c3-fd7d-4935-81c0-4c213f0becea")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C12")
 					(unit 1)
@@ -7379,7 +7390,7 @@
 			(uuid "25aeeb96-deda-4577-b3f9-f555f5fc90d1")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "Y1")
 					(unit 1)
@@ -7446,7 +7457,7 @@
 			(uuid "d676964d-f23a-4780-9d7c-e4437fc27840")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR010")
 					(unit 1)
@@ -7512,7 +7523,7 @@
 			(uuid "11bb8707-9b64-4ca9-b126-63cd96d38dbd")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR07")
 					(unit 1)
@@ -7522,7 +7533,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 104.14 137.16 0)
+		(at 76.2 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7531,7 +7542,7 @@
 		(fields_autoplaced yes)
 		(uuid "3fc8b6ac-dd1a-41ee-9a1b-b0332af02f08")
 		(property "Reference" "#PWR026"
-			(at 104.14 143.51 0)
+			(at 76.2 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7540,7 +7551,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 104.14 142.24 0)
+			(at 76.2 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7548,7 +7559,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 104.14 137.16 0)
+			(at 76.2 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7557,7 +7568,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 104.14 137.16 0)
+			(at 76.2 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7566,7 +7577,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 104.14 137.16 0)
+			(at 76.2 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7578,7 +7589,7 @@
 			(uuid "86c72e39-9de6-4196-9846-b60da90e7ef8")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR026")
 					(unit 1)
@@ -7588,7 +7599,7 @@
 	)
 	(symbol
 		(lib_id "cnhardware:LED_3535_3W_W_TP")
-		(at 57.15 127 0)
+		(at 29.21 127 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7597,7 +7608,7 @@
 		(fields_autoplaced yes)
 		(uuid "41214c46-1691-4a8f-998c-63905c3f1490")
 		(property "Reference" "D7"
-			(at 57.15 120.65 0)
+			(at 29.21 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7605,7 +7616,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 57.15 123.19 0)
+			(at 29.21 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7613,7 +7624,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:LED_3535_3W_W_PAD"
-			(at 57.15 127 0)
+			(at 29.21 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7622,7 +7633,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 127 0)
+			(at 29.21 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7631,7 +7642,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 57.15 127 0)
+			(at 29.21 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7649,7 +7660,7 @@
 			(uuid "b35c4bed-dc3c-405c-a573-fc33ff3f0961")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "D7")
 					(unit 1)
@@ -7659,7 +7670,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 107.95 151.13 90)
+		(at 80.01 151.13 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7668,7 +7679,7 @@
 		(fields_autoplaced yes)
 		(uuid "420be996-94ec-4709-a12a-3de973b2430b")
 		(property "Reference" "L5"
-			(at 107.95 146.05 90)
+			(at 80.01 146.05 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7676,7 +7687,7 @@
 			)
 		)
 		(property "Value" "4.7u"
-			(at 107.95 148.59 90)
+			(at 80.01 148.59 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7684,7 +7695,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_1008_2520Metric"
-			(at 107.95 151.13 0)
+			(at 80.01 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7693,7 +7704,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 107.95 151.13 0)
+			(at 80.01 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7702,7 +7713,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 107.95 151.13 0)
+			(at 80.01 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7711,7 +7722,7 @@
 			)
 		)
 		(property "LCSC" " C88528"
-			(at 107.95 151.13 90)
+			(at 80.01 151.13 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7726,7 +7737,7 @@
 			(uuid "757aa116-5d9d-4d0c-b1df-32c4e967f75f")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "L5")
 					(unit 1)
@@ -7736,7 +7747,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 96.52 78.74 90)
+		(at 68.58 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7745,7 +7756,7 @@
 		(fields_autoplaced yes)
 		(uuid "4336d3b4-8db2-4296-9c6e-47de51ac783c")
 		(property "Reference" "#PWR015"
-			(at 100.33 78.74 0)
+			(at 72.39 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7754,7 +7765,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 92.71 78.7399 90)
+			(at 64.77 78.7399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7763,7 +7774,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 96.52 78.74 0)
+			(at 68.58 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7772,7 +7783,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 78.74 0)
+			(at 68.58 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7781,7 +7792,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 96.52 78.74 0)
+			(at 68.58 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7793,7 +7804,7 @@
 			(uuid "68ae3b45-0d27-4dc4-911b-b4ee40e78eb0")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR015")
 					(unit 1)
@@ -7803,7 +7814,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:Q_NMOS_GSD")
-		(at 63.5 132.08 0)
+		(at 35.56 132.08 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7812,7 +7823,7 @@
 		(dnp no)
 		(uuid "4412f651-9bbc-4eba-bac9-4acb2b84b171")
 		(property "Reference" "Q7"
-			(at 57.15 133.3501 0)
+			(at 29.21 133.3501 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7821,7 +7832,7 @@
 			)
 		)
 		(property "Value" "AO3400A"
-			(at 57.15 130.8101 0)
+			(at 29.21 130.8101 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7830,7 +7841,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:SOT-23-EXTRASPACE"
-			(at 58.42 129.54 0)
+			(at 30.48 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7839,7 +7850,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 63.5 132.08 0)
+			(at 35.56 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7848,7 +7859,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 63.5 132.08 0)
+			(at 35.56 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7857,7 +7868,7 @@
 			)
 		)
 		(property "LCSC" "C20917"
-			(at 63.5 132.08 0)
+			(at 35.56 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7875,7 +7886,7 @@
 			(uuid "5d5e0a0b-67fe-4fd2-82f0-cc691b983fca")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "Q7")
 					(unit 1)
@@ -7941,7 +7952,7 @@
 			(uuid "3eaa55aa-c40d-4887-b927-6f8f90861a7c")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR04")
 					(unit 1)
@@ -8075,7 +8086,7 @@
 			(uuid "53db2926-7a14-40cb-80c9-6a5923c04946")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "U1")
 					(unit 1)
@@ -8152,7 +8163,7 @@
 			(uuid "76ff17d0-e649-45ed-90dc-aa1d981705ed")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R10")
 					(unit 1)
@@ -8162,7 +8173,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 68.58 127 270)
+		(at 40.64 127 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8171,7 +8182,7 @@
 		(fields_autoplaced yes)
 		(uuid "518ed1e4-d20a-4ca7-8758-4fc2689fb8ff")
 		(property "Reference" "#PWR041"
-			(at 64.77 127 0)
+			(at 36.83 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8180,7 +8191,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 72.39 126.9999 90)
+			(at 44.45 126.9999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8189,7 +8200,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 68.58 127 0)
+			(at 40.64 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8198,7 +8209,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 68.58 127 0)
+			(at 40.64 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8207,7 +8218,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 68.58 127 0)
+			(at 40.64 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8219,7 +8230,7 @@
 			(uuid "531417bc-d224-480d-a4c1-0433552d4d08")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR041")
 					(unit 1)
@@ -8229,7 +8240,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 60.96 186.69 0)
+		(at 33.02 186.69 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8238,7 +8249,7 @@
 		(fields_autoplaced yes)
 		(uuid "52369582-ad3a-49f9-be62-3a5f3a03e0f6")
 		(property "Reference" "#PWR058"
-			(at 60.96 193.04 0)
+			(at 33.02 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8247,7 +8258,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 60.96 191.77 0)
+			(at 33.02 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8255,7 +8266,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 60.96 186.69 0)
+			(at 33.02 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8264,7 +8275,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 60.96 186.69 0)
+			(at 33.02 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8273,7 +8284,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 60.96 186.69 0)
+			(at 33.02 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8285,7 +8296,7 @@
 			(uuid "58089019-ebf9-4a37-871f-4170b2b6ab4c")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR058")
 					(unit 1)
@@ -8295,7 +8306,7 @@
 	)
 	(symbol
 		(lib_id "cnhardware:LED_3535_3W_W_TP")
-		(at 57.15 151.13 0)
+		(at 29.21 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8304,7 +8315,7 @@
 		(fields_autoplaced yes)
 		(uuid "5240281b-f6eb-4ea0-bfda-331552c179b0")
 		(property "Reference" "D0"
-			(at 57.15 144.78 0)
+			(at 29.21 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8312,7 +8323,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 57.15 147.32 0)
+			(at 29.21 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8320,7 +8331,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:LED_3535_3W_W_PAD"
-			(at 57.15 151.13 0)
+			(at 29.21 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8329,7 +8340,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 151.13 0)
+			(at 29.21 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8338,7 +8349,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 57.15 151.13 0)
+			(at 29.21 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8356,7 +8367,7 @@
 			(uuid "44b1ebdd-6fb8-4fd3-bb63-2456d0d7b57c")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "D0")
 					(unit 1)
@@ -8366,7 +8377,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 104.14 88.9 0)
+		(at 76.2 88.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8375,7 +8386,7 @@
 		(fields_autoplaced yes)
 		(uuid "5245c5ba-d3cb-4f84-9f30-753b848bbaff")
 		(property "Reference" "#PWR017"
-			(at 104.14 95.25 0)
+			(at 76.2 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8384,7 +8395,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 104.14 93.98 0)
+			(at 76.2 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8392,7 +8403,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 104.14 88.9 0)
+			(at 76.2 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8401,7 +8412,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 104.14 88.9 0)
+			(at 76.2 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8410,7 +8421,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 104.14 88.9 0)
+			(at 76.2 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8422,7 +8433,7 @@
 			(uuid "65ca3d77-4165-46ce-8880-5f2c65759882")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR017")
 					(unit 1)
@@ -8488,7 +8499,7 @@
 			(uuid "c43d6343-dee6-4a4d-ab40-a1a3fbe5f57a")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR071")
 					(unit 1)
@@ -8554,7 +8565,7 @@
 			(uuid "6d76f165-9be3-4ebb-8ccc-5090ba1d87d6")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR05")
 					(unit 1)
@@ -8631,7 +8642,7 @@
 			(uuid "f84619c6-9aa7-4b06-a58e-5345a33f388e")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "L1")
 					(unit 1)
@@ -8698,7 +8709,7 @@
 			(uuid "e2e6ee69-ab3b-4fff-90ef-81b818cb37e8")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR052")
 					(unit 1)
@@ -8708,7 +8719,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 111.76 151.13 270)
+		(at 83.82 151.13 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8717,7 +8728,7 @@
 		(fields_autoplaced yes)
 		(uuid "5b53ecb8-8609-4dd0-8fef-8560db8ed925")
 		(property "Reference" "#PWR030"
-			(at 107.95 151.13 0)
+			(at 80.01 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8726,7 +8737,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 115.57 151.1299 90)
+			(at 87.63 151.1299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8735,7 +8746,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 111.76 151.13 0)
+			(at 83.82 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8744,7 +8755,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 111.76 151.13 0)
+			(at 83.82 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8753,7 +8764,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 111.76 151.13 0)
+			(at 83.82 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8765,7 +8776,7 @@
 			(uuid "94d5af96-2417-494d-a775-5b2e65aac767")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR030")
 					(unit 1)
@@ -8844,7 +8855,7 @@
 			(uuid "6ba605f6-37e8-44c4-a1fd-002f9b19149e")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R9")
 					(unit 1)
@@ -8854,7 +8865,7 @@
 	)
 	(symbol
 		(lib_id "cnhardware:LED_3535_3W_W_TP")
-		(at 100.33 102.87 0)
+		(at 72.39 102.87 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8863,7 +8874,7 @@
 		(fields_autoplaced yes)
 		(uuid "5df9fcd9-7e0e-40f9-b227-029e9571757d")
 		(property "Reference" "D2"
-			(at 100.33 96.52 0)
+			(at 72.39 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8871,7 +8882,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 100.33 99.06 0)
+			(at 72.39 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8879,7 +8890,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:LED_3535_3W_W_PAD"
-			(at 100.33 102.87 0)
+			(at 72.39 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8888,7 +8899,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 102.87 0)
+			(at 72.39 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8897,7 +8908,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 100.33 102.87 0)
+			(at 72.39 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8915,7 +8926,7 @@
 			(uuid "e74ddbdd-a2b2-46d3-8f89-2f65e309297f")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "D2")
 					(unit 1)
@@ -8981,7 +8992,7 @@
 			(uuid "509c5c0d-dab2-4401-8f7e-bd10b65fe87f")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR020")
 					(unit 1)
@@ -8991,7 +9002,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:Q_NMOS_GSD")
-		(at 106.68 132.08 0)
+		(at 78.74 132.08 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9000,7 +9011,7 @@
 		(dnp no)
 		(uuid "5e417a50-c256-4967-b308-914265eabba8")
 		(property "Reference" "Q3"
-			(at 100.33 133.3501 0)
+			(at 72.39 133.3501 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9009,7 +9020,7 @@
 			)
 		)
 		(property "Value" "AO3400A"
-			(at 100.33 130.8101 0)
+			(at 72.39 130.8101 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9019,7 +9030,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:SOT-23-EXTRASPACE"
-			(at 101.6 129.54 0)
+			(at 73.66 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9028,7 +9039,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 106.68 132.08 0)
+			(at 78.74 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9037,7 +9048,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 106.68 132.08 0)
+			(at 78.74 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9046,7 +9057,7 @@
 			)
 		)
 		(property "LCSC" "C20917"
-			(at 106.68 132.08 0)
+			(at 78.74 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9064,7 +9075,7 @@
 			(uuid "30dc0dff-335a-48e8-a047-5c036f0e8a88")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "Q3")
 					(unit 1)
@@ -9130,7 +9141,7 @@
 			(uuid "ed140daf-e0a6-4a10-acce-0a2efd0c92c4")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR054")
 					(unit 1)
@@ -9140,7 +9151,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:Q_NMOS_GSD")
-		(at 106.68 83.82 0)
+		(at 78.74 83.82 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9149,7 +9160,7 @@
 		(dnp no)
 		(uuid "5f805a8c-5e6f-4aa2-94c0-33e444c0870e")
 		(property "Reference" "Q2"
-			(at 100.33 85.0901 0)
+			(at 72.39 85.0901 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9158,7 +9169,7 @@
 			)
 		)
 		(property "Value" "AO3400A"
-			(at 100.33 82.5501 0)
+			(at 72.39 82.5501 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9168,7 +9179,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:SOT-23-EXTRASPACE"
-			(at 101.6 81.28 0)
+			(at 73.66 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9177,7 +9188,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 106.68 83.82 0)
+			(at 78.74 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9186,7 +9197,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 106.68 83.82 0)
+			(at 78.74 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9195,7 +9206,7 @@
 			)
 		)
 		(property "LCSC" "C20917"
-			(at 106.68 83.82 0)
+			(at 78.74 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9213,7 +9224,7 @@
 			(uuid "ec03c261-b9bf-4850-b2a4-721c5af1fc61")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "Q2")
 					(unit 1)
@@ -9292,7 +9303,7 @@
 			(uuid "a6b55915-a4dd-4010-a6a7-56fb287b3b17")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C4")
 					(unit 1)
@@ -9369,7 +9380,7 @@
 			(uuid "cad412b2-91e5-44c8-b190-14bd420e233e")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C1")
 					(unit 1)
@@ -9379,7 +9390,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:Q_NMOS_GSD")
-		(at 63.5 83.82 0)
+		(at 35.56 83.82 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9388,7 +9399,7 @@
 		(dnp no)
 		(uuid "62399617-1151-4761-b945-0f80b863c8d9")
 		(property "Reference" "Q5"
-			(at 57.15 85.0901 0)
+			(at 29.21 85.0901 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9397,7 +9408,7 @@
 			)
 		)
 		(property "Value" "AO3400A"
-			(at 57.15 82.5501 0)
+			(at 29.21 82.5501 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9406,7 +9417,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:SOT-23-EXTRASPACE"
-			(at 58.42 81.28 0)
+			(at 30.48 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9415,7 +9426,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 63.5 83.82 0)
+			(at 35.56 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9424,7 +9435,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 63.5 83.82 0)
+			(at 35.56 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9433,7 +9444,7 @@
 			)
 		)
 		(property "LCSC" "C20917"
-			(at 63.5 83.82 0)
+			(at 35.56 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9451,7 +9462,7 @@
 			(uuid "43de7538-a7d2-44bc-84cf-48879dcbf8fd")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "Q5")
 					(unit 1)
@@ -9461,7 +9472,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 53.34 78.74 90)
+		(at 25.4 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9470,7 +9481,7 @@
 		(fields_autoplaced yes)
 		(uuid "62afaf75-67fc-4fe5-9415-7c45f91cbdc8")
 		(property "Reference" "#PWR031"
-			(at 57.15 78.74 0)
+			(at 29.21 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9479,7 +9490,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 49.53 78.7399 90)
+			(at 21.59 78.7399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9488,7 +9499,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 53.34 78.74 0)
+			(at 25.4 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9497,7 +9508,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 53.34 78.74 0)
+			(at 25.4 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9506,7 +9517,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 53.34 78.74 0)
+			(at 25.4 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9518,7 +9529,7 @@
 			(uuid "c758119a-60b3-4fb2-b845-bda3412e72f7")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR031")
 					(unit 1)
@@ -9528,7 +9539,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 64.77 176.53 90)
+		(at 36.83 176.53 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9537,7 +9548,7 @@
 		(fields_autoplaced yes)
 		(uuid "63adf46c-2583-4046-922b-a6a376b6ca8f")
 		(property "Reference" "L10"
-			(at 64.77 171.45 90)
+			(at 36.83 171.45 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9545,7 +9556,7 @@
 			)
 		)
 		(property "Value" "4.7u"
-			(at 64.77 173.99 90)
+			(at 36.83 173.99 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9553,7 +9564,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_1008_2520Metric"
-			(at 64.77 176.53 0)
+			(at 36.83 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9562,7 +9573,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 64.77 176.53 0)
+			(at 36.83 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9571,7 +9582,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 64.77 176.53 0)
+			(at 36.83 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9580,7 +9591,7 @@
 			)
 		)
 		(property "LCSC" " C88528"
-			(at 64.77 176.53 90)
+			(at 36.83 176.53 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9595,7 +9606,7 @@
 			(uuid "d40288b6-82e4-4c01-9ed4-d0fb9e36985d")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "L10")
 					(unit 1)
@@ -9672,7 +9683,7 @@
 			(uuid "254e9ba2-1fc1-4f77-9830-cb0389c5b966")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R4")
 					(unit 1)
@@ -9682,7 +9693,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 60.96 137.16 0)
+		(at 33.02 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9691,7 +9702,7 @@
 		(fields_autoplaced yes)
 		(uuid "6aafbeb2-2ea4-41a1-8515-506aa39aea37")
 		(property "Reference" "#PWR037"
-			(at 60.96 143.51 0)
+			(at 33.02 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9700,7 +9711,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 60.96 142.24 0)
+			(at 33.02 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9708,7 +9719,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 60.96 137.16 0)
+			(at 33.02 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9717,7 +9728,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 60.96 137.16 0)
+			(at 33.02 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9726,7 +9737,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 60.96 137.16 0)
+			(at 33.02 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9738,7 +9749,7 @@
 			(uuid "3f1953ea-a982-4959-acf8-26bb1577dd60")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR037")
 					(unit 1)
@@ -9748,7 +9759,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 64.77 78.74 90)
+		(at 36.83 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9757,7 +9768,7 @@
 		(fields_autoplaced yes)
 		(uuid "6baad0dd-58a7-4f8b-9ed3-e4031893daee")
 		(property "Reference" "L6"
-			(at 64.77 73.66 90)
+			(at 36.83 73.66 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9765,7 +9776,7 @@
 			)
 		)
 		(property "Value" "4.7u"
-			(at 64.77 76.2 90)
+			(at 36.83 76.2 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9773,7 +9784,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_1008_2520Metric"
-			(at 64.77 78.74 0)
+			(at 36.83 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9782,7 +9793,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 64.77 78.74 0)
+			(at 36.83 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9791,7 +9802,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 64.77 78.74 0)
+			(at 36.83 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9800,7 +9811,7 @@
 			)
 		)
 		(property "LCSC" " C88528"
-			(at 64.77 78.74 90)
+			(at 36.83 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9815,7 +9826,7 @@
 			(uuid "9afa2427-c33b-40af-b5db-4ef1239cae7e")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "L6")
 					(unit 1)
@@ -9881,7 +9892,7 @@
 			(uuid "6a66783e-20bd-4b8b-968b-7344e1646844")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR074")
 					(unit 1)
@@ -9947,7 +9958,7 @@
 			(uuid "1b1d766f-47c6-4bd6-a1dd-851ebabe8db8")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR011")
 					(unit 1)
@@ -9957,7 +9968,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:Q_NMOS_GSD")
-		(at 106.68 107.95 0)
+		(at 78.74 107.95 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9966,7 +9977,7 @@
 		(dnp no)
 		(uuid "6e961d2e-5734-451a-92ad-8e7b3af37216")
 		(property "Reference" "Q1"
-			(at 100.33 109.2201 0)
+			(at 72.39 109.2201 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9975,7 +9986,7 @@
 			)
 		)
 		(property "Value" "AO3400A"
-			(at 100.33 106.6801 0)
+			(at 72.39 106.6801 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9984,7 +9995,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:SOT-23-EXTRASPACE"
-			(at 101.6 105.41 0)
+			(at 73.66 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9993,7 +10004,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 106.68 107.95 0)
+			(at 78.74 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10002,7 +10013,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 106.68 107.95 0)
+			(at 78.74 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10011,7 +10022,7 @@
 			)
 		)
 		(property "LCSC" "C20917"
-			(at 106.68 107.95 0)
+			(at 78.74 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10029,7 +10040,7 @@
 			(uuid "635763a0-f940-4cf2-8b7e-e67e4cd975c7")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "Q1")
 					(unit 1)
@@ -10039,7 +10050,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 60.96 113.03 0)
+		(at 33.02 113.03 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10048,7 +10059,7 @@
 		(fields_autoplaced yes)
 		(uuid "708f7689-f2e6-40ea-b159-04afd9887352")
 		(property "Reference" "#PWR036"
-			(at 60.96 119.38 0)
+			(at 33.02 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10057,7 +10068,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 60.96 118.11 0)
+			(at 33.02 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10065,7 +10076,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 60.96 113.03 0)
+			(at 33.02 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10074,7 +10085,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 60.96 113.03 0)
+			(at 33.02 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10083,7 +10094,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 60.96 113.03 0)
+			(at 33.02 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10095,7 +10106,7 @@
 			(uuid "1583b58e-f526-4742-8b35-560e315c83b7")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR036")
 					(unit 1)
@@ -10174,7 +10185,7 @@
 			(uuid "05182eb8-cdcd-48fb-8b63-c797bdbf69b0")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R7")
 					(unit 1)
@@ -10253,7 +10264,7 @@
 			(uuid "96341fc2-10f9-45a5-bb5a-4da9d60db351")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C2")
 					(unit 1)
@@ -10332,7 +10343,7 @@
 			(uuid "639f2c40-07c0-44f4-8942-fc52821ff1b6")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R11")
 					(unit 1)
@@ -10398,7 +10409,7 @@
 			(uuid "44da804d-3662-4bd4-9acd-686acd113410")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR068")
 					(unit 1)
@@ -10408,7 +10419,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 68.58 102.87 270)
+		(at 40.64 102.87 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10417,7 +10428,7 @@
 		(fields_autoplaced yes)
 		(uuid "7a93d981-01ad-4c09-9f93-915e38c58c14")
 		(property "Reference" "#PWR040"
-			(at 64.77 102.87 0)
+			(at 36.83 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10426,7 +10437,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 72.39 102.8699 90)
+			(at 44.45 102.8699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10435,7 +10446,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 68.58 102.87 0)
+			(at 40.64 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10444,7 +10455,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 68.58 102.87 0)
+			(at 40.64 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10453,7 +10464,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 68.58 102.87 0)
+			(at 40.64 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10465,7 +10476,7 @@
 			(uuid "e38b5e06-9c88-4cf2-a431-601951bd2f3d")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR040")
 					(unit 1)
@@ -10475,7 +10486,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:Q_NMOS_GSD")
-		(at 63.5 156.21 0)
+		(at 35.56 156.21 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10484,7 +10495,7 @@
 		(dnp no)
 		(uuid "81100f4e-f269-4652-b60a-8dd37eda3524")
 		(property "Reference" "Q8"
-			(at 57.15 157.4801 0)
+			(at 29.21 157.4801 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10493,7 +10504,7 @@
 			)
 		)
 		(property "Value" "AO3400A"
-			(at 57.15 154.9401 0)
+			(at 29.21 154.9401 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10502,7 +10513,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:SOT-23-EXTRASPACE"
-			(at 58.42 153.67 0)
+			(at 30.48 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10511,7 +10522,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 63.5 156.21 0)
+			(at 35.56 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10520,7 +10531,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 63.5 156.21 0)
+			(at 35.56 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10529,7 +10540,7 @@
 			)
 		)
 		(property "LCSC" "C20917"
-			(at 63.5 156.21 0)
+			(at 35.56 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10547,7 +10558,7 @@
 			(uuid "5ad3e9e6-ba9f-4b4d-b5d5-4dc585bcd3f9")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "Q8")
 					(unit 1)
@@ -10557,7 +10568,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 107.95 176.53 90)
+		(at 80.01 176.53 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10566,7 +10577,7 @@
 		(fields_autoplaced yes)
 		(uuid "82573bd2-8d4c-4712-a0c0-3ffd7cfe14bd")
 		(property "Reference" "L11"
-			(at 107.95 171.45 90)
+			(at 80.01 171.45 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10574,7 +10585,7 @@
 			)
 		)
 		(property "Value" "4.7u"
-			(at 107.95 173.99 90)
+			(at 80.01 173.99 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10582,7 +10593,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_1008_2520Metric"
-			(at 107.95 176.53 0)
+			(at 80.01 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10591,7 +10602,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 107.95 176.53 0)
+			(at 80.01 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10600,7 +10611,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 107.95 176.53 0)
+			(at 80.01 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10609,7 +10620,7 @@
 			)
 		)
 		(property "LCSC" " C88528"
-			(at 107.95 176.53 90)
+			(at 80.01 176.53 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10624,7 +10635,7 @@
 			(uuid "469dcfe0-f620-4af4-abcd-a287707780bf")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "L11")
 					(unit 1)
@@ -10634,7 +10645,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 111.76 127 270)
+		(at 83.82 127 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10643,7 +10654,7 @@
 		(fields_autoplaced yes)
 		(uuid "846d6048-0aac-4674-a6b1-a3a4c7468330")
 		(property "Reference" "#PWR027"
-			(at 107.95 127 0)
+			(at 80.01 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10652,7 +10663,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 115.57 126.9999 90)
+			(at 87.63 126.9999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10661,7 +10672,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 111.76 127 0)
+			(at 83.82 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10670,7 +10681,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 111.76 127 0)
+			(at 83.82 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10679,7 +10690,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 111.76 127 0)
+			(at 83.82 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10691,7 +10702,7 @@
 			(uuid "4609be6a-e842-457d-9f20-119bc9260cb4")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR027")
 					(unit 1)
@@ -10701,7 +10712,7 @@
 	)
 	(symbol
 		(lib_id "cnhardware:LED_3535_3W_W_TP")
-		(at 100.33 127 0)
+		(at 72.39 127 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10710,7 +10721,7 @@
 		(fields_autoplaced yes)
 		(uuid "8735e990-5492-42a1-ad27-90f726e15df0")
 		(property "Reference" "D3"
-			(at 100.33 120.65 0)
+			(at 72.39 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10718,7 +10729,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 100.33 123.19 0)
+			(at 72.39 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10726,7 +10737,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:LED_3535_3W_W_PAD"
-			(at 100.33 127 0)
+			(at 72.39 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10735,7 +10746,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 127 0)
+			(at 72.39 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10744,7 +10755,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 100.33 127 0)
+			(at 72.39 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10762,7 +10773,7 @@
 			(uuid "d5425827-3e68-4821-91ca-969191cbded1")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "D3")
 					(unit 1)
@@ -10772,7 +10783,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 96.52 151.13 90)
+		(at 68.58 151.13 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10781,7 +10792,7 @@
 		(fields_autoplaced yes)
 		(uuid "892cb60c-e44f-48d2-8081-c9d91ccb8463")
 		(property "Reference" "#PWR028"
-			(at 100.33 151.13 0)
+			(at 72.39 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10790,7 +10801,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 92.71 151.1299 90)
+			(at 64.77 151.1299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10799,7 +10810,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 96.52 151.13 0)
+			(at 68.58 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10808,7 +10819,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 151.13 0)
+			(at 68.58 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10817,7 +10828,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 96.52 151.13 0)
+			(at 68.58 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10829,7 +10840,7 @@
 			(uuid "93b4061d-e62b-4bd6-9342-d6601bac3716")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR028")
 					(unit 1)
@@ -10895,7 +10906,7 @@
 			(uuid "30cfaf34-d7ec-4997-8147-877602c5a75a")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR066")
 					(unit 1)
@@ -10961,7 +10972,7 @@
 			(uuid "14dbe4fa-8602-490a-a21c-9457585cc8db")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR046")
 					(unit 1)
@@ -10971,7 +10982,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 53.34 176.53 90)
+		(at 25.4 176.53 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10980,7 +10991,7 @@
 		(fields_autoplaced yes)
 		(uuid "9235fe27-e415-4112-ab25-6acabc1df674")
 		(property "Reference" "#PWR057"
-			(at 57.15 176.53 0)
+			(at 29.21 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10989,7 +11000,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 49.53 176.5299 90)
+			(at 21.59 176.5299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10998,7 +11009,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 53.34 176.53 0)
+			(at 25.4 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11007,7 +11018,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 53.34 176.53 0)
+			(at 25.4 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11016,7 +11027,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 53.34 176.53 0)
+			(at 25.4 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11028,7 +11039,7 @@
 			(uuid "e065ce04-3417-4d1d-bb84-83066a425790")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR057")
 					(unit 1)
@@ -11038,7 +11049,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 64.77 151.13 90)
+		(at 36.83 151.13 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11047,7 +11058,7 @@
 		(fields_autoplaced yes)
 		(uuid "948be8a2-5fe2-434f-abea-03d7b1be1b7d")
 		(property "Reference" "L9"
-			(at 64.77 146.05 90)
+			(at 36.83 146.05 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11055,7 +11066,7 @@
 			)
 		)
 		(property "Value" "4.7u"
-			(at 64.77 148.59 90)
+			(at 36.83 148.59 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11063,7 +11074,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_1008_2520Metric"
-			(at 64.77 151.13 0)
+			(at 36.83 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11072,7 +11083,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 64.77 151.13 0)
+			(at 36.83 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11081,7 +11092,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 64.77 151.13 0)
+			(at 36.83 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11090,7 +11101,7 @@
 			)
 		)
 		(property "LCSC" " C88528"
-			(at 64.77 151.13 90)
+			(at 36.83 151.13 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11105,7 +11116,7 @@
 			(uuid "b7f5c317-8a8a-4edd-9af9-21652d4747d2")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "L9")
 					(unit 1)
@@ -11115,7 +11126,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 68.58 78.74 270)
+		(at 40.64 78.74 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11124,7 +11135,7 @@
 		(fields_autoplaced yes)
 		(uuid "948f7123-cb09-4ee5-825d-00dcff3213bf")
 		(property "Reference" "#PWR039"
-			(at 64.77 78.74 0)
+			(at 36.83 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11133,7 +11144,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 72.39 78.7399 90)
+			(at 44.45 78.7399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11142,7 +11153,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 68.58 78.74 0)
+			(at 40.64 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11151,7 +11162,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 68.58 78.74 0)
+			(at 40.64 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11160,7 +11171,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 68.58 78.74 0)
+			(at 40.64 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11172,7 +11183,7 @@
 			(uuid "39d2e676-3fa8-4396-bd69-f299c281fc23")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR039")
 					(unit 1)
@@ -11182,7 +11193,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 111.76 176.53 270)
+		(at 83.82 176.53 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11191,7 +11202,7 @@
 		(fields_autoplaced yes)
 		(uuid "95b0ad60-90e5-4667-a546-bbe00ee8259d")
 		(property "Reference" "#PWR062"
-			(at 107.95 176.53 0)
+			(at 80.01 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11200,7 +11211,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 115.57 176.5299 90)
+			(at 87.63 176.5299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11209,7 +11220,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 111.76 176.53 0)
+			(at 83.82 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11218,7 +11229,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 111.76 176.53 0)
+			(at 83.82 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11227,7 +11238,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 111.76 176.53 0)
+			(at 83.82 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11239,7 +11250,7 @@
 			(uuid "a5fbdeac-1eb4-447b-9361-b2507e76a4aa")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR062")
 					(unit 1)
@@ -11305,7 +11316,7 @@
 			(uuid "7d90b7ce-ac1b-4d4a-95a6-dafaff0cffc6")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR075")
 					(unit 1)
@@ -11384,7 +11395,7 @@
 			(uuid "f833dd68-c954-47a8-8bb1-3ccde3d1094d")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C9")
 					(unit 1)
@@ -11463,7 +11474,7 @@
 			(uuid "a6f0e7b2-1422-481c-81b9-f5d4da7f6e67")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R5")
 					(unit 1)
@@ -11530,7 +11541,7 @@
 			(uuid "bce9b37c-31fc-4b93-afb5-e38374124fd7")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "H2")
 					(unit 1)
@@ -11609,7 +11620,7 @@
 			(uuid "f2f6db59-4352-4d84-8ed8-9fd26caa2061")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R2")
 					(unit 1)
@@ -11619,7 +11630,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 64.77 102.87 90)
+		(at 36.83 102.87 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11628,7 +11639,7 @@
 		(fields_autoplaced yes)
 		(uuid "9f4371cf-a0b4-45c6-bf44-225b6b1ba8ee")
 		(property "Reference" "L7"
-			(at 64.77 97.79 90)
+			(at 36.83 97.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11636,7 +11647,7 @@
 			)
 		)
 		(property "Value" "4.7u"
-			(at 64.77 100.33 90)
+			(at 36.83 100.33 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11644,7 +11655,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_1008_2520Metric"
-			(at 64.77 102.87 0)
+			(at 36.83 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11653,7 +11664,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 64.77 102.87 0)
+			(at 36.83 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11662,7 +11673,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 64.77 102.87 0)
+			(at 36.83 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11671,7 +11682,7 @@
 			)
 		)
 		(property "LCSC" " C88528"
-			(at 64.77 102.87 90)
+			(at 36.83 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11686,7 +11697,7 @@
 			(uuid "51d0891e-c6c0-4610-b3a4-6afe8d2a470c")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "L7")
 					(unit 1)
@@ -11752,7 +11763,7 @@
 			(uuid "32c7bb57-671e-473b-9f30-92902b37d6dc")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR073")
 					(unit 1)
@@ -11818,7 +11829,7 @@
 			(uuid "82161b66-88d0-4a0e-b07a-3f80cec64c7f")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR076")
 					(unit 1)
@@ -11828,7 +11839,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 107.95 78.74 90)
+		(at 80.01 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11837,7 +11848,7 @@
 		(fields_autoplaced yes)
 		(uuid "a9bb3c9f-8ee1-48e5-bb0c-db235349469c")
 		(property "Reference" "L2"
-			(at 107.95 73.66 90)
+			(at 80.01 73.66 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11845,7 +11856,7 @@
 			)
 		)
 		(property "Value" "4.7u"
-			(at 107.95 76.2 90)
+			(at 80.01 76.2 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11853,7 +11864,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_1008_2520Metric"
-			(at 107.95 78.74 0)
+			(at 80.01 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11862,7 +11873,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 107.95 78.74 0)
+			(at 80.01 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11871,7 +11882,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 107.95 78.74 0)
+			(at 80.01 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11880,7 +11891,7 @@
 			)
 		)
 		(property "LCSC" " C88528"
-			(at 107.95 78.74 90)
+			(at 80.01 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11895,7 +11906,7 @@
 			(uuid "291e8fcf-420a-4eeb-9ad0-efb917b8a1ee")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "L2")
 					(unit 1)
@@ -11961,7 +11972,7 @@
 			(uuid "3ad062b7-f099-495d-aaad-edd9eae51612")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR072")
 					(unit 1)
@@ -11971,7 +11982,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:Q_NMOS_GSD")
-		(at 63.5 181.61 0)
+		(at 35.56 181.61 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11980,7 +11991,7 @@
 		(dnp no)
 		(uuid "aa99fefc-9d59-4c11-9392-be5cffc125dd")
 		(property "Reference" "Q9"
-			(at 57.15 182.8801 0)
+			(at 29.21 182.8801 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11989,7 +12000,7 @@
 			)
 		)
 		(property "Value" "AO3400A"
-			(at 57.15 180.3401 0)
+			(at 29.21 180.3401 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11998,7 +12009,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:SOT-23-EXTRASPACE"
-			(at 58.42 179.07 0)
+			(at 30.48 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12007,7 +12018,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 63.5 181.61 0)
+			(at 35.56 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12016,7 +12027,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 63.5 181.61 0)
+			(at 35.56 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12025,7 +12036,7 @@
 			)
 		)
 		(property "LCSC" "C20917"
-			(at 63.5 181.61 0)
+			(at 35.56 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12043,7 +12054,7 @@
 			(uuid "3e87e6ba-bc7b-4afa-8938-373b16ce8192")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "Q9")
 					(unit 1)
@@ -12122,7 +12133,7 @@
 			(uuid "18650071-9128-4eaa-862c-4b9bfe03f66a")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C13")
 					(unit 1)
@@ -12188,7 +12199,7 @@
 			(uuid "f78a87ec-2ec3-4854-98b5-c149cbb6ca69")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR013")
 					(unit 1)
@@ -12198,7 +12209,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 107.95 102.87 90)
+		(at 80.01 102.87 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12207,7 +12218,7 @@
 		(fields_autoplaced yes)
 		(uuid "b0133c95-b50e-491e-b9f9-ce593c176230")
 		(property "Reference" "L3"
-			(at 107.95 97.79 90)
+			(at 80.01 97.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12215,7 +12226,7 @@
 			)
 		)
 		(property "Value" "4.7u"
-			(at 107.95 100.33 90)
+			(at 80.01 100.33 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12223,7 +12234,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_1008_2520Metric"
-			(at 107.95 102.87 0)
+			(at 80.01 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12232,7 +12243,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 107.95 102.87 0)
+			(at 80.01 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12241,7 +12252,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 107.95 102.87 0)
+			(at 80.01 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12250,7 +12261,7 @@
 			)
 		)
 		(property "LCSC" " C88528"
-			(at 107.95 102.87 90)
+			(at 80.01 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12265,7 +12276,7 @@
 			(uuid "6b7504b0-8250-45d6-91f6-ef03d06c6f7f")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "L3")
 					(unit 1)
@@ -12332,7 +12343,7 @@
 			(uuid "71169a4e-0685-4440-bc6e-465c17a22ecd")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR021")
 					(unit 1)
@@ -12342,7 +12353,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 53.34 102.87 90)
+		(at 25.4 102.87 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12351,7 +12362,7 @@
 		(fields_autoplaced yes)
 		(uuid "b2f4285c-a84c-4788-b63e-57141d38de86")
 		(property "Reference" "#PWR032"
-			(at 57.15 102.87 0)
+			(at 29.21 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12360,7 +12371,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 49.53 102.8699 90)
+			(at 21.59 102.8699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12369,7 +12380,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 53.34 102.87 0)
+			(at 25.4 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12378,7 +12389,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 53.34 102.87 0)
+			(at 25.4 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12387,7 +12398,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 53.34 102.87 0)
+			(at 25.4 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12399,7 +12410,7 @@
 			(uuid "50a332bb-6d17-4896-a320-aa4c7d8c5a5d")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR032")
 					(unit 1)
@@ -12409,7 +12420,7 @@
 	)
 	(symbol
 		(lib_id "cnhardware:LED_3535_3W_W_TP")
-		(at 57.15 78.74 0)
+		(at 29.21 78.74 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12418,7 +12429,7 @@
 		(fields_autoplaced yes)
 		(uuid "baa72dbf-63ed-4bb9-809d-8064531f29c7")
 		(property "Reference" "D5"
-			(at 57.15 72.39 0)
+			(at 29.21 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12426,7 +12437,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 57.15 74.93 0)
+			(at 29.21 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12434,7 +12445,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:LED_3535_3W_W_PAD"
-			(at 57.15 78.74 0)
+			(at 29.21 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12443,7 +12454,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 78.74 0)
+			(at 29.21 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12452,7 +12463,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 57.15 78.74 0)
+			(at 29.21 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12470,7 +12481,7 @@
 			(uuid "73422daa-5c85-4dd1-bc23-fb47ca991cb0")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "D5")
 					(unit 1)
@@ -12547,7 +12558,7 @@
 			(uuid "d2311d89-11bc-428c-a459-e73e99cb8012")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R12")
 					(unit 1)
@@ -12613,7 +12624,7 @@
 			(uuid "3fe4801c-85a8-4cf3-8d1e-b14012f4d239")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR044")
 					(unit 1)
@@ -12679,7 +12690,7 @@
 			(uuid "d5e5be26-3825-44a4-a05b-af1d09e29114")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR047")
 					(unit 1)
@@ -12746,7 +12757,7 @@
 			(uuid "acf9661b-7ebb-446a-ac15-88b62ab2221d")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR018")
 					(unit 1)
@@ -12825,7 +12836,7 @@
 			(uuid "08d894bb-0ca9-424f-93c8-c407726d7175")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C8")
 					(unit 1)
@@ -12904,7 +12915,7 @@
 			(uuid "469d8951-a694-4bd1-b22d-806925bc155c")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R3")
 					(unit 1)
@@ -12970,7 +12981,7 @@
 			(uuid "5a5d3400-63ec-4366-8705-e42345bfdaaa")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR06")
 					(unit 1)
@@ -12980,7 +12991,7 @@
 	)
 	(symbol
 		(lib_id "cnhardware:LED_3535_3W_W_TP")
-		(at 57.15 176.53 0)
+		(at 29.21 176.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12989,7 +13000,7 @@
 		(fields_autoplaced yes)
 		(uuid "cf3a0b51-6887-4309-b45e-5b4716a292b0")
 		(property "Reference" "D8"
-			(at 57.15 170.18 0)
+			(at 29.21 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12997,7 +13008,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 57.15 172.72 0)
+			(at 29.21 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13005,7 +13016,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:LED_3535_3W_W_PAD"
-			(at 57.15 176.53 0)
+			(at 29.21 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13014,7 +13025,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 176.53 0)
+			(at 29.21 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13023,7 +13034,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 57.15 176.53 0)
+			(at 29.21 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13041,7 +13052,7 @@
 			(uuid "66db4833-7e3d-4947-82c5-9c68b38fa4a5")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "D8")
 					(unit 1)
@@ -13108,7 +13119,7 @@
 			(uuid "d50bf171-35b4-4872-9974-c6cab43732f1")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR09")
 					(unit 1)
@@ -13174,7 +13185,7 @@
 			(uuid "b70be77e-b67e-481d-808e-ce6c876d6761")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR070")
 					(unit 1)
@@ -13240,7 +13251,7 @@
 			(uuid "534e39c8-38aa-4209-97b6-7654fe302061")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR048")
 					(unit 1)
@@ -13250,7 +13261,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 68.58 151.13 270)
+		(at 40.64 151.13 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13259,7 +13270,7 @@
 		(fields_autoplaced yes)
 		(uuid "d0460c18-7009-4967-8fb7-6dc4fe6d4741")
 		(property "Reference" "#PWR042"
-			(at 64.77 151.13 0)
+			(at 36.83 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13268,7 +13279,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 72.39 151.1299 90)
+			(at 44.45 151.1299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13277,7 +13288,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 68.58 151.13 0)
+			(at 40.64 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13286,7 +13297,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 68.58 151.13 0)
+			(at 40.64 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13295,7 +13306,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 68.58 151.13 0)
+			(at 40.64 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13307,7 +13318,7 @@
 			(uuid "b06f1ce5-71cd-4213-9e57-c458152efbe7")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR042")
 					(unit 1)
@@ -13373,7 +13384,7 @@
 			(uuid "863c8ef4-f5a2-4324-9d94-fb14922cecf9")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR050")
 					(unit 1)
@@ -13383,7 +13394,7 @@
 	)
 	(symbol
 		(lib_id "cnhardware:LED_3535_3W_W_TP")
-		(at 57.15 102.87 0)
+		(at 29.21 102.87 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13392,7 +13403,7 @@
 		(fields_autoplaced yes)
 		(uuid "d1e1dfa7-0661-400b-afd9-aa21265a9d9f")
 		(property "Reference" "D6"
-			(at 57.15 96.52 0)
+			(at 29.21 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13400,7 +13411,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 57.15 99.06 0)
+			(at 29.21 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13408,7 +13419,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:LED_3535_3W_W_PAD"
-			(at 57.15 102.87 0)
+			(at 29.21 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13417,7 +13428,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 102.87 0)
+			(at 29.21 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13426,7 +13437,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 57.15 102.87 0)
+			(at 29.21 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13444,7 +13455,7 @@
 			(uuid "e61381eb-f2a1-4ac5-8bf2-0958eb8380ea")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "D6")
 					(unit 1)
@@ -13454,7 +13465,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 111.76 78.74 270)
+		(at 83.82 78.74 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13463,7 +13474,7 @@
 		(fields_autoplaced yes)
 		(uuid "d55a9c03-0262-4cb4-931f-84c85089a8da")
 		(property "Reference" "#PWR016"
-			(at 107.95 78.74 0)
+			(at 80.01 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13472,7 +13483,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 115.57 78.7399 90)
+			(at 87.63 78.7399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13481,7 +13492,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 111.76 78.74 0)
+			(at 83.82 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13490,7 +13501,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 111.76 78.74 0)
+			(at 83.82 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13499,7 +13510,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 111.76 78.74 0)
+			(at 83.82 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13511,7 +13522,7 @@
 			(uuid "1ea68f4d-48e9-47a2-b0d7-c45d9579d558")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR016")
 					(unit 1)
@@ -13521,7 +13532,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 107.95 127 90)
+		(at 80.01 127 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13530,7 +13541,7 @@
 		(fields_autoplaced yes)
 		(uuid "d65ba64c-6833-4507-9c26-d18ac400f37a")
 		(property "Reference" "L4"
-			(at 107.95 121.92 90)
+			(at 80.01 121.92 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13538,7 +13549,7 @@
 			)
 		)
 		(property "Value" "4.7u"
-			(at 107.95 124.46 90)
+			(at 80.01 124.46 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13546,7 +13557,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_1008_2520Metric"
-			(at 107.95 127 0)
+			(at 80.01 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13555,7 +13566,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 107.95 127 0)
+			(at 80.01 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13564,7 +13575,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 107.95 127 0)
+			(at 80.01 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13573,7 +13584,7 @@
 			)
 		)
 		(property "LCSC" " C88528"
-			(at 107.95 127 90)
+			(at 80.01 127 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13588,7 +13599,7 @@
 			(uuid "0e6426c8-e8ea-4852-bfec-8ae41cb88173")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "L4")
 					(unit 1)
@@ -13655,7 +13666,7 @@
 			(uuid "af6e7fb5-aaf4-417b-ab93-00cea43bc195")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR01")
 					(unit 1)
@@ -13732,7 +13743,7 @@
 			(uuid "539816c8-38c5-4502-8b8b-c9fb27718b08")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R1")
 					(unit 1)
@@ -13798,7 +13809,7 @@
 			(uuid "67b24e9c-3421-4874-82f6-d061ea18ede7")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR045")
 					(unit 1)
@@ -13864,7 +13875,7 @@
 			(uuid "1a9fe55a-7ee4-40a7-a7f8-e370f60fbacc")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR049")
 					(unit 1)
@@ -13874,7 +13885,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 53.34 127 90)
+		(at 25.4 127 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13883,7 +13894,7 @@
 		(fields_autoplaced yes)
 		(uuid "e3e1a386-fae5-4f18-996d-d20f49e74619")
 		(property "Reference" "#PWR033"
-			(at 57.15 127 0)
+			(at 29.21 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13892,7 +13903,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 49.53 126.9999 90)
+			(at 21.59 126.9999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13901,7 +13912,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 53.34 127 0)
+			(at 25.4 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13910,7 +13921,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 53.34 127 0)
+			(at 25.4 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13919,7 +13930,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 53.34 127 0)
+			(at 25.4 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13931,7 +13942,7 @@
 			(uuid "ebb24195-7fb9-4363-bd43-762189a10937")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR033")
 					(unit 1)
@@ -14055,7 +14066,7 @@
 			(uuid "6f1ea3b9-cc7d-4a2c-a96a-2d62776d5407")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "J2")
 					(unit 1)
@@ -14159,7 +14170,7 @@
 			(uuid "974d040f-f2b5-46c6-a044-a61170196044")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "U3")
 					(unit 1)
@@ -14169,7 +14180,7 @@
 	)
 	(symbol
 		(lib_id "cnhardware:LED_3535_3W_W_TP")
-		(at 100.33 78.74 0)
+		(at 72.39 78.74 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14178,7 +14189,7 @@
 		(fields_autoplaced yes)
 		(uuid "e97407ca-1ccd-46c1-b642-4372c159bc9c")
 		(property "Reference" "D1"
-			(at 100.33 72.39 0)
+			(at 72.39 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14186,7 +14197,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 100.33 74.93 0)
+			(at 72.39 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14194,7 +14205,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:LED_3535_3W_W_PAD"
-			(at 100.33 78.74 0)
+			(at 72.39 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14203,7 +14214,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 78.74 0)
+			(at 72.39 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14212,7 +14223,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 100.33 78.74 0)
+			(at 72.39 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14230,7 +14241,7 @@
 			(uuid "34b930dc-52eb-40c9-b397-188ff937b99e")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "D1")
 					(unit 1)
@@ -14296,7 +14307,7 @@
 			(uuid "9dc7f549-b20c-4ad5-905a-da7c052653e0")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR065")
 					(unit 1)
@@ -14375,7 +14386,7 @@
 			(uuid "27e4aed1-9801-4c75-894b-9f5bc93ebc9a")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C11")
 					(unit 1)
@@ -14385,7 +14396,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 68.58 176.53 270)
+		(at 40.64 176.53 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14394,7 +14405,7 @@
 		(fields_autoplaced yes)
 		(uuid "f3acfa44-dac8-4836-b07f-a1513c8c24c8")
 		(property "Reference" "#PWR059"
-			(at 64.77 176.53 0)
+			(at 36.83 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14403,7 +14414,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 72.39 176.5299 90)
+			(at 44.45 176.5299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14412,7 +14423,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 68.58 176.53 0)
+			(at 40.64 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14421,7 +14432,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 68.58 176.53 0)
+			(at 40.64 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14430,7 +14441,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 68.58 176.53 0)
+			(at 40.64 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14442,7 +14453,7 @@
 			(uuid "b0388952-7941-4692-a287-8b5eaeb14d4d")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR059")
 					(unit 1)
@@ -14508,7 +14519,7 @@
 			(uuid "cae2b149-933d-4965-be5a-65290055aebb")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR03")
 					(unit 1)
@@ -14587,7 +14598,7 @@
 			(uuid "baa04053-5404-40d0-9343-cf72603dbde7")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C6")
 					(unit 1)
@@ -14597,7 +14608,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:Q_NMOS_GSD")
-		(at 106.68 181.61 0)
+		(at 78.74 181.61 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -14606,7 +14617,7 @@
 		(dnp no)
 		(uuid "fd290f12-1648-4c12-a755-16712ef4d225")
 		(property "Reference" "Q10"
-			(at 100.33 182.8801 0)
+			(at 72.39 182.8801 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14615,7 +14626,7 @@
 			)
 		)
 		(property "Value" "AO3400A"
-			(at 100.33 180.3401 0)
+			(at 72.39 180.3401 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14625,7 +14636,7 @@
 			)
 		)
 		(property "Footprint" "cnhardware:SOT-23-EXTRASPACE"
-			(at 101.6 179.07 0)
+			(at 73.66 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14634,7 +14645,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 106.68 181.61 0)
+			(at 78.74 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14643,7 +14654,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, gate/source/drain"
-			(at 106.68 181.61 0)
+			(at 78.74 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14652,7 +14663,7 @@
 			)
 		)
 		(property "LCSC" "C20917"
-			(at 106.68 181.61 0)
+			(at 78.74 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14670,7 +14681,7 @@
 			(uuid "b501cf82-c5c7-40fd-86ce-458209de160b")
 		)
 		(instances
-			(project "hyperspecusb"
+			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "Q10")
 					(unit 1)
