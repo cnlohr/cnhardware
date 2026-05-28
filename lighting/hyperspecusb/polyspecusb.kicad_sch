@@ -3135,7 +3135,7 @@
 		)
 		(uuid "0a0d2040-0118-49d3-8618-a73267d78995")
 	)
-	(text "Recommended roll:\n\n* Royal Blue 440nm + 30\n* Blue 470nm + 25\n* Cyan 495nm + 25\n* Green 520nm + 40\nGreen 560?\n* Cyan yellow 575nm  (Looks phosphor) +<<>>\n* Yellow 590-595nm (May be orange)? + 30\n* Red 620nm +40\n* Deep Red 660nm +60\n* IR 730nm"
+	(text "Recommended roll:\n\n* Royal Blue 440nm + 30\n* Blue 470nm + 25\n* Cyan 495nm + 25\n* Green 520nm + 40\nGreen 560?\n//* Cyan yellow 575nm  (Looks phosphor) +<<>>\n* Yellow 580-585nm (May be orange)? + 30\n* Red 620nm +40\n* Deep Red 660nm +60\n* IR 730nm"
 		(exclude_from_sim no)
 		(at 139.446 145.542 0)
 		(effects
@@ -3145,6 +3145,16 @@
 			(justify left top)
 		)
 		(uuid "8e2242b9-7cd0-4eb4-8fa1-7e2e7eec8da6")
+	)
+	(text "TODO: Add USB/PD protection"
+		(exclude_from_sim no)
+		(at 212.598 161.798 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "d949494e-1028-4d92-a237-6cc4d38acc3e")
 	)
 	(text "RY8401 and MT2492 have same pinout\nRY8401 goes up to 40V though!"
 		(exclude_from_sim no)
