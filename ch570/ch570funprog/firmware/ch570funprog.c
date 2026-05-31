@@ -6,6 +6,11 @@
 #define LED PA7
 #define LED_ON 0
 
+
+#define POWER_IO    PA7
+#define SWC_IO      PA3
+#define SWD_IO      PA2
+
 uint32_t count;
 int doreboot = 0;
 int last = 0;
@@ -79,6 +84,67 @@ void HandleHidUserReportOutComplete( struct _USBState * ctx )
 	return;
 }
 
+
+uint32_t dmaa[] = {
+		0x010203, 0x010203, 0x010203, 0x010203, 0x010203
+	};
+
+__HIGH_CODE
+void ASetup()
+{
+
+	SYS_SAFE_ACCESS( R32_PA_DIR = SWC_IO | SWD_IO | POWER_IO; ); // Drive out.
+//	R32_PA_PD_DRV = SWD_IO | SWC_IO; // 20mA
+	SYS_SAFE_ACCESS( R8_TMR_CTRL_MOD = 0b00000010; );
+
+	SYS_SAFE_ACCESS( R8_PWM_OUT_EN = RB_PWM2_OUT_EN | RB_PWM3_OUT_EN; );
+	SYS_SAFE_ACCESS( R8_PWM_CONFIG = 0; ); // 8-bit mode.
+	SYS_SAFE_ACCESS( R32_TMR_CNT_END = 31; );
+
+	SYS_SAFE_ACCESS( R32_PWM_DMA_BEG = dmaa; );
+	SYS_SAFE_ACCESS( R32_PWM_DMA_END = ((uint8_t*)dmaa) + sizeof( dmaa ); );
+//	SYS_SAFE_ACCESS( R8_PWM_DMA_CTRL = 5; );
+	SYS_SAFE_ACCESS( R8_PWM_DMA_CTRL = 7; );
+
+	// 8.3.2 PWM Function
+	SYS_SAFE_ACCESS( R32_PWM1_3_DATA = (4<<8) | (4<<16) | 7; );
+
+//	SYS_SAFE_ACCESS( R16_PWM_CYC_VALUE = (4<<8) | (4<<16) | 1; ); // Not used in 8-bit mode.
+
+	SYS_SAFE_ACCESS( R16_PWM_CLOCK_DIV = 16; );
+	SYS_SAFE_ACCESS( R8_PWM_POLAR = RB_PWM3_POLAR; );
+
+/*	SYS_SAFE_ACCESS( R32_TMR_FIFO = 0x0309; );
+	SYS_SAFE_ACCESS( R32_TMR_FIFO = 0x0309; );
+	SYS_SAFE_ACCESS( R32_TMR_FIFO = 0x0309; );
+	SYS_SAFE_ACCESS( R32_TMR_FIFO = 0x0309; );
+*/
+//	SYS_SAFE_ACCESS( R32_TMR_FIFO = 20; );
+//	SYS_SAFE_ACCESS( R32_TMR_FIFO = 20; );
+	SYS_SAFE_ACCESS( R8_TMR_CTRL_MOD = 0b00001100; );
+
+printf( "%08x\n", R32_PA_DIR );
+//	funDigitalWrite( SWD_IO, !LED_ON );
+
+//	SYS_SAFE_ACCESS( R8_SLP_CLK_OFF1=2; );
+//	SYS_SAFE_ACCESS( R8_SLP_CLK_OFF0=(1<<4); );
+
+	//R8_PWM_CONFIG = 0b100 | RB_PWM_CYCLE_SEL;
+
+/*	*((volatile uint16_t *)((&R8_PWM2_DATA))) = 12;
+	*((volatile uint16_t *)((&R8_PWM3_DATA))) = 12;
+
+	*((volatile uint16_t *)((&R16_PWM2_DATA))) = 12;
+	*((volatile uint16_t *)((&R16_PWM3_DATA))) = 12;
+*/
+
+//	SYS_SAFE_ACCESS( R8_PWM_CONFIG |= RB_PWM_SYNC_EN; );
+//	SYS_SAFE_ACCESS( R8_PWM_CONFIG |= RB_PWM_SYNC_START; );
+
+//	SYS_SAFE_ACCESS( R32_PA_OUT = 0; );
+//	SYS_SAFE_ACCESS( R32_PA_OUT = SWC_IO | SWD_IO | POWER_IO; );
+}
+
 __USBFS_FUN_ATTRIBUTE
 static __attribute__((noreturn)) void processLoop()
 {
@@ -98,8 +164,12 @@ static __attribute__((noreturn)) void processLoop()
 			}
 		}
 		printf( "loop\n" );
+
+		ASetup();
 	}
 }
+
+
 
 int main()
 {
