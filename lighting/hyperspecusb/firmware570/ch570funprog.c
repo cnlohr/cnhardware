@@ -201,6 +201,8 @@ int main()
 	funPinMode( LED, GPIO_CFGLR_OUT_10Mhz_PP );
 	funDigitalWrite( LED, !LED_ON );
 
+	USBFSReset();
+
 	R32_PA_PU = PIN_SWD;
 
 	printf("USBFS starting...");

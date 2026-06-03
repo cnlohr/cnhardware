@@ -48,8 +48,27 @@ static inline void Send0Bit(void)
 static inline int ReadBit(void)
 {
 	uint32_t ret;
-	asm volatile( "" : "=r" (ccount) );
-	return ret;
+	asm volatile( "\n\
+		lui a2, 0x40001\n\
+		ori a2, a2, 0x0a0 /*R32_PA_DIR*/\n\
+		lw a3, 0(a2) /* old DIR = a3 */ \n\
+		andi a4, a3, 0b11111011\n\
+		li a0, 0b100\n\
+		sw a0, (0xac-0xa0)(a2) /* R32_PA_CLR */\n\
+	/*	li a1, 1\n 1: c.addi a1, -1\n  c.bnez a1, 1b */\n\
+		sw a4, (0xa0-0xa0)(a2) /* R32_PA_DIR release */\n\
+		sw a0, (0xb8-0xa0)(a2) /* R32_PA_SET */\n\
+	/*	sw a3, (0xa0-0xa0)(a2) */ /* R32_PA_DIR drive for one */\n\
+	/*	sw a4, (0xa0-0xa0)(a2) */ /* R32_PA_DIR release */\n\
+		li a1, 25\n 1: c.addi a1, -1\n  c.bnez a1, 1b\n\
+		lw %[ret], (0xa4-0xa0)(a2) /* R32_PA_PIN */\n\
+		li a1, 10\n 1: c.addi a1, -1\n  c.bnez a1, 1b\n\
+		sw a3, (0xa0-0xa0)(a2) /* R32_PA_DIR drive */\n\
+		" : [ret]"=r"(ret) : : "a0", "a1", "a2", "a3", "a4" );
+	return !!ret;
+}
+
+
 /*	uint32_t odir = R32_PA_DIR;
 	uint32_t nod = odir & ~PIN_SWD;
 	R32_PA_CLR = PIN_SWD;
@@ -62,7 +81,6 @@ static inline int ReadBit(void)
 	Delay_Tiny_Inline( 16 );
 	R32_PA_DIR = odir;
 	return r;*/
-}
 
 static void IssueBuffer(void) { }
 
