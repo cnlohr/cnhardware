@@ -3230,7 +3230,7 @@
 		(at 175.26 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "cc36d667-649f-4473-a6ab-83420a7072e8")
+		(uuid "d9a9363e-d45e-4624-9fb3-8e81fd579ccb")
 	)
 	(junction
 		(at 148.59 111.76)
@@ -6976,6 +6976,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 148.59 105.41 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "36ca0bda-ffa5-4576-9c2f-4e4a06bd63cb")
+		(property "Reference" "R11"
+			(at 151.13 104.1399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "0"
+			(at 151.13 106.6799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "swadgeparts:R_0805_2012Metric"
+			(at 150.368 105.41 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 148.59 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 148.59 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C17477"
+			(at 148.59 105.41 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "25a14c79-3fbc-4915-8006-73308caa54fe")
+		)
+		(pin "1"
+			(uuid "87be7e5f-3f01-4348-bd9f-da756c7cc381")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "cnhardware:LED_3535_3W_W_TP")
 		(at 72.39 176.53 0)
 		(unit 1)
@@ -8578,6 +8657,85 @@
 			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 175.26 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5905bdd0-d97d-4145-a7af-ceb43dbebb96")
+		(property "Reference" "R5"
+			(at 177.8 72.3899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 177.8 74.9299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 173.482 73.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 175.26 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 175.26 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25905"
+			(at 175.26 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "26b7e1b9-68bc-4d24-9890-04ca1695c652")
+		)
+		(pin "2"
+			(uuid "9096356a-ba47-486b-92af-d83369a37f3a")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -10283,85 +10441,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 148.59 105.41 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "739804fc-92d1-496d-8760-811f0c031d1d")
-		(property "Reference" "R11"
-			(at 151.13 104.1399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "33"
-			(at 151.13 106.6799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 150.368 105.41 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 148.59 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 148.59 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C23140"
-			(at 148.59 105.41 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ef6e29fa-ef0f-41af-adfa-cbf134978cd1")
-		)
-		(pin "1"
-			(uuid "639f2c40-07c0-44f4-8942-fc52821ff1b6")
-		)
-		(instances
-			(project "polyspecusb"
-				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
-					(reference "R11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 186.69 93.98 0)
 		(unit 1)
@@ -11408,85 +11487,6 @@
 			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 175.26 73.66 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9c193b43-a8b5-4577-b28e-34c688e3ab49")
-		(property "Reference" "R5"
-			(at 177.8 72.3899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "4.7k"
-			(at 177.8 74.9299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 173.482 73.66 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 175.26 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 175.26 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C25900"
-			(at 175.26 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2f4c5d0b-2eac-452e-a88f-7b87715a3d43")
-		)
-		(pin "2"
-			(uuid "a6f0e7b2-1422-481c-81b9-f5d4da7f6e67")
-		)
-		(instances
-			(project "polyspecusb"
-				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
-					(reference "R5")
 					(unit 1)
 				)
 			)

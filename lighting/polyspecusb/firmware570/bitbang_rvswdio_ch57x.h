@@ -47,6 +47,17 @@ static inline void Send0Bit(void)
 
 static inline int ReadBit(void)
 {
+
+	R32_PA_CLR = PIN_SWD;
+	Delay_Tiny_Inline( 2 );
+	R32_PA_DIR &= ~PIN_SWD;
+	Delay_Tiny_Inline( 5 );
+	int r = !!(R32_PA_PIN&PIN_SWD);
+	R32_PA_SET = PIN_SWD;
+	Delay_Tiny_Inline( 12 );
+	R32_PA_DIR |= PIN_SWD;
+	return r;
+#if 0
 	uint32_t ret;
 	asm volatile( "\n\
 		lui a2, 0x40001\n\
@@ -66,6 +77,10 @@ static inline int ReadBit(void)
 		sw a3, (0xa0-0xa0)(a2) /* R32_PA_DIR drive */\n\
 		" : [ret]"=r"(ret) : : "a0", "a1", "a2", "a3", "a4" );
 	return !!ret;
+#endif
+
+
+
 }
 
 
