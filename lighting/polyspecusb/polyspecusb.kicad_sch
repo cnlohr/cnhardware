@@ -3135,9 +3135,9 @@
 		)
 		(uuid "0a0d2040-0118-49d3-8618-a73267d78995")
 	)
-	(text "Recommended roll:\n\n* Royal Blue 440nm + 30\n* Blue 470nm + 25\n* Cyan 495nm + 25\n* Green 520nm + 40\nGreen 560?\n//* Cyan yellow 575nm  (Looks phosphor) +<<>>\n* Yellow 580-585nm (May be orange)? + 30\n* Red 620nm +40\n* Deep Red 660nm +60\n* IR 730nm"
+	(text "Recommended roll:\n\n* Royal Blue 440nm + 30\n* Blue 470nm + 25\n* Cyan 495nm + 25\n* Green 520nm + 40\n* Green 560\n//* Cyan yellow 575nm  (Looks phosphor) +<<>>\n* Yellow 590nm (May be orange)? + ??\n* Red 620nm +30\n* Deep Red 660nm +60\n* IR 730nm"
 		(exclude_from_sim no)
-		(at 139.446 145.542 0)
+		(at 128.016 150.114 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3146,19 +3146,21 @@
 		)
 		(uuid "8e2242b9-7cd0-4eb4-8fa1-7e2e7eec8da6")
 	)
-	(text "TODO: Add USB/PD protection"
+	(text "TODO: Add USB/PD protection\nTODO: Make sure we don't NEED a PI on the antenna."
 		(exclude_from_sim no)
-		(at 212.598 161.798 0)
+		(at 172.212 214.122 0)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 5.08 5.08)
+				(thickness 1.016)
+				(bold yes)
 			)
 		)
 		(uuid "d949494e-1028-4d92-a237-6cc4d38acc3e")
 	)
-	(text "RY8401 and MT2492 have same pinout\nRY8401 goes up to 40V though!"
+	(text "RY8401 and MT2492 have same pinout\nRY8401 goes up to 40V though!\n.8×(5.1+1.5)÷1.5 = 3.52V"
 		(exclude_from_sim no)
-		(at 211.074 74.422 0)
+		(at 210.82 75.692 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3171,6 +3173,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2a9770be-3c79-477f-b647-9c2a58eaaf9f")
+	)
+	(junction
+		(at 139.7 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2be24faf-287f-4b49-a39b-086d39c0347a")
 	)
 	(junction
 		(at 76.2 176.53)
@@ -3230,7 +3238,7 @@
 		(at 175.26 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "d9a9363e-d45e-4624-9fb3-8e81fd579ccb")
+		(uuid "d55f9469-7b35-43cf-a8dd-26553aed7643")
 	)
 	(junction
 		(at 148.59 111.76)
@@ -3479,6 +3487,16 @@
 			(type default)
 		)
 		(uuid "ca3d5be2-334b-4c07-8d0f-e47a8696719f")
+	)
+	(wire
+		(pts
+			(xy 125.73 111.76) (xy 139.7 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7ecf574-d2b4-441a-a3a9-d3169c10a5aa")
 	)
 	(wire
 		(pts
@@ -3809,6 +3827,28 @@
 		(uuid "5095e1ba-9701-4687-92ed-548481c28760")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 29.1882 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWD"
+		(shape input)
+		(at 125.73 119.38 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "558e7aec-8ff7-426b-94f1-f0f315e120f9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 125.73 126.2961 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5988,7 +6028,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "22k"
+		(property "Value" "10k"
 			(at 166.37 68.5799 0)
 			(effects
 				(font
@@ -6024,7 +6064,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C31850"
+		(property "LCSC" "C25804"
 			(at 163.83 67.31 0)
 			(effects
 				(font
@@ -6258,6 +6298,72 @@
 			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR034")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 40.64 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1fa92807-d070-44c9-943d-44bebc5e8ab1")
+		(property "Reference" "#PWR079"
+			(at 40.64 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 40.64 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 40.64 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 40.64 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 40.64 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "30b89f88-32c0-4a22-a6bc-69d5be0fe8ca")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR079")
 					(unit 1)
 				)
 			)
@@ -7835,6 +7941,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 83.82 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "42eb5378-75d6-4012-b9a9-bb77a769ebdc")
+		(property "Reference" "R15"
+			(at 86.36 86.3599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 86.36 88.8999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 82.042 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 83.82 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 83.82 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25905"
+			(at 83.82 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ef7fe012-9969-457b-8220-d148e2c35b44")
+		)
+		(pin "2"
+			(uuid "ab12c7fb-eccf-4f8c-a3b5-554f88f1ed4e")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VBUS")
 		(at 68.58 78.74 90)
 		(unit 1)
@@ -7978,6 +8163,85 @@
 			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "Q7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 40.64 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "444905cc-add7-44dc-aabe-2b4051d91472")
+		(property "Reference" "R23"
+			(at 43.18 86.3599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 43.18 88.8999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 38.862 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 40.64 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 40.64 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25905"
+			(at 40.64 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "618158fe-5763-4724-8b7a-05664cb728b5")
+		)
+		(pin "2"
+			(uuid "3580b9cc-9691-4212-9ca9-207dfb1f1807")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R23")
 					(unit 1)
 				)
 			)
@@ -8178,6 +8442,85 @@
 			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 83.82 160.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "482b829d-4812-4c1d-858a-f4480e330ad7")
+		(property "Reference" "R19"
+			(at 86.36 158.7499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 86.36 161.2899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 82.042 160.02 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 83.82 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 83.82 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25905"
+			(at 83.82 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ee0b4d88-c004-4dd9-a09f-66207567547f")
+		)
+		(pin "2"
+			(uuid "080bfece-b29a-4ffd-9f84-20002c7a442f")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -8664,7 +9007,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 175.26 73.66 0)
+		(at 175.26 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8673,7 +9016,7 @@
 		(fields_autoplaced yes)
 		(uuid "5905bdd0-d97d-4145-a7af-ceb43dbebb96")
 		(property "Reference" "R5"
-			(at 177.8 72.3899 0)
+			(at 177.8 64.7699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8682,7 +9025,7 @@
 			)
 		)
 		(property "Value" "5.1k"
-			(at 177.8 74.9299 0)
+			(at 177.8 67.3099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8691,7 +9034,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 173.482 73.66 90)
+			(at 173.482 66.04 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8700,7 +9043,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 175.26 73.66 0)
+			(at 175.26 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8709,7 +9052,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 175.26 73.66 0)
+			(at 175.26 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8718,7 +9061,7 @@
 			)
 		)
 		(property "LCSC" "C25905"
-			(at 175.26 73.66 0)
+			(at 175.26 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8813,6 +9156,85 @@
 			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "L1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 40.64 111.76 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5a5e8c77-ff85-4a8b-beb8-6c24ea60ae6a")
+		(property "Reference" "R16"
+			(at 43.18 110.4899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 43.18 113.0299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 38.862 111.76 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 40.64 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 40.64 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25905"
+			(at 40.64 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8a8d75ee-ec97-4873-85bd-b118eeef5064")
+		)
+		(pin "2"
+			(uuid "d9171a6e-b366-4f60-96e3-0ef652f484ec")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -9026,6 +9448,72 @@
 			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 40.64 139.7 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5ce5589c-b1df-4ff4-a131-97de02191892")
+		(property "Reference" "#PWR080"
+			(at 40.64 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 40.64 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 40.64 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 40.64 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 40.64 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "12ad2ec0-c60d-4ba8-9dcf-ed87d93d7d55")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR080")
 					(unit 1)
 				)
 			)
@@ -10004,6 +10492,72 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 83.82 163.83 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6ce3dbb7-b033-4f1a-a3dc-927361060ba7")
+		(property "Reference" "#PWR082"
+			(at 83.82 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 83.82 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 83.82 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 83.82 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d0c85c4f-9dc6-4e4f-af9c-894dfd831022")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR082")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 270.51 127 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10217,6 +10771,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 83.82 111.76 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6feb71d4-c7f0-40c1-b6ad-120673ef5aba")
+		(property "Reference" "R14"
+			(at 86.36 110.4899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 86.36 113.0299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 82.042 111.76 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 83.82 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 83.82 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25905"
+			(at 83.82 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0fad4965-28d4-4544-b227-078a15e86d29")
+		)
+		(pin "2"
+			(uuid "8e4be29b-436c-4174-aae4-82169b1f7e11")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 33.02 113.03 0)
 		(unit 1)
@@ -10277,85 +10910,6 @@
 			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR036")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 175.26 66.04 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "712663da-5596-415b-91ee-cc9fc4f7a4f3")
-		(property "Reference" "R7"
-			(at 177.8 64.7699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "22k"
-			(at 177.8 67.3099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 173.482 66.04 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 175.26 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 175.26 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C31850"
-			(at 175.26 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "47421d75-9758-4c37-84c6-dc6bba134ffe")
-		)
-		(pin "2"
-			(uuid "05182eb8-cdcd-48fb-8b63-c797bdbf69b0")
-		)
-		(instances
-			(project "polyspecusb"
-				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
-					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -11131,6 +11685,217 @@
 			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR057")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 83.82 139.7 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9397ac2d-96c3-4e04-8967-50261d94266e")
+		(property "Reference" "#PWR081"
+			(at 83.82 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 83.82 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 83.82 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 83.82 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5bbbb6b4-4860-41ca-8b88-a3ea29858437")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR081")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 83.82 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "942cad0b-e1dc-481a-b5cb-c49e0e53a7cf")
+		(property "Reference" "#PWR078"
+			(at 83.82 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 83.82 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 83.82 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 83.82 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b3e2e1a0-dfb0-4f4f-a543-e6dae07c746f")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR078")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 83.82 135.89 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9478eccf-8b27-47e1-9ea3-d6430fb90dd1")
+		(property "Reference" "R18"
+			(at 86.36 134.6199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 86.36 137.1599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 82.042 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 83.82 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 83.82 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25905"
+			(at 83.82 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "81d406af-20b2-4812-9920-97a1bcd6c60a")
+		)
+		(pin "2"
+			(uuid "4cf7ce0d-85af-4ecd-b4e2-da725de699dd")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -12429,6 +13194,151 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 83.82 91.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b751ad45-af2d-4c1c-b431-b2cd2ecaca1e")
+		(property "Reference" "#PWR077"
+			(at 83.82 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 83.82 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 83.82 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 83.82 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "81651cf8-73ec-4a4b-91b6-a53363e8ddd9")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR077")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 40.64 135.89 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b763f46a-05a2-47cf-9745-742143b6b8e9")
+		(property "Reference" "R17"
+			(at 43.18 134.6199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 43.18 137.1599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 38.862 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 40.64 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 40.64 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25905"
+			(at 40.64 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8c7f84c4-e3a4-4f2b-867e-b4dbef9245cd")
+		)
+		(pin "2"
+			(uuid "c5e1551a-d5b0-4854-bde7-cc7b7f9aa4f1")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "cnhardware:LED_3535_3W_W_TP")
 		(at 29.21 78.74 0)
 		(unit 1)
@@ -12571,6 +13481,85 @@
 			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 125.73 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bc64c506-28b4-4cae-94a1-3e401d0448f2")
+		(property "Reference" "R13"
+			(at 128.27 114.2999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 128.27 116.8399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 123.952 115.57 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 125.73 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 125.73 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 125.73 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "94b9c3de-584d-4507-97a3-88569ff12aa9")
+		)
+		(pin "2"
+			(uuid "2afd640a-9756-404f-b78d-ba1aaae9b71d")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -12935,6 +13924,138 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 40.64 163.83 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c5b37d62-b711-4664-a105-c8263caa37a0")
+		(property "Reference" "#PWR083"
+			(at 40.64 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 40.64 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 40.64 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 40.64 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 40.64 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f8540e43-9c93-4a72-b0e2-3f9753d58011")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR083")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 40.64 91.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cb91455f-4c39-4126-add1-97340e3b34d7")
+		(property "Reference" "#PWR086"
+			(at 40.64 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 40.64 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 40.64 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 40.64 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 40.64 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "70006a92-f94a-4155-a683-76b40152f1ca")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR086")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 248.92 67.31 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12994,6 +14115,164 @@
 			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 83.82 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cbd0be44-e53d-42e2-8537-eb040f74999a")
+		(property "Reference" "R22"
+			(at 86.36 184.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 86.36 186.6899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 82.042 185.42 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 83.82 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 83.82 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25905"
+			(at 83.82 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9aca666e-cf6a-480a-928f-a7b5612a47d3")
+		)
+		(pin "2"
+			(uuid "18169971-c1a5-4850-a1b2-3d7a2819655d")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 40.64 160.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cd2a8d17-5b37-46ca-9047-3643bd1f4e2f")
+		(property "Reference" "R20"
+			(at 43.18 158.7499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 43.18 161.2899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 38.862 160.02 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 40.64 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 40.64 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25905"
+			(at 40.64 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "db17f7b1-bee7-43ae-82a6-af5b8ffe5dec")
+		)
+		(pin "2"
+			(uuid "b0ec915c-58b3-4d06-84f1-f551c421bea3")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R20")
 					(unit 1)
 				)
 			)
@@ -13397,6 +14676,72 @@
 			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR050")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 40.64 189.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d0d83695-3259-449d-ba2e-c23a5b4ec64a")
+		(property "Reference" "#PWR084"
+			(at 40.64 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 40.64 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 40.64 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 40.64 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 40.64 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d7fda1df-346d-4f6d-8936-a2f575feee72")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR084")
 					(unit 1)
 				)
 			)
@@ -13955,6 +15300,85 @@
 			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "#PWR033")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 175.26 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e71ccd30-197d-46fd-87bb-b23123f83ea6")
+		(property "Reference" "R7"
+			(at 177.8 72.3899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1.5k"
+			(at 177.8 74.9299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 173.482 73.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 175.26 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 175.26 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25867"
+			(at 175.26 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2fc460c7-2a33-47d8-99a1-2dd0da782d77")
+		)
+		(pin "2"
+			(uuid "2871ee07-a213-4ae6-80f8-6eec1d9ac67f")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -14538,6 +15962,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 83.82 189.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f4f2a58b-78c2-4819-a74a-bf1a313bb92c")
+		(property "Reference" "#PWR085"
+			(at 83.82 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 83.82 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 83.82 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 83.82 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a4bbb908-3cfb-4aba-adb8-94761deb133f")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "#PWR085")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 154.94 115.57 180)
 		(unit 1)
@@ -14611,6 +16101,85 @@
 			(project "polyspecusb"
 				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
 					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 40.64 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fcdfafb9-b005-4d04-8310-28503c3b7450")
+		(property "Reference" "R21"
+			(at 43.18 184.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 43.18 186.6899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 38.862 185.42 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 40.64 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 40.64 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25905"
+			(at 40.64 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fa256fc8-2507-4cac-b41c-055ed457161b")
+		)
+		(pin "2"
+			(uuid "6c437e5c-9d98-4bb9-829a-cee5bee88c73")
+		)
+		(instances
+			(project "polyspecusb"
+				(path "/7cd715cc-a370-41fa-9dbc-2b192a3d4328"
+					(reference "R21")
 					(unit 1)
 				)
 			)

@@ -29,6 +29,6 @@ int main()
 		//funDigitalWrite( MP,     FUN_LOW );
 		GPIOC->OUTDR = 0x00;
 		GPIOD->OUTDR = 0b0000;
-		Delay_Ms( 1 );
+		Delay_Us( 500 );
 	}
 }
