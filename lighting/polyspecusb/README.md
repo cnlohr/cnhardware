@@ -1,5 +1,11 @@
-# 
 
+TODO:
+1. Add resistor on ABC boards
+2. Make D board (when more LEDs come)
+3. Digitize the post-it notes.
+4. Take pictures of the boards.
+5. Classify radiance.
+6. Fix flakeyness with 570funprog programmer
 
 
 
@@ -136,5 +142,6 @@ First Batch
 Board b, mid1, .588W (4.95V, .136A)
 First BAtch
 3.86 438nm
+
 
 
