@@ -1,0 +1,330 @@
+
+polyspec006.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .init:
+
+00000000 <InterruptVector>:
+   0:	0fc0006f          	j	fc <handle_reset>
+   4:	00000000          	.word	0x00000000
+   8:	000001b8          	.word	0x000001b8
+   c:	0000016c          	.word	0x0000016c
+	...
+  30:	0000016c          	.word	0x0000016c
+  34:	00000000          	.word	0x00000000
+  38:	0000016c          	.word	0x0000016c
+  3c:	00000000          	.word	0x00000000
+  40:	0000016c          	.word	0x0000016c
+  44:	0000016c          	.word	0x0000016c
+  48:	0000016c          	.word	0x0000016c
+  4c:	0000016c          	.word	0x0000016c
+  50:	0000016c          	.word	0x0000016c
+  54:	0000016c          	.word	0x0000016c
+  58:	0000016c          	.word	0x0000016c
+  5c:	0000016c          	.word	0x0000016c
+  60:	0000016c          	.word	0x0000016c
+  64:	0000016c          	.word	0x0000016c
+  68:	0000016c          	.word	0x0000016c
+  6c:	0000016c          	.word	0x0000016c
+  70:	0000016c          	.word	0x0000016c
+  74:	0000016c          	.word	0x0000016c
+  78:	0000016c          	.word	0x0000016c
+  7c:	0000016c          	.word	0x0000016c
+  80:	0000016c          	.word	0x0000016c
+  84:	0000016c          	.word	0x0000016c
+  88:	0000016c          	.word	0x0000016c
+  8c:	0000016c          	.word	0x0000016c
+  90:	0000016c          	.word	0x0000016c
+  94:	0000016c          	.word	0x0000016c
+  98:	0000016c          	.word	0x0000016c
+  9c:	0000016c          	.word	0x0000016c
+  a0:	0000016c          	.word	0x0000016c
+  a4:	0000                	.insn	2, 0x
+	...
+
+Disassembly of section .text:
+
+000000a8 <PrintHex>:
+  a8:	e00007b7          	lui	a5,0xe0000
+  ac:	0f478793          	addi	a5,a5,244 # e00000f4 <_eusrstack+0xbfffe0f4>
+  b0:	4398                	lw	a4,0(a5)
+  b2:	08077713          	andi	a4,a4,128
+  b6:	ff6d                	bnez	a4,b0 <PrintHex+0x8>
+  b8:	78302737          	lui	a4,0x78302
+  bc:	08870713          	addi	a4,a4,136 # 78302088 <_eusrstack+0x58300088>
+  c0:	e00006b7          	lui	a3,0xe0000
+  c4:	c398                	sw	a4,0(a5)
+  c6:	0f468693          	addi	a3,a3,244 # e00000f4 <_eusrstack+0xbfffe0f4>
+  ca:	4771                	li	a4,28
+  cc:	4325                	li	t1,9
+  ce:	55f1                	li	a1,-4
+  d0:	429c                	lw	a5,0(a3)
+  d2:	0807f793          	andi	a5,a5,128
+  d6:	ffed                	bnez	a5,d0 <PrintHex+0x28>
+  d8:	00e55633          	srl	a2,a0,a4
+  dc:	8a3d                	andi	a2,a2,15
+  de:	05700793          	li	a5,87
+  e2:	00c36463          	bltu	t1,a2,ea <PrintHex+0x42>
+  e6:	03000793          	li	a5,48
+  ea:	97b2                	add	a5,a5,a2
+  ec:	07a2                	slli	a5,a5,0x8
+  ee:	0857e793          	ori	a5,a5,133
+  f2:	c29c                	sw	a5,0(a3)
+  f4:	1771                	addi	a4,a4,-4
+  f6:	fcb71de3          	bne	a4,a1,d0 <PrintHex+0x28>
+  fa:	8082                	ret
+
+000000fc <handle_reset>:
+  fc:	20000197          	auipc	gp,0x20000
+ 100:	30018193          	addi	gp,gp,768 # 200003fc <__global_pointer$>
+ 104:	20002117          	auipc	sp,0x20002
+ 108:	efc10113          	addi	sp,sp,-260 # 20002000 <_eusrstack>
+ 10c:	6509                	lui	a0,0x2
+ 10e:	88050513          	addi	a0,a0,-1920 # 1880 <ch32fun.c.4f65bdf7+0x8f3>
+ 112:	30051073          	csrw	mstatus,a0
+ 116:	468d                	li	a3,3
+ 118:	00000517          	auipc	a0,0x0
+ 11c:	ee850513          	addi	a0,a0,-280 # 0 <InterruptVector>
+ 120:	8d55                	or	a0,a0,a3
+ 122:	30551073          	csrw	mtvec,a0
+ 126:	c0418513          	addi	a0,gp,-1020 # 20000000 <_data_vma>
+ 12a:	c0418593          	addi	a1,gp,-1020 # 20000000 <_data_vma>
+ 12e:	4601                	li	a2,0
+ 130:	00b55663          	bge	a0,a1,13c <handle_reset+0x40>
+ 134:	c110                	sw	a2,0(a0)
+ 136:	0511                	addi	a0,a0,4
+ 138:	feb54ee3          	blt	a0,a1,134 <handle_reset+0x38>
+ 13c:	2e800513          	li	a0,744
+ 140:	c0418593          	addi	a1,gp,-1020 # 20000000 <_data_vma>
+ 144:	c0418613          	addi	a2,gp,-1020 # 20000000 <_data_vma>
+ 148:	00c58863          	beq	a1,a2,158 <handle_reset+0x5c>
+ 14c:	4114                	lw	a3,0(a0)
+ 14e:	c194                	sw	a3,0(a1)
+ 150:	0511                	addi	a0,a0,4
+ 152:	0591                	addi	a1,a1,4
+ 154:	fec59ae3          	bne	a1,a2,148 <handle_reset+0x4c>
+ 158:	e000f7b7          	lui	a5,0xe000f
+ 15c:	4705                	li	a4,1
+ 15e:	c398                	sw	a4,0(a5)
+ 160:	22800793          	li	a5,552
+ 164:	34179073          	csrw	mepc,a5
+ 168:	30200073          	mret
+
+0000016c <ADC1_2_IRQHandler>:
+
+// Return the Machine Exception Program Register (MEPC)
+static inline uint32_t __get_MEPC(void)
+{
+	uint32_t result;
+	__ASM volatile( ADD_ARCH_ZICSR "csrr %0," "mepc" : "=r"(result));
+ 16c:	34102573          	csrr	a0,mepc
+void DefaultIRQHandler( void )
+{
+#if FUNCONF_DEBUG_HARDFAULT && ( FUNCONF_USE_DEBUGPRINTF || FUNCONF_USE_UARTPRINTF || FUNCONF_USE_USBPRINTF )
+	//This is kind of like a crash handler.
+	//printf( "DEAD MSTATUS:%08x MTVAL:%08x MCAUSE:%08x MEPC:%08x\n", (int)__get_MSTATUS(), (int)__get_MTVAL(), (int)__get_MCAUSE(), (int)__get_MEPC() );
+	PrintHex( __get_MEPC() ); // "addr2line -e debugprintfdemo.elf 0x000007e6" ---> debugprintfdemo.c:45
+ 170:	3f25                	jal	a8 <PrintHex>
+	__ASM volatile( ADD_ARCH_ZICSR "csrr %0, mstatus": "=r"(result) );
+ 172:	30002573          	csrr	a0,mstatus
+	PrintHex( __get_MSTATUS() );
+ 176:	3f0d                	jal	a8 <PrintHex>
+
+// Return the Machine Trap Value Register (MTVAL)
+static inline uint32_t __get_MTVAL(void)
+{
+	uint32_t result;
+	__ASM volatile( ADD_ARCH_ZICSR "csrr %0," "mtval" : "=r" (result) );
+ 178:	34302573          	csrr	a0,mtval
+	PrintHex( __get_MTVAL() );
+ 17c:	3735                	jal	a8 <PrintHex>
+	__ASM volatile( ADD_ARCH_ZICSR "csrr %0," "mcause": "=r"(result));
+ 17e:	34202573          	csrr	a0,mcause
+	PrintHex( __get_MCAUSE() );
+ 182:	371d                	jal	a8 <PrintHex>
+#if FUNCONF_USE_DEBUGPRINTF
+	while( (*DMDATA0) & 0x80 );
+ 184:	e00007b7          	lui	a5,0xe0000
+ 188:	0f478793          	addi	a5,a5,244 # e00000f4 <_eusrstack+0xbfffe0f4>
+ 18c:	4398                	lw	a4,0(a5)
+ 18e:	08077713          	andi	a4,a4,128
+ 192:	ff6d                	bnez	a4,18c <ADC1_2_IRQHandler+0x20>
+	*DMDATA0 = 0x0a85;
+ 194:	6705                	lui	a4,0x1
+ 196:	a8570713          	addi	a4,a4,-1403 # a85 <_data_lma+0x79d>
+ 19a:	c398                	sw	a4,0(a5)
+	while( (*DMDATA0) & 0x80 );
+ 19c:	e00007b7          	lui	a5,0xe0000
+ 1a0:	0f478793          	addi	a5,a5,244 # e00000f4 <_eusrstack+0xbfffe0f4>
+ 1a4:	4398                	lw	a4,0(a5)
+ 1a6:	08077713          	andi	a4,a4,128
+ 1aa:	ff6d                	bnez	a4,1a4 <ADC1_2_IRQHandler+0x38>
+	*DMDATA0 = 0xaaaaaa83;
+ 1ac:	aaaab737          	lui	a4,0xaaaab
+ 1b0:	a8370713          	addi	a4,a4,-1405 # aaaaaa83 <_eusrstack+0x8aaa8a83>
+ 1b4:	c398                	sw	a4,0(a5)
+	putchar( '\n' );
+#endif
+#endif
+	//printf( "DEAD MSTATUS:%08x MTVAL:%08x MCAUSE:%08x MEPC:%08x\n", (int)__get_MSTATUS(), (int)__get_MTVAL(), (int)__get_MCAUSE(), (int)__get_MEPC() );
+	// Infinite Loop
+	asm volatile( "1: j 1b" );
+ 1b6:	a001                	j	1b6 <ADC1_2_IRQHandler+0x4a>
+
+000001b8 <NMI_Handler>:
+ * 			The sys clock is switched to HSI.
+ * 			Clears the CSSF flag in RCC->INTR
+ */
+void NMI_RCC_CSS_IRQHandler( void )
+{
+	RCC->INTR |= RCC_CSSC;	// clear the clock security int flag
+ 1b8:	40021737          	lui	a4,0x40021
+ 1bc:	471c                	lw	a5,8(a4)
+ 1be:	008006b7          	lui	a3,0x800
+ 1c2:	8fd5                	or	a5,a5,a3
+ 1c4:	c71c                	sw	a5,8(a4)
+
+000001c6 <SystemInit>:
+ 1c6:	400227b7          	lui	a5,0x40022
+ 1ca:	4709                	li	a4,2
+ 1cc:	c398                	sw	a4,0(a5)
+ 1ce:	400217b7          	lui	a5,0x40021
+ 1d2:	01080737          	lui	a4,0x1080
+ 1d6:	0007a223          	sw	zero,4(a5) # 40021004 <_eusrstack+0x2001f004>
+ 1da:	08170713          	addi	a4,a4,129 # 1080081 <polyspec006.c.55debe5c+0x107df41>
+ 1de:	c398                	sw	a4,0(a5)
+ 1e0:	009f0737          	lui	a4,0x9f0
+ 1e4:	c798                	sw	a4,8(a5)
+ 1e6:	40021737          	lui	a4,0x40021
+ 1ea:	431c                	lw	a5,0(a4)
+ 1ec:	00679693          	slli	a3,a5,0x6
+ 1f0:	fe06dde3          	bgez	a3,1ea <SystemInit+0x24>
+ 1f4:	435c                	lw	a5,4(a4)
+ 1f6:	400216b7          	lui	a3,0x40021
+ 1fa:	9bf1                	andi	a5,a5,-4
+ 1fc:	0027e793          	ori	a5,a5,2
+ 200:	c35c                	sw	a5,4(a4)
+ 202:	4721                	li	a4,8
+ 204:	42dc                	lw	a5,4(a3)
+ 206:	8bb1                	andi	a5,a5,12
+ 208:	fee79ee3          	bne	a5,a4,204 <SystemInit+0x3e>
+ 20c:	e00007b7          	lui	a5,0xe0000
+ 210:	0f878793          	addi	a5,a5,248 # e00000f8 <_eusrstack+0xbfffe0f8>
+ 214:	0007a023          	sw	zero,0(a5)
+ 218:	e00007b7          	lui	a5,0xe0000
+ 21c:	0f478793          	addi	a5,a5,244 # e00000f4 <_eusrstack+0xbfffe0f4>
+ 220:	08000713          	li	a4,128
+ 224:	c398                	sw	a4,0(a5)
+ 226:	8082                	ret
+
+00000228 <main>:
+#include <stdio.h>
+
+#define LEDMASK 512
+
+int main()
+{
+ 228:	1151                	addi	sp,sp,-12
+ 22a:	c406                	sw	ra,8(sp)
+	SystemInit();
+ 22c:	3f69                	jal	1c6 <SystemInit>
+#endif
+
+void DelaySysTick( uint32_t n )
+{
+#if defined(CH32V003) || defined(CH32V00x)
+	uint32_t targend = SysTick->CNT + n;
+ 22e:	e000f7b7          	lui	a5,0xe000f
+ 232:	4798                	lw	a4,8(a5)
+ 234:	00a4d7b7          	lui	a5,0xa4d
+ 238:	b8078793          	addi	a5,a5,-1152 # a4cb80 <polyspec006.c.55debe5c+0xa4aa40>
+ 23c:	973e                	add	a4,a4,a5
+	while( ((int32_t)( SysTick->CNT - targend )) < 0 );
+ 23e:	e000f6b7          	lui	a3,0xe000f
+ 242:	469c                	lw	a5,8(a3)
+ 244:	8f99                	sub	a5,a5,a4
+ 246:	fe07cee3          	bltz	a5,242 <main+0x1a>
+	Delay_Ms( 1800 );
+	funGpioInitAll(); // Enable GPIOs
+ 24a:	40021737          	lui	a4,0x40021
+ 24e:	4f1c                	lw	a5,24(a4)
+	GPIOC->CFGLR = 0x11111111;
+	GPIOD->CFGLR = 0x44441144; // PD2..3 outputs
+	while(1)
+	{
+		GPIOC->OUTDR = LEDMASK;
+ 250:	20000613          	li	a2,512
+		GPIOD->OUTDR = (LEDMASK>>8)<<2;
+ 254:	46a1                	li	a3,8
+	funGpioInitAll(); // Enable GPIOs
+ 256:	0357e793          	ori	a5,a5,53
+ 25a:	cf1c                	sw	a5,24(a4)
+	GPIOC->CFGLR = 0x11111111;
+ 25c:	111117b7          	lui	a5,0x11111
+ 260:	11178793          	addi	a5,a5,273 # 11111111 <polyspec006.c.55debe5c+0x1110efd1>
+ 264:	40011737          	lui	a4,0x40011
+ 268:	c31c                	sw	a5,0(a4)
+	GPIOD->CFGLR = 0x44441144; // PD2..3 outputs
+ 26a:	400117b7          	lui	a5,0x40011
+ 26e:	44441737          	lui	a4,0x44441
+ 272:	14470713          	addi	a4,a4,324 # 44441144 <_eusrstack+0x2443f144>
+ 276:	40078793          	addi	a5,a5,1024 # 40011400 <_eusrstack+0x2000f400>
+ 27a:	c398                	sw	a4,0(a5)
+		GPIOC->OUTDR = LEDMASK;
+ 27c:	40011737          	lui	a4,0x40011
+ 280:	c750                	sw	a2,12(a4)
+		GPIOD->OUTDR = (LEDMASK>>8)<<2;
+ 282:	c7d4                	sw	a3,12(a5)
+		ADD_N_NOPS( 15 );
+ 284:	0001                	nop
+ 286:	0001                	nop
+ 288:	0001                	nop
+ 28a:	0001                	nop
+ 28c:	0001                	nop
+ 28e:	0001                	nop
+ 290:	0001                	nop
+ 292:	0001                	nop
+ 294:	0001                	nop
+ 296:	0001                	nop
+ 298:	0001                	nop
+ 29a:	0001                	nop
+ 29c:	0001                	nop
+ 29e:	0001                	nop
+ 2a0:	0001                	nop
+		GPIOC->OUTDR = 0x00;
+ 2a2:	00072623          	sw	zero,12(a4) # 4001100c <_eusrstack+0x2000f00c>
+		GPIOD->OUTDR = 0b0000;
+ 2a6:	0007a623          	sw	zero,12(a5)
+		ADD_N_NOPS( 30 );
+ 2aa:	0001                	nop
+ 2ac:	0001                	nop
+ 2ae:	0001                	nop
+ 2b0:	0001                	nop
+ 2b2:	0001                	nop
+ 2b4:	0001                	nop
+ 2b6:	0001                	nop
+ 2b8:	0001                	nop
+ 2ba:	0001                	nop
+ 2bc:	0001                	nop
+ 2be:	0001                	nop
+ 2c0:	0001                	nop
+ 2c2:	0001                	nop
+ 2c4:	0001                	nop
+ 2c6:	0001                	nop
+ 2c8:	0001                	nop
+ 2ca:	0001                	nop
+ 2cc:	0001                	nop
+ 2ce:	0001                	nop
+ 2d0:	0001                	nop
+ 2d2:	0001                	nop
+ 2d4:	0001                	nop
+ 2d6:	0001                	nop
+ 2d8:	0001                	nop
+ 2da:	0001                	nop
+ 2dc:	0001                	nop
+ 2de:	0001                	nop
+ 2e0:	0001                	nop
+ 2e2:	0001                	nop
+ 2e4:	0001                	nop
+	while(1)
+ 2e6:	bf69                	j	280 <main+0x58>

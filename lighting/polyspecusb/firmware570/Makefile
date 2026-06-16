@@ -9,6 +9,11 @@ install_udev_rules :
 	sudo udevadm control --reload
 	sudo udevadm trigger
 
+
+freshflash :
+	$(MINICHLINK)/minichlink -P
+	make all
+
 # Below this is largely designed around the CH5xx
 
 go_into_bootloader :
