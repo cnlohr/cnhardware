@@ -144,4 +144,131 @@ First BAtch
 3.86 438nm
 
 
+## Blue "450-460"
+Board c, top1, .709w (4.93V .147A)
+2.62 W/sr/m^2 446nm
+
+## Lake Blue "470-475"
+Board c, top2, .617w (4.94V, .125A)
+4.05 W/sr/m^2 468nm
+
+## Ice Blue 490-495
+Board c, top 3, .632W (4.94V, .127A)
+2.5 W, 490nm
+
+## 520-525
+Board C, top 4, .574W (4.95V, .117A)
+2.4 W, 514nm
+
+## 545-550
+Board C, mid 3, .658W (4.95V, .135A)
+1.1W, 540nm
+
+## 560-565
+Board C, bottom3, LOW POWER, .8W (4.94V, .170A)
+.617, 542nm
+
+## 520-530
+Board c, mid2, 1.004W (.493V, .260A)
+3.92, 516nm
+
+## 555-560
+Board C, bottom2, 1.272W (4.897V, .266A)
+2.31, 544nm
+
+## 550-555
+Board C, Bottom1, .707W (4.947V, .144A)
+1.3, 544nm
+
+## 530-535
+Board C, mid1, .677 (4.949, .137A)
+1.96, 526nm
+
+## 560-570
+D, top1  .678w (4.949V, .138A)
+9.17, 552nm
+
+## 580-585
+D, top2 .648 (4.954V, .131A)
+"Alt new order"
+2.37, 612nm
+
+## 575 "Cyan Yellow"
+D, top3, .707 (4.95, .140A)
+.923, 552nm
+
+## 580-585 ZQQMU
+D, top4, 1.203 (4.911, .241A)
+.42, 584nm
+
+##590-595
+D, mid3, 1.291 (4.906, .253)
+2.03, 598nm
+
+##Red 620
+D, bottom3, LOW POWER 1.71W (4.855, .367)
+New Batch Red
+3.93, 628nm
+
+##585-590
+D, middle2, 1.715 (4.856, .354A)
+From group of oranges
+1.38, 596nm
+
+##620-630
+D, bottom2, 2.52 (4.802, .521A)
+Unknown but first group, probably oranges.
+11.5W, 634nm
+
+##600-605
+D, bottom1, 1.908W (4.851V, .392A)
+From first group of oranges
+3.75, 616nm
+
+##570-580
+D, mid1, 1.11W (4.922, .229A)
+I think yellows or oranges.
+1.22, 558nm
+
+## 660 deep red
+E, top1, 1.178W (4.914, .239A)
+8.17, 656nm
+
+## 700nm 
+E, top2, 1.756W (4.870, .359A)
+Single Item (New)
+9.31, 704nm
+
+## 480-485
+E, top3, .722W (4.951, .145A)
+FROM NEW BATCH!
+3.57, 484nm
+
+## 940nm
+E, top4, 3.11W (4.755, .653)
+From new batch, single item
+Deep glow. Does not effectively measure.
+
+## 365-370
+E, mid3, .811W (4.948, .167)
+From new batch (I think, maybe?)
+Cannot measure, has pale indigo glow.
+
+## 850nm
+E mid2, 3.46W (4.725, .731A)
+No ND1000 filter, 100W/sr/m^2, off chart 780nm
+
+## ??? Found on floor
+E, bottom2, 1.08W (4.964, .223A)
+3.8W, 514nm
+
+## 1050nm
+E bottom1, LOW POWER 3.064W (4.746, .647) (was 9W at low power)
+What is this monstrosity?
+I liked it because even while it's burning my corneas off, it has this really deep ethereal red glow.
+
+## IR730
+E mid1, LOW POWER 2.523W (4.800, .527)
+3.52, 734nm
+
 

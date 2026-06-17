@@ -17,6 +17,6 @@ int main()
 		ADD_N_NOPS( 15 );
 		GPIOC->OUTDR = 0x00;
 		GPIOD->OUTDR = 0b0000;
-		ADD_N_NOPS( 30 );
+		ADD_N_NOPS( 300 );
 	}
 }
