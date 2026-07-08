@@ -5526,12 +5526,6 @@
 		(uuid "a1907575-33b9-432f-b463-2058cca83036")
 	)
 	(junction
-		(at 123.19 83.82)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a286c90c-08bf-4c04-a959-f71d2e8c79ac")
-	)
-	(junction
 		(at 238.76 109.22)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7653,6 +7647,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOOT0"
+		(shape input)
+		(at 135.89 83.82 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3486fd9c-1390-4e93-a2a7-9792eba6411c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.9833 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -13477,71 +13493,6 @@
 			(project "ch32v203c8funboard"
 				(path "/d4c301a4-fa8a-4124-9d39-a249c1660dd5"
 					(reference "D7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 123.19 83.82 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a4ec2c8c-f96d-4c03-afba-f144d9b3c92a")
-		(property "Reference" "#PWR034"
-			(at 116.84 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 118.872 83.82 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 123.19 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 123.19 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 123.19 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "851869bb-ccb5-403a-964b-8a8eea839836")
-		)
-		(instances
-			(project "ch32v203c8funboard"
-				(path "/d4c301a4-fa8a-4124-9d39-a249c1660dd5"
-					(reference "#PWR034")
 					(unit 1)
 				)
 			)

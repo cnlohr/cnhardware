@@ -65,7 +65,7 @@ int main()
 		memset( vals, 0, sizeof( vals ) );
 		int i;
 		(void)ADC1->RDATAR;
-		for( i = 60; i < 92; i++ )
+		for( i = 30; i < 92; i++ )
 		{
 			int j;
 			for( j = 0; j < 16; j++ )
@@ -75,7 +75,7 @@ int main()
 				TIM1->CH4CVR = i;
 			}
 		}
-		for( i = 60; i < 92; i++ )
+		for( i = 30; i < 92; i++ )
 		{
 			printf( "%d ", (int)vals[i] );
 		}
