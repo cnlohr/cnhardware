@@ -1,0 +1,154 @@
+(footprint "BiggerCoil"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "bbade8b4-1564-41df-8584-7e39a25f5485")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "BiggerCoil"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "3fec7700-b68f-4b6b-a678-e836763f4307")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "25383cb6-d40d-4f7f-9789-92c2e39a4c22")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b64049c3-ca39-433c-8001-0949c7609914")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -8.999999 -18)
+		(end -9 18)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.Cu")
+		(uuid "c37daccf-2ad7-4c15-83b7-36f15eeb2111")
+	)
+	(fp_line
+		(start -6 -21)
+		(end 6 -21)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.Cu")
+		(uuid "176e18f8-032b-4c94-b80b-76b888493daf")
+	)
+	(fp_line
+		(start -6 21)
+		(end 6 21)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.Cu")
+		(uuid "71525b04-eb61-4b85-8357-bdecf16f9ced")
+	)
+	(fp_line
+		(start 9 18)
+		(end 9 -16.8)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.Cu")
+		(uuid "77cd057b-4c6c-41cc-8a82-20a966591f0f")
+	)
+	(fp_arc
+		(start -9 -18)
+		(mid -8.12132 -20.12132)
+		(end -6 -21)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.Cu")
+		(uuid "b7bddd16-fb4d-44c1-9871-d9e6ff6fbe20")
+	)
+	(fp_arc
+		(start -6 21)
+		(mid -8.12132 20.12132)
+		(end -9 18)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.Cu")
+		(uuid "c544be9e-e765-43e8-9c17-19d87321c1e1")
+	)
+	(fp_arc
+		(start 6 -21)
+		(mid 8.12132 -20.12132)
+		(end 9 -18)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.Cu")
+		(uuid "45676dfa-a758-402a-826b-3a10169b69fd")
+	)
+	(fp_arc
+		(start 9 18)
+		(mid 8.12132 20.12132)
+		(end 6 21)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.Cu")
+		(uuid "8e068be5-3cf4-4a7e-a768-ca99df0233fe")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "ac17106f-fc7b-4144-a3fd-948ea9b661be")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(embedded_fonts no)
+)
