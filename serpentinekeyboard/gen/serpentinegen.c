@@ -10,10 +10,15 @@
 //			Force:2.85/Spring:1.61/Size:0.75(2.1 cr)/Dt=0.011
 //   Then manual fixup.
 
+#pragma comment(lib, "opengl32")
+#pragma comment(lib, "user32")
+#pragma comment(lib, "gdi32")
 
 #include <stdatomic.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <malloc.h>
+#include <immintrin.h>
 
 #define CNFG_IMPLEMENTATION
 #define CNFGOGL
@@ -33,6 +38,9 @@ kicadElement * kicad_file;
 #define W 1050
 #define H 1000
 #define MSPHX 320
+
+// Must be a multiple of 32 or else the SIMD code will burn your house down
+#define WORRY_ABOUT_LEN 1024
 
 //#define BOTTOM
 
@@ -80,6 +88,7 @@ int grabdown;
 int grabbede = -1;
 short cww, cwh;
 int paused = 0;
+int renderBubbles = 0;
 
 DFLT loadOffsetX;
 DFLT loadOffsetY;
@@ -102,10 +111,11 @@ struct serpElem elems[ELEMENTS];
 #define EMX ((W))
 #define EMY ((H))
 int elementMap[EMX][EMY][MSPHX];
-int elementMapCnt[EMX][EMY];
+_Atomic int elementMapCnt[EMX][EMY];
 int frameno;
 
 DFLT barrierMap[EMX][EMY];
+uint32_t barrierMapTextureData[EMX * EMY];
 
 DFLT sphForceCoeff; // computed each frame
 
@@ -158,6 +168,9 @@ void HandleKey( int keycode, int bDown )
 		break;
 	case ' ':
 		paused = !paused;
+		break;
+	case 'b': case 'B':
+		renderBubbles = !renderBubbles;
 		break;
 	case 'L': case 'l': enable_line_collision = !enable_line_collision; break;
 	case 'z': case 'Z':
@@ -348,19 +361,8 @@ void HandleMotion( int x, int y, int mask )
 
 int HandleDestroy() { return 0; }
 
-
-void * execthread( void * v )
+void execthread_p1(int start, int end)
 {
-	intptr_t ip = (intptr_t)v;
-	int start = starts[ip];
-	int end = ends[ip];
-	int worryAbout[1024];
-
-	while( !doquit )
-	{
-
-		OGLockSema( threadstarts[ip] );
-
 		int e;
 		for( e = start; e < end; e++ )
 		{
@@ -400,12 +402,11 @@ void * execthread( void * v )
 					elementMap[cx][cy][ct] = e;
 			}
 		}
+}
 
-
-		OGUnlockSema( threaddones[ip] );
-
-		OGLockSema( threadstarts[ip] );
-
+void execthread_p2(int start, int end, int* worryAbout)
+{
+		int e;
 		int tchecks = 0;
 		for( e = start; e < end; e++ )
 		{
@@ -438,23 +439,35 @@ void * execthread( void * v )
 				int * se = elementMap[cx][cy];
 				int ct = elementMapCnt[cx][cy];
 
-				for( int c = 0; c < ct; c++ )
+				for (int c = 0; c < ct; c++)
 				{
 					int ec = se[c];
-					if( ec == e ) continue;
+					if (ec == e) { continue; }
 
-					int n;
-					for( n = 0; n < worryAboutCnt; n++ )
+					__m256i ECVec = _mm256_set1_epi32(ec);
+					int VecN = 0;
+					for (VecN = 0; VecN < worryAboutCnt; VecN += 32)
 					{
-						if( worryAbout[n] == ec ) break;
+						uint8_t Compare0 = _mm256_movemask_ps(_mm256_castsi256_ps(_mm256_cmpeq_epi32(_mm256_loadu_si256((__m256i*)&worryAbout[VecN]), ECVec)));
+						uint8_t Compare1 = _mm256_movemask_ps(_mm256_castsi256_ps(_mm256_cmpeq_epi32(_mm256_loadu_si256((__m256i*)&worryAbout[VecN + 8]), ECVec)));
+						uint8_t Compare2 = _mm256_movemask_ps(_mm256_castsi256_ps(_mm256_cmpeq_epi32(_mm256_loadu_si256((__m256i*)&worryAbout[VecN + 16]), ECVec)));
+						uint8_t Compare3 = _mm256_movemask_ps(_mm256_castsi256_ps(_mm256_cmpeq_epi32(_mm256_loadu_si256((__m256i*)&worryAbout[VecN + 24]), ECVec)));
+						// The following is the most expensive line of code in the entire program now.
+						// Compare0..3 must all be registers (the SIMD instruction can only output to reg), so can't do any funny stack tricks to re-interpret them as an int in-place.
+						uint32_t Compare = (Compare3 << 24) | (Compare2 << 16) | (Compare1 << 8) | Compare0;
+						int ItemsToCheck = min(32, worryAboutCnt - VecN);
+						uint32_t CompareMasked = Compare << (32 - ItemsToCheck);
+
+						if (CompareMasked != 0) { break; } // This still has pretty large misprediction rate, but vectorizing out the compares has made it much less of an issue
 					}
-					if( n == worryAboutCnt  )
+
+					if (VecN >= worryAboutCnt)
 					{
 						worryAboutCnt++;
-						if( worryAboutCnt >= sizeof( worryAbout ) / sizeof( worryAbout[0] ) )
-							fprintf( stderr, "Warning: worryAbout too small\n" );
+						if (worryAboutCnt >= WORRY_ABOUT_LEN)
+							fprintf(stderr, "Warning: worryAbout too small\n");
 						else
-							worryAbout[worryAboutCnt-1] = ec;
+							worryAbout[worryAboutCnt - 1] = ec;
 					}
 				}
 			}
@@ -531,7 +544,7 @@ void * execthread( void * v )
 							
 							// Makes it so we aren't just intersecting lines, but the conic section
 							// produced by the two lines.
-						DFLT	cor = cor + (segCOR-cor)*t;
+						DFLT	cor = cor + (segCOR-cor)*t; // TODO: WTF IS THIS???
 						DFLT	dforce = (crad+cor) - dist;
 								
 								
@@ -589,9 +602,26 @@ void * execthread( void * v )
 				if( skipnext ) c++;
 			}
 		}
+}
 
+void * execthread( void * v )
+{
+	intptr_t ip = (intptr_t)v;
+	int start = starts[ip];
+	int end = ends[ip];
+	int worryAbout[WORRY_ABOUT_LEN];
+
+	while( !doquit )
+	{
+		OGLockSema( threadstarts[ip] );
+		execthread_p1(start, end);
+		OGUnlockSema( threaddones[ip] );
+
+		OGLockSema( threadstarts[ip] );
+		execthread_p2(start, end, &worryAbout);
 		OGUnlockSema( threaddones[ip] );
 	}
+	return 0;
 }
 
 
@@ -900,9 +930,9 @@ int main()
 
 				DFLT dx = endX - startX;
 				DFLT dy = endY - startY;
-				if( abs(dx) > abs(dy) )
+				if( fabs(dx) > fabs(dy) )
 				{
-					DFLT ldy = dy/abs(dx);
+					DFLT ldy = dy/fabs(dx);
 					if( startX > endX ) { DFLT tmp = startX; startX = endX; endX = tmp; tmp = startY; startY = endY; endY = tmp; ldy = -ldy; }
 
 					DFLT y = startY;
@@ -914,7 +944,7 @@ int main()
 				}
 				else
 				{
-					DFLT ldx = dx/abs(dy);
+					DFLT ldx = dx/fabs(dy);
 					if( startY > endY ) { DFLT tmp = startY; startY = endY; endY = tmp; tmp = startX; startX = endX; endX = tmp; ldx = -ldx; }
 					DFLT x = startX;
 					for( DFLT y = startY; y <= endY+0.99; y++ )
@@ -1397,6 +1427,18 @@ int main()
 
 
 	CNFGSetup( "SerpentineGen", 1920, 1080 );
+
+	// barrierMap is assumed to not change anymore, so we can pre-convert and upload as a texture to save time not rendering 1M+ polygons every frame
+	for (int x = 0; x < W; x++)
+	for (int y = 0; y < H; y++)
+	{
+		float BarrierVal = (float)barrierMap[x][y] * 20.0F;
+		uint8_t GrayVal = (uint8_t)round(BarrierVal);
+		int ColourHere = (BarrierVal < 2.0F) ? 0 : (0xFF | (GrayVal << 8) | (GrayVal << 16) | (GrayVal << 24));
+		barrierMapTextureData[(y * W) + x] = ColourHere;
+	}
+	unsigned int BarrierMapTextureID = CNFGTexImage(barrierMapTextureData, W, H);
+
 	CNFGSetLineWidth( 2 );
 	while(CNFGHandleInput())
 	{
@@ -1511,68 +1553,55 @@ int main()
 		}
 		double dPhase5 = OGGetAbsoluteTime();
 
-		for( int x = 0; x < W; x++ )
-		for( int y = 0; y < H; y++ )
+		CNFGBlitTex(BarrierMapTextureID, -0.5 * zoom + xofs, -0.5 * zoom + yofs, W * zoom, H * zoom);
+
+		if (renderBubbles)
 		{
-			DFLT b = barrierMap[x][y];
-			if( b > 0.1 )
+			for( e = 0; e < ELEMENTS; e++ )
 			{
-				int bll = b * 20;
-				CNFGColor( 0xff | (bll<<8) | (bll<<16) | (bll<<24) );
-				DFLT x0 = (x-.5) * zoom + xofs;
-				DFLT y0 = (y-.5) * zoom + yofs;
-				DFLT x1 = (x+.5) * zoom + xofs;
-				DFLT y1 = (y+.5) * zoom + yofs;
-				if( x0 >= cww || y0 >= cwh || x1 < 0 || y1 < 0 ) continue;
-				CNFGTackRectangle( x0, y0, x1, y1 );
+				DFLT tx = elems[e].x;
+				DFLT ty = elems[e].y;
+
+				DFLT cx = tx * zoom + xofs;
+				DFLT cy = ty * zoom + yofs;
+
+				if( cx < -16384 || cx > 16384 || cy < -16384 || cy > 16384  ) continue;
+
+				if( e == closestAt )
+				{
+					CNFGColor( 0xff000080 ); 
+				}
+				else if( elems[e].fixed )
+				{
+					CNFGColor( 0xffffff80 ); 
+				}
+				else if( e == grabbede )
+				{
+					CNFGColor( 0x0000ff80 ); 
+				}
+				else if( elems[e].pinned )
+				{
+					CNFGColor( 0x00000080 ); 
+				}
+				else
+				{
+					CNFGColor( 0xffffff10 ); 
+				}
+
+				RDPoint points[NRBP];
+
+				DFLT cr = elems[e].currentRadius;
+
+				int i;
+
+				for( i = 0; i < NRBP; i++ )
+				{
+					points[i].x = (pointsBase[i][0] * cr + tx) * zoom + xofs;
+					points[i].y = (pointsBase[i][1] * cr + ty) * zoom + yofs;
+				}
+
+				CNFGTackPoly( points, NRBP ); // EXTREMELY EXPENSIVE!!
 			}
-		}
-
-
-		for( e = 0; e < ELEMENTS; e++ )
-		{
-			DFLT tx = elems[e].x;
-			DFLT ty = elems[e].y;
-
-			DFLT cx = tx * zoom + xofs;
-			DFLT cy = ty * zoom + yofs;
-
-			if( cx < -16384 || cx > 16384 || cy < -16384 || cy > 16384  ) continue;
-
-			if( e == closestAt )
-			{
-				CNFGColor( 0xff000080 ); 
-			}
-			else if( elems[e].fixed )
-			{
-				CNFGColor( 0xffffff80 ); 
-			}
-			else if( e == grabbede )
-			{
-				CNFGColor( 0x0000ff80 ); 
-			}
-			else if( elems[e].pinned )
-			{
-				CNFGColor( 0x00000080 ); 
-			}
-			else
-			{
-				CNFGColor( 0xffffff10 ); 
-			}
-
-			RDPoint points[NRBP];
-
-			DFLT cr = elems[e].currentRadius;
-
-			int i;
-
-			for( i = 0; i < NRBP; i++ )
-			{
-				points[i].x = (pointsBase[i][0] * cr + tx) * zoom + xofs;
-				points[i].y = (pointsBase[i][1] * cr + ty) * zoom + yofs;
-			}
-
-			CNFGTackPoly( points, NRBP );
 		}
 
 		//Change color to white.
@@ -1595,15 +1624,22 @@ int main()
 
 			if( ax < -16384 || ax > 16384 || ay < -16384 || ay > 16384 ||
 				bx < -16384 || bx > 16384 || by < -16384 || by > 16384 ) continue;
-			CNFGTackSegment( ax, ay, bx, by );
+			CNFGTackSegment( ax, ay, bx, by ); // This is quite expensive, could just the data be saved off and then rendered while the next cycle is running?
 		}
 
 		CNFGColor( 0xffffffff );
 
-		for( int x = 0; x < EMX; x++ )
-		for( int y = 0; y < EMY; y++ )
+		for (int x = 0; x < EMX; x++)
 		{
-			elementMapCnt[x][y] = 0;
+			// This removes the atomic constraint for clearing.
+			// We can guarantee that no other threads are active during this phase, so this is safe as long as that assumption holds.
+			// Without this contraint lift, the compiler cannot optimize the array clearing at all, because each element must individually be atomically written.
+			// By removing this atomicity constraint, an optimized memset is used, significantly speeding this up (I measured about 1.8ms per frame)
+			int* NonAtomicArr = (int*)(elementMapCnt[x]);
+			for (int y = 0; y < EMY; y++)
+			{
+				NonAtomicArr[y] = 0;
+			}
 		}
 		double dPhase6 = OGGetAbsoluteTime();
 
@@ -1645,9 +1681,9 @@ int main()
 		CNFGPenY = 3;
 		CNFGDrawText( cts, 3 );
 
-		sprintf( cts, "Force (bubble)  [r][f] = %.2f\nSpring (force)  [t][g] = %.2f\nSizeMux         [y][h] = %.2f\nLine Collision     [l] = %s\nUser Speed Mux  [u][j] = %.2f\nDt              [i][k] = %.3f\nPaused      [SPACEBAR] = %s\nJump To Closest [z]\n",
+		sprintf( cts, "Force (bubble)  [r][f] = %.2f\nSpring (force)  [t][g] = %.2f\nSizeMux         [y][h] = %.2f\nLine Collision     [l] = %s\nUser Speed Mux  [u][j] = %.2f\nDt              [i][k] = %.3f\nPaused      [SPACEBAR] = %s\nRender Bubbles     [b] = %s\nJump To Closest [z]\n",
 			inter_force_multiplier, springForceUserMux, sizeUserMux,
-			enable_line_collision ? "Yes" : "No", speedUserMux, dt, paused?"PAUSED":"RUNNING");
+			enable_line_collision ? "Yes" : "No", speedUserMux, dt, paused?"PAUSED":"RUNNING", renderBubbles?"Yes":"No");
 		CNFGPenX = 250;
 		CNFGPenY = 3;
 		CNFGDrawText( cts, 3 );
