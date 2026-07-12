@@ -41,13 +41,13 @@
         "pads": {
           "drill": 0.8,
           "height": 1.27,
-          "width": 2.54
+          "width": 1.27
         },
-        "silk_line_width": 0.1,
+        "silk_line_width": 0.2,
         "silk_text_italic": false,
-        "silk_text_size_h": 1.0,
-        "silk_text_size_v": 1.0,
-        "silk_text_thickness": 0.1,
+        "silk_text_size_h": 0.8,
+        "silk_text_size_v": 0.8,
+        "silk_text_thickness": 0.2,
         "silk_text_upright": false,
         "zones": {
           "border_display_style": 2,
@@ -60,13 +60,13 @@
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.5,
+          "min_clearance": 0.2,
           "min_island_area": 10.0,
-          "min_thickness": 0.25,
+          "min_thickness": 0.2,
           "pad_connection": 1,
           "remove_islands": 0,
-          "thermal_relief_gap": 0.5,
-          "thermal_relief_spoke_width": 0.5
+          "thermal_relief_gap": 0.2,
+          "thermal_relief_spoke_width": 0.2
         }
       },
       "diff_pair_dimensions": [
@@ -116,12 +116,12 @@
         "missing_tuning_profile": "warning",
         "net_conflict": "warning",
         "nonmirrored_text_on_back_layer": "warning",
-        "npth_inside_courtyard": "ignore",
+        "npth_inside_courtyard": "error",
         "padstack": "warning",
-        "pth_inside_courtyard": "ignore",
+        "pth_inside_courtyard": "error",
         "shorting_items": "error",
-        "silk_edge_clearance": "warning",
-        "silk_over_copper": "warning",
+        "silk_edge_clearance": "ignore",
+        "silk_over_copper": "ignore",
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
@@ -159,7 +159,7 @@
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.0,
+        "min_track_width": 0.2,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.5,
         "solder_mask_to_copper_clearance": 0.0,
@@ -502,14 +502,14 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "ch32v203funboard.kicad_pro",
+    "filename": "etheraddon.kicad_pro",
     "version": 3
   },
   "net_settings": {
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.195,
+        "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -520,7 +520,7 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
+        "track_width": 0.3,
         "tuning_profile": "",
         "via_diameter": 0.6,
         "via_drill": 0.3,
@@ -539,7 +539,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "ch32v203funboard-rev-",
+      "plot": "etheraddon-rev-",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
@@ -554,7 +554,7 @@
       "method": 0,
       "sort_order": 0
     },
-    "bom_export_filename": "${PROJECTNAME}.csv",
+    "bom_export_filename": "etheraddon-rev-/${PROJECTNAME}.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -616,12 +616,42 @@
           "label": "Datasheet",
           "name": "Datasheet",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Device",
+          "name": "Sim.Device",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": true,
+          "label": "LCSC",
+          "name": "LCSC",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "Default Editing",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -669,18 +699,18 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "ch32v203funboard.kicad_sch",
-        "name": "ch32v203funboard",
-        "uuid": "d4c301a4-fa8a-4124-9d39-a249c1660dd5"
+        "filename": "etheraddon.kicad_sch",
+        "name": "etheraddon",
+        "uuid": "7102c44d-72b2-45e4-8dfb-e663bd5acc46"
       }
     ],
-    "used_designators": "",
+    "used_designators": "L2,T1,C20,C24-26,C29-36,D1-7,U1,U6-7,R3-5,R11,R22-30,J1-2,J4,J10,#PWR1-3,#PWR7,#PWR13-18,#PWR96-108",
     "variants": []
   },
   "sheets": [
     [
-      "d4c301a4-fa8a-4124-9d39-a249c1660dd5",
-      "ch32v203funboard"
+      "7102c44d-72b2-45e4-8dfb-e663bd5acc46",
+      "etheraddon"
     ]
   ],
   "text_variables": {},
