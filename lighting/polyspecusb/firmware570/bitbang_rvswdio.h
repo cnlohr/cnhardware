@@ -1384,7 +1384,9 @@ static int WriteBlock( struct SWIOState * iss, uint32_t address_to_write, uint8_
 			}
 			else if( (int32_t)(blob_size - index) > 0 )
 			{
-				memcpy( &data, &blob[index], blob_size - index );
+				size_t copy_len = (size_t)(blob_size - index);
+				if( copy_len > sizeof(data) ) copy_len = sizeof(data);
+				memcpy( &data, &blob[index], copy_len );
 			}
 			WriteWord( dev, wp, data );
 			wp += 4;
