@@ -628,7 +628,7 @@ void * execthread( void * v )
 		OGUnlockSema( threaddones[ip] );
 
 		OGLockSema( threadstarts[ip] );
-		execthread_p2(start, end, &worryAbout);
+		execthread_p2(start, end, &worryAbout[0]);
 		OGUnlockSema( threaddones[ip] );
 	}
 	return 0;
