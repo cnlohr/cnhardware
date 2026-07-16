@@ -81,6 +81,7 @@ DFLT sizeUserMux = 1.0;
 DFLT tetherShrink = 0.0; // Set to 0 to make it something that desires to be as tight as possible.
 DFLT speedUserMux = 1.0;
 DFLT closestPts = 1e20;
+DFLT exportMaxErrorMM = 0.01;
 int closestAt = -1;
 
 DFLT xofs;
@@ -177,6 +178,12 @@ void HandleKey( int keycode, int bDown )
 	case 'b': case 'B':
 		renderBubbles = !renderBubbles;
 		break;
+	case 'P': case 'p':
+		exportMaxErrorMM *= .909090909090909;
+		break;
+	case ':': case ';':
+		exportMaxErrorMM *= 1.1;
+		break;
 	case 'L': case 'l': enable_line_collision = !enable_line_collision; break;
 	case 'z': case 'Z':
 		if( closestAt >= 0 )
@@ -211,11 +218,56 @@ void HandleKey( int keycode, int bDown )
 	)\n");
 
 		int e = 0;
-		for( e = 0; e < ELEMENTS; e++ )
+		int i;
+		struct serpElem * elemsExport = malloc( ELEMENTS * sizeof(struct serpElem));
+		memcpy( elemsExport, elems, ELEMENTS * sizeof(struct serpElem));
+		int nrExport = ELEMENTS;
+		int eOfMin = -1;
+		double dmin = 1e20;
+		for( i = 0; i < ELEMENTS; i++ )
+		{
+			eOfMin = -1;
+			dmin = 1e20;
+			for( e = 1; e < nrExport-1; e++ )
+			{
+				int p = e-1;
+				int n = e+1;
+				struct serpElem * ep = elemsExport + p;
+				struct serpElem * et = elemsExport + e;
+				struct serpElem * en = elemsExport + n;
+				double dxn = en->x - et->x;
+				double dyn = en->y - et->y;
+				double dxp = ep->x - et->x;
+				double dyp = ep->y - et->y;
+				double cross = dxn * dyp - dxp * dyn;
+				if( cross < 0 ) cross = -cross;
+
+				if( cross < dmin )
+				{
+					dmin = cross;
+					eOfMin = e;
+				}
+			}
+			if( dmin >= exportMaxErrorMM ) break;
+			//printf( "Removing %d/%d (%f)\n", eOfMin, nrExport, dmin );
+			//printf( "... + %d, ... + %d, %d\n", eOfMin, eOfMin+1, nrExport - eOfMin - 1 );
+			memcpy( elemsExport + (eOfMin), elemsExport + (eOfMin+1), (nrExport - eOfMin - 1)*sizeof(struct serpElem) );
+			nrExport--;
+			if( ( nrExport % 100 ) == 0 ) printf( "%d remain (%f)\n", nrExport, dmin );
+		}
+
+		printf( "Exporting %d segments\n", nrExport );
+
+		// Export Elements
+		//exportMaxErrorMM
+
+
+
+		for( e = 0; e < nrExport; e++ )
 		{
 			int n = e+1;
-			struct serpElem * et = elems + e;
-			struct serpElem * en = elems + n;
+			struct serpElem * et = elemsExport + e;
+			struct serpElem * en = elemsExport + n;
 
 			if( e < ELEMENTS-1 )
 			{
@@ -237,7 +289,7 @@ void HandleKey( int keycode, int bDown )
 	(embedded_fonts no)\n\
 )\n" );
 		fclose( f );
-
+		free( elemsExport );
 
 	}
 		break;
@@ -1687,7 +1739,7 @@ int main()
 		CNFGPenY = cwh-markermargin-6;
 		CNFGDrawText( cts, 3 );
 
-		sprintf( cts, "frame %d\ne3 cr %f\nsphForceCoeff %f\nratiohit %f\nP1: %.3fms\nP2: %.3fms\nP3: %.3fms\nP4: %.3fms\nP5: %.3fms\nTL: %.1fmm\nCL: %.3fmm\nOfs: %.3f,%.3f", frameno, elems[3].currentRadius,sphForceCoeff, thits/(DFLT)ttotal, (dPhase2-dPhase1)*1000.0, (dPhase3-dPhase2)*1000.0, (dPhase4-dPhase3)*1000.0, (dPhase5-dPhase4)*1000.0, (dPhase6-dPhase5)*1000.0, totalLen, closestPts/10.0, loadOffsetX, loadOffsetY );
+		sprintf( cts, "frame %d\ne3 cr %f\nsphForceCoeff %f\nratiohit %f\nP1: %.3fms\nP2: %.3fms\nP3: %.3fms\nP4: %.3fms\nP5: %.3fms\nTL: %.1fmm\nCL: %.3fmm\nOfs: %.3f,%.3f\nExport Cull: %.3fmm^2", frameno, elems[3].currentRadius,sphForceCoeff, thits/(DFLT)ttotal, (dPhase2-dPhase1)*1000.0, (dPhase3-dPhase2)*1000.0, (dPhase4-dPhase3)*1000.0, (dPhase5-dPhase4)*1000.0, (dPhase6-dPhase5)*1000.0, totalLen, closestPts/10.0, loadOffsetX, loadOffsetY, exportMaxErrorMM );
 		closestPts = 1e20;
 		thits = 0;
 		ttotal = 0;
