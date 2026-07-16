@@ -10,6 +10,9 @@
 //			Force:2.85/Spring:1.61/Size:0.75(2.1 cr)/Dt=0.011
 //   Then manual fixup.
 
+// Aproach 2:
+//  158000 segments, 0.15 thick, target 23 meters.
+
 #pragma comment(lib, "opengl32")
 #pragma comment(lib, "user32")
 #pragma comment(lib, "gdi32")
@@ -32,8 +35,10 @@ int threadct = 24;
 
 kicadElement * kicad_file;
 
-#define ELEMENTS 195000
-#define OUTTHICK 0.12
+#define MIN( x, y ) ((x)<(y)?(x):(y))
+
+#define ELEMENTS 158000
+#define OUTTHICK 0.15
 
 #define W 1050
 #define H 1000
@@ -42,7 +47,7 @@ kicadElement * kicad_file;
 // Must be a multiple of 32 or else the SIMD code will burn your house down
 #define WORRY_ABOUT_LEN 1024
 
-//#define BOTTOM
+#define BOTTOM
 
 #ifdef BOTTOM
 #define USENET "\"RBOT\""
@@ -61,8 +66,8 @@ kicadElement * kicad_file;
 int enable_line_collision = 0;
 DFLT inter_force_multiplier = 1.0;
 DFLT targetRadius = 2.8;
-DFLT radSpeed = 0.0000004; // Speed by which the lengths approach the target length.
-int  maxRadSpeedSpeedup = 3000;
+DFLT radSpeed = 0.0000003; // Speed by which the lengths approach the target length.
+int  maxRadSpeedSpeedup = 32000;
 DFLT velocityDamp = 1;
 DFLT sphForceCoeffStart = .1;
 DFLT sphForceCoeffFinal = 10;
@@ -145,7 +150,7 @@ void HandleKey( int keycode, int bDown )
 		break;
 	case 'G': case 'g':
 		springForceUserMux *= 1.1;
-		if( springForceUserMux > 2.5 ) springForceUserMux = 2.5;
+		if( springForceUserMux > 5 ) springForceUserMux = 5;
 		break;
 	case 'Y': case 'y':
 		sizeUserMux *= 0.909090909090909;
@@ -417,10 +422,10 @@ void execthread_p2(int start, int end, int* worryAbout)
 
 			DFLT crad = elems[e].currentRadius * .5;
 
-			int seCxMin = (tx-0.5 - crad);
-			int seCyMin = (ty-0.5 - crad);
-			int seCxMax = (tx+0.5 + crad);
-			int seCyMax = (ty+0.5 + crad);
+			int seCxMin = (tx-1 - crad);
+			int seCyMin = (ty-1 - crad);
+			int seCxMax = (tx+1 + crad);
+			int seCyMax = (ty+1 + crad);
 
 			if( seCxMin < 0 ) seCxMin = 0;
 			if( seCyMin < 0 ) seCyMin = 0;
@@ -465,7 +470,7 @@ void execthread_p2(int start, int end, int* worryAbout)
 						// Compare0..3 must all be registers (the SIMD instruction can only output to reg), so can't do any funny stack tricks to re-interpret them as an int in-place.
 						uint32_t Compare = (Compare3 << 24) | (Compare2 << 16) | (Compare1 << 8) | Compare0;
 #endif
-						int ItemsToCheck = min(32, worryAboutCnt - VecN);
+						int ItemsToCheck = MIN(32, worryAboutCnt - VecN);
 						uint32_t CompareMasked = Compare << (32 - ItemsToCheck);
 
 						if (CompareMasked != 0) { break; } // This still has pretty large misprediction rate, but vectorizing out the compares has made it much less of an issue
@@ -554,7 +559,8 @@ void execthread_p2(int start, int end, int* worryAbout)
 							
 							// Makes it so we aren't just intersecting lines, but the conic section
 							// produced by the two lines.
-						DFLT	cor = cor + (segCOR-cor)*t; // TODO: WTF IS THIS???
+						//cor = 0; // ??? I don't know what I was thinking.
+						//cor = cor + (segCOR-cor)*t;
 						DFLT	dforce = (crad+cor) - dist;
 								
 								
@@ -628,7 +634,7 @@ void * execthread( void * v )
 		OGUnlockSema( threaddones[ip] );
 
 		OGLockSema( threadstarts[ip] );
-		execthread_p2(start, end, &worryAbout);
+		execthread_p2(start, end, worryAbout);
 		OGUnlockSema( threaddones[ip] );
 	}
 	return 0;
@@ -1565,53 +1571,51 @@ int main()
 
 		CNFGBlitTex(BarrierMapTextureID, -0.5 * zoom + xofs, -0.5 * zoom + yofs, W * zoom, H * zoom);
 
-		if (renderBubbles)
+		for( e = 0; e < ELEMENTS; e++ )
 		{
-			for( e = 0; e < ELEMENTS; e++ )
+			DFLT tx = elems[e].x;
+			DFLT ty = elems[e].y;
+
+			DFLT cx = tx * zoom + xofs;
+			DFLT cy = ty * zoom + yofs;
+
+			if( cx < -16384 || cx > 16384 || cy < -16384 || cy > 16384  ) continue;
+
+			if( e == closestAt )
 			{
-				DFLT tx = elems[e].x;
-				DFLT ty = elems[e].y;
-
-				DFLT cx = tx * zoom + xofs;
-				DFLT cy = ty * zoom + yofs;
-
-				if( cx < -16384 || cx > 16384 || cy < -16384 || cy > 16384  ) continue;
-
-				if( e == closestAt )
-				{
-					CNFGColor( 0xff000080 ); 
-				}
-				else if( elems[e].fixed )
-				{
-					CNFGColor( 0xffffff80 ); 
-				}
-				else if( e == grabbede )
-				{
-					CNFGColor( 0x0000ff80 ); 
-				}
-				else if( elems[e].pinned )
-				{
-					CNFGColor( 0x00000080 ); 
-				}
-				else
-				{
-					CNFGColor( 0xffffff10 ); 
-				}
-
-				RDPoint points[NRBP];
-
-				DFLT cr = elems[e].currentRadius;
-
-				int i;
-
-				for( i = 0; i < NRBP; i++ )
-				{
-					points[i].x = (pointsBase[i][0] * cr + tx) * zoom + xofs;
-					points[i].y = (pointsBase[i][1] * cr + ty) * zoom + yofs;
-				}
-
-				CNFGTackPoly( points, NRBP ); // EXTREMELY EXPENSIVE!!
+				CNFGColor( 0xff000080 ); 
 			}
+			else if( elems[e].fixed )
+			{
+				CNFGColor( 0xffffff80 ); 
+			}
+			else if( e == grabbede )
+			{
+				CNFGColor( 0x0000ff80 ); 
+			}
+			else if( elems[e].pinned )
+			{
+				CNFGColor( 0x00000080 ); 
+			}
+			else
+			{
+				if (!renderBubbles) continue;
+				CNFGColor( 0xffffff10 ); 
+			}
+
+			RDPoint points[NRBP];
+
+			DFLT cr = elems[e].currentRadius;
+
+			int i;
+
+			for( i = 0; i < NRBP; i++ )
+			{
+				points[i].x = (pointsBase[i][0] * cr + tx) * zoom + xofs;
+				points[i].y = (pointsBase[i][1] * cr + ty) * zoom + yofs;
+			}
+
+			CNFGTackPoly( points, NRBP ); // EXTREMELY EXPENSIVE!!
 		}
 
 		//Change color to white.
