@@ -1,7 +1,7 @@
 #include "ch32fun.h"
 #include <stdio.h>
 
-#define LEDMASK 0b0000000001
+#define LEDMASK 0b0000010000
 
 int main()
 {
@@ -26,6 +26,6 @@ int main()
 		//funDigitalWrite( MP,     FUN_LOW );
 		GPIOC->OUTDR = 0x00;
 		GPIOD->OUTDR = 0b0000;
-		ADD_N_NOPS( 30 );
+		ADD_N_NOPS( 50 );
 	}
 }
