@@ -11,7 +11,9 @@
 //   Then manual fixup.
 
 // Aproach 2:
-//  158000 segments, 0.15 thick, target 23 meters.
+//  158000 segments, 0.15 thick, target 24 meters.
+// Maybe 150000, 0.15 thick, target 23m, I'm finding 2.59/1.95 force/spring works well. Sizemux 0.91
+// try hard to get to 0.306 clearance. 
 
 #pragma comment(lib, "opengl32")
 #pragma comment(lib, "user32")
@@ -37,7 +39,7 @@ kicadElement * kicad_file;
 
 #define MIN( x, y ) ((x)<(y)?(x):(y))
 
-#define ELEMENTS 158000
+#define ELEMENTS 150000
 #define OUTTHICK 0.15
 
 #define W 1050
@@ -47,7 +49,7 @@ kicadElement * kicad_file;
 // Must be a multiple of 32 or else the SIMD code will burn your house down
 #define WORRY_ABOUT_LEN 1024
 
-#define BOTTOM
+//#define BOTTOM
 
 #ifdef BOTTOM
 #define USENET "\"RBOT\""
