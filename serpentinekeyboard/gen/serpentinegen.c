@@ -33,13 +33,12 @@
 
 #include "kicadparse.h"
 
-int threadct = 24;
+int threadct = 30;
 
 kicadElement * kicad_file;
 
 #define MIN( x, y ) ((x)<(y)?(x):(y))
 
-#define ELEMENTS 150000
 #define OUTTHICK 0.15
 
 #define W 1050
@@ -50,17 +49,29 @@ kicadElement * kicad_file;
 #define WORRY_ABOUT_LEN 1024
 
 //#define BOTTOM
+#define MONTEBASE
 
-#ifdef BOTTOM
+#ifdef MONTEBASE
+#define USENET "\"RTOP\""
+#define USECOPPER "\"F.Cu\""
+#define ADHESIVEUSE "\"F.Adhes\""
+#define OUTFILE "../montebase/test.pretty/testboard.kicad_mod"
+#define OPENFILE "../montebase/montebase.kicad_pcb"
+#define ELEMENTS 15000
+#elif defined( BOTTOM )
 #define USENET "\"RBOT\""
 #define USECOPPER "\"B.Cu\""
 #define ADHESIVEUSE "\"B.Adhes\""
 #define OUTFILE "../testboard2/test.pretty/testboard_back.kicad_mod"
+#define OPENFILE "../keybase/keybase.kicad_pcb"
+#define ELEMENTS 150000
 #else
 #define USENET "\"RTOP\""
 #define USECOPPER "\"F.Cu\""
 #define ADHESIVEUSE "\"F.Adhes\""
 #define OUTFILE "../testboard2/test.pretty/testboard.kicad_mod"
+#define OPENFILE "../keybase/keybase.kicad_pcb"
+#define ELEMENTS 150000
 #endif
 
 #define DFLT double
@@ -830,7 +841,7 @@ int main()
 	int availElem = 0;
 
 	{
-		FILE * f = fopen( "../keybase/keybase.kicad_pcb", "r" );
+		FILE * f = fopen( OPENFILE, "r" );
 		if( !f )
 		{
 			fprintf( stderr, "Error: can't open pcb file\n" );
@@ -1216,7 +1227,7 @@ int main()
 							{
 								px = atof( at->leaves[0] );
 								py = atof( at->leaves[1] );
-								pr = atof( at->leaves[2] ) * 3.14159 / 180.0;
+								pr = at->leaves[2] ? atof( at->leaves[2] ) * 3.14159 / 180.0 : 0;
 								hasflag |= 1;
 							}								
 							
@@ -1232,7 +1243,7 @@ int main()
 								prrr = atof( roundrect_rratio->leaves[0] );
 								hasflag |= 4;
 							}
-
+printf( "%s\n", netname );
 							if( netname && strcmp( netname, USENET ) == 0 )
 							{
 								float compr = sqrt( pw*pw+ph*ph ) * (roundrect_rratio ? 1.2 : 1.0 );// - ((pw+ph)/4.0*prrr); (No benefit from rounded rect), actually it's worse.
@@ -1311,8 +1322,8 @@ int main()
 				int p;
 				for( p = 0; p < numPinnedPads; p++ )
 				{
-					//printf( "%d -- %f %f %f %f  %f < %f\n", p,  x1, y1, pinnedPads[p].x, pinnedPads[p].y,
-					//	Dist2( x1, y1, pinnedPads[p].x, pinnedPads[p].y ), pinnedPads[p].r );
+					printf( "%d -- %f %f %f %f  %f < %f\n", p,  x1, y1, pinnedPads[p].x, pinnedPads[p].y,
+						Dist2( x1, y1, pinnedPads[p].x, pinnedPads[p].y ), pinnedPads[p].r );
 					if( Dist2( x1, y1, pinnedPads[p].x, pinnedPads[p].y ) < pinnedPads[p].r/2 )
 					{
 						adhes[i].p1 = p;
@@ -1330,7 +1341,8 @@ int main()
 
 			if( adhes[firstAdhesGraph].p1 < 0 || adhes[lastAdhesGraph].p2 < 0 )
 			{
-				fprintf( stderr, "Error: First and last parts of segment must be tied down with a pad or via\n" );
+				fprintf( stderr, "Error: First and last parts of segment must be tied down with a pad or via (Got %d %d)\n",
+					adhes[firstAdhesGraph].p1, adhes[lastAdhesGraph].p2 );
 				exit( -16 );
 			}
 			pins++; // last pin is required.
