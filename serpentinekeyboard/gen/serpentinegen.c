@@ -1711,17 +1711,13 @@ printf( "%s\n", netname );
 
 		CNFGColor( 0xffffffff );
 
-		for (int x = 0; x < EMX; x++)
 		{
 			// This removes the atomic constraint for clearing.
 			// We can guarantee that no other threads are active during this phase, so this is safe as long as that assumption holds.
 			// Without this contraint lift, the compiler cannot optimize the array clearing at all, because each element must individually be atomically written.
 			// By removing this atomicity constraint, an optimized memset is used, significantly speeding this up (I measured about 1.8ms per frame)
-			int* NonAtomicArr = (int*)(elementMapCnt[x]);
-			for (int y = 0; y < EMY; y++)
-			{
-				NonAtomicArr[y] = 0;
-			}
+			int* NonAtomicArr = (int*)(&elementMapCnt[0][0]);
+			for (size_t i = 0; i < (sizeof(elementMapCnt) / sizeof(elementMapCnt[0][0])); i++) { NonAtomicArr[i] = 0; }
 		}
 		double dPhase6 = OGGetAbsoluteTime();
 
