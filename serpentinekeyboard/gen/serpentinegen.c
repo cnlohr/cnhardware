@@ -49,7 +49,7 @@ kicadElement * kicad_file;
 #define WORRY_ABOUT_LEN 1024
 
 //#define BOTTOM
-#define MONTEBASE
+//#define MONTEBASE
 
 #ifdef MONTEBASE
 #define USENET "\"RTOP\""
@@ -1245,7 +1245,7 @@ int main()
 								prrr = atof( roundrect_rratio->leaves[0] );
 								hasflag |= 4;
 							}
-printf( "%s\n", netname );
+//printf( "%s\n", netname );
 							if( netname && strcmp( netname, USENET ) == 0 )
 							{
 								float compr = sqrt( pw*pw+ph*ph ) * (roundrect_rratio ? 1.2 : 1.0 );// - ((pw+ph)/4.0*prrr); (No benefit from rounded rect), actually it's worse.
