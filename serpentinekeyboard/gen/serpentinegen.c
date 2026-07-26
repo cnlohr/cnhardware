@@ -522,10 +522,13 @@ void execthread_p2(int start, int end, int* worryAbout)
 					int VecN = 0;
 					for (VecN = 0; VecN < worryAboutCnt; VecN += 32)
 					{
+						int ItemsToCheck = MIN(32, worryAboutCnt - VecN);
 #ifdef USE_AVX512
-						uint16_t Compare0 = _mm512_cmpeq_epi32_mask(_mm512_loadu_si512((__m512i*)&worryAbout[VecN]), ECVec);
-						uint16_t Compare1 = _mm512_cmpeq_epi32_mask(_mm512_loadu_si512((__m512i*)&worryAbout[VecN + 16]), ECVec);
-						uint32_t Compare = (Compare1 << 16) | Compare0;
+						uint32_t Mask = (uint32_t)((1ULL << ItemsToCheck) - 1);
+						__mmask16 Compare0 = _mm512_mask_cmpeq_epi32_mask((uint16_t)Mask, _mm512_loadu_si512((__m512i*)&worryAbout[VecN]), ECVec);
+						__mmask16 Compare1 = _mm512_mask_cmpeq_epi32_mask((uint16_t)(Mask >> 16), _mm512_loadu_si512((__m512i*)&worryAbout[VecN + 16]), ECVec);
+						if ((Compare0 | Compare1) != 0) { break; }
+						
 #else
 						uint8_t Compare0 = _mm256_movemask_ps(_mm256_castsi256_ps(_mm256_cmpeq_epi32(_mm256_loadu_si256((__m256i*)&worryAbout[VecN]), ECVec)));
 						uint8_t Compare1 = _mm256_movemask_ps(_mm256_castsi256_ps(_mm256_cmpeq_epi32(_mm256_loadu_si256((__m256i*)&worryAbout[VecN + 8]), ECVec)));
@@ -534,11 +537,10 @@ void execthread_p2(int start, int end, int* worryAbout)
 						// The following is the most expensive line of code in the entire program now.
 						// Compare0..3 must all be registers (the SIMD instruction can only output to reg), so can't do any funny stack tricks to re-interpret them as an int in-place.
 						uint32_t Compare = (Compare3 << 24) | (Compare2 << 16) | (Compare1 << 8) | Compare0;
-#endif
-						int ItemsToCheck = MIN(32, worryAboutCnt - VecN);
 						uint32_t CompareMasked = Compare << (32 - ItemsToCheck);
 
 						if (CompareMasked != 0) { break; } // This still has pretty large misprediction rate, but vectorizing out the compares has made it much less of an issue
+#endif
 					}
 
 					if (VecN >= worryAboutCnt)
@@ -1709,17 +1711,13 @@ printf( "%s\n", netname );
 
 		CNFGColor( 0xffffffff );
 
-		for (int x = 0; x < EMX; x++)
 		{
 			// This removes the atomic constraint for clearing.
 			// We can guarantee that no other threads are active during this phase, so this is safe as long as that assumption holds.
 			// Without this contraint lift, the compiler cannot optimize the array clearing at all, because each element must individually be atomically written.
 			// By removing this atomicity constraint, an optimized memset is used, significantly speeding this up (I measured about 1.8ms per frame)
-			int* NonAtomicArr = (int*)(elementMapCnt[x]);
-			for (int y = 0; y < EMY; y++)
-			{
-				NonAtomicArr[y] = 0;
-			}
+			int* NonAtomicArr = (int*)(&elementMapCnt[0][0]);
+			for (size_t i = 0; i < (sizeof(elementMapCnt) / sizeof(elementMapCnt[0][0])); i++) { NonAtomicArr[i] = 0; }
 		}
 		double dPhase6 = OGGetAbsoluteTime();
 
