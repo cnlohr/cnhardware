@@ -1,8 +1,8 @@
 all : serpentinegen
 
 #CFLAGS:=-fsanitize=address -O0
-CFLAGS:=-O3  -mavx2
-#-DUSE_AVX512 -mavx512f
+CFLAGS:=-O3 -DUSE_AVX512 -mavx512f
+# -mavx2
 
 serpentinegen : serpentinegen.c
 	gcc $(CFLAGS) -g -o $@ $^ -lpthread -lX11 -lGL -lm
