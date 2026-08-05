@@ -438,3 +438,11 @@ Codes from JLCPCB:
 4. Executing, without human intervention, a processing program which requires them to modify their exeuction, by logical decision during the processing run.
 
 Also, another friend mentioned 8537.10.9170 is a common entry for general purpose circuit boards for controlling things. So may want to look into that if appropriate for your uses. Note: This has a 27% Tarriff at least in Oct, 2024
+
+## Kicad parts install for easyeda conversion
+
+```
+pip install --break-system-packages easyeda2kicad
+python -m easyeda2kicad --full --lcsc_id=C2765186 --output /home/cnlohr/git/cnhardware/kicad_parts/ --overwrite
+```
+
