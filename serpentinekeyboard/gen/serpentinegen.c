@@ -237,8 +237,9 @@ void HandleKey( int keycode, int bDown )
 		int nrExport = ELEMENTS;
 		int eOfMin = -1;
 		double dmin = 1e20;
-		// https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm 
-		// Ramer–Douglas–Peucker algorithm
+		// This is NOT the Ramer–Douglas–Peucker algorithm.  It's similar, but, I need to re-visit this.
+		// This is much greedier, but I think it comes to the same conclusion.  Just slower.
+		// So I'm not sure if it makes sense to rewrite or anything.
 		for( i = 0; i < ELEMENTS; i++ )
 		{
 			eOfMin = -1;
