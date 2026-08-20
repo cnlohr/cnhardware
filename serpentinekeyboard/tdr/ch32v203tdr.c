@@ -10,7 +10,7 @@ int main()
 {
 	RCC->APB1PCENR |= RCC_APB1Periph_PWR; // Enable LDO control
 
-	RCC->APB2PCENR |= RCC_APB2Periph_GPIOD | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOA | RCC_APB2Periph_TIM1 | RCC_APB2Periph_ADC1;
+	RCC->APB2PCENR |= RCC_APB2Periph_AFIO | RCC_APB2Periph_GPIOD | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOA | RCC_APB2Periph_TIM1 | RCC_APB2Periph_ADC1;
 
 	// LDO to performance mode.
 	EXTEN->EXTEN_CTR = 0xf50 | (1<<5);
@@ -75,14 +75,21 @@ int main()
 	RCC->CTLR &= ~3; // HSI Off
 
 	// Configure ADC first.
-	// Note to self: DO NOT USE BUFFER
+	// Note to self: DO NOT USE BUFFER, it slows things down.
 	ADC1->CTLR1 = ( 0 << 0);
-	ADC1->CTLR2 = ADC_EXTTRIG | ADC_ADON | ( 0 << 17 ); // EXTSEL = T1CC1
+	ADC1->CTLR2 = ADC_EXTTRIG | ADC_ADON | ( 0 << 17 ); // (EXTSEL = 0 = T1CC1)
+
+	//  I could not get EXTI11 source working.
+	// ADC1->CTLR2 |= (7<<17)
+	// Default remap is to use EXTI11
+	//AFIO->EXTICR[2] = 0<<12; // PA to EXTI11
+	//EXTI->RTENR = EXTI_RTENR_TR11;
+	//EXTI->EVENR = EXTI_EVENR_MR11;
+
 	ADC1->SAMPTR2 = 0; // 1.5 cycle SAMPTR = 0, 1 = 7.5 samples, does not change edge
 
-	// Prescaler (Actually run TIM1 @ 144MHz)
+	// Prescaler (Actually run TIM1 @ full speed)
 	TIM1->PSC = 0x0000;
-
 
 	// Actual time is this+1
 	// Must be divisible by ADC setup.
@@ -91,8 +98,12 @@ int main()
 	TIM1->SWEVGR |= TIM_UG;
 	
 	TIM1->CCER |= TIM_CC1E | TIM_CC1P;
+	TIM1->CCER |= TIM_CC2E | TIM_CC2P;
+	TIM1->CCER |= TIM_CC3E | TIM_CC3P;
 	TIM1->CCER |= TIM_CC4E | TIM_CC4P;
 	TIM1->CHCTLR1 |= TIM_OC1M_2 | TIM_OC1M_1;
+	TIM1->CHCTLR1 |= TIM_OC2M_2 | TIM_OC2M_1;
+	TIM1->CHCTLR2 |= TIM_OC3M_2 | TIM_OC3M_1;
 	TIM1->CHCTLR2 |= TIM_OC4M_2 | TIM_OC4M_1;
 
 	TIM1->CH1CVR = 68; // CH1 triggers ADC.  Be careful where this is set.
