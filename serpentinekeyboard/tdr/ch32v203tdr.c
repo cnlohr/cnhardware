@@ -133,18 +133,20 @@ int main()
 		int i;
 		(void)ADC1->RDATAR;
 		int j;
-		for( j = 0; j < 10 /* Oversample */; j++ )
+		for( j = 0; j < 100 /* Oversample */; j++ )
 		{
-			for( i = 25; i < 92; i++ )
+			for( i = 15; i < 92; i++ )
 			{
 				while(!(ADC1->STATR & ADC_EOC));
 				vals[i] += ADC1->RDATAR;
 				TIM1->CH4CVR = i;
 			}
 		}
-		for( i = 30; i < 92; i++ )
+		for( i = 25; i < 92; i++ )
 		{
-			printf( "%d ", (int)vals[i] );
+			char cts[16];
+			int n = sprintf( cts, "%d ", (int)vals[i] );
+			_write( 0, cts, n );
 		}
 		printf( "\n" );
 	}
