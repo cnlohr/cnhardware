@@ -1,0 +1,253 @@
+(footprint "SOT-23-easy-selfprint"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "SOT-23, Standard")
+	(tags "SOT-23")
+	(property "Reference" "Q1"
+		(at -1.1 2.8 270)
+		(layer "F.SilkS")
+		(uuid "4462c8a1-a9ce-456d-ac41-dfa3de742de6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Q_PMOS_GSD"
+		(at 0 2.5 0)
+		(layer "F.Fab")
+		(uuid "fdf9cec5-f902-4b62-9d7a-79b08153bc22")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4d5d617c-64e0-4083-a0dc-7b23236d4e30")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" "P-MOSFET transistor, gate/source/drain"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f5328d85-af67-4448-9229-951ffd2acbd3")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "LCSC" "C15127"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c948a758-4bea-4b52-9656-58cdb857f989")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "cost" ".10"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2b2bae62-08fe-4fbf-a891-982abccc0001")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(sheetname "/")
+	(sheetfile "totp.kicad_sch")
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.7 -1.75)
+		(end 1.7 -1.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "c5f9c769-c856-4ce2-b777-507eda3ebc5e")
+	)
+	(fp_line
+		(start -1.7 1.75)
+		(end -1.7 -1.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "f9ce53d0-c135-4e11-8aad-76f8a9470d2d")
+	)
+	(fp_line
+		(start 1.7 -1.75)
+		(end 1.7 1.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "6f81fd24-78b1-4234-93bd-9bd4f3b685fe")
+	)
+	(fp_line
+		(start 1.7 1.75)
+		(end -1.7 1.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "6a98ab41-b44a-4f9e-b4cb-53c020d11561")
+	)
+	(fp_line
+		(start -0.7 -0.95)
+		(end -0.7 1.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "9fc9eba5-d7e5-4c75-9560-044637d06bfe")
+	)
+	(fp_line
+		(start -0.7 -0.95)
+		(end -0.15 -1.52)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "b2f646b2-8837-4fbc-9686-821728fae886")
+	)
+	(fp_line
+		(start -0.7 1.52)
+		(end 0.7 1.52)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "a0439a5c-e986-44d7-b6b9-eca7e2f47545")
+	)
+	(fp_line
+		(start -0.15 -1.52)
+		(end 0.7 -1.52)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "5a227db8-333c-40ed-8ea8-899c0d25d988")
+	)
+	(fp_line
+		(start 0.7 -1.52)
+		(end 0.7 1.52)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "fd0b4deb-e834-46bc-922a-49c85cfef553")
+	)
+	(fp_line
+		(start 0.76 -1.58)
+		(end -1.4 -1.58)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "9a88ce95-260e-4eec-9156-01f479027635")
+	)
+	(fp_line
+		(start 0.76 -1.58)
+		(end 0.76 -0.650001)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "46258837-544e-4dcd-b048-23946583a453")
+	)
+	(fp_line
+		(start 0.76 1.58)
+		(end -0.7 1.58)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "9f69f59f-36a9-4e18-b1da-31cea85cd7da")
+	)
+	(fp_line
+		(start 0.76 1.58)
+		(end 0.759999 0.65)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "302a7b62-f69b-4c60-8aca-bf0b3f1ba491")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 90)
+		(layer "F.Fab")
+		(uuid "368a2171-b1c4-4d01-8b26-81e3e0e438d8")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -1.2 -0.95)
+		(size 1.2 0.75)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "69c7ea76-4dbe-4743-8115-8b52e18cf1e3")
+	)
+	(pad "2" smd rect
+		(at -1.2 0.95)
+		(size 1.2 0.75)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "7740a1e6-aa14-445a-a579-453b31d00d1e")
+	)
+	(pad "3" smd rect
+		(at 1.1 0)
+		(size 1.2 0.75)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "acd16240-5291-428a-b9fd-9d7d92b14b68")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/../Swadge-Parts/package3d/SOT-23.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
