@@ -25,6 +25,11 @@ void handle_debug_input( int numbytes, uint8_t * data )
 
 uint32_t timer_data[256];
 
+int audiosamphead;
+int audiosamptail;
+#define ASAMPS 256
+int16_t  audio_samples[ASAMPS];
+
 int main()
 {
 	SystemInit();
@@ -63,18 +68,18 @@ int main()
 
 	// Base is 952.4 @ 5-bit (31 period) = 60MHz base clock.
 	// Output at 1.9047619kHz with this setup.
-	uint32_t targetsampletime = 31496; // 
-	R16_PWM_CLOCK_DIV = 500;
+	R16_PWM_CLOCK_DIV = 300;
+	uint32_t targetsampletime = (63*R16_PWM_CLOCK_DIV); // in 1/60Mths of a second.
     R8_PWM_OUT_EN |= (1 << (0));
     R8_PWM_CONFIG &= ~(RB_PWM_CYC_MOD | RB_PWM_CYCLE_SEL);
-    R8_PWM_CONFIG |= 3 << 2; // 0 = 8-bit, 3 << 2 = 5-bit, 2 << 2 = 6-bit, 1 << 2 = 7-bit.
+    R8_PWM_CONFIG |= 3 << 2; // 0 = 8-bit, 3 << 2 = 5-bit (??? why not?), 2 << 2 = 6-bit, 1 << 2 = 7-bit.
     R8_PWM_CONFIG |= RB_PWM_CYCLE_SEL;
-	R8_PWM1_DATA = 31;
+	R8_PWM1_DATA = 37; // Adjust 0 offset.
 
 	uint32_t * rptr = timer_data;
 	uint32_t * end = &timer_data[sizeof(timer_data)/sizeof(timer_data[0])];
-	uint32_t pre = 0;
-	uint32_t last = 0;
+	uint32_t place = 0;
+	int32_t rvalue = 0;
 
 	while(1)
 	{
@@ -84,30 +89,76 @@ int main()
 		{
 			uint32_t v = *(rptr++);
 
+			// For each edge.
+			int negative = 0;
 			if( v & 0x02000000 )
 			{
 				v = v & 0x1ffffff;
-
-				uint32_t sampdt = (v + pre);
-				
-
-				last = v;
+				negative = 1;
 			}
-			else
+
+			int tprog = v;
+
+//			place += v;
+
+			do
 			{
-				uint32_t dt = v - last;
+				int leftover = place + tprog - targetsampletime;
 
-				if( dt < 
+				if( leftover > 0 )
+				{
+					// We bridge over.  Need to see how much data was left.
+					int fillcur = targetsampletime - place;
+					place += fillcur;
+					tprog -= fillcur;
+					if( negative )
+						rvalue -= fillcur;
+					else
+						rvalue += fillcur;					
+				}
+				else
+				{
+					// No leftover.  Add remaining part.
+					place += tprog;
+					if( negative )
+						rvalue -= tprog;
+					else
+						rvalue += tprog;
+					break;
+				}
 
-				last = v;
-			}
+
+				audio_samples[audiosamphead] = rvalue;
+				audiosamphead = (audiosamphead + 1) % ASAMPS;
+
+				rvalue = 0;
+
+				place -= targetsampletime;
+			} while(1);
+
+
 
 			if( rptr == end ) rptr = timer_data;
 		}
+
+
 		//printf( "%08x\n", R16_TMR_DMA_NOW );
 		// Should print 00001310 020000a0 00001310 020000a0
-		printf( "%08x %08x %08x %08x @ %08x\n", (int)timer_data[0], (int)timer_data[1], (int)timer_data[2], (int)timer_data[3], R16_TMR_DMA_NOW );
-		Delay_Ms(1);
+//		printf( "%08x %08x %08x %08x @ %08x\n", (int)timer_data[0], (int)timer_data[1], (int)timer_data[2], (int)timer_data[3], R16_TMR_DMA_NOW );
+		//printf( "%6d %5d %d\n", audio_samples[audiosamphead], place, audiosamphead );
+	//	printf( "%x\n",  audio_samples[(audiosamphead-1+ASAMPS)&(ASAMPS-1)]+32767 );
+		//printf( "." );
+	//	_write( 0, "12345", 5 );
+
+		while( audiosamptail != audiosamphead )
+		{
+			char v[10];
+			//int r = sprintf( v, "%x\n", audio_samples[(audiosamphead-1+ASAMPS)&(ASAMPS-1)]+32767 );
+			int r = sprintf( v, "%d\n", audio_samples[audiosamptail] );
+			_write( 0, v, r );
+			//Delay_Us(100);
+			audiosamptail = (audiosamptail+1)%ASAMPS;
+		}
 
 		
 
