@@ -1,5 +1,7 @@
 /* 
 	In progress.  Trying to jank an ADC out of a ch57x.
+
+	// Mic (with pull-up) on pa3
 */
 
 
@@ -40,15 +42,18 @@ int main()
 
 	funPinMode(PA7, GPIO_CFGLR_OUT_2Mhz_PP); //PWM1
 
-	R32_PA_PU |= 0b1000;
+	// Pull-up PA3
+	R32_PA_PU |= 0b1100; // Extra pull-up on mic - why?
 	R32_PA_PD_DRV |= 0b0100;
+	// doesn't do anything?
 
 	// Configure comparator to output to timer capture.
 	R32_CMP_CTRL = 
-		(1<<25) | // RB_APR_OUT_CMP = realtime output.
+		(0<<25) | // RB_APR_OUT_CMP = realtime output. -- what does this even do?
 		(0) |     // RB_CMP_SW = 0 = PA2/PA3.
 		(1<<1) |  // RB_CMP_CAP = 1: Input comes from the comparator;
 		(1<<0);   // RB_CMP_EN = 1.
+
 
 	// Setup 26-bit capture timer - default on PA7.
 	R8_TMR_CTRL_MOD = 
@@ -68,9 +73,10 @@ int main()
 
 	// Base is 952.4 @ 5-bit (31 period) = 60MHz base clock.
 	// Or 100MHz...
-	R16_PWM_CLOCK_DIV = 16;
+	R16_PWM_CLOCK_DIV = 8;
 	uint32_t targetsampletime = (255*R16_PWM_CLOCK_DIV); // in 1/60Mths of a second.
-    R8_PWM_OUT_EN |= (1 << (0));
+	// SPS = F_CPU/(R16_PWM_CLOCK_DIV*255)
+    R8_PWM_OUT_EN |= (1 << (0)); // Enable output 0.
     R8_PWM_CONFIG &= ~(RB_PWM_CYC_MOD | RB_PWM_CYCLE_SEL);
     R8_PWM_CONFIG |= 0 << 2; // 0 = 8-bit, 3 << 2 = 5-bit (??? why not?), 2 << 2 = 6-bit, 1 << 2 = 7-bit.
     R8_PWM_CONFIG |= RB_PWM_CYCLE_SEL;
@@ -163,7 +169,7 @@ int main()
 			int i;
 			for( i = 0; i < 7; i++ )
 			{
-				int samp = audio_samples[ (audiosamptail++) & (ASAMPS-1) ] >> 1;
+				int samp = audio_samples[ (audiosamptail++) & (ASAMPS-1) ] >> 2;
 				int err = samp - remote_estimate;
 				if( err > 127 ) err = 127;
 				if( err < -128 ) err = -128;
@@ -199,9 +205,9 @@ int main()
 		
 
 
-		//R8_PWM1_DATA = 128 - (accumulated_dc>>20); // Adjust 0 offset.
-		if( accumulated_dc > 1000000 ) { R8_PWM1_DATA--; accumulated_dc = 0; }
-		if( accumulated_dc <-1000000 ) { R8_PWM1_DATA++; accumulated_dc = 0; }
+		// Steps disrupt the sampling. Minimize how often we do it.
+		if( accumulated_dc > 1000000 && R8_PWM1_DATA > 0 ) { R8_PWM1_DATA--; accumulated_dc = 0; }
+		if( accumulated_dc <-1000000 && R8_PWM1_DATA < 254 ) { R8_PWM1_DATA++; accumulated_dc = 0; }
 		accumulated_dc = accumulated_dc - (accumulated_dc>>11);
 
 		//if( R8_PWM1_DATA++ > 28 ) R8_PWM1_DATA = 1;
