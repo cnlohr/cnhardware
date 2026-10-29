@@ -67,19 +67,23 @@ int main()
 
 
 	// Base is 952.4 @ 5-bit (31 period) = 60MHz base clock.
-	// Output at 1.9047619kHz with this setup.
-	R16_PWM_CLOCK_DIV = 300;
-	uint32_t targetsampletime = (63*R16_PWM_CLOCK_DIV); // in 1/60Mths of a second.
+	// Or 100MHz...
+	R16_PWM_CLOCK_DIV = 16;
+	uint32_t targetsampletime = (255*R16_PWM_CLOCK_DIV); // in 1/60Mths of a second.
     R8_PWM_OUT_EN |= (1 << (0));
     R8_PWM_CONFIG &= ~(RB_PWM_CYC_MOD | RB_PWM_CYCLE_SEL);
-    R8_PWM_CONFIG |= 3 << 2; // 0 = 8-bit, 3 << 2 = 5-bit (??? why not?), 2 << 2 = 6-bit, 1 << 2 = 7-bit.
+    R8_PWM_CONFIG |= 0 << 2; // 0 = 8-bit, 3 << 2 = 5-bit (??? why not?), 2 << 2 = 6-bit, 1 << 2 = 7-bit.
     R8_PWM_CONFIG |= RB_PWM_CYCLE_SEL;
-	R8_PWM1_DATA = 37; // Adjust 0 offset.
+	R8_PWM1_DATA = 160; // Adjust 0 offset.
 
 	uint32_t * rptr = timer_data;
 	uint32_t * end = &timer_data[sizeof(timer_data)/sizeof(timer_data[0])];
 	uint32_t place = 0;
 	int32_t rvalue = 0;
+
+	int remote_estimate = 0;
+
+	int accumulated_dc = 0;
 
 	while(1)
 	{
@@ -129,6 +133,7 @@ int main()
 
 
 				audio_samples[audiosamphead] = rvalue;
+				accumulated_dc += rvalue;
 				audiosamphead = (audiosamphead + 1) % ASAMPS;
 
 				rvalue = 0;
@@ -150,17 +155,54 @@ int main()
 		//printf( "." );
 	//	_write( 0, "12345", 5 );
 
-		while( audiosamptail != audiosamphead )
+		do
 		{
-			char v[10];
-			//int r = sprintf( v, "%x\n", audio_samples[(audiosamphead-1+ASAMPS)&(ASAMPS-1)]+32767 );
-			int r = sprintf( v, "%d\n", audio_samples[audiosamptail] );
-			_write( 0, v, r );
-			//Delay_Us(100);
-			audiosamptail = (audiosamptail+1)%ASAMPS;
-		}
+			uint32_t remain = ( audiosamphead - audiosamptail ) & ( ASAMPS - 1 );
+			if( remain < 8 ) break;
+			uint8_t senda[7];
+			int i;
+			for( i = 0; i < 7; i++ )
+			{
+				int samp = audio_samples[ (audiosamptail++) & (ASAMPS-1) ] >> 1;
+				int err = samp - remote_estimate;
+				if( err > 127 ) err = 127;
+				if( err < -128 ) err = -128;
+				remote_estimate += err;
+				senda[i] = err;
+			}
+			_write( 1, (void*)senda, 7 );
 
+/*			uint32_t remain = ( audiosamphead - audiosamptail ) & ( ASAMPS - 1 );
+			if( remain < 4 ) break;
+			uint16_t senda[3];
+			senda[0] = audio_samples[ (audiosamptail++) & (ASAMPS-1) ];
+			senda[1] = audio_samples[ (audiosamptail++) & (ASAMPS-1) ];
+			senda[2] = audio_samples[ (audiosamptail++) & (ASAMPS-1) ];
+
+
+			_write( 1, (void*)senda, 6 );*/
+
+
+/*
+			char da[7];
+			int n = sprintf( da, "%d\n", senda[0] );
+			_write(1,da,n);
+			n = sprintf( da, "%d\n", senda[1] );
+			_write(1,da,n);
+			n = sprintf( da, "%d\n", senda[2] );
+			_write(1,da,n);
+*/
+			//Delay_Us(10);
+			//printf( "." );
+//			_write(1, "1234567", 7 );
+		} while( 1 );
 		
+
+
+		//R8_PWM1_DATA = 128 - (accumulated_dc>>20); // Adjust 0 offset.
+		if( accumulated_dc > 1000000 ) { R8_PWM1_DATA--; accumulated_dc = 0; }
+		if( accumulated_dc <-1000000 ) { R8_PWM1_DATA++; accumulated_dc = 0; }
+		accumulated_dc = accumulated_dc - (accumulated_dc>>11);
 
 		//if( R8_PWM1_DATA++ > 28 ) R8_PWM1_DATA = 1;
 	}
