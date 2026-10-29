@@ -2,6 +2,7 @@
 	In progress.  Trying to jank an ADC out of a ch57x.
 
 	// Mic (with pull-up) on pa3
+	// RC on PC7->PC2
 */
 
 
