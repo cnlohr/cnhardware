@@ -2,8 +2,44 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-int main()
+int main( int argc, char ** argv )
 {
+	int mode = 0;
+
+	if( argc == 2 && argv[1][0] == 'B' ) mode = 1;
+	if( argc == 2 && argv[1][0] == 'F' )
+	{
+		FILE * f = fopen( "todump.txt", "rb" );
+		char * payload = malloc(1);
+		int payloadlen = 0;
+		while( !feof( f ) )
+		{
+			char l[1024];
+			char *lp = fgets(l, 1024, f);
+			int i;
+			for( i = 0; lp[i]; i++ )
+			{
+				if( lp[i] == ',' ) { lp = lp+i+3; break; }
+			}
+			if( !lp[i] ) { fprintf( stderr, "Malform\n" ); continue; }
+
+			int c = fgetc(f);
+			if( c == EOF )
+			{
+				payloadlen++;
+				payload = realloc( payload, payloadlen );
+				payload[payloadlen-1] = 0;
+				break;
+			}
+			payloadlen++;
+			payload = realloc( payload, payloadlen );
+			payload[payloadlen-1] = c;
+		} while( 1 );
+		fprintf( stderr, "Readok %d\n", payloadlen );
+		printf( payload );
+		return 0;
+	}
+
 #if 0
 {
 	int err = 0;
@@ -37,25 +73,37 @@ printf( "value: %d\n", value );
 //		uint16_t vu = getchar();
 //		vu |= getchar()<<8;
 //		int16_t vs = vu;
-#ifdef SAMP8COMP
-		int32_t gv = ((int8_t)getchar());
-#else
-		if( ( sample & 1 ) == 0 )
+
+		int32_t gv;
+		if( mode == 1 )
 		{
-			temp = ((uint8_t)getchar());
+			int gc = getchar();
+			if( gc == EOF ) break;
+			gv = ((int8_t)gc);
+			//fprintf( stderr, "%d\n", gv );
 		}
-		uint8_t code = (temp >> 4)&0xf;
-		temp <<= 4;
-		int32_t gv = 0;
-		if( code > 8 )
+		else
 		{
-			gv = 1<<(code - 9);
+			// Wacky 4-bit-per-sample compression
+			if( ( sample & 1 ) == 0 )
+			{
+				int gc = getchar();
+				if( gc == EOF ) break;
+
+				temp = ((uint8_t)gc);
+			}
+			uint8_t code = (temp >> 4)&0xf;
+			temp <<= 4;
+			gv = 0;
+			if( code > 8 )
+			{
+				gv = 1<<(code - 9);
+			}
+			else if( code < 8 )
+			{
+				gv = -1<<(7-code);
+			}
 		}
-		else if( code < 8 )
-		{
-			gv = -1<<(7-code);
-		}
-#endif
 
 		vs += gv;
 		float f = vs / 1024.0f;

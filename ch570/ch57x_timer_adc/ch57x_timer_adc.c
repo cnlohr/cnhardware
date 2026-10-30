@@ -17,6 +17,9 @@
 #define LED PA8
 #endif
 
+
+#define USE_UART_OUT
+
 uint32_t count;
 
 int last = 0;
@@ -28,22 +31,21 @@ void handle_debug_input( int numbytes, uint8_t * data )
 
 uint32_t timer_data[256];
 
-int audiosamphead;
-int audiosamptail;
-#define ASAMPS 256
-int16_t  audio_samples[ASAMPS];
 
 void RunFunction() __HIGH_CODE;
 
 #define PWMCLOCKDIV 4
-	// SPS = F_CPU/(PWMCLOCKDIV*255*oversample)
+// SPS = F_CPU/(PWMCLOCKDIV*255*oversample)
 
+// Highest quality combination so far - 100MHz / (1 oversample*5clockdiv*255) = 78.431kSPS
+// Good quality combination so far - 75MHz / (1 oversample*5clockdiv*255) = 78.824kSPS
+// Actually amazing: 100MHz / (1 oversample*4clockdiv*255) = 98.039kSPS
 
 void RunFunction()
 {
-	const uint32_t oversample = 2;
-	const uint32_t targetsampletime = oversample*(255*R16_PWM_CLOCK_DIV); // in 1/60Mths of a second.
 
+	const uint32_t oversample = 1;
+	const uint32_t targetsampletime = oversample*(255*R16_PWM_CLOCK_DIV); // in 1/60Mths of a second.
 
 	uint32_t * rptr = timer_data;
 	uint32_t * end = &timer_data[sizeof(timer_data)/sizeof(timer_data[0])];
@@ -100,10 +102,29 @@ void RunFunction()
 					break;
 				}
 
+				//audio_samples[audiosamphead] = rvalue;
+				//audiosamphead = (audiosamphead + 1) % ASAMPS;
 
-				audio_samples[audiosamphead] = rvalue;
+				int err = (rvalue>>2) - remote_estimate;
+				int value = 0;
+
+				if( err > 127 ) err = 127;
+				if( err < -127 ) err = -127;
+				value = err;
+
+				while(!(R8_UART1_LSR & RB_LSR_TX_ALL_EMP));
+#if 0
+	static int ak;
+				ak++;
+				value = ak;
+#endif
+				R8_UART1_THR = value;
+				//printf( "%d\n", value );
+				remote_estimate += err;
+
+
+
 				accumulated_dc += rvalue;
-				audiosamphead = (audiosamphead + 1) % ASAMPS;
 				rvalue = 0;
 
 				place -= targetsampletime;
@@ -123,80 +144,12 @@ void RunFunction()
 		//printf( "." );
 	//	_write( 0, "12345", 5 );
 
-		do
-		{
-			uint32_t remain = ( audiosamphead - audiosamptail ) & ( ASAMPS - 1 );
-			if( remain < 15 ) break;
-			uint32_t temp = 0;
-			uint8_t senda[7];
-//#define SAMP8COMP
-			int i;
-#ifdef SAMP8COMP
-			for( i = 0; i < 7; i++ )
-#else
-			for( i = 0; i < 14; i++ )
-#endif
-			{
-				int samp = audio_samples[ (audiosamptail++) & (ASAMPS-1) ] >> 2;
-				int err = samp - remote_estimate;
-				int value = 0;
-#ifdef SAMP8COMP
-				if( err > 127 ) err = 127;
-				if( err < -128 ) err = -128;
-				value = err;
-				senda[i] = value;
-#else
-				// logcomp
-				int sign = 0;
-				if( err < 0 ) { sign = 1; err = -err; }
-				if( err == 0 ) { err = 0; value = 8; }
-				else
-				{
-					err = (err + (err>>1));
-					int negclz = 32 - __builtin_clz(err);
-					if( negclz > 7 ) negclz = 7;
-					value = negclz;
-					err = 1<<(negclz-1);
-					if( sign ) { value = 8-negclz; err = -err; }
-					else { value = 8+negclz; }
-				}				
-				temp = (temp<<4) | value;
-				if( i&1 ) { senda[i/2] = temp; temp = 0; }
-#endif
-				remote_estimate += err;
-			}
-			_write( 1, (void*)senda, 7 );
 
-/*			uint32_t remain = ( audiosamphead - audiosamptail ) & ( ASAMPS - 1 );
-			if( remain < 4 ) break;
-			uint16_t senda[3];
-			senda[0] = audio_samples[ (audiosamptail++) & (ASAMPS-1) ];
-			senda[1] = audio_samples[ (audiosamptail++) & (ASAMPS-1) ];
-			senda[2] = audio_samples[ (audiosamptail++) & (ASAMPS-1) ];
-
-
-			_write( 1, (void*)senda, 6 );*/
-
-
-/*
-			char da[7];
-			int n = sprintf( da, "%d\n", senda[0] );
-			_write(1,da,n);
-			n = sprintf( da, "%d\n", senda[1] );
-			_write(1,da,n);
-			n = sprintf( da, "%d\n", senda[2] );
-			_write(1,da,n);
-*/
-			//Delay_Us(10);
-			//printf( "." );
-//			_write(1, "1234567", 7 );
-		} while( 1 );
-		
 
 
 		// Steps disrupt the sampling. Minimize how often we do it.
-		if( accumulated_dc > 15000000 && R8_PWM1_DATA > 0 ) { R8_PWM1_DATA--; accumulated_dc = 0; }
-		if( accumulated_dc <-15000000 && R8_PWM1_DATA < 254 ) { R8_PWM1_DATA++; accumulated_dc = 0; }
+		if( accumulated_dc > 10000000 && R8_PWM1_DATA > 0 ) { R8_PWM1_DATA--; accumulated_dc = 0; }
+		if( accumulated_dc <-10000000 && R8_PWM1_DATA < 254 ) { R8_PWM1_DATA++; accumulated_dc = 0; }
 		accumulated_dc = accumulated_dc - (accumulated_dc>>19);
 
 		//if( R8_PWM1_DATA++ > 28 ) R8_PWM1_DATA = 1;
@@ -217,6 +170,31 @@ int main()
 	R32_PA_PU |= 0b1100; // Extra pull-up on mic - why?
 	R32_PA_PD_DRV |= 0b0100;
 	// doesn't do anything?
+
+	// UART Config
+//	SetupUART(FUNCONF_UART_PRINTF_BAUD); // UART1 on rx,tx:PA8,PA9 at 115200 baud (PA2,PA3 on ch570/2)
+
+	//PA10 TXD_7: TXD pin mapping of UART.
+	funPinMode(PA10, GPIO_CFGLR_OUT_50Mhz_PP); //UART out.
+
+	const uint32_t rate = 2000000;//921600;
+	R16_UART1_DL = (const uint32_t)( ((10 * FUNCONF_SYSTEM_CORE_CLOCK / 8 / rate ) +5) /10 );
+	R8_UART1_FCR = (2 << 6) | RB_FCR_TX_FIFO_CLR | RB_FCR_RX_FIFO_CLR | RB_FCR_FIFO_EN;
+	R8_UART1_LCR = RB_LCR_WORD_SZ | RB_LCR_STOP_BIT /*Extra stop bit*/;
+	R8_UART1_IER = RB_IER_TXD_EN;
+	R8_UART1_DIV = 1;
+
+
+	R16_PIN_ALTERNATE_H = RB_UART_TXD;
+#if 0
+	while(1)
+	{
+		while(!(R8_UART1_LSR & RB_LSR_TX_ALL_EMP));
+		R8_UART1_THR = 'U';
+		while(!(R8_UART1_LSR & RB_LSR_TX_ALL_EMP));
+		R8_UART1_THR = '\n';
+	}
+#endif
 
 	// Configure comparator to output to timer capture.
 	R32_CMP_CTRL = 
