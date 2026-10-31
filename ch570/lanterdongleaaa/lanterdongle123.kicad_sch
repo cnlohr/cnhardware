@@ -3742,12 +3742,6 @@
 		(uuid "82a8be4a-cc80-4c40-917a-55a5b4106835")
 	)
 	(junction
-		(at 91.44 87.63)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "963b8e1c-7359-49e4-9af1-91ed13ede53c")
-	)
-	(junction
 		(at 40.64 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3758,6 +3752,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "af0086ea-2eb4-46eb-a997-c1185ec27c13")
+	)
+	(junction
+		(at 91.44 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b609ce27-2365-4c2e-a16c-c031e968e976")
 	)
 	(junction
 		(at 129.54 40.64)
@@ -4740,6 +4740,99 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 66.04 91.44 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "02112b98-761f-4141-87ff-900f3d8a3b75")
+		(property "Reference" "C5"
+			(at 69.85 90.1699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "33nF"
+			(at 69.85 92.7099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 67.0052 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 66.04 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C21117"
+			(at 66.04 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "057584d3-32dd-4922-b1f8-38e6b866ea3f")
+		)
+		(pin "2"
+			(uuid "2e5a9771-0ecf-4ef0-94d8-ee4230c829f2")
+		)
+		(instances
+			(project "lanterdongle123"
+				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
+					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_SPST")
 		(at 63.5 163.83 0)
 		(unit 1)
@@ -5138,99 +5231,6 @@
 			(project "lanterdongle123"
 				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
 					(reference "#PWR038")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 66.04 91.44 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "106638d2-e431-4b37-99be-75e9ad6b1442")
-		(property "Reference" "C7"
-			(at 69.85 90.1699 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1uF"
-			(at 69.85 92.7099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
-			(at 67.0052 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 66.04 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 66.04 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C1848"
-			(at 66.04 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "486a7ae9-b2f5-423f-9537-6fffe8105146")
-		)
-		(pin "2"
-			(uuid "65ff20f4-ee60-4737-acf7-c592bd59df8e")
-		)
-		(instances
-			(project "lanterdongle123"
-				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
-					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -5668,7 +5668,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3.3k"
+		(property "Value" "2.2k"
 			(at 184.15 54.6099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5679,7 +5679,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 179.832 53.34 90)
 			(hide yes)
 			(show_name no)
@@ -5712,7 +5712,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C26010"
+		(property "LCSC" "C4190"
 			(at 181.61 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -5917,7 +5917,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10nF"
+		(property "Value" "33nF"
 			(at 76.2 153.6699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5928,7 +5928,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 73.3552 156.21 0)
 			(hide yes)
 			(show_name no)
@@ -5961,7 +5961,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1710"
+		(property "LCSC" "C21117"
 			(at 72.39 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -6010,7 +6010,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3.3k"
+		(property "Value" "2.2k"
 			(at 184.15 31.7499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6021,7 +6021,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 179.832 30.48 90)
 			(hide yes)
 			(show_name no)
@@ -6054,7 +6054,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C26010"
+		(property "LCSC" "C4190"
 			(at 181.61 30.48 0)
 			(hide yes)
 			(show_name no)
@@ -6276,10 +6276,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "3e8095c2-0764-46cc-9d6c-ebc119131b91")
 		(property "Reference" "R5"
@@ -6302,7 +6302,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 152.4 42.418 90)
 			(hide yes)
 			(show_name no)
@@ -6356,192 +6356,6 @@
 			(project "lanterdongle123"
 				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
 					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 91.44 91.44 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "421e7ab0-3082-41e5-84f7-27960e5e2c7b")
-		(property "Reference" "C6"
-			(at 95.25 90.1699 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1uF"
-			(at 95.25 92.7099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
-			(at 92.4052 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 91.44 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 91.44 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C1848"
-			(at 91.44 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ce6a6e58-3929-4c28-86b4-b2feadfa1cd2")
-		)
-		(pin "2"
-			(uuid "5f0dc7dd-8fdf-4447-9af5-2dddd4b85b68")
-		)
-		(instances
-			(project "lanterdongle123"
-				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
-					(reference "C6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 53.34 91.44 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4344d076-f708-4d5b-8efc-1b84b212fb7e")
-		(property "Reference" "C5"
-			(at 57.15 90.1699 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1uF"
-			(at 57.15 92.7099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
-			(at 54.3052 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 53.34 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 53.34 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C1848"
-			(at 53.34 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "47dfdc29-8f77-44cb-a620-ec3ae5c20370")
-		)
-		(pin "2"
-			(uuid "b35385af-a40f-44e9-a076-10e2427ab9bb")
-		)
-		(instances
-			(project "lanterdongle123"
-				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
-					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -6754,7 +6568,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10nF"
+		(property "Value" "33nF"
 			(at 87.63 153.6699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6765,7 +6579,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 84.7852 156.21 0)
 			(hide yes)
 			(show_name no)
@@ -6798,7 +6612,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1710"
+		(property "LCSC" "C21117"
 			(at 83.82 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -7488,7 +7302,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10nF"
+		(property "Value" "33nF"
 			(at 76.2 168.9099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7499,7 +7313,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 73.3552 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -7532,7 +7346,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1710"
+		(property "LCSC" "C21117"
 			(at 72.39 167.64 0)
 			(hide yes)
 			(show_name no)
@@ -7937,7 +7751,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3.3k"
+		(property "Value" "2.2k"
 			(at 132.08 35.5599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7948,7 +7762,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 127.762 34.29 90)
 			(hide yes)
 			(show_name no)
@@ -7981,7 +7795,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C26010"
+		(property "LCSC" "C4190"
 			(at 129.54 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -8177,6 +7991,99 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 66.04 113.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "79ed03a7-8aed-4254-b0d1-3b877b162228")
+		(property "Reference" "C12"
+			(at 69.85 111.7599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "33nF"
+			(at 69.85 114.2999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 67.0052 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 66.04 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C21117"
+			(at 66.04 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2f279ebf-0b03-4d1f-8416-fb1803f95f14")
+		)
+		(pin "2"
+			(uuid "40bfa09d-d654-469f-bad1-4531d51b6747")
+		)
+		(instances
+			(project "lanterdongle123"
+				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
+					(reference "C12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 149.86 139.7 0)
 		(unit 1)
@@ -8249,6 +8156,84 @@
 			(project "lanterdongle123"
 				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
 					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VDDA")
+		(at 66.04 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7d5c67cd-5502-4a0e-a6ea-481f837dd320")
+		(property "Reference" "#PWR045"
+			(at 66.04 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VDDA"
+			(at 66.04 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.04 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VDDA\""
+			(at 66.04 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f50eb363-fe90-4521-82ec-121e767e8f63")
+		)
+		(instances
+			(project "lanterdongle123"
+				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -8433,7 +8418,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3.3k"
+		(property "Value" "2.2k"
 			(at 172.72 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8444,7 +8429,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 168.402 33.02 90)
 			(hide yes)
 			(show_name no)
@@ -8477,7 +8462,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C26010"
+		(property "LCSC" "C4190"
 			(at 170.18 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -8603,7 +8588,7 @@
 				)
 			)
 		)
-		(property "Value" "3.3k"
+		(property "Value" "2.2k"
 			(at 54.61 160.02 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8613,7 +8598,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 54.61 165.608 90)
 			(hide yes)
 			(show_name no)
@@ -8646,7 +8631,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C26010"
+		(property "LCSC" "C4190"
 			(at 54.61 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -9659,6 +9644,99 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 91.44 91.44 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "aabc2529-bdbe-4ae9-b0f4-f1840ef7c92b")
+		(property "Reference" "C6"
+			(at 95.25 90.1699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "33nF"
+			(at 95.25 92.7099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 92.4052 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 91.44 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C21117"
+			(at 91.44 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ecdcc075-34d1-4649-970c-cfd80abd3f5b")
+		)
+		(pin "2"
+			(uuid "be53d419-664c-42ed-af34-5d26da6a618e")
+		)
+		(instances
+			(project "lanterdongle123"
+				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
+					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 170.18 57.15 0)
 		(unit 1)
@@ -9984,97 +10062,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 139.7 40.64 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b6ef6c81-e685-4c6e-88c1-354495cb5107")
-		(property "Reference" "C10"
-			(at 139.7 33.02 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1uF"
-			(at 139.7 35.56 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
-			(at 143.51 39.6748 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 139.7 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 139.7 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C1848"
-			(at 139.7 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6c520e94-e5b5-43e4-8222-2c969ae4e5a3")
-		)
-		(pin "2"
-			(uuid "7f92508a-82ee-4202-8359-29bb19064e76")
-		)
-		(instances
-			(project "lanterdongle123"
-				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
-					(reference "C10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 29.21 91.44 0)
 		(unit 1)
@@ -10360,7 +10347,7 @@
 				)
 			)
 		)
-		(property "Value" "3.3k"
+		(property "Value" "2.2k"
 			(at 54.61 144.78 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10370,7 +10357,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 54.61 150.368 90)
 			(hide yes)
 			(show_name no)
@@ -10403,7 +10390,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C26010"
+		(property "LCSC" "C4190"
 			(at 54.61 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -11028,6 +11015,84 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 66.04 116.84 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dc933fb2-1a42-41f0-adcd-d987af97724b")
+		(property "Reference" "#PWR035"
+			(at 66.04 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 66.04 121.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.04 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 66.04 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3db2ec41-4c0e-4ada-bf37-cb95863d426d")
+		)
+		(instances
+			(project "lanterdongle123"
+				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
+					(reference "#PWR035")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 163.83 139.7 0)
 		(unit 1)
 		(body_style 1)
@@ -11340,6 +11405,190 @@
 	)
 	(symbol
 		(lib_id "Device:C")
+		(at 53.34 91.44 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ea1e10ed-7afb-4279-a28b-3001bd7eb073")
+		(property "Reference" "C7"
+			(at 57.15 90.1699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "33nF"
+			(at 57.15 92.7099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 54.3052 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 53.34 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C21117"
+			(at 53.34 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2689485c-0281-45b9-9cb3-4356a2c2a7f8")
+		)
+		(pin "2"
+			(uuid "6879f595-6be9-49f4-bed9-92c28152f2b1")
+		)
+		(instances
+			(project "lanterdongle123"
+				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
+					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 139.7 40.64 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ed279205-af24-48fd-b8d2-d850740eb390")
+		(property "Reference" "C10"
+			(at 139.7 33.02 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "33nF"
+			(at 139.7 35.56 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 143.51 39.6748 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 139.7 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C21117"
+			(at 139.7 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ce9ab994-a457-45b3-a2dc-e85a509505e3")
+		)
+		(pin "2"
+			(uuid "855bec38-278f-4c1d-88ff-6c16abc97e71")
+		)
+		(instances
+			(project "lanterdongle123"
+				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
+					(reference "C10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
 		(at 170.18 53.34 0)
 		(unit 1)
 		(body_style 1)
@@ -11361,7 +11610,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10nF"
+		(property "Value" "33nF"
 			(at 173.99 54.6099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11372,7 +11621,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 171.1452 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -11405,7 +11654,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1710"
+		(property "LCSC" "C21117"
 			(at 170.18 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -11454,7 +11703,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10nF"
+		(property "Value" "33nF"
 			(at 86.36 40.6399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11465,7 +11714,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 83.5152 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -11498,7 +11747,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1710"
+		(property "LCSC" "C21117"
 			(at 82.55 39.37 0)
 			(hide yes)
 			(show_name no)
