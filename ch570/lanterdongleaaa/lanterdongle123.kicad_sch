@@ -3634,6 +3634,18 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "TODO: Move slide switch down.\nTODO: Get double-thickness mask.\nALL R's: 3.3k"
+		(exclude_from_sim no)
+		(at 244.856 26.67 0)
+		(effects
+			(font
+				(size 3.81 3.81)
+				(thickness 0.762)
+				(bold yes)
+			)
+		)
+		(uuid "1c8c5643-8b66-4901-a301-cfc1cfab5455")
+	)
 	(text "LEDs: \nC55109522 / WS2812C-2020-V6 / $0.0689 / 5mA / DIDOF\nC3646929 / XL-0807RGBC-2812B / 15mA / $0.0669 /  DIDOF\n\nC56145017 / CT-2018UGRBC/HW-P8-M2 / 11.5mA / $0.021 / 0.45mA / DIDOF\n\nC52191312 / CT-1615UGRBC/H-P6-5 / $0.0361 / 5ma / DIDOF\nC42400839 / XL-3332RGBC-2812B / $0.0279 / 5ma << WILD AWESOME FOOTPRINT\nC48982517 / TCWIN T64 / $0.0305 / 5mA / DIDOF\nC48982516 / TCWIN T63 / $0.0322 / 12mA / DIDOF\nC49237873 / XL-3227RGBC-2812B / $0.0340 / 5mA / Lateral mirror footprint.\nC27637006 / TX1812PWCA5-F01 / $0.0374 / 5mA / Same lateral mirror.\nC5440835 / SK6805D-EC2018 / $0.0435 / 5mA / DIDOF\nC54796802 / YY-0807BRGK26-07-FI / $0.0431 / 5mA / DIDOF \n\nDIDOF = What I thought was flipped DI/DO, but it looks like my design is just wrong."
 		(exclude_from_sim no)
 		(at 190.246 138.684 0)
@@ -3647,7 +3659,7 @@
 	)
 	(text "Initial test at cabin:\n4.7k into 100nF (I think 100nF?)\n"
 		(exclude_from_sim no)
-		(at 221.234 64.008 0)
+		(at 114.046 21.844 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4727,7 +4739,7 @@
 	)
 	(global_label "SWD"
 		(shape input)
-		(at 215.9 38.1 180)
+		(at 248.92 90.17 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4737,7 +4749,7 @@
 		)
 		(uuid "f03e5b8e-f40b-4576-aa61-333289d3412a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 208.9839 38.1 0)
+			(at 242.0039 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5169,7 +5181,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 215.9 40.64 270)
+		(at 248.92 92.71 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5180,7 +5192,7 @@
 		(fields_autoplaced yes)
 		(uuid "0ee0e31a-ec1a-456f-a510-681aeab13435")
 		(property "Reference" "#PWR038"
-			(at 209.55 40.64 0)
+			(at 242.57 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5191,7 +5203,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 212.09 40.6399 90)
+			(at 245.11 92.7099 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5202,7 +5214,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 215.9 40.64 0)
+			(at 248.92 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5213,7 +5225,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 215.9 40.64 0)
+			(at 248.92 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5224,7 +5236,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 215.9 40.64 0)
+			(at 248.92 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7581,7 +7593,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 215.9 43.18 90)
+		(at 248.92 95.25 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7592,7 +7604,7 @@
 		(fields_autoplaced yes)
 		(uuid "6d621490-6a65-46e2-9b55-8bd120eee091")
 		(property "Reference" "#PWR039"
-			(at 219.71 43.18 0)
+			(at 252.73 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7603,7 +7615,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 212.09 43.1799 90)
+			(at 245.11 95.2499 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7614,7 +7626,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 215.9 43.18 0)
+			(at 248.92 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7625,7 +7637,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 215.9 43.18 0)
+			(at 248.92 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7636,7 +7648,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 215.9 43.18 0)
+			(at 248.92 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8748,7 +8760,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
-		(at 220.98 40.64 0)
+		(at 254 92.71 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8759,7 +8771,7 @@
 		(fields_autoplaced yes)
 		(uuid "8aaa6bcf-9dca-4bba-a4e8-d6ccf85ce3e5")
 		(property "Reference" "J1"
-			(at 223.52 39.3699 0)
+			(at 256.54 91.4399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8770,7 +8782,7 @@
 			)
 		)
 		(property "Value" "PGM"
-			(at 223.52 41.9099 0)
+			(at 256.54 93.9799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8781,7 +8793,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
-			(at 220.98 40.64 0)
+			(at 254 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8792,7 +8804,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 220.98 40.64 0)
+			(at 254 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8803,7 +8815,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 220.98 40.64 0)
+			(at 254 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
