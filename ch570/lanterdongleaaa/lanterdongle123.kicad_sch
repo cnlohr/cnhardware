@@ -3770,12 +3770,6 @@
 		(uuid "ac28120c-f478-4a65-b253-57048781a5b9")
 	)
 	(junction
-		(at 82.55 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "af0086ea-2eb4-46eb-a997-c1185ec27c13")
-	)
-	(junction
 		(at 91.44 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3811,13 +3805,13 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 35.56) (xy 46.99 35.56)
+			(xy 43.18 35.56) (xy 38.1 35.56)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "08819911-ef50-4123-8759-180eb0aa2388")
+		(uuid "062838ad-14a6-4aad-9b00-5506210fc74b")
 	)
 	(wire
 		(pts
@@ -3951,7 +3945,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 38.1) (xy 43.18 53.34)
+			(xy 43.18 35.56) (xy 43.18 53.34)
 		)
 		(stroke
 			(width 0)
@@ -4041,7 +4035,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 35.56) (xy 78.74 35.56)
+			(xy 78.74 35.56) (xy 87.63 35.56)
 		)
 		(stroke
 			(width 0)
@@ -4078,6 +4072,16 @@
 			(type default)
 		)
 		(uuid "777955c8-25e0-4452-9850-0f7348041f97")
+	)
+	(wire
+		(pts
+			(xy 38.1 38.1) (xy 46.99 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ea95eb5-25b2-4427-af11-16777f8cfc71")
 	)
 	(wire
 		(pts
@@ -4158,6 +4162,16 @@
 			(type default)
 		)
 		(uuid "963ece12-ecb9-4f07-8692-c82d44b93f83")
+	)
+	(wire
+		(pts
+			(xy 46.99 35.56) (xy 46.99 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "974b6680-b6b9-4255-97bd-dae866738700")
 	)
 	(wire
 		(pts
@@ -4258,16 +4272,6 @@
 			(type default)
 		)
 		(uuid "b57941e4-1669-4e4f-9d3d-d8e25859d2a4")
-	)
-	(wire
-		(pts
-			(xy 38.1 38.1) (xy 43.18 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b5c0b18f-97cc-4944-98c9-bf5b0487191c")
 	)
 	(wire
 		(pts
@@ -4378,16 +4382,6 @@
 			(type default)
 		)
 		(uuid "e73c8104-5810-4587-9a66-462012b9eff7")
-	)
-	(wire
-		(pts
-			(xy 87.63 35.56) (xy 82.55 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e78dbad2-cce9-45f1-a4e1-e250d1b5840f")
 	)
 	(wire
 		(pts
@@ -7929,84 +7923,6 @@
 			(project "lanterdongle123"
 				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
 					(reference "L2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 82.55 43.18 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "74597e4a-b5bd-4b54-b0a3-26e0469f4c95")
-		(property "Reference" "#PWR019"
-			(at 82.55 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 82.55 48.26 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 82.55 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 82.55 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 82.55 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6f05ac20-ed6b-4aed-98dc-7eb494c87bd2")
-		)
-		(instances
-			(project "lanterdongle123"
-				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
-					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -11697,99 +11613,6 @@
 			(project "lanterdongle123"
 				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
 					(reference "C3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 82.55 39.37 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ee96db33-6e14-4bcd-9724-1c3662e05884")
-		(property "Reference" "C11"
-			(at 86.36 38.0999 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "33nF"
-			(at 86.36 40.6399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 83.5152 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 82.55 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 82.55 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C21117"
-			(at 82.55 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "afeb0db0-bdb8-4f0a-ac6a-e2bba0dc0d51")
-		)
-		(pin "2"
-			(uuid "8a051f4e-5a56-483b-966a-ec6a62d0a196")
-		)
-		(instances
-			(project "lanterdongle123"
-				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
-					(reference "C11")
 					(unit 1)
 				)
 			)
