@@ -2411,321 +2411,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Transistor_FET:2N7002"
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "Q"
-				(at 5.08 1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "2N7002"
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-				(at 5.08 -1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(justify left)
-				)
-			)
-			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF"
-				(at 5.08 -3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "N-Channel Switching MOSFET"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "SOT?23*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "2N7002_0_1"
-				(polyline
-					(pts
-						(xy 0.254 1.905) (xy 0.254 -1.905)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 0) (xy -2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 2.286) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0.508) (xy 0.762 -0.508)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.27) (xy 0.762 -2.286)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 1.651 0)
-					(radius 2.794)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 2.54 -1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.921 0.381) (xy 3.683 0.381)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "2N7002_1_1"
-				(pin input line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "G"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "cnhardware:ARTWORK"
 			(exclude_from_sim yes)
 			(in_bom no)
@@ -3636,7 +3321,7 @@
 	)
 	(text "TODO: Move slide switch down.\nTODO: Get double-thickness mask.\nALL R's: 3.3k"
 		(exclude_from_sim no)
-		(at 244.856 26.67 0)
+		(at 240.284 23.368 0)
 		(effects
 			(font
 				(size 3.81 3.81)
@@ -3678,16 +3363,6 @@
 		)
 		(uuid "ca1f7b1b-7102-4ee9-939a-3bc04d1d9fe0")
 	)
-	(text "Need 1.4 or 1.6mm high inductor"
-		(exclude_from_sim no)
-		(at 106.68 70.104 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "ca4558ae-1c1f-464a-a6fb-abec543f0c4b")
-	)
 	(text "Methodology:\nLED Output with UART\nOn break-end time rising, using internal pull-up.\n\nWith both buttons down: 1.8ms\nWith only 10nF button down: 0.6ms\n\nWhat if we use 1nF?\n\nCan C3 be 1nF?"
 		(exclude_from_sim no)
 		(at 96.774 170.18 0)
@@ -3728,12 +3403,6 @@
 		(uuid "1233db08-05e3-43c9-a4b3-dab9b633db9a")
 	)
 	(junction
-		(at 158.75 41.91)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "45f316e1-15b6-43d1-b788-e293aebac9af")
-	)
-	(junction
 		(at 105.41 34.29)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3756,12 +3425,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7d7f4f0f-06f5-4cdb-9325-b02130f0eacf")
-	)
-	(junction
-		(at 170.18 41.91)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "82a8be4a-cc80-4c40-917a-55a5b4106835")
 	)
 	(junction
 		(at 40.64 45.72)
@@ -3832,16 +3495,6 @@
 			(type default)
 		)
 		(uuid "0dca0373-173d-4285-8229-5c68c6293d36")
-	)
-	(wire
-		(pts
-			(xy 158.75 41.91) (xy 158.75 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0ff1cd4f-bda1-4a4e-95fb-ce40299d73a2")
 	)
 	(wire
 		(pts
@@ -4015,16 +3668,6 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 39.37) (xy 170.18 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "64e2cef0-3dfe-4a39-acba-ef68abbd19aa")
-	)
-	(wire
-		(pts
 			(xy 181.61 39.37) (xy 170.18 39.37)
 		)
 		(stroke
@@ -4062,6 +3705,16 @@
 			(type default)
 		)
 		(uuid "6e01997b-6c3c-410d-8603-bab379f90b13")
+	)
+	(wire
+		(pts
+			(xy 168.91 40.64) (xy 156.21 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "712c0aad-9691-4f58-9d2e-d95f405668fd")
 	)
 	(wire
 		(pts
@@ -4175,6 +3828,16 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 39.37) (xy 168.91 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97a74151-fa9b-47a7-b1f4-66fd870938d2")
+	)
+	(wire
+		(pts
 			(xy 135.89 40.64) (xy 129.54 40.64)
 		)
 		(stroke
@@ -4192,16 +3855,6 @@
 			(type default)
 		)
 		(uuid "9e068f91-4812-418c-b338-d26c4a96c2c2")
-	)
-	(wire
-		(pts
-			(xy 170.18 46.99) (xy 170.18 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9e88632f-fc25-46b6-8954-0f1b76f8bd61")
 	)
 	(wire
 		(pts
@@ -4245,7 +3898,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 40.64) (xy 156.21 40.64)
+			(xy 168.91 39.37) (xy 170.18 39.37)
 		)
 		(stroke
 			(width 0)
@@ -4275,17 +3928,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 41.91) (xy 158.75 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b7046f07-8a46-4a16-90f3-97307af8dd09")
-	)
-	(wire
-		(pts
-			(xy 170.18 41.91) (xy 170.18 46.99)
+			(xy 170.18 39.37) (xy 170.18 49.53)
 		)
 		(stroke
 			(width 0)
@@ -4352,16 +3995,6 @@
 			(type default)
 		)
 		(uuid "dc0da79a-d28b-4c9d-ab6b-025c72599a07")
-	)
-	(wire
-		(pts
-			(xy 158.75 41.91) (xy 170.18 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e4327038-c5ac-4d60-8368-5bd7ea06d00c")
 	)
 	(wire
 		(pts
@@ -4528,30 +4161,6 @@
 		(uuid "66c9e2b9-2a27-43ce-b51c-b2a4679c7ca7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 44.3677 148.59 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "PWM"
-		(shape input)
-		(at 151.13 52.07 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "66cc7bb8-059e-4a9a-8519-e8fe75f473c5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 143.972 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4880,7 +4489,7 @@
 				)
 			)
 		)
-		(property "Footprint" "cnhardware:TS-1187A-B-A-B-TACTILE"
+		(property "Footprint" "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
 			(at 63.5 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -4913,7 +4522,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C318884"
+		(property "LCSC" "C720477"
 			(at 63.5 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -5247,84 +4856,6 @@
 			(project "lanterdongle123"
 				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
 					(reference "#PWR038")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 158.75 57.15 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "11467103-7f77-48cd-a9e7-fead50e079bf")
-		(property "Reference" "#PWR018"
-			(at 158.75 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 158.75 62.23 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 158.75 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 158.75 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 158.75 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "80be41d7-7da0-412a-8ae3-381929cf0a58")
-		)
-		(instances
-			(project "lanterdongle123"
-				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
-					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -5684,7 +5215,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2k"
+		(property "Value" "3.3k"
 			(at 184.15 54.6099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5728,7 +5259,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C4190"
+		(property "LCSC" "C22978"
 			(at 181.61 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -6026,7 +5557,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2k"
+		(property "Value" "3.3k"
 			(at 184.15 31.7499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6070,7 +5601,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C4190"
+		(property "LCSC" "C22978"
 			(at 181.61 30.48 0)
 			(hide yes)
 			(show_name no)
@@ -6409,7 +5940,7 @@
 				)
 			)
 		)
-		(property "Footprint" "cnhardware:TS-1187A-B-A-B-TACTILE"
+		(property "Footprint" "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
 			(at 63.5 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -6442,7 +5973,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C318884"
+		(property "LCSC" "C720477"
 			(at 63.5 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -7130,94 +6661,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_FET:2N7002")
-		(at 156.21 52.07 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "5f189ab0-d6cf-4232-bbde-187d349a08e0")
-		(property "Reference" "Q1"
-			(at 162.56 50.7999 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2N7002"
-			(at 162.56 53.3399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 161.29 53.975 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF"
-			(at 161.29 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
-			(at 156.21 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "e661d9f5-cdea-4ea6-94be-aec42973343f")
-		)
-		(pin "1"
-			(uuid "73b757ca-92c5-4419-bfe1-b561ea3052e9")
-		)
-		(pin "2"
-			(uuid "1219b205-519c-4ccb-9ac1-e17e88fb949f")
-		)
-		(instances
-			(project "lanterdongle123"
-				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
-					(reference "Q1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3.3V")
 		(at 162.56 137.16 0)
 		(unit 1)
@@ -7767,7 +7210,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2k"
+		(property "Value" "3.3k"
 			(at 132.08 35.5599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7811,7 +7254,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C4190"
+		(property "LCSC" "C22978"
 			(at 129.54 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -8356,7 +7799,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2k"
+		(property "Value" "3.3k"
 			(at 172.72 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8400,7 +7843,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C4190"
+		(property "LCSC" "C22978"
 			(at 170.18 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -8526,7 +7969,7 @@
 				)
 			)
 		)
-		(property "Value" "2.2k"
+		(property "Value" "3.3k"
 			(at 54.61 160.02 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8569,7 +8012,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C4190"
+		(property "LCSC" "C22978"
 			(at 54.61 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -10285,7 +9728,7 @@
 				)
 			)
 		)
-		(property "Value" "2.2k"
+		(property "Value" "3.3k"
 			(at 54.61 144.78 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10328,7 +9771,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C4190"
+		(property "LCSC" "C22978"
 			(at 54.61 148.59 0)
 			(hide yes)
 			(show_name no)
