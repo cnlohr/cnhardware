@@ -70,7 +70,7 @@ void OutputLEDs( uint32_t * ledcolors )
 	}
 }
 
-#define PWMCLOCKDIV 4
+#define PWMCLOCKDIV 12
 // SPS = F_CPU/(PWMCLOCKDIV*255*oversample)
 
 // Highest quality combination so far - 100MHz / (1 oversample*5clockdiv*255) = 78.431kSPS
@@ -92,11 +92,11 @@ void RunFunction()
 
 	int accumulated_dc = 0;
 
-	DCDCEnable(); // Enable the internal DCDC
 	LSIEnable(); // Disable LSE, enable LSI
 	RTC_init();
 
 	// LED Test
+#if 0
 	while(1)
 	{
 		#define NR_LEDS 6
@@ -114,7 +114,7 @@ void RunFunction()
 		funDigitalWrite( PA1, 0 );
 		funPinMode(PA1, GPIO_CFGLR_IN_PUPD );
 		Delay_Ms(3);
-		funPinMode(PA1, GPIO_CFGLR_OUT_50Mhz_PP); //LED Out
+		funPinMode(PA1, GPIO_CFGLR_OUT_50Mhz_PP); //LED Out / Buttons in
 		Delay_Us(50);
 
 		int frameno;
@@ -152,6 +152,7 @@ void RunFunction()
 		}
 		frameno++;
 	}
+#endif
 
 	while(1)
 	{
@@ -199,9 +200,29 @@ void RunFunction()
 					break;
 				}
 
+//rvalue is always divisible by 2.
+rvalue>>=1;
+
+static int ifp, rvmin, rvmax;
+ifp++;
+
+if( ifp == 1000 )
+{
+	//printf( "%d %d %d\n", rvalue, R8_PWM1_DATA, rvmax-rvmin );
+	printf( "." );
+	rvmin = 100000;
+	rvmax = -100000;
+	ifp = 0;
+}
+else
+{
+	if( rvalue < rvmin ) rvmin = rvalue;
+	if( rvalue > rvmax ) rvmax = rvalue;
+}
+
 				//audio_samples[audiosamphead] = rvalue;
 				//audiosamphead = (audiosamphead + 1) % ASAMPS;
-
+#if 0
 				int err = (rvalue>>2) - remote_estimate;
 				int value = 0;
 
@@ -214,9 +235,10 @@ void RunFunction()
 				ak++;
 				value = ak;
 #endif
-				//printf( "%d\n", value );
+				printf( "%d\n", value );
 				remote_estimate += err;
 
+#endif
 
 
 				accumulated_dc += rvalue;
@@ -243,9 +265,9 @@ void RunFunction()
 
 
 		// Steps disrupt the sampling. Minimize how often we do it.
-		if( accumulated_dc > 10000000 && R8_PWM1_DATA > 0 ) { R8_PWM1_DATA--; accumulated_dc = 0; }
-		if( accumulated_dc <-10000000 && R8_PWM1_DATA < 254 ) { R8_PWM1_DATA++; accumulated_dc = 0; }
-		accumulated_dc = accumulated_dc - (accumulated_dc>>19);
+		if( accumulated_dc > 10000000 && R8_PWM1_DATA > 0 ) { R8_PWM1_DATA++; accumulated_dc = 0; }
+		if( accumulated_dc <-10000000 && R8_PWM1_DATA < 254 ) { R8_PWM1_DATA--; accumulated_dc = 0; }
+		accumulated_dc = accumulated_dc - (accumulated_dc>>23);
 
 		//if( R8_PWM1_DATA++ > 28 ) R8_PWM1_DATA = 1;
 	}
@@ -257,11 +279,6 @@ int main()
 
 	funGpioInitAll(); // no-op on ch5xx
 
-
-	funPinMode(PA7, GPIO_CFGLR_OUT_2Mhz_PP); //PWM1
-	// PA2 is Microphone
-	// PA3 is Sawtooth in.
-
 	// Pull-up PA3
 //	R32_PA_PU |= 0b1100; // Extra pull-up on mic - why?
 //	R32_PA_PD_DRV |= 0b0100;
@@ -270,38 +287,39 @@ int main()
 	// UART Config
 //	SetupUART(FUNCONF_UART_PRINTF_BAUD); // UART1 on rx,tx:PA8,PA9 at 115200 baud (PA2,PA3 on ch570/2)
 
-	//PA10 TXD_7: TXD pin mapping of UART.
+	//Not using UART: TXD_7: TXD pin mapping of UART.
 	funPinMode(PA1, GPIO_CFGLR_OUT_50Mhz_PP); //LED Out
 
-	// TODO: save power on other pins.
+	funPinMode(PA7, GPIO_CFGLR_OUT_2Mhz_PP); //PWM1
 
-	funPinMode(PA0, GPIO_CFGLR_IN_PUPD );
+	// Comparator mapping default.
+	funPinMode(PA2, GPIO_CFGLR_IN_FLOAT); // PA2 is Microphone
+	funPinMode(PA3, GPIO_CFGLR_IN_FLOAT); // PA3 is Sawtooth in.
+
+	// Slight pull SWIO high.
+	funDigitalWrite(PA0, 1); 
+	funPinMode(PA0, GPIO_CFGLR_IN_PUPD ); 
+
+	// TODO: Explore this. TODO Explore.
+	SYS_SAFE_ACCESS(
+		R16_AUX_POWER_ADJ = 1;
+		R16_POWER_PLAN = RB_PWR_PLAN_EN | RB_PWR_SYS_EN | RB_PWR_RAM2K | RB_PWR_CORE;
+	);
+
+	SYS_SAFE_ACCESS(
+		R16_POWER_PLAN |= RB_PWR_DCDC_EN; // Enable core DC DC
+	);
 
 	Delay_Ms(100);
-	R16_PIN_ALTERNATE = 0; //RB_PIN_DEBUG_EN;
+
+	SYS_SAFE_ACCESS( 
+		R16_PIN_ALTERNATE = 
+			RB_PIN_DEBUG_EN | // Disable to disable debug.
+			0b111101111100; // Low power unused pins.
+		R16_PIN_ALTERNATE_H = 0; // All default mapping.
+	);
 
 	initialSWD = funDigitalRead( PA0 );
-#if 0
-	R16_UART1_DL = 1; //(const uint32_t)( ((10 * FUNCONF_SYSTEM_CORE_CLOCK / 8 / rate ) +5) /10 );
-	R8_UART1_FCR = (2 << 6) | RB_FCR_TX_FIFO_CLR | RB_FCR_RX_FIFO_CLR | RB_FCR_FIFO_EN;
-	R8_UART1_LCR = (0b11<<0) /*8-bits*/ | RB_LCR_STOP_BIT /*Extra stop bit*/;
-	R8_UART1_IER = RB_IER_TXD_EN;
-	R8_UART1_DIV = 1;
-
-	// RB_TMR_PIN:   00: Timer Default mapping (PWM0/PA7, CAP_IN1/PA7, CAP_IN2/PA2);
-	// RB_UART_TXD: 010: Remapping (TXD/PA1)
-	R16_PIN_ALTERNATE_H = (0b010 << 3) | ( 0b00<<6 );
-#endif
-
-#if 0
-	while(1)
-	{
-		while(!(R8_UART1_LSR & RB_LSR_TX_ALL_EMP));
-		R8_UART1_THR = 'U';
-		while(!(R8_UART1_LSR & RB_LSR_TX_ALL_EMP));
-		R8_UART1_THR = '\n';
-	}
-#endif
 
 	// Configure comparator to output to timer capture.
 	R32_CMP_CTRL = 
@@ -309,7 +327,6 @@ int main()
 		(0) |     // RB_CMP_SW = 0 = PA2/PA3.
 		(1<<1) |  // RB_CMP_CAP = 1: Input comes from the comparator;
 		(1<<0);   // RB_CMP_EN = 1.
-
 
 	// Setup 26-bit capture timer - default on PA7.
 	R8_TMR_CTRL_MOD = 
@@ -334,7 +351,7 @@ int main()
     R8_PWM_CONFIG &= ~(RB_PWM_CYC_MOD | RB_PWM_CYCLE_SEL);
     R8_PWM_CONFIG |= 0 << 2; // 0 = 8-bit, 3 << 2 = 5-bit (??? why not?), 2 << 2 = 6-bit, 1 << 2 = 7-bit.
     R8_PWM_CONFIG |= RB_PWM_CYCLE_SEL;
-	R8_PWM1_DATA = 160; // Adjust 0 offset.
+	R8_PWM1_DATA = 200; // Adjust 0 offset.
 
 
 	RunFunction();
