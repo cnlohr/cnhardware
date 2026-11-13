@@ -6,7 +6,7 @@
 
 #include "iSLER.h"
 
-#define CHANNEL 38
+#define CHANNEL 18
 void RunFunction() __HIGH_CODE;
 
 void RunFunction()
@@ -48,7 +48,7 @@ void RunFunction()
 					0x66, 0x55, 0x44, 0x33, 0x22, 0x11, // MAC (reversed)
 					0x06, 0x09, 'R', 'X', ':', '?', '?'}; // 0x09: "Complete Local Name"
 
-			iSLERTX(ACCESS_ADDRESS, txbuf, sizeof(txbuf), 37, PHY_MODE);
+			iSLERTX(ACCESS_ADDRESS, txbuf, sizeof(txbuf), CHANNEL, PHY_MODE);
 			iSLERRX(ACCESS_ADDRESS, CHANNEL, PHY_MODE);
 		}
 	}
