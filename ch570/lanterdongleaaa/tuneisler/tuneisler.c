@@ -6,7 +6,7 @@
 
 #include "iSLER.h"
 
-#define CHANNEL 37
+#define CHANNEL 38
 void RunFunction() __HIGH_CODE;
 
 void RunFunction()
