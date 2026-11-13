@@ -6,23 +6,31 @@
 
 #include "iSLER.h"
 
-//void RunFunction() __HIGH_CODE;
+#define CHANNEL 18
+void RunFunction() __HIGH_CODE;
 
 void RunFunction()
 {
 	uint32_t nextSend = funSysTick32();
 
+	iSLERRX(ACCESS_ADDRESS, CHANNEL, PHY_MODE);
+
 	while(1)
 	{
-		iSLERRX(ACCESS_ADDRESS, 37, PHY_MODE);
 		if( rx_ready )
 		{
 			uint8_t *frame = (uint8_t*)LLE_BUF;
 			int rssi = iSLERRSSI();
 
-			if( !iSLERCRCOK() ) { printf( "X\n" ); return; }
-
-			printf( "%d\n", rssi );
+			if( iSLERCRCOK() )
+			{
+				printf( "%d\n", rssi );
+				iSLERRX(ACCESS_ADDRESS, CHANNEL, PHY_MODE);
+			}
+			else
+			{
+				printf( "x" );
+			}
 		}
 
 		if( TimeElapsed32( funSysTick32(), nextSend ) > 0 )
@@ -31,12 +39,13 @@ void RunFunction()
 			nextSend += DELAY_MS_TIME * 10;
 
 
-			const uint8_t txbuf[] = {
+			static uint8_t txbuf[] = {
 					0x02, 0x0d, // header for LL: PDU + frame length
 					0x66, 0x55, 0x44, 0x33, 0x22, 0x11, // MAC (reversed)
 					0x06, 0x09, 'R', 'X', ':', '?', '?'}; // 0x09: "Complete Local Name"
 
 			iSLERTX(ACCESS_ADDRESS, txbuf, sizeof(txbuf), 37, PHY_MODE);
+			iSLERRX(ACCESS_ADDRESS, CHANNEL, PHY_MODE);
 		}
 	}
 }
