@@ -23,6 +23,7 @@
 
 uint32_t count;
 int initialSWD;
+int frameno = 18;
 
 int last = 0;
 void handle_debug_input( int numbytes, uint8_t * data )
@@ -70,7 +71,8 @@ void OutputLEDs( uint32_t * ledcolors )
 	}
 }
 
-#define PWMCLOCKDIV 12
+#define PWMCLOCKDIV 16
+#define INITIAL_ZERO 128
 // SPS = F_CPU/(PWMCLOCKDIV*255*oversample)
 
 // Highest quality combination so far - 100MHz / (1 oversample*5clockdiv*255) = 78.431kSPS
@@ -97,7 +99,11 @@ void RunFunction()
 
 	// LED Test
 #if 0
-	while(1)
+	R16_PIN_ALTERNATE &= ~RB_PIN_DEBUG_EN;
+
+	//while(1)
+	int i;
+	for( i = 0; i < 10; i++ )
 	{
 		#define NR_LEDS 6
 		static uint32_t ledcolors[NR_LEDS] = { 0x00ff00, 0x0000ff, 0x00ff00, 0x00ff00, 0xff00ff, 0x00ffff };
@@ -117,7 +123,6 @@ void RunFunction()
 		funPinMode(PA1, GPIO_CFGLR_OUT_50Mhz_PP); //LED Out / Buttons in
 		Delay_Us(50);
 
-		int frameno;
 		volatile int tween = -NR_LEDS;
 
 		int ledno;
@@ -147,11 +152,13 @@ void RunFunction()
 
 			if( initialSWD != funDigitalRead( PA0 ) )
 			{
-				R16_PIN_ALTERNATE = RB_PIN_DEBUG_EN;
+				R16_PIN_ALTERNATE |= RB_PIN_DEBUG_EN;
 			}
 		}
 		frameno++;
 	}
+	R16_PIN_ALTERNATE |= RB_PIN_DEBUG_EN;
+
 #endif
 
 	while(1)
@@ -208,8 +215,8 @@ ifp++;
 
 if( ifp == 1000 )
 {
-	//printf( "%d %d %d\n", rvalue, R8_PWM1_DATA, rvmax-rvmin );
-	printf( "." );
+	printf( "%d %d %d\n", rvalue, R8_PWM1_DATA, rvmax-rvmin );
+	//printf( "." );
 	rvmin = 100000;
 	rvmax = -100000;
 	ifp = 0;
@@ -351,7 +358,7 @@ int main()
     R8_PWM_CONFIG &= ~(RB_PWM_CYC_MOD | RB_PWM_CYCLE_SEL);
     R8_PWM_CONFIG |= 0 << 2; // 0 = 8-bit, 3 << 2 = 5-bit (??? why not?), 2 << 2 = 6-bit, 1 << 2 = 7-bit.
     R8_PWM_CONFIG |= RB_PWM_CYCLE_SEL;
-	R8_PWM1_DATA = 200; // Adjust 0 offset.
+	R8_PWM1_DATA = INITIAL_ZERO; // Adjust 0 offset.
 
 
 	RunFunction();
