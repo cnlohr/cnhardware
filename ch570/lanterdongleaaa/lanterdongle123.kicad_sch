@@ -3342,6 +3342,17 @@
 		)
 		(uuid "3820250d-bc9b-44a1-8ef5-15f5ce1ff598")
 	)
+	(text "Changing from 33nF to 10nF made a lot of things surprisingly better."
+		(exclude_from_sim no)
+		(at 213.106 94.488 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "38dafdd6-493a-43a7-b9d4-a11eaa598b42")
+	)
 	(text "Initial test at cabin:\n4.7k into 100nF (I think 100nF?)\n"
 		(exclude_from_sim no)
 		(at 114.046 21.844 0)
@@ -3352,6 +3363,17 @@
 			(justify left)
 		)
 		(uuid "3916a9e6-ce84-49ee-9335-c69907f1f720")
+	)
+	(text "Fc = 3.3kHz"
+		(exclude_from_sim no)
+		(at 147.066 44.958 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3ae57a6b-9e00-4766-a1e3-8a689d89bc1d")
 	)
 	(text "LEDs running audio test:\n Noise goes up. ~35 (note: proc is powered off VDDA)\n Tiny improvement for switching processor to VDD from VDDA\n but probably not worth it.\n"
 		(exclude_from_sim no)
@@ -3474,6 +3496,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7d7f4f0f-06f5-4cdb-9325-b02130f0eacf")
+	)
+	(junction
+		(at 146.05 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a606c487-8420-45be-8fd0-05f32f6708ee")
 	)
 	(junction
 		(at 40.64 45.72)
@@ -4019,13 +4047,13 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 40.64) (xy 146.05 43.18)
+			(xy 146.05 40.64) (xy 146.05 48.26)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a647f525-ddbb-410c-92df-bb8ad173152e")
+		(uuid "a6720f45-ccb9-44cc-8469-75ddadd2abae")
 	)
 	(wire
 		(pts
@@ -4518,7 +4546,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33nF"
+		(property "Value" "10nF"
 			(at 69.85 92.7099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4562,7 +4590,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21117"
+		(property "LCSC" "C57112"
 			(at 66.04 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -5595,7 +5623,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33nF"
+		(property "Value" "10nF"
 			(at 76.2 153.6699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5639,7 +5667,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21117"
+		(property "LCSC" "C57112"
 			(at 72.39 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -6246,7 +6274,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33nF"
+		(property "Value" "10nF"
 			(at 87.63 153.6699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6290,7 +6318,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21117"
+		(property "LCSC" "C57112"
 			(at 83.82 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -6970,7 +6998,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33nF"
+		(property "Value" "10nF"
 			(at 76.2 168.9099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7014,7 +7042,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21117"
+		(property "LCSC" "C57112"
 			(at 72.39 167.64 0)
 			(hide yes)
 			(show_name no)
@@ -7603,7 +7631,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33nF"
+		(property "Value" "10nF"
 			(at 69.85 114.2999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7647,7 +7675,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21117"
+		(property "LCSC" "C57112"
 			(at 66.04 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -9256,7 +9284,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33nF"
+		(property "Value" "10nF"
 			(at 95.25 92.7099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9300,7 +9328,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21117"
+		(property "LCSC" "C57112"
 			(at 91.44 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -10001,6 +10029,84 @@
 			(project "lanterdongle123"
 				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
 					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 146.05 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c0ccc5d7-a4f6-42a9-8bfe-4195474d94e1")
+		(property "Reference" "#PWR011"
+			(at 146.05 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 146.05 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 146.05 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 146.05 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 146.05 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "08fddfaa-eaeb-4a0a-9132-86c37ab00c66")
+		)
+		(instances
+			(project "lanterdongle123"
+				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -10760,6 +10866,99 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 146.05 52.07 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e07985f9-710b-4751-89a4-f76d80b25eef")
+		(property "Reference" "C11"
+			(at 149.86 50.7999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10nF"
+			(at 149.86 53.3399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 145.0848 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 146.05 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 146.05 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C57112"
+			(at 146.05 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b96ab764-54bf-423a-8029-4cfbaa6508fb")
+		)
+		(pin "2"
+			(uuid "7f9bee72-795c-480d-9cb2-52bd5e80db8c")
+		)
+		(instances
+			(project "lanterdongle123"
+				(path "/62aef330-aacb-4e04-9e4f-744bc61e5ffc"
+					(reference "C11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 29.21 93.98 0)
 		(unit 1)
@@ -11016,7 +11215,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33nF"
+		(property "Value" "10nF"
 			(at 57.15 92.7099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11060,7 +11259,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21117"
+		(property "LCSC" "C57112"
 			(at 53.34 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -11108,7 +11307,7 @@
 				)
 			)
 		)
-		(property "Value" "33nF"
+		(property "Value" "10nF"
 			(at 139.7 35.56 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11151,7 +11350,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21117"
+		(property "LCSC" "C57112"
 			(at 139.7 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -11200,7 +11399,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33nF"
+		(property "Value" "10nF"
 			(at 173.99 54.6099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11244,7 +11443,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21117"
+		(property "LCSC" "C57112"
 			(at 170.18 53.34 0)
 			(hide yes)
 			(show_name no)

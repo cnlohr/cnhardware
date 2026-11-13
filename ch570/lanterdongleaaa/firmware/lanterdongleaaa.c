@@ -71,7 +71,7 @@ void OutputLEDs( uint32_t * ledcolors )
 	}
 }
 
-#define PWMCLOCKDIV 16
+#define PWMCLOCKDIV 4
 #define INITIAL_ZERO 128
 // SPS = F_CPU/(PWMCLOCKDIV*255*oversample)
 
@@ -82,7 +82,7 @@ void OutputLEDs( uint32_t * ledcolors )
 void RunFunction()
 {
 
-	const uint32_t oversample = 1;
+	const uint32_t oversample = 4;
 	const uint32_t targetsampletime = oversample*(255*R16_PWM_CLOCK_DIV); // in 1/60Mths of a second.
 
 	uint32_t * rptr = timer_data;
