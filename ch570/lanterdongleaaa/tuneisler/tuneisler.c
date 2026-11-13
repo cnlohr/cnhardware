@@ -14,20 +14,20 @@ void RunFunction()
 
 	while(1)
 	{
-		iSLERRX(ACCESS_ADDRESS, 38, PHY_MODE);
+		iSLERRX(ACCESS_ADDRESS, 37, PHY_MODE);
 		if( rx_ready )
 		{
-			if( !iSLERCRCOK() ) return;
-
 			uint8_t *frame = (uint8_t*)LLE_BUF;
 			int rssi = iSLERRSSI();
+
+			if( !iSLERCRCOK() ) { printf( "X\n" ); return; }
 
 			printf( "%d\n", rssi );
 		}
 
 		if( TimeElapsed32( funSysTick32(), nextSend ) > 0 )
 		{
-printf( "." );
+			printf( "." );
 			nextSend += DELAY_MS_TIME * 10;
 
 
@@ -36,7 +36,7 @@ printf( "." );
 					0x66, 0x55, 0x44, 0x33, 0x22, 0x11, // MAC (reversed)
 					0x06, 0x09, 'R', 'X', ':', '?', '?'}; // 0x09: "Complete Local Name"
 
-			iSLERTX(ACCESS_ADDRESS, txbuf, sizeof(txbuf), 38, PHY_MODE);
+			iSLERTX(ACCESS_ADDRESS, txbuf, sizeof(txbuf), 37, PHY_MODE);
 		}
 	}
 }
