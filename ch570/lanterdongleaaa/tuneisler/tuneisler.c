@@ -24,18 +24,22 @@ void RunFunction()
 
 			if( iSLERCRCOK() )
 			{
-				printf( "%d\n", rssi );
-				iSLERRX(ACCESS_ADDRESS, CHANNEL, PHY_MODE);
+				//printf( "%d [%02x %02x %02x %02x %02x %02x]\n", rssi, frame[0], frame[1], frame[2], frame[3], frame[4], frame[5] );
+				if( frame[2] == 0x66 && frame[3] == 0x55 && frame[4] == 0x44 )
+				{
+					printf( "%d\n", rssi );
+				}
 			}
 			else
 			{
-				printf( "x" );
+				//printf( "x" );
 			}
+			iSLERRX(ACCESS_ADDRESS, CHANNEL, PHY_MODE);
 		}
 
 		if( TimeElapsed32( funSysTick32(), nextSend ) > 0 )
 		{
-			printf( "." );
+			//printf( "." );
 			nextSend += DELAY_MS_TIME * 10;
 
 
