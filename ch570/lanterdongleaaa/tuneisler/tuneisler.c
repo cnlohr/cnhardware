@@ -28,12 +28,14 @@ void RunFunction()
 	uint32_t hopTimeOutAt = now;
 	uint32_t channel = scanplan[0];
 	uint32_t rxthis = 0;
+	uint32_t txalready = 0;
 
 	while(1)
 	{
 		now = funSysTick32();
-		if( TimeElapsed32( now, hopTimeOutAt ) )
+		if( TimeElapsed32( now, hopTimeOutAt ) > 0 )
 		{
+//printf( "%d %d   %d\n", now, hopTimeOutAt, TimeElapsed32( now, hopTimeOutAt ) );
 			if( !rxthis ) printf( "-" );
 			scanpos++;
 			if( scanpos >= SCANCHAN ) scanpos = 0; else printf( "," );
@@ -42,6 +44,10 @@ void RunFunction()
 			nextSend = now + ((rand()&0xfff) + 10000) * DELAY_US_TIME; //10-14ms
 			//iSLERRX(ACCESS_ADDRESS, channel, PHY_MODE);
 			rxthis = 0;
+			txalready = 0;
+
+			hopTimeOutAt = now + 100000 * DELAY_US_TIME; // Long future (After send)
+//printf( "%d %d %d\n", now, hopTimeOutAt, nextSend );
 		}
 
 		if( rx_ready )
@@ -67,11 +73,8 @@ void RunFunction()
 			iSLERRX(ACCESS_ADDRESS, channel, PHY_MODE);
 		}
 
-		if( TimeElapsed32( funSysTick32(), nextSend ) > 0 )
+		if( TimeElapsed32( now, nextSend ) > 0 )
 		{
-			//printf( "." );
-			nextSend += DELAY_MS_TIME * 10;
-
 			static uint8_t txbuf[] = {
 					0x02, 0x0d, // header for LL: PDU + frame length
 					0x66, 0x55, 0x44, 0x33, 0x22, 0x11, // MAC (reversed)
@@ -79,8 +82,8 @@ void RunFunction()
 
 			iSLERTX(ACCESS_ADDRESS, txbuf, sizeof(txbuf), channel, PHY_MODE);
 			iSLERRX(ACCESS_ADDRESS, channel, PHY_MODE);
-
 			hopTimeOutAt = now + 8000 * DELAY_US_TIME;
+			nextSend = hopTimeOutAt + 10000 * DELAY_US_TIME; // Far future
 		}
 	}
 }
