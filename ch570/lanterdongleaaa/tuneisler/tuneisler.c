@@ -13,7 +13,7 @@
 #include "iSLER.h"
 
 #define SCANCHAN 1
-uint32_t scanplan[SCANCHAN] = { 37 };
+uint32_t scanplan[SCANCHAN] = { 37 };//, 8, 17, 27, 36 };
 
 void RunFunction() __HIGH_CODE;
 
@@ -40,7 +40,7 @@ void RunFunction()
 			if( scanpos == 0 ) printf( "\n" );
 			channel = scanplan[scanpos];
 			nextSend = now + ((rand()&0xfff) + 10000) * DELAY_US_TIME; //10-14ms
-			iSLERRX(ACCESS_ADDRESS, channel, PHY_MODE);
+			//iSLERRX(ACCESS_ADDRESS, channel, PHY_MODE);
 			rxthis = 0;
 		}
 
