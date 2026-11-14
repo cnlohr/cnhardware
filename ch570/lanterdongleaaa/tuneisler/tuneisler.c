@@ -12,8 +12,8 @@
 
 #include "iSLER.h"
 
-#define SCANCHAN 5
-uint32_t scanplan[SCANCHAN] = { 0, 8, 17, 27, 36 };
+#define SCANCHAN 1
+uint32_t scanplan[SCANCHAN] = { 37 };
 
 void RunFunction() __HIGH_CODE;
 
