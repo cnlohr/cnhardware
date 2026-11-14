@@ -35,9 +35,8 @@ void RunFunction()
 		if( TimeElapsed32( now, hopTimeOutAt ) )
 		{
 			if( !rxthis ) printf( "-" );
-			if( scanpos != 0 ) printf( "," );
 			scanpos++;
-			if( scanpos >= SCANCHAN ) scanpos = 0;
+			if( scanpos >= SCANCHAN ) scanpos = 0; else printf( "," );
 			if( scanpos == 0 ) printf( "\n" );
 			channel = scanplan[scanpos];
 			nextSend = now + ((rand()&0xfff) + 10000) * DELAY_US_TIME; //10-14ms
@@ -59,7 +58,7 @@ void RunFunction()
 					rxthis = 1;
 				}
 
-				hopTimeOutAt = now + 8000; // Got Packet.  Set planned jump.
+				hopTimeOutAt = now + 8000 * DELAY_US_TIME; // Got Packet.  Set planned jump.
 			}
 			else
 			{
@@ -81,7 +80,7 @@ void RunFunction()
 			iSLERTX(ACCESS_ADDRESS, txbuf, sizeof(txbuf), channel, PHY_MODE);
 			iSLERRX(ACCESS_ADDRESS, channel, PHY_MODE);
 
-			hopTimeOutAt = now + 8000;
+			hopTimeOutAt = now + 8000 * DELAY_US_TIME;
 		}
 	}
 }
