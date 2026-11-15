@@ -36,7 +36,7 @@ void RunFunction()
 		now = funSysTick32();
 
 		int timeoutIfGotPacket = TimeElapsed32( now, hopTimeOutAt );
-		int timeoutIfNotGotPacket = TimeElapsed32( now, hopTimeOutAt + (4000* DELAY_US_TIME) );
+		int timeoutIfNotGotPacket = TimeElapsed32( now, hopTimeOutAt - (4000 * DELAY_US_TIME) );
 		int timeout = rxthis ? timeoutIfGotPacket : timeoutIfNotGotPacket;
 		if( timeout > 0 )
 		{
@@ -70,14 +70,14 @@ void RunFunction()
 				{
 					if( !rxthis ) printf( "%d", rssi );
 					rxthis = 1;
+
+					int32_t projExp = *((uint32_t*)&frame[8]);
+					int32_t nowRemain = TimeElapsed32( hopTimeOutAt, now );
+					uint32_t targetRemain = (nowRemain * 7)/8 + (projExp/8);
+
+					hopTimeOutAt = targetRemain + now;
+					printf( "[%d %d %d]\n", projExp, nowRemain, targetRemain );
 				}
-
-				int32_t projExp = *((uint32_t*)&frame[8]);
-				int32_t nowRemain = TimeElapsed32( hopTimeOutAt, now );
-
-				uint32_t targetRemain = (nowRemain * 7)/8 + (projExp/8);
-
-				hopTimeOutAt = targetRemain + now;
 			}
 			else
 			{
@@ -93,7 +93,7 @@ void RunFunction()
 					0x66, 0x55, 0x44, 0x33, 0x22, 0x11, // MAC (reversed)
 					0xaa, 0xaa, 0xaa, 0xaa, ':', '?', '?'}; // 0x09: "Complete Local Name"
 
-			uint32_t projExp = TimeElapsed32( hopTimeOutAt, now );
+			uint32_t projExp = TimeElapsed32( hopTimeOutAt, now ); // eg 132731
 			*((uint32_t*)&txbuf[8]) = projExp;
 
 			iSLERTX(ACCESS_ADDRESS, txbuf, sizeof(txbuf), channel, PHY_MODE);
