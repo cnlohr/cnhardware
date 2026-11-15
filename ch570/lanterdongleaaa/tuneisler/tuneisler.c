@@ -26,6 +26,7 @@ void RunFunction()
 	uint32_t now = funSysTick32();
 	uint32_t nextSend = now + 10000 * DELAY_US_TIME;
 	uint32_t hopTimeOutAt = now;
+	uint32_t hopTimeOutAtNoPacket = now;
 	uint32_t channel = scanplan[0];
 	uint32_t rxthis = 0;
 	uint32_t txalready = 0;
@@ -36,7 +37,7 @@ void RunFunction()
 		now = funSysTick32();
 
 		int timeoutIfGotPacket = TimeElapsed32( now, hopTimeOutAt );
-		int timeoutIfNotGotPacket = TimeElapsed32( now, hopTimeOutAt - (4000 * DELAY_US_TIME) );
+		int timeoutIfNotGotPacket = TimeElapsed32( now, hopTimeOutAtNoPacket );
 		int timeout = rxthis ? timeoutIfGotPacket : timeoutIfNotGotPacket;
 		if( timeout > 0 )
 		{
@@ -55,7 +56,8 @@ void RunFunction()
 			txalready = 0;
 			subsend = 0;
 
-			hopTimeOutAt = now + 30000 * DELAY_US_TIME; // Long future (After send)
+			hopTimeOutAt = now + 30000 * DELAY_US_TIME; // Always stable by default.
+			hopTimeOutAtNoPacket = hopTimeOutAt + ((rand()&0xfff) + 8000) * DELAY_US_TIME; //8-12ms longer
 		}
 
 		if( rx_ready )
@@ -65,15 +67,15 @@ void RunFunction()
 
 			if( iSLERCRCOK() )
 			{
-				printf( "%d [%02x %02x %02x %02x %02x %02x]\n", rssi, frame[0], frame[1], frame[2], frame[3], frame[4], frame[5] );
 				if( frame[2] == 0x66 && frame[3] == 0x55 && frame[4] == 0x44 )
 				{
+					//printf( "%d [%02x %02x %02x %02x %02x %02x]\n", rssi, frame[0], frame[1], frame[2], frame[3], frame[4], frame[5] );
 					if( !rxthis ) printf( "%d", rssi );
 					rxthis = 1;
 
 					int32_t projExp = *((uint32_t*)&frame[8]);
 					int32_t nowRemain = TimeElapsed32( hopTimeOutAt, now );
-					uint32_t targetRemain = (nowRemain * 7)/8 + (projExp/8);
+					uint32_t targetRemain = (nowRemain * 3)/4 + (projExp/4);
 
 					hopTimeOutAt = targetRemain + now;
 					printf( "[%d %d %d]\n", projExp, nowRemain, targetRemain );
@@ -93,7 +95,7 @@ void RunFunction()
 					0x66, 0x55, 0x44, 0x33, 0x22, 0x11, // MAC (reversed)
 					0xaa, 0xaa, 0xaa, 0xaa, ':', '?', '?'}; // 0x09: "Complete Local Name"
 
-			uint32_t projExp = TimeElapsed32( hopTimeOutAt, now ); // eg 132731
+			uint32_t projExp = TimeElapsed32( hopTimeOutAt, now ); // eg 132731, ideal timeout (assuming we got a packet)
 			*((uint32_t*)&txbuf[8]) = projExp;
 
 			iSLERTX(ACCESS_ADDRESS, txbuf, sizeof(txbuf), channel, PHY_MODE);
@@ -101,11 +103,11 @@ void RunFunction()
 
 			if( subsend == 3 )
 			{
-				nextSend = hopTimeOutAt + 100000 * DELAY_US_TIME; // Far future
+				nextSend = now + 0x7fffffff; // Far future (Will never be hit)
 			}
 			else
 			{
-				nextSend = (rand()&0xff) * DELAY_US_TIME; // Random future
+				nextSend = ((rand()&0x1ff)+100) * DELAY_US_TIME; // Random future
 				subsend++;
 			}
 		}
