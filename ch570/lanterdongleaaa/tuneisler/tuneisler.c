@@ -73,12 +73,12 @@ void RunFunction()
 					if( !rxthis ) printf( "%d", rssi );
 					rxthis = 1;
 
-					int32_t projExp = *((uint32_t*)&frame[8]) - (1000*DELAY_US_TIME /*Assume 2ms ping*/);
+					int32_t projExp = *((uint32_t*)&frame[8]) - (300*DELAY_US_TIME /*Assume 2ms ping*/);
 					int32_t nowRemain = TimeElapsed32( hopTimeOutAt, now );
 					uint32_t targetRemain = (nowRemain * 3)/4 + (projExp/4);
 
 					hopTimeOutAt = targetRemain + now;
-					printf( "[%d %d %d  %d]\n", projExp, nowRemain, targetRemain, timeout );
+					//printf( "[%d %d %d  %d]\n", projExp, nowRemain, targetRemain, timeout );
 				}
 			}
 			else
@@ -107,7 +107,7 @@ void RunFunction()
 			}
 			else
 			{
-				nextSend = ((rand()&0x1ff)+100) * DELAY_US_TIME; // Random future
+				nextSend = ((rand()&0x3ff)+100) * DELAY_US_TIME; // Random future (.1 to 1.1ms)
 				subsend++;
 			}
 		}
