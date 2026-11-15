@@ -36,7 +36,7 @@ void RunFunction()
 		now = funSysTick32();
 
 		int timeoutIfGotPacket = TimeElapsed32( now, hopTimeOutAt );
-		int timeoutIfNotGotPacket = TimeElapsed32( now, hopTimeOutAt - (4000* DELAY_US_TIME) );
+		int timeoutIfNotGotPacket = TimeElapsed32( now, hopTimeOutAt + (4000* DELAY_US_TIME) );
 		int timeout = rxthis ? timeoutIfGotPacket : timeoutIfNotGotPacket;
 		if( timeout > 0 )
 		{
@@ -101,7 +101,7 @@ void RunFunction()
 
 			if( subsend == 3 )
 			{
-				nextSend = hopTimeOutAt + 10000 * DELAY_US_TIME; // Far future
+				nextSend = hopTimeOutAt + 100000 * DELAY_US_TIME; // Far future
 			}
 			else
 			{
