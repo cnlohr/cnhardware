@@ -56,7 +56,7 @@ void RunFunction()
 			txalready = 0;
 			subsend = 0;
 
-			hopTimeOutAt = now + 30000 * DELAY_US_TIME; // Always stable by default.
+			hopTimeOutAt = now + 20000 * DELAY_US_TIME; // Always stable by default.
 			hopTimeOutAtNoPacket = hopTimeOutAt + ((rand()&0xfff) + 8000) * DELAY_US_TIME; //8-12ms longer
 		}
 
@@ -73,12 +73,12 @@ void RunFunction()
 					if( !rxthis ) printf( "%d", rssi );
 					rxthis = 1;
 
-					int32_t projExp = *((uint32_t*)&frame[8]);
+					int32_t projExp = *((uint32_t*)&frame[8]) - (1000*DELAY_US_TIME /*Assume 2ms ping*/);
 					int32_t nowRemain = TimeElapsed32( hopTimeOutAt, now );
 					uint32_t targetRemain = (nowRemain * 3)/4 + (projExp/4);
 
 					hopTimeOutAt = targetRemain + now;
-					printf( "[%d %d %d]\n", projExp, nowRemain, targetRemain );
+					printf( "[%d %d %d  %d]\n", projExp, nowRemain, targetRemain, timeout );
 				}
 			}
 			else
