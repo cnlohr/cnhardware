@@ -29,11 +29,16 @@ void RunFunction()
 	uint32_t channel = scanplan[0];
 	uint32_t rxthis = 0;
 	uint32_t txalready = 0;
+	uint32_t subsend = 0;
 
 	while(1)
 	{
 		now = funSysTick32();
-		if( TimeElapsed32( now, hopTimeOutAt ) > 0 )
+
+		int timeoutIfGotPacket = TimeElapsed32( now, hopTimeOutAt );
+		int timeoutIfNotGotPacket = TimeElapsed32( now, hopTimeOutAt - (4000* DELAY_US_TIME) );
+		int timeout = rxthis ? timeoutIfGotPacket : timeoutIfNotGotPacket;
+		if( timeout > 0 )
 		{
 //printf( "%d %d   %d\n", now, hopTimeOutAt, TimeElapsed32( now, hopTimeOutAt ) );
 			if( !rxthis ) printf( "-" );
@@ -44,12 +49,13 @@ void RunFunction()
 			iSLERRX(ACCESS_ADDRESS, channel, PHY_MODE);
 			rx_ready = 0;
 			nextSend = now + ((rand()&0xfff) + 10000) * DELAY_US_TIME; //10-14ms
+
 			//iSLERRX(ACCESS_ADDRESS, channel, PHY_MODE);
 			rxthis = 0;
 			txalready = 0;
+			subsend = 0;
 
-			hopTimeOutAt = now + 100000 * DELAY_US_TIME; // Long future (After send)
-//printf( "%d %d %d\n", now, hopTimeOutAt, nextSend );
+			hopTimeOutAt = now + 30000 * DELAY_US_TIME; // Long future (After send)
 		}
 
 		if( rx_ready )
@@ -66,7 +72,12 @@ void RunFunction()
 					rxthis = 1;
 				}
 
-				hopTimeOutAt = now + 8000 * DELAY_US_TIME; // Got Packet.  Set planned jump.
+				int32_t projExp = *((uint32_t*)&frame[8]);
+				int32_t nowRemain = TimeElapsed32( hopTimeOutAt, now );
+
+				uint32_t targetRemain = (nowRemain * 7)/8 + (projExp/8);
+
+				hopTimeOutAt = targetRemain + now;
 			}
 			else
 			{
@@ -80,12 +91,23 @@ void RunFunction()
 			static uint8_t txbuf[] = {
 					0x02, 0x0d, // header for LL: PDU + frame length
 					0x66, 0x55, 0x44, 0x33, 0x22, 0x11, // MAC (reversed)
-					0x06, 0x09, 'R', 'X', ':', '?', '?'}; // 0x09: "Complete Local Name"
+					0xaa, 0xaa, 0xaa, 0xaa, ':', '?', '?'}; // 0x09: "Complete Local Name"
+
+			uint32_t projExp = TimeElapsed32( hopTimeOutAt, now );
+			*((uint32_t*)&txbuf[8]) = projExp;
 
 			iSLERTX(ACCESS_ADDRESS, txbuf, sizeof(txbuf), channel, PHY_MODE);
 			iSLERRX(ACCESS_ADDRESS, channel, PHY_MODE);
-			hopTimeOutAt = now + 8000 * DELAY_US_TIME;
-			nextSend = hopTimeOutAt + 10000 * DELAY_US_TIME; // Far future
+
+			if( subsend == 3 )
+			{
+				nextSend = hopTimeOutAt + 10000 * DELAY_US_TIME; // Far future
+			}
+			else
+			{
+				nextSend = (rand()&0xff) * DELAY_US_TIME; // Random future
+				subsend++;
+			}
 		}
 	}
 }
