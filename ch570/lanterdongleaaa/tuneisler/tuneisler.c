@@ -13,7 +13,7 @@
 #include "iSLER.h"
 
 #define SCANCHAN 5
-uint32_t scanplan[SCANCHAN] = { 37, 8, 17, 27, 36 };
+uint32_t scanplan[SCANCHAN] = { 0, 8, 17, 27, 36 };
 
 void RunFunction() __HIGH_CODE;
 
@@ -65,7 +65,7 @@ void RunFunction()
 
 			if( iSLERCRCOK() )
 			{
-				//printf( "%d [%02x %02x %02x %02x %02x %02x]\n", rssi, frame[0], frame[1], frame[2], frame[3], frame[4], frame[5] );
+				printf( "%d [%02x %02x %02x %02x %02x %02x]\n", rssi, frame[0], frame[1], frame[2], frame[3], frame[4], frame[5] );
 				if( frame[2] == 0x66 && frame[3] == 0x55 && frame[4] == 0x44 )
 				{
 					if( !rxthis ) printf( "%d", rssi );
