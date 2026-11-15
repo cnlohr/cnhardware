@@ -56,7 +56,7 @@ void RunFunction()
 			txalready = 0;
 			subsend = 0;
 
-			hopTimeOutAt = now + 20000 * DELAY_US_TIME; // Always stable by default.
+			hopTimeOutAt += 30000 * DELAY_US_TIME; // Always stable by default.
 			hopTimeOutAtNoPacket = hopTimeOutAt + ((rand()&0xfff) + 8000) * DELAY_US_TIME; //8-12ms longer
 		}
 
@@ -74,11 +74,11 @@ void RunFunction()
 					rxthis = 1;
 
 					int32_t projExp = *((uint32_t*)&frame[8]) - (300*DELAY_US_TIME /*Assume 2ms ping*/);
-					int32_t nowRemain = TimeElapsed32( hopTimeOutAt, now );
+					int32_t nowRemain = TimeElapsed32( now, hopTimeOutAt );
 					uint32_t targetRemain = (nowRemain * 3)/4 + (projExp/4);
 
 					hopTimeOutAt = targetRemain + now;
-					//printf( "[%d %d %d  %d]\n", projExp, nowRemain, targetRemain, timeout );
+					printf( "[%d %d %d  %d]\n", projExp, nowRemain, targetRemain, timeout );
 				}
 			}
 			else
@@ -98,7 +98,7 @@ void RunFunction()
 			uint32_t projExp = TimeElapsed32( hopTimeOutAt, now ); // eg 132731, ideal timeout (assuming we got a packet)
 			*((uint32_t*)&txbuf[8]) = projExp;
 
-			iSLERTX(ACCESS_ADDRESS, txbuf, sizeof(txbuf), channel, PHY_MODE);
+		//	iSLERTX(ACCESS_ADDRESS, txbuf, sizeof(txbuf), channel, PHY_MODE);
 			iSLERRX(ACCESS_ADDRESS, channel, PHY_MODE);
 
 			if( subsend == 3 )
