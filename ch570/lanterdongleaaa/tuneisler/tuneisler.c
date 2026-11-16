@@ -42,7 +42,7 @@ void RunFunction()
 		if( timeout > 0 )
 		{
 //printf( "%d %d   %d\n", now, hopTimeOutAt, TimeElapsed32( now, hopTimeOutAt ) );
-			if( !rxthis ) printf( "-" );
+			if( !rxthis ) printf( "%d", rxthis );
 			scanpos++;
 			if( scanpos >= SCANCHAN ) scanpos = 0; else printf( "," );
 			if( scanpos == 0 ) printf( "\n" );
