@@ -7022,6 +7022,16 @@
 	)
 	(wire
 		(pts
+			(xy 73.66 62.23) (xy 81.28 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea91aa5e-be51-49c0-87ce-e8ddcc28bb6b")
+	)
+	(wire
+		(pts
 			(xy 43.18 46.99) (xy 40.64 46.99)
 		)
 		(stroke
@@ -9286,6 +9296,30 @@
 			)
 		)
 	)
+	(global_label "MCO"
+		(shape input)
+		(at 66.04 62.23 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "77785a6b-74f4-4048-acef-77bbb96f9dcb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 59.0029 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "PA2"
 		(shape input)
 		(at 240.03 128.27 180)
@@ -10547,30 +10581,6 @@
 		(uuid "b05ad502-5556-47be-9a2d-f1c784ab619d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 116.1529 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "MCO"
-		(shape input)
-		(at 81.28 62.23 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b159a29b-4f9e-4522-9633-721ffdc12d84")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 74.2429 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12233,9 +12243,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "01a6eb73-2e91-44e8-b751-61fb4921bdf5")
 		(property "Reference" "J18"
@@ -13459,9 +13469,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "0faab424-3030-4049-b1e0-b00bfc39ab8f")
 		(property "Reference" "J15"
@@ -13635,6 +13645,95 @@
 			(project "j4bottom"
 				(path "/4a975303-4aa6-4bd7-afc9-6566662787a6"
 					(reference "#PWR0110")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 69.85 62.23 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "16ba503e-7650-4cdd-bee8-abf0d7700259")
+		(property "Reference" "R5"
+			(at 69.85 59.69 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22"
+			(at 69.85 62.23 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 69.85 64.008 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 69.85 62.23 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25092"
+			(at 69.85 62.23 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "304789e9-01d4-4b4c-b9ee-922ae65251f2")
+		)
+		(pin "2"
+			(uuid "c36386ae-4098-4d50-97cf-da6c4b4df56c")
+		)
+		(instances
+			(project "j4bottom"
+				(path "/4a975303-4aa6-4bd7-afc9-6566662787a6"
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -14835,9 +14934,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "28702fc7-77a7-47da-8d7e-84f55db0f465")
 		(property "Reference" "J10"
@@ -14943,9 +15042,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "2a6185e3-1e75-4526-be34-4403487688b6")
 		(property "Reference" "J14"
@@ -15128,9 +15227,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "2b563fc4-6072-4818-963b-e0e5c86d6f26")
 		(property "Reference" "J12"
@@ -15314,9 +15413,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "2c31b7de-5cf1-410f-b750-427e1faa57c3")
 		(property "Reference" "J6"
@@ -15513,9 +15612,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2d04b5fc-9d20-43e3-8afa-5e4b0a859e23")
@@ -15803,9 +15902,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "311440b4-adca-4267-903e-130a2578fbda")
@@ -16229,9 +16328,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "38d99ee2-7d65-4713-9b96-c5254848711d")
 		(property "Reference" "J11"
@@ -17054,9 +17153,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "40f9c784-2086-4132-8856-379c2da12153")
@@ -17771,9 +17870,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "458a529a-cfde-49b6-acf7-291e567e557b")
 		(property "Reference" "J1"
@@ -18282,9 +18381,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "4c44cb7a-9813-4fd5-876e-61e7b55a1ed1")
 		(property "Reference" "J9"
@@ -19977,9 +20076,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "6a396d72-b2d6-4e6d-90e7-9021120ffb88")
 		(property "Reference" "J5"
@@ -20827,9 +20926,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "79295a9a-945d-4a12-8d31-05eefebb44d9")
 		(property "Reference" "J16"
@@ -21830,9 +21929,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "8875849b-b699-4010-91db-f681d3b36484")
 		(property "Reference" "J7"
@@ -21938,9 +22037,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "88a16f25-055a-40f0-9f57-a7f70697e316")
 		(property "Reference" "J13"
@@ -24797,9 +24896,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "b4134811-554f-4c7f-b5a4-6f74cb7170ab")
 		(property "Reference" "J17"
@@ -25306,9 +25405,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "bcf1c385-4b87-4bda-8ab8-905a52133821")
 		(property "Reference" "J8"
@@ -25661,9 +25760,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "c4f3d16f-9368-47c4-90d7-d79f79c17946")
 		(property "Reference" "J2"
@@ -25769,9 +25868,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c5b711d7-8efb-4eba-a86e-86053f66aa9f")
@@ -26644,9 +26743,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "d335f1ce-cf0e-4da0-bfd6-ee6261d82d64")
 		(property "Reference" "J19"
@@ -26752,9 +26851,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "d3af7834-1020-44f9-b7e5-1ae167926ad7")
 		(property "Reference" "J4"
@@ -28579,9 +28678,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "f260534d-eb8a-42e3-9ae5-011f0befd94b")
 		(property "Reference" "J3"
