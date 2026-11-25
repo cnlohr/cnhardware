@@ -1245,22 +1245,16 @@
 		(uuid "819da3ba-a14a-4869-97ce-03cc2ce5e10d")
 	)
 	(junction
-		(at 118.11 80.01)
+		(at 143.51 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "bf018880-ce3c-4895-bd63-68b10b919f5c")
+		(uuid "b8af75f6-6d31-4cb8-a088-b8d0a21e4e82")
 	)
 	(junction
 		(at 123.19 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c2301277-1a49-437b-8071-5e0c0467bcf9")
-	)
-	(junction
-		(at 110.49 80.01)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cf5b1a02-ae44-41a8-a979-546937bcf4d2")
 	)
 	(wire
 		(pts
@@ -1274,23 +1268,13 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 80.01) (xy 118.11 80.01)
+			(xy 152.4 85.09) (xy 156.21 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "239082e0-9d63-4d8a-bd0e-d64345efb779")
-	)
-	(wire
-		(pts
-			(xy 153.67 87.63) (xy 153.67 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2925edd2-90b5-45be-a6ae-ca717fecbb39")
+		(uuid "40fd438e-fe6a-4f18-915b-bdced6d74fc2")
 	)
 	(wire
 		(pts
@@ -1314,23 +1298,33 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 90.17) (xy 156.21 90.17)
+			(xy 154.94 90.17) (xy 152.4 90.17)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7c539a77-48a4-42b0-a82d-8c8371de9c84")
+		(uuid "80e2daf5-f971-4ee7-93cb-400bb3ab066f")
 	)
 	(wire
 		(pts
-			(xy 118.11 58.42) (xy 118.11 80.01)
+			(xy 118.11 60.96) (xy 154.94 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8224e9c2-b917-4ef8-94ed-d80e73a8c285")
+		(uuid "9939b246-b0f1-40dc-a2fb-836e616a19d4")
+	)
+	(wire
+		(pts
+			(xy 154.94 60.96) (xy 154.94 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c66ca7f-f634-4c91-b5bc-dff5f7a3af8b")
 	)
 	(wire
 		(pts
@@ -1344,13 +1338,13 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 87.63) (xy 153.67 87.63)
+			(xy 153.67 87.63) (xy 152.4 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b1f929ce-6d90-4182-b22f-1de24369374b")
+		(uuid "b2b5c1a1-0040-46a3-a62e-ad6a77b89f82")
 	)
 	(wire
 		(pts
@@ -1364,13 +1358,13 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 90.17) (xy 156.21 80.01)
+			(xy 118.11 58.42) (xy 118.11 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b9aed88e-5fe9-4294-a7d0-ba0d8c8bb970")
+		(uuid "b5c8ff36-aa62-46ed-b7cb-b0e2a61d0fb8")
 	)
 	(wire
 		(pts
@@ -1384,7 +1378,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 80.01) (xy 153.67 80.01)
+			(xy 107.95 80.01) (xy 153.67 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1401,6 +1395,26 @@
 			(type default)
 		)
 		(uuid "d40ea3a0-27a5-4205-b4fe-1df68bf9b0c5")
+	)
+	(wire
+		(pts
+			(xy 156.21 85.09) (xy 156.21 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f36942d0-8cd7-46aa-a7e4-41dbf0d6c44a")
+	)
+	(wire
+		(pts
+			(xy 153.67 80.01) (xy 153.67 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd26dcd7-41ed-4fd2-b47c-52f5606fb1d7")
 	)
 	(global_label "VDD"
 		(shape input)
@@ -1452,17 +1466,17 @@
 	)
 	(global_label "VBUS"
 		(shape input)
-		(at 138.43 66.04 0)
+		(at 138.43 63.5 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "9df9812a-1be7-48e2-b37a-e344557d960b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 146.3138 66.04 0)
+			(at 130.5462 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1470,7 +1484,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 	)
@@ -1884,84 +1898,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 110.49 87.63 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "37bc68df-576c-4591-931b-412c0f67d921")
-		(property "Reference" "#PWR021"
-			(at 110.49 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 110.49 92.71 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 110.49 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 110.49 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 110.49 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "28015e9a-bc52-4cc8-978b-04a72fe88257")
-		)
-		(instances
-			(project "badderapplebatteryaddon-alt"
-				(path "/84d09847-b362-4294-91a5-7ed66786a4c2"
-					(reference "#PWR021")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 152.4 92.71 90)
 		(unit 1)
 		(body_style 1)
@@ -2318,10 +2254,9 @@
 		(on_board yes)
 		(in_pos_files no)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "5c56fc0c-c88e-4b66-bf55-42d6495d8d0c")
 		(property "Reference" "J10"
-			(at 135.128 64.77 90)
+			(at 134.874 71.882 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2854,6 +2789,84 @@
 			(project "badderapplebatteryaddon-alt"
 				(path "/84d09847-b362-4294-91a5-7ed66786a4c2"
 					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 143.51 68.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "729a71e9-a3f5-4e8d-bd46-52db8ab32f5c")
+		(property "Reference" "#PWR021"
+			(at 143.51 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 143.51 73.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 143.51 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 143.51 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 143.51 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b0bb30dd-ad0a-4d41-8c78-7c0fd477e4a6")
+		)
+		(instances
+			(project "badderapplebatteryaddon-alt"
+				(path "/84d09847-b362-4294-91a5-7ed66786a4c2"
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -3559,7 +3572,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 110.49 83.82 0)
+		(at 143.51 64.77 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3568,9 +3581,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "ebf56ad4-0a6d-4c37-819d-4f070bbd5adc")
+		(uuid "fffe20ca-1184-4088-b794-065c42379fe5")
 		(property "Reference" "C7"
-			(at 114.3 82.5499 0)
+			(at 147.32 63.4999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3581,7 +3594,7 @@
 			)
 		)
 		(property "Value" "4.7u"
-			(at 114.3 85.0899 0)
+			(at 147.32 66.0399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3592,7 +3605,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 111.4552 87.63 0)
+			(at 144.4752 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3603,7 +3616,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 110.49 83.82 0)
+			(at 143.51 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3614,7 +3627,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 110.49 83.82 0)
+			(at 143.51 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3625,7 +3638,7 @@
 			)
 		)
 		(property "LCSC" "C19666"
-			(at 110.49 83.82 0)
+			(at 143.51 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3636,7 +3649,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 110.49 83.82 0)
+			(at 143.51 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3647,10 +3660,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "c92fc632-087f-4b94-94e4-f263b849e9dc")
+			(uuid "ef39407e-e3fa-41d6-99cc-aa852609d61a")
 		)
 		(pin "2"
-			(uuid "3bfba167-a1c9-4b93-b4b6-7e55d4b58652")
+			(uuid "4b3bc9a3-3483-4f4f-97d9-a2731bee4c7e")
 		)
 		(instances
 			(project "badderapplebatteryaddon-alt"
